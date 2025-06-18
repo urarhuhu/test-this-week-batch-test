@@ -1,34 +1,46 @@
 {
   "title": {
-    "message": "Docusaurus",
+    "message": "React Native",
     "description": "The title in the navbar"
   },
-  "item.label.Docs": {
-    "message": "Docs",
-    "description": "Navbar item with label Docs"
+  "logo.alt": {
+    "message": "React Native",
+    "description": "The alt text of navbar logo"
   },
-  "item.label.API": {
-    "message": "API",
-    "description": "Navbar item with label API"
+  "item.label.Development": {
+    "message": "Development",
+    "description": "Navbar item with label Development"
   },
-  "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
-  },
-  "item.label.Showcase": {
-    "message": "Showcase",
-    "description": "Navbar item with label Showcase"
+  "item.label.Contributing": {
+    "message": "Contributing",
+    "description": "Navbar item with label Contributing"
   },
   "item.label.Community": {
     "message": "Community",
     "description": "Navbar item with label Community"
   },
-  "item.label.Tests": {
-    "message": "Tests",
-    "description": "Navbar item with label Tests"
+  "item.label.Showcase": {
+    "message": "Showcase",
+    "description": "Navbar item with label Showcase"
   },
-  "item.label.Debug": {
-    "message": "Debug",
-    "description": "Navbar item with label Debug"
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Guides": {
+    "message": "Guides",
+    "description": "Navbar item with label Guides"
+  },
+  "item.label.Components": {
+    "message": "Components",
+    "description": "Navbar item with label Components"
+  },
+  "item.label.APIs": {
+    "message": "APIs",
+    "description": "Navbar item with label APIs"
+  },
+  "item.label.Architecture": {
+    "message": "Architecture",
+    "description": "Navbar item with label Architecture"
   }
 }

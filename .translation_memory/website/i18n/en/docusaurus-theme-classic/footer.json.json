@@ -1,96 +1,137 @@
 {
   "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-theme-classic/footer.json",
-  "source_file_content_hash": "ea895bc96a9c4c6ebf47e37cd64fcdb99b905ada86ac3c8cd14de49a6dce664c",
+  "source_file_content_hash": "66cf979dc076cc8cbc84feef01ba5a32ef764f46a90d4ad710fd34f684ca4954",
   "segments": [
     {
-      "segment_id": "link.title.Learn",
-      "source_content": "Learn",
-      "source_content_hash": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "segment_id": "link.title.Develop",
+      "source_content": "Develop",
+      "source_content_hash": "7576b5e7f2107fbc7a0522f1afe0101a741069ce9c1684dd0f5fcedbb069b3a3",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "學習"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The title of the footer links column with title=Learn in the footer"
+        "json_description": "The title of the footer links column with title=Develop in the footer"
       }
     },
     {
-      "segment_id": "link.title.Community",
+      "segment_id": "link.title.Participate",
+      "source_content": "Participate",
+      "source_content_hash": "38301e6935f3c542ef936acff424004752224adbd5bf71f40537161ef4fd6be0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Participate in the footer"
+      }
+    },
+    {
+      "segment_id": "link.title.Find us",
+      "source_content": "Find us",
+      "source_content_hash": "66fcde0b29e3b23403126b6d2cca1f0068b487dc8ca8b51dca737986e6e163c9",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Find us in the footer"
+      }
+    },
+    {
+      "segment_id": "link.title.Explore More",
+      "source_content": "Explore More",
+      "source_content_hash": "838985f1607f54af61fa2f7ebf24e6e0032d36248f462e3c432dd3c30fc4c7ed",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Explore More in the footer"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Guides",
+      "source_content": "Guides",
+      "source_content_hash": "572cd72feb9a84e0c639af3ccae73f3a4406f69fe193eac69ab0678eee32baff",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Guides linking to docs/getting-started"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Components",
+      "source_content": "Components",
+      "source_content_hash": "a150ce22160259313c47bc66940b905a9c2196924fd447f802cff12dbb1e9702",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Components linking to docs/components-and-apis"
+      }
+    },
+    {
+      "segment_id": "link.item.label.APIs",
+      "source_content": "APIs",
+      "source_content_hash": "8d266d3e3abde2c74774f8d493f1e162ec7a2f854f743821402245d10577f052",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=APIs linking to docs/accessibilityinfo"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Architecture",
+      "source_content": "Architecture",
+      "source_content_hash": "cd74053c54816e473883dede0ad3b152f38a41995409eade6b42704919bb1359",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Architecture linking to architecture/overview"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Showcase",
+      "source_content": "Showcase",
+      "source_content_hash": "9a15dc9c62db5943b6f133495878c7cbd7e8ab5dab86c87c4eebd595613c748e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Showcase linking to showcase"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Contributing",
+      "source_content": "Contributing",
+      "source_content_hash": "2b18598c711f43c293b07a684a115fcccd7f616dc451c5a1e29779792e3c1ed3",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Contributing linking to contributing/overview"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Community",
       "source_content": "Community",
       "source_content_hash": "bb501d7877eb7ddbd40baf7990e8058212e8140a2e6ceaaf2d54a6412b770bfd",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "社群"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The title of the footer links column with title=Community in the footer"
+        "json_description": "The label of footer link with label=Community linking to community/overview"
       }
     },
     {
-      "segment_id": "link.title.More",
-      "source_content": "More",
-      "source_content_hash": "d47d7cb0e4f8fd2be5ee07826694c18917d83ca77d0a01698582d05f432db996",
+      "segment_id": "link.item.label.Directory",
+      "source_content": "Directory",
+      "source_content_hash": "c8f84c3c5378b920b0ec2702cd9963a470098638b0c8aae249f74ec1a857633a",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "更多"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The title of the footer links column with title=More in the footer"
-      }
-    },
-    {
-      "segment_id": "link.title.Legal",
-      "source_content": "Legal",
-      "source_content_hash": "4787eaf7c938045fd5285fe6a2cd72558caf7bd5faeb93fd1ad490a502e0e37b",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "法律"
-      },
-      "metadata": {
-        "json_description": "The title of the footer links column with title=Legal in the footer"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Introduction",
-      "source_content": "Introduction",
-      "source_content_hash": "b605350bc00209520b7cd8f546322663356ba630708f71bbf30aead6b3dd608e",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "介紹"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Introduction linking to docs"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Installation",
-      "source_content": "Installation",
-      "source_content_hash": "c3fc54aa5390dc2c333d4bb596a339d552ad787337c1fdaac3957ca5a7facf50",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "安裝"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Installation linking to docs/installation"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Migration from v1 to v2",
-      "source_content": "Migration from v1 to v2",
-      "source_content_hash": "62d5c58d153feb3aac512d82026be114c0c0ae03ed55663b7fae1a401f408d8a",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "從 v1 遷移至 v2"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Migration from v1 to v2 linking to docs/migration"
+        "json_description": "The label of footer link with label=Directory linking to https://reactnative.directory/"
       }
     },
     {
@@ -99,50 +140,9 @@
       "source_content_hash": "185a76793eff17b079f576328881972dababed51764f1ab5afed4c9acef64d55",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "Stack Overflow"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/docusaurus"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Feature Requests",
-      "source_content": "Feature Requests",
-      "source_content_hash": "d737b736eae80cc73d675d018d5da8812b0b20ae7792f1b20e4ca46b9fede259",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "功能請求"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Feature Requests linking to /feature-requests"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Discord",
-      "source_content": "Discord",
-      "source_content_hash": "053bc65874ad6098e58c41c57b378a2f36b0220e5e0b46722245e6c2f796818c",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "Discord"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/docusaurus"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Help",
-      "source_content": "Help",
-      "source_content_hash": "b79cac926e0b2e347e72cc91d5174037c9e17ae7733fd7bdb570f71b10cd7bfc",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "幫助"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Help linking to /community/support"
+        "json_description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/react-native"
       }
     },
     {
@@ -151,37 +151,9 @@
       "source_content_hash": "8c6bc099534a0251b576f6b88bd2db124ae9497c64bd9242e92a6aec23e6a73a",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "部落格"
-      },
+      "translations": {},
       "metadata": {
         "json_description": "The label of footer link with label=Blog linking to blog"
-      }
-    },
-    {
-      "segment_id": "link.item.label.Changelog",
-      "source_content": "Changelog",
-      "source_content_hash": "ead07c84baac57a9542f388a07a2a5209456ce790b04251bc9bd7d179ea85cb1",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "更新日誌"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=Changelog linking to /changelog"
-      }
-    },
-    {
-      "segment_id": "link.item.label.GitHub",
-      "source_content": "GitHub",
-      "source_content_hash": "f911e414cf6bdfc595532ab166b5ba0f63d73c021452fcdacbda363dda6ad8fb",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {
-        "zh-hant": "GitHub"
-      },
-      "metadata": {
-        "json_description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
       }
     },
     {
@@ -190,61 +162,73 @@
       "source_content_hash": "4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "X"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The label of footer link with label=X linking to https://x.com/docusaurus"
+        "json_description": "The label of footer link with label=X linking to https://x.com/reactnative"
       }
     },
     {
-      "segment_id": "link.item.label.Privacy",
-      "source_content": "Privacy",
-      "source_content_hash": "54a57c3147c49f33de5898b87084ad2b14c4ab308f762454bf92aca907478ad5",
+      "segment_id": "link.item.label.Bluesky",
+      "source_content": "Bluesky",
+      "source_content_hash": "4ed485c7140118607118ad9ad616ab9c026bef5efa0b0218cbf312188959d451",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "隱私權"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The label of footer link with label=Privacy linking to https://opensource.facebook.com/legal/privacy/"
+        "json_description": "The label of footer link with label=Bluesky linking to https://bsky.app/profile/reactnative.dev"
       }
     },
     {
-      "segment_id": "link.item.label.Terms",
-      "source_content": "Terms",
-      "source_content_hash": "ede5489964834a514b61c7a4a8370be2452dd4a7d807180f14991ccc11ad2430",
+      "segment_id": "link.item.label.GitHub",
+      "source_content": "GitHub",
+      "source_content_hash": "f911e414cf6bdfc595532ab166b5ba0f63d73c021452fcdacbda363dda6ad8fb",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "條款"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The label of footer link with label=Terms linking to https://opensource.facebook.com/legal/terms/"
+        "json_description": "The label of footer link with label=GitHub linking to https://github.com/facebook/react-native"
       }
     },
     {
-      "segment_id": "link.item.label.Cookie Policy",
-      "source_content": "Cookie Policy",
-      "source_content_hash": "ee290b3ddbc8e7e90bd0028e8315a02570ee24d83cc8b0c14f860146bb24fd80",
+      "segment_id": "link.item.label.ReactJS",
+      "source_content": "ReactJS",
+      "source_content_hash": "479397d40c89077d78c9de5cee8a8422f48be9ab1dcfb0e73ec914944f386013",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "Cookie 政策"
-      },
+      "translations": {},
       "metadata": {
-        "json_description": "The label of footer link with label=Cookie Policy linking to https://opensource.facebook.com/legal/cookie-policy/"
+        "json_description": "The label of footer link with label=ReactJS linking to https://react.dev/"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Privacy Policy",
+      "source_content": "Privacy Policy",
+      "source_content_hash": "506ff394621596dd88138642eddfc1e41833b3ae92d95e5c77c94327098abd9a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Privacy Policy linking to https://opensource.fb.com/legal/privacy/"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Terms of Service",
+      "source_content": "Terms of Service",
+      "source_content_hash": "4afa55bf7aec7ddc5dfb904271f881be278e7629ce258675bf4b62f460017abb",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label of footer link with label=Terms of Service linking to https://opensource.fb.com/legal/terms/"
       }
     },
     {
       "segment_id": "copyright",
-      "source_content": "Copyright © 2025 Meta Platforms, Inc. Built with Docusaurus.",
-      "source_content_hash": "f9de1cf1df8b3b4f19c39010194eabb9549914eabc0d15ca73edf451ab0da427",
+      "source_content": "Copyright © 2025 Meta Platforms, Inc.",
+      "source_content_hash": "336e556b1f17245a78a0051386bdd6c8f210b707a5f4cb0580589ffeb5d9bcdd",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "版權所有 © 2025 Meta Platforms, Inc. 使用 Docusaurus 建置。"
-      },
+      "translations": {},
       "metadata": {
         "json_description": "The footer copyright"
       }
@@ -255,89 +239,95 @@
       "source_content_hash": "467880d36a6e70b0b7121d2eee0ac531d103049cc3161cf3870a6d8f64f0ec8d",
       "node_type": "json_message",
       "translatable": true,
-      "translations": {
-        "zh-hant": "Meta 開源專案標誌"
-      },
+      "translations": {},
       "metadata": {
         "json_description": "The alt text of footer logo"
       }
     }
   ],
   "original_json_structure": {
-    "link.title.Learn": {
-      "message": "Learn",
-      "description": "The title of the footer links column with title=Learn in the footer"
+    "link.title.Develop": {
+      "message": "Develop",
+      "description": "The title of the footer links column with title=Develop in the footer"
     },
-    "link.title.Community": {
+    "link.title.Participate": {
+      "message": "Participate",
+      "description": "The title of the footer links column with title=Participate in the footer"
+    },
+    "link.title.Find us": {
+      "message": "Find us",
+      "description": "The title of the footer links column with title=Find us in the footer"
+    },
+    "link.title.Explore More": {
+      "message": "Explore More",
+      "description": "The title of the footer links column with title=Explore More in the footer"
+    },
+    "link.item.label.Guides": {
+      "message": "Guides",
+      "description": "The label of footer link with label=Guides linking to docs/getting-started"
+    },
+    "link.item.label.Components": {
+      "message": "Components",
+      "description": "The label of footer link with label=Components linking to docs/components-and-apis"
+    },
+    "link.item.label.APIs": {
+      "message": "APIs",
+      "description": "The label of footer link with label=APIs linking to docs/accessibilityinfo"
+    },
+    "link.item.label.Architecture": {
+      "message": "Architecture",
+      "description": "The label of footer link with label=Architecture linking to architecture/overview"
+    },
+    "link.item.label.Showcase": {
+      "message": "Showcase",
+      "description": "The label of footer link with label=Showcase linking to showcase"
+    },
+    "link.item.label.Contributing": {
+      "message": "Contributing",
+      "description": "The label of footer link with label=Contributing linking to contributing/overview"
+    },
+    "link.item.label.Community": {
       "message": "Community",
-      "description": "The title of the footer links column with title=Community in the footer"
+      "description": "The label of footer link with label=Community linking to community/overview"
     },
-    "link.title.More": {
-      "message": "More",
-      "description": "The title of the footer links column with title=More in the footer"
-    },
-    "link.title.Legal": {
-      "message": "Legal",
-      "description": "The title of the footer links column with title=Legal in the footer"
-    },
-    "link.item.label.Introduction": {
-      "message": "Introduction",
-      "description": "The label of footer link with label=Introduction linking to docs"
-    },
-    "link.item.label.Installation": {
-      "message": "Installation",
-      "description": "The label of footer link with label=Installation linking to docs/installation"
-    },
-    "link.item.label.Migration from v1 to v2": {
-      "message": "Migration from v1 to v2",
-      "description": "The label of footer link with label=Migration from v1 to v2 linking to docs/migration"
+    "link.item.label.Directory": {
+      "message": "Directory",
+      "description": "The label of footer link with label=Directory linking to https://reactnative.directory/"
     },
     "link.item.label.Stack Overflow": {
       "message": "Stack Overflow",
-      "description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/docusaurus"
-    },
-    "link.item.label.Feature Requests": {
-      "message": "Feature Requests",
-      "description": "The label of footer link with label=Feature Requests linking to /feature-requests"
-    },
-    "link.item.label.Discord": {
-      "message": "Discord",
-      "description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/docusaurus"
-    },
-    "link.item.label.Help": {
-      "message": "Help",
-      "description": "The label of footer link with label=Help linking to /community/support"
+      "description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/react-native"
     },
     "link.item.label.Blog": {
       "message": "Blog",
       "description": "The label of footer link with label=Blog linking to blog"
     },
-    "link.item.label.Changelog": {
-      "message": "Changelog",
-      "description": "The label of footer link with label=Changelog linking to /changelog"
+    "link.item.label.X": {
+      "message": "X",
+      "description": "The label of footer link with label=X linking to https://x.com/reactnative"
+    },
+    "link.item.label.Bluesky": {
+      "message": "Bluesky",
+      "description": "The label of footer link with label=Bluesky linking to https://bsky.app/profile/reactnative.dev"
     },
     "link.item.label.GitHub": {
       "message": "GitHub",
-      "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+      "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/react-native"
     },
-    "link.item.label.X": {
-      "message": "X",
-      "description": "The label of footer link with label=X linking to https://x.com/docusaurus"
+    "link.item.label.ReactJS": {
+      "message": "ReactJS",
+      "description": "The label of footer link with label=ReactJS linking to https://react.dev/"
     },
-    "link.item.label.Privacy": {
-      "message": "Privacy",
-      "description": "The label of footer link with label=Privacy linking to https://opensource.facebook.com/legal/privacy/"
+    "link.item.label.Privacy Policy": {
+      "message": "Privacy Policy",
+      "description": "The label of footer link with label=Privacy Policy linking to https://opensource.fb.com/legal/privacy/"
     },
-    "link.item.label.Terms": {
-      "message": "Terms",
-      "description": "The label of footer link with label=Terms linking to https://opensource.facebook.com/legal/terms/"
-    },
-    "link.item.label.Cookie Policy": {
-      "message": "Cookie Policy",
-      "description": "The label of footer link with label=Cookie Policy linking to https://opensource.facebook.com/legal/cookie-policy/"
+    "link.item.label.Terms of Service": {
+      "message": "Terms of Service",
+      "description": "The label of footer link with label=Terms of Service linking to https://opensource.fb.com/legal/terms/"
     },
     "copyright": {
-      "message": "Copyright © 2025 Meta Platforms, Inc. Built with Docusaurus.",
+      "message": "Copyright © 2025 Meta Platforms, Inc.",
       "description": "The footer copyright"
     },
     "logo.alt": {
@@ -346,7 +336,7 @@
     }
   },
   "target_i18n_subpath": "docusaurus-theme-classic/footer.json",
-  "last_updated_timestamp": "2025-06-18T05:06:28.025804+00:00",
+  "last_updated_timestamp": "2025-06-18T09:36:26.480510+00:00",
   "schema_version": "1.0",
   "translated_versions": {
     "zh-hant": "ea895bc96a9c4c6ebf47e37cd64fcdb99b905ada86ac3c8cd14de49a6dce664c"

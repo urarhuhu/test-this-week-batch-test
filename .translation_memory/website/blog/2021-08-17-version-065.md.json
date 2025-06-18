@@ -1,0 +1,130 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2021-08-17-version-065.md",
+  "source_file_content_hash": "c6a7bd2d6752db914c80b2ce197923b92457811889fd2919befb81d6a2860c79",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Announcing React Native 0.65\nauthors: [lunaleaps]\ntags: [announcement, release]\n---",
+      "source_content_hash": "c05cfbc8a252d32d7e80404b4e0c66dc3b4ebcaca2a3ba5a023b253a1ef2cb88",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Today we’re releasing React Native version 0.65 with a new version of Hermes, improvements to accessibility, package upgrades, and more.",
+      "source_content_hash": "47cb52d567fc588089f0ef1c437397f3bbe3f209c6cb6ea5c03715694de9ef15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## What's new in Hermes 0.8?",
+      "source_content_hash": "8cd386207cb33dd4ae14167a6899204f549e3883a818d572131182afb2f98493",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "[Hermes](https://hermesengine.dev), Facebook’s open source JavaScript VM optimized for React Native, has been upgraded to version 0.8.1. Some of the stand-out features in this release are:",
+      "source_content_hash": "afa2dbb62dcde972046ad47fdd5c1cd2bbbe7ba2eef20587fea29f3998234070",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "- A new concurrent garbage collector titled “Hades” which delivers up to 30 times shorter pause times on 64 bit devices. At Facebook, we saw this improve some CPU-intensive workloads by 20%-50%. You can [learn more about Hades here](https://hermesengine.dev/docs/hades/).\n- [ECMAScript Internationalization API (ECMA-402, or `Intl`)](https://hermesengine.dev/docs/intl) is now built into Hermes on Android and enabled by default, with only 57-62K per API size overhead (compared to [JSC's 6MiB](https://github.com/react-native-community/jsc-android-buildscripts)). With this change, Hermes users no longer require locale polyfills. A big thank you to [@mganandraj](https://github.com/mganandraj) and other partners at Microsoft for driving the implementation to make this happen!\n- [Hermes on iOS](/blog/2021/03/12/version-0.64) now [supports Apple M1 Macs and Mac Catalyst](https://github.com/facebook/hermes/pull/546)!\n- Memory improvements including SMI (Small Integers) and pointer compression that [shrank JS heap by 30%](https://twitter.com/tmikov/status/1385629737121243140).\n- Changes to `Function.prototype.toString` that [fixed a performance drop due to improper feature detection](https://github.com/facebook/hermes/issues/471#issuecomment-820123463) and [supports the source code injecting use case](https://github.com/facebook/hermes/issues/114).",
+      "source_content_hash": "394b4bb9354cb013a0c718208c0111e0ef2e1973a7112344920dfb7f56504cf9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "You can find the full [Hermes changelog here](https://github.com/facebook/hermes/releases).",
+      "source_content_hash": "4ae8c9e646f6a134b6ce89d982e5b9f267bb28cce9ae6c8b8f5970896452a628",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "[Follow steps here](/docs/hermes#enabling-hermes) to opt-in your app to Hermes if you haven’t already to leverage these new features and gains!",
+      "source_content_hash": "54a4b3010518a85c8ca887d060f0360ee5449aaa5d58bbf984f2891692d09b2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Accessibility Fixes and Additions",
+      "source_content_hash": "2e1f8aab6315c6929ee895cba466a2dd3cfba8324db82ed6db4b4c63aee90a9e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Last year [Facebook took the GAAD pledge](https://reactnative.dev/blog/2021/05/20/GAAD-One-Year-Later) to improve accessibility within React Native. 0.65 shares the results of this pledge and other accessibility wins! Some notable changes include:",
+      "source_content_hash": "f597da820b37ab2b942fe288329a3fa997e6d1db2ced6f5a1694ae8ddca71a10",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "- Allow specification of high contrast light and dark values for iOS. See [documentation](/docs/dynamiccolorios) for more details.\n- Added [`getRecommendedTimeoutMillis`](/docs/accessibilityinfo#getrecommendedtimeoutmillis-android) API on Android. This exposes a user’s preferred default timeout value as set in Android’s accessibility options and is for users who may need extra time to review or reach controls, etc.\n- General fixes to ensure TalkBack/VoiceOver properly announce UI states such as `disabled` and `unselected` on components.",
+      "source_content_hash": "0d970450351c61bec8352b4e6cc87f891e5bf9153c09dd30fdcd4ff7c1a5f2be",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "You can follow along or contribute to our [outstanding accessibility issues](https://github.com/facebook/react-native/projects/15) here!",
+      "source_content_hash": "63a56024fa9c7d6cbae26328555a8c6b6030bb4d4d353ca568ab373bd1002b94",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Notable Dependency Version Updates and Gotchas",
+      "source_content_hash": "8b8f9206a832e40bda8caa8cdfd4511ecbee923c688ab6e38e33322b5da66d21",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "- `react-native-codegen` version `0.0.7` is now needed as a `devDependency` in the `package.json`.\n- JCenter has been sunsetted and read-only now. We have removed JCenter as a maven repository and updated dependencies to use MavenCentral and Jitpack.\n- Upgraded OkHttp from v3 to v4.9.1. See [Upgrading to OkHttp 4](https://square.github.io/okhttp/upgrading_to_okhttp_4/) for more details on changes.\n- Upgraded to Flipper 0.93 to support Xcode 12.5. See [Flipper changelog here](https://github.com/facebook/flipper/blob/master/desktop/static/CHANGELOG.md).\n- Android Gradle Plugin 7 support\n- Apple Silicon requires a linker workaround. See [@mikehardy’s note](https://github.com/react-native-community/releases/issues/238#issuecomment-890367992) about this.",
+      "source_content_hash": "1fb4603f4a68a29bda3b8c0918775ebeb68b15585407b6d213f08181e15263ce",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Thank You!",
+      "source_content_hash": "2ce6578a4e3a16a5a6f733157db5fa19c8ecf5fa3d1eae28b68673cf92819583",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "This release includes over **1100 commits** from **61 contributors**. Thank you to everyone who has contributed and supported this release! You can find the [full changelog here](https://github.com/facebook/react-native/blob/main/CHANGELOG.md#v0650).",
+      "source_content_hash": "9faa6e8683c88bb183f84c61b4ed38bf6332dda00d42439387367e6c05663fef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2021-08-17-version-065.md",
+  "last_updated_timestamp": "2025-06-18T09:36:14.117611+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

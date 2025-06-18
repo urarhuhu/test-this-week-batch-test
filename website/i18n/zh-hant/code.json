@@ -1,389 +1,30 @@
 {
-  "Preset options": {
-    "message": "預設選項"
-  },
-  "apiDocs.configTabs.presetOptions.description": {
-    "message": "若使用預設配置，可透過 {presetLink} 設定此插件："
-  },
-  "preset options": {
-    "message": "預設選項"
-  },
-  "Plugin options": {
-    "message": "插件選項"
-  },
-  "If you are using a standalone plugin, provide options directly to the plugin:": {
-    "message": "若使用獨立插件，請直接向插件提供選項："
-  },
-  "Current: {canaryVersionName}": {
-    "message": "當前：{canaryVersionName}",
-    "description": "The hint text for the current canary version tag."
-  },
-  "Example: 0.0.0-4922": {
-    "message": "範例：0.0.0-4922",
-    "description": "An example canary version tag when the actual version can't be fetched."
-  },
-  "The latest canary version that's available on npm is published at {time}.": {
-    "message": "npm 上最新的 Canary 版本發佈於 {time}。"
-  },
-  "homepage.features.powered-by-mdx.title": {
-    "message": "由 MDX 驅動"
-  },
-  "homepage.features.powered-by-mdx.text": {
-    "message": "節省時間並專注於文字內容。只需用 MDX 撰寫文檔和部落格文章，Docusaurus 會將其轉換為靜態 HTML 檔案以供部署。得益於 MDX，您甚至可以在 Markdown 中嵌入 React 元件。"
-  },
-  "homepage.features.built-using-react.title": {
-    "message": "基於 React 構建"
-  },
-  "homepage.features.built-using-react.text": {
-    "message": "透過編寫 React 元件來擴展和自訂專案佈局。利用可插拔架構，在重複使用 Docusaurus 插件生成資料的同時，設計專屬網站。"
-  },
-  "homepage.features.ready-for-translations.title": {
-    "message": "支援多語言翻譯"
-  },
-  "homepage.features.ready-for-translations.text": {
-    "message": "內建本地化功能。使用 git、Crowdin 或其他翻譯管理工具來翻譯文檔，並獨立部署各語言版本。"
-  },
-  "homepage.features.document-versioning.title": {
-    "message": "文件版本控制"
-  },
-  "homepage.features.document-versioning.text": {
-    "message": "為所有專案版本的使用者提供支援。文件版本控制能讓文檔與專案發佈保持同步。"
-  },
-  "homepage.features.content-search.title": {
-    "message": "內容搜尋"
-  },
-  "homepage.features.content-search.text": {
-    "message": "讓社群輕鬆找到所需文檔內容。我們自豪地支援 Algolia 文檔搜尋功能。"
-  },
-  "homepage.quotes.christopher-chedeau.title": {
-    "message": "Prettier 首席開發者",
-    "description": "Title of quote of Christopher Chedeau on the home page"
-  },
-  "homepage.quotes.christopher-chedeau": {
-    "message": "我在 Facebook 協助開源了許多專案，每個專案都需要一個網站。它們都有相似的約束條件：文檔必須用 Markdown 編寫，並透過 GitHub Pages 部署。Docusaurus 的存在讓我非常欣慰，因為我不必每次都花一週時間從頭搭建。",
-    "description": "Quote of Christopher Chedeau on the home page"
-  },
-  "homepage.quotes.hector-ramos.title": {
-    "message": "React Native 首席倡導者",
-    "description": "Title of quote of Hector Ramos on the home page"
-  },
-  "homepage.quotes.hector-ramos": {
-    "message": "遷移至 Docusaurus 後，React Native 文檔的開源貢獻量激增。現在文檔存放在小型倉庫中，使用純 Markdown 格式，完全沒有典型靜態網站生成器的繁瑣配置。感謝 Slash！",
-    "description": "Quote of Hector Ramos on the home page"
-  },
-  "homepage.quotes.risky-vetter.title": {
-    "message": "ReasonReact 開發者",
-    "description": "Title of quote of Ricky Vetter on the home page"
-  },
-  "homepage.quotes.risky-vetter": {
-    "message": "Docusaurus 是 ReasonML 系列專案的絕佳選擇。它使我們的文檔保持一致、支援國際化、易於維護，並對新貢獻者友好。",
-    "description": "Quote of Ricky Vetter on the home page"
-  },
-  "Favorite": {
-    "message": "精選推薦"
-  },
-  "showcase.tag.favorite.description": {
-    "message": "我們精選的 Docusaurus 網站，絕對值得您參考！"
-  },
-  "Open-Source": {
-    "message": "開源專案"
-  },
-  "showcase.tag.opensource.description": {
-    "message": "開源 Docusaurus 網站可作為靈感來源！"
-  },
-  "Product": {
-    "message": "商業產品"
-  },
-  "showcase.tag.product.description": {
-    "message": "與商業產品相關聯的 Docusaurus 網站！"
-  },
-  "Design": {
-    "message": "設計美學"
-  },
-  "showcase.tag.design.description": {
-    "message": "經過精心打磨、脫離初始模板的出色 Docusaurus 網站！"
-  },
-  "I18n": {
-    "message": "多語言支援"
-  },
-  "showcase.tag.i18n.description": {
-    "message": "使用國際化功能並支援多種語系的 Docusaurus 網站。"
-  },
-  "Versioning": {
-    "message": "版本控制"
-  },
-  "showcase.tag.versioning.description": {
-    "message": "使用文檔插件版本控制功能管理多版本的 Docusaurus 網站。"
-  },
-  "Large": {
-    "message": "大型網站"
-  },
-  "showcase.tag.large.description": {
-    "message": "Very large Docusaurus sites, including many more pages than the average!"
-  },
-  "Meta": {
-    "message": "Meta"
-  },
-  "showcase.tag.meta.description": {
-    "message": "Docusaurus sites of Meta (formerly Facebook) projects"
-  },
-  "Personal": {
-    "message": "Personal"
-  },
-  "showcase.tag.personal.description": {
-    "message": "Personal websites, blogs and digital gardens built with Docusaurus"
-  },
-  "RTL Direction": {
-    "message": "RTL Direction"
-  },
-  "showcase.tag.rtl.description": {
-    "message": "Docusaurus sites using the right-to-left reading direction support."
-  },
-  "Docusaurus with Keytar": {
-    "message": "Docusaurus with Keytar"
-  },
-  "homepage.hero.title": {
-    "message": "Build <b>optimized</b> websites <b>quickly</b>, focus on your <b>content</b>",
-    "description": "Home page hero title, can contain simple html tags"
-  },
-  "Get Started": {
-    "message": "Get Started"
-  },
-  "Try a Demo": {
-    "message": "Try a Demo"
-  },
-  "Loved by many engineers": {
-    "message": "Loved by many engineers"
-  },
-  "Check it out in the intro video": {
-    "message": "Check it out in the intro video"
-  },
-  "homepage.banner.launch.newVersion": {
-    "message": "Docusaurus {newVersion} is out!️"
-  },
-  "versionsPage.versionEntry.link": {
-    "message": "Documentation"
-  },
-  "versionsPage.versionEntry.releaseNotes": {
-    "message": "Release Notes"
-  },
-  "versionsPage.title": {
-    "message": "Docusaurus documentation versions"
-  },
-  "versionsPage.current.title": {
-    "message": "Current version (Stable)"
-  },
-  "versionsPage.current.description": {
-    "message": "Here you can find the documentation for current released version."
-  },
-  "versionsPage.next.title": {
-    "message": "Next version (Unreleased)"
-  },
-  "versionsPage.next.description": {
-    "message": "Here you can find the documentation for work-in-process unreleased version."
-  },
-  "versionsPage.archived.title": {
-    "message": "Past versions (Not maintained anymore)"
-  },
-  "versionsPage.archived.description": {
-    "message": "Here you can find documentation for previous versions of Docusaurus."
-  },
-  "versionsPage.legacy.title": {
-    "message": "Docusaurus v1 (Legacy)"
-  },
-  "versionsPage.legacy.description": {
-    "message": "Here you can find documentation for legacy version of Docusaurus."
-  },
-  "colorGenerator.tip.body": {
-    "message": "Aim for at least {wcagLink} for the primary color to ensure readability. Use the Docusaurus website itself to preview how your color palette would look like. You can use alternative palettes in dark mode because one color doesn't usually work in both light and dark mode."
-  },
-  "colorGenerator.tip.body.wcagLink.label": {
-    "message": "WCAG-AA contrast ratio"
-  },
-  "colorGenerator.inputs.primary.label": {
-    "message": "Primary Color:"
-  },
-  "colorGenerator.inputs.modeToggle.label": {
-    "message": "Edit {colorMode} mode"
-  },
-  "colorGenerator.inputs.modeToggle.label.colorMode.light": {
-    "message": "light"
-  },
-  "colorGenerator.inputs.modeToggle.label.colorMode.dark": {
-    "message": "dark"
-  },
-  "colorGenerator.inputs.resetButton.label": {
-    "message": "Reset"
-  },
-  "colorGenerator.inputs.background.label": {
-    "message": "Background:"
-  },
-  "colorGenerator.table.heading1": {
-    "message": "CSS Variable Name"
-  },
-  "colorGenerator.table.heading2": {
-    "message": "Hex",
-    "description": "This column is the color's representation in hex"
-  },
-  "colorGenerator.table.heading3": {
-    "message": "Adjustment",
-    "description": "This column is the adjusted shades' adjustment values relative to the primary color"
-  },
-  "colorGenerator.table.heading4": {
-    "message": "Contrast Rating",
-    "description": "This column is WCAG contrast rating: AAA, AA, Fail"
-  },
-  "colorGenerator.text": {
-    "message": "Replace the variables in {cssPath} with these new variables."
-  },
-  "playground.codesandbox.description": {
-    "message": "CodeSandbox is an online code editor and development environment that allows developers to create, share and collaborate on web development projects in a browser-based environment"
-  },
-  "playground.stackblitz.description": {
-    "message": "StackBlitz uses a novel {webContainersLink} technology to run Docusaurus directly in your browser."
-  },
-  "playground.tryItButton": {
-    "message": "Try it now!"
-  },
-  "team.profile.websiteLinkLabel": {
-    "message": "website"
-  },
-  "team.profile.Sebastien Lorber.body": {
-    "message": "React lover since 2014. Freelance, helping Facebook ship Docusaurus v2. He writes regularly, on his {website} and {devto}."
-  },
-  "team.profile.Sida Chen.body": {
-    "message": "Student from Shanghai, China. Enthusiastic open-source project creator, but never actually works hard on those projects he created."
-  },
-  "team.profile.Clement Couriol.body": {
-    "message": "Student from CPE Lyon, France. Passionate web developer who tries to become an expert web developer."
-  },
-  "team.profile.Joel Marcey.body": {
-    "message": "Docusaurus founder and now ever grateful Docusaurus cheerleader to those who actually write code for it."
-  },
-  "team.profile.Alexey Pyltsyn.body": {
-    "message": "Obsessed open-source enthusiast 👋 Eternal amateur at everything 🤷‍♂️ Maintainer of Russian docs on PHP, React, Kubernetes and much more 🧐"
-  },
-  "team.profile.Yangshun Tay.body": {
-    "message": "Full Front End Stack developer who likes working on the Jamstack. Working on Docusaurus made him Facebook's unofficial part-time Open Source webmaster, which is an awesome role to be in."
-  },
-  "team.profile.Endilie Yacop Sucipto.body": {
-    "message": "Docusaurus 維護者 · 🔥🔥🔥"
-  },
-  "team.profile.Wei Gao.body": {
-    "message": "🏗️ 持續進步中的 React 開發者，負責維護 Docusaurus，撰寫文件並在這個世界大量建立網站。"
-  },
-  "team.profile.Anshul Goyal.body": {
-    "message": "全端開發者，熱愛編碼與嘗試新技術。閒暇時貢獻開源專案，在個人{websiteLink}撰寫部落格文章，並觀看動漫。"
-  },
-  "team.profile.Anshul Goyal.body.websiteLink.label": {
-    "message": "網站"
-  },
-  "team.profile.Drew Alexander.body": {
-    "message": "開發者與創意人，致力於培養技能以實現各種構想。"
-  },
-  "team.profile.Fanny Vieira.body": {
-    "message": "Fanny 高中時開始接觸網頁開發，為學校廚房建置專案。閒暇時熱衷貢獻開源專案，偶爾在{blogLink}分享經驗，也喜歡烹飪與創作{spotifyLink}。"
-  },
-  "team.profile.Fanny Vieira.body.blogLink.label": {
-    "message": "她的部落格"
-  },
-  "team.profile.Fanny Vieira.body.spotifyLink.label": {
-    "message": "Spotify 播放清單"
-  },
-  "team.profile.Sam Zhou.body": {
-    "message": "Sam 於 2011 年開始程式設計，並在 2015 年建立個人{websiteLink}。他對程式語言、開發基礎設施與網頁開發深感興趣，曾開發自己的{samLangLink}與{miniReactLink}。"
-  },
-  "team.profile.Sam Zhou.body.samLangLink.label": {
-    "message": "程式語言"
-  },
-  "team.profile.Sam Zhou.body.miniReactLink.label": {
-    "message": "迷你 React"
-  },
-  "team.profile.Tan Teik Jun.body": {
-    "message": "開源愛好者，目標是成為與本頁其他成員同樣優秀的人。參與 Docusaurus 開發讓他更接近這個目標。🌱"
-  },
-  "team.profile.Nisarag Bhatt.body": {
-    "message": "全端網頁開發者，熱愛學習新技術並加以應用！積極貢獻開源專案，也撰寫技術文章與教學。"
-  },
-  "upgradeGuide.archivedVersion.notice": {
-    "message": "您正在瀏覽歸檔版本，以下程式碼片段已過時。請前往{mainSiteLink}並按照指示升級至最新版本。"
-  },
-  "upgradeGuide.archivedVersion.notice.mainSiteLink.label": {
-    "message": "主網站"
-  },
-  "upgradeGuide.unreleasedVersion.notice": {
-    "message": "您正在瀏覽未發布版本的說明文件。若欲使用任何未發布功能，可參閱{canaryDocLink}。"
-  },
-  "upgradeGuide.unreleasedVersion.notice.canaryDocLink.label": {
-    "message": "{canaryTag}版本"
-  },
-  "upgradeGuide.outdatedVersion.notice": {
-    "message": "您正在瀏覽過期版本的說明文件。以下程式碼片段展示如何升級至最新版本。"
-  },
-  "showcase.filters.resultCount": {
-    "message": "1 個網站|{sitesCount} 個網站",
-    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "Docusaurus Site Showcase": {
-    "message": "Docusaurus 網站展示區"
-  },
-  "List of websites people are building with Docusaurus": {
-    "message": "使用 Docusaurus 建置的網站清單"
-  },
-  "showcase.header.button": {
-    "message": "🙏 歡迎提交您的網站"
-  },
-  "Want to implement the same page? Read {guideLink} to find out!": {
-    "message": "想實作相同頁面？請閱讀{guideLink}了解做法！"
-  },
-  "the generated index page guide": {
-    "message": "自動生成索引頁指南"
-  },
-  "changelog.backLink": {
-    "message": "← 返回索引頁"
-  },
-  "theme.changelog.post.paginator.navAriaLabel": {
-    "message": "更新日誌項目導覽",
-    "description": "The ARIA label for the changelog pagination"
-  },
-  "theme.changelog.post.paginator.newerRelease": {
-    "message": "較新版本",
-    "description": "The changelog button label to navigate to the newer release"
-  },
-  "theme.changelog.post.paginator.olderRelease": {
-    "message": "較舊版本",
-    "description": "The changelog button label to navigate to the older release"
-  },
-  "showcase.card.sourceLink": {
-    "message": "原始碼"
-  },
-  "showcase.usersList.noResult": {
-    "message": "無結果"
-  },
-  "showcase.favoritesList.title": {
-    "message": "精選推薦"
-  },
-  "showcase.usersList.allUsers": {
-    "message": "全部網站"
-  },
-  "showcase.filters.title": {
-    "message": "篩選條件"
-  },
-  "showcase.searchBar.placeholder": {
-    "message": "搜尋網站名稱..."
-  },
-  "changelog.description.rssLink": {
-    "message": "RSS 訂閱"
-  },
-  "changelog.description": {
-    "message": "透過{rssLink}訂閱或追蹤我們的{xLink}以掌握最新版本資訊！"
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.ErrorPageContent.title": {
-    "message": "本頁面發生錯誤。",
+    "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "返回頁首",
+    "message": "Scroll back to top",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
@@ -469,22 +110,6 @@
   "theme.docs.versionBadge.label": {
     "message": "Version: {versionLabel}"
   },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "latest version",
-    "description": "The label used for the latest version suggestion link label"
-  },
   "theme.common.editThisPage": {
     "message": "Edit this page",
     "description": "The link label to edit the current page"
@@ -544,10 +169,6 @@
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Close",
     "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
     "message": "Expand sidebar category '{label}'",
@@ -646,167 +267,139 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "展開側邊欄",
+    "message": "Expand sidebar",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.SearchBar.seeAll": {
-    "message": "查看全部 {count} 個結果"
+    "message": "See all {count} results"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "找到 1 份文件|找到 {count} 份文件",
+    "message": "One document found|{count} documents found",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "「{query}」的搜尋結果",
+    "message": "Search results for \"{query}\"",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "搜尋文件",
+    "message": "Search the documentation",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "在此輸入搜尋內容",
+    "message": "Type your search here",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "搜尋",
+    "message": "Search",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "由 Algolia 提供搜尋",
+    "message": "Search by Algolia",
     "description": "The ARIA label for Algolia mention"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "未找到任何結果",
+    "message": "No results were found",
     "description": "The paragraph for empty search result"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "正在取得新結果...",
+    "message": "Fetching new results...",
     "description": "The paragraph for fetching new search results"
   },
   "theme.SearchBar.label": {
-    "message": "搜尋",
+    "message": "Search",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "清除查詢",
+    "message": "Clear the query",
     "description": "The label and ARIA label for search box reset button"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "取消",
+    "message": "Cancel",
     "description": "The label and ARIA label for search box cancel button"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "最近搜尋",
+    "message": "Recent",
     "description": "The title for recent searches"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "無最近搜尋記錄",
+    "message": "No recent searches",
     "description": "The text when no recent searches"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "儲存此搜尋",
+    "message": "Save this search",
     "description": "The label for save recent search button"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "從歷史記錄中移除此搜尋",
+    "message": "Remove this search from history",
     "description": "The label for remove recent search button"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "收藏",
+    "message": "Favorite",
     "description": "The title for favorite searches"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "從收藏中移除此搜尋",
+    "message": "Remove this search from favorites",
     "description": "The label for remove favorite search button"
   },
   "theme.SearchModal.errorScreen.titleText": {
-    "message": "無法取得結果",
+    "message": "Unable to fetch results",
     "description": "The title for error screen of search modal"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "您可能需要檢查網路連線。",
+    "message": "You might want to check your network connection.",
     "description": "The help text for error screen of search modal"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "進行選擇",
+    "message": "to select",
     "description": "The explanatory text of the action for the enter key"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Enter 鍵",
+    "message": "Enter key",
     "description": "The ARIA label for the Enter key button that makes the selection"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "進行導航",
+    "message": "to navigate",
     "description": "The explanatory text of the action for the Arrow up and Arrow down key"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "向上箭頭",
+    "message": "Arrow up",
     "description": "The ARIA label for the Arrow up key button that makes the navigation"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "向下箭頭",
+    "message": "Arrow down",
     "description": "The ARIA label for the Arrow down key button that makes the navigation"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "關閉",
+    "message": "to close",
     "description": "The explanatory text of the action for Escape key"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Escape 鍵",
+    "message": "Escape key",
     "description": "The ARIA label for the Escape key button that close the modal"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "搜尋由",
+    "message": "Search by",
     "description": "The text explain that the search is making by Algolia"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "沒有找到以下搜尋的結果",
+    "message": "No results for",
     "description": "The text explains that there are no results for the following search"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "嘗試搜尋",
+    "message": "Try searching for",
     "description": "The text for the suggested query when no results are found for the following search"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "認為此查詢應返回結果？",
+    "message": "Believe this query should return results?",
     "description": "The text for the question where the user thinks there are missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "請告知我們。",
+    "message": "Let us know.",
     "description": "The text for the link to report missing results"
   },
   "theme.SearchModal.placeholder": {
-    "message": "搜尋文件",
+    "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
-  },
-  "theme.IdealImageMessage.loading": {
-    "message": "載入中...",
-    "description": "When the full-scale image is loading"
-  },
-  "theme.IdealImageMessage.load": {
-    "message": "Click to load{sizeMessage}",
-    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
-  },
-  "theme.IdealImageMessage.offline": {
-    "message": "Your browser is offline. Image not loaded",
-    "description": "When the user is viewing an offline document"
-  },
-  "theme.IdealImageMessage.404error": {
-    "message": "404. Image not found",
-    "description": "When the image is not found"
-  },
-  "theme.IdealImageMessage.error": {
-    "message": "Error. Click to reload",
-    "description": "When the image fails to load for unknown error"
-  },
-  "theme.Playground.liveEditor": {
-    "message": "Live Editor",
-    "description": "The live editor label of the live codeblocks"
-  },
-  "theme.Playground.result": {
-    "message": "Result",
-    "description": "The result label of the live codeblocks"
   },
   "theme.blog.post.plurals": {
     "message": "One post|{count} posts",

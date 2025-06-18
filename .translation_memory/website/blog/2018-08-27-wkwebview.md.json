@@ -1,0 +1,154 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2018-08-27-wkwebview.md",
+  "source_file_content_hash": "d786320fa65ed5b6b6ac0fbd56df821ffe0721ccbbd5be7d3de9b2553f38d65c",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Introducing new iOS WebViews\nauthor: Ramanpreet Nara\nauthorTitle: Software Engineer at Facebook\nauthorURL: 'https://github.com/rsnara'\ntags: [engineering]\n---",
+      "source_content_hash": "bbb71ff2aeee97e8687c057b7c27536177069ea8c53df7f14b9495258fa029b5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "For a long time now, Apple has discouraged using UIWebViews in favor of WKWebView. In iOS 12, which will be released in the upcoming months, [UIWebViews will be formally deprecated](https://developer.apple.com/videos/play/wwdc2018/234/?time=104). React Native's iOS WebView implementation relies heavily on the UIWebView class. Therefore, in light of these developments, we've built a new native iOS backend to the WebView React Native component that uses WKWebView.",
+      "source_content_hash": "6993e63c47b90c82b026bec05a8f14635a1d69cfda565f410cf44a6ac656f81e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The tail end of these changes were landed in [this commit](https://github.com/facebook/react-native/commit/33b353c97c31190439a22febbd3d2a9ead49d3c9), and will become available in the 0.57 release.",
+      "source_content_hash": "1c58b10d7197f0388449c7f513c12ee58d1dcb907ca21652132300b3ea30b922",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "To opt into this new implementation, please use the [`useWebKit`](https://reactnative.dev/docs/0.63/webview#usewebkit) prop:",
+      "source_content_hash": "7adabd47c2cec122db1ec0d59182db76d99290ffe034766de581dec098e8bede",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```js\n<WebView\n  useWebKit={true}\n  source={{url: 'https://www.google.com'}}\n/>\n```",
+      "source_content_hash": "dd3af535d731df30c714ae93c1fccae81753ef76704aaaf281047f2d54301aa1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Improvements",
+      "source_content_hash": "67692dc4ef021018ddde90a5bb21878700f59438fdd5f3b07aaa2c990b4daa1a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "`UIWebView` had no legitimate way to facilitate communication between the JavaScript running in the WebView, and React Native. When messages were sent from the WebView, we relied on a hack to deliver them to React Native. Succinctly, we encoded the message data into a url with a special scheme, and navigated the WebView to it. On the native side, we intercepted and cancelled this navigation, parsed the data from the url, and finally called into React Native. This implementation was error prone and insecure. I'm glad to announce that we've leveraged `WKWebView` features to completely replace it.",
+      "source_content_hash": "9e26d12d1cd84a7a0625c2feae700992d158b45b20a1a1ebb2e3e42844dc0cd8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Other benefits of WKWebView over UIWebView include faster JavaScript execution, and a multi-process architecture. Please see this [2014 WWDC](https://developer.apple.com/videos/play/wwdc2014/206) for more details.",
+      "source_content_hash": "c10420f4b345a12df99f34be4e781460ff70d124a14d2e4c7981016fd8fb5899",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Caveats",
+      "source_content_hash": "689cebe2875bcec60d7e6c8dad2aa091dddf7a8bb3c242a652db9a0b62b18235",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "If your components use the following props, then you may experience problems when switching to WKWebView. For the time being, we suggest that you avoid using these props:",
+      "source_content_hash": "7d6cfc6033c4261cf6d60fc8cbc3d09f5b860920b7f2072e1fd61cff95bd71fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "**Inconsistent behavior:**",
+      "source_content_hash": "b14255e4564b6befe7cee9c302ee06f8246e3d53fdf6907ad0e6a77234b6637c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "`automaticallyAdjustContentInsets` and `contentInsets` ([commit](https://github.com/facebook/react-native/commit/bacfd9297657569006bab2b1f024ad1f289b1b27))",
+      "source_content_hash": "4be0f363cc9912d20ed5b6d2d46d15fdc3a829c3af93ec36798614d27c196613",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "When you add contentInsets to a `WKWebView`, it doesn't change the `WKWebView`'s viewport. The viewport remains the same size as the frame. With `UIWebView`, the viewport size actually changes (gets smaller, if the content insets are positive).",
+      "source_content_hash": "bd0070d48cc6b417c8aa06af82eb79fe1fcf15bd164e705ea75b1348307d8326",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "`backgroundColor` ([commit](https://github.com/facebook/react-native/commit/215fa14efc2a817c7e038075163491c8d21526fd))",
+      "source_content_hash": "d8f20053f63a3ce77398671e9feb20cde55068a6fd57b1410e32f3e8b2073291",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "With the new iOS implementation of WebView, there's a chance that your background color will flicker into view if you use this property. Furthermore, `WKWebView` renders transparent backgrounds differently from `UIWebview`. Please look at the commit description for more details.",
+      "source_content_hash": "f44465d78a9a9a526cf7641e1a12db2a09cdb58539075c7b781dac1ffe0142e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "**Not supported:**",
+      "source_content_hash": "9221694f15628024131e96a9f2b11d2fdd17701edf407a244445777e6fe8ab85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "`scalesPageToFit` ([commit](https://github.com/facebook/react-native/commit/b18fddadfeae5512690a0a059a4fa80c864f43a3))",
+      "source_content_hash": "0a241118353dac45222ab47c6cc5c114c78e4fc4a083573f4588f27ac38b8a96",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "WKWebView didn't support the scalesPageToFit prop, so we couldn't implement this on the WebView React Native component.",
+      "source_content_hash": "c3d0b456f738d834e431b4c21939ee71a4a07ab4b567fb201dcd544b646bc4df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2018-08-27-wkwebview.md",
+  "last_updated_timestamp": "2025-06-18T09:36:14.086534+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

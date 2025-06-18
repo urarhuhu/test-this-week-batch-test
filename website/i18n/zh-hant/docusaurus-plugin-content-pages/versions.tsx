@@ -1,197 +1,166 @@
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
-import type {ReactNode} from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
-import {
-  useVersions,
-  useLatestVersion,
-} from '@docusaurus/plugin-content-docs/client';
+import React from 'react';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
-import VersionsArchived from '@site/versionsArchived.json';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import versions from '../../versions.json';
+// The versionsArchived mapping is a custom feature, NOT a Docusaurus feature
+import versionsArchived from '../../versionsArchived.json';
 
-const docsPluginId = undefined; // Default docs plugin instance
+const VersionItem = ({
+  version,
+  archivedDocumentationUrl,
+  currentVersion,
+}: {
+  version: string;
+  currentVersion: string;
+  archivedDocumentationUrl?: string;
+}) => {
+  const versionName = version === 'next' ? 'main' : version;
 
-const VersionsArchivedList = Object.entries(VersionsArchived);
+  const isCurrentVersion = currentVersion === version;
+  const isNext = version === 'next';
+  const isRC = version.toUpperCase().indexOf('-RC') !== -1;
 
-function DocumentationLabel() {
-  return (
-    <Translate id="versionsPage.versionEntry.link">Documentation</Translate>
+  const latestMajorVersion = versions[0].toUpperCase().replace('-RC', '');
+
+  const documentationUrl = useBaseUrl(
+    archivedDocumentationUrl ??
+      `/docs/${isCurrentVersion ? '' : version + '/'}getting-started`
   );
-}
+  const documentationLink = <a href={documentationUrl}>Documentation</a>;
 
-function ReleaseNotesLabel() {
-  return (
-    <Translate id="versionsPage.versionEntry.releaseNotes">
-      Release Notes
-    </Translate>
-  );
-}
+  let releaseNotesURL = 'https://github.com/facebook/react-native/releases';
+  let releaseNotesTitle = 'Changelog';
+  if (isNext) {
+    releaseNotesURL = `https://github.com/facebook/react-native/compare/${latestMajorVersion}-stable...main`;
+    releaseNotesTitle = 'Commits since ' + latestMajorVersion;
+  } else if (!isRC) {
+    releaseNotesURL = `https://github.com/facebook/react-native/releases/tag/v${version}.0`;
+  }
 
-export default function Version(): ReactNode {
-  const {
-    siteConfig: {organizationName, projectName},
-  } = useDocusaurusContext();
-  const versions = useVersions(docsPluginId);
-  const latestVersion = useLatestVersion(docsPluginId);
-  const currentVersion = versions.find(
-    (version) => version.name === 'current',
-  )!;
-  const pastVersions = versions.filter(
-    (version) => version !== latestVersion && version.name !== 'current',
-  );
-  const repoUrl = `https://github.com/${organizationName!}/${projectName!}`;
+  const releaseNotesLink = <a href={releaseNotesURL}>{releaseNotesTitle}</a>;
 
   return (
-    <Layout
-      title="Versions"
-      description="Docusaurus 2 Versions page listing all documented site versions">
-      <main className="container margin-vert--lg">
-        <Heading as="h1">
-          <Translate id="versionsPage.title">
-            Docusaurus documentation versions
-          </Translate>
-        </Heading>
+    <tr>
+      <th>{versionName}</th>
+      <td>{documentationLink}</td>
+      <td>{releaseNotesLink}</td>
+    </tr>
+  );
+};
 
-        <div className="margin-bottom--lg">
-          <Heading as="h3" id="next">
-            <Translate id="versionsPage.current.title">
-              Current version (Stable)
-            </Translate>
-          </Heading>
-          <p>
-            <Translate id="versionsPage.current.description">
-              Here you can find the documentation for current released version.
-            </Translate>
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <th>{latestVersion.label}</th>
-                <td>
-                  <Link to={latestVersion.path}>
-                    <DocumentationLabel />
-                  </Link>
-                </td>
-                <td>
-                  <Link to={`${repoUrl}/releases/tag/v${latestVersion.name}`}>
-                    <ReleaseNotesLabel />
-                  </Link>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+const Versions = () => {
+  const currentVersion = versions.length > 0 ? versions[0] : null;
+  const latestVersions = ['next'].concat(
+    versions.filter(version => version.indexOf('-RC') !== -1)
+  );
+  const stableVersions = versions.filter(
+    version => version.indexOf('-RC') === -1 && version !== currentVersion
+  );
 
-        {currentVersion !== latestVersion && (
-          <div className="margin-bottom--lg">
-            <Heading as="h3" id="latest">
-              <Translate id="versionsPage.next.title">
-                Next version (Unreleased)
-              </Translate>
-            </Heading>
-            <p>
-              <Translate id="versionsPage.next.description">
-                Here you can find the documentation for work-in-process
-                unreleased version.
-              </Translate>
-            </p>
-            <table>
-              <tbody>
-                <tr>
-                  <th>{currentVersion.label}</th>
-                  <td>
-                    <Link to={currentVersion.path}>
-                      <DocumentationLabel />
-                    </Link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        {(pastVersions.length > 0 || VersionsArchivedList.length > 0) && (
-          <div className="margin-bottom--lg">
-            <Heading as="h3" id="archive">
-              <Translate id="versionsPage.archived.title">
-                Past versions (Not maintained anymore)
-              </Translate>
-            </Heading>
-            <p>
-              <Translate id="versionsPage.archived.description">
-                Here you can find documentation for previous versions of
-                Docusaurus.
-              </Translate>
-            </p>
-            <table>
-              <tbody>
-                {pastVersions.map((version) => (
-                  <tr key={version.name}>
-                    <th>{version.label}</th>
-                    <td>
-                      <Link to={version.path}>
-                        <DocumentationLabel />
-                      </Link>
-                    </td>
-                    <td>
-                      <Link href={`${repoUrl}/releases/tag/v${version.name}`}>
-                        <ReleaseNotesLabel />
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-                {VersionsArchivedList.map(([versionName, versionUrl]) => (
-                  <tr key={versionName}>
-                    <th>{versionName}</th>
-                    <td>
-                      <Link to={versionUrl}>
-                        <DocumentationLabel />
-                      </Link>
-                    </td>
-                    <td>
-                      <Link href={`${repoUrl}/releases/tag/v${versionName}`}>
-                        <ReleaseNotesLabel />
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-        <div className="margin-bottom--lg">
-          <Heading as="h3" id="legacy">
-            <Translate id="versionsPage.legacy.title">
-              Docusaurus v1 (Legacy)
-            </Translate>
-          </Heading>
-          <p>
-            <Translate id="versionsPage.legacy.description">
-              Here you can find documentation for legacy version of Docusaurus.
-            </Translate>
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <th>1.x</th>
-                <td>
-                  <Link href="https://v1.docusaurus.io/docs/en/installation">
-                    <DocumentationLabel />
-                  </Link>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
+  return (
+    <Layout title="Versions" wrapperClassName="versions-page">
+      <h1>React Native versions</h1>
+      <p>
+        Open source React Native releases follow a release train that is
+        coordinated on GitHub through the{' '}
+        <a
+          href={'https://github.com/reactwg/react-native-releases/discussions'}>
+          <code>react-native-releases</code>
+        </a>{' '}
+        repository. New releases are created off the <code>main</code> branch of{' '}
+        <a href={'https://github.com/facebook/react-native'}>
+          <code>facebook/react-native</code>
+        </a>
+        . They will follow a Release Candidate process to allow contributors
+        like yourself to{' '}
+        <a href={useBaseUrl('docs/upgrading')}>verify the changes</a> and to
+        identify any issues by{' '}
+        <a href="https://github.com/facebook/react-native/issues">
+          writing clear, actionable bug reports
+        </a>
+        . Eventually, the release candidate will be promoted to stable.
+      </p>
+      <h2>Next version (Unreleased)</h2>
+      <p>
+        To see what changes are coming and provide better feedback to React
+        Native contributors, use the latest release candidate when possible.
+        Changes introduced in a release candidate will have been shipped to
+        production Facebook apps for over two weeks by the time the release
+        candidate is cut.
+      </p>
+      <table className="versions">
+        <tbody>
+          {latestVersions.map(version => (
+            <VersionItem
+              key={'version_' + version}
+              version={version}
+              currentVersion={currentVersion}
+            />
+          ))}
+        </tbody>
+      </table>
+      <h2>Latest version</h2>
+      <p>
+        The most recent stable version will be used automatically whenever a new
+        project is created using the <code>npx react-native init</code> command.
+      </p>
+      <table className="versions">
+        <tbody>
+          <VersionItem
+            key={'version_' + currentVersion}
+            version={currentVersion}
+            currentVersion={currentVersion}
+          />
+        </tbody>
+      </table>
+      <h2>Previous versions</h2>
+      <table className="versions">
+        <tbody>
+          {stableVersions.map(version => (
+            <VersionItem
+              key={'version_' + version}
+              version={version}
+              currentVersion={currentVersion}
+            />
+          ))}
+        </tbody>
+      </table>
+      <h2>Archived versions</h2>
+      <p>
+        The documentation for unmaintained versions can be found on website
+        archive snapshots, hosted as separate sites.
+      </p>
+      <table className="versions">
+        <tbody>
+          {Object.entries(versionsArchived).map(
+            ([version, archivedDocumentationUrl]) => (
+              <VersionItem
+                key={'version_' + version}
+                version={version}
+                archivedDocumentationUrl={archivedDocumentationUrl}
+                currentVersion={currentVersion}
+              />
+            )
+          )}
+        </tbody>
+      </table>
+      <p>
+        The documentation for versions below <code>0.60</code> can be found on
+        the separate website called{' '}
+        <a href="https://archive.reactnative.dev/versions">
+          React Native Archive
+        </a>
+        .
+      </p>
     </Layout>
   );
-}
+};
+
+export default Versions;

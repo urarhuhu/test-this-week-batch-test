@@ -1,34 +1,46 @@
 {
   "title": {
-    "message": "Docusaurus",
+    "message": "React Native",
     "description": "The title in the navbar"
   },
-  "item.label.Docs": {
-    "message": "文件",
-    "description": "Navbar item with label Docs"
+  "logo.alt": {
+    "message": "React Native",
+    "description": "The alt text of navbar logo"
   },
-  "item.label.API": {
-    "message": "API",
-    "description": "Navbar item with label API"
+  "item.label.Development": {
+    "message": "開發",
+    "description": "Navbar item with label Development"
   },
-  "item.label.Blog": {
-    "message": "部落格",
-    "description": "Navbar item with label Blog"
-  },
-  "item.label.Showcase": {
-    "message": "展示區",
-    "description": "Navbar item with label Showcase"
+  "item.label.Contributing": {
+    "message": "貢獻",
+    "description": "Navbar item with label Contributing"
   },
   "item.label.Community": {
     "message": "社群",
     "description": "Navbar item with label Community"
   },
-  "item.label.Tests": {
-    "message": "測試",
-    "description": "Navbar item with label Tests"
+  "item.label.Showcase": {
+    "message": "作品展示",
+    "description": "Navbar item with label Showcase"
   },
-  "item.label.Debug": {
-    "message": "除錯",
-    "description": "Navbar item with label Debug"
+  "item.label.Blog": {
+    "message": "部落格",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Guides": {
+    "message": "指南",
+    "description": "Navbar item with label Guides"
+  },
+  "item.label.Components": {
+    "message": "元件",
+    "description": "Navbar item with label Components"
+  },
+  "item.label.APIs": {
+    "message": "API",
+    "description": "Navbar item with label APIs"
+  },
+  "item.label.Architecture": {
+    "message": "架構",
+    "description": "Navbar item with label Architecture"
   }
 }

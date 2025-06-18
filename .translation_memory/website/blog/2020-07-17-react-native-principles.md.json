@@ -1,0 +1,194 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2020-07-17-react-native-principles.md",
+  "source_file_content_hash": "88b5cacf487232205a490ca1ad367ddde74ed3a369a5f3053482790becfdaef3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: React Native Team Principles\nauthors: [Eli White]\ntags: [announcement]\n---",
+      "source_content_hash": "e939db88a0d34a883a44c7f2fd0a80320a1f8e0270fcdec4d8f9f9b5dccb663a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "The React Native team at Facebook is guided by principles that help determine how we prioritize our work on React Native. These principles represent our team specifically and do not necessarily represent every stakeholder in the React Native community. We are sharing these principles here to be more transparent about what drives us, how we make decisions, and how we focus our efforts.",
+      "source_content_hash": "38b7d5b84232f48eadf8e37054cd5b4ad03cd5565aa20ac78d71185b923ba9c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## **Native Experience**",
+      "source_content_hash": "691cdc7dbd79e5362dacd70735d1247a2d92d2715a7149809f08dce782a4e2f1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Our top priority for React Native is to **match the expectations people have for each platform**. This is why React Native renders to platform primitives. We value native look-and-feel over cross-platform consistency.",
+      "source_content_hash": "838cd55e474f1cd2b891b975e325b92465cd634ff2bc2e3f1d5efa8beacdceb4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "For example, the TextInput in React Native renders to a UITextField on iOS. This ensures that integration with password managers and keyboard controls work out of the box. By using platform primitives, React Native apps are also able to stay up-to-date with design and behavior changes from new releases of Android and iOS.",
+      "source_content_hash": "0a9de189418c9fd066592c01e050fea4e6b14239ffec75f88f56756ad2c80cae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "In order to match the look-and-feel of native apps, we must also match their performance. This is where we focus our most ambitious efforts. For example, Facebook created Hermes, [a new JavaScript Engine built from scratch for React Native on Android](https://facebook.github.io/react-native/blog/2019/07/17/hermes). Hermes significantly improves the start time of React Native apps. We are also working on major architectural changes that optimize the threading model and make React Native easier to interoperate with native code.",
+      "source_content_hash": "b895dabc9f9adf252a47683658fb586294d613975f348aa9fe5eccbde56fbf51",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Massive Scale",
+      "source_content_hash": "547f8542c0711eee50e85951f654aabb3b82cf4f943d07379f2e19ed48590089",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Hundreds of screens in the Facebook app are implemented with React Native. The Facebook app is used by billions of people on a huge range of devices. **This is why** **we invest in the most challenging problems at scale.**",
+      "source_content_hash": "54962a3d1bcb95927697975a62ed60250322be4eed0058485d639c06215b8ddb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Deploying React Native in our apps lets us identify problems that we wouldn’t see at a smaller scale. For example, Facebook focuses on improving performance across a broad spectrum of devices from the newest iPhone to many older generations of Android devices. This focus informs our architecture projects such as Hermes, Fabric, and TurboModules.",
+      "source_content_hash": "5786534c30dd1750c8348bf031e6918e9189f4d41853d731428f638ed7c302bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "We have proven that React Native can scale to massive organizations too. When hundreds of developers are working on the same app, gradual adoption is a must. This is why we made sure that React Native can be adopted one screen at a time. Soon, we will be taking this one step further and enable migrating individual native views of an existing native screen to React Native.",
+      "source_content_hash": "c799fb4d0edc616a2b8e37612e5e5fc3ca771b1987613ffef157fe95e60f782f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "A focus on massive scale means there are many things our team isn’t currently working on. For example, our team doesn’t drive the adoption of React Native in the industry. We also do not actively build solutions for problems that we don’t see at scale. We are proud that we have [many partners and core contributors](https://github.com/facebook/react-native/blob/master/ECOSYSTEM.md) that are able to focus on those important areas for the community.",
+      "source_content_hash": "7a9e24e1ecd4155f87d16acc739c86a1f66ed5fd8ab253575c2a05d068a5b0dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Developer Velocity",
+      "source_content_hash": "3a26e0e44b4fbb177a8d4ae67d80d27b052931d50302f4012b5a1353a50a9ca7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Great user experiences are created iteratively. **It should only take a few seconds to seeing the result of code changes** in a running app. React Native's architecture enables it to provide near-instant feedback during development.",
+      "source_content_hash": "767fe34661b774f30bf10d8ba23d63a0ffdf084da3d84122a13815eb55a2f397",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "We often hear from teams that adopting React Native significantly improved their development velocity. These teams find that the instant feedback during development makes it much easier to try different ideas and add extra polish when they don’t have to interrupt their coding session for every little change. When we make changes to React Native, we make sure to preserve this quality of the developer experience.",
+      "source_content_hash": "8a31e54db2169fba78c4be5015b8f7099ad70c46765117dd1f1faf9cf8e2fb1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Instant feedback is not the only way that React Native improves developer velocity. Teams can leverage the fast-growing ecosystem of high quality open source packages. Teams can also share business logic between Android, iOS, and the web. This helps them ship updates faster and reduce organizational silos between platform teams.",
+      "source_content_hash": "b0a01f190c7635501d089a4078298428c8d6e1ffb1bf6a28d3e9356e9b2885c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "## Every Platform",
+      "source_content_hash": "312140f9cf73e1bec94d560eec9daecb03a20f4aa6d88f880a973a1f659ee789",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "When we introduced React Native in 2014, we presented it with our motto “Learn once, write anywhere” — and we mean _anywhere_. **Developers should be able to reach as many people as possible without being limited by device model or operating system.**",
+      "source_content_hash": "3cf2e0e3ec43b8292b25c7cfe28b570b012311d294baa579c44f50b128bee235",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "React Native targets very different platforms including mobile, desktop, web, TV, VR, game consoles, and more. We want to enable rich experiences on each platform instead of requiring developers to build for the lowest common denominator. To accomplish this, we focus on supporting the unique features of each platform. This ranges from varying input mechanisms (e.g. touch, pen, mouse) to fundamentally different consumption experiences like 3D environments in VR.",
+      "source_content_hash": "70203c70ad8b556c4abaa52d09038cb2af7f75e40b9335849c7bcf79ab7fbdc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "This principle informed our decision to implement React Native’s new core architecture in cross-platform C++ to promote parity across platforms. We are also refining the public interface targeted at other platform maintainers like Microsoft with Windows and macOS. We strive to enable any platforms to support React Native.",
+      "source_content_hash": "d33aa2f9eae07249074fe2c791fa2acf82921f04ed0164b5996f40da1349dc0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## Declarative UI",
+      "source_content_hash": "b9f3726c22e6dcbb45f9a7cc076b04eb8c114609219de2acc97855bf2148ed55",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "We don’t believe in deploying the exact same user interface on every platform, we believe in **exposing each platform’s unique capabilities with the same declarative programming model**. Our declarative programming model is React.",
+      "source_content_hash": "af10ba6787c520d1abc604bd4279adc2ac22bfa1a1047f44577fac968933a1f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "In our experience, the unidirectional data flow popularized by React makes applications easier to understand. We prefer to express a screen as a composition of declarative components rather than imperatively managed views. React’s success on the web and the direction of the new native Android and iOS frameworks show that the industry has also embraced declarative UI.",
+      "source_content_hash": "06ec9ea9ad929ef4577a283ca926e8700c242d2d74083628145d2d7eba0c6956",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "React popularized declarative user interfaces. However, there remain many unsolved problems that React is uniquely positioned to solve. React Native will continue to build on top of the innovations of React and remain at the forefront of the declarative user interface movement.",
+      "source_content_hash": "04531fa9f09545e824b03e815b7497e326a59be505ac952fd62166fb9e7800c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2020-07-17-react-native-principles.md",
+  "last_updated_timestamp": "2025-06-18T09:36:14.107476+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

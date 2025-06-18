@@ -1,14 +1,14 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 🚀 Feature request
-    url: https://docusaurus.io/feature-requests
-    about: The Canny board to send us feature requests, vote and measure the interest of users. Useful to submit a feature request when you have an idea but no concrete API design proposal.
-  - name: ❓ Simple question - Discord chat
-    url: https://discord.gg/docusaurus
-    about: This issue tracker is not for technical support. Please use our Discord chat, and ask the community for help.
-  - name: ❓ Simple question - Stack Overflow
-    url: https://stackoverflow.com/questions/tagged/docusaurus
-    about: This issue tracker is not for technical support. Please use Stack Overflow, and ask the community for help.
-  - name: ❓ Advanced question - GitHub Discussions
-    url: https://github.com/facebook/docusaurus/discussions
-    about: Use GitHub Discussions for advanced and unanswered questions only, requiring a maintainer's answer. Make sure the question wasn't already asked.
+  - name: ⚛️ React Native Issue
+    url: https://github.com/facebook/react-native/issues
+    about: Please report bugs or issues in the React Native repository.
+  - name: ⤴️ Upgrade Issue
+    url: https://github.com/react-native-community/upgrade-support
+    about: Need help upgrading to a newer React Native version? Visit the Upgrade Support repository.
+  - name: 🤔 Questions and Help
+    url: https://reactnative.dev/community/support
+    about: Looking for help with your app? Please refer to the React Native community's support resources.
+  - name: 🚀 React Native Discussions and Feature Proposals
+    url: https://github.com/react-native-community/discussions-and-proposals
+    about: Discuss the future of React Native in the React Native community's discussions and proposals repository.

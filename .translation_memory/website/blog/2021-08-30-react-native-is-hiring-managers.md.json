@@ -1,0 +1,66 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2021-08-30-react-native-is-hiring-managers.md",
+  "source_file_content_hash": "846bd87ef2f28581cc7036a30519ebde86eeebb01fbf1fe5f27b941af1590706",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: React Native Is Hiring Managers, To Expand Beyond Mobile\nauthors: [Eli White]\ntags: [hiring]\n---",
+      "source_content_hash": "794ca6eb9fe84b47d1d9701e79972ae227b57cbbe2442a667c3e35ed38f8a336",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "We recently shared [React Native’s Many Platform Vision](https://reactnative.dev/blog/2021/08/26/many-platform-vision) for how expanding React to other platforms improves the framework for everyone else. We’ve been making significant progress on this vision over the last couple years by partnering with Microsoft on React Native for Windows and macOS, and Oculus on React Native in VR.",
+      "source_content_hash": "6010d3316381e88bd8ca453011d9d53fbce40ce4dac4f70094591f1ff77357b0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "As [part of our plans beginning earlier this year](https://reactnative.dev/blog/2021/08/19/h2-2021), we are growing our focus on these platforms and growing our teams to help us achieve our vision. In order to support our new teammates, and many more to come, **we are hiring two Engineering Managers: one to help support React Native for Desktop, and one to support React Native for VR**.",
+      "source_content_hash": "d1e9c300f807942576753997ac7fbe33c768a30149f7562201739f6e1e8bf4b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a427a70",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5da3670c",
+      "source_content": "<figure>\n  <img src=\"/blog/assets/many-platform-vision-messenger-desktop.png\" alt=\"Screenshot of the Messenger app on macOS\" />\n  <figcaption>\n    React Native powers Video Calling in Messenger for Windows and macOS.\n  </figcaption>\n</figure>",
+      "source_content_hash": "d95e8c5ac5b10d687a9be8bdf7b66e5189ac35c170dbcb72ea4953658315783d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8f488ab5",
+      "source_content": "<figure>\n  <img src=\"/blog/assets/many-platform-vision-oculus-home.png\" alt=\"Screenshot of Oculus Home in virtual reality\" />\n  <figcaption>\n    React and Relay power the Oculus Home and many other virtual reality experiences.\n  </figcaption>\n</figure>",
+      "source_content_hash": "b960c4b90fb79ab5feb8982c0a8c5f80406a7e98e11e4df7376d2208b2c1b53b",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "We are looking for managers who will care deeply about the growth and success of our engineers, and are excited about our vision. Previous React or React Native experience is not required. This role is open to anyone in the United States. If this sounds like an interesting opportunity and you are interested in learning more, please apply on [Facebook’s Career’s Page](https://www.facebook.com/careers/v2/jobs/438516437547870). We look forward to hearing from you!",
+      "source_content_hash": "49dbb6d6ffd6b7c2472d10eca1841c25bf123d6f1d7e6bba0b87c44de0bf2f8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2021-08-30-react-native-is-hiring-managers.md",
+  "last_updated_timestamp": "2025-06-18T09:36:14.117138+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

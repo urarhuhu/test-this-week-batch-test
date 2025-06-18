@@ -1,6 +1,6 @@
 {
   "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-docs-community/current.json",
-  "source_file_content_hash": "084aec2a20fbb5021571ca4434b10cc7d73cdb7bbaedad227c1ccfe215dbfc1a",
+  "source_file_content_hash": "87aaedccbd58b71b69d589bd6866e9b9a91020d254d03a199456085138206ce7",
   "segments": [
     {
       "segment_id": "version.label",
@@ -14,47 +14,14 @@
       }
     },
     {
-      "segment_id": "sidebar.community.link.Changelog",
-      "source_content": "Changelog",
-      "source_content_hash": "ead07c84baac57a9542f388a07a2a5209456ce790b04251bc9bd7d179ea85cb1",
+      "segment_id": "sidebar.community.category.Community",
+      "source_content": "Community",
+      "source_content_hash": "bb501d7877eb7ddbd40baf7990e8058212e8140a2e6ceaaf2d54a6412b770bfd",
       "node_type": "json_message",
       "translatable": true,
       "translations": {},
       "metadata": {
-        "json_description": "The label for link Changelog in sidebar community, linking to /changelog"
-      }
-    },
-    {
-      "segment_id": "sidebar.community.link.Showcase",
-      "source_content": "Showcase",
-      "source_content_hash": "9a15dc9c62db5943b6f133495878c7cbd7e8ab5dab86c87c4eebd595613c748e",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {},
-      "metadata": {
-        "json_description": "The label for link Showcase in sidebar community, linking to /showcase"
-      }
-    },
-    {
-      "segment_id": "sidebar.community.link.Feature Requests",
-      "source_content": "Feature Requests",
-      "source_content_hash": "d737b736eae80cc73d675d018d5da8812b0b20ae7792f1b20e4ca46b9fede259",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {},
-      "metadata": {
-        "json_description": "The label for link Feature Requests in sidebar community, linking to /feature-requests"
-      }
-    },
-    {
-      "segment_id": "sidebar.community.link.Chat with us on Discord",
-      "source_content": "Chat with us on Discord",
-      "source_content_hash": "c8d84720a7cc6ed99a16de126a7685aaccee36e3405de3900e771a000d49de79",
-      "node_type": "json_message",
-      "translatable": true,
-      "translations": {},
-      "metadata": {
-        "json_description": "The label for link Chat with us on Discord in sidebar community, linking to https://discord.gg/docusaurus"
+        "json_description": "The label for category Community in sidebar community"
       }
     }
   ],
@@ -63,25 +30,13 @@
       "message": "Next",
       "description": "The label for version current"
     },
-    "sidebar.community.link.Changelog": {
-      "message": "Changelog",
-      "description": "The label for link Changelog in sidebar community, linking to /changelog"
-    },
-    "sidebar.community.link.Showcase": {
-      "message": "Showcase",
-      "description": "The label for link Showcase in sidebar community, linking to /showcase"
-    },
-    "sidebar.community.link.Feature Requests": {
-      "message": "Feature Requests",
-      "description": "The label for link Feature Requests in sidebar community, linking to /feature-requests"
-    },
-    "sidebar.community.link.Chat with us on Discord": {
-      "message": "Chat with us on Discord",
-      "description": "The label for link Chat with us on Discord in sidebar community, linking to https://discord.gg/docusaurus"
+    "sidebar.community.category.Community": {
+      "message": "Community",
+      "description": "The label for category Community in sidebar community"
     }
   },
   "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current.json",
-  "last_updated_timestamp": "2025-06-18T04:53:23.179803+00:00",
+  "last_updated_timestamp": "2025-06-18T09:36:26.481116+00:00",
   "schema_version": "1.0",
   "translated_versions": {}
 }

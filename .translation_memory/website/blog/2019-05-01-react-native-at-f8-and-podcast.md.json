@@ -1,0 +1,106 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2019-05-01-react-native-at-f8-and-podcast.md",
+  "source_file_content_hash": "a69c5bcc90e629c0bead767c59d4d041824653282b2cd53c88212b2f67e6d229",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: React Native at F8 and Open Source Podcast\nauthors: [cpojer]\ntags: [announcement]\n---",
+      "source_content_hash": "5ebb660709fbf2e8315c5ff04aba7af0b98fd593edf3df35dc706e3c6674df62",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "This week, [Eli White](https://twitter.com/Eli_White) gave a talk at [F8 2019](https://developers.facebook.com/videos/2019/mobile-innovation-with-react-native-componentkit-and-litho/) about React Native in Facebook's Android and iOS applications. We are excited to share what we've been up to for the past two years and what we're doing next.",
+      "source_content_hash": "8a7626607756c923b2aeba7a9facaddf66c0fa5e37bbf222d00a8f547d05835e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Check out the video on [Facebook's developer website](https://developers.facebook.com/videos/2019/mobile-innovation-with-react-native-componentkit-and-litho/):",
+      "source_content_hash": "5e9b9806c59fcf1829c260682aff5c94ead52d5055bd94488b161ccdc7842f7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "88aa2da8",
+      "source_content": "<a href=\"https://developers.facebook.com/videos/2019/mobile-innovation-with-react-native-componentkit-and-litho/\">\n  <img\n    src=\"/blog/assets/eli-at-f8.png\"\n    alt=\"F8 Talk about React Native\"\n  />\n</a>",
+      "source_content_hash": "890165d7ef6bfc080a15a868aac63084484e3ab1505c1a012a74ec2cf998caa5",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "#### Highlights from the talk:",
+      "source_content_hash": "f6f73b206645048b5f22058a7352c0e1601b3c6d21bdc36ffbc3783b4351f611",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "- We spent 2017 and 2018 focused on React Native's largest product, Facebook's Marketplace. We collaborated with the Marketplace team to improve quality and add delight to the product. At this point, Marketplace is one of the highest quality products in the Facebook app both on Android and iOS.\n- Marketplace's performance was a big challenge as well, especially on mid-end Android devices. We cut startup time by more than 50% over the last year with more improvements on the way! The biggest improvements are being built into React Native and will be coming to the community later this year.\n- We have the confidence that we can build the high quality and performant apps that Facebook needs with React Native. This confidence has let us invest in bigger bets, like [rethinking the core of React Native](https://www.youtube.com/watch?v=UcqRXTriUVI&app=desktop).\n- Microsoft supports and uses React Native for Windows, enabling people to use their expertise and codebase to render to Microsofts's Universal Windows Platform. Check out Microsoft Build next week to [hear them talk about that more](https://mybuild.techcommunity.microsoft.com/sessions/77321).",
+      "source_content_hash": "6d5da68a87e190438bdc3a71ba81a99a13d7ee2f93bc8a1505affe5af881534d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "### React Radio Podcast about Open Source",
+      "source_content_hash": "b0e0a1ca0a2dd474759c7b902b5b0d42d358fa28a7445238efbddf5d76a3751c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Eli's talk concludes by talking about our recent open source work. We gave [an update on our progress in March](/blog/2019/03/01/react-native-open-source-update) and recently [Nader Dabit](https://twitter.com/dabit3) and [Gant Laborde](https://twitter.com/GantLaborde) invited Christoph for a chat on their podcast, [React Native Radio](https://devchat.tv/react-native-radio/react-native-open-source-the-react-native-community-feat-christoph-nakazawa/), to chat about React Native in open source.",
+      "source_content_hash": "4fbd293bc5dbcfd6e36fd7bc28db30bb1b069468b26bec05b16306195a67a9c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "#### Highlights from the podcast:",
+      "source_content_hash": "a13830ebbbb93e95ed34c8a434266a502861823f71f9659a7b896a5d2a77d47d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "- We talked about how the React Native team at Facebook thinks about open source and how we are building a sustainable community that scales for a project of React Native's [size](https://octoverse.github.com/projects#repositories).\n- We are on track to remove multiple modules as part of the [Lean Core](https://github.com/facebook/react-native/issues/23313) effort. Many modules like WebView and the React Native CLI have received more than 100 Pull Requests since they were extracted.\n- Next, we'll be focusing on overhauling the React Native website and documentation. Stay tuned!",
+      "source_content_hash": "931fdd18676509f2364015d9e9c026bca1be7c61e202eec510aacc8a93b0d23d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "You'll find the episode in your favorite podcasting app soon or you can listen to the recording right here:",
+      "source_content_hash": "e3225893bdd992594fee2fa6fc10f6b7919de38dfd7f016615e1456e2d48026c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "<audio controls style={{display: 'block', margin: '0 auto'}} src=\"https://media.devchat.tv/reactnativeradio/React_Native_Radio_Episode_121.mp3\"> {' '} Audio is unsupported in this browser.{' '} </audio>",
+      "source_content_hash": "578ad2882fb642a445c7ae5ef930cced552fd34599c3febc9d93bd148e141f35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2019-05-01-react-native-at-f8-and-podcast.md",
+  "last_updated_timestamp": "2025-06-18T09:36:14.094309+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}
