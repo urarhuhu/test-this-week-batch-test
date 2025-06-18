@@ -1,0 +1,112 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/api/themes/overview.mdx",
+  "source_file_content_hash": "feca350fab09513377f6b4b9f0b1c2b57afdbcfbd7681081fa89cd6acdc20507",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\nid: themes-overview\nsidebar_label: Themes overview\nslug: /api/themes\n---",
+      "source_content_hash": "3302b759626cd9e9289e9e9a1bf53644304e26310e71625339eda62d0cabb82b",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "# Docusaurus themes",
+      "source_content_hash": "4dc0659374ed2ac05a533d4c434f4de49f84b2a906669aed433fcf5a5186b1c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Docusaurus 主題"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "We provide official Docusaurus themes.",
+      "source_content_hash": "e815acec4ffba8b60b223e1ed96d90575311edcf163a1464d6916d48b539b8f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供官方的 Docusaurus 主題。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Main themes {#main-themes}",
+      "source_content_hash": "e12cc6407aba83fa6e07a86738df8e71005c51835ca1c0e6cb0fd471503d327d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 主要主題 {#main-themes}"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "The main themes implement the user interface for the [docs](../plugins/plugin-content-docs.mdx), [blog](../plugins/plugin-content-blog.mdx) and [pages](../plugins/plugin-content-pages.mdx) plugins.",
+      "source_content_hash": "21b2c8cdfaefec45d1a94648b1f7bd809cfd22ca998c3dac1acc86f15f738a82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "主要主題為 [文檔](../plugins/plugin-content-docs.mdx)、[部落格](../plugins/plugin-content-blog.mdx) 和 [頁面](../plugins/plugin-content-pages.mdx) 插件實現了使用者介面。"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- [@docusaurus/theme-classic](./theme-classic.mdx)\n- 🚧 other themes are planned",
+      "source_content_hash": "686cd0fb8ccab1b68ead591d12c8ab664f486c1e0efdf2d8b20ddb02d026bba4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [@docusaurus/theme-classic](./theme-classic.mdx)\n- 🚧 其他主題規劃中"
+      }
+    },
+    {
+      "segment_id": "f55b9485",
+      "source_content": ":::warning\n\nThe goal is to have all themes share the exact same features, user-experience and configuration.\n\nOnly the UI design and underlying styling framework should change, and you should be able to change theme easily.\n\nWe are not there yet: only the classic theme is production ready.\n\n:::",
+      "source_content_hash": "7a135e8f91a3d42ce54d1353f5c6ea41a6db594b8f355cecc824323aae074734",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n目標是讓所有主題共享完全相同的功能、使用者體驗和配置。\n\n只有 UI 設計和底層樣式框架會有所不同，且您應能輕鬆更換主題。\n\n目前尚未達成此目標：僅經典主題已達生產就緒狀態。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Enhancement themes {#enhancement-themes}",
+      "source_content_hash": "7c99709d000a002ea5e052b8572906006314d8882e6eb0206ca3e8223005a405",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 增強型主題 {#enhancement-themes}"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "These themes will enhance the existing main themes with additional user-interface related features.",
+      "source_content_hash": "599777aa5b942bf6edffc78433fdeb90951501a955bceb894ba458da25d655f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些主題將透過額外的使用者介面相關功能來增強現有的主要主題。"
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "- [@docusaurus/theme-live-codeblock](./theme-live-codeblock.mdx)\n- [@docusaurus/theme-search-algolia](./theme-search-algolia.mdx)",
+      "source_content_hash": "6695523dfb305cc9d4a0fa10175264a78e57636635c55cda67990fe8c301530c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [@docusaurus/theme-live-codeblock](./theme-live-codeblock.mdx)\n- [@docusaurus/theme-search-algolia](./theme-search-algolia.mdx)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/api/themes/overview.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.379654+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "feca350fab09513377f6b4b9f0b1c2b57afdbcfbd7681081fa89cd6acdc20507"
+  }
+}

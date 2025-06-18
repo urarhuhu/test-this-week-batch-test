@@ -1,0 +1,462 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/guides/docs/docs-multi-instance.mdx",
+  "source_file_content_hash": "e9ae4f1cedb8b0343fbb9791a14ef3140a2646a63318b1ed0426483f42c7565b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: multi-instance\ndescription: Use multiple docs plugin instances on a single Docusaurus site.\nslug: /docs-multi-instance\n---",
+      "source_content_hash": "ac25f8f5dee28582ae6fb43f0db3ced95af61cfcad41c3e687ab2c2affaa667f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Docs Multi-instance",
+      "source_content_hash": "de0eb94ac1750163ce97f4749544e81709a3cd065e54d1a513519e00a007cec1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 多實例文檔"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "The `@docusaurus/plugin-content-docs` plugin can support [multi-instance](../../using-plugins.mdx#multi-instance-plugins-and-plugin-ids).",
+      "source_content_hash": "c2517817efd09cd9e42d68da748ba7d392c66eb7a21ce8e205f98d51f79424a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`@docusaurus/plugin-content-docs` 插件支援 [多實例模式](../../using-plugins.mdx#multi-instance-plugins-and-plugin-ids)。"
+      }
+    },
+    {
+      "segment_id": "bb849aa9",
+      "source_content": ":::note\n\nThis feature is only useful for [versioned documentation](./versioning.mdx). It is recommended to be familiar with docs versioning before reading this page. If you just want [multiple sidebars](./sidebar/multiple-sidebars.mdx), you can do so within one plugin.\n\n:::",
+      "source_content_hash": "288fb1750b96cce54190a5f364faa815cdb61be668982b4d93dd5434c7793276",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n此功能僅對 [版本化文檔](./versioning.mdx) 有用。建議在閱讀本頁前先熟悉文檔版本化功能。若您僅需 [多側邊欄](./sidebar/multiple-sidebars.mdx)，可在單一插件內實現。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Use-cases {#use-cases}",
+      "source_content_hash": "fd65b262eadbb0affe351245649a54039a4e5026de0108aa982785b928dde0d0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用場景 {#use-cases}"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Sometimes you want a Docusaurus site to host 2 distinct sets of documentation (or more).",
+      "source_content_hash": "9a344a5c03ad1aaffb4ded10e74ddd41c88c0f5a7732d167cc4f0e019b425c83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有時您可能希望一個 Docusaurus 站點托管兩套（或更多）獨立的文檔集。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "These documentations may even have different versioning/release lifecycles.",
+      "source_content_hash": "e8f13c0526c247e78c9af7ab1090909872cb8bf3478ffcbc958c1c1f591f4d0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些文檔甚至可能具有不同的版本控制/發佈週期。"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Mobile SDKs documentation {#mobile-sdks-documentation}",
+      "source_content_hash": "fb542e43935424ef544bbefcb84b5bc986f370bc027d4a8b692d5eb313262846",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 移動端 SDK 文檔 {#mobile-sdks-documentation}"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "If you build a cross-platform mobile SDK, you may have 2 documentations:",
+      "source_content_hash": "776d972acd3b03cc6432753971059847c57a230df1b7b98159cdb5814c56d9c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您開發跨平台移動端 SDK，可能會有兩套文檔："
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "- Android SDK documentation (`v1.0`, `v1.1`)\n- iOS SDK documentation (`v1.0`, `v2.0`)",
+      "source_content_hash": "959d41736eb8aeeb61d1ab1ce76db8f0e0bcdbe274bf293856d83e6aa67ac983",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Android SDK 文檔（`v1.0`、`v1.1`）\n- iOS SDK 文檔（`v1.0`、`v2.0`）"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "In this case, you can use a distinct docs plugin instance per mobile SDK documentation.",
+      "source_content_hash": "c7909abd5b4d22b4555cf89366d5c123758d544e5b8acc047fdb958f09bcfba7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此情況下，可為每個移動端 SDK 文檔使用獨立的插件實例。"
+      }
+    },
+    {
+      "segment_id": "0d170438",
+      "source_content": ":::warning\n\nIf each documentation instance is very large, you should rather create 2 distinct Docusaurus sites.\n\nIf someone edits the iOS documentation, is it really useful to rebuild everything, including the whole Android documentation that did not change?\n\n:::",
+      "source_content_hash": "eb31b932087f08e67e4fa556a18d8b07b768737c39cedd3e78249a709336bd3b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n若每套文檔體量龐大，建議創建兩個獨立的 Docusaurus 站點。\n\n當有人編輯 iOS 文檔時，重新構建包括未變更的完整 Android 文檔是否真的必要？\n\n:::"
+      }
+    },
+    {
+      "segment_id": "782c902a",
+      "source_content": "### Versioned and unversioned doc {#versioned-and-unversioned-doc}",
+      "source_content_hash": "c0e047b6c214d0cbfa42c3e8bbe51a981338cb2d02f355cc3e0d977f5dda7e37",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 版本化與非版本化文檔 {#versioned-and-unversioned-doc}"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Sometimes, you want some documents to be versioned, while other documents are more \"global\", and it feels useless to version them.",
+      "source_content_hash": "5f711d86e6438d5e6279aee40ad6f86871ec3abe417923d325a678dc184013b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有時您希望部分文檔進行版本控制，而其他「全局性」文檔則無需版本化。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "We use this pattern on the Docusaurus website itself:",
+      "source_content_hash": "5e50ed7d8f6cf038530b89274702d6ae5941de56f829214fd9fb7fcf7d4cded2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 官方網站即採用此模式："
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "- The [/docs/\\*](/docs) section is versioned\n- The [/community/\\*](/community/support) section is unversioned",
+      "source_content_hash": "f83163d6f2240ab061a7fc36f4cc42eb73372c7352f0543e36be5e367fa86db5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [/docs/\\*](/docs) 章節為版本化內容\n- [/community/\\*](/community/support) 章節為非版本化內容"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Setup {#setup}",
+      "source_content_hash": "a2c3b327b6de8a7a4e73648d09cd46e3d793cfbb1b168642be5bb137bc21d541",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置方法 {#setup}"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "Suppose you have 2 documentations:",
+      "source_content_hash": "2745a3d3aa6e117f9c8726d32a1958f933e8601c95407c3655355c0293e48133",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "假設您有兩套文檔："
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "- Product: some versioned doc about your product\n- Community: some unversioned doc about the community around your product",
+      "source_content_hash": "77a0fa268405e8ca6f09d3d7d17a76e17a559078092340269b208d9c1b997325",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 產品文檔：關於產品的版本化說明\n- 社群文檔：關於產品周邊社群的未版本化說明"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "In this case, you should use the same plugin twice in your site configuration.",
+      "source_content_hash": "f55a1188ca4ca30551caba8f0c59fe1d92091d7b1ee7af64abfb0acbeef4ca6c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此情況下，您應在站點配置中重複使用同一插件兩次。"
+      }
+    },
+    {
+      "segment_id": "7cde057a",
+      "source_content": ":::warning\n\n`@docusaurus/preset-classic` already includes a docs plugin instance for you!\n\n:::",
+      "source_content_hash": "06b96451a31b3d4a54b2d4309b4d9d4ca8c5d95f3857f84cc4df14009a80a655",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n`@docusaurus/preset-classic` 已預設包含一個文檔插件實例！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "When using the preset:",
+      "source_content_hash": "91abdaedb0467996193634bb4ec152c931b7ccb94fdc7e39bb73b32773a9f631",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用預設配置時："
+      }
+    },
+    {
+      "segment_id": "5d4925eb",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          // highlight-start\n          // id: 'product', // omitted => default instance\n          // highlight-end\n          path: 'product',\n          routeBasePath: 'product',\n          sidebarPath: './sidebarsProduct.js',\n          // ... other options\n        },\n      },\n    ],\n  ],\n  plugins: [\n    [\n      '@docusaurus/plugin-content-docs',\n      {\n        // highlight-start\n        id: 'community',\n        // highlight-end\n        path: 'community',\n        routeBasePath: 'community',\n        sidebarPath: './sidebarsCommunity.js',\n        // ... other options\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "e7312f74c004bb6debd4b1261331e742e6c50ab980ab2199cb2a28f91a281cc4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5d4925eb"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "When not using the preset:",
+      "source_content_hash": "6bc33754f9452eaf052da10d0b3cf5e610056ff4f5a4fb26fd3be7786e85a47d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "不使用預設配置時："
+      }
+    },
+    {
+      "segment_id": "cae897fb",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-content-docs',\n      {\n        // highlight-start\n        // id: 'product', // omitted => default instance\n        // highlight-end\n        path: 'product',\n        routeBasePath: 'product',\n        sidebarPath: './sidebarsProduct.js',\n        // ... other options\n      },\n    ],\n    [\n      '@docusaurus/plugin-content-docs',\n      {\n        // highlight-start\n        id: 'community',\n        // highlight-end\n        path: 'community',\n        routeBasePath: 'community',\n        sidebarPath: './sidebarsCommunity.js',\n        // ... other options\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "9c5d556033a1fd98243bcbd0ad89fcec346fe2cb6e8a9e86a351820d64ea3bac",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cae897fb"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "Don't forget to assign a unique `id` attribute to plugin instances.",
+      "source_content_hash": "b383ff233178b56ff299f8726cf5fcefceb35721874038803d931eb8504bc862",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請務必為插件實例分配唯一的 `id` 屬性。"
+      }
+    },
+    {
+      "segment_id": "70c0d7b3",
+      "source_content": ":::note\n\nWe consider that the `product` instance is the most important one, and make it the \"default\" instance by not assigning any ID.\n\n:::",
+      "source_content_hash": "d3a076c831ca0ae51eb38517a5c4c160d520bc659bc16b28c3cf02f6215324e2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n我們將 `product` 實例視為最重要實例，透過不分配 ID 使其成為「預設」實例。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "9c2ab4c8",
+      "source_content": "## Versioned paths {#versioned-paths}",
+      "source_content_hash": "46ba79245d1c8869e9d576e5283fe964717075371434b2373e2cb9fa64370980",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 版本化路徑 {#versioned-paths}"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "Each plugin instance will store versioned docs in a distinct folder.",
+      "source_content_hash": "323027cd02b20863e2159f678b4126a12a9c6f352c12da49c38769973e9d5b82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個插件實例會將版本化文檔存儲在獨立目錄。"
+      }
+    },
+    {
+      "segment_id": "cfeb9eb1",
+      "source_content": "The default plugin instance will use these paths:",
+      "source_content_hash": "4dfb9f83ef9f5e8a5ae9bdda047c600fc466d4eb420722aa7b154ee5df236979",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設插件實例使用以下路徑："
+      }
+    },
+    {
+      "segment_id": "6b304caa",
+      "source_content": "- `website/versions.json`\n- `website/versioned_docs`\n- `website/versioned_sidebars`",
+      "source_content_hash": "ba7fc9bc9932f17fd0dfa8029fb8739d56c227d4b296395de35fda257d83045f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `website/versions.json`\n- `website/versioned_docs`\n- `website/versioned_sidebars`"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "The other plugin instances (with an `id` attribute) will use these paths:",
+      "source_content_hash": "cae665f377ca9b965d71ed714f85c9c45347f38bfcaa3d13462665cfd915c186",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他插件實例（帶有 `id` 屬性）使用以下路徑："
+      }
+    },
+    {
+      "segment_id": "3670cec0",
+      "source_content": "- `website/[pluginId]_versions.json`\n- `website/[pluginId]_versioned_docs`\n- `website/[pluginId]_versioned_sidebars`",
+      "source_content_hash": "70cd64050658d435f2d6cd82612f77275f1f9efdb247da2bc549ddad96c80f1e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `website/[pluginId]_versions.json`\n- `website/[pluginId]_versioned_docs`\n- `website/[pluginId]_versioned_sidebars`"
+      }
+    },
+    {
+      "segment_id": "90808c0b",
+      "source_content": ":::tip\n\nYou can omit the `id` attribute (defaults to `default`) for one of the docs plugin instances.\n\nThe instance paths will be simpler, and retro-compatible with a single-instance setup.\n\n:::",
+      "source_content_hash": "26d6c40d53807c6ffdc6859307ae1cb67b3f6edf54b9e330c842434bcd73bad0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n可為其中一個文檔插件實例省略 `id` 屬性（默認為 `default`）。\n\n該實例路徑會更簡潔，並與單實例配置保持回溯兼容性。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a5905b07",
+      "source_content": "## Tagging new versions {#tagging-new-versions}",
+      "source_content_hash": "e2c3b959aa41833460fa1e555c0f7d4cb18376f7ecb16fe7ef57cfcb374cf474",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 標記新版本 {#tagging-new-versions}"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "Each plugin instance will have its own CLI command to tag a new version. They will be displayed if you run:",
+      "source_content_hash": "77533e0b63086022290837f6066fae5bd71a2d2413a71ef2f431d69bbd06ef75",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個插件實例都有專屬的 CLI 命令來標記新版本。執行以下命令即可查看："
+      }
+    },
+    {
+      "segment_id": "dddc2d3c",
+      "source_content": "```bash npm2yarn\nnpm run docusaurus -- --help\n```",
+      "source_content_hash": "d475ea7564a39987ad3761d01a49b4d67af58b323d2a6af7fe2f6ebe266d9d1c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dddc2d3c"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "To version the product/default docs plugin instance:",
+      "source_content_hash": "2d429709e031ea3aaac683483a399a321d73241e4b5ed8d8aa264d91f7a28fb3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要為產品/預設文件插件實例進行版本控制："
+      }
+    },
+    {
+      "segment_id": "5010ec34",
+      "source_content": "```bash npm2yarn\nnpm run docusaurus docs:version 1.0.0\n```",
+      "source_content_hash": "a81ff4193152b9173d9c8449b6b6c5e5dfbcc32a53fb5707f41e84575d11cb89",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5010ec34"
+      }
+    },
+    {
+      "segment_id": "674abb31",
+      "source_content": "To version the non-default/community docs plugin instance:",
+      "source_content_hash": "38af4fd0cb32644e71041c60125f668a352f09ca48aeb36ca5f4de16ee8bac65",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要為非預設/社群文件插件實例進行版本控制："
+      }
+    },
+    {
+      "segment_id": "ebc385af",
+      "source_content": "```bash npm2yarn\nnpm run docusaurus docs:version:community 1.0.0\n```",
+      "source_content_hash": "2afcf5452eb5af8798312c15449405b5acce7691c48d10e7bd82bedebb858818",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ebc385af"
+      }
+    },
+    {
+      "segment_id": "188a0310",
+      "source_content": "## Docs navbar items {#docs-navbar-items}",
+      "source_content_hash": "6974bbf0e760a75effd11bdd9981ae42471b9d1b233edaab7fb7026ea1edcd3b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 文件導航欄項目 {#docs-navbar-items}"
+      }
+    },
+    {
+      "segment_id": "5cf1bce4",
+      "source_content": "Each docs-related [theme navbar items](../../api/themes/theme-configuration.mdx#navbar) take an optional `docsPluginId` attribute.",
+      "source_content_hash": "1ac0cb009721c264b2d9841bbc5c2c1bb0ecdf3c1e175b67dabd26c63ef38f66",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個與文件相關的[主題導航欄項目](../../api/themes/theme-configuration.mdx#navbar)都可選用 `docsPluginId` 屬性。"
+      }
+    },
+    {
+      "segment_id": "0427bb2b",
+      "source_content": "For example, if you want to have one version dropdown for each mobile SDK (iOS and Android), you could do:",
+      "source_content_hash": "e9a595aaae9e13d6a8027df3f0d97e711150090fbc78363b08165b48044f71ec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "舉例來說，若您想為每個行動 SDK（iOS 和 Android）各設置一個版本下拉選單，可以這樣做："
+      }
+    },
+    {
+      "segment_id": "0152e600",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        {\n          type: 'docsVersionDropdown',\n          // highlight-start\n          docsPluginId: 'ios',\n          // highlight-end\n        },\n        {\n          type: 'docsVersionDropdown',\n          // highlight-start\n          docsPluginId: 'android',\n          // highlight-end\n        },\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "04ebb50a5e6906eb74d9d21998ab0d45ee994f8ba918f51f36e588aa78c92929",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0152e600"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/guides/docs/docs-multi-instance.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.173690+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e9ae4f1cedb8b0343fbb9791a14ef3140a2646a63318b1ed0426483f42c7565b"
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.4/index.mdx",
+  "source_file_content_hash": "746ccedf9fcbf1e3172467e3a4d8ec3aea648f047314f0473ea1dc6fb81c903d",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.4\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2024-05-31\n---",
+      "source_content_hash": "e5f0ac13a27b0ec03705b60d12a410ece07944f362ecbb94b296831bf3f2306e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.4**.",
+      "source_content_hash": "f8d4c6f30d06c42e50cdeb0d1dc7d7d81011f4045d0484e344f15c924a4d1d8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 3.4** 版本發布。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Upgrading should be easy. Our [release process](/community/release-process) respects [Semantic Versioning](https://semver.org/). Minor versions do not include any breaking changes.",
+      "source_content_hash": "81680bc8b927edb4674a8a44f09d0912cb08f6a4274e97bb1c6c65523e5a4839",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該很簡單。我們的[發布流程](/community/release-process)遵循[語意化版本控制](https://semver.org/)。次要版本不包含任何破壞性變更。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 部落格文章社交卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點功能"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### Tags files",
+      "source_content_hash": "f755d2070b79ba714ba5e29c22e0797776426d2917208a42e1099e39f99e202f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 標籤檔案"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "The docs and blog plugins both already supported a `tags` front matter attribute, enabling you to group related content. But tags declared inline in the front matter are not always ideal.",
+      "source_content_hash": "6bc7400689015babf3c80941f3baeea74016433b97a8906debbb9977aa57b1ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文件與部落格插件原本就支援 front matter 中的 `tags` 屬性，讓您能將相關內容分組。但直接在 front matter 中聲明標籤並非總是理想做法。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "With [#10137](https://github.com/facebook/docusaurus/pull/10137), you can now declare a list of pre-defined tags in a `tags.yml` file:",
+      "source_content_hash": "2589b8d6bb3ad3e0bfb63a2b823806c5efc3984490a100e031546a021d153d26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過 [#10137](https://github.com/facebook/docusaurus/pull/10137)，您現在可以在 `tags.yml` 檔案中預先定義標籤列表："
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```yml title=\"blog/tags.yml\"\ntag1:\n  label: 'Tag 1'\n  description: 'Tag 1 description'\n  permalink: /tag-1-permalink\n\ntag2:\n  label: 'Tag 2'\n  description: 'Tag 2 description'\n  permalink: /tag-2-permalink\n```",
+      "source_content_hash": "37eb46c0032f75b05f2ee5191730c9d12cf2ff62fd507fb70030f723bf12b87f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "These predefined tags can be used in the front matter of your blog or docs files:",
+      "source_content_hash": "16871dd98dabde7b5929b4fb6aac5e2837524bb630ac3c07a1154f4931822818",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些預定義標籤可用於部落格或文件檔案的 front matter 中："
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "```md title=\"blog/2024-05-31-my-blog-post.md\"\n---\ntags: [tag1, tag2]\n---\n\n# Title\n\nContent\n```",
+      "source_content_hash": "379ae867cce55c403c7bd4270620cafd6f7f467493f11dc5f8a3ac13080efc28",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "5a149cd3",
+      "source_content": ":::tip[Keeping tags usage consistent]\n\nUse the new `onInlineTags: 'throw'` plugin option to enforce the usage of predefined tags and prevent contributors from creating new unwanted tags.\n\n:::",
+      "source_content_hash": "ce9d3e2ee2f4b5e53888dba3d24e7ff3f2ebe10ca83778942b686c8a8b98b6f0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[保持標籤使用一致性]\n\n使用新的 `onInlineTags: 'throw'` 插件選項來強制使用預定義標籤，防止貢獻者創建新的非預期標籤。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### Hash Router - Experimental",
+      "source_content_hash": "644b198df43bdd55a3c3a75b8dd97373aa1f7a2db43dc90d7d49bef38744387b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 哈希路由 - 實驗性功能"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "With [9859](https://github.com/facebook/docusaurus/pull/9859), we added a new **experimental** hash router config option, useful for **offline browsing** by opening your site locally through the `file://` protocol.",
+      "source_content_hash": "fdd49ed6e3d99d66c615b23e1c1353498acf867723ebd1103154e518015ace0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過 [9859](https://github.com/facebook/docusaurus/pull/9859)，我們新增了實驗性的哈希路由配置選項，這對於透過 `file://` 協議在本機開啟網站進行**離線瀏覽**非常有用。"
+      }
+    },
+    {
+      "segment_id": "6d254e09",
+      "source_content": "```tsx title=\"docusaurus.config.js\"\nexport default {\n  future: {\n    experimental_router: 'hash',\n  },\n};\n```",
+      "source_content_hash": "07434a8674b35a45a8925f6ae30bd3125d8ea012eb2ff03d6a0a287539bb194f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6d254e09"
+      }
+    },
+    {
+      "segment_id": "cc486557",
+      "source_content": ":::warning\n\nThis mode is **not recommended for sites deployed through a web server**.\n\n:::",
+      "source_content_hash": "2c561fb8ae5159ce0b89e63e0b4e73a1e6161e18bff21a36658411b5c6ffa08c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此模式**不建議用於透過網頁伺服器部署的網站**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "When this mode is turned on, Docusaurus will opt out of static site rendering, and build a client-side single page application where all routes are prefixed with `/#/`. A single `index.html` file is generated. This file can be opened locally in your browser by simply clicking it, using the browser `file://` protocol. This makes it possible to distribute a Docusaurus site as a `.zip` file so that readers can browse it offline, without having to install anything complex on their computer apart a web browser.",
+      "source_content_hash": "a4e8cabbce446db5d9932c31071e267e114114d2010d405b7cfa013dbb679448",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "啟用此模式時，Docusaurus 將退出靜態網站渲染，並構建一個客戶端單頁應用程式，其中所有路由都以前綴 `/#/` 開頭。會生成單一的 `index.html` 檔案。此檔案可直接在瀏覽器中點擊開啟，使用瀏覽器的 `file://` 協議。這使得可以將 Docusaurus 網站作為 `.zip` 檔案分發，讓讀者無需在電腦上安裝複雜的軟體，僅需網頁瀏覽器即可離線瀏覽。"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "![Docusaurus hash router - local browsing using the file:// protocol](./img/hash.png)",
+      "source_content_hash": "f5963dce20f2bd0ed382241334005769b35e9f3db6ca1802a9fb48960b386ec7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 哈希路由 - 使用 file:// 協議進行本地瀏覽](./img/hash.png)"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "Try browsing our own Docusaurus site built with the hash router:",
+      "source_content_hash": "bc939f17b05a58477fe857e555f5839e4afb09b84f89f0105c09d0f845b12202",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "試試瀏覽我們使用哈希路由構建的 Docusaurus 網站："
+      }
+    },
+    {
+      "segment_id": "1316cb90",
+      "source_content": "- [Docusaurus website - Hash Router web deployment](https://facebook.github.io/docusaurus/#/)\n- [Docusaurus website - Hash Router downloadable GitHub artifacts](https://github.com/facebook/docusaurus/actions/workflows/build-hash-router.yml)",
+      "source_content_hash": "0f563c47986762d8e00fddf823a066f099edc00977cdae5ea160b321a4005af9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Docusaurus 網站 - 哈希路由網頁部署](https://facebook.github.io/docusaurus/#/)\n- [Docusaurus 網站 - 哈希路由可下載的 GitHub 成品](https://github.com/facebook/docusaurus/actions/workflows/build-hash-router.yml)"
+      }
+    },
+    {
+      "segment_id": "b3463ffb",
+      "source_content": ":::caution[Experimental]\n\nThis feature is **experimental**. If you try it out, please let us know how it works for you [here](https://github.com/facebook/docusaurus/issues/3825).\n\n:::",
+      "source_content_hash": "02b731c4fddb09a869f6405c42b371f6ca34dbcd4a4039fd0cedb791d82ffae9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::caution[實驗性]\n\n此功能為**實驗性質**。如果您試用，請[在此](https://github.com/facebook/docusaurus/issues/3825)告訴我們使用體驗。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### Site Storage - Experimental",
+      "source_content_hash": "45d4c44e7a318d6b397310f941735e51a3568ec7deec8c9da08329d5364be237",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 網站儲存 - 實驗性功能"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "Docusaurus uses the browser `localStorage` API to persist UI state.",
+      "source_content_hash": "9e7b4bfc12a548d7e755845c55032736f929a671d2a6564b15e5a7d0341d7b79",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用瀏覽器的 `localStorage` API 來持久化 UI 狀態。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "But sometimes the storage space is \"shared\" between multiple sites using the same domain, leading to **storage key conflicts**. This generally happens in two cases",
+      "source_content_hash": "e13069330f44711a6c50871a1f068ff47d546d816683e2d6d588a4d3e3bcc607",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "但有時儲存空間會被使用相同網域的多個網站「共享」，導致**儲存鍵衝突**。這通常發生在兩種情況："
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "- when working on multiple `http://localhost:3000` sites\n- when hosting multiple sites under the same domain: `https://example.com/site1/` and `https://example.com/site2/`",
+      "source_content_hash": "2a1c7732d27d5602430f756a6895baa3a01bc8d62cbd8d2eb5bf825bf7b6a92c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 當在多個 `http://localhost:3000` 網站上工作時\n- 當在同一個網域下托管多個網站時：`https://example.com/site1/` 和 `https://example.com/site2/`"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "For this reason, we introduced a new **experimental** `siteStorage` configuration option:",
+      "source_content_hash": "82013098e0eac6998aa18cc0791e499b2dd886e6158e84fd36d120fe56bc6b9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "因此，我們引入了新的**實驗性** `siteStorage` 配置選項："
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```tsx\nexport default {\n  future: {\n    experimental_storage: {\n      type: 'localStorage',\n      namespace: true,\n    },\n  },\n};\n```",
+      "source_content_hash": "bb2bc205cfb8ed182f1bc07c792d06984c6af445d83deb8d49d42730245a27d8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "When `namespace: true` is set, we apply a hash suffix to all the storage keys, making them unique to the current site (based on `config.url` and `config.baseUrl`. For example, the `theme` storage key becomes `theme-x6f`. It is also possible to provide your own custom suffix `namespace: 'suffix'`. We also made it possible to use `type: 'sessionStorage'` instead of the default `localStorage`.",
+      "source_content_hash": "4028ac94b892d7f49129801f93897e53ad89d87f441bb5bffe47eb474a11fd83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當設置 `namespace: true` 時，我們會為所有儲存鍵添加哈希後綴，使其基於 `config.url` 和 `config.baseUrl` 成為當前網站專屬。例如，`theme` 儲存鍵會變成 `theme-x6f`。您也可以提供自定義後綴 `namespace: 'suffix'`。我們還實現了可使用 `type: 'sessionStorage'` 來替代預設的 `localStorage`。"
+      }
+    },
+    {
+      "segment_id": "43fbed67",
+      "source_content": ":::caution[Experimental]\n\nThis feature is **experimental**. If you try it out, please let us know how it works for you [here](https://github.com/facebook/docusaurus/pull/10121).\n\n:::",
+      "source_content_hash": "9438f46ef49fafc89c634d25367a762ae63a5e41f593ee4af78bea4ecf1d3ac0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::caution[實驗性功能]\n\n此功能目前處於**實驗階段**。若您嘗試使用，請於[此處](https://github.com/facebook/docusaurus/pull/10121)回報使用體驗。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他值得注意的變更包括："
+      }
+    },
+    {
+      "segment_id": "10e4f9ca",
+      "source_content": "- [#10151](https://github.com/facebook/docusaurus/pull/10151): add Turkmen (tk) theme translations\n- [#10111](https://github.com/facebook/docusaurus/pull/10111): add Bulgarian (bg) theme translations\n- [#10168](https://github.com/facebook/docusaurus/pull/10168): fix many long overdue Markdown link resolution bugs\n- [#10178](https://github.com/facebook/docusaurus/pull/10178): the `/search` page now respects the `contextualSearch: false` setting\n- [#10118](https://github.com/facebook/docusaurus/pull/10118): fix bad pluralization on docs generated index category card description\n- [#10130](https://github.com/facebook/docusaurus/pull/10130): fix false positives reported by the broken anchor checker due to trailing slashes",
+      "source_content_hash": "c3c00312ee1b3938c8e298641914f64f3e619cea9f864601d06e75588cb7b768",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#10151](https://github.com/facebook/docusaurus/pull/10151)：新增土庫曼語(tk)主題翻譯\n- [#10111](https://github.com/facebook/docusaurus/pull/10111)：新增保加利亞語(bg)主題翻譯  \n- [#10168](https://github.com/facebook/docusaurus/pull/10168)：修復多個長期存在的Markdown連結解析錯誤\n- [#10178](https://github.com/facebook/docusaurus/pull/10178)：`/search`頁面現在會遵循`contextualSearch: false`設定\n- [#10118](https://github.com/facebook/docusaurus/pull/10118)：修正文件生成索引分類卡描述中的錯誤複數形式\n- [#10130](https://github.com/facebook/docusaurus/pull/10130)：修復因尾隨斜線導致錨點檢查器誤報的問題"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "Check the **[3.4.0 changelog entry](/changelog/3.4.0)** for an exhaustive list of changes.",
+      "source_content_hash": "92fca35a8bbeeececad06f14dc942b1573ce760248bc50612f7ffd821c1fc86e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "完整變更清單請參閱**[3.4.0版本更新日誌](/changelog/3.4.0)**。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.4/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.014725+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "746ccedf9fcbf1e3172467e3a4d8ec3aea648f047314f0473ea1dc6fb81c903d"
+  }
+}

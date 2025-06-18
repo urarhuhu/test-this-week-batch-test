@@ -1,0 +1,1192 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2023/09-29-preparing-your-site-for-docusaurus-v3/index.mdx",
+  "source_file_content_hash": "bd830e35b2b2d08dabe61648d1082edf93f98f3382ad610ac1b2e513f8f7e78e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Preparing your site for Docusaurus v3\nauthors:\n  - slorber\ntags: [maintenance]\nslug: /preparing-your-site-for-docusaurus-v3\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "e20fd4e7c6390afc974df3ec7daa4a86223a6c78685632a61bd95c439e57c40a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "6cae1da3",
+      "source_content": ":::warning\n\nThis blog post was written when Docusaurus v3 was in beta. There are some changes in dependency versions and upgrade steps you should be aware of if upgrading to Docusaurus v3 current stable releases. Use the [upgrade guide](https://docusaurus.io/docs/next/migration/v3) for the most up-to-date migration steps.\n\n:::",
+      "source_content_hash": "32b3ee18ccd7a419e42d0f794c77dd1091577aec4afd99033e4edea068baeaa1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此部落格文章撰寫時 Docusaurus v3 尚處於測試版。若您要升級至當前穩定版 Docusaurus v3，需注意部分依賴版本與升級步驟的變更。請參閱[升級指南](https://docusaurus.io/docs/next/migration/v3)以獲取最新遷移步驟。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "**Docusaurus v3** is now [**in beta**](https://github.com/facebook/docusaurus/discussions/9312) and the official release is around the corner. This is the perfect time to start **preparing your site** for this new major version.",
+      "source_content_hash": "ce546a1c9e2803ee618cb962f6853f279ca7cdaa3d8724086e603c49806de310",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**Docusaurus v3** 現已進入[測試階段](https://github.com/facebook/docusaurus/discussions/9312)，正式版即將發布。此刻正是開始為新主版本**預先調整網站**的最佳時機。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Docusaurus v3 comes with a few **breaking changes**, many of which can be **handled today under Docusaurus v2**. Preparing your site ahead of time can be done incrementally, and will make it easier to upgrade to v3.",
+      "source_content_hash": "47d6d03ff19b963f987217d5f1a8011dda7e558d89defdfaee609cca6d81530d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3 包含若干**破壞性變更**，其中許多可於**Docusaurus v2環境下先行處理**。提前逐步調整網站內容，將使後續升級至v3更為順暢。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "The main breaking change is the upgrade from MDX v1 to MDX v3. Read the [**MDX v2**](https://mdxjs.com/blog/v2/) and [**MDX v3**](https://mdxjs.com/blog/v3/) release notes for details. MDX will now compile your Markdown content **more strictly** and with **subtle differences**.",
+      "source_content_hash": "7024c04382f91001530f653652cee0d34ddd7260b232c9245ecfb12c430209ab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "主要破壞性變更為從MDX v1升級至MDX v3。詳情請閱讀[**MDX v2**](https://mdxjs.com/blog/v2/)與[**MDX v3**](https://mdxjs.com/blog/v3/)發布說明。新版MDX將以**更嚴格標準**及**細微差異**編譯您的Markdown內容。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "This article will mostly focus on how to prepare your content for this new MDX version, and will also list a few other breaking changes that you can handle today.",
+      "source_content_hash": "637a6512f5aa96612d5b58e811a0abf98c388205225a1cbe896baf6d9d56f721",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本文將重點說明如何為新版MDX調整內容，並列出其他可立即處理的破壞性變更。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "![Preparing your site for Docusaurus v3 - social card](./img/social-card.png)",
+      "source_content_hash": "ba98fedeeeeb196ec4de5633c2af6b18c9f5ce777200aa782740150f98ab718c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![為Docusaurus v3預做準備 - 社群媒體卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "27878640",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_27878640"
+      }
+    },
+    {
+      "segment_id": "d2808037",
+      "source_content": ":::warning\n\nThis article mentions most Docusaurus v3 breaking changes, but is not exhaustive. Read the [v3.0.0-beta.0 release notes](https://github.com/facebook/docusaurus/discussions/9312) for an exhaustive list.\n\n:::",
+      "source_content_hash": "d44dd556cf2c8213cef4b69da674738d0f521949e3d333757cdc708d443ad7e7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n本文提及多數Docusaurus v3破壞性變更，但未盡完整。完整清單請參閱[v3.0.0-beta.0發布說明](https://github.com/facebook/docusaurus/discussions/9312)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b56ef571",
+      "source_content": ":::tip[Don't be afraid]\n\nThere's a lot of content in this blog post, but many Docusaurus v2 sites can upgrade with very few changes.\n\nIf your site is relatively small, with only a few customizations, you can probably [upgrade to Docusaurus v3](#try-docusaurus-v3-today) immediately.\n\n:::",
+      "source_content_hash": "b7bdcc69872f6639d92bfe0f21f4deac81d2faa4d0f2bb56ce55df9c649964e4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[無需過慮]\n\n本篇內容雖多，但多數Docusaurus v2網站只需極少調整即可升級。\n\n若您的網站規模較小且自定義功能有限，或許能直接[立即升級至Docusaurus v3](#try-docusaurus-v3-today)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Preparatory work",
+      "source_content_hash": "12a7b5f039808887cf7e759db0d06e5f736f7d04d544a2d694ca0211148ab1c1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 準備工作"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Before preparing for the Docusaurus v3 upgrade, we recommend upgrading to the latest [Docusaurus v2 version](/versions).",
+      "source_content_hash": "54f5ee9000db6fd2d3f161092764ccb36067a0cf254cc7e5c51c96fd423bc180",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在準備升級Docusaurus v3前，建議先升級至最新[Docusaurus v2版本](/versions)。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Depending on the complexity of your site, it may be a good idea to adopt the [visual regression testing workflow](/blog/upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing) that we recently presented. It could help you catch unexpected visual side effects occurring during the Docusaurus v3 upgrade.",
+      "source_content_hash": "334566355c0b16c0bfdcd7148afa5090ca6c86d30c09cfcc686f10d8004f1ef6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "視網站複雜度而定，建議採用我們近期介紹的[視覺回歸測試工作流](/blog/upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing)，有助於捕捉Docusaurus v3升級過程中意外的視覺副作用。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "We also recommend using the `.mdx` extension whenever you use JSX, `import`, or `export` (i.e. MDX features) inside a Markdown file. It is semantically more correct and improves compatibility with external tools (IDEs, formatters, linters, etc.). In future versions of Docusaurus, `.md` files will be parsed as standard [CommonMark](https://commonmark.org/), which does not support these features. In Docusaurus v3, `.md` files keep being compiled as MDX files, but it will be possible to [opt-in for CommonMark](https://github.com/facebook/docusaurus/issues/3018).",
+      "source_content_hash": "c446657b27197dbd953949586619a4ffa344f47f9fe75d70e7a77cf56b729f93",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您在Markdown文件中使用JSX、`import`或`export`等MDX功能時，建議統一採用`.mdx`副檔名。此舉語意更精確，並提升與外部工具（IDE、格式化工具、linter等）的相容性。未來Docusaurus版本中，`.md`文件將以標準[CommonMark](https://commonmark.org/)格式解析，不再支援這些功能。Docusaurus v3雖仍將`.md`文件編譯為MDX格式，但將開放[選擇啟用CommonMark](https://github.com/facebook/docusaurus/issues/3018)。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Preparing content for MDX v3",
+      "source_content_hash": "194997b15c65926389dc483a93e5e34b19371ba301e515d3d468638fa696f42f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 為MDX v3調整內容"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "MDX is a major dependency of Docusaurus responsible for compiling your `.md` and `.mdx` files to React components.",
+      "source_content_hash": "7202fc33645d19e3cd6ca0d592287fb0ee2c6dc2af0829fb8af3bdc6268b67bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX是Docusaurus的核心依賴，負責將`.md`與`.mdx`文件編譯為React組件。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "MDX v3 is much better, but also comes with changes that probably require you to refactor your content a bit. MDX v3 is stricter, and some components that compiled fine under v1 might now fail to compile under v3, most likely because of `{` and `<` characters.",
+      "source_content_hash": "f3a28dbcc277c3fdc10e4ef65d659c62107146ca642369a519052c8a2fe7ef56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX v3雖大幅改進，但伴隨的變更可能需要您調整現有內容。新版MDX規範更嚴格，某些在v1能正常編譯的組件，可能因`{`或`<`等字符導致v3編譯失敗。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Upgrading MDX comes with all the breaking changes documented on the [MDX v2](https://mdxjs.com/blog/v2/) and [MDX v3](https://mdxjs.com/blog/v3/) release blog posts. Most breaking changes come from MDX v2. The [MDX v2 migration guide](https://mdxjs.com/migrating/v2/) has a section on how to [update MDX files](https://mdxjs.com/migrating/v2/#update-mdx-files) that will be particularly relevant to us. Also make sure to read the [Troubleshooting MDX](https://mdxjs.com/docs/troubleshooting-mdx/) page that can help you interpret common MDX error messages.",
+      "source_content_hash": "6801765f698e4e4dcc91e99d2bc6d05cc5072cae0fdd24d03436bf0f755ddae8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級 MDX 會帶來 [MDX v2](https://mdxjs.com/blog/v2/) 和 [MDX v3](https://mdxjs.com/blog/v3/) 發布部落格文章中記錄的所有重大變更。大多數重大變更來自 MDX v2。[MDX v2 遷移指南](https://mdxjs.com/migrating/v2/)中有一個關於如何[更新 MDX 文件](https://mdxjs.com/migrating/v2/#update-mdx-files)的章節，這對我們特別相關。同時請務必閱讀[MDX 疑難排解](https://mdxjs.com/docs/troubleshooting-mdx/)頁面，該頁面可以幫助你解讀常見的 MDX 錯誤訊息。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Make sure to also read our updated [**MDX and React**](/docs/markdown-features/react) documentation page.",
+      "source_content_hash": "4a6d28dbecd7771a1a61e0cac59be1f97984a35fb43a1552cc53f74377a1b197",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請確保也閱讀我們更新的 [**MDX 與 React**](/docs/markdown-features/react) 文件頁面。"
+      }
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::tip[Ask for help]\n\nWe have a dedicated [MDX v3 - Upgrade Support](https://github.com/facebook/docusaurus/discussions/9053) discussion.\n\n:::",
+      "source_content_hash": "0f336990e18c44c21589bda55ec9d74019ab073623ad8501df0c4b00cfdba03c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[尋求幫助]\n\n我們有一個專門的 [MDX v3 - 升級支援](https://github.com/facebook/docusaurus/discussions/9053)討論區。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### Using the MDX playground",
+      "source_content_hash": "9d9cd3dc6b96b8b6863f75db694919588e627e6e63fe8626b929be5cdba67e33",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 MDX 遊樂場"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "The MDX playground is your new best friend. It permits to understand how your content is **compiled to React components**, and troubleshoot compilation or rendering issues in isolation.",
+      "source_content_hash": "e5db70e47da12e613c3ff1d2ffdaafe96742a448d29ff42b008c6369796389d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX 遊樂場是你新的最佳夥伴。它可以幫助你理解你的內容如何**被編譯為 React 元件**，並在隔離環境中排查編譯或渲染問題。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Each MDX version comes with its own playground:",
+      "source_content_hash": "576bbc96643d6ec9740f98e806df5b2197a0ac659a6c4d2418b1106b73a3f442",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個 MDX 版本都有其專屬的遊樂場："
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "- [MDX playground - current version](https://mdxjs.com/playground/)\n- [MDX playground - v1](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground/)",
+      "source_content_hash": "3c5eca5812991e7ba285ee971a271a8f230c5e3bc7ff1b64954815ed62f2b5d7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [MDX 遊樂場 - 當前版本](https://mdxjs.com/playground/)\n- [MDX 遊樂場 - v1](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground/)"
+      }
+    },
+    {
+      "segment_id": "e7961985",
+      "source_content": "<details>\n  <summary>Configuring the MDX playground options for Docusaurus</summary>\n\nTo obtain a compilation behavior similar to what Docusaurus v2 uses, please turn on these options on the [MDX playground](https://mdxjs.com/playground/):\n\n- Use `MDX`\n- Use `remark-gfm`\n- Use `remark-directive`\n\n![Screenshot of the MDX playground's options panel, with only the \"Use `MDX`\", \"Use `remark-gfm`\", and \"Use `remark-directive`\" options checked](./img/mdx2-playground-options.png)\n\n</details>",
+      "source_content_hash": "e8a487c19d10c91f9824eb259ed47655c3d64278a8cc8d4ac448984904430441",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e7961985"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "Using the two MDX playgrounds side-by-side, you will soon notice that some content is compiled differently or fails to compile in v3.",
+      "source_content_hash": "869fda57075017f5253420015c7b00cbe59b684b45572e4595e8373c87d1a16e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "並排使用兩個 MDX 遊樂場，你很快就會發現某些內容在 v3 中的編譯方式不同或無法編譯。"
+      }
+    },
+    {
+      "segment_id": "93d92b0f",
+      "source_content": ":::tip[Making your content future-proof]\n\nThe goal will be to refactor your problematic content so that it **works fine with both versions of MDX**. This way, when you upgrade to Docusaurus v3, this content will already work out-of-the-box.\n\n:::",
+      "source_content_hash": "32878288a3d7448cbad5e29e1a2317d6b7e65bd92fd598cbf3e87b451a877165",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[讓你的內容具備未來兼容性]\n\n目標是重構你的問題內容，使其**在兩個 MDX 版本中都能正常運作**。這樣，當你升級到 Docusaurus v3 時，這些內容已經可以開箱即用。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### Using the MDX checker CLI",
+      "source_content_hash": "373aa0af1dda0d91a27bad807bcc0100b4a795cc9d0c39e018257621d6c65e76",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 MDX 檢查器 CLI"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "We provide a [docusaurus-mdx-checker](https://github.com/slorber/docusaurus-mdx-checker) CLI that permits to easily spot problematic content. Run this command today on your Docusaurus v2 site to obtain a list of files that will fail to compile under MDX v3.",
+      "source_content_hash": "07c16da85949e21e49ef859d11886a3810e3d62bfaf5e3cc5021e7851ed1556e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供了一個 [docusaurus-mdx-checker](https://github.com/slorber/docusaurus-mdx-checker) CLI，可以輕鬆發現問題內容。今天就在你的 Docusaurus v2 網站上運行此命令，以獲取在 MDX v3 下無法編譯的文件列表。"
+      }
+    },
+    {
+      "segment_id": "dc73c0d2",
+      "source_content": "```bash\nnpx docusaurus-mdx-checker\n```",
+      "source_content_hash": "a8734f2a202101eb1144dea0e892a3e2151ae18f717a5b4606d7d5d586b6dae5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dc73c0d2"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "For each compilation issue, the CLI will log the file path and a line number to look at.",
+      "source_content_hash": "366a0f56bf49cdf3af341a5356c67160358058db5045d0d0bb39534903486547",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於每個編譯問題，CLI 會記錄文件路徑和需要查看的行號。"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "![Screenshot of the terminal showing an example MDX checker CLI output, with a few error messages](./img/mdx-checker-output.png)",
+      "source_content_hash": "9de9f777429666c0a597380d2715a7218909d888a48b4b39c72e62b9b7d96c72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![終端截圖顯示 MDX 檢查器 CLI 輸出的範例，包含幾個錯誤訊息](./img/mdx-checker-output.png)"
+      }
+    },
+    {
+      "segment_id": "72871d03",
+      "source_content": ":::tip\n\nUse this CLI to estimate of how much work will be required to make your content compatible with MDX v3.\n\n:::",
+      "source_content_hash": "389ca0c22ee3711f45eb81142872f716fcc42c8e97bee38055a84e3c9a37306c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用此 CLI 來評估讓你的內容兼容 MDX v3 需要多少工作量。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "15abb7bc",
+      "source_content": ":::warning\n\nThis CLI is a best effort, and will only report compilation errors.\n\nIt will not report subtle compilation changes that do not produce errors but can affect how your content is displayed. To catch these problems, we recommend using [visual regression tests](/blog/upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing).\n\n:::",
+      "source_content_hash": "a56d6cb193ac28be55a86fdcb74d091ce413bf6921ffcb1f46c45f86ec414d00",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此 CLI 是盡力而為，僅會報告編譯錯誤。\n\n它不會報告那些不產生錯誤但可能影響內容顯示的細微編譯變更。為了捕捉這些問題，我們建議使用[視覺回歸測試](/blog/upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cbd60296",
+      "source_content": "### Common MDX problems",
+      "source_content_hash": "2ee3e50afa758b88490e2b02963101c0352ab50fc8c6d1bcf4c51ed877612a22",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 常見的 MDX 問題"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "We upgraded a few Docusaurus sites to Docusaurus v3 and MDX v3:",
+      "source_content_hash": "cd9c04d34bc720b8f61e1c2a0b95a414eda6f40dcc9d9470c6dab41773449785",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們已將幾個 Docusaurus 網站升級到 Docusaurus v3 和 MDX v3："
+      }
+    },
+    {
+      "segment_id": "0aa939cf",
+      "source_content": "- [Docusaurus PR](https://github.com/facebook/docusaurus/pull/8288)\n- [React-Native PR](https://github.com/facebook/react-native-website/pull/3780)\n- [Jest PR](https://github.com/jestjs/jest/pull/14463)",
+      "source_content_hash": "60f8109b550b8290f08c8ce1ed67fab294778d4cc413de092ec3166e49e61d9a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Docusaurus PR](https://github.com/facebook/docusaurus/pull/8288)\n- [React-Native PR](https://github.com/facebook/react-native-website/pull/3780)\n- [Jest PR](https://github.com/jestjs/jest/pull/14463)"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "These upgrades permitted us to aggregate the most common content problems, and document how to best handle them.",
+      "source_content_hash": "ee7c9a115c4f95b4d8a2e2fc0fe920a72cc1686de8b8eb07a7b3ba698dff1280",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些升級讓我們能夠匯總最常見的內容問題，並記錄如何最好地處理它們。"
+      }
+    },
+    {
+      "segment_id": "47cd8dd6",
+      "source_content": "#### Bad usage of `{`",
+      "source_content_hash": "12de4f79d05af8a933fd5880580fd9267bd7bcd67c861eecb19a0d22491a8f49",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 錯誤使用 `{`"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "The `{` character is used for opening [JavaScript expressions](https://mdxjs.com/docs/what-is-mdx/#expressions). MDX will now fail if what you put inside `{expression}` is not a valid expression.",
+      "source_content_hash": "8082ce8f6277e23702452bd9e93d3864bf87a6e75ab2ecdd3d4f9a118be0b2e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`{` 字符用於開啟 [JavaScript 表達式](https://mdxjs.com/docs/what-is-mdx/#expressions)。MDX 現在會在你放入 `{expression}` 中的內容不是有效表達式時失敗。"
+      }
+    },
+    {
+      "segment_id": "601bdf38",
+      "source_content": "```md title=\"example.md\"\nThe object shape looks like {username: string, age: number}\n```",
+      "source_content_hash": "1522a321e21da9037ac4eda001be8db6f73aa688e7543abdb9b4bae3149550f6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_601bdf38"
+      }
+    },
+    {
+      "segment_id": "55b3acdc",
+      "source_content": ":::danger[Error message]\n\n> Could not parse expression with acorn: Unexpected content after expression\n\n:::",
+      "source_content_hash": "8c84b48c477df2429539ad3d47cd9774d3152e8453d17bdab448412e0b8de00e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[錯誤訊息]\n\n> 無法使用 acorn 解析表達式：表達式後出現意外內容\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8f285cf5",
+      "source_content": ":::tip[How to prepare]\n\nAvailable options to fix this error:\n\n- Use inline code: `{username: string, age: number}`\n- Use the HTML code: `&#123;`\n- Escape it: `\\{`\n\n:::",
+      "source_content_hash": "ecc97d8fcec6cf6b00cb9789196c69402a46698c50e0dda75382bd4f7ab62952",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n可用的修正選項：\n\n- 使用行內程式碼：`{username: string, age: number}`\n- 使用 HTML 代碼：`&#123;`\n- 進行跳脫：`\\{`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2f2d5f01",
+      "source_content": "#### Bad usage of `<`",
+      "source_content_hash": "a18e053e61b986db7ef60187a3f27548576cad5e8a72e666381d1dc8e4d3dd03",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 不當使用 `<`"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "The `<` character is used for opening [JSX tags](https://mdxjs.com/docs/what-is-mdx/#jsx). MDX will now fail if it thinks your JSX is invalid.",
+      "source_content_hash": "9d3ec7f368e25f340eadb4113653994b753087146339a5f608de3b32853ddf19",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`<` 字元用於開啟 [JSX 標籤](https://mdxjs.com/docs/what-is-mdx/#jsx)。若 MDX 認為你的 JSX 無效，現在會直接報錯。"
+      }
+    },
+    {
+      "segment_id": "5680b15c",
+      "source_content": "```md title=\"example.md\"\nUse Android version <5\n\nYou can use a generic type like Array<T>\n\nFollow the template \"Road to <YOUR_MINOR_VERSION>\"\n```",
+      "source_content_hash": "3b85ef5604e475c1927a0150d3b1978736d1833098b98caf1f21597b17e06928",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5680b15c"
+      }
+    },
+    {
+      "segment_id": "50ecdbd8",
+      "source_content": ":::danger[Error messages]\n\n> Unexpected character `5` (U+0035) before name, expected a character that can start a name, such as a letter, `$`, or `_`\n\n> Expected a closing tag for `<T>` (1:6-1:9) before the end of `paragraph` end-tag-mismatch mdast-util-mdx-jsx\n\n> Expected a closing tag for `<YOUR_MINOR_VERSION>` (134:19-134:39) before the end of `paragraph`\n\n:::",
+      "source_content_hash": "68b844532417507ce4cadd532b2b5033991ae4548b46949c1cfffc0f28f4dc85",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[錯誤訊息]\n\n> 在名稱前出現意外字元 `5` (U+0035)，預期應為可作為名稱開頭的字元，如字母、`$` 或 `_`\n\n> 在 `paragraph` 結束前預期應有 `<T>` (1:6-1:9) 的閉合標籤 (end-tag-mismatch mdast-util-mdx-jsx)\n\n> 在 `paragraph` 結束前預期應有 `<YOUR_MINOR_VERSION>` (134:19-134:39) 的閉合標籤\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f3377609",
+      "source_content": ":::tip[How to prepare]\n\nAvailable options to fix this error:\n\n- Use inline code: `Array<T>`\n- Use the HTML code: `&lt;` or `&#60;`\n- Escape it: `\\<` (unfortunately the `\\` will be displayed under MDX v1)\n\n:::",
+      "source_content_hash": "e9a085e171ecc7a2c44ff719875d49be16bbd1b2b73e7e2a763d98671f127cdd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n可用的修正選項：\n\n- 使用行內程式碼：`Array<T>`\n- 使用 HTML 代碼：`&lt;` 或 `&#60;`\n- 進行跳脫：`\\<` (但在 MDX v1 下會顯示 `\\` 字元)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e63d69ef",
+      "source_content": "#### Bad usage of GFM Autolink",
+      "source_content_hash": "efd94e8e00bf3f0bc6459fdb86c918875fc73615ffbcfdeb062d7b9b5f96761b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 不當使用 GFM 自動連結"
+      }
+    },
+    {
+      "segment_id": "0427bb2b",
+      "source_content": "Docusaurus supports [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/), but [autolink](https://github.github.com/gfm/#autolinks) using the `<link>` syntax is not supported anymore by MDX.",
+      "source_content_hash": "a534cd24f6c2a5cdc6cd8c5a2f73e514ecdf0b83ef8f5c65d149f5f62fe6f25f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 支援 [GitHub 風味 Markdown (GFM)](https://github.github.com/gfm/)，但 MDX 不再支援使用 `<link>` 語法的[自動連結](https://github.github.com/gfm/#autolinks)。"
+      }
+    },
+    {
+      "segment_id": "0152e600",
+      "source_content": "```md title=\"example.md\"\n<sebastien@thisweekinreact.com>\n\n<http://localhost:3000>\n```",
+      "source_content_hash": "1139885eb2dc48de38aa1a5d31f95848c7f2ef419964cbfbb5322661b1ee5298",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0152e600"
+      }
+    },
+    {
+      "segment_id": "f4b4753d",
+      "source_content": ":::danger[Error messages]\n\n> Unexpected character `@` (U+0040) in name, expected a name character such as letters, digits, `$`, or `_`; whitespace before attributes; or the end of the tag (note: to create a link in MDX, use `[text](url)`)\n\n> Unexpected character `/` (U+002F) before local name, expected a character that can start a name, such as a letter, `$`, or `_` (note: to create a link in MDX, use `[text](url)`)\n\n:::",
+      "source_content_hash": "82ec65bf6a27b9bd1d32fe011756564c5edfb5dbc5c2b6bc6bc8c9d966935a4c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[錯誤訊息]\n\n> 名稱中出現意外字元 `@` (U+0040)，預期應為名稱字元如字母、數字、`$` 或 `_`；屬性前的空白；或標籤結尾 (注意：在 MDX 中建立連結請使用 `[文字](網址)`)\n\n> 在本地名稱前出現意外字元 `/` (U+002F)，預期應為可作為名稱開頭的字元，如字母、`$` 或 `_` (注意：在 MDX 中建立連結請使用 `[文字](網址)`)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a53e2fe8",
+      "source_content": ":::tip[How to prepare]\n\nUse regular Markdown links, or remove the `<` and `>`. MDX and GFM are able to autolink literals already.\n\n{/* prettier-ignore */}\n```md title=\"example.md\"\nsebastien@thisweekinreact.com\n[sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com)\n\nhttp://localhost:3000\n[http://localhost:3000](http://localhost:3000)\n```\n\n:::",
+      "source_content_hash": "84dbe8e0a53537dbaaebac0f9cf455a7d29b4537e9306ba25a8a7d0879bee8dd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n使用標準 Markdown 連結，或移除 `<` 和 `>`。MDX 和 GFM 已能自動連結純文字。\n\n{/* prettier-ignore */}\n```md title=\"example.md\"\nsebastien@thisweekinreact.com\n[sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com)\n\nhttp://localhost:3000\n[http://localhost:3000](http://localhost:3000)\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3079a4d2",
+      "source_content": "#### Lower-case MDXComponent mapping",
+      "source_content_hash": "8480eefc23b6f1141e2bce5e6fc62ce2fd0a950d4f1a77963856cecf870015e8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 小寫的 MDXComponent 映射"
+      }
+    },
+    {
+      "segment_id": "e4945edb",
+      "source_content": "For users providing a [custom `MDXComponent`mapping](/docs/markdown-features/react#mdx-component-scope), components are now \"sandboxed\":",
+      "source_content_hash": "7361896e65e0f9c336c1380c5de3597050110847ca923820335bacce0d7366bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於提供[自訂 `MDXComponent` 映射](/docs/markdown-features/react#mdx-component-scope)的使用者，元件現在會被「沙盒化」："
+      }
+    },
+    {
+      "segment_id": "563ec494",
+      "source_content": "- a `MDXComponent` mapping for `h1` only gets used for `# hi` but not for `<h1>hi</h1>`\n- a **lower-cased** custom element name will not be substituted by its respective `MDXComponent` component anymore",
+      "source_content_hash": "d2d89e50ae9b9d836ca02404f79b4db03fbe84ff735b49cf2472ef5eb6c0da57",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `h1` 的 `MDXComponent` 映射僅適用於 `# 標題` 而不適用於 `<h1>標題</h1>`\n- **小寫**的自訂元件名稱將不再被其對應的 `MDXComponent` 元件替換"
+      }
+    },
+    {
+      "segment_id": "78bd731b",
+      "source_content": ":::danger[visual difference]\n\nYour [`MDXComponent` component mapping](/docs/markdown-features/react#mdx-component-scope) might not be applied as before, and your custom components might no longer be used.\n\n:::",
+      "source_content_hash": "1d23bb6c9e773164ff0d31ceeb482ab958dd25bc3ca75f526dad5a89a94f7f77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[視覺差異]\n\n你的 [`MDXComponent` 元件映射](/docs/markdown-features/react#mdx-component-scope)可能不會像以前那樣生效，且自訂元件可能不再被使用。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c4db320b",
+      "source_content": ":::tip[How to prepare]\n\nFor native Markdown elements, you can keep using **lower-case**: `p`, `h1`, `img`, `a`...\n\nFor any other element, **use upper-case names**.\n\n```diff title=\"src/theme/MDXComponents.js\"\n import MDXComponents from '@theme-original/MDXComponents';\n\n export default {\n   ...MDXComponents,\n   p: (props) => <p {...props} className=\"my-paragraph\"/>\n-  myElement: (props) => <div {...props} className=\"my-class\" />,\n+  MyElement: (props) => <div {...props} className=\"my-class\" />,\n };\n```\n\n:::",
+      "source_content_hash": "1efbf83ed34f629dd4f4a69fd925ea2cf834c2a5a7fb180a4b694e71af1ef990",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n對於原生 Markdown 元素，您可以繼續使用**小寫**：`p`、`h1`、`img`、`a`...\n\n對於其他任何元素，**請使用大寫名稱**。\n\n```diff title=\"src/theme/MDXComponents.js\"\n import MDXComponents from '@theme-original/MDXComponents';\n\n export default {\n   ...MDXComponents,\n   p: (props) => <p {...props} className=\"my-paragraph\"/>\n-  myElement: (props) => <div {...props} className=\"my-class\" />,\n+  MyElement: (props) => <div {...props} className=\"my-class\" />,\n };\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "89d451de",
+      "source_content": "#### Unintended extra paragraphs",
+      "source_content_hash": "df91b4e0a269c87ffa65a60c9643fa912c9e14271a1f8938998cfe0235e7becf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 非預期的額外段落"
+      }
+    },
+    {
+      "segment_id": "32fb7230",
+      "source_content": "In MDX, it is now possible to interleave JSX and Markdown more easily without requiring extra line breaks. Writing content on multiple lines can also produce new expected `<p>` tags.",
+      "source_content_hash": "e75aed0c1810a88a7b13cff16b0d84865fcaec5d5f8ddf0a088542ef565afd23",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 MDX 中，現在可以更輕鬆地交錯使用 JSX 和 Markdown，而無需額外的換行。在多行編寫內容也可能產生新的預期 `<p>` 標籤。"
+      }
+    },
+    {
+      "segment_id": "1aa0d7db",
+      "source_content": ":::danger[visual difference]\n\nSee how this content is rendered differently by MDX v1 and v3.\n\n```md title=\"example.md\"\n<div>Some **Markdown** content</div>\n<div>\n  Some **Markdown** content\n</div>\n```\n\n{/* prettier-ignore */}\n```html title=\"MDX v1 output\"\n<div>Some **Markdown** content</div>\n<div>Some **Markdown** content</div>\n```\n\n{/* prettier-ignore */}\n```html title=\"MDX v3 output\"\n<div>Some <strong>Markdown</strong> content</div>\n<div><p>Some <strong>Markdown</strong> content</p></div>\n```\n\n:::",
+      "source_content_hash": "06e6d00f25eceec36c98fad460fb7a2c558438fab3afc51926d975b36a6578da",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[視覺差異]\n\n請看這段內容在 MDX v1 和 v3 中的渲染差異。\n\n```md title=\"example.md\"\n<div>Some **Markdown** content</div>\n<div>\n  Some **Markdown** content\n</div>\n```\n\n{/* prettier-ignore */}\n```html title=\"MDX v1 輸出\"\n<div>Some **Markdown** content</div>\n<div>Some **Markdown** content</div>\n```\n\n{/* prettier-ignore */}\n```html title=\"MDX v3 輸出\"\n<div>Some <strong>Markdown</strong> content</div>\n<div><p>Some <strong>Markdown</strong> content</p></div>\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "afe40238",
+      "source_content": ":::tip[How to prepare]\n\nIf you don't want an extra `<p>` tag, refactor content on a case by case basis to use a single-line JSX tag.\n\n```diff\n <figure>\n   <img src=\"/img/myImage.png\" alt=\"My alt\" />\n-  <figcaption>\n-    My image caption\n-  </figcaption>\n+  <figcaption>My image caption</figcaption>\n </figure>\n```\n\nIf your content contains \"Markdown inlines\" (`**`, `*`, `_`, `[link](/path)`), you might not be able to refactor it ahead of time, and will have to do it alongside the Docusaurus v3 upgrade.\n\n:::",
+      "source_content_hash": "2983471a9ea87e8d5dba7da4c31a13faeca3ccf45118c279cba665c104177d89",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n如果您不希望有額外的 `<p>` 標籤，請根據具體情況重構內容，使用單行 JSX 標籤。\n\n```diff\n <figure>\n   <img src=\"/img/myImage.png\" alt=\"My alt\" />\n-  <figcaption>\n-    My image caption\n-  </figcaption>\n+  <figcaption>My image caption</figcaption>\n </figure>\n```\n\n如果您的內容包含「Markdown 內聯元素」（`**`、`*`、`_`、`[link](/path)`），您可能無法提前重構，需要在升級到 Docusaurus v3 時一併處理。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "793be93c",
+      "source_content": "#### Unintended usage of directives",
+      "source_content_hash": "fef87d1c059ecd79cc601f2051337f883515ad4774172d59d8546aa21fa46820",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 非預期的指令使用"
+      }
+    },
+    {
+      "segment_id": "4786f22b",
+      "source_content": "Docusaurus v3 now uses [Markdown Directives](https://talk.commonmark.org/t/generic-directives-plugins-syntax/444) (implemented with [remark-directive](https://github.com/remarkjs/remark-directive)) as a generic way to provide support for admonitions, and other upcoming Docusaurus features.",
+      "source_content_hash": "1ea0c6adb3efd268362d5446b37b997ca7e9fc5428c66ebc6d78bb928b78650c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3 現在使用 [Markdown 指令](https://talk.commonmark.org/t/generic-directives-plugins-syntax/444)（通過 [remark-directive](https://github.com/remarkjs/remark-directive) 實現）作為一種通用方式來支持 admonitions 和其他即將推出的 Docusaurus 功能。"
+      }
+    },
+    {
+      "segment_id": "999199d1",
+      "source_content": "```md title=\"example.md\"\nThis is a :textDirective\n\n::leafDirective\n\n:::containerDirective\n\nContainer directive content\n\n:::\n```",
+      "source_content_hash": "6b4730b95700082807fd981ed6445c5c6ff03b76c0111243c63cbf880935d905",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_999199d1"
+      }
+    },
+    {
+      "segment_id": "94e6f51a",
+      "source_content": ":::danger[Visual change]\n\nDirectives are parsed with the purpose of being handled by other Remark plugins. Unhandled directives will be ignored, and won't be rendered back in their original form.\n\n```md title=\"example.md\"\nThe AWS re:Invent conf is great\n```\n\nDue to `:Invent` being parsed as a text directive, this will now be rendered as:\n\n```\nThe AWS re\nconf is great\n```\n\n:::",
+      "source_content_hash": "a0ba29cfc2b5bb812be85365a3501f2c0b571f2691b727943ffb480cdffbe741",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[視覺變化]\n\n指令會被解析並由其他 Remark 插件處理。未處理的指令將被忽略，並且不會以原始形式渲染回來。\n\n```md title=\"example.md\"\nThe AWS re:Invent conf is great\n```\n\n由於 `:Invent` 被解析為文本指令，現在將渲染為：\n\n```\nThe AWS re\nconf is great\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a19f6dfd",
+      "source_content": ":::tip[How to prepare]\n\n- Use the HTML code: `&#58;`\n- Add a space after `:` (if it makes sense): `: text`\n- Escape it: `\\:` (unfortunately the `\\` will be displayed under MDX v1)\n\n:::",
+      "source_content_hash": "d01023f0a7d604727df33b5f8062b5673e9d2e529b31e6cc06e1c60f5b91c0db",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n- 使用 HTML 代碼：`&#58;`\n- 在 `:` 後添加空格（如果合理）：`: text`\n- 轉義它：`\\:`（不幸的是，在 MDX v1 下會顯示 `\\`）\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7ee8342f",
+      "source_content": "#### Unsupported indented code blocks",
+      "source_content_hash": "4adc8a7d6da40e24174dd2a3a6fe469335f0db311cf1a7d40a7df321ae452239",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 不支援的縮進代碼塊"
+      }
+    },
+    {
+      "segment_id": "6fecc583",
+      "source_content": "MDX does not transform indented text as code blocks anymore.",
+      "source_content_hash": "73cd611a3a1da87f3b9d196fe7261aa87ce690e377ff1ba16f8b5cd37fa6cefc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX 不再將縮進文本轉換為代碼塊。"
+      }
+    },
+    {
+      "segment_id": "f4a7be08",
+      "source_content": "```md title=\"example.md\"\n    console.log(\"hello\");\n```",
+      "source_content_hash": "3caff5ef6bfe3360c9ab5db4caf7451b127da3cd7f1feb5161cad38a9cb4eda1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f4a7be08"
+      }
+    },
+    {
+      "segment_id": "e24549d0",
+      "source_content": ":::danger[Visual change]\n\nThe upgrade does not generally produce new MDX compilation errors, but can lead to content being rendered in an unexpected way because there isn't a code block anymore.\n\n:::",
+      "source_content_hash": "e6a4a4f6774f2dc855157b6949486114953a90f49d0c56064eb0fa20f2c5de8b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[視覺變化]\n\n升級通常不會產生新的 MDX 編譯錯誤，但可能導致內容以非預期的方式渲染，因為不再有代碼塊。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8f4086cf",
+      "source_content": ":::tip[How to prepare]\n\nUse the regular code block syntax instead of indentation:\n\n````md title=\"example.md\"\n```js\nconsole.log('hello');\n```\n````\n\n:::",
+      "source_content_hash": "600fe0e18d15c3f50afbbd856a96510584c20e79b672568e348b7ab8a38b96b1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n使用常規的代碼塊語法代替縮進：\n\n````md title=\"example.md\"\n```js\nconsole.log('hello');\n```\n````\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ccc4a3de",
+      "source_content": "### MDX plugins",
+      "source_content_hash": "1fe71232ec7dfd2ca30e64e0e554eb1126ad10733ffc849d0f06a35ef3a93c3a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### MDX 插件"
+      }
+    },
+    {
+      "segment_id": "56f32447",
+      "source_content": "All the official packages (Unified, Remark, Rehype...) in the MDX ecosystem are now [**ES Modules only**](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) and do not support [CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules) anymore.",
+      "source_content_hash": "3db6e36af926f8f29cc1e7e0a7b149fc59166e6012d3035a3cc68b5f6310d992",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX生態系統中的所有官方套件（Unified、Remark、Rehype等）現在都[**僅支援ES模組**](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)，不再支援[CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules)。"
+      }
+    },
+    {
+      "segment_id": "b41b4d77",
+      "source_content": "In practice this means that you can't do `require(\"remark-plugin\")` anymore.",
+      "source_content_hash": "5736b382ba83209504549065d24b75cb9c4485b7d5c13bea5394254738beb4f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這實際上意味著你不能再使用`require(\"remark-plugin\")`了。"
+      }
+    },
+    {
+      "segment_id": "324aaccc",
+      "source_content": ":::tip[How to prepare]\n\nDocusaurus v3 now supports [**ES Modules**](https://flaviocopes.com/es-modules/) configuration files. We recommend that you migrate your config file to ES module, that enables you to import the Remark plugins easily:\n\n```js title=\"docusaurus.config.js\"\nimport remarkPlugin from 'remark-plugin';\n\nexport default {\n  title: 'Docusaurus',\n  /* site config using remark plugins here */\n};\n```\n\nIf you want to keep using CommonJS modules, you can use dynamic imports as a workaround that enables you to import ES modules inside a CommonJS module. Fortunately, the [Docusaurus config supports the usage of an async function](/docs/configuration#syntax-to-declare-docusaurus-config) to let you do so.\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = async function () {\n  const myPlugin = (await import('remark-plugin')).default;\n  return {\n    // site config...\n  };\n};\n```\n\n:::",
+      "source_content_hash": "fa67f43a04d2e1c7a57622d49f353a760931438db1cd19871847f5868284b97a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\nDocusaurus v3現在支援[**ES模組**](https://flaviocopes.com/es-modules/)配置檔案。我們建議你將配置檔案遷移到ES模組，這樣可以輕鬆導入Remark外掛：\n\n```js title=\"docusaurus.config.js\"\nimport remarkPlugin from 'remark-plugin';\n\nexport default {\n  title: 'Docusaurus',\n  /* 這裡使用Remark外掛的網站配置 */\n};\n```\n\n如果你想繼續使用CommonJS模組，可以使用動態導入作為變通方法，這樣可以在CommonJS模組中導入ES模組。幸運的是，[Docusaurus配置支援使用非同步函式](/docs/configuration#syntax-to-declare-docusaurus-config)來實現這一點。\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = async function () {\n  const myPlugin = (await import('remark-plugin')).default;\n  return {\n    // 網站配置...\n  };\n};\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2d6defc5",
+      "source_content": ":::info[For plugin authors]\n\nIf you created custom Remark or Rehype plugins, you may need to refactor those, or eventually rewrite them completely, due to how the new AST is structured. We have created a [dedicated support discussion](https://github.com/facebook/docusaurus/discussions/9337) to help plugin authors upgrade their code.\n\n:::",
+      "source_content_hash": "ad323ca73bdc51c80dbed8e1abbe432ab5ce84dfeab4121abca44ad275ec64fa",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[給外掛開發者]\n\n如果你創建了自定義的Remark或Rehype外掛，由於新的AST結構，你可能需要重構這些外掛，甚至完全重寫它們。我們創建了一個[專用支援討論](https://github.com/facebook/docusaurus/discussions/9337)來幫助外掛開發者升級他們的代碼。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fa8c4ad8",
+      "source_content": "## Other breaking changes",
+      "source_content_hash": "c3ee12b1f7f688c7b7359a35d4aba682d2cd93c289905cbcea202bf876e597f7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他重大變更"
+      }
+    },
+    {
+      "segment_id": "b0e8431f",
+      "source_content": "Apart from MDX, there are other breaking changes that you can already prepare your site for, notably major version upgrades of important dependencies.",
+      "source_content_hash": "80e513d1c68d9680257f9e037b05aa344a170d5ca18b3f354152415d11450d8c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "除了MDX之外，還有其他重大變更，你可以提前為你的網站做好準備，特別是重要依賴項的主要版本升級。"
+      }
+    },
+    {
+      "segment_id": "4f8527a0",
+      "source_content": "### Node.js 18.0",
+      "source_content_hash": "3f30b8c48d40eb8d3c9ff5e3080bc7e92cbc708445c35d93ea27424806e44f48",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Node.js 18.0"
+      }
+    },
+    {
+      "segment_id": "1b707117",
+      "source_content": "Node.js 16 [reached End-of-Life](https://nodejs.org/en/blog/announcements/nodejs16-eol), and Docusaurus v3 now requires **Node.js >= 18.0**.",
+      "source_content_hash": "4349b31725173c925d185b60f37b467bde4ca59498c99be38e3d6b2d09eba6ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Node.js 16[已達到生命週期終止](https://nodejs.org/en/blog/announcements/nodejs16-eol)，Docusaurus v3現在需要**Node.js >= 18.0**。"
+      }
+    },
+    {
+      "segment_id": "52229983",
+      "source_content": ":::tip[How to prepare]\n\nUpgrade your Docusaurus v2 site to Node.js 18 before upgrading to Docusaurus v3.\n\n:::",
+      "source_content_hash": "49c467b9a3edd7a6b49aab3f551fd62160aab2747eeaa687d678f0d8e2dca46e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n在升級到Docusaurus v3之前，先將你的Docusaurus v2網站升級到Node.js 18。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "548b3ae8",
+      "source_content": "### React 18.0",
+      "source_content_hash": "af3659b84ff89ff0c5b8dac0179d774abf3f32d6350d3cf5652868224cd2eece",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### React 18.0"
+      }
+    },
+    {
+      "segment_id": "9f46c1b6",
+      "source_content": "Docusaurus v3 now requires **React >= 18.0**.",
+      "source_content_hash": "e30762092c1938ed86ed980e8b17b42fd3905dd39bdc8dd3c7d5d222c5ff666e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3現在需要**React >= 18.0**。"
+      }
+    },
+    {
+      "segment_id": "ca714988",
+      "source_content": "React 18 comes with its own breaking changes that should be relatively easy to handle, depending on the amount of custom React code you created for your site.",
+      "source_content_hash": "8571a53d2efd4d4b9bec04d0739fe7e71a278413980715aab532190c804b79b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "React 18帶來了自己的重大變更，這些變更應該相對容易處理，具體取決於你為網站創建的自定義React代碼量。"
+      }
+    },
+    {
+      "segment_id": "2fc2d2cf",
+      "source_content": "Simple Docusaurus sites that only use our official theme code without swizzling do not have anything to do.",
+      "source_content_hash": "474f89a2384baa283433cc54751ab94558f3f0047f8ad1ecdeb89edef3cb44da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "僅使用我們官方主題代碼且未進行swizzling的簡單Docusaurus網站無需做任何更改。"
+      }
+    },
+    {
+      "segment_id": "733c9dfa",
+      "source_content": ":::tip[How to prepare]\n\nRead the official [React v18.0](https://react.dev/blog/2022/03/29/react-v18) and [How to Upgrade to React 18](https://react.dev/blog/2022/03/08/react-18-upgrade-guide), and look at your first-party React code to figure out which components might be affected this React 18 upgrade.\n\nWe recommend to particularly look for:\n\n- Automatic batching for stateful components\n- New React hydration errors reported to the console\n\n:::",
+      "source_content_hash": "0df1f3375873a927a4cd4285b20f04dac0d89b59bc308128243e2479744b3228",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n閱讀官方的[React v18.0](https://react.dev/blog/2022/03/29/react-v18)和[如何升級到React 18](https://react.dev/blog/2022/03/08/react-18-upgrade-guide)，並查看你的第一方React代碼，找出哪些組件可能受到React 18升級的影響。\n\n我們建議特別關注：\n\n- 有狀態組件的自動批處理\n- 控制台報告的新React水合錯誤\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b6ec34ca",
+      "source_content": "### TypeScript 5.0",
+      "source_content_hash": "b3475b8c8d5dadb1f1535e66a31a50cec5f38691d58e95e2d8f4eefbe268731e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### TypeScript 5.0"
+      }
+    },
+    {
+      "segment_id": "0beac34c",
+      "source_content": "Docusaurus v3 now requires **TypeScript >= 5.0**.",
+      "source_content_hash": "f714a3156723da291771c677e46b86f0d50642476b6ccdcd52061b1e514386e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3現在需要**TypeScript >= 5.0**。"
+      }
+    },
+    {
+      "segment_id": "3afbb94b",
+      "source_content": ":::tip[How to prepare]\n\nUpgrade your Docusaurus v2 site to TypeScript 5 before upgrading to Docusaurus v3.\n\n:::",
+      "source_content_hash": "9d39c413defcb2d28b83ee54e5c0a80bd8f7dc9ee92fabe711aec8f8985f62c6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n在升級到Docusaurus v3之前，先將你的Docusaurus v2網站升級到TypeScript 5。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "db274ff9",
+      "source_content": "### TypeScript base config",
+      "source_content_hash": "034c7ee76a0da205ef93f3ae0b2bb392f09d9087cd315347ad1dc802303616c8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### TypeScript基礎配置"
+      }
+    },
+    {
+      "segment_id": "bfa178cb",
+      "source_content": "The official Docusaurus TypeScript config has been re-internalized from the external package [`@tsconfig/docusaurus`](https://www.npmjs.com/package/@tsconfig/docusaurus) to our new monorepo package [`@docusaurus/tsconfig`](https://www.npmjs.com/package/@docusaurus/tsconfig).",
+      "source_content_hash": "e43c5d9b5d2329974c8d0dafb3c980d7560f7fa44074fd775700761e029d3263",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "官方的Docusaurus TypeScript配置已從外部套件[`@tsconfig/docusaurus`](https://www.npmjs.com/package/@tsconfig/docusaurus)重新內部化到我們的新monorepo套件[`@docusaurus/tsconfig`](https://www.npmjs.com/package/@docusaurus/tsconfig)。"
+      }
+    },
+    {
+      "segment_id": "ec3c0760",
+      "source_content": "This new package is versioned alongside all the other Docusaurus core packages, and will be used to ensure TypeScript retro-compatibility and breaking changes on major version upgrades.",
+      "source_content_hash": "f749e56750fc3b8af14dc247fe322eaa477c695d96c7841ab6662c60a72abcb7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這個新套件與所有其他 Docusaurus 核心套件版本同步，將用於確保 TypeScript 的向後兼容性以及在主要版本升級時的破壞性變更。"
+      }
+    },
+    {
+      "segment_id": "c5d38641",
+      "source_content": ":::tip[How to prepare]\n\nThe new Docusaurus v3 TypeScript config is sensibly the same as the former Docusaurus v2 TypeScript config. If you upgraded to TypeScript 5, using the Docusaurus v3 config on a v2 site is already possible:\n\n```diff title=\"package.json\"\n {\n   \"devDependencies\": {\n-    \"@tsconfig/docusaurus\": \"^1.0.7\",\n+    \"@docusaurus/tsconfig\": \"^3.0.0-beta.0\",\n   }\n }\n```\n\n```diff title=\"tsconfig.json\"\n {\n-  \"extends\": \"@tsconfig/docusaurus/tsconfig.json\",\n+  \"extends\": \"@docusaurus/tsconfig\",\n   \"compilerOptions\": {\n     \"baseUrl\": \".\"\n   }\n }\n```\n\n:::",
+      "source_content_hash": "a2ee34e913343cd857586b9fd8b7ea9acc7672fb12f0f2284e278cb312bfc9ce",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n新的 Docusaurus v3 TypeScript 配置基本上與之前的 Docusaurus v2 TypeScript 配置相同。如果您已升級至 TypeScript 5，在 v2 網站上使用 Docusaurus v3 配置已經是可行的：\n\n```diff title=\"package.json\"\n {\n   \"devDependencies\": {\n-    \"@tsconfig/docusaurus\": \"^1.0.7\",\n+    \"@docusaurus/tsconfig\": \"^3.0.0-beta.0\",\n   }\n }\n```\n\n```diff title=\"tsconfig.json\"\n {\n-  \"extends\": \"@tsconfig/docusaurus/tsconfig.json\",\n+  \"extends\": \"@docusaurus/tsconfig\",\n   \"compilerOptions\": {\n     \"baseUrl\": \".\"\n   }\n }\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "841204f6",
+      "source_content": "### Admonition warning",
+      "source_content_hash": "ae097a3aee7317b9ed407ecbaae437260885fb22efb0c9653717402c9ea20a16",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 警告提示框"
+      }
+    },
+    {
+      "segment_id": "ae95f665",
+      "source_content": "For historical reasons, we support an undocumented admonition `:::warning` that renders with a red color.",
+      "source_content_hash": "e55c0e98b8ce059c8e0f3d145976d1bd9ab8d68aa562c6040da173f487ab07ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於歷史原因，我們支援一個未公開的警告提示框 `:::warning`，其渲染顏色為紅色。"
+      }
+    },
+    {
+      "segment_id": "0a67cef8",
+      "source_content": ":::danger[Warning]\n\nThis is a Docusaurus v2 `:::warning` admonition.\n\n:::",
+      "source_content_hash": "06b82804d7c6903487778eb803945360867017596567770d0922a66370b05b88",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[警告]\n\n這是 Docusaurus v2 的 `:::warning` 提示框。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "4ddcc352",
+      "source_content": "However, the color and icon is historically wrong. Docusaurus v3 re-introduces `:::warning` admonition officially, documents it, and fix the color and icon.",
+      "source_content_hash": "af1215e694605fa203f239c052797b46dc3df300cca053942d62597393bd3b68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然而，其顏色和圖標在歷史上是不正確的。Docusaurus v3 正式重新引入 `:::warning` 提示框，將其文件化，並修正了顏色和圖標。"
+      }
+    },
+    {
+      "segment_id": "e97b9801",
+      "source_content": ":::warning\n\nThis is a Docusaurus v3 `:::warning` admonition.\n\n:::",
+      "source_content_hash": "d9ffa5505983b412f15129c5f1788bf442da94bb9b3930a5f45ce3b73139e3d5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n這是 Docusaurus v3 的 `:::warning` 提示框。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "69356572",
+      "source_content": ":::tip[How to prepare]\n\nIf you previously used the undocumented `:::warning` admonition, make sure to verify for each usage if yellow is now an appropriate color. If you want to keep the red color, use `:::danger` instead.\n\nDocusaurus v3 also [deprecated the `:::caution`](https://github.com/facebook/docusaurus/pull/9308) admonition. Please refactor `:::caution` (yellow) to either `:::warning` (yellow) or `:::danger` (red).\n\n:::",
+      "source_content_hash": "64f98dad20943871886b05b6253ac45f922be0348d9b101541a69ed648ddf291",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n如果您之前使用了未公開的 `:::warning` 提示框，請確保檢查每個使用案例，確認黃色現在是否為合適的顏色。如果您希望保持紅色，請改用 `:::danger`。\n\nDocusaurus v3 也[棄用了 `:::caution`](https://github.com/facebook/docusaurus/pull/9308) 提示框。請將 `:::caution`（黃色）重構為 `:::warning`（黃色）或 `:::danger`（紅色）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e6791c87",
+      "source_content": "### Versioned sidebars",
+      "source_content_hash": "3c9615c32cb8127bcab1fe0fb3874297a739d4a6edb2f8a80a1f00126ea71936",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 版本化側邊欄"
+      }
+    },
+    {
+      "segment_id": "698d0e82",
+      "source_content": "This breaking change will only affect **Docusaurus v2 early adopters** who versioned their docs before `v2.0.0-beta.10` (December 2021).",
+      "source_content_hash": "a08b413d25ebb62161fae9732ce868b56624ff413aae84aa342d2671e6bb7b56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此破壞性變更僅影響 **Docusaurus v2 早期採用者**，即在 `v2.0.0-beta.10`（2021 年 12 月）之前對其文件進行版本控制的用戶。"
+      }
+    },
+    {
+      "segment_id": "fa770099",
+      "source_content": "When creating version `v1.0.0`, the sidebar file contained a prefix `version-v1.0.0/` that [Docusaurus v3 does not support anymore](https://github.com/facebook/docusaurus/pull/9310).",
+      "source_content_hash": "3479e25bb46f37e88809cee0ed6644ba1e6140d1ae9992278e079122d5881c9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當創建版本 `v1.0.0` 時，側邊欄文件包含前綴 `version-v1.0.0/`，而 [Docusaurus v3 不再支援此格式](https://github.com/facebook/docusaurus/pull/9310)。"
+      }
+    },
+    {
+      "segment_id": "64e83027",
+      "source_content": "```json title=\"versioned_sidebars/version-v1.0.0-sidebars.json\"\n{\n  \"version-v1.0.0/docs\": [\n    \"version-v1.0.0/introduction\",\n    \"version-v1.0.0/prerequisites\"\n  ]\n}\n```",
+      "source_content_hash": "440d9db9e29a5157127648c366d222174c4c136975263e20edc76cbf97f4651f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_64e83027"
+      }
+    },
+    {
+      "segment_id": "7016ea4c",
+      "source_content": ":::tip[How to prepare]\n\nYour Docusaurus v2 site is able to handle the 2 sidebar formats similarly.\n\nYou can remove the useless versioned prefix from your versioned sidebars.\n\n```json title=\"versioned_sidebars/version-v1.0.0-sidebars.json\"\n{\n  \"docs\": [\"introduction\", \"prerequisites\"]\n}\n```\n\n:::",
+      "source_content_hash": "b9843a5f8345b81e5c83960bc0972fe874236a4310682efbf88d2679f8e5e7a7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何準備]\n\n您的 Docusaurus v2 網站能夠以類似方式處理這兩種側邊欄格式。\n\n您可以從版本化側邊欄中移除無用的版本前綴。\n\n```json title=\"versioned_sidebars/version-v1.0.0-sidebars.json\"\n{\n  \"docs\": [\"introduction\", \"prerequisites\"]\n}\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "76d60c63",
+      "source_content": "## Try Docusaurus v3 today {#try-docusaurus-v3-today}",
+      "source_content_hash": "98a272fe704a3d22dfa4d49220c939e477c15b55a7ef67356ed8170021c08ff0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 立即試用 Docusaurus v3 {#try-docusaurus-v3-today}"
+      }
+    },
+    {
+      "segment_id": "4fa5605e",
+      "source_content": "Docusaurus v3 is now [in beta](https://github.com/facebook/docusaurus/discussions/9312), and already used in production by [React-Native](https://reactnative.dev), [Jest](https://jestjs.io), and [our own website](https://docusaurus.io/).",
+      "source_content_hash": "d569dbfd0f7cedf428fc3140e909afe39b13b17c83b2b612c869347784823363",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3 目前處於 [beta 階段](https://github.com/facebook/docusaurus/discussions/9312)，並已被 [React-Native](https://reactnative.dev)、[Jest](https://jestjs.io) 以及[我們的官方網站](https://docusaurus.io/) 用於生產環境。"
+      }
+    },
+    {
+      "segment_id": "8856ba44",
+      "source_content": "We think this new Docusaurus version is **robust and ready to be deployed in production**. It should be released officially soon, after receiving a positive feedback from early adopters of our community.",
+      "source_content_hash": "4a0bb024f742f49224cd57886fa12ac2b54032d2752f7c6e117bf02b614344a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們認為這個新版本的 Docusaurus **穩定且已準備好部署至生產環境**。在收到我們社群早期採用者的正面回饋後，它將很快正式發布。"
+      }
+    },
+    {
+      "segment_id": "6f54fd35",
+      "source_content": "We would really appreciate it if you try upgrading and report issues on the [3.0.0-beta.0 release discussion thread](https://github.com/facebook/docusaurus/discussions/9312).",
+      "source_content_hash": "3db1400d743d9baa86c04ec7d802121034489af7ec5333430b5ccbfa0589de92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您能嘗試升級並在 [3.0.0-beta.0 發布討論串](https://github.com/facebook/docusaurus/discussions/9312) 中回報問題，我們將非常感激。"
+      }
+    },
+    {
+      "segment_id": "624f0d89",
+      "source_content": "For most sites, the upgrade should be easy. If you prepared your site ahead of time as documented here, upgrading the following dependencies should be enough:",
+      "source_content_hash": "2d173223e6418ac4d348c85e43d6b0ce244672ff451a4d32f8a7dd5ff3ab760b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於大多數網站來說，升級應該很簡單。如果您按照本文檔提前準備好您的網站，升級以下依賴項應該就足夠了："
+      }
+    },
+    {
+      "segment_id": "7e0e84c0",
+      "source_content": "```diff title=\"package.json\"\n {\n   \"dependencies\": {\n-    \"@docusaurus/core\": \"2.4.3\",\n-    \"@docusaurus/preset-classic\": \"2.4.3\",\n-    \"@mdx-js/react\": \"^1.6.22\",\n+    \"@docusaurus/core\": \"3.0.0-beta.0\",\n+    \"@docusaurus/preset-classic\": \"3.0.0-beta.0\",\n+    \"@mdx-js/react\": \"^3.0.0\",\n     \"clsx\": \"^2.0.0\",\n     \"prism-react-renderer\": \"^1.3.5\",\n-    \"react\": \"^17.0.2\",\n-    \"react-dom\": \"^17.0.2\"\n+    \"react\": \"^18.2.0\",\n+    \"react-dom\": \"^18.2.0\"\n   },\n   \"devDependencies\": {\n-    \"@docusaurus/module-type-aliases\": \"2.4.3\"\n+    \"@docusaurus/module-type-aliases\": \"3.0.0-beta.0\"\n   }\n }\n```",
+      "source_content_hash": "1225d21caaaedb79e6db177929ab5e895336f62ff5634b303d8d28f901b37e36",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7e0e84c0"
+      }
+    },
+    {
+      "segment_id": "c7ed6f17",
+      "source_content": "## Ask for help",
+      "source_content_hash": "847b47bc16dd3f738468fa0a782bf6d2ca1dd551be5c3dd67ce269ddc660525b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 尋求協助"
+      }
+    },
+    {
+      "segment_id": "3d0a35df",
+      "source_content": "We will be there to help you upgrade through the following support channels:",
+      "source_content_hash": "ab19d1a395f0fe03ca91f71c47fa9228d6eadd80b4054d15c61d064de5e9edc2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將透過以下支援管道協助您完成升級："
+      }
+    },
+    {
+      "segment_id": "1d2dff65",
+      "source_content": "- [Docusaurus v3 - Upgrade Support](https://github.com/facebook/docusaurus/discussions/9336)\n- [Docusaurus v3 - Discord channel #migration-v2-to-v3](https://discord.com/channels/398180168688074762/1154771869094912090)\n- [MDX v3 - Upgrade Support](https://github.com/facebook/docusaurus/discussions/9053)\n- [MDX v3 - Remark/Rehype Plugins Support](https://github.com/facebook/docusaurus/discussions/9337)\n- [MDX v3 - Discord channel #migration-mdx-v3](https://discord.com/channels/398180168688074762/1116724556976111616)",
+      "source_content_hash": "bce88afeae8e66e952f3efff31ebb2748c9090a8381b2fcc96907af6160a668d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Docusaurus v3 - 升級支援討論區](https://github.com/facebook/docusaurus/discussions/9336)\n- [Docusaurus v3 - Discord #migration-v2-to-v3 頻道](https://discord.com/channels/398180168688074762/1154771869094912090)\n- [MDX v3 - 升級支援討論區](https://github.com/facebook/docusaurus/discussions/9053)\n- [MDX v3 - Remark/Rehype 插件支援](https://github.com/facebook/docusaurus/discussions/9337)\n- [MDX v3 - Discord #migration-mdx-v3 頻道](https://discord.com/channels/398180168688074762/1116724556976111616)"
+      }
+    },
+    {
+      "segment_id": "14d50a1d",
+      "source_content": "Alternatively, you can look for a paid [Docusaurus Service Provider](https://github.com/facebook/docusaurus/discussions/9281) to execute this upgrade for you. If your site is open source, you can also ask our community for [free, benevolent help](https://github.com/facebook/docusaurus/discussions/9283).",
+      "source_content_hash": "09dddcac05f47873aed6290fdfde700e6781e8ff2249d1c40f2f40ad67957bee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "或者，您可以尋找付費的[Docusaurus服務供應商](https://github.com/facebook/docusaurus/discussions/9281)代為執行升級。若您的專案是開源的，也可以向社群尋求[免費的善意協助](https://github.com/facebook/docusaurus/discussions/9283)。"
+      }
+    },
+    {
+      "segment_id": "0621a2c6",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 結論"
+      }
+    },
+    {
+      "segment_id": "36a7c2db",
+      "source_content": "Docusaurus v3 is ready to try, and will be released soon. This article already gives you a good idea of all the major changes required to upgrade.",
+      "source_content_hash": "37b76ac239224995116b943f92b88bd75b0bfdd2e75da0aba88648713882d67f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3 已進入可試用階段並即將正式發布。本文已詳盡說明升級所需的主要變更事項。"
+      }
+    },
+    {
+      "segment_id": "eb2c43fb",
+      "source_content": "The initial 3.0 release is focusing on dependency and infrastructure upgrades that will permit us to implement new exciting features. It also comes with a few useful features that we will detail in the final release notes.",
+      "source_content_hash": "dbfce43255db2c8e98f10266f959d04a6c165e7a58b8574abe06bc9995065e3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "3.0 初始版本聚焦於依賴項與基礎架構升級，這些改進將為後續新功能鋪路。同時也包含若干實用特性，我們會在最終版發布說明中詳細介紹。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2023/09-29-preparing-your-site-for-docusaurus-v3/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.014097+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "bd830e35b2b2d08dabe61648d1082edf93f98f3382ad610ac1b2e513f8f7e78e"
+  }
+}

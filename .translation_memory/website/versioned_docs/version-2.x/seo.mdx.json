@@ -1,0 +1,360 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/seo.mdx",
+  "source_file_content_hash": "e6287c76cbd8cad8fa74241eb6c826d44ed4b95ec41b7f5a66747f67a05930ce",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: How to make your Docusaurus site maximally search-engine-friendly.\nsidebar_label: SEO\nkeywords:\n  - seo\n  - positioning\n---",
+      "source_content_hash": "9420590a1ba55f6c3b87b5c3e7057e279355600ecb6779fb38b649589bdcb5fb",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "# Search engine optimization (SEO)",
+      "source_content_hash": "09d62bb0b425f57c80a9bd8e25274b57af3c3b38324149a6556d8fdef4881469",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b608d7f0",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Docusaurus supports search engine optimization in a variety of ways.",
+      "source_content_hash": "e4ac7c39daaf7527404ce2efb2204e3cb424d7fd2754c082ad1d07d116b3b01d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "## Global metadata {#global-metadata}",
+      "source_content_hash": "b42cf5e10620b20cc28e1212ce0acdbf990c49276c6c59f92c5d0e37bcb6e0f4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Provide global meta attributes for the entire site through the [site configuration](./configuration.mdx#site-metadata). The metadata will all be rendered in the HTML `<head>` using the key-value pairs as the prop name and value.",
+      "source_content_hash": "fec89fb99714cee5246ebc4043d5563ea6039f1cbed4efde730073138b46df8f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "940e34e3",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  themeConfig: {\n    metadata: [{name: 'keywords', content: 'cooking, blog'}],\n    // This would become <meta name=\"keywords\" content=\"cooking, blog\"/> in the generated HTML\n  },\n};\n```",
+      "source_content_hash": "af2f6f2afcd936ca053d702283d57cde371d9641d2d960497e2806d73500da89",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Docusaurus adds some metadata out-of-the-box. For example, if you have configured [i18n](./i18n/i18n-introduction.mdx), you will get a [`hreflang`](https://developers.google.com/search/docs/advanced/crawling/localized-versions) alternate link.",
+      "source_content_hash": "09684cdfab01e65caf3bec3c86fee1a3e59225db74900997640f4e9154a3adff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "To read more about types of meta tags, visit [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta).",
+      "source_content_hash": "98e871e888c5e95ca3a0597201ed8a4d6c66e538435e0927ed96ba780b55511b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Single page metadata {#single-page-metadata}",
+      "source_content_hash": "f8dc09b5e847d5900db84d056132ace9538894a72d7613b646615358811ad7e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Similar to [global metadata](#global-metadata), Docusaurus also allows for the addition of meta-information to individual pages. Follow [this guide](./guides/markdown-features/markdown-features-head-metadata.mdx) for configuring the `<head>` tag. In short:",
+      "source_content_hash": "9b39fdae9c893c52a15c8f30f07a0054630c6b0e038e6eb84bab6fa71da6cedc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "076d64d1",
+      "source_content": "```md title=\"my-markdown-page.md\"\n# A cooking guide\n\n<head>\n  <meta name=\"keywords\" content=\"cooking, blog\"/>\n</head>\n\nSome content...\n```",
+      "source_content_hash": "feae663fedc0834c840931778906b4c592951873a7c2b59e110edc18ddf85155",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Docusaurus automatically adds `description`, `title`, canonical URL links, and other useful metadata to each Markdown page. They are configurable through front matter:",
+      "source_content_hash": "53d0f0dec676ba07452e49f503b8d49978135133dfdaf1a09664acc2539030b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```md\n---\ntitle: Title for search engines; can be different from the actual heading\ndescription: A short description of this page\nimage: a thumbnail image to be shown in social media cards\nkeywords: [keywords, describing, the main topics]\n---\n```",
+      "source_content_hash": "9685d468a49238e7261931c1c77cd0066c39b99c6f800ff10688b211cfe89263",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "When creating your React page, adding these fields in `Layout` would also improve SEO.",
+      "source_content_hash": "3ae9e341b4f83848aaf10e242e22825a99e9c47d019f4182b48eb16724a90c58",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "97388c5b",
+      "source_content": ":::tip\n\nPrefer to use front matter for fields like `description` and `keywords`: Docusaurus will automatically apply this to both `description` and `og:description`, while you would have to manually declare two metadata tags when using the `<head>` tag.\n\n:::",
+      "source_content_hash": "3a549fbbb25489d3f48bebbb3fbb43b04a6f8dab546e6e26a3e91c7518636236",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "For JSX pages, you can use the Docusaurus [`<Head>`](docusaurus-core.mdx#head) component.",
+      "source_content_hash": "ea10adc857ee239f1f4e3840db764959a413e27e33a4ed75337e33eed1c7b3c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1d510af2",
+      "source_content": "```jsx title=\"my-react-page.jsx\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\nimport Head from '@docusaurus/Head';\n\nexport default function page() {\n  return (\n    <Layout title=\"Page\" description=\"A React page demo\">\n      <Head>\n        <meta property=\"og:image\" content=\"image.png\" />\n      </Head>\n      {/* ... */}\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "3e88f586ba5fce95e99887358fa46ab2c619bbda147ad0ae13c944335852f9b6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a9404d4e",
+      "source_content": ":::tip\n\nFor convenience, the default theme `<Layout>` component accept `title` and `description` as props.\n\n:::",
+      "source_content_hash": "2581972562932755265191aeac7d0f6ea3c74b0a0759ef47f9df5d352e33b233",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "90d35b51",
+      "source_content": "## Static HTML generation {#static-html-generation}",
+      "source_content_hash": "214304c12ffe064c2cf665543241ad1dbd4e2178babc0626d54fa7e3a8f4a028",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Docusaurus is a static site generator—HTML files are statically generated for every URL route, which helps search engines discover your content more easily.",
+      "source_content_hash": "9aa0339a4cdbeb7dc7712596ff04e9f2db96d3fd0e2660c80fb56c100482d0a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "## Image meta description {#image-meta-description}",
+      "source_content_hash": "b22740c17b7e403ebba67a1979d888e04250d7ceceb3352a05e6cc2b738620c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "The alt tag for an image tells the search engine what the image is about, and is used when the image can't be visually seen, e.g. when using a screen reader, or when the image is broken. Alt tags are commonly supported in Markdown.",
+      "source_content_hash": "d49b90309541611d777d4e3e38496033bf7a5b01235812f86518495ff8266d48",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "You may also add a title for your image—this doesn't impact SEO much but is displayed as a tooltip when hovering above the image, usually used to provide hints.",
+      "source_content_hash": "771921606f64cc368cce22ccc5a4bbfda54b0b127a760120c9fcb8b7e2bd2532",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dc73c0d2",
+      "source_content": "```md\n![Docusaurus banner](./assets/docusaurus-asset-example-banner.png 'Image title')\n```",
+      "source_content_hash": "eb90fc44e00b25429f6db8a280a16b7fc6f4d529838e395ccfaf052187e4a83e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "341c2c0e",
+      "source_content": "<BrowserWindow>\n\n![Docusaurus banner](./assets/docusaurus-asset-example-banner.png 'Image title')\n\n</BrowserWindow>",
+      "source_content_hash": "e581cf12fa566b9daf6d61c338a1f6be1fdbf8187217d07d6d2a619e75323a1f",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "## Rich search information {#rich-search-information}",
+      "source_content_hash": "6d448c0678b510f3d715fca034855ec7379b10a0e203a0f9a0f45610346451e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "Docusaurus blogs support [rich search results](https://search.google.com/test/rich-results) out-of-the-box to get maximum search engine experience. The information is created depending on your meta information in blog/global configuration. In order to get the benefits of the rich search information, fill in the information about the post's publish date, authors, and image, etc. Read more about the meta-information [here](./blog.mdx).",
+      "source_content_hash": "f0f5226012f6fcc8073757b2abc62d8652f62c3d41d308ee77f4b90f7e79800a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "## Robots file {#robots-file}",
+      "source_content_hash": "51eed7883daf612e7d19657e1dfdc40206e06813490a8680336c8bb5fdbe2e83",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "A `robots.txt` file regulates search engines' behavior about which should be displayed and which shouldn't. You can provide it as [static asset](./static-assets.mdx). The following would allow access to all sub-pages from all requests:",
+      "source_content_hash": "cb1b705fc29eeecdbab7972d39e20b9be9a95dbca1c0cd6abef05023a0a1d010",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5347a9b5",
+      "source_content": "```text title=\"static/robots.txt\"\nUser-agent: *\nDisallow:\n```",
+      "source_content_hash": "455ee94e62fb77d6ac4c1ed9a1929d24415aad86a095d470ad8572bc2d7f8c0e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Read more about the robots file in [the Google documentation](https://developers.google.com/search/docs/advanced/robots/intro).",
+      "source_content_hash": "c64c49b8a877d287d604fdbb2fb9c9fa1ae52a92e739bedba301dfb3502a5fad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳閱 [Google 文件](https://developers.google.com/search/docs/advanced/robots/intro)以了解更多關於 robots 檔案的資訊。"
+      }
+    },
+    {
+      "segment_id": "837540ee",
+      "source_content": ":::warning\n\n**Important**: the `robots.txt` file does **not** prevent HTML pages from being indexed.\n\nTo prevent your whole Docusaurus site from being indexed, use the [`noIndex`](./api/docusaurus.config.js.mdx#noIndex) site config. Some [hosting providers](./deployment.mdx) may also let you configure a `X-Robots-Tag: noindex` HTTP header (GitHub Pages does not support this).\n\nTo prevent a single page from being indexed, use `<meta name=\"robots\" content=\"noindex\">` as [page metadata](#single-page-metadata). Read more about the [robots meta tag](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag).\n\n:::",
+      "source_content_hash": "135f44cf59a33dccc71a444324180717842250567cbcd611a43b68001e52c33d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n**重要**：`robots.txt` 檔案**無法**阻止 HTML 頁面被索引。\n\n若要防止整個 Docusaurus 網站被索引，請使用 [`noIndex`](./api/docusaurus.config.js.mdx#noIndex) 網站配置。某些[託管服務提供商](./deployment.mdx)可能也允許您配置 `X-Robots-Tag: noindex` HTTP 標頭（GitHub Pages 不支援此功能）。\n\n若要防止單一頁面被索引，請使用 `<meta name=\"robots\" content=\"noindex\">` 作為[頁面元數據](#single-page-metadata)。詳閱[robots 元標籤](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag)以了解更多資訊。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d53c8ed4",
+      "source_content": "## Sitemap file {#sitemap-file}",
+      "source_content_hash": "69e01ba809a0fa7735cf1a491e30ae66087303f28d5435ecf7a305696fb23a02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 網站地圖檔案 {#sitemap-file}"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "Docusaurus provides the [`@docusaurus/plugin-sitemap`](./api/plugins/plugin-sitemap.mdx) plugin, which is shipped with `preset-classic` by default. It autogenerates a `sitemap.xml` file which will be available at `https://example.com/[baseUrl]/sitemap.xml` after the production build. This sitemap metadata helps search engine crawlers crawl your site more accurately.",
+      "source_content_hash": "ddd91aebc1b534b4b71ae9cb266a4ca4d776c2d12aad36d16e239ca631c5a0a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供預設隨 `preset-classic` 內建的 [`@docusaurus/plugin-sitemap`](./api/plugins/plugin-sitemap.mdx) 外掛程式。它會自動生成 `sitemap.xml` 檔案，在生產環境建置後可透過 `https://example.com/[baseUrl]/sitemap.xml` 存取。此網站地圖元數據有助於搜尋引擎爬蟲更準確地爬取您的網站。"
+      }
+    },
+    {
+      "segment_id": "09750f99",
+      "source_content": ":::tip\n\nThe sitemap plugin automatically filters pages containing a `noindex` [robots meta directive](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag).\n\nFor example, [`/examples/noIndex`](/examples/noIndex) is not included in the [Docusaurus sitemap.xml file](pathname:///sitemap.xml) because it contains the following [page metadata](#single-page-metadata):\n\n```html\n<head>\n  <meta name=\"robots\" content=\"noindex, nofollow\" />\n</head>\n```\n\n:::",
+      "source_content_hash": "f79af45c6f0faaa5baba5fb0e7e08d50ef5c0aba3a9a81466f3f5123ed13642b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n網站地圖外掛程式會自動過濾包含 `noindex` [robots 元指令](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag)的頁面。\n\n例如，[`/examples/noIndex`](/examples/noIndex) 並未包含在[Docusaurus 的 sitemap.xml 檔案](pathname:///sitemap.xml)中，因為它包含以下[頁面元數據](#single-page-metadata)：\n\n```html\n<head>\n  <meta name=\"robots\" content=\"noindex, nofollow\" />\n</head>\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "## Human readable links {#human-readable-links}",
+      "source_content_hash": "30439eb3b0bdac5f408d396878e8b281806a7a4149b4a0e2f55d16f8f96c792f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 人類可讀連結 {#human-readable-links}"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "Docusaurus uses your file names as links, but you can always change that using slugs, see this [tutorial](./guides/docs/docs-create-doc.mdx#document-id) for more details.",
+      "source_content_hash": "81a5cae2373aad24ed0af14bc5a7d0197ed99b5ec54963317fb06d2ab0e98764",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用您的檔案名稱作為連結，但您始終可以使用 slugs 來更改，詳見此[教學](./guides/docs/docs-create-doc.mdx#document-id)以了解更多細節。"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "## Structured content {#structured-content}",
+      "source_content_hash": "dcb267d368aeb3a779f8c912d44362a42581448fb5964e94d1925dd183fb8c3e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 結構化內容 {#structured-content}"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "Search engines rely on the HTML markup such as `<h2>`, `<table>`, etc., to understand the structure of your webpage. When Docusaurus renders your pages, semantic markup, e.g. `<aside>`, `<nav>`, `<main>`, are used to divide the different sections of the page, helping the search engine to locate parts like sidebar, navbar, and the main page content.",
+      "source_content_hash": "8925cc95fded23f6553f8d51a33f8e44063ac367416012213c3f77b0f2400e9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "搜尋引擎依賴 HTML 標記（如 `<h2>`、`<table>` 等）來理解您的網頁結構。當 Docusaurus 渲染您的頁面時，會使用語義標記（如 `<aside>`、`<nav>`、`<main>`）來劃分頁面的不同部分，幫助搜尋引擎定位側邊欄、導航欄和主要頁面內容等區域。"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "Most [CommonMark](https://spec.commonmark.org/0.30/#atx-headings) syntaxes have their corresponding HTML tags. By using Markdown consistently in your project, you will make it easier for search engines to understand your page content.",
+      "source_content_hash": "be6f090656ec390d6f7435f8eb0c1fe5f57a08017b82496e27f3061e69437969",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "大多數 [CommonMark](https://spec.commonmark.org/0.30/#atx-headings) 語法都有對應的 HTML 標籤。透過在專案中一致地使用 Markdown，您將使搜尋引擎更容易理解您的頁面內容。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/seo.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.074521+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e6287c76cbd8cad8fa74241eb6c826d44ed4b95ec41b7f5a66747f67a05930ce"
+  }
+}

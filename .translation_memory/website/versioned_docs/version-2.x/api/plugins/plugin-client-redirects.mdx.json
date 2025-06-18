@@ -1,0 +1,252 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/api/plugins/plugin-client-redirects.mdx",
+  "source_file_content_hash": "d22aee8e75bac0d0d576ce59ca1fcbcdf86d38428b586f5170731569723e3ca3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\nslug: /api/plugins/@docusaurus/plugin-client-redirects\n---",
+      "source_content_hash": "91c9283c0e269183327cb73de304ef52cbada187f9b70e8d80565e27d1fa9fc3",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-client-redirects",
+      "source_content_hash": "0c15e540a67a1ae88a64f6b8229ba622569b5e5d1d596457e79040df7f10204a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-client-redirects"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Docusaurus Plugin to generate **client-side redirects**.",
+      "source_content_hash": "b85a18915c55ea4b0b20a411606103dacd06a5f5dce1d6d1ff3314f3e3d2918e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 插件，用於生成**客戶端重定向**。"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This plugin will write additional HTML pages to your static site that redirect the user to your existing Docusaurus pages with JavaScript.",
+      "source_content_hash": "61b8602c132495cfcccb6254b36b0bad530e256a69d249a2158be7379742a72a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此插件會將額外的 HTML 頁面寫入您的靜態站點，這些頁面會透過 JavaScript 將用戶重定向至現有的 Docusaurus 頁面。"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::warning[production only]\n\nThis plugin is always inactive in development and **only active in production** because it works on the build output.\n\n:::",
+      "source_content_hash": "9a3df16769bf9dff0552e47d151e1d6e773b2dbf97634d241f808a109f326877",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[僅在生產環境生效]\n\n此插件在開發環境始終處於非活躍狀態，**僅在生產環境生效**，因為其運作依賴於構建輸出。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "80e6256a",
+      "source_content": ":::warning\n\nIt is better to use server-side redirects whenever possible.\n\nBefore using this plugin, you should look if your hosting provider doesn't offer this feature.\n\n:::",
+      "source_content_hash": "ac5449ef3ae19b0c6287255fd30747460a65a8500c8798e68acc5d52e5a90a5c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n建議優先使用伺服器端重定向。\n\n在使用此插件前，應確認您的託管服務商是否已提供此功能。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-client-redirects\n```",
+      "source_content_hash": "8363cee0c18872100ea5e17aedd4f5249302781d8a06c0f80eaf743e6811e6e8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受字段："
+      }
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4dd51304"
+      }
+    },
+    {
+      "segment_id": "60430721",
+      "source_content": "| Option | Type | Default | Description |\n| --- | --- | --- | --- |\n| `fromExtensions` | `string[]` | `[]` | The extensions to be removed from the route after redirecting. |\n| `toExtensions` | `string[]` | `[]` | The extensions to be appended to the route after redirecting. |\n| `redirects` | <code>[RedirectRule](#RedirectRule)[]</code> | `[]` | The list of redirect rules. |\n| `createRedirects` | <code>[CreateRedirectsFn](#CreateRedirectsFn)</code> | `undefined` | A callback to create a redirect rule. Docusaurus query this callback against every path it has created, and use its return value to output more paths. |",
+      "source_content_hash": "50e5ed05aed3a96a21bb77e9b07d49f2126ca3f64d6e0b0239de2c6d18bdbe58",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_60430721"
+      }
+    },
+    {
+      "segment_id": "229d6705",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_229d6705"
+      }
+    },
+    {
+      "segment_id": "17bc5bbf",
+      "source_content": ":::note\n\nThis plugin will also read the [`siteConfig.onDuplicateRoutes`](../docusaurus.config.js.mdx#onDuplicateRoutes) config to adjust its logging level when multiple files will be emitted to the same location.\n\n:::",
+      "source_content_hash": "9fd2b3613434ca9b7053e9710805e694972d9515f117d0a9b1dee56f5e7a038a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n本插件還會讀取 [`siteConfig.onDuplicateRoutes`](../docusaurus.config.js.mdx#onDuplicateRoutes) 配置，以便在多個文件將被發送到相同位置時調整其日誌級別。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "### Types {#types}",
+      "source_content_hash": "034686b12f78982c1e0199ff93724cd49daf8a7ddf6e6948ebd61df99af28c7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型 {#types}"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "#### `RedirectRule` {#RedirectRule}",
+      "source_content_hash": "cc1a75f00a278c71865b73cf05b290e48fd8effca394d55f0cd3800257801c12",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `RedirectRule` {#RedirectRule}"
+      }
+    },
+    {
+      "segment_id": "750e2f7e",
+      "source_content": "```ts\ntype RedirectRule = {\n  to: string;\n  from: string | string[];\n};\n```",
+      "source_content_hash": "26243fa3eb99888018e6a13bc1137b59e0141fe97369b23ba2239df305f5ffca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_750e2f7e"
+      }
+    },
+    {
+      "segment_id": "f9dbfd6b",
+      "source_content": ":::note\n\nThe idea of \"from\" and \"to\" is central in this plugin. \"From\" means a path that you want to _create_, i.e. an extra HTML file that will be written; \"to\" means a path to want to redirect _to_, usually a route that Docusaurus already knows about.\n\nThis is why you can have multiple \"from\" for the same \"to\": we will create multiple HTML files that all redirect to the same destination. On the other hand, one \"from\" can never have more than one \"to\": the written HTML file needs to have a determinate destination.\n\n:::",
+      "source_content_hash": "d14148517cdf4c120d4cac0433522fe7ea6a5e567e4779c83de49f2bca05695f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n「來源」與「目標」的概念是本插件的核心。「來源」指您希望創建的路徑，即一個將被寫入的額外 HTML 文件；「目標」則是您希望重定向至的路徑，通常是 Docusaurus 已知的路由。\n\n因此，同一個「目標」可以對應多個「來源」：我們會創建多個 HTML 文件，它們都重定向至同一個目的地。反之，一個「來源」不能對應多個「目標」：寫入的 HTML 文件必須有確定的目的地。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "98355e36",
+      "source_content": "#### `CreateRedirectsFn` {#CreateRedirectsFn}",
+      "source_content_hash": "d7c957fc677f2f8b8e2159e3d6c1b58d3ceb56a3f9f38fdf1840c42b3d7b644e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `CreateRedirectsFn` {#CreateRedirectsFn}"
+      }
+    },
+    {
+      "segment_id": "7b2110d8",
+      "source_content": "```ts\n// The parameter `path` is a route that Docusaurus has already created. It can\n// be seen as the \"to\", and your return value is the \"from\". Returning a falsy\n// value will not create any redirect pages for this particular path.\ntype CreateRedirectsFn = (path: string) => string[] | string | null | undefined;\n```",
+      "source_content_hash": "f5d834735acc72224e4809e80b083af50b85d47e24c30ca072a849886dd24a07",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7b2110d8"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Here's an example configuration:",
+      "source_content_hash": "cd39f89d5932884cf6e700296d41ca0fdce5ff18a65f9e6ff904dffa3d91cbe2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下為配置範例："
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  plugins: [\n    [\n      '@docusaurus/plugin-client-redirects',\n      // highlight-start\n      {\n        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage\n        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)\n        redirects: [\n          // /docs/oldDoc -> /docs/newDoc\n          {\n            to: '/docs/newDoc',\n            from: '/docs/oldDoc',\n          },\n          // Redirect from multiple old paths to the new path\n          {\n            to: '/docs/newDoc2',\n            from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],\n          },\n        ],\n        createRedirects(existingPath) {\n          if (existingPath.includes('/community')) {\n            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X\n            return [\n              existingPath.replace('/community', '/docs/team'),\n              existingPath.replace('/community', '/docs/support'),\n            ];\n          }\n          return undefined; // Return a falsy value: no redirect created\n        },\n      },\n      // highlight-end\n    ],\n  ],\n};\n```",
+      "source_content_hash": "61684633420ca8e6158fbacaafffc7c5b22daf224a8269bc85d50373741219ad",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/api/plugins/plugin-client-redirects.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.045361+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "d22aee8e75bac0d0d576ce59ca1fcbcdf86d38428b586f5170731569723e3ca3"
+  }
+}

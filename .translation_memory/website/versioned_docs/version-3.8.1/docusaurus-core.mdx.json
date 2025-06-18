@@ -1,0 +1,1380 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/docusaurus-core.mdx",
+  "source_file_content_hash": "eca4c7925de30cf7b2d2bc12d2d02ac0778616a7e4394529934635974f91b559",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_label: Client API\n---",
+      "source_content_hash": "37e037e0169baab5e76aa44dbc7183fab9ea96964480d8d2719f160bb603bd1a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Docusaurus Client API",
+      "source_content_hash": "15c5a10914281bf018d9239631f154e00946bfd5eb5f626f71409fc514ec0130",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Docusaurus 客戶端 API"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus provides some APIs on the clients that can be helpful to you when building your site.",
+      "source_content_hash": "1d0ad8bd5d4eb95c37cb24093e9a7797694efce6dd03233318e0efb8c3e7c622",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供了一些客戶端 API，在構建網站時可能對您有所幫助。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Components {#components}",
+      "source_content_hash": "e6c03db808895570efadfbaf83bec767cf6eaae99f514fb8ffc522d03e0626e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 組件 {#components}"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "### `<ErrorBoundary />` {#errorboundary}",
+      "source_content_hash": "7c2d94718f9f40d2af93224f8118b9a6aa23ddbdc2eed97c5005d21c3c7f8063",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<ErrorBoundary />` {#errorboundary}"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "This component creates a [React error boundary](https://reactjs.org/docs/error-boundaries.html).",
+      "source_content_hash": "f2c01c428f534b1bc5319112c19f2818a864b0aa499fafc8157ed830ec7161a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此組件創建了一個 [React 錯誤邊界](https://reactjs.org/docs/error-boundaries.html)。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Use it to wrap components that might throw, and display a fallback when that happens instead of crashing the whole app.",
+      "source_content_hash": "53a93f6346a32974c5f96802eadc03e2b18f198f9c0d9e3a5467ecf7da4808da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用它來包裹可能拋出錯誤的組件，並在發生錯誤時顯示回退內容，而不是導致整個應用程序崩潰。"
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```jsx\nimport React from 'react';\nimport ErrorBoundary from '@docusaurus/ErrorBoundary';\n\nconst SafeComponent = () => (\n  <ErrorBoundary\n    fallback={({error, tryAgain}) => (\n      <div>\n        <p>This component crashed because of error: {error.message}.</p>\n        <button onClick={tryAgain}>Try Again!</button>\n      </div>\n    )}>\n    <SomeDangerousComponentThatMayThrow />\n  </ErrorBoundary>\n);\n```",
+      "source_content_hash": "f662e9dc2c93c60acde6eae06cbbaedbba594320cd7e9e57cda70754a9137667",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "6543a19e",
+      "source_content": "```mdx-code-block\nimport ErrorBoundaryTestButton from '@site/src/components/ErrorBoundaryTestButton'\n```",
+      "source_content_hash": "e6bd54aa557d4fced79e995dfb4f586726e8a4c3e6a5155f6df6e98d19c72b60",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6543a19e"
+      }
+    },
+    {
+      "segment_id": "214ab298",
+      "source_content": ":::tip\n\nTo see it in action, click here: <ErrorBoundaryTestButton/>\n\n:::",
+      "source_content_hash": "2fdd1ae60e0b3d1ebdcbdd5bd07f2b75d3a013cce9a5eb8115c15bf23fb90420",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n要查看實際效果，請點擊這裡：<ErrorBoundaryTestButton/>\n\n:::"
+      }
+    },
+    {
+      "segment_id": "73f75a5c",
+      "source_content": ":::info\n\nDocusaurus uses this component to catch errors within the theme's layout, and also within the entire app.\n\n:::",
+      "source_content_hash": "2d8b39fde8674042d1818ff4907072a3a850acfce78114b699c16b796294452d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\nDocusaurus 使用此組件來捕獲主題佈局內的錯誤，以及整個應用程序內的錯誤。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7d0728d9",
+      "source_content": ":::note\n\nThis component doesn't catch build-time errors and only protects against client-side render errors that can happen when using stateful React components.\n\n:::",
+      "source_content_hash": "0a0caa460a0561033c46b8c19f22ebc2204ab84c938a140a4735f432b41903bd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n此組件不會捕獲構建時錯誤，僅保護在使用有狀態 React 組件時可能發生的客戶端渲染錯誤。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "#### Props {#errorboundary-props}",
+      "source_content_hash": "64be7b2dcc520e1390124cce6f02d45750ebd8d0279e058c1ef8905a584e7a8c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 屬性 {#errorboundary-props}"
+      }
+    },
+    {
+      "segment_id": "e3321a43",
+      "source_content": "- `fallback`: an optional render callback returning a JSX element. It will receive an object with 2 attributes: `error`, the error that was caught, and `tryAgain`, a function (`() => void`) callback to reset the error in the component and try rendering it again. If not present, `@theme/Error` will be rendered instead. `@theme/Error` is used for the error boundaries wrapping the site, above the layout.",
+      "source_content_hash": "45ce8d9836370536ca6088635f497d59d78bfcf313bbcf1efdea718f56ef6241",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `fallback`: 可選的渲染回調函數，返回一個 JSX 元素。它將接收一個包含 2 個屬性的對象：`error`，捕獲到的錯誤，以及 `tryAgain`，一個用於重置組件錯誤並嘗試重新渲染的函數回調（`() => void`）。如果未提供，則會渲染 `@theme/Error` 代替。`@theme/Error` 用於包裹站點的錯誤邊界，位於佈局之上。"
+      }
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::warning\n\nThe `fallback` prop is a callback, and **not a React functional component**. You can't use React hooks inside this callback.\n\n:::",
+      "source_content_hash": "83e54f48d81577f4d23e8fc82586570cdf956dd0d932e1564a954ad9ccbe76b4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n`fallback` 屬性是一個回調函數，**而不是一個 React 功能組件**。您不能在此回調中使用 React hooks。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### `<Head/>` {#head}",
+      "source_content_hash": "9614b40e1b86db7c18704abc884a6496cc8b5b5fe9feb7f184cd3e66475cc84d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<Head/>` {#head}"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "This reusable React component will manage all of your changes to the document head. It takes plain HTML tags and outputs plain HTML tags and is beginner-friendly. It is a wrapper around [React Helmet](https://github.com/nfl/react-helmet).",
+      "source_content_hash": "83777900506ba12f926ba52d6e1be72b973b06a4ad0312c1f41d82106f3adbf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這個可重用的 React 組件將管理您對文檔頭部的所有更改。它接受純 HTML 標籤並輸出純 HTML 標籤，對初學者友好。它是 [React Helmet](https://github.com/nfl/react-helmet) 的封裝。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Usage Example:",
+      "source_content_hash": "c527f5c5e76a3bb06b0a5c57e8cb9b4a356444ea71497da4099bf29b94253898",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用示例："
+      }
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport Head from '@docusaurus/Head';\n\nconst MySEO = () => (\n  // highlight-start\n  <Head>\n    <meta property=\"og:description\" content=\"My custom description\" />\n    <meta charSet=\"utf-8\" />\n    <title>My Title</title>\n    <link rel=\"canonical\" href=\"http://mysite.com/example\" />\n  </Head>\n  // highlight-end\n);\n```",
+      "source_content_hash": "5a4e8b1e194487fb6c23f20b07fb7779b2934e59372031464840bbf96719d330",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fb3ded8"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Nested or latter components will override duplicate usages:",
+      "source_content_hash": "1158fc47aa2dc4586b4836622c4e59f2ec3147bb94fc4997579c520a102d249b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "嵌套或後面的組件將覆蓋重複的使用："
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```jsx\n<Parent>\n  {/* highlight-start */}\n  <Head>\n    <title>My Title</title>\n    <meta name=\"description\" content=\"Helmet application\" />\n  </Head>\n  {/* highlight-end */}\n  <Child>\n    {/* highlight-start */}\n    <Head>\n      <title>Nested Title</title>\n      <meta name=\"description\" content=\"Nested component\" />\n    </Head>\n    {/* highlight-end */}\n  </Child>\n</Parent>\n```",
+      "source_content_hash": "f6df59d81f1ef0868360200a12dd5f8227245e6e19be7fc1f1843b31c41ceac3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Outputs:",
+      "source_content_hash": "a25332d9f8670bc9c97830e179a24ed1cb098c3ed38cffc2f8ecf83f2f1af3ef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "輸出："
+      }
+    },
+    {
+      "segment_id": "03a9ab41",
+      "source_content": "```html\n<head>\n  <title>Nested Title</title>\n  <meta name=\"description\" content=\"Nested component\" />\n</head>\n```",
+      "source_content_hash": "f2fe0f2ac72fb2403d97934079c007267d7bfd2d2c84c6cc956076cb3e5361cb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_03a9ab41"
+      }
+    },
+    {
+      "segment_id": "37fca32e",
+      "source_content": "### `<Link/>` {#link}",
+      "source_content_hash": "d806811ea9be38f3a5406dc75b404d17214d0d7969e5e2026cccd0ab16878c26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<Link/>` {#link}"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "This component enables linking to internal pages as well as a powerful performance feature called preloading. Preloading is used to prefetch resources so that the resources are fetched by the time the user navigates with this component. We use an `IntersectionObserver` to fetch a low-priority request when the `<Link>` is in the viewport and then use an `onMouseOver` event to trigger a high-priority request when it is likely that a user will navigate to the requested resource.",
+      "source_content_hash": "a598a116d0ed39b5e1b4b9a50623a20cf77a546713cbbbc52f0a83a56265adb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此組件支持鏈接到內部頁面，以及一個稱為預加載的強大性能功能。預加載用於預取資源，以便用戶通過此組件導航時資源已經被獲取。我們使用 `IntersectionObserver` 在 `<Link>` 進入視口時發起低優先級請求，然後使用 `onMouseOver` 事件在用戶可能導航到請求的資源時觸發高優先級請求。"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "The component is a wrapper around react-router’s `<Link>` component that adds useful enhancements specific to Docusaurus. All props are passed through to react-router’s `<Link>` component.",
+      "source_content_hash": "b6451cd22c5afe02890ec66a24a5573c4cfe488a79fa884253f2b2dbc625399a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "該組件是 react-router 的 `<Link>` 組件的封裝，添加了特定於 Docusaurus 的有用增強功能。所有屬性都會傳遞給 react-router 的 `<Link>` 組件。"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "External links also work, and automatically have these props: `target=\"_blank\" rel=\"noopener noreferrer\"`.",
+      "source_content_hash": "f038570a5ea3ff5a9cddca1fe37f9d477f57b34d28cf668411f97d5d3f517ddb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外部鏈接也可以使用，並自動具有這些屬性：`target=\"_blank\" rel=\"noopener noreferrer\"`。"
+      }
+    },
+    {
+      "segment_id": "4e583d18",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport Link from '@docusaurus/Link';\n\nconst Page = () => (\n  <div>\n    <p>\n      {/* highlight-next-line */}\n      Check out my <Link to=\"/blog\">blog</Link>!\n    </p>\n    <p>\n      {/* highlight-next-line */}\n      Follow me on <Link to=\"https://x.com/docusaurus\">X</Link>!\n    </p>\n  </div>\n);\n```",
+      "source_content_hash": "541b0b1a80a4082f1fda57c505079211f404595fcd141f4ec8be74432a00ad2e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4e583d18"
+      }
+    },
+    {
+      "segment_id": "73776161",
+      "source_content": "#### `to`: string {#to-string}",
+      "source_content_hash": "096fb5c80d47bc4b3bcee1e691c10d742d0242e6baf899f40ae627f2da5bf5a8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `to`: 字符串 {#to-string}"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "The target location to navigate to. Example: `/docs/introduction`.",
+      "source_content_hash": "8f517dac7135fe5953d7ae7cc4a9f5e2dcf5233f4997666b0937608e8baf4a85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要導航到的目標位置。例如：`/docs/introduction`。"
+      }
+    },
+    {
+      "segment_id": "ad3cd2f7",
+      "source_content": "```jsx\n<Link to=\"/courses\" />\n```",
+      "source_content_hash": "ff8370677784d0728cdd29c91c2f7141170dca9f972b098211d0d889c8f29952",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ad3cd2f7"
+      }
+    },
+    {
+      "segment_id": "94366076",
+      "source_content": ":::tip\n\nPrefer this component to vanilla `<a>` tags because Docusaurus does a lot of optimizations (e.g. broken path detection, prefetching, applying base URL...) if you use `<Link>`.\n\n:::",
+      "source_content_hash": "d3f2b511086dba9407a20829fc5d367332b6d148d69d5745cc509086d618370e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n優先使用此組件而不是原生的 `<a>` 標籤，因為如果您使用 `<Link>`，Docusaurus 會進行許多優化（例如檢測無效路徑、預取、應用基礎 URL 等）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "531ec0bb",
+      "source_content": "### `<Redirect/>` {#redirect}",
+      "source_content_hash": "91e18d9bef4d0a17fb6448acab3357c54f3a4bc60f0c5032e071e54d6b062170",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<Redirect/>` {#redirect}"
+      }
+    },
+    {
+      "segment_id": "d2a3d4c7",
+      "source_content": "Rendering a `<Redirect>` will navigate to a new location. The new location will override the current location in the history stack like server-side redirects (HTTP 3xx) do. You can refer to [React Router's Redirect documentation](https://reacttraining.com/react-router/web/api/Redirect) for more info on available props.",
+      "source_content_hash": "8418b134a9607882343c089dbc335965dc0016cd3a1a5314635cbf6444763e3c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "渲染 `<Redirect>` 將導航到新位置。新位置將像服務器端重定向（HTTP 3xx）一樣覆蓋歷史堆棧中的當前位置。您可以參考 [React Router 的 Redirect 文檔](https://reacttraining.com/react-router/web/api/Redirect) 以獲取有關可用屬性的更多信息。"
+      }
+    },
+    {
+      "segment_id": "008183b0",
+      "source_content": "Example usage:",
+      "source_content_hash": "21eddf0bab8eb72f66078a107da27d93c6221bf506374c84a693bb4b5f15983c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "71779666",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport {Redirect} from '@docusaurus/router';\n\nconst Home = () => {\n  // highlight-next-line\n  return <Redirect to=\"/docs/test\" />;\n};\n```",
+      "source_content_hash": "d9c5cf3cec84520d2b9a9ffb26165c8b1a168ab28f58f4d830cd808cf1641f74",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71779666"
+      }
+    },
+    {
+      "segment_id": "b826038b",
+      "source_content": ":::note\n\n`@docusaurus/router` implements [React Router](https://reacttraining.com/react-router/web/guides/quick-start) and supports its features.\n\n:::",
+      "source_content_hash": "9ef6d2a05b307792da13b3b60f0746fa059c3dbf9257ccc3fd2052e861da0894",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n`@docusaurus/router` 實作了 [React Router](https://reacttraining.com/react-router/web/guides/quick-start) 並支援其功能。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8d279c43",
+      "source_content": "### `<BrowserOnly/>` {#browseronly}",
+      "source_content_hash": "b439b4d667bfc21bf632afaf9d501a1c3fd3edc36c1e180b4194d0bd123fc290",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<BrowserOnly/>` {#browseronly}"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "The `<BrowserOnly>` component permits to render React components only in the browser after the React app has hydrated.",
+      "source_content_hash": "5d572133fbc14ef7b43f65f0439031709f9a42710a7dd540794eaaccaaa1bdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`<BrowserOnly>` 元件允許在瀏覽器中，當 React 應用完成水合(hydration)後才渲染 React 元件。"
+      }
+    },
+    {
+      "segment_id": "df411793",
+      "source_content": ":::tip\n\nUse it for integrating with code that can't run in Node.js, because the `window` or `document` objects are being accessed.\n\n:::",
+      "source_content_hash": "ac71c65e96795e8f91f95f1d943f2f5922cf5da5e1d9acf0467991f2b09e6e4b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n當需要整合的程式碼無法在 Node.js 環境執行（例如存取 `window` 或 `document` 物件時）可使用此元件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "6d457467",
+      "source_content": "#### Props {#browseronly-props}",
+      "source_content_hash": "1e5d4a1f7ded0863c97cb0a0af6f6e99d593b935fb0468e8c2a9043e2fae414a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### Props {#browseronly-props}"
+      }
+    },
+    {
+      "segment_id": "bc3926aa",
+      "source_content": "- `children`: render function prop returning browser-only JSX. Will not be executed in Node.js\n- `fallback` (optional): JSX to render on the server (Node.js) and until React hydration completes.",
+      "source_content_hash": "e4591a362a3c2f8f010d9ad4578895e2218b7e4f5c40a0230796d9ac4c27a562",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `children`: 渲染函式 prop，返回僅在瀏覽器執行的 JSX。不會在 Node.js 環境執行\n- `fallback` (選填): 在伺服器端(Node.js)和 React 水合完成前渲染的 JSX"
+      }
+    },
+    {
+      "segment_id": "3bff4086",
+      "source_content": "#### Example with code {#browseronly-example-code}",
+      "source_content_hash": "bd159ba35f462fa747ab24bf0ea08921c85bef8619d387e3fd12ef3fe638ec29",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 程式碼範例 {#browseronly-example-code}"
+      }
+    },
+    {
+      "segment_id": "ec2ce541",
+      "source_content": "```jsx\n// highlight-start\nimport BrowserOnly from '@docusaurus/BrowserOnly';\n// highlight-end\n\nconst MyComponent = () => {\n  return (\n    // highlight-start\n    <BrowserOnly>\n      {() => <span>page url = {window.location.href}</span>}\n    </BrowserOnly>\n    // highlight-end\n  );\n};\n```",
+      "source_content_hash": "e0f1da699393b9e96db159937926ef8c44f71e7b16b3620e14805d14ee87df03",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ec2ce541"
+      }
+    },
+    {
+      "segment_id": "49007f24",
+      "source_content": "#### Example with a library {#browseronly-example-library}",
+      "source_content_hash": "44214d0bfa1fa676b6a6599976e8f4260bb832fcf1bb83c592bcd97fb4444ff4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 函式庫使用範例 {#browseronly-example-library}"
+      }
+    },
+    {
+      "segment_id": "ca792546",
+      "source_content": "```jsx\n// highlight-start\nimport BrowserOnly from '@docusaurus/BrowserOnly';\n// highlight-end\n\nconst MyComponent = (props) => {\n  return (\n    // highlight-start\n    <BrowserOnly fallback={<div>Loading...</div>}>\n      {() => {\n        const LibComponent = require('some-lib').LibComponent;\n        return <LibComponent {...props} />;\n      }}\n    </BrowserOnly>\n    // highlight-end\n  );\n};\n```",
+      "source_content_hash": "f466d7b3241fc113e57f81333c3a9f9869f19a82df0208457b46bef203b2a611",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ca792546"
+      }
+    },
+    {
+      "segment_id": "263073b1",
+      "source_content": "### `<Interpolate/>` {#interpolate}",
+      "source_content_hash": "d0db768dcf45fa29f91d8835e31eba6a7229a9a89dc6ffb6d2796d5a48dbc13c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<Interpolate/>` {#interpolate}"
+      }
+    },
+    {
+      "segment_id": "d119b75c",
+      "source_content": "A simple interpolation component for text containing dynamic placeholders.",
+      "source_content_hash": "7e729003db11218a657b7ba977cc89d28bc34db84866d739f5c8aed75746e0de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於處理含動態佔位符文字的簡易插值元件。"
+      }
+    },
+    {
+      "segment_id": "8f4e752e",
+      "source_content": "The placeholders will be replaced with the provided dynamic values and JSX elements of your choice (strings, links, styled elements...).",
+      "source_content_hash": "95a4bccd86e5217fcd436252848b99adbead94c8b797daf1f9207e9dcd292330",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "佔位符將被替換為提供的動態值和您選擇的 JSX 元素（字串、連結、樣式化元素等）。"
+      }
+    },
+    {
+      "segment_id": "61d0a6d1",
+      "source_content": "#### Props {#interpolate-props}",
+      "source_content_hash": "e29883e2f883e11d2eec4dd6ef03bcbddc37a879d2c8faf246dde0abdaa3e676",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### Props {#interpolate-props}"
+      }
+    },
+    {
+      "segment_id": "73b95320",
+      "source_content": "- `children`: text containing interpolation placeholders like `{placeholderName}`\n- `values`: object containing interpolation placeholder values",
+      "source_content_hash": "d4c492d09b58561ca0d40c735d95e234bfe2994f22db13d910be194c3bc1ec98",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `children`: 包含插值佔位符的文字，例如 `{placeholderName}`\n- `values`: 包含插值佔位符值的物件"
+      }
+    },
+    {
+      "segment_id": "4f217d4a",
+      "source_content": "```jsx\nimport React from 'react';\nimport Link from '@docusaurus/Link';\nimport Interpolate from '@docusaurus/Interpolate';\n\nexport default function VisitMyWebsiteMessage() {\n  return (\n    // highlight-start\n    <Interpolate\n      values={{\n        firstName: 'Sébastien',\n        website: (\n          <Link to=\"https://docusaurus.io\" className=\"my-website-class\">\n            website\n          </Link>\n        ),\n      }}>\n      {'Hello, {firstName}! How are you? Take a look at my {website}'}\n    </Interpolate>\n    // highlight-end\n  );\n}\n```",
+      "source_content_hash": "82e1c9cc98322580c756f5690a97a782f5779225e933515dcfd0fa47b30318c6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4f217d4a"
+      }
+    },
+    {
+      "segment_id": "36d4802a",
+      "source_content": "### `<Translate/>` {#translate}",
+      "source_content_hash": "b1eaf12614f3ccd493493579683581bc6c7e24ede65d5b3f87090d778ec74e5f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<Translate/>` {#translate}"
+      }
+    },
+    {
+      "segment_id": "216a8ee1",
+      "source_content": "When [localizing your site](./i18n/i18n-introduction.mdx), the `<Translate/>` component will allow providing **translation support to React components**, such as your homepage. The `<Translate>` component supports [interpolation](#interpolate).",
+      "source_content_hash": "28f9a3585ce3eff553bf0d45aaab9e2f4e718a5e2b1cb831a7e5657b14ebf512",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當[本地化您的網站](./i18n/i18n-introduction.mdx)時，`<Translate/>` 元件可為 React 元件（如首頁）提供翻譯支援。此元件支援[插值功能](#interpolate)。\n\n翻譯字串會透過 [`docusaurus write-translations`](./cli.mdx#docusaurus-write-translations-sitedir) CLI 靜態提取，並在 `website/i18n/[locale]` 目錄下生成 `code.json` 翻譯檔案。"
+      }
+    },
+    {
+      "segment_id": "590d1cd9",
+      "source_content": "The translation strings will statically extracted from your code with the [`docusaurus write-translations`](./cli.mdx#docusaurus-write-translations-sitedir) CLI and a `code.json` translation file will be created in `website/i18n/[locale]`.",
+      "source_content_hash": "2a60be66b8d5e9782e90798e24612014f17247246e9a109ca9a7b8a823c4b7c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n`<Translate/>` 的 props **必須是硬編碼的字串**。\n\n除了用於插值的 `values` prop 外，**無法使用變數**，否則靜態提取將無法運作。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "01f7f55c",
+      "source_content": ":::note\n\nThe `<Translate/>` props **must be hardcoded strings**.\n\nApart from the `values` prop used for interpolation, it is **not possible to use variables**, or the static extraction wouldn't work.\n\n:::",
+      "source_content_hash": "ed3d160594bebcb5098e0888ba774f00b652906af6327daa1d56d734da4d527b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### Props {#translate-props}"
+      }
+    },
+    {
+      "segment_id": "cc33bff5",
+      "source_content": "#### Props {#translate-props}",
+      "source_content_hash": "58a0eb992376459fc7c22474dfb350e7b87cae6025c6787fb3e109b636887f84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例 {#example}"
+      }
+    },
+    {
+      "segment_id": "fc4d82ef",
+      "source_content": "- `children`: untranslated string in the default site locale (can contain [interpolation placeholders](#interpolate))\n- `id`: optional value to be used as the key in JSON translation files\n- `description`: optional text to help the translator\n- `values`: optional object containing interpolation placeholder values",
+      "source_content_hash": "3e66bb7252de633988b22c092485c8cdfe1b53df3ab275ea7f7a33b71e711c8f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `children`: 預設網站語系的未翻譯字串（可包含[插值佔位符](#interpolate)）\n- `id`: 選填值，作為 JSON 翻譯檔案中的鍵名\n- `description`: 選填文字，協助翻譯人員理解內容\n- `values`: 選填物件，包含插值佔位符的值"
+      }
+    },
+    {
+      "segment_id": "f4c0cbe5",
+      "source_content": "#### Example {#example}",
+      "source_content_hash": "465e7128e514b599962672f0518b27ac0858385a5f8295ec0825a4089aaa317f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n`<Translate>` 元件支援插值功能。您也可以透過自訂程式碼和 [`translate` 命令式 API](#translate-imperative) 實作[字串複數化](https://github.com/facebook/docusaurus/pull/i18n/i18n-tutorial.mdx#pluralization)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7e9a9732",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\n\n// highlight-start\nimport Translate from '@docusaurus/Translate';\n// highlight-end\n\nexport default function Home() {\n  return (\n    <Layout>\n      <h1>\n        {/* highlight-start */}\n        <Translate\n          id=\"homepage.title\"\n          description=\"The homepage welcome message\">\n          Welcome to my website\n        </Translate>\n        {/* highlight-end */}\n      </h1>\n      <main>\n        {/* highlight-start */}\n        <Translate values={{firstName: 'Sébastien'}}>\n          {'Welcome, {firstName}! How are you?'}\n        </Translate>\n        {/* highlight-end */}\n      </main>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "7a1ff6a7b77c2ab6eb87159c587a3ecc26d067b0b1025df3b8e5165f6daaff81",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7e9a9732"
+      }
+    },
+    {
+      "segment_id": "df3f8500",
+      "source_content": ":::note\n\nYou can even omit the children prop and specify a translation string in your `code.json` file manually after running the `docusaurus write-translations` CLI command.\n\n```jsx\n<Translate id=\"homepage.title\" />\n```\n\n:::",
+      "source_content_hash": "65990ae274c63beb5af1e2677beff8bddc95b05fe6985a33ddd350163a2dd353",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n您甚至可以省略 children prop，在執行 `docusaurus write-translations` CLI 指令後，手動在 `code.json` 檔案中指定翻譯字串。\n\n```jsx\n<Translate id=\"homepage.title\" />\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c4f62365",
+      "source_content": ":::info\n\nThe `<Translate>` component supports interpolation. You can also implement [string pluralization](https://github.com/facebook/docusaurus/pull/i18n/i18n-tutorial.mdx#pluralization) through some custom code and the [`translate` imperative API](#translate-imperative).\n\n:::",
+      "source_content_hash": "17eebfded15125414e8cd3a801f55723c2041cb88238dc3790a4fb74eff843c4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Hooks {#hooks}"
+      }
+    },
+    {
+      "segment_id": "5bc50701",
+      "source_content": "## Hooks {#hooks}",
+      "source_content_hash": "f865d5462da6cd5b577b89c40df32d921c7ec21946b411b774593eb3fcc85a75",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "12e415c2",
+      "source_content": "### `useDocusaurusContext` {#useDocusaurusContext}",
+      "source_content_hash": "3917d0f7f80b96a60a7a5680b51ad6b0f1223992aa0a4101dae52708ed6961ff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useDocusaurusContext` {#useDocusaurusContext}"
+      }
+    },
+    {
+      "segment_id": "9cbb5424",
+      "source_content": "React hook to access Docusaurus Context. The context contains the `siteConfig` object from [docusaurus.config.js](api/docusaurus.config.js.mdx) and some additional site metadata.",
+      "source_content_hash": "8614d4f432eac8232353d9623e7ccf085b4c50adefc63eb2c52531f16175d701",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於存取 Docusaurus 上下文(Context)的 React Hook。該上下文包含來自 [docusaurus.config.js](api/docusaurus.config.js.mdx) 的 `siteConfig` 物件和一些額外的網站元資料。"
+      }
+    },
+    {
+      "segment_id": "9f0775df",
+      "source_content": "```ts\ntype PluginVersionInformation =\n  | {readonly type: 'package'; readonly version?: string}\n  | {readonly type: 'project'}\n  | {readonly type: 'local'}\n  | {readonly type: 'synthetic'};\n\ntype SiteMetadata = {\n  readonly docusaurusVersion: string;\n  readonly siteVersion?: string;\n  readonly pluginVersions: Record<string, PluginVersionInformation>;\n};\n\ntype I18nLocaleConfig = {\n  label: string;\n  direction: string;\n};\n\ntype I18n = {\n  defaultLocale: string;\n  locales: [string, ...string[]];\n  currentLocale: string;\n  localeConfigs: Record<string, I18nLocaleConfig>;\n};\n\ntype DocusaurusContext = {\n  siteConfig: DocusaurusConfig;\n  siteMetadata: SiteMetadata;\n  globalData: Record<string, unknown>;\n  i18n: I18n;\n  codeTranslations: Record<string, string>;\n};\n```",
+      "source_content_hash": "0f21b8bda39c53f7ed93090c303e988f13b2b5eeb03f712c8b3f561fcbe64dae",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f0775df"
+      }
+    },
+    {
+      "segment_id": "475959f2",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "99727f95",
+      "source_content": "```jsx\nimport React from 'react';\nimport useDocusaurusContext from '@docusaurus/useDocusaurusContext';\n\nconst MyComponent = () => {\n  // highlight-next-line\n  const {siteConfig, siteMetadata} = useDocusaurusContext();\n  return (\n    <div>\n      {/* highlight-start */}\n      <h1>{siteConfig.title}</h1>\n      <div>{siteMetadata.siteVersion}</div>\n      <div>{siteMetadata.docusaurusVersion}</div>\n      {/* highlight-end */}\n    </div>\n  );\n};\n```",
+      "source_content_hash": "4231722d84bab82f2552a3d33bf70e1a6284aa176dcd7b24da139a76e6fbe21d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_99727f95"
+      }
+    },
+    {
+      "segment_id": "149f031a",
+      "source_content": ":::note\n\nThe `siteConfig` object only contains **serializable values** (values that are preserved after `JSON.stringify()`). Functions, regexes, etc. would be lost on the client side.\n\n:::",
+      "source_content_hash": "881359ff9721191f8953315650c317be17144c85208ed4cbe74e7d4407270e79",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n`siteConfig` 物件僅包含**可序列化的值**（即經過 `JSON.stringify()` 後仍保留的值）。函數、正則表達式等內容會在客戶端丟失。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "72965517",
+      "source_content": "### `useIsBrowser` {#useIsBrowser}",
+      "source_content_hash": "30af30dba4e1852b1df5863c2b934502001860b5651bd4fc97317ff22cfb99b6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useIsBrowser` {#useIsBrowser}"
+      }
+    },
+    {
+      "segment_id": "ce99c217",
+      "source_content": "Returns `true` when the React app has successfully hydrated in the browser.",
+      "source_content_hash": "48707251a5afcea785c382e0654f0c664fb11af7231606c9c4b0104cdf369c15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當 React 應用在瀏覽器中完成水合（hydration）時返回 `true`。"
+      }
+    },
+    {
+      "segment_id": "8c649e5e",
+      "source_content": ":::warning\n\nUse this hook instead of `typeof windows !== 'undefined'` in React rendering logic.\n\nThe first client-side render output (in the browser) **must be exactly the same** as the server-side render output (Node.js). Not following this rule can lead to unexpected hydration behaviors, as described in [The Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/).\n\n:::",
+      "source_content_hash": "6bd7722f48cbf38e2036b056b71ecebc4dca69e5c023cf4e74d03b65e0a904d4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n在 React 渲染邏輯中應使用此鉤子而非 `typeof windows !== 'undefined'`。\n\n客戶端首次渲染輸出（瀏覽器端）**必須與**伺服器端渲染輸出（Node.js 端）**完全一致**。違反此規則可能導致非預期的水合行為，詳見 [The Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "250c20ca",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "691f84c2",
+      "source_content": "```jsx\nimport React from 'react';\nimport useIsBrowser from '@docusaurus/useIsBrowser';\n\nconst MyComponent = () => {\n  // highlight-start\n  const isBrowser = useIsBrowser();\n  // highlight-end\n  return <div>{isBrowser ? 'Client' : 'Server'}</div>;\n};\n```",
+      "source_content_hash": "dfef0670952b1bc8b3f964059e9f68ec3da47988c7033b7ba8373819968c76b5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_691f84c2"
+      }
+    },
+    {
+      "segment_id": "381a5950",
+      "source_content": "### `useBaseUrl` {#useBaseUrl}",
+      "source_content_hash": "98066907cd14b0aafea6b251baaccd76c09f908e9494bdd00d688b3a9e7fd65a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useBaseUrl` {#useBaseUrl}"
+      }
+    },
+    {
+      "segment_id": "1e0d7fbe",
+      "source_content": "React hook to prepend your site `baseUrl` to a string.",
+      "source_content_hash": "7c2bd62f57f5edc9738bd749951bca46288f3a163564869eaee708c55cfbc22e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於在字串前附加站點 `baseUrl` 的 React 鉤子。"
+      }
+    },
+    {
+      "segment_id": "41c1ba53",
+      "source_content": ":::warning\n\n**Don't use it for regular links!**\n\nThe `/baseUrl/` prefix is automatically added to all **absolute paths** by default:\n\n- Markdown: `[link](/my/path)` will link to `/baseUrl/my/path`\n- React: `<Link to=\"/my/path/\">link</Link>` will link to `/baseUrl/my/path`\n\n:::",
+      "source_content_hash": "90b28d376d268e08a173cc418b22a4700bf54b0a7f054b2b69b12d19fb91bf63",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n**勿用於常規連結！**\n\n所有**絕對路徑**預設會自動添加 `/baseUrl/` 前綴：\n\n- Markdown：`[link](/my/path)` 會指向 `/baseUrl/my/path`\n- React：`<Link to=\"/my/path/\">link</Link>` 會指向 `/baseUrl/my/path`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0c760a60",
+      "source_content": "#### Options {#options}",
+      "source_content_hash": "bffc8405114cc4562899104bd636a4fe1a183224e36591105b134e6b672b8499",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options}"
+      }
+    },
+    {
+      "segment_id": "c9b3691d",
+      "source_content": "```ts\ntype BaseUrlOptions = {\n  forcePrependBaseUrl: boolean;\n  absolute: boolean;\n};\n```",
+      "source_content_hash": "a6fa4a7837616db3e4b974b327d94e113c7734ed7e56284b0d54d08305c443c5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c9b3691d"
+      }
+    },
+    {
+      "segment_id": "6ff5a621",
+      "source_content": "#### Example usage: {#example-usage}",
+      "source_content_hash": "0452687cb06fc1e69c99e5c3fecd829898697539abb2e6ad2ceac322afd7eba1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 使用範例： {#example-usage}"
+      }
+    },
+    {
+      "segment_id": "44d75a33",
+      "source_content": "```jsx\nimport React from 'react';\nimport useBaseUrl from '@docusaurus/useBaseUrl';\n\nconst SomeImage = () => {\n  // highlight-start\n  const imgSrc = useBaseUrl('/img/myImage.png');\n  // highlight-end\n  return <img src={imgSrc} />;\n};\n```",
+      "source_content_hash": "61598e91b1ad3c42ba234b01c219f80d0b32d053d36b68eb870b1ff11d4fe6f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_44d75a33"
+      }
+    },
+    {
+      "segment_id": "ee96f585",
+      "source_content": ":::tip\n\nIn most cases, you don't need `useBaseUrl`.\n\nPrefer a `require()` call for [assets](./guides/markdown-features/markdown-features-assets.mdx):\n\n```jsx\n<img src={require('@site/static/img/myImage.png').default} />\n```\n\n:::",
+      "source_content_hash": "80d5cf23cc7ea890244bc9f2152a5c12644428908d5a3a113e292f98c7f87da2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n多數情況下無需使用 `useBaseUrl`。\n\n對於[靜態資源](./guides/markdown-features/markdown-features-assets.mdx)，建議改用 `require()`：\n\n```jsx\n<img src={require('@site/static/img/myImage.png').default} />\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "76f5fa2a",
+      "source_content": "### `useBaseUrlUtils` {#useBaseUrlUtils}",
+      "source_content_hash": "07924a79adbfc3f025905a6605fec90592002592a21a145382fd2ebe4106bed3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useBaseUrlUtils` {#useBaseUrlUtils}"
+      }
+    },
+    {
+      "segment_id": "16341c03",
+      "source_content": "Sometimes `useBaseUrl` is not good enough. This hook return additional utils related to your site's base URL.",
+      "source_content_hash": "d99c8fa867d5cd4cd3b51ca28e8640ebeeb63989824173a43348d5afb0a8c459",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當 `useBaseUrl` 無法滿足需求時，此鉤子提供與站點基礎 URL 相關的額外工具函數。"
+      }
+    },
+    {
+      "segment_id": "564bb8f1",
+      "source_content": "- `withBaseUrl`: useful if you need to add base URLs to multiple URLs at once.",
+      "source_content_hash": "f4154badde473aa91191b8598a236282a9cc8ee49f9f8ab39f4c12c65ef32ae2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `withBaseUrl`：需同時為多個 URL 添加基礎 URL 時特別有用。"
+      }
+    },
+    {
+      "segment_id": "619d970f",
+      "source_content": "```jsx\nimport React from 'react';\nimport {useBaseUrlUtils} from '@docusaurus/useBaseUrl';\n\nconst Component = () => {\n  const urls = ['/a', '/b'];\n  // highlight-start\n  const {withBaseUrl} = useBaseUrlUtils();\n  const urlsWithBaseUrl = urls.map(withBaseUrl);\n  // highlight-end\n  return <div>{/* ... */}</div>;\n};\n```",
+      "source_content_hash": "92953f236b628cd9d5e33d9e227371184427f8e2af90b87c6c1724ca2e347413",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_619d970f"
+      }
+    },
+    {
+      "segment_id": "7f3056d6",
+      "source_content": "### `useGlobalData` {#useGlobalData}",
+      "source_content_hash": "60b338cf29f78698c8d1473d624a3b21a41c8966360279fc67251406b8b7fd2c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useGlobalData` {#useGlobalData}"
+      }
+    },
+    {
+      "segment_id": "2a5b873d",
+      "source_content": "React hook to access Docusaurus global data created by all the plugins.",
+      "source_content_hash": "9cce0ca850103ec6c70a71c6a11de6a043cddc231b142668e02f0cbd9d7a1678",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於存取所有插件建立的 Docusaurus 全域資料的 React 鉤子。"
+      }
+    },
+    {
+      "segment_id": "0cfab7d6",
+      "source_content": "Global data is namespaced by plugin name then by plugin ID.",
+      "source_content_hash": "87cdbf31ec6751809f2c005960660accf6b2cc5f65d737e5ec660761b7728f2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "全域資料按插件名稱與插件 ID 進行命名空間隔離。"
+      }
+    },
+    {
+      "segment_id": "07c19d09",
+      "source_content": ":::info\n\nPlugin ID is only useful when a plugin is used multiple times on the same site. Each plugin instance is able to create its own global data.\n\n:::",
+      "source_content_hash": "52e1cdf7d49925c3e7ca4ccc5fbc19f737ddb1110b8f2a32140e566b9f2ccf1b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n僅當同一插件在站點中被多次使用時才需關注插件 ID。每個插件實例可建立獨立的全域資料。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "58e13dc0",
+      "source_content": "```ts\ntype GlobalData = Record<\n  PluginName,\n  Record<\n    PluginId, // \"default\" by default\n    any // plugin-specific data\n  >\n>;\n```",
+      "source_content_hash": "f2324433691f0cfee4a6bb572ba3b7aeb2b8ca3b489b85cef72d5f79a076717a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58e13dc0"
+      }
+    },
+    {
+      "segment_id": "61a57ead",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "d66d2785",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport useGlobalData from '@docusaurus/useGlobalData';\n\nconst MyComponent = () => {\n  // highlight-start\n  const globalData = useGlobalData();\n  const myPluginData = globalData['my-plugin']['default'];\n  return <div>{myPluginData.someAttribute}</div>;\n  // highlight-end\n};\n```",
+      "source_content_hash": "273fc8baf6dc7aca83ac692646d563b6eb01d96f0bdd6d47b75f84572fc72291",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d66d2785"
+      }
+    },
+    {
+      "segment_id": "a7d64d4d",
+      "source_content": ":::tip\n\nInspect your site's global data at `.docusaurus/globalData.json`\n\n:::",
+      "source_content_hash": "2bddc53a006394997b7423298cfafc9e1b01dce8def21c2857db0496548d6db7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n可透過 `.docusaurus/globalData.json` 檢視站點的全域資料\n\n:::"
+      }
+    },
+    {
+      "segment_id": "03464bfb",
+      "source_content": "### `usePluginData` {#usePluginData}",
+      "source_content_hash": "ed8ae6b3a3453ab887e8b20a28829f5e75335ac639170d026cbca3124a34c28b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `usePluginData` {#usePluginData}"
+      }
+    },
+    {
+      "segment_id": "2e4be0ab",
+      "source_content": "Access global data created by a specific plugin instance.",
+      "source_content_hash": "4ed53b84428f15ae42401951a44fee71269ea0a52baa60b7f0d3547e7084db9f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "存取特定插件實例建立的全局資料。"
+      }
+    },
+    {
+      "segment_id": "d66f9bc8",
+      "source_content": "This is the most convenient hook to access plugin global data and should be used most of the time.",
+      "source_content_hash": "3fbe26a384667388a9eeb626582d5161f1b2272b4f256c1c569ce72409afb3e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此為存取插件全局資料最便捷的鉤子，多數情況下應優先採用。"
+      }
+    },
+    {
+      "segment_id": "3e09f17b",
+      "source_content": "`pluginId` is optional if you don't use multi-instance plugins.",
+      "source_content_hash": "827d633275aacc01bed03bbb1513cdbd0fb3a977b5bf9a632bb3215874242575",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若未使用多實例插件，`pluginId` 可省略。"
+      }
+    },
+    {
+      "segment_id": "32f99f1f",
+      "source_content": "```ts\nfunction usePluginData(\n  pluginName: string,\n  pluginId?: string,\n  options?: {failfast?: boolean},\n);\n```",
+      "source_content_hash": "9e4573a939e72968eace0b8d0fbdec1a8dd01a83fe70a7c79637084d42b307f9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_32f99f1f"
+      }
+    },
+    {
+      "segment_id": "d10e32d6",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "7f6069b6",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport {usePluginData} from '@docusaurus/useGlobalData';\n\nconst MyComponent = () => {\n  // highlight-start\n  const myPluginData = usePluginData('my-plugin');\n  return <div>{myPluginData.someAttribute}</div>;\n  // highlight-end\n};\n```",
+      "source_content_hash": "a193fd4734310d776a35f47e8c52193a4672e3e49c62e266d3a370d288a992c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7f6069b6"
+      }
+    },
+    {
+      "segment_id": "371fa623",
+      "source_content": "### `useAllPluginInstancesData` {#useAllPluginInstancesData}",
+      "source_content_hash": "7c4c7f08fe38d06665779a41e155042b1c4a27ea72c938428aaba5268f5fc651",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useAllPluginInstancesData` {#useAllPluginInstancesData}"
+      }
+    },
+    {
+      "segment_id": "eb2c43fb",
+      "source_content": "Access global data created by a specific plugin. Given a plugin name, it returns the data of all the plugins instances of that name, by plugin id.",
+      "source_content_hash": "95e2602454f46f601f8fbbe3ad8f2d74d538851bc611a5f991238bc428d37cc8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "存取特定插件建立的全局資料。根據插件名稱返回該插件所有實例的資料（按插件 ID 分類）。"
+      }
+    },
+    {
+      "segment_id": "e879963c",
+      "source_content": "```ts\nfunction useAllPluginInstancesData(\n  pluginName: string,\n  options?: {failfast?: boolean},\n);\n```",
+      "source_content_hash": "c6f2825d159110ee322552ad9e7a6a07be3e233aadfc8d89e1bcb353c9214339",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e879963c"
+      }
+    },
+    {
+      "segment_id": "11ca2290",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "6727af3a",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport {useAllPluginInstancesData} from '@docusaurus/useGlobalData';\n\nconst MyComponent = () => {\n  // highlight-start\n  const allPluginInstancesData = useAllPluginInstancesData('my-plugin');\n  const myPluginData = allPluginInstancesData['default'];\n  return <div>{myPluginData.someAttribute}</div>;\n  // highlight-end\n};\n```",
+      "source_content_hash": "e59420ece2165984a9afaa0cfc7706faf687f7f84f2c49a4cdd395c878b8402b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6727af3a"
+      }
+    },
+    {
+      "segment_id": "1212565e",
+      "source_content": "### `useBrokenLinks` {#useBrokenLinks}",
+      "source_content_hash": "711d528afe3e54e5003e5bdf8a68692260cdb959fd08aa50d89731765f84706d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useBrokenLinks` {#useBrokenLinks}"
+      }
+    },
+    {
+      "segment_id": "52e54b91",
+      "source_content": "React hook to access the Docusaurus broken link checker APIs, exposing a way for a Docusaurus pages to report and collect their links and anchors.",
+      "source_content_hash": "cae9fc1a8dcb656a5fdb11e99239f42ff90f18cc2d08043f661ad69210147d71",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於存取 Docusaurus 斷鏈檢查 API 的 React Hook，提供 Docusaurus 頁面回報與收集連結及錨點的方式。"
+      }
+    },
+    {
+      "segment_id": "8bd01601",
+      "source_content": ":::warning\n\nThis is an **advanced** API that **most Docusaurus users don't need to use directly**.\n\nIt is already **built-in** in existing high-level components:\n\n- the [`<Link>`](#link) component will collect links for you\n- the `@theme/Heading` (used for Markdown headings) will collect anchors\n\nUse `useBrokenLinks()` if you implement your own `<Heading>` or `<Link>` component.\n\n:::",
+      "source_content_hash": "f64e0c64cae5d8c17ff2196c2847626dc09614a7cb8b18f488c31a5beac25e5b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n這是**進階** API，**多數 Docusaurus 使用者無需直接使用**。\n\n現有高階元件已**內建**此功能：\n\n- [`<Link>`](#link) 元件會自動收集連結\n- `@theme/Heading` (用於 Markdown 標題) 會自動收集錨點\n\n僅在實作自訂 `<Heading>` 或 `<Link>` 元件時使用 `useBrokenLinks()`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c637866f",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "c4faeba1",
+      "source_content": "```js title=\"MyHeading.js\"\nimport useBrokenLinks from '@docusaurus/useBrokenLinks';\n\nexport default function MyHeading(props) {\n  useBrokenLinks().collectAnchor(props.id);\n  return <h2 {...props} />;\n}\n```",
+      "source_content_hash": "5745a6c0187d68088c96885065b9898f4fac5c590ec048efafb78209f0d7f41b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c4faeba1"
+      }
+    },
+    {
+      "segment_id": "d747548c",
+      "source_content": "```js title=\"MyLink.js\"\nimport useBrokenLinks from '@docusaurus/useBrokenLinks';\n\nexport default function MyLink(props) {\n  useBrokenLinks().collectLink(props.href);\n  return <a {...props} />;\n}\n```",
+      "source_content_hash": "6b37ed0e1d60f40cd5c35bbc6026ca83c6164d63c42d241d4e25304be0306ce0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d747548c"
+      }
+    },
+    {
+      "segment_id": "7173bf1f",
+      "source_content": "## Functions {#functions}",
+      "source_content_hash": "eabcc5123644fa71a0e15bd1d23fccc08ea2bae7736f51e735397b846495eb1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 函式 {#functions}"
+      }
+    },
+    {
+      "segment_id": "4ba1514d",
+      "source_content": "### `interpolate` {#interpolate-1}",
+      "source_content_hash": "d88f22b1642abebfbacd1b90f71d52695d78333bbb8824853dd275f82d4da60d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `interpolate` {#interpolate-1}"
+      }
+    },
+    {
+      "segment_id": "9ccb1d95",
+      "source_content": "The imperative counterpart of the [`<Interpolate>`](#interpolate) component.",
+      "source_content_hash": "41db97950e06e7d0661d1084613a180ecbb64163660e42058b0d0219c0570a0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[`<Interpolate>`](#interpolate) 元件的命令式對應方法。"
+      }
+    },
+    {
+      "segment_id": "ac8a983d",
+      "source_content": "#### Signature {#signature}",
+      "source_content_hash": "fd5f342783fff3df5210bc1553195ba63cf988fb8cc026ec7859f914ce9438b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 簽名 {#signature}"
+      }
+    },
+    {
+      "segment_id": "cf28054d",
+      "source_content": "```ts\n// Simple string interpolation\nfunction interpolate(text: string, values: Record<string, string>): string;\n\n// JSX interpolation\nfunction interpolate(\n  text: string,\n  values: Record<string, ReactNode>,\n): ReactNode;\n```",
+      "source_content_hash": "a0988df8eda23ea491d552d15c11cd916b1599b06572535f86070039eca60993",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cf28054d"
+      }
+    },
+    {
+      "segment_id": "185b49e4",
+      "source_content": "#### Example {#example-1}",
+      "source_content_hash": "4f8b2861ca4b2eb18dbdc81dd3ed989734193bc853476b4979568cb39965aea2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例 {#example-1}"
+      }
+    },
+    {
+      "segment_id": "bb1c9736",
+      "source_content": "```js\n// highlight-next-line\nimport {interpolate} from '@docusaurus/Interpolate';\n\nconst message = interpolate('Welcome {firstName}', {firstName: 'Sébastien'});\n```",
+      "source_content_hash": "182f87d11f10c32d29b512701fa075d4924b47f4e38e5a61274f1fe129b844e1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bb1c9736"
+      }
+    },
+    {
+      "segment_id": "1dc9f519",
+      "source_content": "### `translate` {#translate-imperative}",
+      "source_content_hash": "02aff641a3b6298e310dc3773af0941f744be4b94726fd954ff8ec51f1c26c9a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `translate` {#translate-imperative}"
+      }
+    },
+    {
+      "segment_id": "664ad775",
+      "source_content": "The imperative counterpart of the [`<Translate>`](#translate) component. Also supporting [placeholders interpolation](#interpolate).",
+      "source_content_hash": "ecaf8129e87c81b8101ba980b7f3ca379eb60578c33a58f5f28ef148423b67a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[`<Translate>`](#translate) 元件的命令式對應方法，同時支援[佔位符插值](#interpolate)。"
+      }
+    },
+    {
+      "segment_id": "7f2c485b",
+      "source_content": ":::tip\n\nUse the imperative API for the **rare cases** where a **component cannot be used**, such as:\n\n- the page `title` metadata\n- the `placeholder` props of form inputs\n- the `aria-label` props for accessibility\n\n:::",
+      "source_content_hash": "c33dc8808bae18a35eecff06674e54c1d6abe6a72338864244fa9a3647bf3bf0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n僅在**無法使用元件**的**特殊情況**下使用命令式 API，例如：\n\n- 頁面 `title` 元數據\n- 表單輸入的 `placeholder` 屬性\n- 無障礙功能的 `aria-label` 屬性\n\n:::"
+      }
+    },
+    {
+      "segment_id": "766a152f",
+      "source_content": "#### Signature {#signature-1}",
+      "source_content_hash": "0ab12de4b3c56d2f773070712d18cc4191356d70fffd1a36e47def6783212d32",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 簽名 {#signature-1}"
+      }
+    },
+    {
+      "segment_id": "a378b093",
+      "source_content": "```ts\nfunction translate(\n  translation: {message: string; id?: string; description?: string},\n  values: Record<string, string>,\n): string;\n```",
+      "source_content_hash": "2428d15cbbd48ad262af9750939584ee375223dcc653a9be833220d7a79e0f1b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a378b093"
+      }
+    },
+    {
+      "segment_id": "c1758d09",
+      "source_content": "#### Example {#example-2}",
+      "source_content_hash": "80442f89e0cec34a20c46845148c1f2c3c1bdcf3cd495ce7fc8cb5e0de16486d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例 {#example-2}"
+      }
+    },
+    {
+      "segment_id": "db4f283b",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\n\n// highlight-next-line\nimport {translate} from '@docusaurus/Translate';\n\nexport default function Home() {\n  return (\n    <Layout\n      // highlight-next-line\n      title={translate({message: 'My page meta title'})}>\n      <img\n        src={'https://docusaurus.io/logo.png'}\n        aria-label={\n          // highlight-start\n          translate(\n            {\n              message: 'The logo of site {siteName}',\n              // Optional\n              id: 'homepage.logo.ariaLabel',\n              description: 'The home page logo aria label',\n            },\n            {siteName: 'Docusaurus'},\n          )\n          // highlight-end\n        }\n      />\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "a1636d89236f35d2d0d182117212e719dcfa5c321efb50c7f2dc892bad861bc8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_db4f283b"
+      }
+    },
+    {
+      "segment_id": "6570da94",
+      "source_content": "## Modules {#modules}",
+      "source_content_hash": "1889a6d8d9592fd9c69fd8bcf03a9cb1999cd6b60c70c37c1afa1f85f1d8641c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 模組 {#modules}"
+      }
+    },
+    {
+      "segment_id": "b61deb91",
+      "source_content": "### `ExecutionEnvironment` {#executionenvironment}",
+      "source_content_hash": "49588495f6be5deeff38767e8acfd03a3b59ed74a3ec762d4f28216d704f3bd3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `ExecutionEnvironment` {#executionenvironment}"
+      }
+    },
+    {
+      "segment_id": "4ef51667",
+      "source_content": "A module that exposes a few boolean variables to check the current rendering environment.",
+      "source_content_hash": "c314798cd333d81d30681fa0240a181206918bf2f30d408f77c0d396e738640e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此模組提供若干布林變數，用於檢測當前渲染環境。"
+      }
+    },
+    {
+      "segment_id": "54b96f43",
+      "source_content": ":::warning\n\nFor React rendering logic, use [`useIsBrowser()`](#useIsBrowser) or [`<BrowserOnly>`](#browseronly) instead.\n\n:::",
+      "source_content_hash": "2f8bda00a56ceb98d357e09667dc477a627098133714a54511a772ced23de01b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n在 React 渲染邏輯中，請改用 [`useIsBrowser()`](#useIsBrowser) 或 [`<BrowserOnly>`](#browseronly)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c9e8b912",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "bbbc583e",
+      "source_content": "```js\nimport ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';\n\nif (ExecutionEnvironment.canUseDOM) {\n  require('lib-that-only-works-client-side');\n}\n```",
+      "source_content_hash": "db3ac2a127bc63d78f7a206abdee5dfe87abbd7b0500126de9b06f86759ee75a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bbbc583e"
+      }
+    },
+    {
+      "segment_id": "cec1a6de",
+      "source_content": "| Field | Description |\n| --- | --- |\n| `ExecutionEnvironment.canUseDOM` | `true` if on client/browser, `false` on Node.js/prerendering. |\n| `ExecutionEnvironment.canUseEventListeners` | `true` if on client and has `window.addEventListener`. |\n| `ExecutionEnvironment.canUseIntersectionObserver` | `true` if on client and has `IntersectionObserver`. |\n| `ExecutionEnvironment.canUseViewport` | `true` if on client and has `window.screen`. |",
+      "source_content_hash": "4be79a4bfd647ccb855ce6cab012ffa8fed6d250f3725758ed22989cf7289460",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cec1a6de"
+      }
+    },
+    {
+      "segment_id": "3580e38f",
+      "source_content": "### `constants` {#constants}",
+      "source_content_hash": "9e09827a29f41148cfab6f06f02c9ee63e32b0b7ab6c16b6a750344bbe1c6e1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `constants` {#constants}"
+      }
+    },
+    {
+      "segment_id": "9ce3da92",
+      "source_content": "A module exposing useful constants to client-side theme code.",
+      "source_content_hash": "f65c207910bdf506c428d8b79aae84ac5505ae40d25aa63049cea022e036bd3c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此模組向客戶端主題程式碼提供實用常數。"
+      }
+    },
+    {
+      "segment_id": "4c69a582",
+      "source_content": "```js\nimport {DEFAULT_PLUGIN_ID} from '@docusaurus/constants';\n```",
+      "source_content_hash": "93028066505e4b80756e0778324cfded91580b86fba412ced2f5d5db185d146a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c69a582"
+      }
+    },
+    {
+      "segment_id": "99d85b9c",
+      "source_content": "| Named export        | Value     |\n| ------------------- | --------- |\n| `DEFAULT_PLUGIN_ID` | `default` |",
+      "source_content_hash": "4f8bf0293df0c1a72d8ef471c9c01f2cad8ced055d76f5f27a1c4d95e12d90b9",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_99d85b9c"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/docusaurus-core.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.397104+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "eca4c7925de30cf7b2d2bc12d2d02ac0778616a7e4394529934635974f91b559"
+  }
+}

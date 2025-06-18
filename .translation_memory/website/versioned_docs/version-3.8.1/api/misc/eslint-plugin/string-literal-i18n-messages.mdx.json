@@ -1,0 +1,142 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/api/misc/eslint-plugin/string-literal-i18n-messages.mdx",
+  "source_file_content_hash": "8ffb9cd239acd037c63459d07b8bbc1a0e5f93a19d0aa29fa876df0ee43a7d48",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /api/misc/@docusaurus/eslint-plugin/string-literal-i18n-messages\n---",
+      "source_content_hash": "b2cb14f41020c1bc60caebfeb098d7c5db978b40aeba778433bb7d8ee783f38b",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# string-literal-i18n-messages",
+      "source_content_hash": "1708969449e02e86e6d04ba2b4d8c57ba4de114bbc8037a5ab15f8daa5b654c8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 字串常數國際化訊息"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Enforce translate APIs to be called on plain text labels.",
+      "source_content_hash": "f29127b8aaac70b7d92c192cd823d94bef386bd6cdda3162efdedb68dff01584",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "強制要求純文字標籤必須透過翻譯API進行處理。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Docusaurus offers the [`docusaurus write-translations`](../../../cli.mdx#docusaurus-write-translations-sitedir) API, which statically extracts the text labels marked as translatable. Dynamic values used in `<Translate>` or `translate()` calls will fail to be extracted. This rule will ensure that all translate calls are statically extractable.",
+      "source_content_hash": "b3dd937b967863b0cde3f582842d5c76aafe45a0321b32a8f42fd83f9d5721d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus提供[`docusaurus write-translations`](../../../cli.mdx#docusaurus-write-translations-sitedir) API，該功能會靜態提取標記為可翻譯的文字標籤。若在`<Translate>`或`translate()`呼叫中使用動態值，將導致提取失敗。本規則將確保所有翻譯呼叫皆可被靜態提取。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Rule Details {#details}",
+      "source_content_hash": "690b629e8ddc6e690cbd5cbf346df9a24a48806263051f247d6714c4a3c6ead7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則詳情 {#details}"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Examples of **incorrect** code for this rule:",
+      "source_content_hash": "7c6462bacad6bdc980d88d6feb75fba43108d257e6c559378586af7869988718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**錯誤**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```js\nconst text = 'Some text to be translated'\n\n// Invalid <Translate> child\n<Translate>{text}</Translate>\n\n// Invalid message attribute\ntranslate({message: text})\n```",
+      "source_content_hash": "b8aa76d09bf8cc9fe1b20c54683195172bafd7c2cf5e8d8cd39ff85628ac5c1c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4b395385"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Examples of **correct** code for this rule:",
+      "source_content_hash": "76019e5c3c094061d1e3142f6873cc0ad1c55a6f9b9596980100921b3099184f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**正確**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "08021a08",
+      "source_content": "```js\n// Valid <Translate> child\n<Translate>Some text to be translated</Translate>\n\n// Valid message attribute\ntranslate({message: 'Some text to be translated'})\n\n// Valid <Translate> child using values object as prop\n<Translate values={{firstName: 'Sébastien'}}>\n  {'Welcome, {firstName}! How are you?'}\n</Translate>\n\n// Valid message attribute using values object as second argument\ntranslate({message: 'The logo of site {siteName}'}, {siteName: 'Docusaurus'})\n```",
+      "source_content_hash": "9bdf34e930b3872ea644167b8a1b108d61f4c88e4d5cfd9ba4feed48acbc2f4c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_08021a08"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## When Not To Use It {#when-not-to-use}",
+      "source_content_hash": "54002d80f20b61218ad62d9f33d2db0105e2a3cbe2a6a9e8fea7de190a4eb5e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 不適用情境 {#when-not-to-use}"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "If you're not using the [i18n feature](../../../i18n/i18n-introduction.mdx), you can disable this rule.",
+      "source_content_hash": "832a04c469f07279f74dfc745b4538aa2fd2b34dedd378ecb38480879c2c94ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若未使用[國際化功能](../../../i18n/i18n-introduction.mdx)，可停用此規則。"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## Further Reading {#further-reading}",
+      "source_content_hash": "372006c6107a6701da927145765c8cfb3114c9bd41eac5ce41dec0368d3629d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 延伸閱讀 {#further-reading}"
+      }
+    },
+    {
+      "segment_id": "6773b78b",
+      "source_content": "- https://docusaurus.io/docs/docusaurus-core#translate\n- https://docusaurus.io/docs/docusaurus-core#translate-imperative",
+      "source_content_hash": "b1531e784110680950deab1905bbe66381d065858a559e55c3a3e6d35a387dac",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- https://docusaurus.io/docs/docusaurus-core#translate\n- https://docusaurus.io/docs/docusaurus-core#translate-imperative"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/api/misc/eslint-plugin/string-literal-i18n-messages.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.368214+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "8ffb9cd239acd037c63459d07b8bbc1a0e5f93a19d0aa29fa876df0ee43a7d48"
+  }
+}

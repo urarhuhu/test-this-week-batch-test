@@ -1,0 +1,532 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/guides/markdown-features/markdown-features-assets.mdx",
+  "source_file_content_hash": "1910ac50198ca44dd590b2ee051f0edf4e507ed72526ccdd8878189fefc77338",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: assets\ndescription: Handling assets in Docusaurus Markdown\nslug: /markdown-features/assets\n---",
+      "source_content_hash": "16473451fce33f31ebf1bc3444715b90d55544f5d2e3fb2f55124f7508bc3749",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Assets",
+      "source_content_hash": "6d84ad4f5ddb8dde0301e697d362fbf7c9ffb6712233a3068482258ef0756bf1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 靜態資源"
+      }
+    },
+    {
+      "segment_id": "623f74e7",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+      "source_content_hash": "0ef4a68bf87f46cb4d65c13f4623b8f35a4ea296950dbb88c0fce62ed668618f",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_623f74e7"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Sometimes you want to link to assets (e.g. docx files, images...) directly from Markdown files, and it is convenient to co-locate the asset next to the Markdown file using it.",
+      "source_content_hash": "ed7a7cc42b272a1aea8db519b10325e2e736f4a4d85b82c7ef5e53898ab62123",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有時您會希望直接從 Markdown 檔案連結靜態資源（例如 .docx 文件、圖片等），此時將資源與使用它的 Markdown 檔案放在同一目錄下會非常方便。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Let's imagine the following file structure:",
+      "source_content_hash": "271c936be1a35d11dc7a90dee06a43d42191c20126b0a3ef215ef87e9c142d7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "假設有以下檔案結構："
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```\n# Your doc\n/website/docs/myFeature.mdx\n\n# Some assets you want to use\n/website/docs/assets/docusaurus-asset-example-banner.png\n/website/docs/assets/docusaurus-asset-example.docx\n```",
+      "source_content_hash": "8dbe75d0b5b304b63d7f11c884a8cb19bf0b462315773b7d93633986e8811ac1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Images {#images}",
+      "source_content_hash": "f4856305be7e3aee2964573feb2b09cbd98cf3679d1fc07cf09f264a196f71e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 圖片 {#images}"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "You can display images in three different ways: Markdown syntax, CJS require, or ES imports syntax.",
+      "source_content_hash": "885f62504563ca5bdc72a73be366fd35b596ef84ee29e532409bcd23dc6b9afd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以用三種方式顯示圖片：Markdown 語法、CommonJS 的 require 或 ES 的 import 語法。"
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"Markdown syntax\">\n```",
+      "source_content_hash": "f129bb0d757f7d74db5a86ad36f677728f5fa9d3573df57d12f2d19cc9451115",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Display images using simple Markdown syntax:",
+      "source_content_hash": "44f2e5e8b6b30a911c777fea05958e9b96164c2bb95a477fb3bd91f8dca6f13f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用簡單的 Markdown 語法顯示圖片："
+      }
+    },
+    {
+      "segment_id": "be2d5397",
+      "source_content": "```md\n![Example banner](./assets/docusaurus-asset-example-banner.png)\n```",
+      "source_content_hash": "f4da24763847343de8361acc18ac2d5b2896e23f953cf384771f9d897dfda8d7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_be2d5397"
+      }
+    },
+    {
+      "segment_id": "bca33820",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"CommonJS require\">\n```",
+      "source_content_hash": "3a75c4c000df3a0de9123642c0bf7b3cf8dbafe76d82b74321695066884a7cef",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bca33820"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Display images using inline CommonJS `require` in JSX image tag:",
+      "source_content_hash": "335ed39d5e5d3121e585b66d0c294a6bb073729200817495c9b2421f2d2e5679",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 JSX 圖片標籤內聯 CommonJS `require` 顯示圖片："
+      }
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```jsx\n<img\n  src={require('./assets/docusaurus-asset-example-banner.png').default}\n  alt=\"Example banner\"\n/>\n```",
+      "source_content_hash": "2e4c8bb9ee832f67cbc643affd98ba221476092fd26f7b907a871f6e2cf9274b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_48ec8149"
+      }
+    },
+    {
+      "segment_id": "f275f5fd",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"Import statement\">\n```",
+      "source_content_hash": "9a0c5dade42f482395c66fff05ec3c9b2cc910dc6944520019cff8103ec8a92d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f275f5fd"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Display images using ES `import` syntax and JSX image tag:",
+      "source_content_hash": "2ee94d87ff093bdb8e7f1d66be0580a710ae8add15a4648cc8d20f063641961b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 ES `import` 語法與 JSX 圖片標籤顯示圖片："
+      }
+    },
+    {
+      "segment_id": "3adc0ceb",
+      "source_content": "```jsx\nimport myImageUrl from './assets/docusaurus-asset-example-banner.png';\n\n<img src={myImageUrl} alt=\"Example banner\" />;\n```",
+      "source_content_hash": "47a030a3ce5e48dda44f822c0d376017e7edf24bba3d0df243eaa0f6e3f99bd6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3adc0ceb"
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "All of the above result in displaying the image:",
+      "source_content_hash": "f82644967c20a29e4f8eb52573dfb5161b6e9385700c0a081aeb75eb4526db61",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以上所有方式都會顯示相同的圖片："
+      }
+    },
+    {
+      "segment_id": "e7961985",
+      "source_content": "<BrowserWindow>\n\n![My image alternative text](../../assets/docusaurus-asset-example-banner.png)\n\n</BrowserWindow>",
+      "source_content_hash": "fd20d7800c35bfc83d44426f54ba7cfd09cb5076cc38f6df05d5526c66b5bd73",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e7961985"
+      }
+    },
+    {
+      "segment_id": "cbde7a8e",
+      "source_content": ":::note\n\nIf you are using [@docusaurus/plugin-ideal-image](../../api/plugins/plugin-ideal-image.mdx), you need to use the dedicated image component, as documented.\n\n:::",
+      "source_content_hash": "4e295e7e775f39de025f0453c2e51ff1b2666a943ab0060489a35f7ba9adea9c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n如果您使用 [@docusaurus/plugin-ideal-image](../../api/plugins/plugin-ideal-image.mdx)，則需按照文件說明使用專用的圖片組件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "## Files {#files}",
+      "source_content_hash": "44cce9dd3a7ef177f40b877eda67dcbae63ed0baa4d94ce4b3fb95c5a4ed614b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 文件 {#files}"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "In the same way, you can link to existing assets by `require`'ing them and using the returned URL in `video`s, `a` anchor links, etc.",
+      "source_content_hash": "f49f96a4f6fe91f7072a59fcefc51efb58d157d632116ba9570677d0a458da24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同樣地，您可以通過 `require` 現有資源並將返回的 URL 用於 `video`、`a` 錨點連結等。"
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```md\n# My Markdown page\n\n<a target=\"\\_blank\" href={require('./assets/docusaurus-asset-example.docx').default}> Download this docx </a>\n\nor\n\n[Download this docx using Markdown](./assets/docusaurus-asset-example.docx)\n```",
+      "source_content_hash": "a5090a14ad05f6e49b6cb7af0e9dc2e0261e8d9577f53b072c1f1517752bb5a5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    },
+    {
+      "segment_id": "6fa14611",
+      "source_content": "<BrowserWindow>\n\n<a\n  target=\"_blank\"\n  href={require('../../assets/docusaurus-asset-example.docx').default}>\n  {'Download this docx'}\n</a>\n\n[Download this docx using Markdown](../../assets/docusaurus-asset-example.docx)\n\n</BrowserWindow>",
+      "source_content_hash": "b4e49229d80cf19aa246f5e5dac24bc34b1ac5d5741628bc96988b03c658eabf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6fa14611"
+      }
+    },
+    {
+      "segment_id": "95f2feab",
+      "source_content": ":::info[Markdown links are always file paths]\n\nIf you use the Markdown image or link syntax, all asset paths will be resolved as file paths by Docusaurus and automatically converted to `require()` calls. You don't need to use `require()` in Markdown unless you use the JSX syntax, which you do have to handle yourself.\n\n:::",
+      "source_content_hash": "12c34e6889437f5afd5a17cc4d6dba7a008f5fc003a7506b315640802f758df6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[Markdown 連結始終視為檔案路徑]\n\n若使用 Markdown 圖片或連結語法，Docusaurus 會將所有資源路徑解析為檔案路徑並自動轉換為 `require()` 調用。除非使用 JSX 語法（需自行處理），否則無需在 Markdown 中手動使用 `require()`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "37fca32e",
+      "source_content": "## Inline SVGs {#inline-svgs}",
+      "source_content_hash": "bccb34e2e644c762146ef9eb40b93f90a26c7eadce31cde2e5de936e42d877e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 內聯 SVG {#inline-svgs}"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "Docusaurus supports inlining SVGs out of the box.",
+      "source_content_hash": "de25df79a2319a8d665e7ef535af0b004a06d238178fec582b6f728232c43b01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 原生支援內聯 SVG。"
+      }
+    },
+    {
+      "segment_id": "7102653e",
+      "source_content": "```jsx\nimport DocusaurusSvg from './docusaurus.svg';\n\n<DocusaurusSvg />;\n```",
+      "source_content_hash": "6ad70cf674ed7214e10e7469050363c67f31020e0a4628777b8d38e5647eafb1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7102653e"
+      }
+    },
+    {
+      "segment_id": "6e56e8cf",
+      "source_content": "<BrowserWindow>\n\nimport DocusaurusSvg from '@site/static/img/docusaurus.svg';\n\n<DocusaurusSvg />\n\n</BrowserWindow>",
+      "source_content_hash": "8e62d969c6c64fdc09bdbe268a6660fd871337f30a9d21646bee34578cc2cc96",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6e56e8cf"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "This can be useful if you want to alter the part of the SVG image via CSS. For example, you can change one of the SVG colors based on the current theme.",
+      "source_content_hash": "c49ce4d6fe5bbda63cdbe17f9092674f75c9a62b96595cb6aa32d9437b0018e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若需透過 CSS 修改 SVG 圖像部分內容時，此功能非常實用。例如，可根據當前主題變更 SVG 的某種顏色。"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```jsx\nimport DocusaurusSvg from './docusaurus.svg';\n\n<DocusaurusSvg className=\"themedDocusaurus\" />;\n```",
+      "source_content_hash": "e4419b4d6c71a6ae9bfbaa57aab2037be263afbc30689e97b29e1e0fd890b917",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "a6c3f55f",
+      "source_content": "```css\n[data-theme='light'] .themedDocusaurus [fill='#FFFF50'] {\n  fill: greenyellow;\n}\n\n[data-theme='dark'] .themedDocusaurus [fill='#FFFF50'] {\n  fill: seagreen;\n}\n```",
+      "source_content_hash": "67ea5b452ba43e8e1ed5684efb384e79ea5db0feed3e358803c01cd810f81420",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a6c3f55f"
+      }
+    },
+    {
+      "segment_id": "dc9a6065",
+      "source_content": "<BrowserWindow>\n  <DocusaurusSvg className=\"themedDocusaurus\" />\n</BrowserWindow>",
+      "source_content_hash": "37596c8907ef670fef408fc4511ab0d57ae78df6df8dad95c116cc8a854bf239",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dc9a6065"
+      }
+    },
+    {
+      "segment_id": "c6b2ca77",
+      "source_content": "## Themed Images {#themed-images}",
+      "source_content_hash": "23bf74793217a49bac51abb47775f8f1d2ccd57232ea830ca1ae52391da3f358",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 主題化圖片 {#themed-images}"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "Docusaurus supports themed images: the `ThemedImage` component (included in the themes) allows you to switch the image source based on the current theme.",
+      "source_content_hash": "a911ccfdf8816124102b2e84156d12d9861a66b0830cbf3838ae4aeba3ee8da7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 支援主題化圖片：內建主題中的 `ThemedImage` 組件可讓您根據當前主題切換圖片來源。"
+      }
+    },
+    {
+      "segment_id": "0029045f",
+      "source_content": "```jsx\nimport useBaseUrl from '@docusaurus/useBaseUrl';\nimport ThemedImage from '@theme/ThemedImage';\n\n<ThemedImage\n  alt=\"Docusaurus themed image\"\n  // highlight-start\n  sources={{\n    light: useBaseUrl('/img/docusaurus_light.svg'),\n    dark: useBaseUrl('/img/docusaurus_dark.svg'),\n  }}\n  // highlight-end\n/>;\n```",
+      "source_content_hash": "b73653dff2b7c442ab0da6db7ca92c9763f121e28b8353cb1873d7c5cafbb45c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0029045f"
+      }
+    },
+    {
+      "segment_id": "9bc650e1",
+      "source_content": "```mdx-code-block\nimport useBaseUrl from '@docusaurus/useBaseUrl';\nimport ThemedImage from '@theme/ThemedImage';\n\n<BrowserWindow>\n<ThemedImage\n  alt=\"Docusaurus themed image\"\n  sources={{\n    light: useBaseUrl('/img/docusaurus_keytar.svg'),\n    dark: useBaseUrl('/img/docusaurus_speed.svg'),\n  }}\n/>\n</BrowserWindow>\n```",
+      "source_content_hash": "57d2c5f78566d64a121c38dfc5bc8628bd0807e20c1b88357c3de3c538184d18",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9bc650e1"
+      }
+    },
+    {
+      "segment_id": "6d457467",
+      "source_content": "### GitHub-style themed images {#github-style-themed-images}",
+      "source_content_hash": "fd1d177f1ab18becee56ec79994b9a5e75d3e78cc81111f3677ab8b4954e5cb0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### GitHub 風格主題化圖片 {#github-style-themed-images}"
+      }
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "GitHub uses its own [image theming approach](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/) with path fragments, which you can easily implement yourself.",
+      "source_content_hash": "fff9c6e60a9e0de1e43dd977e9330b9debbbfa760dc827f585259f64fc9d7e26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub 使用其獨特的[圖片主題化方案](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/)，透過路徑片段實現，您可輕鬆自行實作。"
+      }
+    },
+    {
+      "segment_id": "c5e0bb3d",
+      "source_content": "To toggle the visibility of an image using the path fragment (for GitHub, it's `#gh-dark-mode-only` and `#gh-light-mode-only`), add the following to your custom CSS (you can also use your own suffix if you don't want to be coupled to GitHub):",
+      "source_content_hash": "e42e6cffe56758b7eb0db1f62209e98bad7328a468bc5d6baeb67be66ad1c653",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要使用路徑片段切換圖片顯示（GitHub 使用 `#gh-dark-mode-only` 和 `#gh-light-mode-only`），請在自訂 CSS 中加入以下內容（若不想與 GitHub 耦合，也可使用自訂後綴）："
+      }
+    },
+    {
+      "segment_id": "03af811a",
+      "source_content": "```css title=\"src/css/custom.css\"\n[data-theme='light'] img[src$='#gh-dark-mode-only'],\n[data-theme='dark'] img[src$='#gh-light-mode-only'] {\n  display: none;\n}\n```",
+      "source_content_hash": "e349d8c2ece4255b87bec48190274a41f617e7998ef06edfcbe0c8e9b984ce2f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_03af811a"
+      }
+    },
+    {
+      "segment_id": "cf50de8a",
+      "source_content": "```md\n![Docusaurus themed image](/img/docusaurus_keytar.svg#gh-light-mode-only)![Docusaurus themed image](/img/docusaurus_speed.svg#gh-dark-mode-only)\n```",
+      "source_content_hash": "fafa9c788a9c5311888f68abc5f04df68b2501e930f9c8514767edff9982d06d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cf50de8a"
+      }
+    },
+    {
+      "segment_id": "0f9ea278",
+      "source_content": "<BrowserWindow>\n\n![Docusaurus themed image](/img/docusaurus_keytar.svg#gh-light-mode-only)![Docusaurus themed image](/img/docusaurus_speed.svg#gh-dark-mode-only)\n\n</BrowserWindow>",
+      "source_content_hash": "04025351a4e699182cb96b71a2f1d139e2822bcabc541ba907dd874c055db61e",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0f9ea278"
+      }
+    },
+    {
+      "segment_id": "49007f24",
+      "source_content": "## Static assets {#static-assets}",
+      "source_content_hash": "55d56bda378a2d14d71f8d4a2e6372d12043e82d41fbea5a264d23cd40501166",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 靜態資源 {#static-assets}"
+      }
+    },
+    {
+      "segment_id": "be0f7233",
+      "source_content": "If a Markdown link or image has an absolute path, the path will be seen as a file path and will be resolved from the static directories. For example, if you have configured [static directories](../../static-assets.mdx) to be `['public', 'static']`, then for the following image:",
+      "source_content_hash": "9ec099aac298464eb0d29d537caa1c2c766887a6ef9d492a6579b767baae5f4c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若 Markdown 連結或圖片使用絕對路徑，該路徑將被視為檔案路徑，並從靜態目錄解析。例如，若您設定[靜態目錄](../../static-assets.mdx)為 `['public', 'static']`，則以下圖片："
+      }
+    },
+    {
+      "segment_id": "eff3427d",
+      "source_content": "```md title=\"my-doc.md\"\n![An image from the static](/img/docusaurus.png)\n```",
+      "source_content_hash": "6e6e7b3e3d3c14edf1e3b39b4f973e48fe02dc0dbe002b7e0b74551846e06b09",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eff3427d"
+      }
+    },
+    {
+      "segment_id": "f6479c91",
+      "source_content": "Docusaurus will try to look for it in both `static/img/docusaurus.png` and `public/img/docusaurus.png`. The link will then be converted to a `require()` call instead of staying as a URL. This is desirable in two regards:",
+      "source_content_hash": "70184d56514ea59fdf42d820fcb63e8c7cfd4476ee9902d8ccc149a42f7da631",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會嘗試在 `static/img/docusaurus.png` 和 `public/img/docusaurus.png` 兩個路徑中尋找該檔案。連結最終會被轉換為 `require()` 呼叫而非保留原始 URL，此設計具有兩項優勢："
+      }
+    },
+    {
+      "segment_id": "5ca58178",
+      "source_content": "1. You don't have to worry about the base URL, which Docusaurus will take care of when serving the asset;\n2. The image enters Webpack's build pipeline and its name will be appended by a hash, which enables browsers to aggressively cache the image and improves your site's performance.",
+      "source_content_hash": "9b4bb8146aa12b717d6ff33b9bc746aa1d502c7bfbc5da160ebc0da785672d68",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 您無需自行處理基礎 URL，Docusaurus 會在提供資源時自動處理；\n2. 圖片會進入 Webpack 的建置流程，其檔名將附加雜湊值，使瀏覽器能積極快取圖片並提升網站效能。"
+      }
+    },
+    {
+      "segment_id": "01902900",
+      "source_content": "If you intend to write URLs, you can use the `pathname://` protocol to disable automatic asset linking.",
+      "source_content_hash": "a9cf3d96d05a6bdc134b5909cbf8afb15391edc57a34a595758c5544e9b3f439",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若需使用原始 URL，可透過 `pathname://` 協議來停用自動資源連結功能。"
+      }
+    },
+    {
+      "segment_id": "4d54a1e8",
+      "source_content": "```md\n![banner](pathname:///img/docusaurus-asset-example-banner.png)\n```",
+      "source_content_hash": "b4210cde34564338d6f0e8412c47e98509bef23f0c4cd5112029ee5d22d52ff7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4d54a1e8"
+      }
+    },
+    {
+      "segment_id": "d73903fc",
+      "source_content": "This link will be generated as `<img src=\"/img/docusaurus-asset-example-banner.png\" alt=\"banner\" />`, without any processing or file existence checking.",
+      "source_content_hash": "3880af87d79836cd0e4286807027d940c92c85832cca9d96ab37cf4a548f3c80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此連結將直接生成為 `<img src=\"/img/docusaurus-asset-example-banner.png\" alt=\"banner\" />`，不會進行任何處理或檔案存在性檢查。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/guides/markdown-features/markdown-features-assets.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.379868+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "1910ac50198ca44dd590b2ee051f0edf4e507ed72526ccdd8878189fefc77338"
+  }
+}

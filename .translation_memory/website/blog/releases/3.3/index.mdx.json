@@ -1,0 +1,224 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.3/index.mdx",
+  "source_file_content_hash": "e606e75c3a6106b8841251dac55d9bec46fd4df3fbe08b008d1d08535818c643",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.3\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2024-05-03\n---",
+      "source_content_hash": "ec451e82428e73137a3e9e56428b41edcbd47fd9bf072c1df951453c0985e686",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.3**.",
+      "source_content_hash": "ce56b2f0068ad243fecfda8dd5828f9e6a6cd361e8cc3cd6329d6bb844ea5c60",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Upgrading should be easy. Our [release process](/community/release-process) respects [Semantic Versioning](https://semver.org/). Minor versions do not include any breaking changes.",
+      "source_content_hash": "81680bc8b927edb4674a8a44f09d0912cb08f6a4274e97bb1c6c65523e5a4839",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "55ad7c88",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';\nimport IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';",
+      "source_content_hash": "1fe6685dcd25e2df72257e8fcb14fca8fc7e79c06d11dc4cfa37176d00d64609",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Prepare for React 19",
+      "source_content_hash": "79d6ab7a70030fd524263694b8ea82b1a389aa96856e40bd4bfc964005b79793",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "The React core team recently [released the first **React 19 beta**](https://react.dev/blog/2024/04/25/react-19). They also [published an upgrade guide and a **React v18.3 release**](https://react.dev/blog/2024/04/25/react-19-upgrade-guide) with new warnings to help us identify issues **before upgrading to React 19**.",
+      "source_content_hash": "881be361125f5fe2cd09783c742b39a7498cff2621bbd88114b917ad4f94a1e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Docusaurus v3 depends on React `18.x`. When initializing a new Docusaurus sites, it will use that new React `18.3` release. It's also the case if you decide to upgrade your dependencies, or re-generate your package manager lockfile.",
+      "source_content_hash": "18a0f67d0324572478791e69762bb91b865c92d225e9e77d0de85896e98b4e4c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "It turns out in its current state, **Docusaurus had a few of those extra warnings to fix**, notably this one immediately appearing on your dev console on any page load and navigation:",
+      "source_content_hash": "b9f98313773fbe497a3b6a3891ac76845db8170fec3a50abc915222e9e84a54c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "22ae2175",
+      "source_content": "> Warning: LoadableComponent uses the legacy contextTypes API which is no longer supported and will be removed in the next major release. Use React.createContext() with static contextType instead.",
+      "source_content_hash": "4572485d133c3185299dcfd32806ae92aa79a6aa79abfcc91537c1f044db7c47",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "In [#10079](https://github.com/facebook/docusaurus/pull/10079), we got Docusaurus ready for React 19. We fixed all the React 18.3 warnings we encountered. In case we missed any, don't hesitate to [**report new warnings**](https://github.com/facebook/docusaurus/issues/10099) if you see them, to us but also to other Docusaurus third-party plugin authors.",
+      "source_content_hash": "cdad6a170a1873c4caefdf3b6d9736ffac12db9f5566ae47b25ea4ccc5c1ca68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### `createSitemapItems`",
+      "source_content_hash": "f9a2b452ffb00e292cce23ee5c4e0ba48e2cfda6113d7e5080af04d286efe34f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "In [#10083](https://github.com/facebook/docusaurus/pull/10083), we introduced a new flexible `createSitemapItems()` hook to the sitemap plugin. This enables users to create/filter/transform/enhance the sitemap items with their own custom logic.",
+      "source_content_hash": "935eab68cdaac6698dda571b1af66abef9dc9b0c7b22dd703fa347a271060940",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```ts\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        sitemap: {\n          // highlight-start\n          createSitemapItems: async ({\n            defaultCreateSitemapItems,\n            ...params\n          }) => {\n            const items = await defaultCreateSitemapItems(params);\n            return items.filter((item) => !item.url.includes('/tags/'));\n          },\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "13d69b67acf5b415c9223df899201649455251c33098a1a374be78b4756be365",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "### Pages plugin improvements",
+      "source_content_hash": "068b23b9df43752e968355d85f5a78aa2823cbc25215eb74d1ce24908727aad6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "The Docusaurus [pages plugin](/docs/api/plugins/@docusaurus/plugin-content-pages) has historically been lagging behind the docs and blog plugins in terms of available feature.",
+      "source_content_hash": "e761f5ea1eb42f5a85397bd0f309fc196acd5d5539b18773b4a4c56ca2d09e0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "In [#10032](https://github.com/facebook/docusaurus/pull/10032) we normalized the options available on each core content plugins by adding a few the missing page plugins APIs related to the edit url and the last update metadata displayed at the bottom on Markdown pages.",
+      "source_content_hash": "97a5644ee475f1435662a89c8d6bfe3e85c989ea947e39734e9e58b1c689337e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1d510af2",
+      "source_content": "```js\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        pages: {\n          // highlight-start\n          editUrl:\n            'https://github.com/facebook/docusaurus/tree/main/website/src/pages',\n          editLocalizedFiles: true,\n          showLastUpdateAuthor: true,\n          showLastUpdateTime: true,\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "d8c70dc10b508e4e827bf7940038a7b077d0457e77e98a7f88552527c36c28a7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "46cf9aca",
+      "source_content": "<IframeWindow url=\"/examples/markdownPageExample\" />",
+      "source_content_hash": "80940bb4c8f89ae86b443cad0ab0c971f4ba050a7351639315798ab9c006bedf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "93d92b0f",
+      "source_content": ":::note[Only for Markdown pages]\n\nThese new plugin options only apply to Markdown pages, and have no effect on React pages for which you have full control over the layout with JSX.\n\n:::",
+      "source_content_hash": "42aa157d923c092e90401a3aabb28ac9dd37579fa368cd87eeecf38dcd20c4d6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "85aeef6c",
+      "source_content": "- [#10064](https://github.com/facebook/docusaurus/pull/10064): new site config option `siteConfig.markdown.anchors.maintainCase`\n- [#9767](https://github.com/facebook/docusaurus/pull/9767): new `docusaurus deploy --target-dir` option\n- [#10042](https://github.com/facebook/docusaurus/pull/10042): new (experimental) plugin API: `route.props`\n- [#10060](https://github.com/facebook/docusaurus/pull/10060): optimizes the App entrypoint, avoid useless re-renders on navigations\n- [#10080](https://github.com/facebook/docusaurus/pull/10080): `<Admonition>` component can render properly without heading/icon\n- [#10091](https://github.com/facebook/docusaurus/pull/10091): `<Tabs>` props can now override defaults\n- [#10090](https://github.com/facebook/docusaurus/pull/10090): `docusaurus serve` works better with a `/baseUrl/` pathname prefix\n- [#10070](https://github.com/facebook/docusaurus/pull/10070): add missing theme translations for `pt-BR`\n- [#10025](https://github.com/facebook/docusaurus/pull/10025): doc sidebar item label now impacts the doc pagination label",
+      "source_content_hash": "97897628cacb72c48f81a7d51ae021829097058153c081d1803792820877da4a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#10064](https://github.com/facebook/docusaurus/pull/10064): 新增網站配置選項 `siteConfig.markdown.anchors.maintainCase`\n- [#9767](https://github.com/facebook/docusaurus/pull/9767): 新增 `docusaurus deploy --target-dir` 選項\n- [#10042](https://github.com/facebook/docusaurus/pull/10042): 新增（實驗性）插件 API: `route.props`\n- [#10060](https://github.com/facebook/docusaurus/pull/10060): 優化 App 入口點，避免導航時不必要的重新渲染\n- [#10080](https://github.com/facebook/docusaurus/pull/10080): `<Admonition>` 元件現在可不含標題/圖標正常渲染\n- [#10091](https://github.com/facebook/docusaurus/pull/10091): `<Tabs>` 的 props 現在可覆蓋預設值\n- [#10090](https://github.com/facebook/docusaurus/pull/10090): `docusaurus serve` 在 `/baseUrl/` 路徑前綴下運作更完善\n- [#10070](https://github.com/facebook/docusaurus/pull/10070): 新增 `pt-BR` 語系遺漏的主題翻譯\n- [#10025](https://github.com/facebook/docusaurus/pull/10025): 文件側邊欄項目標籤現在會影響文件分頁標籤"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Check the **[3.3.0 changelog entry](/changelog/3.3.0)** for an exhaustive list of changes.",
+      "source_content_hash": "6244435d0ea31198c994cc67306176544252b254594a8cff5c7fa2c15e651bc0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查閱 **[3.3.0 變更記錄](/changelog/3.3.0)** 以獲取完整的變更清單。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.3/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.016052+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e606e75c3a6106b8841251dac55d9bec46fd4df3fbe08b008d1d08535818c643"
+  }
+}

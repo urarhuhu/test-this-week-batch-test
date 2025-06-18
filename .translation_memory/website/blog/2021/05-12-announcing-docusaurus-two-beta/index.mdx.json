@@ -1,0 +1,362 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2021/05-12-announcing-docusaurus-two-beta/index.mdx",
+  "source_file_content_hash": "61a1389318952bc94cbf8d6390d2bb1e279a29c48a0ea9ff0a4b55e2487c160c",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Announcing Docusaurus 2 Beta\nauthors:\n  - key: slorber\n    image_url: ./img/slorber.png\n  - JMarcey\n  - yangshun\n  - lex111\n\ntags: [release, beta]\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "f797965026a4b89153facf7906ce9a4ffe1d3a4dbd23c84c908ffb8d61a482e5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "After a lengthy alpha stage in order to ensure feature parity and quality, we are excited to officially release the first **[Docusaurus 2 beta](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.0)**.",
+      "source_content_hash": "3da703c7a2a830b902f06b0974e455d4e2e616605e5ae68f6903b1b85e44efbc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "經過漫長的 alpha 階段以確保功能完整性和品質，我們興奮地宣布正式推出首個 **[Docusaurus 2 測試版](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.0)**。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "With the announcement of this beta, the team is even more confident that Docusaurus 2 is **ready for mainstream adoption**!",
+      "source_content_hash": "8873fa246b454e47fa90f57ef80e56a2712ee9c3520e21aa54abe5a43eb10c45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "隨著這個測試版的發布，團隊更加確信 Docusaurus 2 已**準備好迎接主流採用**！"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "![](./img/image_cropped.png)",
+      "source_content_hash": "06457d79dc6029d8c840688a296a9f935315e441c225d33b919c2d4c464c5803",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![](./img/image_cropped.png)"
+      }
+    },
+    {
+      "segment_id": "c6da205d",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c6da205d"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Docusaurus adoption",
+      "source_content_hash": "2f9d2e93003c890cdb5bbd4907e1b7063590f0b26b2bba13d90c523b18842be2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 採用情況"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "**Don't fear the beta tag!**",
+      "source_content_hash": "fab96eb8c7b1e17e3b2e8335fc99e588f1269015ad2c71aa1d7a7ccee6bd302b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**無需擔心測試版標籤！**"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Docusaurus 2 is widely adopted and growing fast:",
+      "source_content_hash": "8b9eb7ced2f9a12a9525db7a3dd90ed617969448f0d914a4a0523690cdf8f032",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 已被廣泛採用且快速成長："
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "[![Docusaurus v1 vs. v2 npm trends from 2019 to mid 2021. The installations of Docusaurus v2 is sharply rising, while v1 is mostly stable. V1 fluctuates between 10000 and 20000, while v2 starts at 0 and ends at almost 60000. The intersection happens around June 2020.](./img/trend.png)](https://www.npmtrends.com/docusaurus-vs-@docusaurus/core)",
+      "source_content_hash": "40ac2b8c23aba6ffbaae7d958d285d69fd1906d1593dab6dee28ee0bb09df4cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Docusaurus v1 與 v2 從 2019 年至 2021 年中的 npm 趨勢。Docusaurus v2 的安裝量急劇上升，而 v1 則相對穩定。V1 在 10000 至 20000 之間波動，而 v2 從 0 開始並最終接近 60000。兩者在 2020 年 6 月左右交叉。](./img/trend.png)](https://www.npmtrends.com/docusaurus-vs-@docusaurus/core)"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "To get a fuller understanding of the quality of current Docusaurus 2 sites, our new [showcase](https://docusaurus.io/showcase) page allows you to filter Docusaurus sites by features, so you may get inspired by real-world production sites with a similar use-case as yours!",
+      "source_content_hash": "20f123c715b937188011fdb8351d868948df9d35cf32e0f9da2c2d00bb277f00",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了更全面地了解當前 Docusaurus 2 網站的品質，我們的新[展示頁面](https://docusaurus.io/showcase)允許您按功能篩選 Docusaurus 網站，讓您可以從與您用例相似的實際生產網站中獲得靈感！"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Don't miss our [favorite](https://docusaurus.io/showcase?tags=favorite) sites; they all stand out with something unique:",
+      "source_content_hash": "34a76cb51d841f99372b5fa5c3e1bd4e5fced40fc6eb659caa1b3f2af2a26f11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "別錯過我們的[精選](https://docusaurus.io/showcase?tags=favorite)網站；它們都因獨特之處而脫穎而出："
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "[![A screenshot of the showcase's favorites section, with 12 cards each displaying the information and preview of one site](./img/favorites.png)](https://docusaurus.io/showcase?tags=favorite)",
+      "source_content_hash": "08cba840b579eb8fac064358a47991a1ef9bed1c8eb8259ae2ab33c4828396cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![展示頁面精選部分的截圖，包含 12 張卡片，每張顯示一個網站的資訊和預覽](./img/favorites.png)](https://docusaurus.io/showcase?tags=favorite)"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## Why was Docusaurus v2 in alpha for so long?",
+      "source_content_hash": "90d8a378a3747331bea0da845b1bf9135134d81f8c7659a4772478bdd6278aa3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 為什麼 Docusaurus v2 的 alpha 階段持續這麼久？"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "It's hard to believe that the first alpha release [v2.0.0-alpha.0](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.0) was 2 years ago 😳 , unusually long for a software alpha.",
+      "source_content_hash": "5d0fa354dbc1df38938a9ebcb07c59b6c672b740a51f5be7c9c14b6255c8f14d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "很難相信第一個 alpha 版本 [v2.0.0-alpha.0](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.0) 已經是 2 年前的事了 😳，這對軟體 alpha 階段來說異常漫長。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "As this was a substantial re-architecture of the code base, we wanted to ensure that we had confidence in the stability and features of Docusaurus 2 before moving on to a beta stage, since beta suggests a high level of quality. We are happy to say that Docusaurus 2 has reached **feature parity** with Docusaurus 1 with **[i18n](https://docusaurus.io/blog/2021/03/09/releasing-docusaurus-i18n)**, and it has been **successfully adopted** by many Docusaurus sites (see [i18n showcase](https://docusaurus.io/showcase?tags=i18n)).",
+      "source_content_hash": "e939ed440d470306cdc65d5cc19aaa59362da85d5914200105f552168278af48",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於這是對程式碼庫的重大重新架構，我們希望在進入測試階段之前確保對 Docusaurus 2 的穩定性和功能有信心，因為測試版意味著高品質。我們很高興地宣布，Docusaurus 2 已通過 **[i18n](https://docusaurus.io/blog/2021/03/09/releasing-docusaurus-i18n)** 實現與 Docusaurus 1 的**功能對等**，並已被許多 Docusaurus 網站**成功採用**（參見 [i18n 展示](https://docusaurus.io/showcase?tags=i18n)）。"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "We're now quite confident that the core features of Docusaurus 2 are stable enough to be in beta.",
+      "source_content_hash": "5733a5558e1ab278227718a22753c3d91d780026aebf5f7dd34641ed33752e87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們現在相當有信心 Docusaurus 2 的核心功能已足夠穩定，可以進入測試階段。"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## What are the goals of the beta?",
+      "source_content_hash": "87b7533497c5f59c8c63b9b194ee12cb353930e7f949f67a001ef10a80707744",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 測試版的目標是什麼？"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Now that Docusaurus 2 is stable and major feature complete, the goal of the beta is to inspire confidence in new users on the production-readiness of Docusaurus 2, migrate more remaining Docusaurus 1 users to version 2, and officially deprecate Docusaurus 1. We will, of course, continue to resolve any issues and bugs that may be discovered.",
+      "source_content_hash": "9114db55bfa3ca672952853f123cae69b0761e04db639a60760bd6b5ac31fceb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在 Docusaurus 2 已穩定且主要功能完整，測試版的目標是讓新用戶對 Docusaurus 2 的生產就緒性建立信心，將更多仍在使用 Docusaurus 1 的用戶遷移到版本 2，並正式棄用 Docusaurus 1。當然，我們將繼續解決可能發現的任何問題和錯誤。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "In addition, we will use the beta phase to **improve our theming system**.",
+      "source_content_hash": "7ccccbbca3bcbfc50cc850313d25e8a569990066bd37a3597a607901bc209655",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此外，我們將利用測試階段**改進我們的主題系統**。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "We want to make it:",
+      "source_content_hash": "af1f00730160bf5162e23ac208e681dd714ca9ab6d98f86342a310a46ee639bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們希望使其："
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "- **easier to implement a custom theme**, including for ourselves. We want to provide [multiple official themes](https://github.com/facebook/docusaurus/issues/3522) (including [Tailwind CSS](https://github.com/facebook/docusaurus/issues/2961)) for a long time.\n\n- **safer to extend an existing theme**: it can be painful to upgrade a highly customized Docusaurus site, as customizations can conflict with internal changes. We need to make the theme public API surface more explicit, and make it clear what is safe to customize.",
+      "source_content_hash": "e48d060506510952f47e4da4fb47f2f672a7a10db60b4938a0be9aa9e112f777",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **更容易實現自訂主題**，包括對我們自己。我們希望長期提供[多個官方主題](https://github.com/facebook/docusaurus/issues/3522)（包括 [Tailwind CSS](https://github.com/facebook/docusaurus/issues/2961)）。\n\n- **更安全地擴展現有主題**：升級高度自訂的 Docusaurus 網站可能會很痛苦，因為自訂可能與內部變更衝突。我們需要使主題的公共 API 表面更加明確，並清楚說明哪些是安全可自訂的。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "We will build a better **theming infrastructure** and refactor the classic theme to use it.",
+      "source_content_hash": "655ae86793daf77f271b9842a80d93637fa13300a4d1015e808030bee9b8af57",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將建立更好的**主題基礎設施**，並重構經典主題以使用它。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "If you customize your site, you may find these planned improvements quite valuable.",
+      "source_content_hash": "11c63c9112afaa85322bd658e4ec386230c30b3ae5fcdc1aed240d62e78307be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您自訂網站，可能會發現這些計劃中的改進相當有價值。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## What's new?",
+      "source_content_hash": "ada2656a23e83528b8ed297127c1d799fd0fee59e8ab39d6a2f9b408584a5af8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 有什麼新功能？"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "In case you missed it, we recently shipped two major improvements:",
+      "source_content_hash": "ba01ae392fe78e086ff0e3876a33965fd6bdc0dd70060ab6f2b18e8e57431f77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您錯過了，我們最近推出了兩項重大改進："
+      }
+    },
+    {
+      "segment_id": "158e1f5d",
+      "source_content": "- [Auto-generated sidebars](https://docusaurus.io/docs/sidebar#sidebar-item-autogenerated): no need to maintain a `sidebars.js` file anymore!\n- [Webpack 5 / PostCSS 8](https://github.com/facebook/docusaurus/issues/4027): persistent caching significantly speeds up **rebuild time**!",
+      "source_content_hash": "7200722b69de771bd4d703b7774435a42ee619e760ca82bfffd7a2d5f43f9c0e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [自動生成的側邊欄](https://docusaurus.io/docs/sidebar#sidebar-item-autogenerated)：不再需要維護 `sidebars.js` 檔案！\n- [Webpack 5 / PostCSS 8](https://github.com/facebook/docusaurus/issues/4027)：持久性快顯記憶體顯著加快了**重建時間**！"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## What's next?",
+      "source_content_hash": "4379ac2c9abc70ce4bb8f3ca063a089af17bb4bf6b50966d6f719d1f8b982852",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 下一步是什麼？"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Shipping the official 2.0 release!",
+      "source_content_hash": "23351ee939ac5d842ee6acec489bbc1dc12c2f39c07595788c4c542836f5e3e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "推出官方 2.0 版本！"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "To get there, we will continue to **fix bugs** and implement the **most wanted features**, including:",
+      "source_content_hash": "67af38306486dbe9efd70666cc8702ccfa6266ce065f8effba5c4fd142d6c0cd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了達成這一目標，我們將繼續**修復錯誤**並實現**最受期待的功能**，包括："
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "- [Sidebar category index pages](https://github.com/facebook/docusaurus/issues/2643)\n- [Better mobile navigation UX](https://github.com/facebook/docusaurus/issues/2220)\n- [Better admonition design](https://github.com/facebookincubator/infima/issues/55)\n- [CSS-in-JS support](https://github.com/facebook/docusaurus/issues/3236)\n- [Improve build time performance](https://github.com/facebook/docusaurus/issues/4765)\n- [Extend Docusaurus plugins, CMS integration](https://github.com/facebook/docusaurus/issues/4138)\n- [Fix trailing slashes and relative link issues](https://github.com/facebook/docusaurus/issues/3372)\n- [Better compatibility with CommonMark](https://github.com/facebook/docusaurus/issues/3018)\n- [Upgrade to MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)",
+      "source_content_hash": "1f587c4ef30ea9a38a47dc8024cd4ad491601cba8a909f31d6b87418310ddf8f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [側邊欄分類索引頁面](https://github.com/facebook/docusaurus/issues/2643)\n- [更好的行動導航使用者體驗](https://github.com/facebook/docusaurus/issues/2220)\n- [更好的警示設計](https://github.com/facebookincubator/infima/issues/55)\n- [CSS-in-JS 支援](https://github.com/facebook/docusaurus/issues/3236)\n- [提升建置時間效能](https://github.com/facebook/docusaurus/issues/4765)\n- [擴展 Docusaurus 插件，CMS 整合](https://github.com/facebook/docusaurus/issues/4138)\n- [修正尾部斜線和相對連結問題](https://github.com/facebook/docusaurus/issues/3372)\n- [更好的 CommonMark 相容性](https://github.com/facebook/docusaurus/issues/3018)\n- [升級至 MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 結論"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "This is an exciting time for Docusaurus.",
+      "source_content_hash": "69557eadc2786004d79aee87ac002b9146aaf99bef9da825944161166f8c4307",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對 Docusaurus 來說，這是一個令人興奮的時刻。"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "We are inspired by the [positive feedback](https://x.com/sebastienlorber/timelines/1392048416872706049) about Docusaurus, and discover new sites online every single day.",
+      "source_content_hash": "2d9de8e6a0cdbee27f3df369c1ac9565f4a9e5582a31752f614600f633d1eeda",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們受到關於 Docusaurus 的[正面反饋](https://x.com/sebastienlorber/timelines/1392048416872706049)的啟發，並且每天都會在網路上發現新的網站。"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "We are so excited for this beta release. We strove for quality and stability while continuing to try to increase the adoption of Docusaurus. For those that have been on the fence from migrating an existing Docusaurus site to Docusaurus 2, it is a great time to upgrade. We want you running on the latest infrastructure when we deprecate Docusaurus 1 at the end of this beta period. Let us know how we can help.",
+      "source_content_hash": "d79aa4f7aff6227178ae9459a272b93db01e70ca45f8118af2a19703be82b61a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們對這次的 Beta 版本感到非常興奮。我們在追求品質和穩定性的同時，也持續努力增加 Docusaurus 的採用率。對於那些還在猶豫是否要將現有的 Docusaurus 網站遷移到 Docusaurus 2 的使用者來說，現在是一個升級的好時機。我們希望在 Beta 階段結束時，您能運行在最新的基礎設施上。請告訴我們我們能如何提供協助。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "Thank you to everyone for reading and to the entire community who supports Docusaurus. 🤗",
+      "source_content_hash": "4b6a97023b19858dac471832cc113400e2bc691068e887c34fd65e2d87ee9d63",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "感謝大家的閱讀，也感謝支持 Docusaurus 的整個社群。🤗"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2021/05-12-announcing-docusaurus-two-beta/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.024461+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "61a1389318952bc94cbf8d6390d2bb1e279a29c48a0ea9ff0a4b55e2487c160c"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/advanced/index.mdx",
+  "source_file_content_hash": "80df342eab109f60bc3cdaff08575b7d1aa239ea3b9a42c6f596e56f3bfd015e",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Advanced Tutorials",
+      "source_content_hash": "7d4b81928d5e19fbf25031152857ba21d9fb5b1e29f9521ccd62f573e4ffcdac",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 進階教學"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "This section is not going to be very structured, but we will cover the following topics:",
+      "source_content_hash": "f8b5f7d3f4404407e5ecc847ce04be2bd938da204570c28905409eae40f6cfe1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本節內容不會有嚴謹的結構，但我們將涵蓋以下主題："
+      }
+    },
+    {
+      "segment_id": "d59bf749",
+      "source_content": "```mdx-code-block\nimport DocCardList from '@theme/DocCardList';\n\n<DocCardList />\n```",
+      "source_content_hash": "bd01a57a6ef4bb55820b0f469b8d688029fbeb14f9297c91f6aa2309b40a8533",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d59bf749"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "We will assume that you have finished the guides, and know the basics like how to configure plugins, how to write React components, etc. These sections will have plugin authors and code contributors in mind, so we may occasionally refer to [plugin APIs](../api/plugin-methods/README.mdx) or other architecture details. Don't panic if you don't understand everything😉",
+      "source_content_hash": "bac773a3a66cbe3288548a135f0843e39e7aa219380ae0805cf52e0c00d5b2eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們假設您已完成基礎指南，並掌握基本知識如配置插件、編寫 React 元件等。這些章節主要面向插件開發者與程式碼貢獻者，因此偶爾會提及[插件 API](../api/plugin-methods/README.mdx)或其他架構細節。若未能完全理解請勿驚慌😉"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/advanced/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.156281+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "80df342eab109f60bc3cdaff08575b7d1aa239ea3b9a42c6f596e56f3bfd015e"
+  }
+}

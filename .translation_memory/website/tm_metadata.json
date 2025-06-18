@@ -1,0 +1,119 @@
+{
+  "locales": [
+    "zh-hant"
+  ],
+  "folder_patterns": [
+    {
+      "source_dir_relative_to_docusaurus_root": "docs",
+      "target_i18n_subpath": "docusaurus-plugin-content-docs/current",
+      "original_agent_pattern": {
+        "source_pattern": "docs/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-docs/current/**/%original_file_name%",
+        "type": "docs",
+        "description": "Documentation files for the 'current' (unreleased) version."
+      },
+      "type": "docs",
+      "description": "Documentation files for the 'current' (unreleased) version.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "versioned_docs",
+      "target_i18n_subpath": "docusaurus-plugin-content-docs",
+      "original_agent_pattern": {
+        "source_pattern": "versioned_docs/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-docs/**/%original_file_name%",
+        "type": "versioned_docs",
+        "description": "Documentation files for all versioned releases. The versioned directory structure (e.g., 'version-3.8.1/') is preserved under the target translation path."
+      },
+      "type": "versioned_docs",
+      "description": "Documentation files for all versioned releases. The versioned directory structure (e.g., 'version-3.8.1/') is preserved under the target translation path.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "community",
+      "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current",
+      "original_agent_pattern": {
+        "source_pattern": "community/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-docs-community/current/**/%original_file_name%",
+        "type": "docs-community",
+        "description": "Documentation files for the 'community' docs instance, as defined in docusaurus.config.ts."
+      },
+      "type": "docs-community",
+      "description": "Documentation files for the 'community' docs instance, as defined in docusaurus.config.ts.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "docs-tests",
+      "target_i18n_subpath": "docusaurus-plugin-content-docs-docs-tests/current",
+      "original_agent_pattern": {
+        "source_pattern": "docs-tests/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-docs-docs-tests/current/**/%original_file_name%",
+        "type": "docs-docs-tests",
+        "description": "Documentation files for the 'docs-tests' instance, inferred from the configuration and i18n structure for testing purposes."
+      },
+      "type": "docs-docs-tests",
+      "description": "Documentation files for the 'docs-tests' instance, inferred from the configuration and i18n structure for testing purposes.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "blog",
+      "target_i18n_subpath": "docusaurus-plugin-content-blog",
+      "original_agent_pattern": {
+        "source_pattern": "blog/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-blog/**/%original_file_name%",
+        "type": "blog",
+        "description": "Markdown/MDX files for the main blog."
+      },
+      "type": "blog",
+      "description": "Markdown/MDX files for the main blog.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "blog-tests",
+      "target_i18n_subpath": "docusaurus-plugin-content-blog-blog-tests",
+      "original_agent_pattern": {
+        "source_pattern": "blog-tests/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-blog-blog-tests/**/%original_file_name%",
+        "type": "blog-blog-tests",
+        "description": "Blog posts for the 'blog-tests' instance, inferred from the i18n structure for testing purposes."
+      },
+      "type": "blog-blog-tests",
+      "description": "Blog posts for the 'blog-tests' instance, inferred from the i18n structure for testing purposes.",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "src/pages",
+      "target_i18n_subpath": "docusaurus-plugin-content-pages",
+      "original_agent_pattern": {
+        "source_pattern": "src/pages/**/*.{md,mdx}",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-pages/**/%original_file_name%",
+        "type": "pages",
+        "description": "Standalone pages written in Markdown/MDX.",
+        "ignore_patterns": [
+          "src/pages/**/*.{js,jsx,ts,tsx,css}"
+        ]
+      },
+      "type": "pages",
+      "description": "Standalone pages written in Markdown/MDX.",
+      "ignore_patterns": [
+        "src/pages/**/*.{js,jsx,ts,tsx,css}"
+      ]
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "i18n/en",
+      "target_i18n_subpath": "",
+      "original_agent_pattern": {
+        "source_pattern": "i18n/en/**/*.json",
+        "translation_pattern": "i18n/%locale%/**/%original_file_name%",
+        "type": "json_translations",
+        "description": "JSON files for UI translations, including theme components, plugin labels, sidebar categories, and code messages."
+      },
+      "type": "json_translations",
+      "description": "JSON files for UI translations, including theme components, plugin labels, sidebar categories, and code messages.",
+      "ignore_patterns": null
+    }
+  ],
+  "docusaurus_root_dir_relative_to_repo": "website",
+  "docusaurus_config_filepath_relative_to_repo": "website/docusaurus.config.ts",
+  "source_language": "en"
+}

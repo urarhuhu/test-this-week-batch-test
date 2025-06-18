@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/api/plugins/overview.mdx",
+  "source_file_content_hash": "cd651ca40a244d79a92c07b082063bceb38d337609bd30127057e790116a3055",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\nid: plugins-overview\nsidebar_label: Plugins overview\nslug: /api/plugins\n---",
+      "source_content_hash": "99f62b04f02236044a7b54e8a9c4a6e99be7e6279b64f30e0b5a19534490ea2f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "# Docusaurus plugins",
+      "source_content_hash": "599aea977652edcbff3219e25a1673da8ade7ca850b481b35ca714e3bd287970",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Docusaurus 插件"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "We provide official Docusaurus plugins.",
+      "source_content_hash": "37479fb90e2e57c0881676c0e32f0a1599d6f9a86d94640139428168f16dadf4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供官方的 Docusaurus 插件。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Content plugins {#content-plugins}",
+      "source_content_hash": "79791901e5b3039a642be46e20d1b8ff973d6b10e41733f15faa68fa3a96feeb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 內容插件 {#content-plugins}"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "These plugins are responsible for loading your site's content, and creating pages for your theme to render.",
+      "source_content_hash": "5679fa0a00c118c07b582446c433f2196a8e4ae19dab34d74b84416312879221",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些插件負責載入您網站的內容，並為您的主題建立頁面以供渲染。"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- [@docusaurus/plugin-content-docs](./plugin-content-docs.mdx)\n- [@docusaurus/plugin-content-blog](./plugin-content-blog.mdx)\n- [@docusaurus/plugin-content-pages](./plugin-content-pages.mdx)",
+      "source_content_hash": "3b7cd2b673708e9e7047ebb173ef2927c9d0cee6d08465c30c4024c99027489d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [@docusaurus/plugin-content-docs](./plugin-content-docs.mdx)\n- [@docusaurus/plugin-content-blog](./plugin-content-blog.mdx)\n- [@docusaurus/plugin-content-pages](./plugin-content-pages.mdx)"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Behavior plugins {#behavior-plugins}",
+      "source_content_hash": "a02b7c603cce382f20636816f3165f2aa0243686391cc1caa6b24b641fd272c4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 行為插件 {#behavior-plugins}"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "These plugins will add a useful behavior to your Docusaurus site.",
+      "source_content_hash": "57e9acb0d239441876fd28e95441a9e5a8d6c53d23146d4b121c028295cb6f1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些插件將為您的 Docusaurus 網站添加實用的行為功能。"
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "- [@docusaurus/plugin-debug](./plugin-debug.mdx)\n- [@docusaurus/plugin-sitemap](./plugin-sitemap.mdx)\n- [@docusaurus/plugin-pwa](./plugin-pwa.mdx)\n- [@docusaurus/plugin-client-redirects](./plugin-client-redirects.mdx)\n- [@docusaurus/plugin-ideal-image](./plugin-ideal-image.mdx)\n- [@docusaurus/plugin-google-analytics](./plugin-google-analytics.mdx)\n- [@docusaurus/plugin-google-gtag](./plugin-google-gtag.mdx)",
+      "source_content_hash": "0ab23afa293ab9c436276d2e0b66db6a608df2282b9f800ee1892a052736f6d3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [@docusaurus/plugin-debug](./plugin-debug.mdx)\n- [@docusaurus/plugin-sitemap](./plugin-sitemap.mdx)\n- [@docusaurus/plugin-pwa](./plugin-pwa.mdx)\n- [@docusaurus/plugin-client-redirects](./plugin-client-redirects.mdx)\n- [@docusaurus/plugin-ideal-image](./plugin-ideal-image.mdx)\n- [@docusaurus/plugin-google-analytics](./plugin-google-analytics.mdx)\n- [@docusaurus/plugin-google-gtag](./plugin-google-gtag.mdx)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/api/plugins/overview.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.031678+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "cd651ca40a244d79a92c07b082063bceb38d337609bd30127057e790116a3055"
+  }
+}

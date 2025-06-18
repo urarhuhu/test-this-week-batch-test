@@ -1,0 +1,371 @@
+---
+id: admonitions
+description: Handling admonitions/callouts in Docusaurus Markdown
+slug: /markdown-features/admonitions
+---
+
+# 提示框 (Admonitions)
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
+
+除了基本的 Markdown 語法外，我們還提供特殊的提示框語法：用三組冒號包裹文字，並在冒號後加上類型標籤。
+
+範例：
+
+```md
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::warning
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::warning
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+</BrowserWindow>
+```
+
+## 與 Prettier 搭配使用 {#usage-with-prettier}
+
+若您使用 [Prettier](https://prettier.io) 格式化 Markdown 文件，Prettier 可能會將程式碼自動格式化為無效的提示框語法。為避免此問題，請在起始和結束指令周圍添加空行。這也是為何此處範例都在內容周圍保留空行。
+
+```md
+<!-- Prettier doesn't change this -->
+:::note
+
+Hello world
+
+:::
+
+<!-- Prettier changes this -->
+:::note
+Hello world
+:::
+
+<!-- to this -->
+::: note Hello world:::
+```
+
+## 指定標題 {#specifying-title}
+
+您也可以選擇性地指定標題。
+
+```md
+:::note[Your Title **with** some _Markdown_ `syntax`!]
+
+Some **content** with some _Markdown_ `syntax`.
+
+:::
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+:::note[Your Title **with** some _Markdown_ `syntax`!]
+
+Some **content** with some _Markdown_ `syntax`.
+
+:::
+
+</BrowserWindow>
+```
+
+## 嵌套提示框 {#nested-admonitions}
+
+提示框可以嵌套使用。每增加一層父級提示框，就需使用更多冒號 `:`。
+
+```md
+:::::info[Parent]
+
+Parent content
+
+::::danger[Child]
+
+Child content
+
+:::tip[Deep Child]
+
+Deep child content
+
+:::
+
+::::
+
+:::::
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+:::::info[Parent]
+
+Parent content
+
+::::danger[Child]
+
+Child content
+
+:::tip[Deep Child]
+
+Deep child content
+
+:::
+
+::::
+
+:::::
+
+</BrowserWindow>
+```
+
+## 搭配 MDX 使用提示框 {#admonitions-with-mdx}
+
+您也可以在提示框內使用 MDX！
+
+```jsx
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+:::tip[Use tabs in admonitions]
+
+<Tabs>
+  <TabItem value="apple" label="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+:::
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+:::tip[Use tabs in admonitions]
+
+<Tabs>
+  <TabItem value="apple" label="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+:::
+
+</BrowserWindow>
+```
+
+## 在 JSX 中使用 {#usage-in-jsx}
+
+在 Markdown 之外，您可以使用 `@theme/Admonition` 元件來獲得相同的輸出效果。
+
+```jsx title="MyReactPage.jsx"
+import Admonition from '@theme/Admonition';
+
+export default function MyReactPage() {
+  return (
+    <div>
+      <Admonition type="info">
+        <p>Some information</p>
+      </Admonition>
+    </div>
+  );
+}
+```
+
+接受的類型與上述相同：`note`、`tip`、`danger`、`info`、`warning`。您也可以選擇性地傳遞 JSX 元素或字串作為圖標，或是指定標題：
+
+```jsx title="MyReactPage.jsx"
+<Admonition type="tip" icon="💡" title="Did you know...">
+  Use plugins to introduce shorter syntax for the most commonly used JSX
+  elements in your project.
+</Admonition>
+```
+
+```mdx-code-block
+<BrowserWindow>
+  <Admonition type="tip" icon="💡" title="Did you know...">
+    Use plugins to introduce shorter syntax for the most commonly used JSX
+    elements in your project.
+  </Admonition>
+</BrowserWindow>
+```
+
+## 自訂提示框 {#customizing-admonitions}
+
+提示框有兩種自訂方式：**解析 (parsing)** 與 **渲染 (rendering)**。
+
+### 自訂渲染行為 {#customizing-rendering-behavior}
+
+您可以透過 [swizzling](../../swizzling.mdx) 自訂每種提示框類型的渲染方式。通常只需簡單的包裝即可達成目標。例如，在以下範例中，我們僅替換了 `info` 提示框的圖標。
+
+```jsx title="src/theme/Admonition.js"
+import React from 'react';
+import Admonition from '@theme-original/Admonition';
+import MyCustomNoteIcon from '@site/static/img/info.svg';
+
+export default function AdmonitionWrapper(props) {
+  if (props.type !== 'info') {
+    return <Admonition title="My Custom Admonition Title" {...props} />;
+  }
+  return <Admonition icon={<MyCustomNoteIcon />} {...props} />;
+}
+```
+
+### 自訂解析行為 {#customizing-parsing-behavior}
+
+提示框是透過 [Remark 插件](./markdown-features-plugins.mdx) 實現的。該插件設計為可配置。若要為特定內容插件 (docs、blog、pages) 自訂 Remark 插件，請透過 `admonitions` 鍵傳遞選項。
+
+```js title="docusaurus.config.js"
+export default {
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          admonitions: {
+            keywords: ['note', 'tip', 'info', 'warning', 'danger'],
+            extendDefaults: true,
+          },
+        },
+      },
+    ],
+  ],
+};
+```
+
+該插件接受以下選項：
+
+- `keywords`: 可作為提示框類型使用的關鍵字陣列。
+- `extendDefaults`: 是否將提供的選項 (如 `keywords`) 合併到現有預設值中。預設為 `true`。
+
+`keyword` 將作為 `type` 屬性傳遞給 `Admonition` 元件。
+
+### 自訂提示框類型元件 {#custom-admonition-type-components}
+
+預設情況下，主題不知道如何處理自訂提示框關鍵字 (如 `:::my-custom-admonition`)。您需自行將每個提示框關鍵字映射到 React 元件，以便主題知道如何渲染它們。
+
+如果您透過以下配置註冊了一個新的提示區塊類型 `my-custom-admonition`：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  presets: [
+    [
+      'classic',
+      {
+        // ...
+        docs: {
+          admonitions: {
+            keywords: ['my-custom-admonition'],
+            extendDefaults: true,
+          },
+        },
+      },
+    ],
+  ],
+};
+```
+
+您可以為 `:::my-custom-admonition` 提供對應的 React 元件，方法是建立以下檔案（由於這不是 React 元件檔案，因此無法透過 swizzle 功能替換）：
+
+```js title="src/theme/Admonition/Types.js"
+import React from 'react';
+import DefaultAdmonitionTypes from '@theme-original/Admonition/Types';
+
+function MyCustomAdmonition(props) {
+  return (
+    <div style={{border: 'solid red', padding: 10}}>
+      <h5 style={{color: 'blue', fontSize: 30}}>{props.title}</h5>
+      <div>{props.children}</div>
+    </div>
+  );
+}
+
+const AdmonitionTypes = {
+  ...DefaultAdmonitionTypes,
+
+  // Add all your custom admonition types here...
+  // You can also override the default ones if you want
+  'my-custom-admonition': MyCustomAdmonition,
+};
+
+export default AdmonitionTypes;
+```
+
+現在您可以在 Markdown 檔案中使用新的提示區塊關鍵字，它將根據您的自訂邏輯進行解析和渲染：
+
+```md
+:::my-custom-admonition[My Title]
+
+It works!
+
+:::
+```
+
+<BrowserWindow>
+
+:::my-custom-admonition[My Title]
+
+It works!
+
+:::
+
+</BrowserWindow>

@@ -1,0 +1,65 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-blog/options.json",
+  "source_file_content_hash": "55a4264289d6b1c665d5edf32343e6a2882f828e43adc19d40d92b3c85ad3370",
+  "segments": [
+    {
+      "segment_id": "title",
+      "source_content": "Docusaurus blog",
+      "source_content_hash": "aca4ea31023d1ea9643c9012b0e9d520ce55c4dec1c783e74dd081dc51e0e8b7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 部落格"
+      },
+      "metadata": {
+        "json_description": "The title for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "description",
+      "source_content": "Read blog posts about Docusaurus from the team",
+      "source_content_hash": "faf08ed96eeacdfbdcc9dd0f9f89905f890e4d6985332e7f458d27189fdb82a2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "閱讀團隊關於 Docusaurus 的部落格文章"
+      },
+      "metadata": {
+        "json_description": "The description for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "sidebar.title",
+      "source_content": "All our posts",
+      "source_content_hash": "4d3a64375d87fc51c296a800cfa67d122b7fdb115d18fe0c58b03befd669060f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有文章"
+      },
+      "metadata": {
+        "json_description": "The label for the left sidebar"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "title": {
+      "message": "Docusaurus blog",
+      "description": "The title for the blog used in SEO"
+    },
+    "description": {
+      "message": "Read blog posts about Docusaurus from the team",
+      "description": "The description for the blog used in SEO"
+    },
+    "sidebar.title": {
+      "message": "All our posts",
+      "description": "The label for the left sidebar"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/options.json",
+  "last_updated_timestamp": "2025-06-18T05:06:28.007110+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "55a4264289d6b1c665d5edf32343e6a2882f828e43adc19d40d92b3c85ad3370"
+  }
+}

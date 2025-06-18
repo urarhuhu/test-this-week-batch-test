@@ -1,0 +1,490 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/guides/markdown-features/markdown-features-react.mdx",
+  "source_file_content_hash": "ceb901f170659fc2ae9359f31f919d5d4ea0b8680ee258f547c4e163ec7f89b6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: react\ndescription: Using the power of React in Docusaurus Markdown documents, thanks to MDX\nslug: /markdown-features/react\n---",
+      "source_content_hash": "b1cc7f57751ebf4370d2ec697c7513f4afcc908565e48a73d2a32b56b0723af4",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# MDX and React",
+      "source_content_hash": "b410271908ead2c4b9f0b2a329ab56864cbc206eb19d795742d0e3dbfb94de8c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```mdx-code-block\nimport BrowserWindow from '@site/src/components/BrowserWindow';\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\nimport styles from './markdown-features-react.module.css';\n```",
+      "source_content_hash": "b0bdb146edeb82721632439ed6b1df62e8275073eff18cbdd2eb188477b52c03",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Using JSX in Markdown {#using-jsx-in-markdown}",
+      "source_content_hash": "6e91901b99ba4b3f8876c64e87fa314ef81004fc80c9184a3866f3252dda9882",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Docusaurus has built-in support for [MDX v1](https://mdxjs.com/), which allows you to write JSX within your Markdown files and render them as React components.",
+      "source_content_hash": "d47d91106de728b498daa9e1bf4752a48ecd80e855759bf86ecb896c266d8a2b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "80e6256a",
+      "source_content": ":::note\n\nWhile Docusaurus parses both `.md` and `.mdx` files using MDX, some of the syntaxes are treated slightly differently by third-party tools. For the most accurate parsing and better editor support, we recommend using the `.mdx` extension for files containing MDX syntax.\n\n:::",
+      "source_content_hash": "c3246d7ac220a35cbfe14b17bbf08b3554ae581c20d1443eb3d5c79a9227519e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Check out the [MDX docs](https://mdxjs.com/) to see what other fancy stuff you can do with MDX.",
+      "source_content_hash": "a19d640843dc0fe27c788315b0b44f060bf08a730b7b0d34231ef3c5be629564",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "### Exporting components {#exporting-components}",
+      "source_content_hash": "7d33dd9bfe1deb7124619ea9dd405757a0ce08248635b3f2c022f240d2da89e1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "To define any custom component within an MDX file, you have to export it: only paragraphs that start with `export` will be parsed as components instead of prose.",
+      "source_content_hash": "0f698510a82252911502143f8a1726162bb05baf0435c41aef89fabaa45267da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```jsx\nexport const Highlight = ({children, color}) => (\n  <span\n    style={{\n      backgroundColor: color,\n      borderRadius: '2px',\n      color: '#fff',\n      padding: '0.2rem',\n    }}>\n    {children}\n  </span>\n);\n\n<Highlight color=\"#25c2a0\">Docusaurus green</Highlight> and <Highlight color=\"#1877F2\">Facebook blue</Highlight> are my favorite colors.\n\nI can write **Markdown** alongside my _JSX_!\n```",
+      "source_content_hash": "c2933edc993e0df2a3798440fda265c271086aa2a745f951752f7179a0d277d4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Notice how it renders both the markup from your React component and the Markdown syntax:",
+      "source_content_hash": "75e2e85bb4c1245854a148ee0e635f32317af19d42f1d68b163a487d06d8a370",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```mdx-code-block\nexport const Highlight = ({children, color}) => (\n  <span\n    style={{\n      backgroundColor: color,\n      borderRadius: '2px',\n      color: '#fff',\n      padding: '0.2rem',\n    }}>\n    {children}\n  </span>\n);\n\n<BrowserWindow minHeight={240}>\n\n<><Highlight color=\"#25c2a0\">Docusaurus green</Highlight>\n{` `}and <Highlight color=\"#1877F2\">Facebook blue</Highlight> are my favorite colors.</>\n\nI can write **Markdown** alongside my _JSX_!\n\n</BrowserWindow>\n```",
+      "source_content_hash": "10c23b335079abbc8c1bb0f838ca6dea25aed9f84fd1f91758db8c66f58004ec",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9186a173",
+      "source_content": ":::warning[MDX is JSX]\n\nSince all doc files are parsed using MDX, anything that looks like HTML is actually JSX. Therefore, if you need to inline-style a component, follow JSX flavor and provide style objects.\n\n{/* prettier-ignore */}\n```jsx\n/* Instead of this: */\n<span style=\"background-color: red\">Foo</span>\n/* Use this: */\n<span style={{backgroundColor: 'red'}}>Foo</span>\n```\n\nThis behavior is different from Docusaurus 1. See also [Migrating from v1 to v2](../../migration/migration-manual.mdx).\n\nIn addition, MDX is not [100% compatible with CommonMark](https://github.com/facebook/docusaurus/issues/3018). Use the **[MDX playground](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground)** to ensure that your syntax is valid MDX.\n\n:::",
+      "source_content_hash": "6fbcf959c97993e63963f352bed8605c19716618d67cd6a0004d3ccd0f01bb35",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "### Importing components {#importing-components}",
+      "source_content_hash": "bc824d9a4f56eee7f45fc3dbd6702aa4f4ccdc79c655e3c24fa8675e813eb2dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "You can also import your own components defined in other files or third-party components installed via npm.",
+      "source_content_hash": "ef63ebfa9aab8c339ea47dbb33bda302d9671ce0d127be22a7c0901eead14ff9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7fa46732",
+      "source_content": "```md\n<!-- Docusaurus theme component -->\nimport TOCInline from '@theme/TOCInline';\n<!-- External component -->\nimport Button from '@mui/material/Button';\n<!-- Custom component -->\nimport BrowserWindow from '@site/src/components/BrowserWindow';\n```",
+      "source_content_hash": "8f90ee8934116a7aef9d67437b8b5cb1ab0803c52222274729eef31d64a244e6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "467b2691",
+      "source_content": ":::tip\n\nThe `@site` alias points to your website's directory, usually where the `docusaurus.config.js` file is. Using an alias instead of relative paths (`'../../src/components/BrowserWindow'`) saves you from updating import paths when moving files around, or when [versioning docs](../docs/versioning.mdx) and [translating](../../i18n/i18n-tutorial.mdx).\n\n:::",
+      "source_content_hash": "34572f63b34602760244ab20e30f43e8c49b05099d3a9ac78d3ea206ad233c33",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "While declaring components within Markdown is very convenient for simple cases, it becomes hard to maintain because of limited editor support, risks of parsing errors, and low reusability. Use a separate `.js` file when your component involves complex JS logic:",
+      "source_content_hash": "76070d14b1ca7d3d2e71d6e1039f0c916803f65daaa1a17f9411d9c28010fb7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "83537d8d",
+      "source_content": "```jsx title=\"src/components/Highlight.js\"\nimport React from 'react';\n\nexport default function Highlight({children, color}) {\n  return (\n    <span\n      style={{\n        backgroundColor: color,\n        borderRadius: '2px',\n        color: '#fff',\n        padding: '0.2rem',\n      }}>\n      {children}\n    </span>\n  );\n}\n```",
+      "source_content_hash": "9cd71282eb66d26e382e351edd7e3121567497a1e0f9682d346363d5d8d4785a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```md title=\"markdown-file.mdx\"\nimport Highlight from '@site/src/components/Highlight';\n\n<Highlight color=\"#25c2a0\">Docusaurus green</Highlight>\n```",
+      "source_content_hash": "f1835a5f5cd34c8a34ef4058195da73ea5643cbbcdcb98c026baafe959c7cec2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "09750f99",
+      "source_content": ":::tip\n\nIf you use the same component across a lot of files, you don't need to import it everywhere—consider adding it to the global scope. [See below](#mdx-component-scope)\n\n:::",
+      "source_content_hash": "83e3417c800624d79543f1266aaa422117201bc8b818b3047074dc6d416ef495",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "### MDX component scope {#mdx-component-scope}",
+      "source_content_hash": "d65d067ec299b9d28ced49e7a200df9b921086f95e1d538b66dc7a10fb8adc1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "Apart from [importing a component](#importing-components) and [exporting a component](#exporting-components), a third way to use a component in MDX is to **register it to the global scope**, which will make it automatically available in every MDX file, without any import statements.",
+      "source_content_hash": "6ac576a81d6e5c26a56749bbc9d07490ec1db01cdf1ea51c7be26d71b43d8653",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "For example, given this MDX file:",
+      "source_content_hash": "c23f682f7d31919f15ee7b2b0fbfecd63e6757aa35f8899d58324a70976c07f5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7d56fc4b",
+      "source_content": "```md\n- a\n- list!\n\nAnd some <Highlight>custom markup</Highlight>...\n```",
+      "source_content_hash": "defed103d21743e341bfdf136473fa75ef11b7ba6fddcafd9566933e32f374a9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "It will be compiled to a React component containing `ul`, `li`, `p`, and `Highlight` elements. `Highlight` is not a native html element: you need to provide your own React component implementation for it.",
+      "source_content_hash": "4c2eb6024e2f87f66d90ff8f9b60a38743d2195ba7ab14a0a658f3c97e303913",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a8f09c71",
+      "source_content": "In Docusaurus, the MDX component scope is provided by the `@theme/MDXComponents` file. It's not a React component, _per se_, unlike most other exports under the `@theme/` alias: it is a record from tag names like `Highlight` to their React component implementations.",
+      "source_content_hash": "d6f9f281431e213e04a27be493e2bf98a6217aa7ae3f15412cc79620d66f3470",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d2a3d4c7",
+      "source_content": "If you [swizzle](../../swizzling.mdx) this component, you will find all tags that have been implemented, and you can further customize our implementation by swizzling the respective sub-component, like `@theme/MDXComponents/Code` (which is used to render [Markdown code blocks](./markdown-features-code-blocks.mdx)).",
+      "source_content_hash": "f3b5b8be2482d6f135ea12ec67f7aacf28b7732802c59f0f686939bd1614b3ea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "008183b0",
+      "source_content": "If you want to register extra tag names (like the `<Highlight>` tag above), you should consider [wrapping `@theme/MDXComponents`](../../swizzling.mdx#wrapping), so you don't have to maintain all the existing mappings. Since the swizzle CLI doesn't allow wrapping non-component files yet, you should manually create the wrapper:",
+      "source_content_hash": "1adf742c87b5f5714046135fe8f39938d832e098482859fe57e757b2882a0879",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "71779666",
+      "source_content": "```js title=\"src/theme/MDXComponents.js\"\nimport React from 'react';\n// Import the original mapper\nimport MDXComponents from '@theme-original/MDXComponents';\n// highlight-next-line\nimport Highlight from '@site/src/components/Highlight';\n\nexport default {\n  // Re-use the default mapping\n  ...MDXComponents,\n  // Map the \"<Highlight>\" tag to our Highlight component\n  // `Highlight` will receive all props that were passed to `<Highlight>` in MDX\n  // highlight-next-line\n  Highlight,\n};\n```",
+      "source_content_hash": "419ae06b1c02c957cccdc64137aefd855ddad9681fc4f43cd56f99c613419677",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "e29bd639",
+      "source_content": "And now, you can freely use `<Highlight>` in every page, without writing the import statement:",
+      "source_content_hash": "cd681037a386f4310a640359bf24debba0db95999736c9464f98841bb5ea6c98",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "44ecd2e3",
+      "source_content": "```md\nI can conveniently use <Highlight color=\"#25c2a0\">Docusaurus green</Highlight> everywhere!\n```",
+      "source_content_hash": "c9b05e685637b0829bcfe7e961ba5074489ba12f47b9d806477d087685552b8b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "bea1601a",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n\nI can conveniently use <Highlight color=\"#25c2a0\">Docusaurus green</Highlight> everywhere!\n\n</BrowserWindow>\n```",
+      "source_content_hash": "0106f3d0917f1cde5986e3bbca893a93a6e3a9503b5f2ccc78bc17f783c3733a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "751dd460",
+      "source_content": ":::warning\n\nWe use **upper-case** tag names like `Highlight` on purpose.\n\nFrom MDX v2+ onward (Docusaurus v3+), lower-case tag names are always rendered as native html elements, and will not use any component mapping you provide.\n\n:::",
+      "source_content_hash": "287e157876acbc7c6340cb64c55d5937879e8c2bd62bfa731ec1146187204219",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "aeec072b",
+      "source_content": ":::warning\n\nThis feature is powered by [a wrapper provider](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/advanced/components#mdxprovider). If you are importing Markdown in a React page, you have to supply this provider yourself through the `MDXContent` theme component.\n\n```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport FeatureDisplay from './_featureDisplay.mdx';\n// highlight-next-line\nimport MDXContent from '@theme/MDXContent';\n\nexport default function LandingPage() {\n  return (\n    <div>\n      {/* highlight-start */}\n      <MDXContent>\n        <FeatureDisplay />\n      </MDXContent>\n      {/* highlight-end */}\n    </div>\n  );\n}\n```\n\nIf you don't wrap your imported MDX with `MDXContent`, the global scope will not be available.\n\n:::",
+      "source_content_hash": "1a8767b8a08b27e3a37dd53245e82c2317cc23bae60607f38acc943d94ab5500",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "79f90fe4",
+      "source_content": "### Markdown and JSX interoperability {#markdown-and-jsx-interoperability}",
+      "source_content_hash": "973e307689270357362852baaec5a6573596de232e9f9b49032f1770886dcf1e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "85b17c36",
+      "source_content": "Docusaurus v2 is using MDX v1, which has a lot of known cases where the content fails to be correctly parsed as Markdown. Use the **[MDX playground](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground)** to ensure that your syntax is valid MDX.",
+      "source_content_hash": "be3a5c679a0422f0853b68d5bc1c79d077f20541006cbf1b2080d2d010a6335d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "de60fdf8",
+      "source_content": "<details>\n<summary>Samples of parsing failures</summary>\n\n**A paragraph starting with a JSX tag will be seen entirely as a JSX string:**\n\n```mdx-code-block\n<Tabs groupId=\"jsx-and-md\">\n<TabItem value=\"Problem\">\n<div className={styles.wrappingBlock}>\n```\n\n```jsx\n<span style={{color: 'red'}}>Highlighted text</span> but afterwards _Markdown_ **doesn't work**\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<span style={{color: 'red'}}>Highlighted text</span> but afterwards _Markdown_ **doesn't work**\n\n</BrowserWindow>\n</div>\n</TabItem>\n<TabItem value=\"Workaround\">\n\nUse JSX for the rest of the line, or prefix the line with some plain text:\n\n<div className={styles.wrappingBlock}>\n```\n\n```jsx\n<span style={{color: 'red'}}>Use JSX for the paragraph</span> to stop <i>worrying about</i> <b>Markdown</b>\n\n&#8203;<span style={{color: 'red'}}>← This is a zero-width space</span> and afterwards <i>Markdown</i> <b>works</b>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<span style={{color: 'red'}}>Use JSX for the paragraph</span> to stop <i>worrying about</i> <b>Markdown</b>\n\n&#8203;<span style={{color: 'red'}}>← This is a zero-width space</span> and afterwards <i>Markdown</i> <b>works</b>\n\n</BrowserWindow>\n</div>\n</TabItem>\n</Tabs>\n\n**Markdown within a JSX tag never works:**\n\n<Tabs groupId=\"jsx-and-md\">\n<TabItem value=\"Problem\">\n<div className={styles.wrappingBlock}>\n```\n\n```jsx\n<span style={{color: 'red'}}>**Bold doesn't work**</span>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<span style={{color: 'red'}}>**Bold doesn't work**</span>\n\n</BrowserWindow>\n</div>\n\n</TabItem>\n<TabItem value=\"Workaround\">\n\nUse JSX within JSX tag, or move the Markdown to the outer layer:\n\n<div className={styles.wrappingBlock}>\n```\n\n```jsx\n<span style={{color: 'red'}}><b>Bold now works</b></span>\n\n**<span style={{color: 'red'}}>Bold now works</span>**\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<span style={{color: 'red'}}><b>Bold now works</b></span>\n\n**<span style={{color: 'red'}}>Bold now works</span>**\n\n</BrowserWindow>\n</div>\n</TabItem>\n</Tabs>\n\n**Text immediately below a JSX tag will be seen as JSX text:**\n\n<Tabs groupId=\"jsx-and-md\">\n<TabItem value=\"Problem\">\n<div className={styles.wrappingBlock}>\n```\n\n{/* prettier-ignore */}\n```jsx\n<div style={{color: 'red'}}>\n**Bold still doesn't work**\n</div>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<div style={{color: 'red'}}>\n**Bold still doesn't work**\n</div>\n\n</BrowserWindow>\n</div>\n</TabItem>\n<TabItem value=\"Workaround\">\n\nAdd an empty new line:\n\n<div className={styles.wrappingBlock}>\n```\n\n{/* prettier-ignore */}\n```jsx\n<div style={{color: 'red'}}>\n\n**Bold now works**\n\n</div>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n<div style={{color: 'red'}}>\n\n**Bold now works**\n\n</div>\n</BrowserWindow>\n</div>\n</TabItem>\n</Tabs>\n\n**Markdown text indented by four spaces will be seen as a code block:**\n\n<Tabs groupId=\"jsx-and-md\">\n<TabItem value=\"Problem\">\n<div className={styles.wrappingBlock}>\n```\n\n{/* prettier-ignore */}\n```jsx\n<div style={{color: 'red'}}>\n\n    You may think I'm just some text...\n\n</div>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n\n<div style={{color: 'red'}}>\n\n    You may think I'm just some text...\n\n</div>\n\n</BrowserWindow>\n</div>\n</TabItem>\n<TabItem value=\"Workaround\">\n\nDon't indent:\n\n<div className={styles.wrappingBlock}>\n```\n\n{/* prettier-ignore */}\n```jsx\n<div style={{color: 'red'}}>\n\nNow I'm actually just text\n\n</div>\n```\n\n```mdx-code-block\n</div>\n<div className={styles.wrappingBlock}>\n<BrowserWindow>\n<div style={{color: 'red'}}>\n\nNow I'm actually just text\n\n</div>\n</BrowserWindow>\n</div>\n</TabItem>\n</Tabs>\n```\n\n</details>",
+      "source_content_hash": "410e9ef72fddaa9ebfe3d8505ea991041c19671e47f51f12a1eccec2cc0c27fb",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "65863fe2",
+      "source_content": "## Importing code snippets {#importing-code-snippets}",
+      "source_content_hash": "7b797fdfa41e87f460824c01d095c6d56faa8419d553b96bccb8280104f56904",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "db871df4",
+      "source_content": "You can not only import a file containing a component definition, but also import any code file as raw text, and then insert it in a code block, thanks to [Webpack raw-loader](https://webpack.js.org/loaders/raw-loader/). In order to use `raw-loader`, you first need to install it in your project:",
+      "source_content_hash": "1f6c9d84cfe8be4593765950e2fd51720d2d3d072ed848c8d03ce5dffe638da5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a320d8a8",
+      "source_content": "```bash npm2yarn\nnpm install --save raw-loader\n```",
+      "source_content_hash": "dc19dceede52bf30a3df0ef3275c8c9bfd1f7b04458ba9d9a12987c910a6c7d3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "76356197",
+      "source_content": "Now you can import code snippets from another file as it is:",
+      "source_content_hash": "0f334d39ceefd631da35943c12fa3099bc32f37af903e206275dd2c4008868dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7c9cd24e",
+      "source_content": "```jsx title=\"myMarkdownFile.mdx\"\nimport CodeBlock from '@theme/CodeBlock';\nimport MyComponentSource from '!!raw-loader!./myComponent';\n\n<CodeBlock language=\"jsx\">{MyComponentSource}</CodeBlock>\n```",
+      "source_content_hash": "e011979ac4feea54f1ecbabacd71acc40b5db2e049ae96b0a95a6d725f1b41fd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7584896b",
+      "source_content": "```mdx-code-block\nimport CodeBlock from '@theme/CodeBlock';\nimport MyComponentSource from '!!raw-loader!@site/src/pages/examples/_myComponent';\n\n<BrowserWindow>\n\n<CodeBlock language=\"jsx\">{MyComponentSource}</CodeBlock>\n\n</BrowserWindow>\n```",
+      "source_content_hash": "1d8b34074aa601775e4f5e8cd373922798fa578327631e58e630d213d8857864",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "bc1752c9",
+      "source_content": "See [using code blocks in JSX](./markdown-features-code-blocks.mdx#usage-in-jsx) for more details of the `<CodeBlock>` component.",
+      "source_content_hash": "3f1d7c38f579a03b7e337295f486a2f5d3c79ebf1f59483cc08758bf32834487",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9b095b85",
+      "source_content": ":::note\n\nYou have to use `<CodeBlock>` rather than the Markdown triple-backtick ` ``` `, because the latter will ship out any of its content as-is, but you want to interpolate the imported text here.\n\n:::",
+      "source_content_hash": "6531805d1f88acb45e491cf92e6decb3754ee544a1e23f3d1237a37fa45b2bf3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ed7d6a34",
+      "source_content": ":::warning\n\nThis feature is experimental and might be subject to breaking API changes in the future.\n\n:::",
+      "source_content_hash": "52a0e784b92203a36d13bda304c15cc49d116da38331f40dd1e23d3d17dfb433",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d44c41e4",
+      "source_content": "## Importing Markdown {#importing-markdown}",
+      "source_content_hash": "4781b7c38eb3fb9eb12de03737649bc9cf269963a08ddb969a69e9f67a611270",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3441f612",
+      "source_content": "You can use Markdown files as components and import them elsewhere, either in Markdown files or in React pages.",
+      "source_content_hash": "37b24dec7a240d6eec660b07add0c1f6bc9871b37573f188e3edc459212e4c07",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d6ee8a64",
+      "source_content": "By convention, using the **`_` filename prefix** will not create any doc page and means the Markdown file is a **\"partial\"**, to be imported by other files.",
+      "source_content_hash": "17bee925b7970abfb3068895a1f40f778c03914bd9d9e5928c00dbe6d870d1e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b6fff5fe",
+      "source_content": "```md title=\"_markdown-partial-example.mdx\"\n<span>Hello {props.name}</span>\n\nThis is text some content from `_markdown-partial-example.mdx`.\n```",
+      "source_content_hash": "10defea7e751d57ed77aefea4837ace8544e5b3ebc4f2417d3d2a8f1560c9f46",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "0e49382f",
+      "source_content": "```jsx title=\"someOtherDoc.mdx\"\nimport PartialExample from './_markdown-partial-example.mdx';\n\n<PartialExample name=\"Sebastien\" />\n```",
+      "source_content_hash": "e7cab576127f77ad5bbaccad5bc5aa89aa3bd9d993dc6624ee41ada22e306fd9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "58e13dc0",
+      "source_content": "```mdx-code-block\nimport PartialExample from './_markdown-partial-example.mdx';\n\n<BrowserWindow>\n  <PartialExample name=\"Sebastien\" />\n</BrowserWindow>\n```",
+      "source_content_hash": "0030c93130ccea16cdda82ff80d030721eced90f38d318014341f2f9654d5ddf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7b046f1b",
+      "source_content": "This way, you can reuse content among multiple pages and avoid duplicating materials.",
+      "source_content_hash": "9b24b3f829e7077ae6eda6cce5e3b9bd925c7f6296f7b9ca3179e25310692958",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2c46fbcb",
+      "source_content": ":::warning\n\nCurrently, the table of contents does not contain the imported Markdown headings. This is a technical limitation that we are trying to solve ([issue](https://github.com/facebook/docusaurus/issues/3915)).\n\n:::",
+      "source_content_hash": "62fb3632f59f04aa04196f13f553c643333c19990c56e699747b6d4af1fbe85b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "76d60c63",
+      "source_content": "## Available exports {#available-exports}",
+      "source_content_hash": "601f397853aa1759fcc0f7d8688f9027a8c87abd0c301a558e1b86e980bc01b5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4fa5605e",
+      "source_content": "Within the MDX page, the following variables are available as globals:",
+      "source_content_hash": "e61b023b9ccba6806a5eb6cbd574e77bb27fb988aaa5f25b86008132d42f20ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c2ed90eb",
+      "source_content": "- `frontMatter`: the front matter as a record of string keys and values;\n- `toc`: the table of contents, as a tree of headings. See also [Inline TOC](./markdown-features-toc.mdx#inline-table-of-contents) for a more concrete use-case.\n- `contentTitle`: the Markdown title, which is the first `h1` heading in the Markdown text. It's `undefined` if there isn't one (e.g. title specified in the front matter).",
+      "source_content_hash": "a536bda9214d0cd3202716fa03241892921f64a095c90331b705b6533b10e1fb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "216de978",
+      "source_content": "```jsx\nimport TOCInline from '@theme/TOCInline';\nimport CodeBlock from '@theme/CodeBlock';\n\nThe table of contents for this page, serialized:\n\n<CodeBlock className=\"language-json\">{JSON.stringify(toc, null, 2)}</CodeBlock>\n\nThe front matter of this page:\n\n<ul>\n  {Object.entries(frontMatter).map(([key, value]) => <li key={key}><b>{key}</b>: {value}</li>)}\n</ul>\n\n<p>The title of this page is: <b>{contentTitle}</b></p>\n```",
+      "source_content_hash": "10c3df3b2f9e80a4692908071fd55c2d7019ec2bb0adb3f5ed5bbd113531d69c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "3f9e217d",
+      "source_content": "```mdx-code-block\nimport TOCInline from '@theme/TOCInline';\n\n<BrowserWindow>\n\nThe table of contents for this page, serialized:\n\n<CodeBlock className=\"language-json\">{JSON.stringify(toc, null, 2)}</CodeBlock>\n\nThe front matter of this page:\n\n<ul>\n  {Object.entries(frontMatter).map(([key, value]) => <li key={key}><b>{key}</b>: {value}</li>)}\n</ul>\n\n<p>The title of this page is: <b>{contentTitle}</b></p>\n\n</BrowserWindow>\n```",
+      "source_content_hash": "ed00224afec6f2e34a2a5f1a8af74de19d48cfe900980d98cf54e219f6e77ed4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/guides/markdown-features/markdown-features-react.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.939726+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

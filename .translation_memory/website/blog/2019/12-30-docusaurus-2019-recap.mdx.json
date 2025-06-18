@@ -1,0 +1,242 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2019/12-30-docusaurus-2019-recap.mdx",
+  "source_file_content_hash": "9b7fea17f1651fdcc711cf40018803f780fd6926f19e5bc20336773c0a8cb74c",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 2019 Recap\nauthors: yangshun\ntags: [recap]\n---",
+      "source_content_hash": "f7e988eb570480a43062dac8cdfc487e7df9f6021f4d604f6df0a78996107727",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "2019 was a great year for Docusaurus - we've made tremendous progress on [Docusaurus 2](https://docusaurus.io/). Current Docusaurus 1 users who aren't using the translations feature can feel free to check it out and [migrate](https://docusaurus.io/docs/migration) to it! Otherwise we will work with you to make that happen in 2020 :)",
+      "source_content_hash": "8dd05bcf32cd83ca94a51ef4dcbd8042abaecd66f975bc959c56d34e79d32c31",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "2019年對Docusaurus而言是豐收的一年——我們在[Docusaurus 2](https://docusaurus.io/)上取得了巨大進展。當前未使用翻譯功能的Docusaurus 1用戶可隨時試用並[遷移](https://docusaurus.io/docs/migration)至新版本！否則我們將在2020年協助您完成遷移 :)"
+      }
+    },
+    {
+      "segment_id": "a2752550",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a2752550"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Docusaurus 2 (D2)",
+      "source_content_hash": "e89de76367fd0eca42bb69fafce96e248d8615ed4ee2445fa87589b221ddf514",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 2 (D2)"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "In 2018, we proposed to rebuild [Docusaurus from the ground up](https://github.com/facebook/docusaurus/issues/789). It involved a major rearchitecture effort - we created a content-centric CSS framework from scratch, a plugins system, and moved from static HTML pages to be a single page-app with prerendered routes. It was a wild adventure and a tough feat, especially with no dedicated FTE working on the project. With the help of [@endilie](https://github.com/endiliey), our ex-intern-turned-contributor-turned-maintainer, we made really good progress on D2 and are currently on version 2.0.0-alpha.40. All features in Docusaurus 1 except for translations have been ported over.",
+      "source_content_hash": "870d099452ea0ddadaa98ff02101b2969cb6dde7237fbbebd1cf310b2ec0692b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "2018年，我們提出[從頭重建Docusaurus](https://github.com/facebook/docusaurus/issues/789)。這項重大架構改造包括：從零打造內容優先的CSS框架、建立插件系統，並將靜態HTML頁面轉為預渲染路由的單頁應用。這是一場艱鉅的冒險，尤其在沒有專職人員的情況下。幸有[@endilie](https://github.com/endiliey)（從實習生成為貢獻者再成為維護者）的協助，D2進展顯著，目前版本為2.0.0-alpha.40。除翻譯功能外，Docusaurus 1的所有特性均已移植完成。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "D2's killer features are **Dark Mode** and its **superb performance**. D2 has dark mode support out-of-the-box and it is near effortless to create a dark mode-friendly documentation site. Endilie put in great effort into optimizing the performance of the site and a bunch of performance optimization tricks have been done under the hood by default - optimized images, prerendering every route to static HTML and client-side routing thereafter, prefetching assets needed by future navigations whenever the user hovers over a navigation link, etc.",
+      "source_content_hash": "79251a423a3f57b4ce4ab27f27cbd3b028222a7a55330e9d7dc9cc8607535f17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "D2的殺手級功能是**暗黑模式**與**卓越性能**。D2開箱即支援暗黑模式，幾乎無需額外配置即可建立暗黑模式友好的文檔站點。Endilie在性能優化上投入大量心力，預設實現多項優化技術：圖片壓縮、所有路由預渲染為靜態HTML後啟用客戶端路由、當用戶懸停導航連結時預取未來導航所需資源等。"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Last but not least, we implemented a plugins architecture and turned the repo into a [Lerna monorepo](https://github.com/facebook/docusaurus/tree/main/packages). We believe this plugin architecture will be helpful towards building a community and also allowing users to build their own features for their unique use cases.",
+      "source_content_hash": "8189f31eeea5c78f73152678d2e4050fefe2bbb716a1369fccec9a6efdb15fe6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "最後，我們實現了插件架構並將代碼庫改為[Lerna單體倉庫](https://github.com/facebook/docusaurus/tree/main/packages)。相信此插件架構有助於社群生態發展，也能讓用戶針對特殊需求自建功能。"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## GitHub Activity",
+      "source_content_hash": "75d57a5acf760cde9b69b760e33d3104c44ebd678c92a51a31303708975c9d90",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## GitHub動態"
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "- Stars: 10050 → 14632 (+45.6% y/y)\n- Total Contributors: 182 → 303 (+66.4% y/y). Most of which are non-Facebook contributors\n- Daily npm Downloads: 728 → 2320 (+218.7% y/y). The peak was in November\n- D1 is currently used by 3872 projects on GitHub while D2 is used by 247 projects on GitHub\n- We now have 4 active core contributors! (+100% y/y)",
+      "source_content_hash": "a87c0252c277b3f2896d10ea256f5ead3071a47b6c4d04e3848da636299e29b0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 星標數：10050 → 14632（年增45.6%）\n- 總貢獻者：182 → 303（年增66.4%），其中多數為非Facebook貢獻者\n- 日均npm下載量：728 → 2320（年增218.7%），峰值出現在11月\n- GitHub上目前有3872個項目使用D1，247個項目使用D2\n- 現有4位核心活躍貢獻者！（年增100%）"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Notable Users",
+      "source_content_hash": "753afafb5dc27a22eea45f3b6bda3f2b8a9b6111d92e0120323b81c742a10ad7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 知名用戶"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "A good portion of the projects within the Open Source community use Docusaurus. This half we also onboarded more notable projects onto Docusaurus 2:",
+      "source_content_hash": "c6487525868328c461fcfa9c1be4078279c36bb069b40189860f062f9ddaa051",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "開源社群中許多項目採用Docusaurus。本季度我們還成功讓更多知名項目遷移至Docusaurus 2："
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "- [Create React App](https://create-react-app.dev/)\n- [Redux](https://redux.js.org/)\n- [Draft.js](https://draftjs.org/)\n- [Flux](http://facebook.github.io/flux/)",
+      "source_content_hash": "8ca00581e80bb2b0b0ad82ea536a0a07eb1d89aa49f81179277d98a3c43b858e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Create React App](https://create-react-app.dev/)\n- [Redux](https://redux.js.org/)\n- [Draft.js](https://draftjs.org/)\n- [Flux](http://facebook.github.io/flux/)"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "And welcomed more projects to Docusaurus 1:",
+      "source_content_hash": "16b3bbd987f9c9c6ebc25d0fdd01f87dbbe5f92af607a060e2d1a938482b1153",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同時歡迎這些新項目加入Docusaurus 1陣營："
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "- [Libra](https://developers.libra.org/)\n- [MobX](https://mobx.js.org/)\n- [Immer](https://immerjs.github.io/immer/)\n- [Sorbet](https://sorbet.org/)",
+      "source_content_hash": "c117c345483b9daab55b57e493a52289661c6fc73a0d86e2231c484331f9152e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Libra](https://developers.libra.org/)\n- [MobX](https://mobx.js.org/)\n- [Immer](https://immerjs.github.io/immer/)\n- [Sorbet](https://sorbet.org/)"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## Media",
+      "source_content_hash": "20445e1048e6a9b3f4c7a88ab2db47a58aa31967b9c47b83bb8d891c15f6be95",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 媒體報導"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Yangshun gave a classroom session during F8 about [Using Docusaurus to Create Open Source Websites](https://www.youtube.com/watch?v=QcGJsf6mgZE).",
+      "source_content_hash": "21d7e78fec7e5e3b3728c02e7fc32708dce6db0137f80fe1a1a03dc0abed3bfc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Yangshun在F8大會上開設了[使用Docusaurus建立開源網站](https://www.youtube.com/watch?v=QcGJsf6mgZE)的教學課程。"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## Community",
+      "source_content_hash": "be955f6b536547890fd3f3512fb7a25d4eb38f958b5aa6bab1c04c6660f8c9ed",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 社群生態"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "A few third-party hosting/development services also has first-class integration with a Docusaurus setup:",
+      "source_content_hash": "9c6b86eb286370ee4646d4f21c7d8931b6c30848aebb7d78113a5639d971d6ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部分第三方託管/開發服務已原生支援Docusaurus部署："
+      }
+    },
+    {
+      "segment_id": "ddd2c7ae",
+      "source_content": "- [Vercel deployment](https://github.com/vercel/vercel/tree/main/examples/docusaurus)\n- [CodeSandbox](https://codesandbox.io/s/docusaurus-template-x3vg9)\n- [Render](https://render.com/docs/deploy-docusaurus)",
+      "source_content_hash": "5b5798b4230f38740bb82547c709c30d15c751a114ec7ee37b47f036c59acfad",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Vercel部署方案](https://github.com/vercel/vercel/tree/main/examples/docusaurus)\n- [CodeSandbox模板](https://codesandbox.io/s/docusaurus-template-x3vg9)\n- [Render部署指南](https://render.com/docs/deploy-docusaurus)"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "## Looking Ahead",
+      "source_content_hash": "8de2e48b0ce5868db1661d22f34f84b1fe7ebfa6e077027919cbbd74d039bd0c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 未來展望"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "D2 has gained some traction among the [developer community](https://docusaurus.io/showcase). In 2020, we want to achieve full feature parity with D1 by the first half and help the remaining Facebook projects on D1 move to D2. It would also be great if we could use Docusaurus for internal documentation, but that is a non-trivial undertaking. If you have a need for it or have some ideas, come speak with us!",
+      "source_content_hash": "20e48d7cc1d5396bf21d15c6b8fe42cba6ba8f0dd2d904697f429c0f0b386e35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "D2 已在[開發者社群](https://docusaurus.io/showcase)中獲得一定關注。2020年，我們的目標是在上半年實現與D1的完整功能對等，並協助剩餘的Facebook專案從D1遷移至D2。若能將Docusaurus用於內部文件也將是一大進展，但這並非易事。若您有此需求或相關想法，歡迎與我們交流！"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Huge thanks to the community for their contributions, especially the core team - [Endilie Yacop Sucipto](https://github.com/endiliey), [Alexey Pyltsyn](https://github.com/lex111), [Wei Gao](https://github.com/wgao19). Lastly, thank you [Joel Marcey](https://github.com/JoelMarcey) for starting Docusaurus and supporting the project all this time.",
+      "source_content_hash": "9c037cba4fc93aa700e149b2f6c9e9dee143ef6f7c11a8c3bc90a3914a0bbc5d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "衷心感謝社群的貢獻，特別是核心團隊成員——[Endilie Yacop Sucipto](https://github.com/endiliey)、[Alexey Pyltsyn](https://github.com/lex111)、[Wei Gao](https://github.com/wgao19)。最後，感謝[Joel Marcey](https://github.com/JoelMarcey)創建Docusaurus並長期支持此專案。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "Cheers to a great 2020! 🎉",
+      "source_content_hash": "3ed77a5e63e0b901ba80d1b0ce0774548ec76857be4dae2902c04b9b4195d7c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "敬祝2020年精彩可期！🎉"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2019/12-30-docusaurus-2019-recap.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.004437+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "9b7fea17f1651fdcc711cf40018803f780fd6926f19e5bc20336773c0a8cb74c"
+  }
+}

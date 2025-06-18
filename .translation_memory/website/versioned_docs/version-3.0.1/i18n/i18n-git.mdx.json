@@ -1,0 +1,408 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/i18n/i18n-git.mdx",
+  "source_file_content_hash": "df26a084d721a2a82da6d108edb43adfa72c2f1acc03aed05083fbd3f32f88c3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: git\nslug: /i18n/git\n---",
+      "source_content_hash": "8751145ddef6dadee49cb1dbb7eeb65af78ec086feb5ecf2ff1a6aaf931f1bb2",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# i18n - Using git",
+      "source_content_hash": "79a795ddf488374d3f66d766532ecd101c4d3cb7075ca61191d43eff1b57ca1e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "A **possible translation strategy** is to **version control the translation files** with Git (or any other [VCS](https://en.wikipedia.org/wiki/Version_control)).",
+      "source_content_hash": "5975dbc67edb956f546d1f23e4c1c0cb5b1899cac24675e90137d44e65784801",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Tradeoffs {#tradeoffs}",
+      "source_content_hash": "dd34e2b4c7e8bf873d5b134ed68547b8d49aa2bcbb9e3d0e608885d89c42879d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This strategy has advantages:",
+      "source_content_hash": "94ec14b42f1a44093051ec29afed650e2f14cbac8c2b52f4b5d249477b783467",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "- **Easy to get started**: just commit the `i18n` folder to Git\n- **Easy for developers**: Git, GitHub and pull requests are mainstream developer tools\n- **Free** (or without any additional cost, assuming you already use Git)\n- **Low friction**: does not require signing up to an external tool\n- **Rewarding**: contributors are happy to have a nice contribution history",
+      "source_content_hash": "1ad1a5ba92a6c89c717a5530bd022d9e9d8c687ca3350f094268706206188fc8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Using Git also present some shortcomings:",
+      "source_content_hash": "53214893d967c146691d1954cdba8813044eb148b398a2c37f99ca058d6a4841",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "- **Hard for non-developers**: they do not master Git and pull-requests\n- **Hard for professional translators**: they are used to SaaS translation software and advanced features\n- **Hard to maintain**: you have to keep the translated files **in sync** with the untranslated files",
+      "source_content_hash": "acc7227280bedc6edd683912830c65e908725226f92bf71d4c56c128658720a0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a2f1eaea",
+      "source_content": ":::note\n\nSome **large-scale technical projects** (React, Vue.js, MDN, TypeScript, Nuxt.js, etc.) use Git for translations.\n\nRefer to the [Docusaurus i18n RFC](https://github.com/facebook/docusaurus/issues/3317) for our notes and links studying these systems.\n\n:::",
+      "source_content_hash": "fbe8fe8c4d840b1eccfa61de12a2001f85a141e5f8404a4f1bfc24e8091d9596",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Initialization {#initialization}",
+      "source_content_hash": "de3a22527272cd0f8160bb5d274a1b86009dc893cb1941248fe2f654180579a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "This is a walk-through of using Git to translate a newly initialized English Docusaurus website into French, and assume you already followed the [i18n tutorial](./i18n-tutorial.mdx).",
+      "source_content_hash": "57a7b680b45081071edad72654e0c63cf4004477c4fd552507faffed9a994437",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "80d9e13c",
+      "source_content": "### Prepare the Docusaurus site {#prepare-the-docusaurus-site}",
+      "source_content_hash": "cb63aba09b3ec2ce8a1f4ff6ba88216f134e532d9a0f52933fd493c1ef3554ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Initialize a new Docusaurus site:",
+      "source_content_hash": "9c8f12a4190c9b53e707f6b2040d23a76c3a0c769ac7f3e74bb026f2e3592c59",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "026f2f3e",
+      "source_content": "```bash\nnpx create-docusaurus@latest website classic\n```",
+      "source_content_hash": "99fb9b012aafbe9394e575d2366a28c552de086f9cfa93445c0122fb8508c133",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Add the site configuration for the French language:",
+      "source_content_hash": "b024d9d72d3fe5928f49a262d4b72a870d78a3a225ae004ae9cdb29ace8a1ea4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fr'],\n  },\n  themeConfig: {\n    navbar: {\n      items: [\n        // ...\n        {\n          type: 'localeDropdown',\n          position: 'left',\n        },\n        // ...\n      ],\n    },\n  },\n  // ...\n};\n```",
+      "source_content_hash": "7ea935d9bf9a2a855436bd24eb1198dc343c3b25eb504b5e0dfd67b07cc7c1a6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Translate the homepage:",
+      "source_content_hash": "50e4bde5ba456cf0afcb61e1488c3f15ec15f087630d1846fde5a23e616f4158",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Translate from '@docusaurus/Translate';\nimport Layout from '@theme/Layout';\n\nexport default function Home() {\n  return (\n    <Layout>\n      <h1 style={{margin: 20}}>\n        <Translate description=\"The homepage main heading\">\n          Welcome to my Docusaurus translated site!\n        </Translate>\n      </h1>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "b11dab67f2f89f5fdb432d08110a5b8bc1501011f926d8531e9b9f8a6d59bc48",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "90d35b51",
+      "source_content": "### Initialize the `i18n` folder {#initialize-the-i18n-folder}",
+      "source_content_hash": "0e522fd0e1921520c92e6d4ee981d7e2cffccdc4fa1d7fe4c48d3ecb86431db6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Use the [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) CLI command to initialize the JSON translation files for the French locale:",
+      "source_content_hash": "d3ddaf52cc4b845ac869ce66625a425c77bd38f6e54d09c4f1e1cac1f74f8291",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "daa16011",
+      "source_content": "```bash npm2yarn\nnpm run write-translations -- --locale fr\n\n  1 translations written at i18n/fr/code.json\n 11 translations written at i18n/fr/docusaurus-theme-classic/footer.json\n  4 translations written at i18n/fr/docusaurus-theme-classic/navbar.json\n  3 translations written at i18n/fr/docusaurus-plugin-content-docs/current.json\n```",
+      "source_content_hash": "bd94e228e6f1bcf736d20099f4d5b089e291c6926f3313d927b71a600853a67e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5ae4e2a6",
+      "source_content": ":::tip\n\nUse the `--messagePrefix '(fr) '` option to make the untranslated strings stand out.\n\n`Hello` will appear as `(fr) Hello` and makes it clear a translation is missing.\n\n:::",
+      "source_content_hash": "4064475f0e7295bd8dbe7baa97b63d2317459065d3a120f846918730d8026014",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "Copy your untranslated Markdown files to the French folder:",
+      "source_content_hash": "f2f538a703d6d9c8d2f59c07d290f9ce08d2ee889b1762acdfd682758dba5b63",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f39e109c",
+      "source_content": "```bash\nmkdir -p i18n/fr/docusaurus-plugin-content-docs/current\ncp -r docs/** i18n/fr/docusaurus-plugin-content-docs/current\n\nmkdir -p i18n/fr/docusaurus-plugin-content-blog\ncp -r blog/** i18n/fr/docusaurus-plugin-content-blog\n\nmkdir -p i18n/fr/docusaurus-plugin-content-pages\ncp -r src/pages/**.md i18n/fr/docusaurus-plugin-content-pages\ncp -r src/pages/**.mdx i18n/fr/docusaurus-plugin-content-pages\n```",
+      "source_content_hash": "c948b4290765d0bc5fe501d3706e0a0e465d74ee5594388c40a194d639b943e9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "Add all these files to Git.",
+      "source_content_hash": "e28e7faf97e83cfadf1490677f7dd13abb89782c44c0eb24a5c781bfecc072a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "23b96cc0",
+      "source_content": "### Translate the files {#translate-the-files}",
+      "source_content_hash": "8b1a33093ca2c36da141c6fc927072d118a63e098d7e91820f3985b0861f0ef0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "Translate the Markdown and JSON files in `i18n/fr` and commit the translation.",
+      "source_content_hash": "55cba9ded642a950cad418ecfb840b3e240da0d1dc7d6c8fae9866d68533b792",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "You should now be able to start your site in French and see the translations:",
+      "source_content_hash": "fe93e7133c8f0274bf020f9b9277c903ee86c8de8e9f6d8ec34b245b44376db3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```bash npm2yarn\nnpm run start -- --locale fr\n```",
+      "source_content_hash": "cb03a7f69b372ffc4020462fee71048686277912592f2ead73eff84fa9200e2d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "You can also build the site locally or on your CI:",
+      "source_content_hash": "834b10ce591d885618bb323a880f08bdc66b7b01076d96358f89739830be622b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```bash npm2yarn\nnpm run build\n# or\nnpm run build -- --locale fr\n```",
+      "source_content_hash": "c1824b60bbee964836596e0add465755005ec2898aed1cda242cbe19aaa76d99",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "### Repeat {#repeat}",
+      "source_content_hash": "69433cdc3b0acd571ab5454679f60c34d17d7e0f69a8c8aea7c1218a2e4e557e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "Follow the same process for each locale you need to support.",
+      "source_content_hash": "f5e76d568c6bf46be4c65b6d47f0443f121f2d44f7707a135308175355ea88f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8b448c8b",
+      "source_content": "## Maintenance {#maintenance}",
+      "source_content_hash": "c9ddfe4c400ea8f2d8e6babc3645f2a4873cbde109992c49f0c5124f13b150eb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "Keeping translated files **consistent** with the originals **can be challenging**, in particular for Markdown documents.",
+      "source_content_hash": "886122ef05c15869f203995badc1510b79c5afe75028de6cc708f71826157fab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "### Markdown translations {#markdown-translations}",
+      "source_content_hash": "2f0e1a6cecf0bafcd99fcdf2647f8e80897b004d7a62d579d0eef31031111d42",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "When an untranslated Markdown document is edited, it is **your responsibility to maintain the respective translated files**, and we unfortunately don't have a good way to help you do so.",
+      "source_content_hash": "b8d41195fa51215ba937beed2eec04a2b48059ba64034a67e56a9a36fbc0e48d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "To keep your translated sites consistent, when the `website/docs/doc1.md` doc is edited, you need **backport these edits** to `i18n/fr/docusaurus-plugin-content-docs/current/doc1.md`.",
+      "source_content_hash": "8098bced58d35c5824661c1e950da21a4fc31c76dfe951d241b97132e6bcc9f5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了保持翻譯站點的一致性，當 `website/docs/doc1.md` 文檔被編輯時，您需要**將這些修改反向移植**到 `i18n/fr/docusaurus-plugin-content-docs/current/doc1.md`。"
+      }
+    },
+    {
+      "segment_id": "c6b2ca77",
+      "source_content": "### JSON translations {#json-translations}",
+      "source_content_hash": "cc072e1f6efc453c29f614b6df57d425afa66f79ad215eb86e780f89d3e76eed",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### JSON 翻譯維護 {#json-translations}"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "To help you maintain the JSON translation files, it is possible to run again the [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) CLI command:",
+      "source_content_hash": "20529ed19769b642836afae0055712ede14c2f3345aa84e204232a8a17db7559",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了協助維護 JSON 翻譯文件，您可以再次執行 [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) CLI 命令："
+      }
+    },
+    {
+      "segment_id": "0029045f",
+      "source_content": "```bash npm2yarn\nnpm run write-translations -- --locale fr\n```",
+      "source_content_hash": "11b280a685be5f4f6630bff872478513be6b87fbbb30620a90797a474355904a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0029045f"
+      }
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "New translations will be appended, and existing ones will not be overridden.",
+      "source_content_hash": "be9bea617d6026d594906579936cc7a1e392b5bc9c0d73fb356c7c367de789be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新的翻譯內容會被追加，現有翻譯則不會被覆蓋。"
+      }
+    },
+    {
+      "segment_id": "b1fb63b3",
+      "source_content": ":::tip\n\nReset your translations with the `--override` option.\n\n:::",
+      "source_content_hash": "5913a51c4724c28ed3e8f4240bc28d30f760454bfdf82995423ebba951a4e944",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用 `--override` 選項可重置您的翻譯內容。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a49ac2ed",
+      "source_content": "### Localize edit URLs {#localize-edit-urls}",
+      "source_content_hash": "dd19712d5720be0e0745e5f589fc3fb0ce0043210e1e6b6d2a3c284ae7dac090",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 本地化編輯網址 {#localize-edit-urls}"
+      }
+    },
+    {
+      "segment_id": "808b0414",
+      "source_content": "When the user is browsing a page at `/fr/doc1`, the edit button will link by default to the unlocalized doc at `website/docs/doc1.md`.",
+      "source_content_hash": "749fc96f3335a5fb655e2411e6c8fdd2bc8dfe9b5f8ceda3d6b9c6aaf4692f04",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當用戶瀏覽 `/fr/doc1` 頁面時，編輯按鈕預設會連結到未本地化的 `website/docs/doc1.md` 文檔。"
+      }
+    },
+    {
+      "segment_id": "61a78cbe",
+      "source_content": "Your translations are on Git, and you can use the `editLocalizedFiles: true` option of the docs and blog plugins.",
+      "source_content_hash": "1fb7356db33f4c5e9c47c942ee66d2e1787734e515519236bd6981bf1b57884e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您的翻譯存放在 Git 中，可使用 docs 和 blog 插件的 `editLocalizedFiles: true` 選項。"
+      }
+    },
+    {
+      "segment_id": "39c48ff7",
+      "source_content": "The edit button will link to the localized doc at `i18n/fr/docusaurus-plugin-content-docs/current/doc1.md`.",
+      "source_content_hash": "8c92b6cbab06569dc04bb79d7414f4b4a80de90d8995db7417ae38d57e8aad7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "編輯按鈕將改為連結到本地化文檔 `i18n/fr/docusaurus-plugin-content-docs/current/doc1.md`。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/i18n/i18n-git.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.152425+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "df26a084d721a2a82da6d108edb43adfa72c2f1acc03aed05083fbd3f32f88c3"
+  }
+}

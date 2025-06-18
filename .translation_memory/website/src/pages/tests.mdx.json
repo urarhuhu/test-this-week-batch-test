@@ -1,0 +1,42 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "src/pages/tests.mdx",
+  "source_file_content_hash": "330542fed6c79eb45e8a6779f9c6509d6a381d758929841d9d0700878d15a7d0",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Tests",
+      "source_content_hash": "2e2e79ae1f9d53c9af70739be09176e10ac0055d51ff48fedf380dff075eb6ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 測試"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Docusaurus use some extra plugin instances for testing / dogfooding purpose:",
+      "source_content_hash": "65191dca8b66430b7fc98a0d6b1a9896cb08f62e1f0fd76d76697794754f10f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用一些額外的插件實例用於測試/內部驗證目的："
+      }
+    },
+    {
+      "segment_id": "17ded777",
+      "source_content": "- [/tests/docs](/tests/docs)\n- [/tests/blog](/tests/blog)\n- [/tests/pages](/tests/pages)",
+      "source_content_hash": "acbb07506ac543d5228c1796540b3277aa13a9f98834fecaaf7af3d13e2969ec",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [/tests/docs](/tests/docs)\n- [/tests/blog](/tests/blog)\n- [/tests/pages](/tests/pages)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-pages/tests.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.048579+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "330542fed6c79eb45e8a6779f9c6509d6a381d758929841d9d0700878d15a7d0"
+  }
+}

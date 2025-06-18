@@ -1,0 +1,232 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/guides/docs/docs-introduction.mdx",
+  "source_file_content_hash": "6dcc40e9948c0aa7ed9591eda6a107dc1bce9e8950315067f63bb7b5bd8190de",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: introduction\nsidebar_label: Introduction\nslug: /docs-introduction\n---",
+      "source_content_hash": "ad340516c836e17aaa62d9ca211ec8650b51391d27e5f9eeae6c62bf5114be21",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Docs Introduction",
+      "source_content_hash": "b7ccf57cf26f082210335f712150b9b1308e260f66da031022b2275bc5cad216",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 文件介紹"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "The docs feature provides users with a way to organize Markdown files in a hierarchical format.",
+      "source_content_hash": "2b9c15c7c9c6e54a4a0e8dc3e6370843404a382b04b4cd2d4710f957657791b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文件功能提供使用者以階層結構組織 Markdown 檔案的方式。"
+      }
+    },
+    {
+      "segment_id": "bb849aa9",
+      "source_content": ":::info\n\nCheck the [Docs Plugin API Reference documentation](./../../api/plugins/plugin-content-docs.mdx) for an exhaustive list of options.\n\n:::",
+      "source_content_hash": "c2a52e3b472864eb8aec8cdaf482e101c6ebe536d3938423c068bdcfc690783d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n詳閱 [文件插件 API 參考文檔](./../../api/plugins/plugin-content-docs.mdx) 以獲取完整的選項列表。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Your site's documentation is organized by four levels, from lowest to highest:",
+      "source_content_hash": "0bfa29d3ac7501a5cad1511d222434c07176b5b57483bd8395c0a124f3217803",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您網站的文檔按四個層級組織，從低到高分別為："
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "1. Individual pages.\n2. Sidebars.\n3. Versions.\n4. Plugin instances.",
+      "source_content_hash": "e317d54bf51dec4edc25a1dc99f26be3cd4f8140002250b4ec37817a93a82f60",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 個別頁面\n2. 側邊欄\n3. 版本\n4. 插件實例"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "The guide will introduce them in that order: starting from [how individual pages can be configured](./docs-create-doc.mdx), to [how to create a sidebar or multiple ones](./sidebar/index.mdx), to [how to create and manage versions](./versioning.mdx), to [how to use multiple docs plugin instances](./docs-multi-instance.mdx).",
+      "source_content_hash": "bebd03cc99cd2ee708fb4fef06de1adef10b15a486d7ff0aabe0cb0dc5390035",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本指南將按此順序介紹：從 [如何配置個別頁面](./docs-create-doc.mdx) 開始，到 [如何建立單個或多個側邊欄](./sidebar/index.mdx)，再到 [如何建立和管理版本](./versioning.mdx)，最後是 [如何使用多個文件插件實例](./docs-multi-instance.mdx)。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Docs-only mode {#docs-only-mode}",
+      "source_content_hash": "040739519308bafd551501e074122f785ab59692ec1cfc3482d3a1f9049121da",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 純文件模式 {#docs-only-mode}"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "A freshly initialized Docusaurus site has the following structure:",
+      "source_content_hash": "291234445334d274a712ac68f57e03ecaca27f377bdf6619aabef6f5f92c93b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新初始化的 Docusaurus 站點具有以下結構："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```\nexample.com/                                -> generated from `src/pages/index.js`\n\nexample.com/docs/intro                      -> generated from `docs/intro.md`\nexample.com/docs/tutorial-basics/...        -> generated from `docs/tutorial-basics/...`\n...\n\nexample.com/blog/2021/08/26/welcome         -> generated from `blog/2021-08-26-welcome/index.md`\nexample.com/blog/2021/08/01/mdx-blog-post   -> generated from `blog/2021-08-01-mdx-blog-post.mdx`\n...\n```",
+      "source_content_hash": "3d5b3ee57b976c7e2d8c034c884abd7dc10bb93f13c528d7b13afafaa0dc75e6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "All docs will be served under the subroute `docs/`. But what if **your site only has docs**, or you want to prioritize your docs by putting them at the root?",
+      "source_content_hash": "b784569f3c99bcf2f3b6dad9534f104a27fab8d4b73bb19083c2f0aa4e00b1fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有文件將在子路由 `docs/` 下提供。但如果 **您的站點僅包含文件**，或您希望將文件置於根目錄以優先展示該怎麼辦？"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Assume that you have the following in your configuration:",
+      "source_content_hash": "40f275db2e0a5eeb8d8918916beed306ede0f1c4178b33707cc4f94df4ea7449",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "假設您的配置中包含以下內容："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          /* docs plugin options */\n        },\n        blog: {\n          /* blog plugin options */\n        },\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "9dcb5ed16bfcea9e609a7d494ada40168017ee0536e26ee61a557f426e4f70d9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "To enter docs-only mode, change it to like this:",
+      "source_content_hash": "45b12c1e25b81d6621767a0780a6e3e8f68322a2591100394db1a74ab34538b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要啟用純文件模式，請將其更改為如下形式："
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          // highlight-next-line\n          routeBasePath: '/', // Serve the docs at the site's root\n          /* other docs plugin options */\n        },\n        // highlight-next-line\n        blog: false, // Optional: disable the blog plugin\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "aa15a7f431a6b956da030e59d31564e81081227990a81002ef4d961220498dca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Note that you **don't necessarily have to give up on using the blog** or other plugins; all that `routeBasePath: '/'` does is that instead of serving the docs through `https://example.com/docs/some-doc`, they are now at the site root: `https://example.com/some-doc`. The blog, if enabled, can still be accessed through the `blog/` subroute.",
+      "source_content_hash": "a0fbc88885ce959d1a8f7354ac303fa4cda4e022385010393737b3b850733a69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意，您 **不一定需要放棄使用部落格** 或其他插件；`routeBasePath: '/'` 的作用僅是將文件從 `https://example.com/docs/some-doc` 移至站點根目錄：`https://example.com/some-doc`。若啟用部落格，仍可透過 `blog/` 子路由訪問。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "Don't forget to put some page at the root (`https://example.com/`) through adding the front matter:",
+      "source_content_hash": "a70a0cf530c76313b304da9df31958b5985366802466c8fc85ce615be556cb59",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "別忘了透過添加 front matter 在根目錄 (`https://example.com/`) 放置一個頁面："
+      }
+    },
+    {
+      "segment_id": "5782e280",
+      "source_content": "```md title=\"docs/intro.md\"\n---\n# highlight-next-line\nslug: /\n---\n\nThis page will be the home page when users visit https://example.com/.\n```",
+      "source_content_hash": "6889924d1a45a2f3ded9a3e01dae6b43a4430a16f92b9668ad5a2ba4417645d4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5782e280"
+      }
+    },
+    {
+      "segment_id": "5064856a",
+      "source_content": ":::warning\n\nIf you added `slug: /` to a doc to make it the homepage, you should delete the existing homepage at `./src/pages/index.js`, or else there will be two files mapping to the same route!\n\n:::",
+      "source_content_hash": "fd28c6e052f6b2912e4d9b7f2cbd5b02ca13ef9940c1465bac8d98e9d56a68dd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n若您已為某個文件添加 `slug: /` 使其成為首頁，則應刪除現有的 `./src/pages/index.js` 首頁，否則將有兩個文件映射至同一路由！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "Now, the site's structure will be like the following:",
+      "source_content_hash": "e0070c56e43e9a1306cf9af8851f36938fa4716488870346160cb51def290af2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在，站點結構將如下所示："
+      }
+    },
+    {
+      "segment_id": "7ded566f",
+      "source_content": "```\nexample.com/                       -> generated from `docs/intro.md`\nexample.com/tutorial-basics/...    -> generated from `docs/tutorial-basics/...`\n...\n```",
+      "source_content_hash": "dd3103a8736d8a813bebf292fed93483b25a03f26b6c30cc1842f2ef82c1180f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7ded566f"
+      }
+    },
+    {
+      "segment_id": "5b81fcd1",
+      "source_content": ":::tip\n\nThere's also a \"blog-only mode\" for those who only want to use the blog feature of Docusaurus. You can use the same method detailed above. Follow the setup instructions on [Blog-only mode](../../blog.mdx#blog-only-mode).\n\n:::",
+      "source_content_hash": "14b1986e8bffbf09c9a910fb8421f98961bc23fb128333c9b3e89cb38a8dcb89",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n對於僅想使用 Docusaurus 部落格功能的用戶，也有「純部落格模式」。您可以使用上述相同方法。請遵循 [純部落格模式](../../blog.mdx#blog-only-mode) 的設定說明。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/guides/docs/docs-introduction.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.092986+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "6dcc40e9948c0aa7ed9591eda6a107dc1bce9e8950315067f63bb7b5bd8190de"
+  }
+}

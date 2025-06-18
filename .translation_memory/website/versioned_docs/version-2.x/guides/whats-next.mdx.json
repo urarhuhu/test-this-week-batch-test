@@ -1,0 +1,62 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/guides/whats-next.mdx",
+  "source_file_content_hash": "75a414ef883c31ee0bc5cb2c84e343684e001ddbedc9620fe8f7c1499ddf05be",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# What's next?",
+      "source_content_hash": "b1bafb42eeca7c1caa3a4dc048e72edac500a4505ab6a27b7670f846e288ef41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 下一步是什麼？"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Congratulations! You have understood most core features of Docusaurus now. You have:",
+      "source_content_hash": "ca878c16e1f4d785e293abcc7748afde56187cc01c49b4873763c3e20bca4084",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "恭喜！您現在已經理解了 Docusaurus 的大部分核心功能。您已經："
+      }
+    },
+    {
+      "segment_id": "17ded777",
+      "source_content": "- [Used the pages plugin](./creating-pages.mdx) to create a standalone React / Markdown page\n- [Used the docs plugin](./docs/docs-introduction.mdx) to create documentation pages. This includes [configuring the sidebar](./docs/sidebar/index.mdx), and even [versioning](./docs/versioning.mdx)\n- [Used the blog plugin](../blog.mdx) to create a fully featured blog\n- Tried your hands on [a range of Markdown features](./markdown-features/markdown-features-intro.mdx), which are useful for all content plugins\n- [Used stylesheets](../styling-layout.mdx) or [swizzling](../swizzling.mdx) to customize your site's appearance\n- [Included images and other assets](../static-assets.mdx) in your pages\n- [Added search](../search.mdx) to your site\n- Understood how [browser support](../browser-support.mdx) and [SEO](../seo.mdx) are done through standard Docusaurus APIs\n- Learned about how [individual plugins](../using-plugins.mdx) are installed and configured\n- [Deployed](../deployment.mdx) your site to a content host\n- [Internationalized](../i18n/i18n-tutorial.mdx) your site to include multiple languages",
+      "source_content_hash": "addc2cdc0495d0e6dbaa75d5ceb793ab5cdb495420a81eb63a3760116dbb4ab8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [使用頁面插件](./creating-pages.mdx) 創建了一個獨立的 React / Markdown 頁面\n- [使用文檔插件](./docs/docs-introduction.mdx) 創建了文檔頁面。這包括 [配置側邊欄](./docs/sidebar/index.mdx)，甚至 [版本控制](./docs/versioning.mdx)\n- [使用部落格插件](../blog.mdx) 創建了一個功能完整的部落格\n- 嘗試了 [一系列 Markdown 功能](./markdown-features/markdown-features-intro.mdx)，這些功能對所有內容插件都很有用\n- [使用樣式表](../styling-layout.mdx) 或 [swizzling](../swizzling.mdx) 來自定義網站的外觀\n- [在頁面中包含了圖片和其他靜態資源](../static-assets.mdx)\n- [為網站添加了搜索功能](../search.mdx)\n- 了解了如何通過標準的 Docusaurus API 實現 [瀏覽器支持](../browser-support.mdx) 和 [SEO](../seo.mdx)\n- 學習了如何安裝和配置 [各個插件](../using-plugins.mdx)\n- [將網站部署](../deployment.mdx) 到內容主機\n- [國際化](../i18n/i18n-tutorial.mdx) 您的網站以支持多種語言"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "At this point, you probably have a big `docusaurus.config.js` already😄 However, you haven't written much code yet! Most of the features are implemented through calling encapsulated Docusaurus APIs. As you continue your journey, you can take three paths:",
+      "source_content_hash": "0d197630467fe07f9bfec8fe583c4fd64d8fb7ef7144128e47c32db41a797ae1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此時，您可能已經有一個龐大的 `docusaurus.config.js` 文件了😄 然而，您還沒有編寫太多代碼！大多數功能都是通過調用封裝的 Docusaurus API 實現的。在繼續您的旅程時，您可以選擇三條路徑："
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "- Learn more advanced Docusaurus concepts. This will help you gain a deeper understand of what the APIs do.\n- Read about [all existing APIs](../docusaurus-core.mdx). Many of them have not been covered in the Guides!\n- Learn to [develop a plugin](../api/plugin-methods/README.mdx) to extend the functionality of your site.",
+      "source_content_hash": "34958485b7a672796fc04a42248b207b95255621702a5c3879b508e58528a074",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 學習更高級的 Docusaurus 概念。這將幫助您更深入地理解 API 的功能。\n- 閱讀 [所有現有的 API](../docusaurus-core.mdx)。許多 API 在指南中並未涵蓋！\n- 學習 [開發插件](../api/plugin-methods/README.mdx) 來擴展網站的功能。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/guides/whats-next.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.133028+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "75a414ef883c31ee0bc5cb2c84e343684e001ddbedc9620fe8f7c1499ddf05be"
+  }
+}

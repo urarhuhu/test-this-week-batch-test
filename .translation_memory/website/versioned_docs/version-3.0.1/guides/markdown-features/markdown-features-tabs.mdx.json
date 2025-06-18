@@ -1,0 +1,354 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/guides/markdown-features/markdown-features-tabs.mdx",
+  "source_file_content_hash": "93e871ca516172edcd41da37478ae2b95edaabe6304d665b0a5a21f79e73a696",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: tabs\ndescription: Using tabs inside Docusaurus Markdown\nslug: /markdown-features/tabs\n---",
+      "source_content_hash": "c7319b9fc528711158029a112db853a66e5bb17e222a700ffe17b0f7d608bff8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Tabs",
+      "source_content_hash": "a61b3c2f60b77b15679d9d12b53579c62bebef5ee69a86a2215fecbfab4fcbc9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```mdx-code-block\nimport BrowserWindow from '@site/src/components/BrowserWindow';\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\nimport styles from './markdown-features-tabs-styles.module.css';\n```",
+      "source_content_hash": "336908ded03ecb1d0ef70c7b03ebf7b7edccb003800c869cf4f1d571b5450307",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Docusaurus provides the `<Tabs>` component that you can use in Markdown thanks to [MDX](./markdown-features-react.mdx):",
+      "source_content_hash": "822ea855f4be412f782f61e1c244cbc5a24ad9ee5aff8a1ffce2b96935c55c05",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "940e34e3",
+      "source_content": "```jsx\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n\n<Tabs>\n  <TabItem value=\"apple\" label=\"Apple\" default>\n    This is an apple 🍎\n  </TabItem>\n  <TabItem value=\"orange\" label=\"Orange\">\n    This is an orange 🍊\n  </TabItem>\n  <TabItem value=\"banana\" label=\"Banana\">\n    This is a banana 🍌\n  </TabItem>\n</Tabs>\n```",
+      "source_content_hash": "214ccac3c28baa597198cd2143c30dd39dac8fb225322bc92675558e081b82d6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "076d64d1",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs>\n    <TabItem value=\"apple\" label=\"Apple\">This is an apple 🍎</TabItem>\n    <TabItem value=\"orange\" label=\"Orange\">This is an orange 🍊</TabItem>\n    <TabItem value=\"banana\" label=\"Banana\">This is a banana 🍌</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "2fe5b1cbbf24fe0f3f538fd9da00a9a22c5d1008be7b2391591ac4d32ea369ca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "06784e79",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "It is also possible to provide `values` and `defaultValue` props to `Tabs`:",
+      "source_content_hash": "033c8b5d9891ae518b697e4f33833bac40c2396d8c1cd3e6679b9581e6eb1ee6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "95318d95",
+      "source_content": "```jsx\n<Tabs\n  defaultValue=\"apple\"\n  values={[\n    {label: 'Apple', value: 'apple'},\n    {label: 'Orange', value: 'orange'},\n    {label: 'Banana', value: 'banana'},\n  ]}>\n  <TabItem value=\"apple\">This is an apple 🍎</TabItem>\n  <TabItem value=\"orange\">This is an orange 🍊</TabItem>\n  <TabItem value=\"banana\">This is a banana 🍌</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "cc5ac3d69312354ef4ae02ab17b942058bd151fe701a61e8af0f7b46dd51e62e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs\n    defaultValue=\"apple\"\n    values={[\n      {label: 'Apple', value: 'apple'},\n      {label: 'Orange', value: 'orange'},\n      {label: 'Banana', value: 'banana'},\n    ]}>\n    <TabItem value=\"apple\">This is an apple 🍎</TabItem>\n    <TabItem value=\"orange\">This is an orange 🍊</TabItem>\n    <TabItem value=\"banana\">This is a banana 🍌</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "b8fe50bd08422f12204717b9befc7cfeda07a7e5b6444e33b4aea4a854aeac3e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4edbd92a",
+      "source_content": "<details>\n  <summary><code>Tabs</code> props take precedence over the <code>TabItem</code> props:</summary>\n\n```jsx\n<Tabs\n  defaultValue=\"apple\"\n  values={[\n    {label: 'Apple 1', value: 'apple'},\n    {label: 'Orange 1', value: 'orange'},\n    {label: 'Banana 1', value: 'banana'},\n  ]}>\n  <TabItem value=\"apple\" label=\"Apple 2\">\n    This is an apple 🍎\n  </TabItem>\n  <TabItem value=\"orange\" label=\"Orange 2\">\n    This is an orange 🍊\n  </TabItem>\n  <TabItem value=\"banana\" label=\"Banana 2\" default>\n    This is a banana 🍌\n  </TabItem>\n</Tabs>\n```\n\n```mdx-code-block\n<BrowserWindow>\n  <Tabs\n    defaultValue=\"apple\"\n    values={[\n      {label: 'Apple 1', value: 'apple'},\n      {label: 'Orange 1', value: 'orange'},\n      {label: 'Banana 1', value: 'banana'},\n    ]}>\n    <TabItem value=\"apple\" label=\"Apple 2\">This is an apple 🍎</TabItem>\n    <TabItem value=\"orange\" label=\"Orange 2\">This is an orange 🍊</TabItem>\n    <TabItem value=\"banana\" label=\"Banana 2\" default>This is a banana 🍌</TabItem>\n  </Tabs>\n</BrowserWindow>\n```\n\n</details>",
+      "source_content_hash": "35a570395bc9294678be918f7fafc4142ac6aa37576bfa92c77f24333cd9ea4d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "0309a88d",
+      "source_content": ":::tip\n\nBy default, all tabs are rendered eagerly during the build process, and search engines can index hidden tabs.\n\nIt is possible to only render the default tab with `<Tabs lazy />`.\n\n:::",
+      "source_content_hash": "46104413c4dab559f9216ed2554d6df24b23464ad739e0b53988cb451724cad8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2bb63d77",
+      "source_content": "## Displaying a default tab {#displaying-a-default-tab}",
+      "source_content_hash": "0f449882e3cd79c3c1f2e538e6850328816439d795ec9cdbd1828ec8018ee948",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "The first tab is displayed by default, and to override this behavior, you can specify a default tab by adding `default` to one of the tab items. You can also set the `defaultValue` prop of the `Tabs` component to the label value of your choice. For example, in the example above, either setting `default` for the `value=\"apple\"` tab or setting `defaultValue=\"apple\"` for the tabs forces the \"Apple\" tab to be open by default.",
+      "source_content_hash": "c4f4ae17466508cd57712291dafb8f163604c5cb91c0fb0355c65f08a25af308",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "Docusaurus will throw an error if a `defaultValue` is provided for the `Tabs` but it refers to a non-existing value. If you want none of the tabs to be shown by default, use `defaultValue={null}`.",
+      "source_content_hash": "724261ad99bcaf066dfd32d351a3038913a76a0245d6f5fd8248bbfae501e92f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d53c8ed4",
+      "source_content": "## Syncing tab choices {#syncing-tab-choices}",
+      "source_content_hash": "db527b2a933e14713c56021b424e5d8a70db3de4a3a1b1239c20561a3efaab90",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "You may want choices of the same kind of tabs to sync with each other. For example, you might want to provide different instructions for users on Windows vs users on macOS, and you want to change all OS-specific instructions tabs in one click. To achieve that, you can give all related tabs the same `groupId` prop. Note that doing this will persist the choice in `localStorage` and all `<Tab>` instances with the same `groupId` will update automatically when the value of one of them is changed. Note that group IDs are globally namespaced.",
+      "source_content_hash": "e89a86780f2c5d102d9c8561a51e8cf65173dc51832b8ac251e0e6c5a9bed608",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```jsx\n// highlight-next-line\n<Tabs groupId=\"operating-systems\">\n  <TabItem value=\"win\" label=\"Windows\">Use Ctrl + C to copy.</TabItem>\n  <TabItem value=\"mac\" label=\"macOS\">Use Command + C to copy.</TabItem>\n</Tabs>\n\n// highlight-next-line\n<Tabs groupId=\"operating-systems\">\n  <TabItem value=\"win\" label=\"Windows\">Use Ctrl + V to paste.</TabItem>\n  <TabItem value=\"mac\" label=\"macOS\">Use Command + V to paste.</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "42e7343dc332d141ed0c9a5eca00836b94227f4fea6cb0c858b125deece41331",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf5bbc3b",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs groupId=\"operating-systems\">\n    <TabItem value=\"win\" label=\"Windows\">Use Ctrl + C to copy.</TabItem>\n    <TabItem value=\"mac\" label=\"macOS\">Use Command + C to copy.</TabItem>\n  </Tabs>\n\n  <Tabs groupId=\"operating-systems\">\n    <TabItem value=\"win\" label=\"Windows\">Use Ctrl + V to paste.</TabItem>\n    <TabItem value=\"mac\" label=\"macOS\">Use Command + V to paste.</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "5562736a992b1e2a907a20547a0586a680e67980ff6a3a027eaa5f6b5ce88b3e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "For all tab groups that have the same `groupId`, the possible values do not need to be the same. If one tab group is chosen a value that does not exist in another tab group with the same `groupId`, the tab group with the missing value won't change its tab. You can see that from the following example. Try to select Linux, and the above tab groups don't change.",
+      "source_content_hash": "10d53c0f7e90a65c0a794bceb0776c69207c418824f31779bee0427eab582e95",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "71969be5",
+      "source_content": "```jsx\n<Tabs groupId=\"operating-systems\">\n  <TabItem value=\"win\" label=\"Windows\">\n    I am Windows.\n  </TabItem>\n  <TabItem value=\"mac\" label=\"macOS\">\n    I am macOS.\n  </TabItem>\n  <TabItem value=\"linux\" label=\"Linux\">\n    I am Linux.\n  </TabItem>\n</Tabs>\n```",
+      "source_content_hash": "0794ad33fb7f15598be742b683c37e192f4963e062bb54bc11c5f3c98e3689a0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b26685f5",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs groupId=\"operating-systems\">\n    <TabItem value=\"win\" label=\"Windows\">I am Windows.</TabItem>\n    <TabItem value=\"mac\" label=\"macOS\">I am macOS.</TabItem>\n    <TabItem value=\"linux\" label=\"Linux\">I am Linux.</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "6e7009bfa3d7fb8d18bfeb04ef38e2af2cf543c99114faa848066e2dc0817491",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "dfdfd869",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "Tab choices with different group IDs will not interfere with each other:",
+      "source_content_hash": "3b4e09b976ebf0c1a1776ef91f38c88f6ad60d5c5a06a55e2b4f64bb7f634ef7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d7631ae3",
+      "source_content": "```jsx\n// highlight-next-line\n<Tabs groupId=\"operating-systems\">\n  <TabItem value=\"win\" label=\"Windows\">Windows in windows.</TabItem>\n  <TabItem value=\"mac\" label=\"macOS\">macOS is macOS.</TabItem>\n</Tabs>\n\n// highlight-next-line\n<Tabs groupId=\"non-mac-operating-systems\">\n  <TabItem value=\"win\" label=\"Windows\">Windows is windows.</TabItem>\n  <TabItem value=\"unix\" label=\"Unix\">Unix is unix.</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "b259acaff1c6b43530e1b983c5583c3f747ae0c21985005be0dc47ab997b536f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b3890715",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs groupId=\"operating-systems\">\n    <TabItem value=\"win\" label=\"Windows\">Windows in windows.</TabItem>\n    <TabItem value=\"mac\" label=\"macOS\">macOS is macOS.</TabItem>\n  </Tabs>\n\n  <Tabs groupId=\"non-mac-operating-systems\">\n    <TabItem value=\"win\" label=\"Windows\">Windows is windows.</TabItem>\n    <TabItem value=\"unix\" label=\"Unix\">Unix is unix.</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "eaab30926e22f6208230da6fb4d301eaa2fae8f70b100ed2646b64a4247a602a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "950e5c6c",
+      "source_content": "## Customizing tabs {#customizing-tabs}",
+      "source_content_hash": "946a00caba59d3926df334a894ce5cbf025febd1c1c881efa8d4aa9570d8ecc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "49be422b",
+      "source_content": "You might want to customize the appearance of a certain set of tabs. You can pass the string in `className` prop, and the specified CSS class will be added to the `Tabs` component:",
+      "source_content_hash": "5db855f05f6c4673774fcae362814463f84f2beedbb45fb7d425d2508910afb8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5ad8d2b2",
+      "source_content": "```jsx\n// highlight-next-line\n<Tabs className=\"unique-tabs\">\n  <TabItem value=\"Apple\">This is an apple 🍎</TabItem>\n  <TabItem value=\"Orange\">This is an orange 🍊</TabItem>\n  <TabItem value=\"Banana\">This is a banana 🍌</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "f64ccb0d44fb5e71a35253d7f293e3d42a5f3834fbabc1b08955938f47bdd795",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4542e6c9",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs className=\"unique-tabs\">\n    <TabItem value=\"Apple\">This is an apple 🍎</TabItem>\n    <TabItem value=\"Orange\">This is an orange 🍊</TabItem>\n    <TabItem value=\"Banana\">This is a banana 🍌</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "71a05f6636fe7f9d3e2521131ec88231028b05d8605a66bf94190403f182d63c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9349ceaa",
+      "source_content": "### Customizing tab headings {#customizing-tab-headings}",
+      "source_content_hash": "ea7a396dfb63988eaf9db6193f93921aef260457b3765ff59e81c035abfd1e01",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e636ba62",
+      "source_content": "You can also customize each tab heading independently by using the `attributes` field. The extra props can be passed to the headings either through the `values` prop in `Tabs`, or props of each `TabItem`—in the same way as you declare `label`.",
+      "source_content_hash": "cfcbb1cb55a12b0efec0268c6a6b9cfcdd795fd3ffcdf224ffe3903699297d6a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0cb8c4d3",
+      "source_content": "```jsx title=\"some-doc.mdx\"\nimport styles from './styles.module.css';\n\n<Tabs>\n  <TabItem value=\"apple\" label=\"Apple\" attributes={{className: styles.red}}>\n    This is an apple 🍎\n  </TabItem>\n  <TabItem value=\"orange\" label=\"Orange\" attributes={{className: styles.orange}}>\n    This is an orange 🍊\n  </TabItem>\n  <TabItem value=\"banana\" label=\"Banana\" attributes={{className: styles.yellow}}>\n    This is a banana 🍌\n  </TabItem>\n</Tabs>\n```",
+      "source_content_hash": "955efc957628c56014371a84c26ffc5ea64729dfb536f5df19a0e65c3fbb3bdb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b1274b5e",
+      "source_content": "```css title=\"styles.module.css\"\n.red {\n  color: red;\n}\n.red[aria-selected='true'] {\n  border-bottom-color: red;\n}\n\n.orange {\n  color: orange;\n}\n.orange[aria-selected='true'] {\n  border-bottom-color: orange;\n}\n\n.yellow {\n  color: yellow;\n}\n.yellow[aria-selected='true'] {\n  border-bottom-color: yellow;\n}\n```",
+      "source_content_hash": "268fa3a7d3a95751745f3f488e9ad13290da5ac2d7b24cc873bc5a48e1e52619",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "bd678245",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs>\n    <TabItem value=\"apple\" label=\"Apple\" attributes={{className: styles.red}}>\n      This is an apple 🍎\n    </TabItem>\n    <TabItem value=\"orange\" label=\"Orange\" attributes={{className: styles.orange}}>\n      This is an orange 🍊\n    </TabItem>\n    <TabItem value=\"banana\" label=\"Banana\" attributes={{className: styles.yellow}}>\n      This is a banana 🍌\n    </TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "b1079d331dce6ea6fcd7d66546aebd9875d6651e72e045755b1bc83e0b58a65d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f87c4dd9",
+      "source_content": ":::tip\n\n`className` would be merged with other default class names. You may also use a custom `data-value` field (`{'data-value': 'apple'}`) paired with CSS attribute selectors:\n\n```css title=\"styles.module.css\"\nli[role='tab'][data-value='apple'] {\n  color: red;\n}\n```\n\n:::",
+      "source_content_hash": "22edbe485a7df2f707c60552df592dfdb4c88e208bc3e0bd371b5754dda366cf",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c06a14cd",
+      "source_content": "## Query string {#query-string}",
+      "source_content_hash": "250788b2f08ead8893969d8ff95dd6024848ce37776cdc2fc3c854f548580758",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b8954ec9",
+      "source_content": "It is possible to persist the selected tab into the url search parameters. This enables you to share a link to a page which pre-selects the tab - linking from your Android app to documentation with the Android tabs pre-selected. This feature does not provide an anchor link - the browser will not scroll to the tab.",
+      "source_content_hash": "e234c6dfa934f37a53f85cce3d37fcb830cbf086c22e5830d75ee8f782606751",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ebe673d6",
+      "source_content": "Use the `queryString` prop to enable this feature and define the search param name to use.",
+      "source_content_hash": "d0fa0c3eaf6a8289d200dc59bde15485df09ee796863f3fb80aa04f37ada50fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c578d2d4",
+      "source_content": "```tsx\n// highlight-next-line\n<Tabs queryString=\"current-os\">\n  <TabItem value=\"android\" label=\"Android\">\n    Android\n  </TabItem>\n  <TabItem value=\"ios\" label=\"iOS\">\n    iOS\n  </TabItem>\n</Tabs>\n```",
+      "source_content_hash": "10ed3e2fa1c64d2e2ed9fe9f5137a4fbaf3fbdca66913f862797e79575dad29e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "110aef9c",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n  <Tabs queryString='current-os'>\n    <TabItem value=\"android\" label=\"Android\">Android</TabItem>\n    <TabItem value=\"ios\" label=\"iOS\">iOS</TabItem>\n  </Tabs>\n</BrowserWindow>\n```",
+      "source_content_hash": "e50fcae6ae12fa7f0326e3ddf6a1a23d12993cdb3dcffaa0607cb107fff41444",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9cbb5424",
+      "source_content": "As soon as a tab is clicked, a search parameter is added at the end of the url: `?current-os=android` or `?current-os=ios`.",
+      "source_content_hash": "3f566faf7a74553f485e087b8deb7ba9268df4942f06126dfaad2142d62f8f43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e24549d0",
+      "source_content": ":::tip\n\n`queryString` can be used together with `groupId`.\n\nFor convenience, when the `queryString` prop is `true`, the `groupId` value will be used as a fallback.\n\n```tsx\n// highlight-next-line\n<Tabs groupId=\"current-os\" queryString>\n  <TabItem value=\"android\" label=\"Android\">\n    Android\n  </TabItem>\n  <TabItem value=\"ios\" label=\"iOS\">\n    iOS\n  </TabItem>\n</Tabs>\n```\n\n```mdx-code-block\n<BrowserWindow>\n  <Tabs queryString groupId=\"current-os\">\n    <TabItem value=\"android\" label=\"Android\">Android</TabItem>\n    <TabItem value=\"ios\" label=\"iOS\">iOS</TabItem>\n  </Tabs>\n</BrowserWindow>\n```\n\nWhen the page loads, the tab query string choice will be restored in priority over the `groupId` choice (using `localStorage`).\n\n:::",
+      "source_content_hash": "4fa093b8f175f5673f5694a492610317ba3b7b4bfa31562b237e32fb0b2abebd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/guides/markdown-features/markdown-features-tabs.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.473809+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

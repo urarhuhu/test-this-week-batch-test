@@ -1,0 +1,222 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/api/misc/eslint-plugin/README.mdx",
+  "source_file_content_hash": "e17e807a1b0fecb686f835ad4d2c0fe45364f87276176c62c5de7ca364d12202",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\nslug: /api/misc/@docusaurus/eslint-plugin\n---",
+      "source_content_hash": "5c51d6f8a69583da2f42ff469d44545467f7df53eac66bc92787b1f7964dc244",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 eslint-plugin",
+      "source_content_hash": "b597d11ac81ec5abfcb674ddc48ad23005f70346ab1fe40fb4aefa56f1b4d4b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 eslint-plugin"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "[ESLint](https://eslint.org/) is a tool that statically analyzes your code and reports problems or suggests best practices through editor hints and command line. Docusaurus provides an ESLint plugin to enforce best Docusaurus practices.",
+      "source_content_hash": "f47898420e5b1d0b08bb444097ec7744d4e4e40e6dd61c9d807bef784fc30a64",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[ESLint](https://eslint.org/) 是一個靜態分析程式碼的工具，能透過編輯器提示和命令行報告問題或建議最佳實踐。Docusaurus 提供了一個 ESLint 插件來強制執行 Docusaurus 的最佳實踐。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Installation",
+      "source_content_hash": "a15d12503bf00f654df068bd9e5af6259db1703ac04a61365b991ce52557e5ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝"
+      }
+    },
+    {
+      "segment_id": "ee201347",
+      "source_content": "```bash npm2yarn\nnpm install --save-dev @docusaurus/eslint-plugin\n```",
+      "source_content_hash": "b05ce1c32ba1d193ca74009fbb0812c19a00a6af9bbd8d540008f7fb23459ad7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ee201347"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Usage",
+      "source_content_hash": "63bfd61a0561b255a2caa0a2e3add091ca7e327f2fa06a407cbb2ff341b858d8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用方法"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### Recommended config",
+      "source_content_hash": "436dd47aa4e25a76b92c1af2497619de301d0afeda5614196ee0958ff9ec11b3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 推薦配置"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Add `plugin:@docusaurus/recommended` to the `extends` section of your `.eslintrc` configuration file:",
+      "source_content_hash": "0ef909f079e7978e051b186c870e4ac2157aca74b635ee8d94dacc95d0566499",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將 `plugin:@docusaurus/recommended` 添加到你的 `.eslintrc` 配置文件的 `extends` 部分："
+      }
+    },
+    {
+      "segment_id": "9eee5787",
+      "source_content": "```json title=\".eslintrc\"\n{\n  \"extends\": [\"plugin:@docusaurus/recommended\"]\n}\n```",
+      "source_content_hash": "60f4c3f08afed1007fb774d10ae6b520e6428d414d72627f0b20cb669ea03dbe",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9eee5787"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "This will enable the `@docusaurus` eslint plugin and use the `recommended` config. See [Supported rules](#supported-rules) below for a list of rules that this will enable.",
+      "source_content_hash": "301c173ebf3f90c61751412a3cdae660941c42044161f68d5b47e5eee4e26ebd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這將啟用 `@docusaurus` eslint 插件並使用 `recommended` 配置。請參閱下方的 [支援的規則](#supported-rules) 以了解這將啟用的規則列表。"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "### Manual config",
+      "source_content_hash": "7600f91d337a22aac49730253779a877345b89b821ec529318d23be3432e03d9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 手動配置"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "For more fine-grained control, you can also enable the plugin manually and configure the rules you want to use directly:",
+      "source_content_hash": "5d6c7e7f7be291616e770329dccfa2cbd9d38b995a74247a1b0686dd2147381b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如需更細緻的控制，你也可以手動啟用插件並直接配置你想使用的規則："
+      }
+    },
+    {
+      "segment_id": "6543a19e",
+      "source_content": "```json title=\".eslintrc\"\n{\n  \"plugins\": [\"@docusaurus\"],\n  \"rules\": {\n    \"@docusaurus/string-literal-i18n-messages\": \"error\",\n    \"@docusaurus/no-untranslated-text\": \"warn\"\n  }\n}\n```",
+      "source_content_hash": "856739e15340c8546b07934192986a55fe4ecf01a4ed2e1fce78fa32f1cc7f65",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6543a19e"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## Supported configs",
+      "source_content_hash": "72be897f106917b7d9c73fa45a543ce82bb825c9facdfc0464fde3299d10a7a1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 支援的配置"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "- Recommended: recommended rule set for most Docusaurus sites that should be extended from.\n- All: **all** rules enabled. This will change between minor versions, so you should not use this if you want to avoid unexpected breaking changes.",
+      "source_content_hash": "207e2742d55681f7f3f824f999a05435f1bf570fdbb923cfa3f78cfd914fa3c6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 推薦：適用於大多數 Docusaurus 網站的推薦規則集，應從中擴展。\n- 全部：啟用**所有**規則。這會在次要版本之間變更，因此如果你希望避免意外的破壞性變更，則不應使用此配置。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Supported rules",
+      "source_content_hash": "44b896503df767b42c04d007ae466b794dd385afd2429f0dc6a6c9ba50eb8ea0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 支援的規則"
+      }
+    },
+    {
+      "segment_id": "f85ce02a",
+      "source_content": "| Name | Description |  |\n| --- | --- | --- |\n| [`@docusaurus/no-untranslated-text`](./no-untranslated-text.mdx) | Enforce text labels in JSX to be wrapped by translate calls |  |\n| [`@docusaurus/string-literal-i18n-messages`](./string-literal-i18n-messages.mdx) | Enforce translate APIs to be called on plain text labels | ✅ |\n| [`@docusaurus/no-html-links`](./no-html-links.mdx) | Ensures @docusaurus/Link is used instead of `<a>` tags | ✅ |\n| [`@docusaurus/prefer-docusaurus-heading`](./prefer-docusaurus-heading.mdx) | Ensures @theme/Heading is used instead of `<hn>` tags for headings | ✅ |",
+      "source_content_hash": "b693e4f145f9cbc56b71654826d74647377d51e7c933f430739d2dfe3870d01f",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f85ce02a"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "✅ = recommended",
+      "source_content_hash": "6ed2c115841a2889216c60bae047f0fad8c55bf455afaab1517443987065faad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "✅ = 推薦"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Example configuration",
+      "source_content_hash": "da2c796f1936c3df20340e243750d85b191fe82e265e9df643139d1bd4c26bab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置範例"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Here's an example configuration:",
+      "source_content_hash": "cd39f89d5932884cf6e700296d41ca0fdce5ff18a65f9e6ff904dffa3d91cbe2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是一個配置範例："
+      }
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```js title=\".eslintrc.js\"\nmodule.exports = {\n  extends: ['plugin:@docusaurus/recommended'],\n  rules: {\n    '@docusaurus/no-untranslated-text': [\n      'warn',\n      {ignoredStrings: ['·', '—', '×']},\n    ],\n  },\n};\n```",
+      "source_content_hash": "831837e3a600d825a73f3bd319aa0226a08f2a7d6b69efc23ccc00dbcef503eb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5a41b4fb"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/api/misc/eslint-plugin/README.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.277888+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e17e807a1b0fecb686f835ad4d2c0fe45364f87276176c62c5de7ca364d12202"
+  }
+}

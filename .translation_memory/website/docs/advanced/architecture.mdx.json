@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/advanced/architecture.mdx",
+  "source_file_content_hash": "4c8b7516c152034093e55342530347a9683a255a72bb8fb16af5c9eb60dc40a7",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: How Docusaurus works to build your app\n---",
+      "source_content_hash": "526b0b60f04f9d7a18762393782d828ac7f31d93a7ed6b9fc0970e640e8e0b92",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Architecture",
+      "source_content_hash": "a38f7bc6aff8e64968ac404465c1579222a2e0b6388f37e9bb31b8fe5f7829a0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 架構"
+      }
+    },
+    {
+      "segment_id": "efa96cff",
+      "source_content": "```mdx-code-block\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\nimport Zoom from 'react-medium-image-zoom';\n```",
+      "source_content_hash": "90e780f781bba1ff3c181f299dbe97f1440051f69dbdab1f0cdc2d97551437b7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efa96cff"
+      }
+    },
+    {
+      "segment_id": "5da3670c",
+      "source_content": "<Zoom>\n\n![Architecture overview](/img/architecture.png)\n\n</Zoom>",
+      "source_content_hash": "bed04349fd2c95b0f084314ae3eb6d66c0502b5695d40b387fa658577c619f10",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5da3670c"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "This diagram shows how Docusaurus works to build your app. Plugins each collect their content and emit JSON data; themes provide layout components which receive the JSON data as route modules. The bundler bundles all the components and emits a server bundle and a client bundle.",
+      "source_content_hash": "f0b9c55d24e52d8a7bf14f42c0074915f2e1ace452cafbfccc19e6e3f37ea82d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此圖表展示 Docusaurus 如何運作來構建您的應用程式。各插件收集其內容並產生 JSON 資料；主題提供接收 JSON 資料作為路由模組的佈局元件。打包工具會打包所有元件並產生伺服器套件與客戶端套件。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Although you (either plugin authors or site creators) are writing JavaScript all the time, bear in mind that the JS is actually run in different environments:",
+      "source_content_hash": "61eca252a2ac32263db8461fc5dcf8ef98c8229444ab8c48dd87587a7183626d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然您（無論是插件開發者或網站建立者）始終在編寫 JavaScript，但請注意這些程式碼實際運行於不同環境："
+      }
+    },
+    {
+      "segment_id": "1b8c1887",
+      "source_content": "- All plugin lifecycle methods are run in Node. Therefore, until we support ES Modules in our codebase, plugin source code must be provided as ES modules that can be imported, or CommonJS that can be `require`'d.\n- The theme code is built with Webpack. They can be provided as ESM—following React conventions.",
+      "source_content_hash": "c004f72075fa0a431ebd41eac925abc94552e0c594668f12fddf5239547c394d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 所有插件生命週期方法都在 Node 環境執行。因此在我們程式碼庫支援 ES 模組前，插件原始碼必須以可被導入的 ES 模組或可被 `require` 的 CommonJS 形式提供。\n- 主題程式碼由 Webpack 構建。可遵循 React 慣例以 ESM 形式提供。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Plugin code and theme code never directly import each other: they only communicate through protocols (in our case, through JSON temp files and calls to `addRoute`). A useful mental model is to imagine that the plugins are not written in JavaScript, but in another language like Rust. The only way to interact with plugins for the user is through `docusaurus.config.js`, which itself is run in Node (hence you can use `require` and pass callbacks as plugin options).",
+      "source_content_hash": "7d4d7e5a16f2589d43e2252acabb3b982b6411753119a5c6f58d511478ca6f9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件程式碼與主題程式碼不會直接互相導入：它們僅透過協議溝通（本案例中透過 JSON 暫存檔案與 `addRoute` 呼叫）。一個有用的心智模型是將插件想像成用 Rust 等其他語言編寫。使用者與插件互動的唯一途徑是透過 `docusaurus.config.js`，該檔案本身在 Node 環境執行（因此可使用 `require` 並傳遞回調函數作為插件選項）。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "During bundling, the config file itself is serialized and bundled, allowing the theme to access config options like `themeConfig` or `baseUrl` through [`useDocusaurusContext()`](../docusaurus-core.mdx#useDocusaurusContext). However, the `siteConfig` object only contains **serializable values** (values that are preserved after `JSON.stringify()`). Functions, regexes, etc. would be lost on the client side. The `themeConfig` is designed to be entirely serializable.",
+      "source_content_hash": "9f4a9c27147fd54194233533c5dcfefa0f3f65541c358a78db80655580e92ff3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "打包過程中，設定檔案本身會被序列化並打包，讓主題能透過 [`useDocusaurusContext()`](../docusaurus-core.mdx#useDocusaurusContext) 存取如 `themeConfig` 或 `baseUrl` 等設定選項。但 `siteConfig` 物件僅包含**可序列化值**（即經 `JSON.stringify()` 後仍保留的值）。函數、正則表達式等將在客戶端遺失。`themeConfig` 被設計為完全可序列化。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/advanced/architecture.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.021761+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "4c8b7516c152034093e55342530347a9683a255a72bb8fb16af5c9eb60dc40a7"
+  }
+}

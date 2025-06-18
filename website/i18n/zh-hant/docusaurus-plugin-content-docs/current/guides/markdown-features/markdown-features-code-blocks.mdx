@@ -1,0 +1,864 @@
+---
+id: code-blocks
+description: Handling code blocks in Docusaurus Markdown
+slug: /markdown-features/code-blocks
+---
+
+# 程式碼區塊
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import CodeBlock from '@theme/CodeBlock';
+
+文件中的程式碼區塊擁有超強功能 💪。
+
+## 程式碼標題 {#code-title}
+
+您可以在語言標籤後方添加 `title` 鍵值來為程式碼區塊添加標題（需在語言與標題之間保留空格）。
+
+````md
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+````
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+## 語法突顯 {#syntax-highlighting}
+
+程式碼區塊是由三個反引號包裹的文字區塊。您可查閱 [MDX 規範參考](https://mdxjs.com/docs/)了解詳細規格。
+
+````md
+```js
+console.log('Every repo must come with a mascot.');
+```
+````
+
+為程式碼區塊使用對應的語言元字串，Docusaurus 將自動啟用語法突顯功能，該功能由 [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer) 提供支援。
+
+<BrowserWindow>
+
+```js
+console.log('Every repo must come with a mascot.');
+```
+
+</BrowserWindow>
+
+### 主題設定 {#theming}
+
+預設情況下，我們使用的 Prism [語法突顯主題](https://github.com/FormidableLabs/prism-react-renderer#theming) 是 [Palenight](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/prism-react-renderer/src/themes/palenight.ts)。您可透過在 docusaurus.config.js 的 `themeConfig` 中傳入 `prism` 的 `theme` 欄位來切換其他主題。
+
+例如，若您偏好使用 `dracula` 突顯主題：
+
+```js title="docusaurus.config.js"
+import {themes as prismThemes} from 'prism-react-renderer';
+
+export default {
+  themeConfig: {
+    prism: {
+      // highlight-next-line
+      theme: prismThemes.dracula,
+    },
+  },
+};
+```
+
+由於 Prism 主題本質上是 JS 物件，若不滿意預設主題，您也可以自行編寫主題。Docusaurus 增強了 `github` 和 `vsDark` 主題以提供更豐富的突顯效果，您可參考我們針對 [淺色](https://github.com/facebook/docusaurus/blob/main/website/src/utils/prismLight.ts) 與 [深色](https://github.com/facebook/docusaurus/blob/main/website/src/utils/prismDark.ts) 程式碼區塊主題的實作方式。
+
+### 支援語言 {#supported-languages}
+
+Docusaurus 預設內建 [常用語言子集](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L10-L25)。
+
+:::warning
+
+部分熱門語言如 Java、C# 或 PHP 預設未啟用。
+
+:::
+
+若要為其他 [Prism 支援語言](https://prismjs.com/#supported-languages) 添加語法突顯，請在額外語言陣列中定義。
+
+:::note
+
+每個額外語言必須是有效的 Prism 元件名稱。例如 Prism 會將語言標籤 `cs` 映射至 `csharp`，但只有 `prism-csharp.js` 作為 _元件_ 存在，因此您需使用 `additionalLanguages: ['csharp']`。您可查閱 `node_modules/prismjs/components` 目錄了解所有可用元件（語言）。
+
+:::
+
+例如，若要為 PowerShell 語言添加突顯功能：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  themeConfig: {
+    prism: {
+      // highlight-next-line
+      additionalLanguages: ['powershell'],
+    },
+    // ...
+  },
+};
+```
+
+添加 `additionalLanguages` 後，請重啟 Docusaurus。
+
+若要為 Prism 尚未支援的語言添加突顯功能，可替換 `prism-include-languages`：
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-classic prism-include-languages
+```
+
+這將在您的 `src/theme` 資料夾中生成 `prism-include-languages.js`。透過編輯此檔案可為自訂語言添加突顯支援：
+
+```js title="src/theme/prism-include-languages.js"
+const prismIncludeLanguages = (Prism) => {
+  // ...
+
+  additionalLanguages.forEach((lang) => {
+    require(`prismjs/components/prism-${lang}`);
+  });
+
+  // highlight-next-line
+  require('/path/to/your/prism-language-definition');
+
+  // ...
+};
+```
+
+編寫自訂語言定義時，可參考 [Prism 官方語言定義](https://github.com/PrismJS/prism/tree/master/components)。
+
+When adding a custom language definition, you do not need to add the language to the `additionalLanguages` config array, since Docusaurus only looks up the `additionalLanguages` strings in languages that Prism provides. Adding the language import in `prism-include-languages.js` is sufficient.
+
+## Line highlighting {#line-highlighting}
+
+### Highlighting with comments {#highlighting-with-comments}
+
+You can use comments with `highlight-next-line`, `highlight-start`, and `highlight-end` to select which lines are highlighted.
+
+````md
+```js
+function HighlightSomeText(highlight) {
+  if (highlight) {
+    // highlight-next-line
+    return 'This text is highlighted!';
+  }
+
+  return 'Nothing highlighted';
+}
+
+function HighlightMoreText(highlight) {
+  // highlight-start
+  if (highlight) {
+    return 'This range is highlighted!';
+  }
+  // highlight-end
+
+  return 'Nothing highlighted';
+}
+```
+````
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```js
+function HighlightSomeText(highlight) {
+  if (highlight) {
+    // highlight-next-line
+    return 'This text is highlighted!';
+  }
+
+  return 'Nothing highlighted';
+}
+
+function HighlightMoreText(highlight) {
+  // highlight-start
+  if (highlight) {
+    return 'This range is highlighted!';
+  }
+  // highlight-end
+
+  return 'Nothing highlighted';
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+Supported commenting syntax:
+
+| Style      | Syntax                   |
+| ---------- | ------------------------ |
+| C-style    | `/* ... */` and `// ...` |
+| JSX-style  | `{/* ... */}`            |
+| Bash-style | `# ...`                  |
+| HTML-style | `<!-- ... -->`           |
+
+We will do our best to infer which set of comment styles to use based on the language, and default to allowing _all_ comment styles. If there's a comment style that is not currently supported, we are open to adding them! Pull requests welcome. Note that different comment styles have no semantic difference, only their content does.
+
+You can set your own background color for highlighted code line in your `src/css/custom.css` which will better fit to your selected syntax highlighting theme. The color given below works for the default highlighting theme (Palenight), so if you are using another theme, you will have to tweak the color accordingly.
+
+```css title="/src/css/custom.css"
+:root {
+  --docusaurus-highlighted-code-line-bg: rgb(72, 77, 91);
+}
+
+/* If you have a different syntax highlighting theme for dark mode. */
+[data-theme='dark'] {
+  /* Color which works with dark mode syntax highlighting theme */
+  --docusaurus-highlighted-code-line-bg: rgb(100, 100, 100);
+}
+```
+
+If you also need to style the highlighted code line in some other way, you can target on `theme-code-block-highlighted-line` CSS class.
+
+### Highlighting with metadata string {#highlighting-with-metadata-string}
+
+You can also specify highlighted line ranges within the language meta string (leave a space after the language). To highlight multiple lines, separate the line numbers by commas or use the range syntax to select a chunk of lines. This feature uses the `parse-number-range` library and you can find [more syntax](https://www.npmjs.com/package/parse-numeric-range) on their project details.
+
+````md
+```jsx {1,4-6,11}
+import React from 'react';
+
+function MyComponent(props) {
+  if (props.isBar) {
+    return <div>Bar</div>;
+  }
+
+  return <div>Foo</div>;
+}
+
+export default MyComponent;
+```
+````
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx {1,4-6,11}
+import React from 'react';
+
+function MyComponent(props) {
+  if (props.isBar) {
+    return <div>Bar</div>;
+  }
+
+  return <div>Foo</div>;
+}
+
+export default MyComponent;
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+:::tip[prefer comments]
+
+Prefer highlighting with comments where you can. By inlining highlight in the code, you don't have to manually count the lines if your code block becomes long. If you add/remove lines, you also don't have to offset your line ranges.
+
+````diff
+- ```jsx {3}
++ ```jsx {4}
+  function HighlightSomeText(highlight) {
+    if (highlight) {
++     console.log('Highlighted text found');
+      return 'This text is highlighted!';
+    }
+
+    return 'Nothing highlighted';
+  }
+  ```
+````
+
+Below, we will introduce how the magic comment system can be extended to define custom directives and their functionalities. The magic comments would only be parsed if a highlight metastring is not present.
+
+:::
+
+### Custom magic comments {#custom-magic-comments}
+
+`// highlight-next-line` and `// highlight-start` etc. are called "magic comments", because they will be parsed and removed, and their purposes are to add metadata to the next line, or the section that the pair of start- and end-comments enclose.
+
+You can declare custom magic comments through theme config. For example, you can register another magic comment that adds a `code-block-error-line` class name:
+
+```mdx-code-block
+<Tabs>
+<TabItem value="docusaurus.config.js">
+```
+
+```js
+export default {
+  themeConfig: {
+    prism: {
+      magicComments: [
+        // Remember to extend the default highlight class name as well!
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: {start: 'highlight-start', end: 'highlight-end'},
+        },
+        // highlight-start
+        {
+          className: 'code-block-error-line',
+          line: 'This will error',
+        },
+        // highlight-end
+      ],
+    },
+  },
+};
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="src/css/custom.css">
+```
+
+```css
+.code-block-error-line {
+  background-color: #ff000020;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="myDoc.md">
+```
+
+````md
+In JavaScript, trying to access properties on `null` will error.
+
+```js
+const name = null;
+// This will error
+console.log(name.toUpperCase());
+// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
+```
+````
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+In JavaScript, trying to access properties on `null` will error.
+
+```js
+const name = null;
+// This will error
+console.log(name.toUpperCase());
+// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+若在元字串中使用數字範圍語法（如 `{1,3-4}`），Docusaurus 會套用 **首個 `magicComments` 條目**的 CSS 類別名稱。預設情況下為 `theme-code-block-highlighted-line`，但若您修改 `magicComments` 配置並將其他條目設為首項，元字串範圍的意義也會隨之改變。
+
+您可透過 `magicComments: []` 停用預設的行高亮註解。若無任何魔法註解配置，但 Docusaurus 遇到包含元字串範圍的程式碼區塊時，將會報錯——因為此時沒有可套用的類別名稱（畢竟高亮類別名稱本質上就是一個魔法註解條目）。
+
+每個魔法註解條目需包含三個鍵值：必填的 `className`、適用於下一行的 `line`，或是包含 `start` 與 `end` 的 `block`（用於標記被兩個註解包圍的整個區塊）。
+
+透過 CSS 鎖定類別已能實現多種效果，但您可透過[元件替換](../../swizzling.mdx)徹底釋放此功能的潛力。
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-classic CodeBlock/Line
+```
+
+`Line` 元件會接收類別名稱列表，您可據此條件式渲染不同標記。
+
+## 行號顯示 {#line-numbering}
+
+您可在語言元字串中使用 `showLineNumbers` 鍵值啟用程式碼區塊的行號功能（注意鍵值前需保留空格）。
+
+````md
+```jsx showLineNumbers
+import React from 'react';
+
+export default function MyComponent(props) {
+  return <div>Foo</div>;
+}
+```
+````
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx showLineNumbers
+import React from 'react';
+
+export default function MyComponent(props) {
+  return <div>Foo</div>;
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+預設行號從 1 開始計數。您可傳入自訂起始值來分割大型程式碼區塊以提升可讀性：
+
+````md
+```jsx showLineNumbers=3
+export default function MyComponent(props) {
+  return <div>Foo</div>;
+}
+```
+````
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx showLineNumbers=3
+export default function MyComponent(props) {
+  return <div>Foo</div>;
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+## 互動式程式碼編輯器 {#interactive-code-editor}
+
+（由 [React Live](https://github.com/FormidableLabs/react-live) 驅動）
+
+您可透過 `@docusaurus/theme-live-codeblock` 外掛建立互動式程式碼編輯器。請先將此外掛加入專案套件。
+
+```bash npm2yarn
+npm install --save @docusaurus/theme-live-codeblock
+```
+
+同時需在 `docusaurus.config.js` 中註冊此外掛。
+
+```js {3}
+export default {
+  // ...
+  themes: ['@docusaurus/theme-live-codeblock'],
+  // ...
+};
+```
+
+使用時，請在語言元字串後附加 `live` 來建立程式碼區塊。
+
+````md
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
+````
+
+該程式碼區塊將被渲染為互動式編輯器，程式碼變更會即時反映在結果面板上。
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+### 匯入模組 {#imports}
+
+:::warning[react-live 與模組匯入]
+
+無法直接從 react-live 程式碼編輯器匯入元件，您必須預先定義可用的匯入項目。
+
+:::
+
+預設所有 React 匯入皆可用。若需擴充可用模組，請替換 react-live 的作用域配置：
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-live-codeblock ReactLiveScope -- --eject
+```
+
+```jsx title="src/theme/ReactLiveScope/index.js"
+import React from 'react';
+
+// highlight-start
+const ButtonExample = (props) => (
+  <button
+    {...props}
+    style={{
+      backgroundColor: 'white',
+      color: 'black',
+      border: 'solid red',
+      borderRadius: 20,
+      padding: 10,
+      cursor: 'pointer',
+      ...props.style,
+    }}
+  />
+);
+// highlight-end
+
+// Add react-live imports you need here
+const ReactLiveScope = {
+  React,
+  ...React,
+  // highlight-next-line
+  ButtonExample,
+};
+
+export default ReactLiveScope;
+```
+
+現在即可使用 `ButtonExample` 元件：
+
+```mdx-code-block
+<BrowserWindow>
+```
+
+```jsx live
+function MyPlayground(props) {
+  return (
+    <div>
+      <ButtonExample onClick={() => alert('hey!')}>Click me</ButtonExample>
+    </div>
+  );
+}
+```
+
+```mdx-code-block
+</BrowserWindow>
+```
+
+### 命令式渲染 (noInline)
+
+當程式碼跨越多個元件或變數時，應使用 `noInline` 選項以避免錯誤。
+
+````md
+```jsx live noInline
+const project = 'Docusaurus';
+
+const Greeting = () => <p>Hello {project}!</p>;
+
+render(<Greeting />);
+```
+````
+
+與一般互動式程式碼區塊不同，使用 `noInline` 時 React Live 不會將您的程式碼包裹在行內函數中進行渲染。
+
+你需要在程式碼結尾明確呼叫 `render()` 來顯示輸出結果。
+
+````mdx-code-block
+<BrowserWindow>
+
+```jsx live noInline
+const project = "Docusaurus";
+
+const Greeting = () => (
+  <p>Hello {project}!</p>
+);
+
+render(
+  <Greeting />
+);
+```
+
+</BrowserWindow>
+````
+
+## 在程式碼區塊中使用 JSX 標記 {#using-jsx-markup}
+
+Markdown 中的程式碼區塊始終將其內容保留為純文字，這意味著你無法執行以下操作：
+
+```ts
+type EditUrlFunction = (params: {
+  // This doesn't turn into a link (for good reason!)
+  version: <a href="/docs/versioning">Version</a>;
+  versionDocsDirPath: string;
+  docPath: string;
+  permalink: string;
+  locale: string;
+}) => string | undefined;
+```
+
+若需嵌入錨點連結或粗體等 HTML 標記，可使用 `<pre>` 標籤、`<code>` 標籤或 `<CodeBlock>` 元件。
+
+```jsx
+<pre>
+  <b>Input: </b>1 2 3 4{'\n'}
+  <b>Output: </b>"366300745"{'\n'}
+</pre>
+```
+
+<BrowserWindow>
+  <pre>
+    <b>{'Input: '}</b>
+    {'1 2 3 4\n'}
+    <b>{'Output: '}</b>
+    {'"366300745"\n'}
+  </pre>
+</BrowserWindow>
+
+:::warning[MDX 對空白不敏感]
+
+MDX 行為與 JSX 一致：換行符號（即使位於 `<pre>` 內）會被轉換為空格。必須明確寫入換行字元才能實際輸出。
+
+:::
+
+:::warning
+
+語法突顯僅作用於純文字字串。Docusaurus 不會嘗試解析含有 JSX 子元素的程式碼區塊內容。
+
+:::
+
+## 多語言支援程式碼區塊 {#multi-language-support-code-blocks}
+
+透過 MDX，你可輕鬆在文件中建立互動式元件，例如使用標籤元件切換顯示多種程式語言的程式碼。
+
+我們並未實作專用的多語言程式碼區塊元件，而是在經典主題中實作了通用型 [`<Tabs>`](./markdown-features-tabs.mdx) 元件，讓你能將其應用於其他非程式碼情境。
+
+以下範例展示如何在文件中建立多語言程式碼標籤。請注意，各語言區塊上下的空行是**刻意保留**的。這是 [MDX 目前的限制](./markdown-features-react.mdx#markdown-and-jsx-interoperability)：必須在 Markdown 語法周圍留空行，MDX 解析器才能辨識其為 Markdown 語法而非 JSX。
+
+````jsx
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def hello_world():
+  print("Hello, world!")
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, World");
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+````
+
+你將獲得以下效果：
+
+```mdx-code-block
+<BrowserWindow>
+<Tabs>
+<TabItem value="js" label="JavaScript">
+```
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="py" label="Python">
+```
+
+```py
+def hello_world():
+  print("Hello, world!")
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="java" label="Java">
+```
+
+```java
+class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, World");
+  }
+}
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+</BrowserWindow>
+```
+
+若有多個這類多語言程式碼標籤，且需同步不同標籤實例間的選擇狀態，請參閱[同步標籤選擇章節](markdown-features-tabs.mdx#syncing-tab-choices)。
+
+### Docusaurus npm2yarn 備註外掛 {#npm2yarn-remark-plugin}
+
+同時顯示 npm 和 Yarn 的 CLI 指令是常見需求，例如：
+
+```bash npm2yarn
+npm install @docusaurus/remark-plugin-npm2yarn
+```
+
+Docusaurus 內建此實用功能，省去每次使用 `Tabs` 元件的麻煩。啟用此功能需先安裝 `@docusaurus/remark-plugin-npm2yarn` 套件，並在 `docusaurus.config.js` 中，於需要此功能的插件（文件、部落格、頁面等）的 `remarkPlugins` 選項註冊。（詳見[文件配置](../../api/plugins/plugin-content-docs.mdx#ex-config)了解配置格式）
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          // highlight-start
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
+          // highlight-end
+        },
+        pages: {
+          // highlight-next-line
+          remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
+        },
+        blog: {
+          // highlight-start
+          remarkPlugins: [
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              {converters: ['pnpm']},
+            ],
+          ],
+          // highlight-end
+          // ...
+        },
+      },
+    ],
+  ],
+};
+```
+
+使用時在程式碼區塊加入 `npm2yarn` 鍵值：
+
+````md
+```bash npm2yarn
+npm install @docusaurus/remark-plugin-npm2yarn
+```
+````
+
+#### 配置選項 {#npm2yarn-remark-plugin-configuration}
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `sync` | `boolean` | `false` | Whether to sync the selected converter across all code blocks. |
+| `converters` | `array` | `'yarn'`, `'pnpm'` | The list of converters to use. The order of the converters is important, as the first converter will be used as the default choice. |
+
+## 在 JSX 中使用 {#usage-in-jsx}
+
+在 Markdown 之外，可使用 `@theme/CodeBlock` 元件獲得相同輸出效果。
+
+```jsx
+import CodeBlock from '@theme/CodeBlock';
+
+export default function MyReactPage() {
+  return (
+    <div>
+      {/* highlight-start */}
+      <CodeBlock
+        language="jsx"
+        title="/src/components/HelloCodeTitle.js"
+        showLineNumbers>
+        {`function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`}
+      </CodeBlock>
+      {/* highlight-end */}
+    </div>
+  );
+}
+```
+
+```mdx-code-block
+<BrowserWindow>
+  <CodeBlock
+    language="jsx"
+    title="/src/components/HelloCodeTitle.js"
+    showLineNumbers>
+    {`function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`}
+  </CodeBlock>
+</BrowserWindow>
+```
+
+The props accepted are `language`, `title` and `showLineNumbers`, in the same way as you write Markdown code blocks.
+
+Although discouraged, you can also pass in a `metastring` prop like `metastring='{1-2} title="/src/components/HelloCodeTitle.js" showLineNumbers'`, which is how Markdown code blocks are handled under the hood. However, we recommend you [use comments for highlighting lines](#highlighting-with-comments).
+
+As [previously stated](#using-jsx-markup), syntax highlighting is only applied when the children is a simple string.

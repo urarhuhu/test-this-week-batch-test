@@ -1,0 +1,222 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "community/2-resources.mdx",
+  "source_file_content_hash": "ba36de433bea9ec74ab728b407b7f799b0acf87e097ed8cf90f3490d6f5f04aa",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Awesome Resources",
+      "source_content_hash": "75d4dd8fb1baf00e154983e088395e87cae2d6b73a5e5755b934b9573bc9c402",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 精選資源"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "A curated list of interesting Docusaurus community projects.",
+      "source_content_hash": "a77974525fbba42ec0e83b36dade7b24854ed473dfdb973075f01b3340f60dff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "精選整理的 Docusaurus 社群專案列表。"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "## Community documentation {#community-documentation}",
+      "source_content_hash": "f6ee918f2fe905430fe775810f08e988ffabd914ae0406a17bbd078057f32c0c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 社群文件 {#community-documentation}"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "The **[Docusaurus.community](https://docusaurus.community)** site extends the [official docs](/docs) with more complex examples and full articles that recommend best practices and provide solutions to common problems.",
+      "source_content_hash": "c61230820fd909cfcbf9a3042c88b86f1ced99564388acd0cdd92db9bc16c5a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**[Docusaurus.community](https://docusaurus.community)** 網站延伸了[官方文件](/docs)，提供更複雜的範例和完整文章，推薦最佳實踐並解決常見問題。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "It is also a full Docusaurus application just like our main site, so customization and experimentation examples are perfectly suited to be hosted there.",
+      "source_content_hash": "62df7e4904b27a4142531a7ed78db200eb28e4fcb5fc72ad1d74d6ec56cb8320",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "它和我們的主站一樣是一個完整的 Docusaurus 應用程式，因此非常適合用來展示自訂化和實驗性的範例。"
+      }
+    },
+    {
+      "segment_id": "bb849aa9",
+      "source_content": ":::info\n\nWe might allow direct links to be added in our official documentation that point to the community documentation, on a case-by-case basis, if the community finds such links to articles useful.\n\nWe are also contemplating further integration into the official documentation at some point in the future.\n\n:::",
+      "source_content_hash": "f2e462af6398ab45e16ec6aced7a809c2ebdf8c62a7fd585efd829f96fae05ea",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n我們可能會根據情況，在官方文件中加入指向社群文件的直接連結，前提是社群認為這些文章連結確實有用。\n\n我們也考慮在未來進一步整合到官方文件中。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## Videos {#videos}",
+      "source_content_hash": "70138026e5e5cb5e85a272011a665e46fa6c2299276bfd6e47a80a1ae582e8c6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 影片 {#videos}"
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "- [F8 2019: Using Docusaurus to Create Open Source Websites](https://www.youtube.com/watch?v=QcGJsf6mgZE)",
+      "source_content_hash": "8c5ad4f6faacd8a53884707852fc412c1c6e24103f5a8002b231b0315177287b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [F8 2019: 使用 Docusaurus 建立開源網站](https://www.youtube.com/watch?v=QcGJsf6mgZE)"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Articles {#articles}",
+      "source_content_hash": "b35c0cc68c642137a3d8fbf640f2db469a961aafef4e44b3773c0ad378aeaed7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 文章 {#articles}"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "- [Awesome Docusaurus](https://github.com/webbertakken/awesome-docusaurus#readme) - Community curated list of Docusaurus resources.\n- [Live code editing in Docusaurus](https://dev.to/mrmuhammadali/live-code-editing-in-docusaurus-ux-at-its-best-2hj1)\n- [The definitive guide to migrating from Blogger to Docusaurus](https://blog.johnnyreilly.com/definitive-guide-to-migrating-from-blogger-to-docusaurus)",
+      "source_content_hash": "ffe635858e6e3bf0aa2cad02f6cea0785038f52e0c5e622b6e95bf194cb9767d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Awesome Docusaurus](https://github.com/webbertakken/awesome-docusaurus#readme) - 社群整理的 Docusaurus 資源列表。\n- [在 Docusaurus 中實現即時代碼編輯](https://dev.to/mrmuhammadali/live-code-editing-in-docusaurus-ux-at-its-best-2hj1)\n- [從 Blogger 遷移到 Docusaurus 的終極指南](https://blog.johnnyreilly.com/definitive-guide-to-migrating-from-blogger-to-docusaurus)"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Showcase {#showcase}",
+      "source_content_hash": "6190922de1674b26039d98b12ae93d4e1d67670c71fd9d0207193a601bb667fd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 展示案例 {#showcase}"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "See the <a href={require('@docusaurus/useBaseUrl').default('showcase')}>showcase</a>.",
+      "source_content_hash": "e41c0adaadcb79dabcab606585d7826dd730b2db54484d31efdb6fcff2e1b002",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "參閱 <a href={require('@docusaurus/useBaseUrl').default('showcase')}>展示案例</a>。"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Community plugins {#community-plugins}",
+      "source_content_hash": "62739bf3724503686407de87d983715bcfdb2cdcaa5c0a8e8a6ac953e27a58a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 社群插件 {#community-plugins}"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "### Search {#search}",
+      "source_content_hash": "0ababd2d97d770065f94194b3e5ae7337aa1a756771a05354a08e2a008b46967",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 搜尋 {#search}"
+      }
+    },
+    {
+      "segment_id": "5d66c9dc",
+      "source_content": "- [docusaurus-plugin-lunr](https://github.com/daldridge/docusaurus-plugin-lunr) - Docusaurus plugin to create a local search index for use with Lunr.js\n- [docusaurus-lunr-search](https://github.com/lelouch77/docusaurus-lunr-search) - Offline Search for Docusaurus\n- [docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local) - Offline/local search for Docusaurus\n- [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local) - Offline/local search for Docusaurus (language of zh supported)\n- [docusaurus-theme-search-typesense](https://github.com/typesense/docusaurus-theme-search-typesense) - Docusaurus plugin for [Typesense DocSearch](https://typesense.org/docs/latest/guide/docsearch.html)\n- [@markprompt/docusaurus-theme-search](https://github.com/motifland/markprompt-js/tree/main/packages/docusaurus-theme-search) - Docusaurus plugin to add generative AI / LLM-powered docs search, powered by [Markprompt](https://markprompt.com).\n- [meilisearch-docsearch](https://github.com/tauri-apps/meilisearch-docsearch) - Docusaurus plugin for [Meilisearch](https://www.meilisearch.com)\n- [@orama/plugin-docusaurus](https://github.com/askorama/orama/tree/main/packages/plugin-docusaurus) - [Orama](https://askorama.ai/) plugin for Docusaurus v2\n- [@orama/plugin-docusaurus-v3](https://github.com/askorama/orama/tree/main/packages/plugin-docusaurus-v3) - [Orama](https://askorama.ai/) plugin for Docusaurus v3\n- [@getcanary/docusaurus-theme-search-pagefind](https://getcanary.dev/docs/integrations/docusaurus.html) - Create [Pagefind](https://pagefind.app/) index and use [Canary](https://github.com/fastrepl/canary) as UI primitives.",
+      "source_content_hash": "fa3099945e935021dc4f8ebf7879b25b95c1be11644f3f529eeb8f58c0cde460",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [docusaurus-plugin-lunr](https://github.com/daldridge/docusaurus-plugin-lunr) - 為 Lunr.js 建立本地搜尋索引的 Docusaurus 插件\n- [docusaurus-lunr-search](https://github.com/lelouch77/docusaurus-lunr-search) - Docusaurus 的離線搜尋\n- [docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local) - Docusaurus 的離線/本地搜尋\n- [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local) - Docusaurus 的離線/本地搜尋（支援中文）\n- [docusaurus-theme-search-typesense](https://github.com/typesense/docusaurus-theme-search-typesense) - 用於 [Typesense DocSearch](https://typesense.org/docs/latest/guide/docsearch.html) 的 Docusaurus 插件\n- [@markprompt/docusaurus-theme-search](https://github.com/motifland/markprompt-js/tree/main/packages/docusaurus-theme-search) - 為 Docusaurus 添加生成式 AI / LLM 驅動的文件搜尋，由 [Markprompt](https://markprompt.com) 提供支援。\n- [meilisearch-docsearch](https://github.com/tauri-apps/meilisearch-docsearch) - 用於 [Meilisearch](https://www.meilisearch.com) 的 Docusaurus 插件\n- [@orama/plugin-docusaurus](https://github.com/askorama/orama/tree/main/packages/plugin-docusaurus) - 適用於 Docusaurus v2 的 [Orama](https://askorama.ai/) 插件\n- [@orama/plugin-docusaurus-v3](https://github.com/askorama/orama/tree/main/packages/plugin-docusaurus-v3) - 適用於 Docusaurus v3 的 [Orama](https://askorama.ai/) 插件\n- [@getcanary/docusaurus-theme-search-pagefind](https://getcanary.dev/docs/integrations/docusaurus.html) - 建立 [Pagefind](https://pagefind.app/) 索引並使用 [Canary](https://github.com/fastrepl/canary) 作為 UI 元件。"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "### Integrations {#integrations}",
+      "source_content_hash": "babaab7aa31542a717556dc98d4fa6b294dbe71c35bd0c5f63dfd0dd07de2d96",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 整合 {#integrations}"
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "- [docusaurus2-dotenv](https://github.com/jonnynabors/docusaurus2-dotenv) - A Docusaurus plugin that supports dotenv and other environment variables\n- [posthog-docusaurus](https://github.com/PostHog/posthog-docusaurus) - Integrate [PostHog](https://posthog.com/) product analytics with Docusaurus\n- [docusaurus-plugin-moesif](https://github.com/Moesif/docusaurus-plugin-moesif) - Adds [Moesif API Analytics](https://www.moesif.com/) to track user behavior and pinpoint where developers drop off in your activation funnel.\n- [docusaurus-plugin-yandex-metrica](https://github.com/sgromkov/docusaurus-plugin-yandex-metrica) - Adds [Yandex Metrika](https://metrika.yandex.ru/) counter for evaluating site traffic and analyzing user behavior.",
+      "source_content_hash": "7cf5088cf1e1bc61fc2a445ebc11f88ab5b0880f0dd24a1dd23202e6dce23486",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [docusaurus2-dotenv](https://github.com/jonnynabors/docusaurus2-dotenv) - 支援 dotenv 及其他環境變數的 Docusaurus 外掛\n- [posthog-docusaurus](https://github.com/PostHog/posthog-docusaurus) - 將 [PostHog](https://posthog.com/) 產品分析工具整合至 Docusaurus\n- [docusaurus-plugin-moesif](https://github.com/Moesif/docusaurus-plugin-moesif) - 加入 [Moesif API 分析](https://www.moesif.com/) 以追蹤使用者行為，並找出開發者在轉化漏斗中流失的環節。\n- [docusaurus-plugin-yandex-metrica](https://github.com/sgromkov/docusaurus-plugin-yandex-metrica) - 加入 [Yandex Metrika](https://metrika.yandex.ru/) 計數器以評估網站流量並分析使用者行為。"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### Features {#features}",
+      "source_content_hash": "fc9b71100bf281a67ec4be3e89ad4ab9266c1fea3c3674edf214c6a690efa198",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 功能 {#features}"
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "- [docusaurus-theme-github-codeblock](https://github.com/saucelabs/docusaurus-theme-github-codeblock). A Docusaurus plugin that supports referencing code examples from public GitHub repositories\n- [docs-to-pdf](https://github.com/jean-humann/docs-to-pdf) - Generate documentation into PDF format\n- [docusaurus-plugin-sass](https://github.com/rlamana/docusaurus-plugin-sass) - Sass/SCSS stylesheets support\n- [docusaurus-plugin-remote-content](https://github.com/rdilweb/docusaurus-plugin-remote-content) - A Docusaurus plugin that allows you to fetch content from remote sources\n- [@graphql-markdown/docusaurus](https://github.com/graphql-markdown/graphql-markdown) - A Docusaurus plugin for generating documentation from GraphQL schemas\n- [docusaurus-plugin-react-docgen-typescript](https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript) - A Docusaurus plugin for loading type annotations from `react-docgen-typescript`\n- [docusaurus-plugin-react-docgen](https://github.com/atomicpages/docusaurus-plugin-react-docgen) - A Docusaurus plugin for loading type annotations from `react-docgen`\n- [docusaurus-plugin-module-alias](https://github.com/atomicpages/docusaurus-plugin-module-alias) - A Docusaurus plugin for quickly aliasing local modules\n- [docusaurus-protobuffet](https://github.com/protobuffet/docusaurus-protobuffet) - Docusaurus toolset for Protobuf contract documentation\n- [docusaurus-prince-pdf](https://github.com/signcl/docusaurus-prince-pdf) - Generate PDF with PrinceXML for better font subsetting and ToC features. Support Docusaurus sites\n- [redocusaurus](https://github.com/rohit-gohri/redocusaurus) - A Docusaurus preset for integrating OpenAPI documentation into your docs with [Redoc](https://github.com/redocly/redoc)\n- [plugin-image-zoom](https://github.com/flexanalytics/plugin-image-zoom) - An Image Zoom plugin for Docusaurus\n- [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc) - A Docusaurus plugin to build documentation with [TypeDoc](https://typedoc.org/)\n- [docusaurus-openapi-docs](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) - A Docusaurus plugin and theme for generating interactive OpenAPI docs\n- [docusaurus-post-generator](https://github.com/moojing/docusaurus-post-generator) - A command line tool for user to add a blog/doc file quickly by command like `yarn gen-post new [template] [post_name]`.\n- [docusaurus-graph](https://github.com/Arsero/docusaurus-graph) - A Docusaurus plugin for generating a graph view showing links between documentation files.\n- [docusaurus-i18n](https://github.com/moonrailgun/docusaurus-i18n) - Auto translate docusaurus documents with openai.",
+      "source_content_hash": "15f36dc989c442082ce36a532235fc33d62b0c6d86856b6effe658e7f487da98",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [docusaurus-theme-github-codeblock](https://github.com/saucelabs/docusaurus-theme-github-codeblock). 支援從公開 GitHub 儲存庫引用程式碼範例的 Docusaurus 外掛\n- [docs-to-pdf](https://github.com/jean-humann/docs-to-pdf) - 將文件轉換為 PDF 格式\n- [docusaurus-plugin-sass](https://github.com/rlamana/docusaurus-plugin-sass) - 支援 Sass/SCSS 樣式表\n- [docusaurus-plugin-remote-content](https://github.com/rdilweb/docusaurus-plugin-remote-content) - 可從遠端來源獲取內容的 Docusaurus 外掛\n- [@graphql-markdown/docusaurus](https://github.com/graphql-markdown/graphql-markdown) - 從 GraphQL 結構生成文件的 Docusaurus 外掛\n- [docusaurus-plugin-react-docgen-typescript](https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript) - 從 `react-docgen-typescript` 載入型別註解的 Docusaurus 外掛\n- [docusaurus-plugin-react-docgen](https://github.com/atomicpages/docusaurus-plugin-react-docgen) - 從 `react-docgen` 載入型別註解的 Docusaurus 外掛\n- [docusaurus-plugin-module-alias](https://github.com/atomicpages/docusaurus-plugin-module-alias) - 快速為本地模組設定別名的 Docusaurus 外掛\n- [docusaurus-protobuffet](https://github.com/protobuffet/docusaurus-protobuffet) - 用於 Protobuf 合約文件的 Docusaurus 工具組\n- [docusaurus-prince-pdf](https://github.com/signcl/docusaurus-prince-pdf) - 使用 PrinceXML 生成 PDF，提供更好的字型子集與目錄功能。支援 Docusaurus 網站\n- [redocusaurus](https://github.com/rohit-gohri/redocusaurus) - 將 OpenAPI 文件整合至文件的 Docusaurus 預設配置，使用 [Redoc](https://github.com/redocly/redoc)\n- [plugin-image-zoom](https://github.com/flexanalytics/plugin-image-zoom) - Docusaurus 的圖片縮放外掛\n- [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc) - 使用 [TypeDoc](https://typedoc.org/) 生成文件的 Docusaurus 外掛\n- [docusaurus-openapi-docs](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) - 用於生成互動式 OpenAPI 文件的 Docusaurus 外掛與主題\n- [docusaurus-post-generator](https://github.com/moojing/docusaurus-post-generator) - 透過指令如 `yarn gen-post new [template] [post_name]` 快速新增部落格/文件檔案的指令列工具\n- [docusaurus-graph](https://github.com/Arsero/docusaurus-graph) - 生成顯示文件檔案間連結關係的圖形檢視的 Docusaurus 外掛\n- [docusaurus-i18n](https://github.com/moonrailgun/docusaurus-i18n) - 使用 openai 自動翻譯 Docusaurus 文件"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Enterprise usage {#enterprise-usage}",
+      "source_content_hash": "d6a1718b79a78c47cb6e25b0a713af4079ad0a15537e6593b5408ad01e432e50",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 企業使用案例 {#enterprise-usage}"
+      }
+    },
+    {
+      "segment_id": "caffd879",
+      "source_content": "- Facebook\n- Google\n- Stripe\n- Algolia\n- Callstack\n- Sauce Labs",
+      "source_content_hash": "132acae5823f110b8e7a43de5e0e27fa2da91d4b532add4c0b8bae3077ae6c78",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Facebook\n- Google\n- Stripe\n- Algolia\n- Callstack\n- Sauce Labs"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current/2-resources.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.040004+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ba36de433bea9ec74ab728b407b7f799b0acf87e097ed8cf90f3490d6f5f04aa"
+  }
+}

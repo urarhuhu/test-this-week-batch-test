@@ -1,0 +1,75 @@
+---
+slug: /migration/v2/automated
+---
+
+# 自動化遷移
+
+遷移 CLI 會自動將您的 v1 網站升級至 v2 網站。
+
+:::info
+
+使用遷移 CLI 後仍需手動調整，因為我們無法實現完全自動化的遷移
+
+:::
+
+遷移 CLI 會處理以下內容：
+
+- 網站配置（從 `siteConfig.js` 轉換為 `docusaurus.config.js`）
+- `package.json`
+- `sidebars.json`
+- `/docs` 目錄
+- `/blog` 目錄
+- `/static` 目錄
+- 若網站使用版本控制功能，則包含 `versioned_sidebar.json` 和 `/versioned_docs` 目錄
+
+使用遷移 CLI 的步驟如下：
+
+1. 執行遷移 CLI 前，請確認 `/docs`、`/blog`、`/static`、`sidebars.json`、`siteConfig.js`、`package.json` 符合預期結構。
+
+2. 執行遷移 CLI 時需指定正確的檔案系統路徑：
+
+```bash
+# migration command format
+npx @docusaurus/migrate migrate <v1 website directory> <desired v2 website directory>
+
+# example
+npx @docusaurus/migrate migrate ./v1-website ./v2-website
+```
+
+3. 要預覽遷移後的網站，請進入 v2 網站目錄並啟動開發伺服器。
+
+```bash npm2yarn
+cd ./v2-website
+npm install
+npm start
+```
+
+:::danger
+
+遷移 CLI 會直接修改現有檔案。請務必先提交這些檔案的當前版本！
+
+:::
+
+#### 選項 {#options}
+
+您可透過選項標記讓遷移 CLI 自動轉換 Markdown 內容與頁面至 v2 格式。通常仍需手動調整才能達到理想效果。
+
+| Name     | Description                                            |
+| -------- | ------------------------------------------------------ |
+| `--mdx`  | Add this flag to convert Markdown to MDX automatically |
+| `--page` | Add this flag to migrate pages automatically           |
+
+```bash
+# example using options
+npx @docusaurus/migrate migrate --mdx --page ./v1-website ./v2-website
+```
+
+:::danger
+
+頁面與 MDX 的遷移功能仍在開發中。
+
+建議先不帶選項執行遷移，提交變更後，再使用 `--page` 和 `--mdx` 選項重新執行遷移。
+
+如此可更輕鬆地檢查與修復差異內容。
+
+:::

@@ -1,0 +1,282 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "community/4-canary.mdx",
+  "source_file_content_hash": "b15afd26b2d4038f0afe22c9a68a47940f11529fcfa10875a98d1bff923fadaa",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Canary releases",
+      "source_content_hash": "09adcfd33499d8765000b7e7e191eeb67e19f6772a4027e8bf38d678e5591443",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Canary 版本"
+      }
+    },
+    {
+      "segment_id": "4015384f",
+      "source_content": "```mdx-code-block\nimport {\n  VersionsProvider,\n  CanaryVersion,\n  StableVersion,\n  InsertIfCanaryVersionUnknown,\n  InsertIfCanaryVersionKnown,\n  PackageJSONDiff,\n  PublishTime,\n} from \"@site/src/components/Versions\";\n\n<VersionsProvider>\n```",
+      "source_content_hash": "b380a965afe400d1ef2705fe4e811759181a587e395749eaeaca5a2b2b237545",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4015384f"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Docusaurus has a canary releases system.",
+      "source_content_hash": "2d37edc7b0cbe1a5674c7ceeac41d0a15b1efc82278da3916cab050e60f3cc04",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 設有 Canary 版本發佈系統。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "It permits you to **test new unreleased features** as soon as the pull requests are merged.",
+      "source_content_hash": "e0d9e262e88b623ef272692118479c76e39f5aa90c229e3da839cdcf7c8193a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此系統允許您在拉取請求合併後，立即**測試尚未發佈的新功能**。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "It is a good way to **give feedback to maintainers**, ensuring the newly implemented feature works as intended.",
+      "source_content_hash": "d2b5348249602139643cb39bfa831bf5f4534ada5b18249398dc3f6fe64f1681",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是**向維護者提供反饋**的良好方式，可確保新實現的功能按預期運作。"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::note\n\nUsing a canary release in production might seem risky, but in practice, it's not.\n\nA canary release passes all automated tests and is used in production by the Docusaurus site itself.\n\n:::",
+      "source_content_hash": "d9e071dac6ca0e5b5f5bf09df4cbff57a0bd099161b0845bb6c2753d9def3dda",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n在生產環境使用 Canary 版本看似有風險，但實際上並非如此。\n\nCanary 版本已通過所有自動化測試，且 Docusaurus 官方網站本身也在生產環境中使用。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```mdx-code-block\n<InsertIfCanaryVersionUnknown>\n```",
+      "source_content_hash": "eacee7171f89f362932690e807feaea9ec8be9144c37af704bcc52c60d693354",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "26b47687",
+      "source_content": ":::warning\n\nThe canary version shown below **may not be up-to-date**. Please go to the [npm page](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions) to find the actual version name.\n\n:::",
+      "source_content_hash": "f9f455be8389d313c0429d2e9ba2ac4186449973c27f6022fa62ee370bc132d2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n下方顯示的 Canary 版本**可能並非最新**。請前往 [npm 頁面](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions)查詢實際版本名稱。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bca33820",
+      "source_content": "```mdx-code-block\n</InsertIfCanaryVersionUnknown>\n<InsertIfCanaryVersionKnown>\n```",
+      "source_content_hash": "38cba490069171229c374f5f28b6444d22f2930c3cd445f48edcf3f34aa865c1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bca33820"
+      }
+    },
+    {
+      "segment_id": "80e5ac71",
+      "source_content": ":::tip\n\nThe canary version shown below is directly fetched from npm and **is up-to-date**. You can directly use these numbers in your package.json.\n\n:::",
+      "source_content_hash": "aff8229e875bb794efa20525d05360cb17255ec5e4c66fdb9cb54b91fedd8d00",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n下方顯示的 Canary 版本直接從 npm 獲取，**為最新版本**。您可直接在 package.json 中使用這些版本號。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```mdx-code-block\n</InsertIfCanaryVersionKnown>\n```",
+      "source_content_hash": "ab20d70a14f0581fad4029dc3eb59184d3ded4ddbac2aeb2da4cfe0ca160f2f3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_64b6f348"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Canary npm dist tag",
+      "source_content_hash": "9e440be954603f114adccfe4bb96f4f237370865997eeefb1453d370e0f709dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Canary npm 分發標籤"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "For any code-related commit on `main`, the continuous integration will publish a canary release under the `@canary` npm dist tag. It generally takes up to 10 minutes.",
+      "source_content_hash": "50782fc039cd4b0eea9b1a2999d21c87b44403fbf4558b0f6f18bf562e1214f8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於 `main` 分支上的任何程式碼相關提交，持續整合系統會將 Canary 版本發佈至 `@canary` npm 分發標籤下。此過程通常需時不超過 10 分鐘。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "You can see on [npm](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions) the current dist tags:",
+      "source_content_hash": "ec44b17c1fd3ab263bb450b9cf73915ec01f74156f7516d8e6256ec39766599b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可在 [npm](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions) 查看當前分發標籤："
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "- `latest`: stable releases (Current: <StableVersion />)\n- `canary`: canary releases (<CanaryVersion />)",
+      "source_content_hash": "65846d7f2c8bda32d0c3bd119a404eb95dacdbfc2ce5a64837382f8e0a50f3d7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `latest`: 穩定版本 (當前: <StableVersion />)\n- `canary`: Canary 版本 (<CanaryVersion />)"
+      }
+    },
+    {
+      "segment_id": "3e5cd42d",
+      "source_content": ":::tip\n\nMake sure to use the latest canary release and check the publication date (sometimes the publish process fails). <PublishTime />\n\n:::",
+      "source_content_hash": "4d5ce680d4c9ff2b630549b5cebae7f6e71d02321a55980bf158c8e4cd8f737d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n請確保使用最新的 Canary 版本並檢查發佈日期（有時發佈過程可能失敗）。<PublishTime />\n\n:::"
+      }
+    },
+    {
+      "segment_id": "724adee0",
+      "source_content": ":::note\n\nCanary versions follow the naming convention `0.0.0-commitNumber`.\n\n:::",
+      "source_content_hash": "ba1c8e761d588a799aa8458d88112323f2673ec2b51284c8d0152fa9c800e4ea",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\nCanary 版本遵循 `0.0.0-commitNumber` 命名慣例。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "## Using a canary release",
+      "source_content_hash": "c1af6a4d2f3d21864b6316cbbcd65aa61b3df1d42a5438bad9594c8b12ec97eb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用 Canary 版本"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Take the latest version published under the [canary npm dist tag](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions) (<CanaryVersion />).",
+      "source_content_hash": "485ea6d198a8953e13f9e05ec7fafdca981f97620b8e6957383ab9458276cfd9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請從 [canary npm 分發標籤](https://www.npmjs.com/package/@docusaurus/core?activeTab=versions) 取得最新版本 (<CanaryVersion />)。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Use it for all the `@docusaurus/*` dependencies in your `package.json`:",
+      "source_content_hash": "52d7364cebe692feca9e214639dda212a48361a0788366ebfad2bc88a49b8054",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在您的 `package.json` 中為所有 `@docusaurus/*` 相依套件使用此版本："
+      }
+    },
+    {
+      "segment_id": "092b29bb",
+      "source_content": "```mdx-code-block\n<PackageJSONDiff />\n```",
+      "source_content_hash": "817cbe9a8a604e696ebfa187aa1f0b994f3f5bbe49955b1265e30a2600416ca6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_092b29bb"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Then, install the dependencies again and start your site:",
+      "source_content_hash": "4c8c70f00763284f5f6e1d05c717757b790b5f02384094b69e45c5fb6d93211a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著重新安裝相依套件並啟動您的網站："
+      }
+    },
+    {
+      "segment_id": "f6563256",
+      "source_content": "```bash npm2yarn\nnpm install\nnpm start\n```",
+      "source_content_hash": "236e6d38b0dbac3fa441a6d45a85f2ee83ed6eade923ed47faef21fbd234cd64",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f6563256"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "You can also upgrade the `@docusaurus/*` packages with command line:",
+      "source_content_hash": "687b688c3b8bc7953b4cdd2200c8e41b79a93c8ad32b19465d00a1543cf88002",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您亦可透過命令列升級 `@docusaurus/*` 套件："
+      }
+    },
+    {
+      "segment_id": "19913a56",
+      "source_content": "```bash npm2yarn\nnpm install --save-exact @docusaurus/core@canary @docusaurus/preset-classic@canary\n```",
+      "source_content_hash": "e21412b18ceaa501690d883bc6af3ebb7f606ca64adb5863d20aa58243ade7d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_19913a56"
+      }
+    },
+    {
+      "segment_id": "5e56b3b9",
+      "source_content": ":::warning\n\nMake sure to include all the `@docusaurus/*` packages.\n\nFor canary releases, prefer using an exact version instead of a semver range (avoid the `^` prefix).\n\n:::",
+      "source_content_hash": "c111a46cc9cec30a8d032d85389d64acf8515b1c3766d7ae6eda854345c712a2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n請確保包含所有 `@docusaurus/*` 套件。\n\n對於 Canary 版本，建議使用確切版本號而非語意化版本範圍（避免使用 `^` 前綴）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c4c0fc07",
+      "source_content": "```mdx-code-block\n</VersionsProvider>\n```",
+      "source_content_hash": "83b7d06526fd60b1f33da0ae89b39c49131c93d2f5b57e9809bd4929695abeb7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c4c0fc07"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current/4-canary.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.028147+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "b15afd26b2d4038f0afe22c9a68a47940f11529fcfa10875a98d1bff923fadaa"
+  }
+}

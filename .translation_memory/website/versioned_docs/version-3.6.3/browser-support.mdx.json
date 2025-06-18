@@ -1,0 +1,262 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.6.3/browser-support.mdx",
+  "source_file_content_hash": "93387470807a7b9117066a86bc278ec4bf431f2b1c6218ff06a09fb79926d8b9",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: How to keep a reasonable bundle size while ensuring sufficient browser support.\n---",
+      "source_content_hash": "11ba5365d4d568649a64754f324b409ea54a1315109f6e7315ae0f446e179edd",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Browser support",
+      "source_content_hash": "79a25446318db8b652e6dcbcb73090e4205bcd352425d90761d697b7ba75bed6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 瀏覽器支援"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus allows sites to define the list of supported browsers through a [browserslist configuration](https://github.com/browserslist/browserslist).",
+      "source_content_hash": "44a23c45e11c9078c25ea1c8431b6e29b13631b73ecd234b4637ad8afe7dcd21",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 允許網站透過 [browserslist 配置](https://github.com/browserslist/browserslist) 定義支援的瀏覽器清單。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Purpose {#purpose}",
+      "source_content_hash": "e6705e229d0338fc5d0cdc2675a14981656d611273c8bc0f98bcf6b30d874a97",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 目的 {#purpose}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Websites need to balance between backward compatibility and bundle size. As old browsers do not support modern APIs or syntax, more code is needed to implement the same functionality.",
+      "source_content_hash": "1171c6ddc2f478e366e8780ce217771256d138cd9da698ecab3bff7717e67440",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "網站需要在向後兼容性和套件大小之間取得平衡。由於舊版瀏覽器不支援現代 API 或語法，需要更多程式碼來實現相同功能。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "For example, you may use the [optional chaining syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining):",
+      "source_content_hash": "6166851751ef281d9c65a239a647ec81e2b281d0f87bee77c866354498b44ab3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，您可能使用 [可選鏈結語法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)："
+      }
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```js\nconst value = obj?.prop?.val;\n```",
+      "source_content_hash": "e2cc1cd408ce4c99025502729fa9ba9120881760ead548da3de177cf18a053b8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4b395385"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "...which unfortunately is only recognized by browser versions released after 2020. To be compatible with earlier browser versions, when building your site for production, our JS loader will transpile your code to a more verbose syntax:",
+      "source_content_hash": "1081af0608a2c8824a90ca1d66534afa62349228ba482aea3fd88bd22059bde0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "...但遺憾的是，此語法僅被 2020 年後發布的瀏覽器版本識別。為了與早期瀏覽器版本兼容，在為生產環境建置網站時，我們的 JS 加載器會將您的程式碼轉譯為更冗長的語法："
+      }
+    },
+    {
+      "segment_id": "cbbebf8e",
+      "source_content": "```js\nvar _obj, _obj$prop;\n\nconst value =\n  (_obj = obj) === null || _obj === void 0\n    ? void 0\n    : (_obj$prop = _obj.prop) === null || _obj$prop === void 0\n    ? void 0\n    : _obj$prop.val;\n```",
+      "source_content_hash": "8070ac170fdd648d6df543a9c0df5375893f59035297a98786f3028cd79de9a7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cbbebf8e"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "However, this penalizes all other users with increased site load time because the 29-character line now becomes 168 characters—a 6-fold increase! (In practice, it will be better because the names used will be shorter.) As a tradeoff, the JS loader only transpiles the syntax to the degree that's supported by all browser versions defined in the browser list.",
+      "source_content_hash": "26914605b24d210e930ae265713c246cd6407bb22f8633bcf59e6ae9cc2e48e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然而，這會懲罰所有其他使用者，因為網站載入時間增加——29 個字元的程式碼行現在變成 168 個字元，增加了 6 倍！（實際上會好一些，因為使用的名稱會更短。）作為折衷方案，JS 加載器僅將語法轉譯到瀏覽器清單中定義的所有瀏覽器版本都支援的程度。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The browser list by default is provided through the `package.json` file as a root `browserslist` field.",
+      "source_content_hash": "428db942a9176dc2ac2a0cd1880d276a7156f2c489267be2991f54dc7741f1f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設的瀏覽器清單透過 `package.json` 檔案中的根 `browserslist` 欄位提供。"
+      }
+    },
+    {
+      "segment_id": "cd591557",
+      "source_content": ":::warning\n\nOn old browsers, the compiled output will use unsupported (too recent) JS syntax, causing React to fail to initialize and end up with a static website with only HTML/CSS and no JS.\n\n:::",
+      "source_content_hash": "248f909bd78fcd4c91f5afbf07bc9958aa073751cba197684d57c5ec6969d1bf",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n在舊版瀏覽器上，編譯後的輸出會使用不支援（太新）的 JS 語法，導致 React 無法初始化，最終呈現僅有 HTML/CSS 而無 JS 的靜態網站。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Default values {#default-values}",
+      "source_content_hash": "6dab6c631737887c927ee9380c2a610dc24218490c18625f81a7cde5330fd1c1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 預設值 {#default-values}"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Websites initialized with the default classic template has the following in `package.json`:",
+      "source_content_hash": "82f876b625465ddf418008ad6ab3ed254a002e36dbdc6ee40c7fe8ea27a4fed5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用預設經典模板初始化的網站在 `package.json` 中包含以下內容："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```json title=\"package.json\"\n{\n  \"name\": \"docusaurus\",\n  // ...\n  // highlight-start\n  \"browserslist\": {\n    \"production\": [\">0.5%\", \"not dead\", \"not op_mini all\"],\n    \"development\": [\n      \"last 1 chrome version\",\n      \"last 1 firefox version\",\n      \"last 1 safari version\"\n    ]\n  }\n  // highlight-end\n  // ...\n}\n```",
+      "source_content_hash": "7e0a4f39796f2e8f0515a116492277f3ee821ede19b96fdabf2e74566d1e6456",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Explained in natural language, the browsers supported in production are those:",
+      "source_content_hash": "d806e3352c72e363a1d1a3f1bfde16553e1a9bd10813e2045a34d33183118208",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用自然語言解釋，生產環境支援的瀏覽器是那些："
+      }
+    },
+    {
+      "segment_id": "2eb5ba30",
+      "source_content": "- With more than 0.5% of market share; _and_\n- Has official support or updates in the past 24 months (the opposite of \"dead\"); _and_\n- Is not Opera Mini.",
+      "source_content_hash": "80182f3b18812002360bfe8a467598ecdbf78ae73f56812bc6f47faa0f64d73a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 市場份額超過 0.5%；_且_\n- 在過去 24 個月內有官方支援或更新（即非「已淘汰」）；_且_\n- 不是 Opera Mini。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "And browsers used in development are:",
+      "source_content_hash": "b9f161f4cec720e9962d4911069f7c4a44d3f939b0d465ee7fd3169b4eabac1f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "而開發環境使用的瀏覽器是："
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "- The latest version of Chrome _or_ Firefox _or_ Safari.",
+      "source_content_hash": "f35d7e06cc3c9a387e184eca5102e50286e8986ad3cb3765544fd7aeccd5a9b8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Chrome _或_ Firefox _或_ Safari 的最新版本。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "You can \"evaluate\" any config with the `browserslist` CLI to obtain the actual list:",
+      "source_content_hash": "156663b3f6414be0f965e93093998f8f333f85683e9c6150283aa9de3c6fb5e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以使用 `browserslist` CLI「評估」任何配置以獲取實際清單："
+      }
+    },
+    {
+      "segment_id": "468b36ba",
+      "source_content": "```bash\nnpx browserslist --env=\"production\"\n```",
+      "source_content_hash": "103518c70325d52b9918e6c4df8ce00345c0ed98fbf2f9d8f5ee4c180a8a4b12",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_468b36ba"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "The output is all browsers supported in production. Below is the output in January 2022:",
+      "source_content_hash": "bf8e38d70a7375e37f76c4db6008ef04b21929ae4689507c168992b64f1a26dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "輸出結果是生產環境支援的所有瀏覽器。以下是 2022 年 1 月的輸出範例："
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```text\nand_chr 96\nand_uc 12.12\nchrome 96\nchrome 95\nchrome 94\nedge 96\nfirefox 95\nfirefox 94\nie 11\nios_saf 15.2\nios_saf 15.0-15.1\nios_saf 14.5-14.8\nios_saf 14.0-14.4\nios_saf 12.2-12.5\nopera 82\nopera 81\nsafari 15.1\nsafari 14.1\nsafari 13.1\n```",
+      "source_content_hash": "d74ced0e55e71ed40c5d526edc8a7fd981fe9a343bbc5baa1eea30740b31f62e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "## Read more {#read-more}",
+      "source_content_hash": "2b02cec63bb7a642b51d7906b44f004fbaf64e53dcdd0a10a21582fa3669ef2e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 延伸閱讀 {#read-more}"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "You may wish to visit the [browserslist documentation](https://github.com/browserslist/browserslist/blob/main/README.md) for more specifications, especially the accepted [query values](https://github.com/browserslist/browserslist/blob/main/README.md#queries) and [best practices](https://github.com/browserslist/browserslist/blob/main/README.md#best-practices).",
+      "source_content_hash": "adc9d4cf2d05bf44b613d477d6947073edc5ab5cc72f626891660bad455147ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以參閱 [browserslist 文件](https://github.com/browserslist/browserslist/blob/main/README.md) 獲取更多規範，特別是接受的 [查詢值](https://github.com/browserslist/browserslist/blob/main/README.md#queries) 和 [最佳實踐](https://github.com/browserslist/browserslist/blob/main/README.md#best-practices)。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.6.3/browser-support.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.310191+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "93387470807a7b9117066a86bc278ec4bf431f2b1c6218ff06a09fb79926d8b9"
+  }
+}

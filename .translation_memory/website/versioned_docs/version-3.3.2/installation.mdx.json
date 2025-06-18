@@ -1,0 +1,486 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/installation.mdx",
+  "source_file_content_hash": "5a10496ac9184458fdc198dcf7427ca8f67b0cfa8b37352ed62cdf3e2cf7367e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: How to install Docusaurus locally, and start a Docusaurus site in no time.\n---",
+      "source_content_hash": "c8c9cd1132da4452777ac377c8f8305adb203fe7d59b684c7d74d4aed1061da8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Installation",
+      "source_content_hash": "a04bc78224193df7d963bd4b5e40fbc0179b0bfd3e4e3c98c5664dc950890a95",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 安裝"
+      }
+    },
+    {
+      "segment_id": "efa96cff",
+      "source_content": "```mdx-code-block\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n```",
+      "source_content_hash": "ee7c7ccc3fc35d8459eb01cfa9b23771278098ad8ace52975ecedfe60785c012",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efa96cff"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Docusaurus consists of a set of npm [packages](https://github.com/facebook/docusaurus/tree/main/packages).",
+      "source_content_hash": "335f2692d0dced423eb88a9f842f4c51518313273d2d2252efe48c73dbbbf990",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 由一組 npm [套件](https://github.com/facebook/docusaurus/tree/main/packages)組成。"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::tip\n\nUse the **[Fast Track](introduction.mdx#fast-track)** to understand Docusaurus in **5 minutes ⏱**!\n\nUse **[docusaurus.new](https://docusaurus.new)** to test Docusaurus immediately in your browser!\n\n:::",
+      "source_content_hash": "c6fc9976af15b4804cbabc16f0a1df826326b86d58887c32dd8b36b60de485b5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用 **[快速入門](introduction.mdx#fast-track)** 在 **5 分鐘 ⏱** 內了解 Docusaurus！\n\n使用 **[docusaurus.new](https://docusaurus.new)** 立即在瀏覽器中測試 Docusaurus！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Requirements {#requirements}",
+      "source_content_hash": "3bd3c3c511be7683246d445823692b95d3051989e70db7d511f9d012deef0cf8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 需求 {#requirements}"
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "- [Node.js](https://nodejs.org/en/download/) version 18.0 or above (which can be checked by running `node -v`). You can use [nvm](https://github.com/nvm-sh/nvm) for managing multiple Node versions on a single machine installed.\n  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.",
+      "source_content_hash": "ac6a8b2b586cbef905d82ba5249ebb793280ba015d03206345c5887cec9a6adb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Node.js](https://nodejs.org/en/download/) 版本 18.0 或更高（可通過運行 `node -v` 檢查）。您可以使用 [nvm](https://github.com/nvm-sh/nvm) 來管理單台機器上的多個 Node 版本。\n  - 安裝 Node.js 時，建議勾選所有與依賴項相關的選項。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Scaffold project website {#scaffold-project-website}",
+      "source_content_hash": "776e0afac9d625c82fa96b80f4dbf471d4edb1500fd03f787ce839072066dc62",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 建立專案網站骨架 {#scaffold-project-website}"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "The easiest way to install Docusaurus is to use the command line tool that helps you scaffold a skeleton Docusaurus website. You can run this command anywhere in a new empty repository or within an existing repository, it will create a new directory containing the scaffolded files.",
+      "source_content_hash": "ae93e918d60b13f72a7bfab0d49575f199eb8bf098834ee032c3464f2bbff44c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "安裝 Docusaurus 最簡單的方法是使用命令行工具，它可以幫助您建立一個 Docusaurus 網站的基本骨架。您可以在新的空倉庫或現有倉庫中的任何位置運行此命令，它將創建一個包含骨架文件的新目錄。"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```bash\nnpx create-docusaurus@latest my-website classic\n```",
+      "source_content_hash": "85367d51ad039a34162fe20061205b2833462ee69803b8ca21bdbd0e3177aed3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "We recommend the `classic` template so that you can get started quickly, and it contains features found in Docusaurus 1. The `classic` template contains `@docusaurus/preset-classic` which includes standard documentation, a blog, custom pages, and a CSS framework (with dark mode support). You can get up and running extremely quickly with the classic template and customize things later on when you have gained more familiarity with Docusaurus.",
+      "source_content_hash": "496906aa35cb380dc37997d09c9b6aab94975908fe94b53de37a51eb16e6cef2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們推薦使用 `classic` 模板，這樣您可以快速上手，並且它包含 Docusaurus 1 中的功能。`classic` 模板包含 `@docusaurus/preset-classic`，其中包括標準文檔、博客、自定義頁面和 CSS 框架（支持暗黑模式）。使用經典模板，您可以極快地啟動並運行，並在對 Docusaurus 更加熟悉後進行自定義。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "You can also use the template's TypeScript variant by passing the `--typescript` flag. See [TypeScript support](./typescript-support.mdx) for more information.",
+      "source_content_hash": "6518cb6e2cb28ada437175d542da26c92d1fe0c8befd5d6b84698e86a6d88c73",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您還可以通過傳遞 `--typescript` 標誌使用模板的 TypeScript 變體。有關更多信息，請參閱 [TypeScript 支持](./typescript-support.mdx)。"
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "```bash\nnpx create-docusaurus@latest my-website classic --typescript\n```",
+      "source_content_hash": "c661e955cb890e28b3af2cc2e504d63be37eb5505fb5faa87612834f6d6cfb4c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "18867dc1",
+      "source_content": ":::info[Meta-Only]\n\nIf you are setting up a new Docusaurus website for a Meta open source project, run this command inside an internal repository, which comes with some useful Meta-specific defaults:\n\n```bash\nscarf static-docs-bootstrap\n```\n\n:::",
+      "source_content_hash": "c844341fc9a148999d50c5ee46be6f9dcd91368e9d213ba11ef192ca16ccc516",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[Meta-Only]\n\n如果您正在為 Meta 開源專案設置新的 Docusaurus 網站，請在內部倉庫中運行此命令，該命令帶有一些有用的 Meta 特定默認值：\n\n```bash\nscarf static-docs-bootstrap\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8296bd42",
+      "source_content": "<details>\n  <summary>Alternative installation commands</summary>\n\nYou can also initialize a new project using your preferred project manager:\n\n```bash npm2yarn\nnpm init docusaurus\n```\n\n</details>",
+      "source_content_hash": "12c4c50deb5470680093c9acc8664e0f701ea192f588536e9f6bca475049d4bd",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8296bd42"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Run `npx create-docusaurus@latest --help`, or check out its [API docs](./api/misc/create-docusaurus.mdx) for more information about all available flags.",
+      "source_content_hash": "46b26f5bec2b2b593f5655d588862d25dd243f9d8c9916f7c1cf69173394068b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "運行 `npx create-docusaurus@latest --help`，或查看其 [API 文檔](./api/misc/create-docusaurus.mdx) 以獲取有關所有可用標誌的更多信息。"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "## Project structure {#project-structure}",
+      "source_content_hash": "4d4d69914604a383054316fc480a75acf3ed3ea29d327f7c2e76b47dcb1ef4ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 專案結構 {#project-structure}"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "Assuming you chose the classic template and named your site `my-website`, you will see the following files generated under a new directory `my-website/`:",
+      "source_content_hash": "ffed08fe7ca757307d68d57aee32761255b82165ce50bd38f3fef232a1421173",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "假設您選擇了經典模板並將您的網站命名為 `my-website`，您將在 `my-website/` 目錄下看到以下生成的文件："
+      }
+    },
+    {
+      "segment_id": "7d13cf22",
+      "source_content": "```bash\nmy-website\n├── blog\n│   ├── 2019-05-28-hola.md\n│   ├── 2019-05-29-hello-world.md\n│   └── 2020-05-30-welcome.md\n├── docs\n│   ├── doc1.md\n│   ├── doc2.md\n│   ├── doc3.md\n│   └── mdx.md\n├── src\n│   ├── css\n│   │   └── custom.css\n│   └── pages\n│       ├── styles.module.css\n│       └── index.js\n├── static\n│   └── img\n├── docusaurus.config.js\n├── package.json\n├── README.md\n├── sidebars.js\n└── yarn.lock\n```",
+      "source_content_hash": "9bacfa067adfb4d6f990e07c783b31b35e407917b29109aa8e3663bde8b22821",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d13cf22"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### Project structure rundown {#project-structure-rundown}",
+      "source_content_hash": "60a6eec15764467e0b93c51c84aaefa20f1bcac3e98c50022acf0070f0a6f579",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 專案結構概述 {#project-structure-rundown}"
+      }
+    },
+    {
+      "segment_id": "cfea4c31",
+      "source_content": "- `/blog/` - Contains the blog Markdown files. You can delete the directory if you've disabled the blog plugin, or you can change its name after setting the `path` option. More details can be found in the [blog guide](blog.mdx)\n- `/docs/` - Contains the Markdown files for the docs. Customize the order of the docs sidebar in `sidebars.js`. You can delete the directory if you've disabled the docs plugin, or you can change its name after setting the `path` option. More details can be found in the [docs guide](./guides/docs/docs-introduction.mdx)\n- `/src/` - Non-documentation files like pages or custom React components. You don't have to strictly put your non-documentation files here, but putting them under a centralized directory makes it easier to specify in case you need to do some sort of linting/processing\n  - `/src/pages` - Any JSX/TSX/MDX file within this directory will be converted into a website page. More details can be found in the [pages guide](guides/creating-pages.mdx)\n- `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory\n- `/docusaurus.config.js` - A config file containing the site configuration. This is the equivalent of `siteConfig.js` in Docusaurus v1\n- `/package.json` - A Docusaurus website is a React app. You can install and use any npm packages you like in them\n- `/sidebars.js` - Used by the documentation to specify the order of documents in the sidebar",
+      "source_content_hash": "3d2a6a987db09ab53743648299097c4945e0d59d042ba13f40f00353a9fdab8c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `/blog/` - 包含部落格的 Markdown 檔案。若您已停用部落格外掛程式，可刪除此目錄；或透過設定 `path` 選項後變更其名稱。更多細節請參閱[部落格指南](blog.mdx)\n- `/docs/` - 包含文件的 Markdown 檔案。可在 `sidebars.js` 中自訂文件側邊欄的排序。若您已停用文件外掛程式，可刪除此目錄；或透過設定 `path` 選項後變更其名稱。更多細節請參閱[文件指南](./guides/docs/docs-introduction.mdx)\n- `/src/` - 非文件類檔案，例如頁面或自訂 React 元件。您不一定要將非文件檔案嚴格放置於此，但集中存放於單一目錄下，能更方便在需要進行某種 linting/處理時指定路徑\n  - `/src/pages` - 此目錄下的任何 JSX/TSX/MDX 檔案都將轉換為網站頁面。更多細節請參閱[頁面指南](guides/creating-pages.mdx)\n- `/static/` - 靜態目錄。此處的任何內容都會被複製到最終 `build` 目錄的根目錄下\n- `/docusaurus.config.js` - 包含網站設定的設定檔。此檔案等同於 Docusaurus v1 中的 `siteConfig.js`\n- `/package.json` - Docusaurus 網站是一個 React 應用程式。您可以在其中安裝並使用任何 npm 套件\n- `/sidebars.js` - 供文件使用，用於指定側邊欄中文檔的排序"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "### Monorepos {#monorepos}",
+      "source_content_hash": "7ab06bf8ac39fafa25bedc6ae791058b6b838fc393716540fee28aeae7baf798",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 單體式儲存庫 (Monorepos) {#monorepos}"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "If you are using Docusaurus for documentation of an existing project, a monorepo may be the solution for you. Monorepos allow you to share dependencies between similar projects. For example, your website may use your local packages to showcase latest features instead of depending on a released version. Then, your contributors can update the docs as they implement features. An example monorepo folder structure is below:",
+      "source_content_hash": "cd9197b02dd99e7c4c295e885321badf069a281b2d704c92210ad92410dc6273",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用 Docusaurus 為現有專案建立文件，單體式儲存庫可能是適合您的解決方案。單體式儲存庫允許您在相似專案間共享依賴項。例如，您的網站可使用本地套件來展示最新功能，而不需依賴已發布的版本。如此一來，貢獻者能在實作功能時同步更新文件。下方為單體式儲存庫的範例目錄結構："
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```bash\nmy-monorepo\n├── package-a # Another package, your actual project\n│   ├── src\n│   └── package.json # Package A's dependencies\n├── website   # Docusaurus root\n│   ├── docs\n│   ├── src\n│   └── package.json # Docusaurus' dependencies\n├── package.json # Monorepo's shared dependencies\n```",
+      "source_content_hash": "bfac30c58cbe0873b0d12fceade64a8c2cab2fcd62aec1e5ff327c96478a1c2a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "In this case, you should run `npx create-docusaurus` within the `./my-monorepo` folder.",
+      "source_content_hash": "21bc2fe092c59a42b6832a944ec3209ccb6972f3620d48557951f13c6ac574ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在此情況下，您應於 `./my-monorepo` 資料夾內執行 `npx create-docusaurus`。"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "If you're using a hosting provider such as Netlify or Vercel, you will need to change the `Base directory` of the site to where your Docusaurus root is. In this case, that would be `./website`. Read more about configuring ignore commands in the [deployment docs](./deployment.mdx#deploying-to-netlify).",
+      "source_content_hash": "cc39a986bcf9c792b0d8aace54a4fa3e36a7f61a4dd68e48afcb6096881159ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用 Netlify 或 Vercel 等託管服務提供商，需將網站的 `Base directory` 變更為 Docusaurus 根目錄所在位置。在此案例中，應設為 `./website`。更多關於設定忽略指令的資訊，請參閱[部署文件](./deployment.mdx#deploying-to-netlify)。"
+      }
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "Read more about monorepos in the [Yarn documentation](https://yarnpkg.com/features/workspaces) (Yarn is not the only way to set up a monorepo, but it's a common solution), or checkout [Docusaurus](https://github.com/facebook/docusaurus) and [Jest](https://github.com/facebook/jest) for some real-world examples.",
+      "source_content_hash": "59f2e47339b5ce4850f57aaf60bb81d1f6e2554697f2a404a3f96b0c773b2e8b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更多關於單體式儲存庫的資訊，請參閱 [Yarn 文件](https://yarnpkg.com/features/workspaces)（Yarn 並非設定單體式儲存庫的唯一方式，但它是常見解決方案），或查看 [Docusaurus](https://github.com/facebook/docusaurus) 和 [Jest](https://github.com/facebook/jest) 的實際範例。"
+      }
+    },
+    {
+      "segment_id": "2bb63d77",
+      "source_content": "## Running the development server {#running-the-development-server}",
+      "source_content_hash": "19017f85801c687c867f83419e10e83ea044ebe1ea8980e96a462f547ec92cee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 執行開發伺服器 {#running-the-development-server}"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "To preview your changes as you edit the files, you can run a local development server that will serve your website and reflect the latest changes.",
+      "source_content_hash": "f0a9719ef9b90a7ad92384c7b46ad95670301d12d354dffb48cd5e4d10733008",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要預覽編輯檔案時的變更，您可以執行本地開發伺服器來提供網站服務並即時反映最新修改。"
+      }
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```bash npm2yarn\ncd my-website\nnpm run start\n```",
+      "source_content_hash": "8d2b0ece5b6ec3329975ac0c6799f0423c0daae1a7c804599e2db057f0c2ae22",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_18fb666f"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "By default, a browser window will open at [`http://localhost:3000`](http://localhost:3000).",
+      "source_content_hash": "d03387f35b797c60ff12526c29e4f84cdca84676402b5d45adb0ab81943e9929",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，瀏覽器視窗會開啟於 [`http://localhost:3000`](http://localhost:3000)。"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "Congratulations! You have just created your first Docusaurus site! Browse around the site to see what's available.",
+      "source_content_hash": "dd0cacc28c61e9620c8bf98126299de02f06db05ece75a41dfffb5b346683ef6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "恭喜！您已成功建立第一個 Docusaurus 網站！請瀏覽網站查看可用內容。"
+      }
+    },
+    {
+      "segment_id": "9c2ab4c8",
+      "source_content": "## Build {#build}",
+      "source_content_hash": "99c28d27c6ff37fdafbd7ca9c02840de60f7ea4aaea24b5fa99f37841883912d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 建置 {#build}"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "Docusaurus is a modern static website generator so we need to build the website into a directory of static contents and put it on a web server so that it can be viewed. To build the website:",
+      "source_content_hash": "242df609e11924eae51a6cd6835d242a90318ec6b693b17d7b149f810ce9bd73",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 是現代靜態網站產生器，因此我們需將網站建置為靜態內容目錄，並放置於網頁伺服器上以供檢視。建置網站的方式如下："
+      }
+    },
+    {
+      "segment_id": "4fe849d4",
+      "source_content": "```bash npm2yarn\nnpm run build\n```",
+      "source_content_hash": "f59d77928ebca01a2394f334d2c0386fe8af6dffab32db943c054660fabcee6f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fe849d4"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "and contents will be generated within the `/build` directory, which can be copied to any static file hosting service like [GitHub pages](https://pages.github.com/), [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/). Check out the docs on [deployment](deployment.mdx) for more details.",
+      "source_content_hash": "527df87fe3574f72d399b30fcfb530676685a61358e87c6d86c760e933cbd014",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建置內容將生成於 `/build` 目錄內，可將其複製到任何靜態檔案託管服務，例如 [GitHub Pages](https://pages.github.com/)、[Vercel](https://vercel.com/) 或 [Netlify](https://www.netlify.com/)。更多細節請參閱[部署](deployment.mdx)文件。"
+      }
+    },
+    {
+      "segment_id": "6ab1b234",
+      "source_content": "## Updating your Docusaurus version {#updating-your-docusaurus-version}",
+      "source_content_hash": "34da5646519cc7d1c8b1629061ab4635ad5a6fbd814f4f985490c7a6bb449550",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 更新 Docusaurus 版本 {#updating-your-docusaurus-version}"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "There are many ways to update your Docusaurus version. One guaranteed way is to manually change the version number in `package.json` to the desired version. Note that all `@docusaurus/`-namespaced packages should be using the same version.",
+      "source_content_hash": "75fbd3b6c5250ca6f78fb2f123f1dff5129b63f11d85826af31022160b230145",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e4c06005",
+      "source_content": "import UpgradeGuide from '@site/src/components/UpgradeGuide';",
+      "source_content_hash": "dd3fbf797a01c42e0dd9d2eb15f6fbb6aa6c62818c0623f91d466d4e943e4d78",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "24d53e93",
+      "source_content": "<UpgradeGuide />",
+      "source_content_hash": "aa35cc71811880717a0f536ac1676e67a6faaaf4b5516b4b283e09e9785a48b9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a8f09c71",
+      "source_content": "Then, in the directory containing `package.json`, run your package manager's install command:",
+      "source_content_hash": "f000f793af7d8aedf7fe1a29301a626d5fcafbcf674ff131f5d4fc7f8a5b2c1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "25a51782",
+      "source_content": "```bash npm2yarn\nnpm install\n```",
+      "source_content_hash": "950fc4a34358acc28e11f5ee2686c39bf408637f4997526ff113ff568ca125f2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "0ddaa835",
+      "source_content": "To check that the update occurred successfully, run:",
+      "source_content_hash": "690d324ff25e3ad3ba0a6cbb8c985dad7773f87bb342af948704ddcb95955537",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b5ea89c4",
+      "source_content": "```bash\nnpx docusaurus --version\n```",
+      "source_content_hash": "a13f528f8fb863d5949d4e44e93c91863259b7edb9f2092f537e9fa28769ee22",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "You should see the correct version as output.",
+      "source_content_hash": "b1b8c11deb2f63102f15b1274188577a32e7c764bbd74618f22a76d58a43711c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "Alternatively, if you are using Yarn, you can do:",
+      "source_content_hash": "d4a1a57f6f75451511aad20daa18bcde0cb6a47984170f688491470caba42bd2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5010ec34",
+      "source_content": "```bash\nyarn add @docusaurus/core @docusaurus/preset-classic\n```",
+      "source_content_hash": "ffd5ba2a8165ac0c3f76ee97ae9af6695c8de844ec39846031fba5fbc3e9d6c2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5055654e",
+      "source_content": ":::tip\n\nUse new unreleased features of Docusaurus with the [`@canary` npm dist tag](/community/canary)\n\n:::",
+      "source_content_hash": "c109674d0d622090a8fcbdac7b1db4b12c84183a81f5341551e61cc71648b5c5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "188a0310",
+      "source_content": "## Problems? {#problems}",
+      "source_content_hash": "e28ebfc4898acd3b8163903505e01e4147b1c76c50d852cf621d6e1f492ce83f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5cf1bce4",
+      "source_content": "Ask for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/docusaurus), on our [GitHub repository](https://github.com/facebook/docusaurus), our [Discord server](https://discordapp.com/invite/docusaurus), or [X](https://x.com/docusaurus).",
+      "source_content_hash": "ae5e055be548ef992e7778f802e1be0bd274b2f32423dfd73240b7f5ef49d5d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/installation.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.199081+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "5a10496ac9184458fdc198dcf7427ca8f67b0cfa8b37352ed62cdf3e2cf7367e"
+  }
+}

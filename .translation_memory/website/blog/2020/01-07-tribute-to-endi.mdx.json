@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2020/01-07-tribute-to-endi.mdx",
+  "source_file_content_hash": "c6ad0717714ef6c83260eeebdf94b2d53b9a80d25f14c96d02e9ec726e8e8322",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Tribute to Endi\nauthors: JMarcey\ntags: [endi, tribute]\n---",
+      "source_content_hash": "f23e19affb870634a7809f67f9738e3c96f266a563341b1c6a48c21d158bba9d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "It is with great sadness to announce that our primary external Docusaurus contributor, [Endilie Yacop Sucipto](https://github.com/endiliey) (Endi to those who knew him), [passed away](https://give.asia/campaign/help_endi_beat_cancer#/updates) over the weekend after an illness associated with his bout with cancer.",
+      "source_content_hash": "91f106bb4d70070b382f1edcea8ef11192738258a089f0b270dc23dbda56d4ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們懷著無比沉痛的心情宣布，Docusaurus 的主要外部貢獻者 [Endilie Yacop Sucipto](https://github.com/endiliey)（熟識他的人稱他為 Endi）在與癌症抗爭的疾病後，[於上週末不幸離世](https://give.asia/campaign/help_endi_beat_cancer#/updates)。"
+      }
+    },
+    {
+      "segment_id": "a2752550",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a2752550"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "It is impossible to overstate Endi's impact on this project:",
+      "source_content_hash": "d1fdac3cfd4b7aed649d5ca7813a2fa14d2cea95da70fcda524bd21cc72dadfa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Endi 對這個專案的影響力難以言喻："
+      }
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "- Docusaurus' top contributor, [by far](https://github.com/facebook/docusaurus/graphs/contributors).\n- [Lead developer](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2) on the nearly complete [version 2 of Docusaurus](https://docusaurus.io/blog/2019/12/30/docusaurus-2019-recap).\n- Overall passionate advocate of the project on [X](https://x.com/endiliey), [Discord](https://discord.gg/docusaurus) and other social media",
+      "source_content_hash": "aca19d43c45f3bee9b052c0a616d4e4bf0ad097fb0c52992cf83e9b4d2d8cd9b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 遙遙領先的 Docusaurus [頂尖貢獻者](https://github.com/facebook/docusaurus/graphs/contributors)\n- 近乎完成的 [Docusaurus 第二版](https://docusaurus.io/blog/2019/12/30/docusaurus-2019-recap) 的[首席開發者](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2)\n- 在 [X](https://x.com/endiliey)、[Discord](https://discord.gg/docusaurus) 等社交媒體上熱情推廣專案的倡導者"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Thinking about it now, it is absolutely amazing how much Endi accomplished on Docusaurus given what he was battling with his health.",
+      "source_content_hash": "c935c998bc2c313986fecfb5c6acd1678fac43f40c7e529b6d612b180ea5edde",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如今回想起來，Endi 在與健康搏鬥的同時，還能為 Docusaurus 完成如此驚人的貢獻，實在令人敬佩。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "We are working on ways to honor Endi's contributions - a commemorative sticker, possibly - and we are open to ideas. Leave a comment here or [tweet](https://x.com/docusaurus) if you have a suggestion.",
+      "source_content_hash": "9ecc17846df0f3472bea24e52367ad904348cc7bd82d17636870f9a978392dd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們正在籌劃紀念 Endi 貢獻的方式——可能製作紀念貼紙——並歡迎大家提供建議。若有想法，請在此留言或[發推文](https://x.com/docusaurus)告知我們。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "The Docusaurus project will not be the same without Endi, and those of us who worked with him will miss him greatly. 😔",
+      "source_content_hash": "a1712397c58948be316660be7afa9c510886ad79df10c225f825ef6f50bd6465",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 專案將因失去 Endi 而不再相同，與他共事過的我們都會深深懷念他。😔"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "![A photo from behind Endi's back, with Endi sitting on a rock cliff, facing the vast sea. His right hand forms a V pose.](/img/endi.jpg)",
+      "source_content_hash": "2814a23732c4162aa9409ea3b94300de79e961d0f17fc7ce47862eb10fea1de5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![一張從 Endi 背後拍攝的照片，Endi 坐在岩石懸崖上，面朝遼闊大海，右手比出勝利手勢。](/img/endi.jpg)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2020/01-07-tribute-to-endi.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.013432+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "c6ad0717714ef6c83260eeebdf94b2d53b9a80d25f14c96d02e9ec726e8e8322"
+  }
+}

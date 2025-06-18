@@ -1,0 +1,25 @@
+# 不索引頁面範例
+
+<head>
+  <meta name="robots" content="nOiNdeX, NoFolLoW" />
+</head>
+
+此頁面將不會被搜尋引擎索引，因為它包含以下[頁面元數據](/docs/seo#single-page-metadata)標記：
+
+```html
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+```
+
+:::tip
+
+站點地圖插件會過濾包含 `noindex` 內容值的頁面。此頁面不會出現在 Docusaurus 的 [sitemap.xml](pathname:///sitemap.xml) 檔案中。
+
+:::
+
+:::note
+
+機器人指令是[不區分大小寫](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)的。
+
+:::

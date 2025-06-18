@@ -1,0 +1,216 @@
+---
+id: introduction
+description: Docusaurus uses MDX. Find out more about Docusaurus-specific features when writing Markdown.
+slug: /markdown-features
+---
+
+# Markdown 功能
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
+Docusaurus 使用 **[Markdown](https://commonmark.org/)** 作為主要內容撰寫格式。
+
+:::tip[學習 Markdown]
+
+您可以[在 10 分鐘內學會 Markdown](https://commonmark.org/help/)。
+
+:::
+
+Docusaurus 使用現代化工具協助您建立**互動式文檔**。
+
+**[MDX](https://mdxjs.com/)** 編譯器會將 **Markdown 文件轉換為 React 元件**，並允許您在 Markdown 內容中使用 JSX。這讓您能輕鬆地在內容中穿插 React 元件，創造出令人愉悅的學習體驗。
+
+:::tip[使用 MDX 遊樂場]
+
+**[MDX 遊樂場](https://mdxjs.com/playground/)** 是您的新朋友！
+
+這是一個非常有用的除錯工具，能展示 MDX 編譯器如何將 Markdown 轉換為 React。
+
+**選項**：選擇正確的格式（MDX 或 CommonMark）以及 Docusaurus 使用的以下插件：`remark-gfm`、`remark-directive`、`rehype-raw`。
+
+:::
+
+## MDX vs. CommonMark {#mdx-vs-commonmark}
+
+Docusaurus 使用 MDX 編譯器將 `.md` 和 `.mdx` 文件都編譯為 React 元件，但**語法的解析方式可能因設定而異**。
+
+MDX 編譯器支援 [2 種格式](https://mdxjs.com/packages/mdx/#optionsformat)：
+
+- [MDX 格式](https://mdxjs.com/docs/what-is-mdx/)：強大的解析器，允許使用 JSX
+- [CommonMark 格式](https://commonmark.org/)：符合標準的 Markdown 解析器，不允許使用 JSX
+
+預設情況下，**Docusaurus v3 對所有文件（包括 `.md` 文件）使用 MDX 格式**（基於歷史原因）。
+
+您可以透過 [`siteConfig.markdown.format`](../../api/docusaurus.config.js.mdx#markdown) 設定或 `mdx.format: md` 前置資料**選擇改用 CommonMark**。
+
+:::tip[如何使用 CommonMark]
+
+如果您計劃使用 CommonMark，我們建議使用 [`siteConfig.markdown.format: 'detect'`](../../api/docusaurus.config.js.mdx#markdown) 設定。系統會根據副檔名自動選擇適當的格式：
+
+- `.md` 文件將使用 CommonMark 格式
+- `.mdx` 文件將使用 MDX 格式
+
+:::
+
+## 標準功能 {#standard-features}
+
+Markdown 是一種讓您能以易讀語法撰寫格式化內容的語法。
+
+```md
+### My Doc Section
+
+Hello world message with some **bold** text, some _italic_ text, and a [link](/)
+
+![img alt](/img/docusaurus.png)
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+<h3>My Doc Section</h3>
+
+Hello world message with some **bold** text, some _italic_ text and a [link](/)
+
+![img alt](/img/docusaurus.png)
+
+</BrowserWindow>
+```
+
+<details>
+
+<summary>Markdown is declarative</summary>
+
+Some may assume a 1-1 correlation between Markdown and HTML, e.g., `![Preview](/img/docusaurus.png)` will always become `<img src="/img/docusaurus.png" alt="Preview" />`, as-is. However, _that is not the case_.
+
+The Markdown syntax `![message](url)` only declaratively tells Docusaurus that an image needs to be inserted here, but we may do other things like transforming a [file path to URL path](./markdown-features-assets.mdx#images), so the generated markup may differ from the output of other Markdown renderers, or a naïve hand-transcription to the equivalent JSX/HTML code.
+
+In general, you should only assume the _semantics_ of the markup (` ``` ` fences become [code blocks](./markdown-features-code-blocks.mdx); `>` becomes [quotes](#quotes), etc.), but not the actual compiled output.
+
+</details>
+
+## 前置資料 {#front-matter}
+
+前置資料用於為 Markdown 文件添加元數據。所有內容插件都有自己的前置資料結構，並使用前置資料來豐富從內容或其他配置推斷出的預設元數據。
+
+前置資料位於文件最頂端，由三個破折號 `---` 包圍。內容以 [YAML](https://yaml.org/spec/1.2.2/) 格式解析。
+
+```md
+---
+title: My Doc Title
+more_data:
+  - Can be provided
+  - as: objects
+    or: arrays
+---
+```
+
+:::info
+
+每個官方插件的 API 文檔都列出了支援的屬性：
+
+- [文檔前置資料](../../api/plugins/plugin-content-docs.mdx#markdown-front-matter)
+- [部落格前置資料](../../api/plugins/plugin-content-blog.mdx#markdown-front-matter)
+- [頁面前置資料](../../api/plugins/plugin-content-pages.mdx#markdown-front-matter)
+
+:::
+
+:::tip[enhance your front matter]
+
+Use the [Markdown config `parseFrontMatter` function](../../api/docusaurus.config.js.mdx#markdown) to provide your own front matter parser, or to enhance the default parser.
+
+It is possible to reuse the default parser to wrap it with your own custom proprietary logic. This makes it possible to implement convenient front matter transformations, shortcuts, or to integrate with external systems using front matter that Docusaurus plugins do not support.
+
+```js title="docusaurus.config.js"
+export default {
+  markdown: {
+    // highlight-start
+    parseFrontMatter: async (params) => {
+      // Reuse the default parser
+      const result = await params.defaultParseFrontMatter(params);
+
+      // Process front matter description placeholders
+      result.frontMatter.description =
+        result.frontMatter.description?.replaceAll('{{MY_VAR}}', 'MY_VALUE');
+
+      // Create your own front matter shortcut
+      if (result.frontMatter.i_do_not_want_docs_pagination) {
+        result.frontMatter.pagination_prev = null;
+        result.frontMatter.pagination_next = null;
+      }
+
+      // Rename an unsupported front matter coming from another system
+      if (result.frontMatter.cms_seo_summary) {
+        result.frontMatter.description = result.frontMatter.cms_seo_summary;
+        delete result.frontMatter.cms_seo_summary;
+      }
+
+      return result;
+    },
+    // highlight-end
+  },
+};
+```
+
+:::
+
+## Quotes {#quotes}
+
+Markdown quotes are beautifully styled:
+
+```md
+> Easy to maintain open source documentation websites.
+>
+> — Docusaurus
+```
+
+<BrowserWindow>
+
+> Easy to maintain open source documentation websites.
+>
+> — Docusaurus
+
+</BrowserWindow>
+
+## Details {#details}
+
+Markdown can embed HTML elements, and [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) HTML elements are beautifully styled:
+
+```md
+### Details element example
+
+<details>
+  <summary>Toggle me!</summary>
+  <div>
+    <div>This is the detailed content</div>
+    <br/>
+    <details>
+      <summary>
+        Nested toggle! Some surprise inside...
+      </summary>
+      <div>😲😲😲😲😲</div>
+    </details>
+  </div>
+</details>
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+<h3>Details element example</h3>
+
+<details>
+  <summary>Toggle me!</summary>
+  <div>
+    <div>This is the detailed content</div>
+    <br/>
+    <details>
+      <summary>
+        Nested toggle! Some surprise inside...
+      </summary>
+      <div>😲😲😲😲😲</div>
+    </details>
+  </div>
+</details>
+
+</BrowserWindow>
+```

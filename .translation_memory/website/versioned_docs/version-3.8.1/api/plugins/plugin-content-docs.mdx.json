@@ -1,0 +1,432 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/api/plugins/plugin-content-docs.mdx",
+  "source_file_content_hash": "4689eed17acb65ecef055e2115296559467a666964d7989ed2df9d351ed40e35",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\nslug: /api/plugins/@docusaurus/plugin-content-docs\n---",
+      "source_content_hash": "b92dfb32b5c7bc4d9dd00ab866bebc7c594b0a4ddb9dd83b4bf67ca69946639c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-content-docs",
+      "source_content_hash": "c7b844ea2bd247de961c5638096d42ba3a37902ef58f1e1d75fa9e114a0eb337",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-content-docs"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Provides the [Docs](../../guides/docs/docs-introduction.mdx) functionality and is the default docs plugin for Docusaurus.",
+      "source_content_hash": "4f91f15660568b7a732bb2e116b48ce77858f0d55a6b91ed60be834f78eda061",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "提供 [Docs](../../guides/docs/docs-introduction.mdx) 功能，是 Docusaurus 的預設文檔插件。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-content-docs\n```",
+      "source_content_hash": "d94b1b951c2e30e21f019e6465b560c54e51c740eeb1a82982390fbab2bc40c6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "440191a5",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.\n\nYou can configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic).\n\n:::",
+      "source_content_hash": "737b2a008954011fd073f76b42dc5ff859f8bcaced754eff0b2741c9f733f873",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您使用 `@docusaurus/preset-classic` 預設配置，則無需額外安裝此插件作為依賴項。\n\n您可透過 [預設選項](../../using-plugins.mdx#docusauruspreset-classic) 配置此插件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受字段："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "6c3c2cc2",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `path` | `string` | `'docs'` | Path to the docs content directory on the file system, relative to site directory. |\n| `editUrl` | <code>string \\| [EditUrlFunction](#EditUrlFunction)</code> | `undefined` | Base URL to edit your site. The final URL is computed by `editUrl + relativeDocPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links. |\n| `editLocalizedFiles` | `boolean` | `false` | The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function. |\n| `editCurrentVersion` | `boolean` | `false` | The edit URL will always target the current version doc instead of older versions. Ignored when `editUrl` is a function. |\n| `routeBasePath` | `string` | `'docs'` | URL route for the docs section of your site. **DO NOT** include a trailing slash. Use `/` for shipping docs without base path. |\n| `tagsBasePath` | `string` | `'tags'` | URL route for the tags list page of your site. It is prepended to the `routeBasePath`. |\n| `include` | `string[]` | `['**/*.{md,mdx}']` | Array of glob patterns matching Markdown files to be built, relative to the content path. |\n| `exclude` | `string[]` | _See example configuration_ | Array of glob patterns matching Markdown files to be excluded. Serves as refinement based on the `include` option. |\n| `sidebarPath` | <code>false \\| string</code> | `undefined` | Path to a sidebars configuration file, loaded in a Node.js context. Use `false` to disable sidebars, or `undefined` to create a fully autogenerated sidebar. |\n| `sidebarCollapsible` | `boolean` | `true` | Whether sidebar categories are collapsible by default. See also [Collapsible categories](/docs/sidebar/items#collapsible-categories) |\n| `sidebarCollapsed` | `boolean` | `true` | Whether sidebar categories are collapsed by default. See also [Expanded categories by default](/docs/sidebar/items#expanded-categories-by-default) |\n| `sidebarItemsGenerator` | <code>[SidebarGenerator](#SidebarGenerator)</code> | _Omitted_ | Function used to replace the sidebar items of type `'autogenerated'` with real sidebar items (docs, categories, links...). See also [Customize the sidebar items generator](/docs/sidebar/autogenerated#customize-the-sidebar-items-generator) |\n| `numberPrefixParser` | <code>boolean \\| [PrefixParser](#PrefixParser)</code> | _Omitted_ | Custom parsing logic to extract number prefixes from file names. Use `false` to disable this behavior and leave the docs untouched, and `true` to use the default parser. See also [Using number prefixes](/docs/sidebar/autogenerated#using-number-prefixes) |\n| `docsRootComponent` | `string` | `'@theme/DocsRoot'` | Parent component of all the docs plugin pages (including all versions). Stays mounted when navigation between docs pages and versions. |\n| `docVersionRootComponent` | `string` | `'@theme/DocVersionLayout'` | Parent component of all docs pages of an individual version (doc pages with sidebars, tags pages). Stays mounted when navigation between pages of that specific version. |\n| `docRootComponent` | `string` | `'@theme/DocRoot'` | Parent component of all doc pages with sidebars (regular docs pages, category generated index pages). Stays mounted when navigation between such pages. |\n| `docItemComponent` | `string` | `'@theme/DocItem'` | Main doc container, with TOC, pagination, etc. |\n| `docTagsListComponent` | `string` | `'@theme/DocTagsListPage'` | Root component of the tags list page |\n| `docTagDocListComponent` | `string` | `'@theme/DocTagDocListPage'` | Root component of the \"docs containing tag X\" page. |\n| `docCategoryGeneratedIndexComponent` | `string` | `'@theme/DocCategoryGeneratedIndexPage'` | Root component of the generated category index page. |\n| `remarkPlugins` | `any[]` | `[]` | Remark plugins passed to MDX. |\n| `rehypePlugins` | `any[]` | `[]` | Rehype plugins passed to MDX. |\n| `rehypePlugins` | `any[]` | `[]` | Recma plugins passed to MDX. |\n| `beforeDefaultRemarkPlugins` | `any[]` | `[]` | Custom Remark plugins passed to MDX before the default Docusaurus Remark plugins. |\n| `beforeDefaultRehypePlugins` | `any[]` | `[]` | Custom Rehype plugins passed to MDX before the default Docusaurus Rehype plugins. |\n| `showLastUpdateAuthor` | `boolean` | `false` | Whether to display the author who last updated the doc. |\n| `showLastUpdateTime` | `boolean` | `false` | Whether to display the last date the doc was updated. This requires access to git history during the build, so will not work correctly with shallow clones (a common default for CI systems). With GitHub `actions/checkout`, use`fetch-depth: 0`. |\n| `breadcrumbs` | `boolean` | `true` | Enable or disable the breadcrumbs on doc pages. |\n| `disableVersioning` | `boolean` | `false` | Explicitly disable versioning even when multiple versions exist. This will make the site only include the current version. Will error if `includeCurrentVersion: false` and `disableVersioning: true`. |\n| `includeCurrentVersion` | `boolean` | `true` | Include the current version of your docs. |\n| `lastVersion` | `string` | First version in `versions.json` | The version navigated to in priority and displayed by default for docs navbar items. |\n| `onlyIncludeVersions` | `string[]` | All versions available | Only include a subset of all available versions. |\n| `versions` | <code>[VersionsConfig](#VersionsConfig)</code> | `{}` | Independent customization of each version's properties. |\n| `tags` | `string \\| false \\| null \\| undefined` | `tags.yml` | Path to a YAML file listing pre-defined tags. Relative to the docs version content directories. |\n| `onInlineTags` | `'ignore' \\| 'log' \\| 'warn' \\| 'throw'` | `warn` | The plugin behavior when docs contain inline tags (not appearing in the list of pre-defined tags, usually `docs/tags.yml`). |",
+      "source_content_hash": "528c1ade10478a53869306fcbd9f3c6a77094001e9530b8f21f77e8116dfab78",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6c3c2cc2"
+      }
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fb3ded8"
+      }
+    },
+    {
+      "segment_id": "b051b70c",
+      "source_content": "### Types {#types}",
+      "source_content_hash": "034686b12f78982c1e0199ff93724cd49daf8a7ddf6e6948ebd61df99af28c7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型 {#types}"
+      }
+    },
+    {
+      "segment_id": "98355e36",
+      "source_content": "#### `EditUrlFunction` {#EditUrlFunction}",
+      "source_content_hash": "e03763744f5c99aabe04b2611f1ef3cc3cb739bb7c051d6be30fc725e24455b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `EditUrlFunction` {#EditUrlFunction}"
+      }
+    },
+    {
+      "segment_id": "7b2110d8",
+      "source_content": "```ts\ntype EditUrlFunction = (params: {\n  version: string;\n  versionDocsDirPath: string;\n  docPath: string;\n  permalink: string;\n  locale: string;\n}) => string | undefined;\n```",
+      "source_content_hash": "fcab627c81756d85b24a315e4d911b74f116b506ec3405165c07178ffe856a41",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7b2110d8"
+      }
+    },
+    {
+      "segment_id": "90d35b51",
+      "source_content": "#### `PrefixParser` {#PrefixParser}",
+      "source_content_hash": "baf88d8d9ab6bedb39f7109bdcfe3fc2cdaf1094316f9c5b465fd4b7ebcfedc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `PrefixParser` {#PrefixParser}"
+      }
+    },
+    {
+      "segment_id": "f8065412",
+      "source_content": "```ts\ntype PrefixParser = (filename: string) => {\n  filename: string;\n  numberPrefix?: number;\n};\n```",
+      "source_content_hash": "975d07555159da44bc5da52ed2884c3052fd96b2a29bcddfc23c941b460e3919",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f8065412"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "#### `SidebarGenerator` {#SidebarGenerator}",
+      "source_content_hash": "10964721bff670b908899be9723b73087190da87b24a4d13cf66fc9803c1fbd7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `SidebarGenerator` {#SidebarGenerator}"
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```ts\ntype SidebarGenerator = (generatorArgs: {\n  /** The sidebar item with type \"autogenerated\" to be transformed. */\n  item: {type: 'autogenerated'; dirName: string};\n  /** Useful metadata for the version this sidebar belongs to. */\n  version: {contentPath: string; versionName: string};\n  /** All the docs of that version (unfiltered). */\n  docs: {\n    id: string;\n    title: string;\n    frontMatter: DocFrontMatter & Record<string, unknown>;\n    source: string;\n    sourceDirName: string;\n    sidebarPosition?: number | undefined;\n  }[];\n  /** Number prefix parser configured for this plugin. */\n  numberPrefixParser: PrefixParser;\n  /** The default category index matcher which you can override. */\n  isCategoryIndex: CategoryIndexMatcher;\n  /**\n   * key is the path relative to the doc content directory, value is the\n   * category metadata file's content.\n   */\n  categoriesMetadata: {[filePath: string]: CategoryMetadata};\n  /**\n   * Useful to re-use/enhance the default sidebar generation logic from\n   * Docusaurus.\n   */\n  defaultSidebarItemsGenerator: SidebarGenerator;\n  // Returns an array of sidebar items — same as what you can declare in\n  // sidebars.js, except for shorthands. See https://docusaurus.io/docs/sidebar/items\n}) => Promise<SidebarItem[]>;\n\ntype CategoryIndexMatcher = (param: {\n  /** The file name, without extension */\n  fileName: string;\n  /**\n   * The list of directories, from lowest level to highest.\n   * If there's no dir name, directories is ['.']\n   */\n  directories: string[];\n  /** The extension, with a leading dot */\n  extension: string;\n}) => boolean;\n```",
+      "source_content_hash": "5206d81044f4c75c9f03573ff03aae1a52bc77a14846ead48a0b8f727cd3af53",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "a0d0e29e",
+      "source_content": "#### `VersionsConfig` {#VersionsConfig}",
+      "source_content_hash": "85d00153e3534531836caff6cbaeb6f3759a01e0104597686a0a0c8d9beb13d1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `VersionsConfig` {#VersionsConfig}"
+      }
+    },
+    {
+      "segment_id": "eb25bb8c",
+      "source_content": "```ts\ntype VersionConfig = {\n  /**\n   * The base path of the version, will be appended to `baseUrl` +\n   * `routeBasePath`.\n   */\n  path?: string;\n  /** The label of the version to be used in badges, dropdowns, etc. */\n  label?: string;\n  /** The banner to show at the top of a doc of that version. */\n  banner?: 'none' | 'unreleased' | 'unmaintained';\n  /** Show a badge with the version label at the top of each doc. */\n  badge?: boolean;\n  /** Prevents search engines from indexing this version */\n  noIndex?: boolean;\n  /** Add a custom class name to the <html> element of each doc */\n  className?: string;\n};\n\ntype VersionsConfig = {[versionName: string]: VersionConfig};\n```",
+      "source_content_hash": "3924c8b8a39056484d16918096892ce9a78bfe90dbbedae8c566ca12748f57bf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eb25bb8c"
+      }
+    },
+    {
+      "segment_id": "16ae54ea",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "You can configure this plugin through preset options or plugin options.",
+      "source_content_hash": "118dd7722fc15d0951831695d6b79451361a000dc8a9de8138e737e9fe881ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過預設選項或插件選項配置此插件。"
+      }
+    },
+    {
+      "segment_id": "26eeb605",
+      "source_content": ":::tip\n\nMost Docusaurus users configure this plugin through the preset options.\n\n:::",
+      "source_content_hash": "0a660704749473b8e0f2d5316b808fdf177b0264e404d29b9d4653e71924c332",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n多數 Docusaurus 用戶透過預設選項配置此插件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "904df6eb",
+      "source_content": "```js config-tabs\n// Preset Options: docs\n// Plugin Options: @docusaurus/plugin-content-docs\n\nconst config = {\n  path: 'docs',\n  breadcrumbs: true,\n  // Simple use-case: string editUrl\n  // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',\n  // Advanced use-case: functional editUrl\n  editUrl: ({versionDocsDirPath, docPath}) =>\n    `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`,\n  editLocalizedFiles: false,\n  editCurrentVersion: false,\n  routeBasePath: 'docs',\n  include: ['**/*.md', '**/*.mdx'],\n  exclude: [\n    '**/_*.{js,jsx,ts,tsx,md,mdx}',\n    '**/_*/**',\n    '**/*.test.{js,jsx,ts,tsx}',\n    '**/__tests__/**',\n  ],\n  sidebarPath: 'sidebars.js',\n  async sidebarItemsGenerator({\n    defaultSidebarItemsGenerator,\n    numberPrefixParser,\n    item,\n    version,\n    docs,\n    isCategoryIndex,\n  }) {\n    // Use the provided data to generate a custom sidebar slice\n    return [\n      {type: 'doc', id: 'intro'},\n      {\n        type: 'category',\n        label: 'Tutorials',\n        items: [\n          {type: 'doc', id: 'tutorial1'},\n          {type: 'doc', id: 'tutorial2'},\n        ],\n      },\n    ];\n  },\n  numberPrefixParser(filename) {\n    // Implement your own logic to extract a potential number prefix\n    const numberPrefix = findNumberPrefix(filename);\n    // Prefix found: return it with the cleaned filename\n    if (numberPrefix) {\n      return {\n        numberPrefix,\n        filename: filename.replace(prefix, ''),\n      };\n    }\n    // No number prefix found\n    return {numberPrefix: undefined, filename};\n  },\n  docsRootComponent: '@theme/DocsRoot',\n  docVersionRootComponent: '@theme/DocVersionRoot',\n  docRootComponent: '@theme/DocRoot',\n  docItemComponent: '@theme/DocItem',\n  remarkPlugins: [require('./my-remark-plugin')],\n  rehypePlugins: [],\n  beforeDefaultRemarkPlugins: [],\n  beforeDefaultRehypePlugins: [],\n  showLastUpdateAuthor: false,\n  showLastUpdateTime: false,\n  disableVersioning: false,\n  includeCurrentVersion: true,\n  lastVersion: undefined,\n  versions: {\n    current: {\n      label: 'Android SDK v2.0.0 (WIP)',\n      path: 'android-2.0.0',\n      banner: 'none',\n    },\n    '1.0.0': {\n      label: 'Android SDK v1.0.0',\n      path: 'android-1.0.0',\n      banner: 'unmaintained',\n    },\n  },\n  onlyIncludeVersions: ['current', '1.0.0', '2.0.0'],\n};\n```",
+      "source_content_hash": "875c3779dc583f0ffe324d5b6ba8b91058ee83b137bbf698de8f18aa9eb1f728",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_904df6eb"
+      }
+    },
+    {
+      "segment_id": "66a437ee",
+      "source_content": "## Markdown front matter {#markdown-front-matter}",
+      "source_content_hash": "b854995dbf0992227ce760c6a3aa3c73e5d0080774b09ab62c46bfabed5f2f1b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Markdown 前置元數據 {#markdown-front-matter}"
+      }
+    },
+    {
+      "segment_id": "bb5297fc",
+      "source_content": "Markdown documents can use the following Markdown [front matter](../../guides/markdown-features/markdown-features-intro.mdx#front-matter) metadata fields, enclosed by a line `---` on either side.",
+      "source_content_hash": "84192aca6d91a3f87c9e5f8ae3617d0015a70951827c7e7b0dcb7c1e60d0bf8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 文檔可使用以下 Markdown [前置元數據](../../guides/markdown-features/markdown-features-intro.mdx#front-matter) 字段，需以 `---` 分隔線包圍。"
+      }
+    },
+    {
+      "segment_id": "2cfc0629",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受字段："
+      }
+    },
+    {
+      "segment_id": "cb0a9597",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb0a9597"
+      }
+    },
+    {
+      "segment_id": "4831c8d8",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `id` | `string` | file path (including folders, without the extension) | A unique document ID. |\n| `title` | `string` | Markdown title or `id` | The text title of your document. Used for the page metadata and as a fallback value in multiple places (sidebar, next/previous buttons...). Automatically added at the top of your doc if it does not contain any Markdown title. |\n| `pagination_label` | `string` | `sidebar_label` or `title` | The text used in the document next/previous buttons for this document. |\n| `sidebar_label` | `string` | `title` | The text shown in the document sidebar for this document. |\n| `sidebar_position` | `number` | Default ordering | Controls the position of a doc inside the generated sidebar slice when using `autogenerated` sidebar items. See also [Autogenerated sidebar metadata](/docs/sidebar/autogenerated#autogenerated-sidebar-metadata). |\n| `sidebar_class_name` | `string` | `undefined` | Gives the corresponding sidebar label a special class name when using autogenerated sidebars. |\n| `sidebar_custom_props` | `object` | `undefined` | Assign [custom props](../../guides/docs/sidebar/index.mdx#passing-custom-props) to the sidebar item referencing this doc |\n| `displayed_sidebar` | `string` | `undefined` | Force the display of a given sidebar when browsing the current document. Read the [multiple sidebars guide](../../guides/docs/sidebar/multiple-sidebars.mdx) for details. |\n| `hide_title` | `boolean` | `false` | Whether to hide the title at the top of the doc. It only hides a title declared through the front matter, and have no effect on a Markdown title at the top of your document. |\n| `hide_table_of_contents` | `boolean` | `false` | Whether to hide the table of contents to the right. |\n| `toc_min_heading_level` | `number` | `2` | The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value. |\n| `toc_max_heading_level` | `number` | `3` | The max heading level shown in the table of contents. Must be between 2 and 6. |\n| `pagination_next` | <code>string \\| null</code> | Next doc in the sidebar | The ID of the documentation you want the \"Next\" pagination to link to. Use `null` to disable showing \"Next\" for this page. |\n| `pagination_prev` | <code>string \\| null</code> | Previous doc in the sidebar | The ID of the documentation you want the \"Previous\" pagination to link to. Use `null` to disable showing \"Previous\" for this page. |\n| `parse_number_prefixes` | `boolean` | `numberPrefixParser` plugin option | Whether number prefix parsing is disabled on this doc. See also [Using number prefixes](/docs/sidebar/autogenerated#using-number-prefixes). |\n| `custom_edit_url` | <code>string \\| null</code> | Computed using the `editUrl` plugin option | The URL for editing this document. Use `null` to disable showing \"Edit this page\" for this page. |\n| `keywords` | `string[]` | `undefined` | Keywords meta tag for the document page, for search engines. |\n| `description` | `string` | The first line of Markdown content | The description of your document, which will become the `<meta name=\"description\" content=\"...\"/>` and `<meta property=\"og:description\" content=\"...\"/>` in `<head>`, used by search engines. |\n| `image` | `string` | `undefined` | Cover or thumbnail image that will be used as the `<meta property=\"og:image\" content=\"...\"/>` in the `<head>`, enhancing link previews on social media and messaging platforms. |\n| `slug` | `string` | File path | Allows to customize the document URL (`/<routeBasePath>/<slug>`). Support multiple patterns: `slug: my-doc`, `slug: /my/path/myDoc`, `slug: /`. |\n| `tags` | `Tag[]` | `undefined` | A list of strings or objects of two string fields `label` and `permalink` to tag to your docs. Strings can be a reference to keys of a [tags file](#tags-file) (usually `tags.yml`) |\n| `draft` | `boolean` | `false` | Draft documents will only be available during development. |\n| `unlisted` | `boolean` | `false` | Unlisted documents will be available in both development and production. They will be \"hidden\" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link. |\n| `last_update` | `FrontMatterLastUpdate` | `undefined` | Allows overriding the last update author/date. Date can be any [parsable date string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse). |",
+      "source_content_hash": "8f3acc85d1b3aa351a0b92f6878c87c5a7487ea4adb34dc32fd56441ac6fee79",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4831c8d8"
+      }
+    },
+    {
+      "segment_id": "999199d1",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_999199d1"
+      }
+    },
+    {
+      "segment_id": "7a5ad31f",
+      "source_content": "```ts\ntype FrontMatterLastUpdate = {date?: string; author?: string};\n\ntype Tag = string | {label: string; permalink: string};\n```",
+      "source_content_hash": "f1900c32e8c3b2ddc2827e82458879aff2edbffb5665444ce5cd9da83a63cb94",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a5ad31f"
+      }
+    },
+    {
+      "segment_id": "45d5dee4",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "b19953ed",
+      "source_content": "```md\n---\nid: doc-markdown\ntitle: Docs Markdown Features\nhide_title: false\nhide_table_of_contents: false\nsidebar_label: Markdown\nsidebar_position: 3\npagination_label: Markdown features\ncustom_edit_url: https://github.com/facebook/docusaurus/edit/main/docs/api-doc-markdown.md\ndescription: How do I find you when I cannot solve this problem\nkeywords:\n  - docs\n  - docusaurus\ntags: [docusaurus]\nimage: https://i.imgur.com/mErPwqL.png\nslug: /myDoc\nlast_update:\n  date: 1/1/2000\n  author: custom author name\n---\n\n# Markdown Features\n\nMy Document Markdown content\n```",
+      "source_content_hash": "54ed6df7a866c19e971ba64c94e9f45502e81be7507b1a0bf6a52001c67d5c48",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b19953ed"
+      }
+    },
+    {
+      "segment_id": "5e0dc5de",
+      "source_content": "import TagsFileApiRefSection from './_partial-tags-file-api-ref-section.mdx';",
+      "source_content_hash": "8ca0a556375f68b6e12fc5485180d69ca71f8b0f6c70ede428d6fa9490499877",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5e0dc5de"
+      }
+    },
+    {
+      "segment_id": "713db72c",
+      "source_content": "<TagsFileApiRefSection />",
+      "source_content_hash": "4746206763a4efd93a4ee31cabe0fa55a6b30f4d8a12a6f37db5b774a5514b6c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_713db72c"
+      }
+    },
+    {
+      "segment_id": "fb020fb7",
+      "source_content": "## i18n {#i18n}",
+      "source_content_hash": "8fc6a816714ea84a43f45dcec8ad8ed16efdecffd610899dbba8869a40b117cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 國際化 {#i18n}"
+      }
+    },
+    {
+      "segment_id": "dbd18971",
+      "source_content": "Read the [i18n introduction](../../i18n/i18n-introduction.mdx) first.",
+      "source_content_hash": "7f3f6f6c86b9b8b0e831ef8680f94c902afcbd8b33228361a1dcd764ca9b42b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請先閱讀 [國際化介紹](../../i18n/i18n-introduction.mdx)。"
+      }
+    },
+    {
+      "segment_id": "4e36860d",
+      "source_content": "### Translation files location {#translation-files-location}",
+      "source_content_hash": "c4a2c001ab74402c22d2ce9621ec4331a59c8b9e0ab446f580b97d441bed9f1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯文件位置 {#translation-files-location}"
+      }
+    },
+    {
+      "segment_id": "f6aafc57",
+      "source_content": "- **Base path**: `website/i18n/[locale]/docusaurus-plugin-content-docs`\n- **Multi-instance path**: `website/i18n/[locale]/docusaurus-plugin-content-docs-[pluginId]`\n- **JSON files**: extracted with [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir)\n- **Markdown files**: `website/i18n/[locale]/docusaurus-plugin-content-docs/[versionName]`",
+      "source_content_hash": "f26664e48741eb5c2a2edf6825b2457a77505dcd94e810e963aab9aae0370433",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **基礎路徑**: `website/i18n/[locale]/docusaurus-plugin-content-docs`\n- **多實例路徑**: `website/i18n/[locale]/docusaurus-plugin-content-docs-[pluginId]`\n- **JSON 文件**: 透過 [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir) 命令提取\n- **Markdown 文件**: `website/i18n/[locale]/docusaurus-plugin-content-docs/[versionName]`"
+      }
+    },
+    {
+      "segment_id": "fb79182e",
+      "source_content": "### Example file-system structure {#example-file-system-structure}",
+      "source_content_hash": "57da28ad906fdd886089988ed51e309efc11cd799e4c58ffb0d296344765dd14",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文件系統結構範例 {#example-file-system-structure}"
+      }
+    },
+    {
+      "segment_id": "4c0c56cd",
+      "source_content": "```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-docs\n│\n│ # translations for website/docs\n├── current\n│   ├── api\n│   │   └── config.md\n│   └── getting-started.md\n├── current.json\n│\n│ # translations for website/versioned_docs/version-1.0.0\n├── version-1.0.0\n│   ├── api\n│   │   └── config.md\n│   └── getting-started.md\n└── version-1.0.0.json\n```",
+      "source_content_hash": "ecdc11eb55e3e68ad57611e101c55d482763183da1dc3288fae6e9f1042468b5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c0c56cd"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/api/plugins/plugin-content-docs.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.384623+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "4689eed17acb65ecef055e2115296559467a666964d7989ed2df9d351ed40e35"
+  }
+}

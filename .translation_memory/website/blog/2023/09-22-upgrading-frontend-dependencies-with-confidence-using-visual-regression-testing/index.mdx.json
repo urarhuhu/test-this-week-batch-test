@@ -1,0 +1,772 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2023/09-22-upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing/index.mdx",
+  "source_file_content_hash": "a41083b6226c20b37a7c1b0d1a01c445503ebf0282f5601e44d33638a756f4d1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nauthors:\n  - slorber\ntags: [release]\nslug: /upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing\ndescription: Upgrade npm dependencies with confidence thanks to a visual regression testing workflow using GitHub Actions, Playwright and Argos.\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "4caf6f969ec4d8c73cfc5c270bfc1bdcdf6b30529dbaa3eb7b4e623dbd4927da",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Upgrading frontend dependencies with confidence",
+      "source_content_hash": "ff2c272fc7e86e87d9140a9ce1aadfdcb6619955bb522654b2c3ac42d948a939",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 自信升級前端依賴項"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Frontend developers often need to **upgrade npm dependencies**, but those upgrades can feel scary and lead to **subtle UI side effects** not caught by your regular test suite.",
+      "source_content_hash": "cc9d11e09af1d73858431a18564b042d9020ab5973d4a86ec5817faaa99adeb6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "前端開發者經常需要**升級 npm 依賴項**，但這些升級可能令人擔憂，並導致**常規測試套件未捕捉到的細微 UI 副作用**。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Upgrading Docusaurus is a good example: without reviewing all the pages one by one, it's hard to be sure there's no visual regression. **Docusaurus v3 is around the corner** (currently in [beta](https://github.com/facebook/docusaurus/discussions/9312)), and we would like to help you do this upgrade with confidence.",
+      "source_content_hash": "8d7c05df440193b60416c42653ef99c77cef4cf3faefb80b1063d62635b9b30d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級 Docusaurus 就是一個很好的例子：若不逐一檢查所有頁面，很難確定沒有視覺回歸問題。**Docusaurus v3 即將發布**（目前處於[測試階段](https://github.com/facebook/docusaurus/discussions/9312)），我們希望能協助您自信地完成此升級。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "This article introduces a **visual regression testing** workflow based on [**GitHub Actions**](https://github.com/features/actions), [**Playwright**](https://playwright.dev/), and [**Argos**](https://argos-ci.com/). It is not directly coupled to Docusaurus or React, and can be adapted to work with other frontend applications and frameworks.",
+      "source_content_hash": "736a33ea5352bee229e9a8f32b13f8ae3b14e7b1f02da632b61f06dc92b0a8cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本文介紹基於 [**GitHub Actions**](https://github.com/features/actions)、[**Playwright**](https://playwright.dev/) 和 [**Argos**](https://argos-ci.com/) 的**視覺回歸測試**工作流程。該流程不直接耦合 Docusaurus 或 React，可適應其他前端應用和框架。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "![Upgrading frontend dependencies with confidence - social card](./img/social-card.png)",
+      "source_content_hash": "958151fa32338506533b9d94dd72c9da574ea11f6204a625e6f9195f328ec14f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![自信升級前端依賴項 - 社交卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "c6da205d",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c6da205d"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "This workflow has been tested while upgrading Docusaurus v2 to v3, and already helped catch a few visual regressions on sites such as [React Native](https://reactnative.dev/), [Jest](https://jestjs.io/), and the [Docusaurus](https://docusaurus.io/) site itself.",
+      "source_content_hash": "d1a68769961d227804d42bab3d0cef8d54f96e7595fa00b0a62d23845c6127b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此工作流程已在 Docusaurus v2 升級至 v3 的過程中測試，並成功捕捉到 [React Native](https://reactnative.dev/)、[Jest](https://jestjs.io/) 和 [Docusaurus](https://docusaurus.io/) 官網等網站的數個視覺回歸問題。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Docusaurus v3 comes with infrastructure changes and major dependency upgrades such as [MDX v3](https://mdxjs.com/blog/v3/) and [React 18](https://react.dev/blog/2022/03/29/react-v18), which can produce unexpected side effects. It would have been difficult to notice all the visual regressions without such a workflow. That's why we encourage site owners to consider adopting visual regression testing, especially for highly customized sites.",
+      "source_content_hash": "55a852e9041fa5f51dabe4deec986d906ef2c57176e391b959e1bcf530aa8a36",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v3 包含基礎架構變更及重大依賴項升級（如 [MDX v3](https://mdxjs.com/blog/v3/) 和 [React 18](https://react.dev/blog/2022/03/29/react-v18)），可能產生意外副作用。若無此類工作流程，很難察覺所有視覺回歸問題。因此我們建議網站管理者採用視覺回歸測試，特別是高度客製化的網站。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Workflow overview",
+      "source_content_hash": "8f8309dc1b6f3b13105ac035a9d97c349d673c1710482bbd1974f361450e8d41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 工作流程概覽"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "The general idea is pretty simple:",
+      "source_content_hash": "06a89cdd623784ea749b55058c10712141afab032d3ad3d3ab799b8eb28276c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "核心概念相當簡單："
+      }
+    },
+    {
+      "segment_id": "5da9e02b",
+      "source_content": "- Build your site in CI with [GitHub Actions](https://github.com/features/actions)\n- Take screenshots of all `sitemap.xml` pages with [Playwright](https://playwright.dev/)\n- Upload them to [Argos](https://argos-ci.com/)\n- Do this for both Git branches `main` and `pr-branch`\n- Compare the screenshots side-by-side in [Argos](https://argos-ci.com/)",
+      "source_content_hash": "d5fa8e047c98fb5390f45b120d63ed6c2e6408e232148f517b9a26d80abb589a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 使用 [GitHub Actions](https://github.com/features/actions) 在 CI 環境構建網站\n- 透過 [Playwright](https://playwright.dev/) 擷取所有 `sitemap.xml` 頁面的截圖\n- 將截圖上傳至 [Argos](https://argos-ci.com/)\n- 對 Git 分支 `main` 和 `pr-branch` 執行上述流程\n- 在 [Argos](https://argos-ci.com/) 並排比對截圖"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Argos will then **report visual differences** found between `main` and `pr-branch` as a GitHub commit status and pull-request comment. This can help you detect visual regressions ahead of time in an automated way.",
+      "source_content_hash": "4397c82fa6e1441d4354c9dca36889803084c8148a101ebe715cceac380583e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Argos 會將 `main` 和 `pr-branch` 之間的**視覺差異**以 GitHub 提交狀態和拉取請求評論的形式回報。這能幫助您提前以自動化方式檢測視覺回歸問題。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![Argos GitHub commit status](./img/argos-github-status.png)",
+      "source_content_hash": "54e6f25eaee4d6c7144a7f3f079c3431cae825310072429632aff96d7e6c61f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Argos GitHub 提交狀態](./img/argos-github-status.png)"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "![Argos GitHub PR comment](./img/argos-github-comment.png)",
+      "source_content_hash": "5f2ad5ab5e7bd08ef78e89545d3c46223028ad5ad7d619f9017e2ed550954aa9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Argos GitHub PR 評論](./img/argos-github-comment.png)"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Argos creates a report referencing all the visual differences found while comparing the 2 Git branches sites side-by-side, and provides a convenient UX to easily spot the difference.",
+      "source_content_hash": "ceb7ec891a4bc5b96d88743ea44ee55a5a67217a78ad0192cec94e2b7f090de4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Argos 會建立報告，記錄比對兩個 Git 分支網站時發現的所有視覺差異，並提供便捷的用戶體驗以便快速識別差異。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Check the [Docusaurus Argos page](https://app.argos-ci.com/meta-open-source/docusaurus) to explore our own website reports.",
+      "source_content_hash": "f4620a0f87427020c8a9010c0898adfc95e7e2875f34260c0859480f8c836705",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查看 [Docusaurus Argos 頁面](https://app.argos-ci.com/meta-open-source/docusaurus) 瀏覽我們的網站報告。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Here is a more concrete example of Argos [reporting a visual regression](https://app.argos-ci.com/slorber/rnw-visual-tests/builds/32/56012838) found while upgrading the React-Native website:",
+      "source_content_hash": "e8cfe5daa8f81186fb8ef90042d0883ba35c33ee113b27f450080f23766298df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是 Argos [回報視覺回歸問題](https://app.argos-ci.com/slorber/rnw-visual-tests/builds/32/56012838) 的具體案例（升級 React-Native 網站時發現）："
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "[![Argos GitHub PR comment](./img/argos-react-native-regression.png)](https://app.argos-ci.com/slorber/rnw-visual-tests/builds/32/56012838)",
+      "source_content_hash": "4eadb92721886e6eb064fe3881a4bd8eb8051be9bb3854be48d2eab91c075489",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Argos GitHub PR 評論](./img/argos-react-native-regression.png)](https://app.argos-ci.com/slorber/rnw-visual-tests/builds/32/56012838)"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Workflow implementation",
+      "source_content_hash": "bbdd820c25eb8a3eb30d0f762e6d64ce901425c484de0c315241743258ca0b79",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 工作流程實作"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "This section will describe the implementation details of each step of the workflow.",
+      "source_content_hash": "9a0b7e9a18b1c3bc95f0eb4e36330ec49751f06d9d28fbdea363ca39d96028cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本節將詳細說明工作流程每個步驟的實作細節。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "You will need to [sign up to Argos](https://app.argos-ci.com/signup) and [connect Argos to your GitHub repository](https://argos-ci.com/docs/github)",
+      "source_content_hash": "a5c992c14af55f3361e2b125bee9a85b72f25a925eb4a3163a76c004e42a4d5f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您需要 [註冊 Argos](https://app.argos-ci.com/signup) 並 [將 Argos 連接至您的 GitHub 存儲庫](https://argos-ci.com/docs/github)"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "### Dependencies",
+      "source_content_hash": "700f48e26e0c2c319acdd9e25c517f549ee38279333d2bc16c8485557eecff9b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 依賴項"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "This workflow requires the following dev dependencies, in addition to the usual Docusaurus ones:",
+      "source_content_hash": "2147b38bad948596d1486c496f56a539ec357e7b7898eeaa615ed8d2c0b88f40",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此工作流程需要以下開發依賴項，除了常規的 Docusaurus 依賴項外："
+      }
+    },
+    {
+      "segment_id": "3c08ed05",
+      "source_content": "```bash\nyarn add -D @argos-ci/cli @argos-ci/playwright @playwright/test cheerio\n```",
+      "source_content_hash": "f362a8e69f46d84eb6e446a67b4e590445a2a54c543235b5b51953800232d43d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3c08ed05"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "### GitHub Action",
+      "source_content_hash": "d3b6a872b1a203dade76801db9c5f450acb057f4409e2efbc34790d3a0d8162e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### GitHub Action"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "The GitHub action is responsible for executing the workflow for each Git branch.",
+      "source_content_hash": "f12d0da74cffe1038951234cb40656a5d3a2588d6304aa117f4b94218273deb2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub Action 負責為每個 Git 分支執行工作流程。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "A minimal workflow could look like:",
+      "source_content_hash": "d917d33ad9ae195386379f57817bf25729dc0d0cd6e13bd57380412bcee84a1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "一個最小化的工作流程可能如下所示："
+      }
+    },
+    {
+      "segment_id": "7d13cf22",
+      "source_content": "```yaml title=\".github/workflows/argos.yml\"\nname: Argos CI Screenshots\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  take-screenshots:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository code\n        uses: actions/checkout@v4\n\n      - name: Use Node.js\n        uses: actions/setup-node@v3\n        with:\n          node-version: current\n\n      - name: Install dependencies\n        run: yarn install --frozen-lockfile\n\n      - name: Install Playwright browsers\n        run: yarn playwright install --with-deps chromium\n\n      - name: Build the website\n        run: yarn docusaurus build\n\n      - name: Take screenshots with Playwright\n        run: yarn playwright test\n\n      - name: Upload screenshots to Argos\n        run: yarn argos upload ./screenshots\n```",
+      "source_content_hash": "6aa1399be7e959757c939c5f266ec8cc9eba8915285587ce68af40d95f712b0e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d13cf22"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "### Playwright config",
+      "source_content_hash": "116ffea37d3bcef5ab9cff3a993e6fa08306d0f64dd038c02e10323940ad09bf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Playwright 配置"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Playwright is responsible for taking screenshots of the website previously built locally by the GitHub action.",
+      "source_content_hash": "133e5308aa8d4698b916740396a6ff90d4ab5c661df3a39728518c6e6a7aead2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Playwright 負責對 GitHub Action 先前在本地構建的網站進行截圖。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "A minimal [Playwright config](https://playwright.dev/docs/test-configuration) could look like:",
+      "source_content_hash": "7bc3c595d3ea57273f726da6a7ebeb44fef49abc7902c35b864148ba71a4a11a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "一個最小化的 [Playwright 配置](https://playwright.dev/docs/test-configuration) 可能如下所示："
+      }
+    },
+    {
+      "segment_id": "f39e109c",
+      "source_content": "```ts title=\"playwright.config.ts\"\nimport {devices} from '@playwright/test';\nimport type {PlaywrightTestConfig} from '@playwright/test';\n\nconst config: PlaywrightTestConfig = {\n  webServer: {\n    port: 3000,\n    command: 'yarn docusaurus serve',\n  },\n  projects: [\n    {\n      name: 'chromium',\n      use: {\n        ...devices['Desktop Chrome'],\n      },\n    },\n  ],\n};\n\nexport default config;\n```",
+      "source_content_hash": "bf5a4b1eaceb61a4000470b30242b997ac4c183dce8c9fff0ced194a1d9c2815",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f39e109c"
+      }
+    },
+    {
+      "segment_id": "d53c8ed4",
+      "source_content": "### Playwright test",
+      "source_content_hash": "7370171f41852f53f37a6cc8994667fc4f2f773000b4bcf4137b0ab77425b8ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Playwright 測試"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "A Playwright config is not enough: we also need to write a Playwright test file to generate the site screenshots.",
+      "source_content_hash": "48cc001734abb4ea170e00a4b4fa783a18e4aa2905ab3ef4afb6c46a4ec21578",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "僅有 Playwright 配置是不夠的：我們還需要編寫一個 Playwright 測試文件來生成網站截圖。"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```ts title=\"screenshot.spec.ts\"\nimport * as fs from 'fs';\nimport {test} from '@playwright/test';\nimport {argosScreenshot} from '@argos-ci/playwright';\nimport {extractSitemapPathnames, pathnameToArgosName} from './utils';\n\n// Constants\nconst siteUrl = 'http://localhost:3000';\nconst sitemapPath = './build/sitemap.xml';\nconst stylesheetPath = './screenshot.css';\nconst stylesheet = fs.readFileSync(stylesheetPath).toString();\n\n// Wait for hydration, requires Docusaurus v2.4.3+\n// Docusaurus adds a <html data-has-hydrated=\"true\"> once hydrated\n// See https://github.com/facebook/docusaurus/pull/9256\nfunction waitForDocusaurusHydration() {\n  return document.documentElement.dataset.hasHydrated === 'true';\n}\n\nfunction screenshotPathname(pathname: string) {\n  test(`pathname ${pathname}`, async ({page}) => {\n    const url = siteUrl + pathname;\n    await page.goto(url);\n    await page.waitForFunction(waitForDocusaurusHydration);\n    await page.addStyleTag({content: stylesheet});\n    await argosScreenshot(page, pathnameToArgosName(pathname));\n  });\n}\n\ntest.describe('Docusaurus site screenshots', () => {\n  const pathnames = extractSitemapPathnames(sitemapPath);\n  console.log('Pathnames to screenshot:', pathnames);\n  pathnames.forEach(screenshotPathname);\n});\n```",
+      "source_content_hash": "afb51dbef83ed769071397b9dcc2998a7d87c28d227faabcffc6e7b0bc92a2dc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "5d237b90",
+      "source_content": "<details>\n  <summary>Why do we take screenshots with Argos instead of Playwright?</summary>\n\nArgos has a [Playwright integration](https://argos-ci.com/docs/playwright) that wraps the original Playwright screenshot API and provides better defaults to make screenshots more deterministic.\n\n</details>",
+      "source_content_hash": "2806571225e319d58a6892baa7b33cd221d44fb4b6d89176d3a81f42752975b0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5d237b90"
+      }
+    },
+    {
+      "segment_id": "4727185d",
+      "source_content": "<details>\n<summary>What's inside <code>utils.ts</code>?</summary>\n\nThis module contains implementation details that we choose to hide for clarity.\n\n```ts\nimport * as cheerio from 'cheerio';\nimport * as fs from 'fs';\n\n// Extract a list of pathnames, given a fs path to a sitemap.xml file\n// Docusaurus generates a build/sitemap.xml file for you!\nexport function extractSitemapPathnames(sitemapPath: string): string[] {\n  const sitemap = fs.readFileSync(sitemapPath).toString();\n  const $ = cheerio.load(sitemap, {xmlMode: true});\n  const urls: string[] = [];\n  $('loc').each(function handleLoc() {\n    urls.push($(this).text());\n  });\n  return urls.map((url) => new URL(url).pathname);\n}\n\n// Converts a pathname to a decent screenshot name\nexport function pathnameToArgosName(pathname: string): string {\n  return pathname.replace(/^\\/|\\/$/g, '') || 'index';\n}\n```\n\n</details>",
+      "source_content_hash": "6fdc2bf2bfd54fcf6d9ed4381ef1b09eece1f0cad4fa69093a99c8b7427f466b",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4727185d"
+      }
+    },
+    {
+      "segment_id": "4e8f71c1",
+      "source_content": "### Stylesheet",
+      "source_content_hash": "828fdfdd204ca16f3298483ee87162178019e3b7bd32eb1fa290e1ee078754ba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 樣式表"
+      }
+    },
+    {
+      "segment_id": "e4d8cd8a",
+      "source_content": "Screenshots are not always deterministic, and taking a screenshot of a page twice can lead to subtle variations that will be reported by Argos as **false positive** visual regressions.",
+      "source_content_hash": "18cc30a99817892e5a729a64e083abe6c2f600e3a2ca9dea131aaa6512816563",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "截圖並不總是確定性的，對同一頁面進行兩次截圖可能會導致細微的變化，這些變化會被 Argos 報告為**假陽性**視覺回歸。"
+      }
+    },
+    {
+      "segment_id": "af834e0d",
+      "source_content": "For this reason, we recommend injecting an extra stylesheet to hide the problematic elements. You will probably need to add new CSS rules to this base stylesheet, according to flaky elements found on your own site. Read [Argos - About flaky tests docs](https://argos-ci.com/docs/about-flaky) for details.",
+      "source_content_hash": "5b3c71b262d3577c2b033a8c1328a0bcab3b67e8b19a68c2abf273a8b735036b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "因此，我們建議注入一個額外的樣式表來隱藏有問題的元素。根據您自己網站上發現的不穩定元素，您可能需要向此基礎樣式表添加新的 CSS 規則。詳情請參閱 [Argos - 關於不穩定測試的文檔](https://argos-ci.com/docs/about-flaky)。"
+      }
+    },
+    {
+      "segment_id": "6b0761da",
+      "source_content": "```css title=\"screenshot.css\"\n/* Iframes can load lazily */\niframe,\n/* Avatars can be flaky due to using external sources: GitHub/Unavatar */\n.avatar__photo,\n/* Gifs load lazily and are animated */\nimg[src$='.gif'],\n/* Algolia keyboard shortcuts appear with a little delay */\n.DocSearch-Button-Keys > kbd,\n/* The live playground preview can often display dates/counters */\n[class*='playgroundPreview'] {\n  visibility: hidden;\n}\n\n/* Different docs last-update dates can alter layout */\n.theme-last-updated,\n/* Mermaid diagrams are rendered client-side and produce layout shifts */\n.docusaurus-mermaid-container {\n  display: none;\n}\n```",
+      "source_content_hash": "b95a53ddfb3f2b27b593ff888c589473a03bd79c383e6a74eab2f3250ee00551",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6b0761da"
+      }
+    },
+    {
+      "segment_id": "ba18e471",
+      "source_content": ":::tip[prevent layout shifts]\n\nWe recommend hiding flaky UI elements affecting layout with `display: none;`.\n\nFor example, the docs \"Last Updated on\" might render on more than 1 line, eventually \"pushing\" the rest of your content further down, leading to Argos detecting many different pixels.\n\n:::",
+      "source_content_hash": "f20ff94167edd8db9e1f6cb40a312c97c443844306fa2d715c555fa97271aa20",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[防止佈局偏移]\n\n我們建議使用 `display: none;` 來隱藏影響佈局的不穩定 UI 元素。\n\n例如，文檔的「最後更新於」可能會渲染超過 1 行，最終「推」下其餘內容，導致 Argos 檢測到許多不同的像素。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "936707a1",
+      "source_content": "## Example repository",
+      "source_content_hash": "aa3759e082ac1b263a5e405b63f2a24cfc7c828b0c0ff6cb3861a81d8dffcf16",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 示例倉庫"
+      }
+    },
+    {
+      "segment_id": "6dc3e423",
+      "source_content": "The [slorber/docusaurus-argos-example](https://github.com/slorber/docusaurus-argos-example) repo shows a complete example of implementing this workflow on a newly initialized Docusaurus v2 site, using a Yarn monorepo.",
+      "source_content_hash": "9fc94ff517a9027aa1dff3b6ae103a496631b10bdda34a6a17139ac000ac4c17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[slorber/docusaurus-argos-example](https://github.com/slorber/docusaurus-argos-example) 倉庫展示了一個完整的示例，該示例在一個新初始化的 Docusaurus v2 網站上實現了此工作流程，並使用了 Yarn monorepo。"
+      }
+    },
+    {
+      "segment_id": "ceb4fd26",
+      "source_content": "[![Docusaurus + Argos monorepo example screenshot](./img/docusaurus-argos-example-repo-screenshot.png)](https://github.com/slorber/docusaurus-argos-example)",
+      "source_content_hash": "abe51535c43637cb3870e69a63f675ba0dcd822bc22033815695ae88e325cb9e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Docusaurus + Argos monorepo 示例截圖](./img/docusaurus-argos-example-repo-screenshot.png)](https://github.com/slorber/docusaurus-argos-example)"
+      }
+    },
+    {
+      "segment_id": "65be34cb",
+      "source_content": "Relevant pull-requests:",
+      "source_content_hash": "3edcf601a63ddb2a2b8e128616e9d02f3836ef76130bbe53487b876a173c8472",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "相關的拉取請求："
+      }
+    },
+    {
+      "segment_id": "c5b7e1f6",
+      "source_content": "- [PR - Set up GitHub Action + Playwright + Argos](https://github.com/slorber/docusaurus-argos-example/pull/1): implements the minimal workflow described above\n- [PR - Upgrading Docusaurus from v2 to v3](https://github.com/slorber/docusaurus-argos-example/pull/2): shows how Argos caught 3 visual regressions while upgrading",
+      "source_content_hash": "830c4f6fe76aa75386068a3b7991cbd0632505940a5040573257fcd8018e89e9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [PR - 設置 GitHub Action + Playwright + Argos](https://github.com/slorber/docusaurus-argos-example/pull/1)：實現了上述最小化工作流程\n- [PR - 從 Docusaurus v2 升級到 v3](https://github.com/slorber/docusaurus-argos-example/pull/2)：展示了 Argos 在升級過程中如何捕獲 3 個視覺回歸"
+      }
+    },
+    {
+      "segment_id": "ade28a80",
+      "source_content": ":::tip[More advanced example?]\n\nBrowse the Docusaurus repository for a more advanced integration:\n\n- [GitHub Action](https://github.com/facebook/docusaurus/blob/main/.github/workflows/argos.yml)\n- [Playwright + Argos tests](https://github.com/facebook/docusaurus/tree/main/argos)\n\n:::",
+      "source_content_hash": "c89bf680feea71395cd25e39b60ee7d04f5df09e205d2d2979fe81920ea151a6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[更高級的示例？]\n\n瀏覽 Docusaurus 倉庫以獲取更高級的集成：\n\n- [GitHub Action](https://github.com/facebook/docusaurus/blob/main/.github/workflows/argos.yml)\n- [Playwright + Argos 測試](https://github.com/facebook/docusaurus/tree/main/argos)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "66a437ee",
+      "source_content": "## Make it cheap",
+      "source_content_hash": "ae34dec841c7c33afd5518a326cbd145840ea5596d9b4fdec65a1c51d787c694",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 降低成本"
+      }
+    },
+    {
+      "segment_id": "bb5297fc",
+      "source_content": "The tools we choose are implementation details of this visual regression testing workflow.",
+      "source_content_hash": "d9e3b25dfe0116dc4352ff8042567652357a2f9717f4f41600475ffe5e2db1ea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們選擇的工具是此視覺回歸測試工作流程的實現細節。"
+      }
+    },
+    {
+      "segment_id": "2cfc0629",
+      "source_content": "For Docusaurus, we choose [Argos](https://argos-ci.com/): it works well for us, and offers [free](https://argos-ci.com/pricing) and [open source](https://argos-ci.com/docs/open-source) plans. However, you are free to adopt alternative tools.",
+      "source_content_hash": "03ff38c3897b23ef46f2f87f80b8a005a7865e3d665ea21cc9a96d4833ba75e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於 Docusaurus，我們選擇了 [Argos](https://argos-ci.com/)：它對我們來說效果很好，並提供[免費](https://argos-ci.com/pricing)和[開源](https://argos-ci.com/docs/open-source)計劃。然而，您可以自由選擇替代工具。"
+      }
+    },
+    {
+      "segment_id": "f4b938fe",
+      "source_content": "In case you don't mind storing large screenshots in Git, you can also try the free, self-hosted [Playwright Visual Comparisons](https://playwright.dev/docs/test-snapshots) and browse visual differences with `npx playwright show-report`. However, we found using a dedicated external tool is more convenient.",
+      "source_content_hash": "38afa8f39cdd7b782706d065c90cb6410ca4c59d431d5479438d10bc52877da0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您不介意在 Git 中存儲大型截圖，您也可以嘗試免費、自託管的 [Playwright 視覺比較](https://playwright.dev/docs/test-snapshots)，並使用 `npx playwright show-report` 瀏覽視覺差異。然而，我們發現使用專用的外部工具更加方便。"
+      }
+    },
+    {
+      "segment_id": "2d5a3f2f",
+      "source_content": "External tools can be expensive, but generally offer free plans with an ample quota of screenshots. You can reduce your screenshot consumption by implementing a few tricks below.",
+      "source_content_hash": "46ce891e308277af3e054ddbf3f45e2477c3fe888a2164040db963c6118ff383",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外部工具可能價格昂貴，但通常提供免費方案並配備充足的截圖額度。您可以透過以下幾種技巧來減少截圖消耗量。"
+      }
+    },
+    {
+      "segment_id": "846134ef",
+      "source_content": "### Limit the number of pathnames",
+      "source_content_hash": "21675d292a65ba9505e17be7ef5022c4c6c784a04bbf52d22c53e0478c3b503c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 限制路徑名稱數量"
+      }
+    },
+    {
+      "segment_id": "53e725dc",
+      "source_content": "The base setup involves taking a screenshot of every single pathname found in `sitemap.xml`. For large sites, that can lead to a lot of screenshots.",
+      "source_content_hash": "e83b1fab396f4b689d0c4d5596693b06df20f0f0d0d04f7d37a38b3e6cc781db",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "基礎設定會對`sitemap.xml`中的每個路徑名稱進行截圖。對於大型網站，這可能導致截圖數量龐大。"
+      }
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "You can decide to filter the pathnames to only take screenshots of the most critical pages.",
+      "source_content_hash": "a9ab66947c5c8ef2d7bc5b756fbad57bed22801cde72dd07ec54e39a695e8341",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以選擇過濾路徑名稱，僅針對最關鍵的頁面進行截圖。"
+      }
+    },
+    {
+      "segment_id": "e962484d",
+      "source_content": "For the Docusaurus website, do not take screenshots for versioned docs pages:",
+      "source_content_hash": "1b220ff3af262cafa676db8caf97aaed912b113d39bc59fecf6271410ae648dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "針對Docusaurus網站，請勿對版本化文件頁面進行截圖："
+      }
+    },
+    {
+      "segment_id": "9dd29bcd",
+      "source_content": "```ts title=\"screenshot.spec.ts\"\n// highlight-start\nfunction isVersionedDocsPathname(pathname: string): boolean {\n  return pathname.match(/^\\/docs\\/((\\d\\.\\d\\.\\d)|(next))\\//);\n}\n// highlight-end\n\ntest.describe('Docusaurus site screenshots', () => {\n  const pathnames = extractSitemapPathnames(sitemapPath)\n    // highlight-next-line\n    .filter(isVersionedDocsPathname);\n\n  pathnames.forEach(screenshotPathname);\n});\n```",
+      "source_content_hash": "baa40bf0cf3b68e919ab7692df592f369cc3d1c6e8fc34e540acea8b87f7324e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9dd29bcd"
+      }
+    },
+    {
+      "segment_id": "ad966a7e",
+      "source_content": "### Limit the workflow concurrency",
+      "source_content_hash": "bdba4256d1a1d8f50b8de0e436fdcc13e3d42d2e5771dc77f052f2db44203207",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 限制工作流程並發數"
+      }
+    },
+    {
+      "segment_id": "6c4ea90c",
+      "source_content": "Implementing [GitHub Actions concurrency groups](https://docs.github.com/en/actions/using-jobs/using-concurrency) will prevent successive commits to trigger multiple useless workflow runs. The workflow will only be executed for the last commit, and previous commits will be canceled automatically.",
+      "source_content_hash": "71f8aa0626c061bbb09c683ba14ce386951881ae46effcc8361ef25535a11730",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實施[GitHub Actions並發群組](https://docs.github.com/en/actions/using-jobs/using-concurrency)可防止連續提交觸發多個無效的工作流程執行。工作流程僅會針對最後一次提交執行，之前的提交將自動取消。"
+      }
+    },
+    {
+      "segment_id": "ac2ed4ad",
+      "source_content": "```yaml title=\".github/workflows/argos.yml\"\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}\n  cancel-in-progress: true\n```",
+      "source_content_hash": "75501563c4061ceb4db3f2f8a9949af6434c81c7e6e59a518d616c05685f433e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ac2ed4ad"
+      }
+    },
+    {
+      "segment_id": "d96e8afa",
+      "source_content": "### Run your workflow conditionally",
+      "source_content_hash": "4abb7c9a5ae583ccc1745669586ce0b09c9724d610f97a84d79a6116b815c171",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 有條件地執行工作流程"
+      }
+    },
+    {
+      "segment_id": "e020f7ed",
+      "source_content": "It's not worth running this workflow for every single commit and pull-request.",
+      "source_content_hash": "e6d3aacb04c0ec54a320d2dd21a6f968511b0e0c1e53452f8e5a482f377ac478",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "並非每次提交和拉取請求都值得執行此工作流程。"
+      }
+    },
+    {
+      "segment_id": "d83b50df",
+      "source_content": "For example, if someone corrects a typo in your documentation, you probably don't want to take hundreds of screenshots and have Argos to point out that only the modified page has a visual difference: duh, that's a bit expected!",
+      "source_content_hash": "dbd987bfaa53821eb009e0ae0268f5b86ebc2092d986f8a7f2199c6fa0385385",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，若有人修正了文件中的拼寫錯誤，您可能不希望拍攝數百張截圖並讓Argos指出只有修改過的頁面存在視覺差異：這本來就是預期結果！"
+      }
+    },
+    {
+      "segment_id": "b16b56a2",
+      "source_content": "For the Docusaurus website, we only run the workflow for pull-request having the `Argos` label:",
+      "source_content_hash": "ae12c9e296c5327f3a5177c4d65b77c0ace1014f49a1eb5bc9b9d1204d65ce28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "針對Docusaurus網站，我們僅對帶有`Argos`標籤的拉取請求執行工作流程："
+      }
+    },
+    {
+      "segment_id": "9a01bde3",
+      "source_content": "```yaml title=\".github/workflows/argos.yml\"\nname: Argos CI Screenshots\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n    # highlight-start\n    types:\n      - opened\n      - synchronize\n      - reopened\n      - labeled\n    # highlight-end\n\njobs:\n  take-screenshots:\n    # highlight-start\n    if: ${{ github.ref_name == 'main' || (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Argos')) }}\n    # highlight-end\n    runs-on: ubuntu-latest\n    steps:\n      # Your job steps here ...\n```",
+      "source_content_hash": "f3a95b52d1d8e732bec52996ad9f5721b3cbd0443dc0071f2090b725396838fd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9a01bde3"
+      }
+    },
+    {
+      "segment_id": "d70ad719",
+      "source_content": "There are many options to explore, such as [triggering the workflow manually](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow) or [only when files matching a specific pattern are modified](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#example-including-paths).",
+      "source_content_hash": "917b264a4ce1472e23c5d9061383157dc17cec220129b830d1b6f3cf6d696bed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "還有許多選項可供探索，例如[手動觸發工作流程](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow)或[僅在修改符合特定模式的文件時執行](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#example-including-paths)。"
+      }
+    },
+    {
+      "segment_id": "fb020fb7",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 結論"
+      }
+    },
+    {
+      "segment_id": "dbd18971",
+      "source_content": "I believe **visual regression testing is underused** in the frontend ecosystem.",
+      "source_content_hash": "6db94f2a9b36ee865c7bff043b41eb2fc78bf8879d7541737a70ff049d934c87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我認為**視覺回歸測試在前端生態系統中未被充分利用**。"
+      }
+    },
+    {
+      "segment_id": "d8492b16",
+      "source_content": "Taking full-page screenshots is a **low-hanging fruit** that is easy to set up and can help you **catch a new class of bugs** that your regular test suite would miss. This technique shines not only for npm package upgrades, but also for **any kind of refactoring** that shouldn't change the user interface.",
+      "source_content_hash": "a5fdf249c9e5ea2d4db481d2b2266825f2eca8d2042c00a5b655656333e5282d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "拍攝全頁截圖是**唾手可得的成果**，易於設置且能幫助您**捕捉常規測試套件會遺漏的新型錯誤**。這項技術不僅適用於npm套件升級，也適用於**任何不應改變用戶界面的重構**。"
+      }
+    },
+    {
+      "segment_id": "4cba7b8e",
+      "source_content": "So why not give it a try?",
+      "source_content_hash": "3b2ef689b163bb04b23e96baf322e991f6060a976bccf23a6cec3e29fee546a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "何不嘗試看看？"
+      }
+    },
+    {
+      "segment_id": "c419a086",
+      "source_content": "Happy hacking!",
+      "source_content_hash": "8648d1acb8723d5f41c94417f2a26108cdb4985d02330e6995ff915b9cb480fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "祝您編碼愉快！"
+      }
+    },
+    {
+      "segment_id": "74f95bc3",
+      "source_content": "## See also",
+      "source_content_hash": "f86dacdbf296df3286206d42650be2e5b328f30e87c2e2a91894bbe6e5e1ef78",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 另請參閱"
+      }
+    },
+    {
+      "segment_id": "0274aeec",
+      "source_content": "Useful documentation links:",
+      "source_content_hash": "b28eca017e58e17027ce1281e31e9e4a94168e703a57df438d7692f12c395383",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實用文件連結："
+      }
+    },
+    {
+      "segment_id": "87cc23fd",
+      "source_content": "- [Playwright - Installation](https://playwright.dev/docs/intro)\n- [Playwright - Test config guide](https://playwright.dev/docs/test-configuration)\n- [Playwright - Test config API](https://playwright.dev/docs/api/class-testconfig)\n- [Argos - Installation](https://argos-ci.com/docs/installation)\n- [Argos - Use with GitHub Actions](https://argos-ci.com/docs/github-actions)\n- [Argos - Use with Playwright](https://argos-ci.com/docs/playwright)\n- [Argos - About flaky tests](https://argos-ci.com/docs/about-flaky)",
+      "source_content_hash": "59ee3f8834b46c3f2e1a3c1550562a099d972fb4f34bbc2ccc27b9e0f9f13abe",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Playwright - 安裝指南](https://playwright.dev/docs/intro)\n- [Playwright - 測試配置指南](https://playwright.dev/docs/test-configuration)\n- [Playwright - 測試配置API](https://playwright.dev/docs/api/class-testconfig)\n- [Argos - 安裝指南](https://argos-ci.com/docs/installation)\n- [Argos - 與GitHub Actions搭配使用](https://argos-ci.com/docs/github-actions)\n- [Argos - 與Playwright搭配使用](https://argos-ci.com/docs/playwright)\n- [Argos - 關於不穩定測試](https://argos-ci.com/docs/about-flaky)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2023/09-22-upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.026146+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "a41083b6226c20b37a7c1b0d1a01c445503ebf0282f5601e44d33638a756f4d1"
+  }
+}

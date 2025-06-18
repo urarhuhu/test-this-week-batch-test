@@ -1,0 +1,186 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.1.1/api/plugins/plugin-debug.mdx",
+  "source_file_content_hash": "a2ee74ef267592d1be079a77c39b9473c48bec2a24b4e0fefc49a5f59eb6dbfb",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\nslug: /api/plugins/@docusaurus/plugin-debug\n---",
+      "source_content_hash": "e53c7d99b8e511f3c7569e26e2a92e4ef3703e5b4da35f061cb201aa31609ad9",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-debug",
+      "source_content_hash": "f296015f78f73cfa7e9f43d02e3c22e59912e397dc2985df650a62cc6671f181",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e6a5da7c",
+      "source_content": "```mdx-code-block\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n```",
+      "source_content_hash": "ee7c7ccc3fc35d8459eb01cfa9b23771278098ad8ace52975ecedfe60785c012",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "The debug plugin will display useful debug information at [`http://localhost:3000/__docusaurus/debug`](http://localhost:3000/__docusaurus/debug).",
+      "source_content_hash": "4a9a3fe72159622831c827830cc6283c3ef1ded9469c4e9de2e540394844cfec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "It is mostly useful for plugin authors, that will be able to inspect more easily the content of the `.docusaurus` folder (like the creates routes), but also be able to inspect data structures that are never written to disk, like the plugin data loaded through the `contentLoaded` lifecycle.",
+      "source_content_hash": "74bf4c17cb5881c824de9c0efbcffd2864cdc100c890b08cc3d6ee9f925ec3fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a7378c68",
+      "source_content": ":::info\n\nIf you use the plugin via the classic preset, the preset will **enable the plugin in development and disable it in production** by default (`debug: undefined`) to avoid exposing potentially sensitive information. You can use `debug: true` to always enable it or `debug: false` to always disable it.\n\nIf you use a standalone plugin, you may need to achieve the same effect by checking the environment:\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    // highlight-next-line\n    process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',\n  ].filter(Boolean),\n};\n```\n\n:::",
+      "source_content_hash": "6150bfffd52a647f06bfba288006f79ac2b76383429f69df41c5eaf2b172d8e6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b56ef571",
+      "source_content": ":::note\n\nIf you report a bug, we will probably ask you to have this plugin turned on in the production, so that we can inspect your deployment config more easily.\n\nIf you don't have any sensitive information, you can keep it on in production [like we do](/__docusaurus/debug).\n\n:::",
+      "source_content_hash": "24c9f0ebad9e84fb695e2cd3ca206a68c395e3d57060514f2bfccb6aac13ad10",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-debug\n```",
+      "source_content_hash": "f1b5f7d7dadc44d89b3890edfd37cc92d30afdfe8156bbaae8676b8268af2e9b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.\n\nYou can configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic).\n\n:::",
+      "source_content_hash": "737b2a008954011fd073f76b42dc5ff859f8bcaced754eff0b2741c9f733f873",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "This plugin currently has no options.",
+      "source_content_hash": "a976eeb842eca2d686e284d8422085a7b5940c858e89f4d43f5f079c6ba67d5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "You can configure this plugin through preset options or plugin options.",
+      "source_content_hash": "118dd7722fc15d0951831695d6b79451361a000dc8a9de8138e737e9fe881ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f695969b",
+      "source_content": ":::tip\n\nMost Docusaurus users configure this plugin through the preset options.\n\n:::",
+      "source_content_hash": "0a660704749473b8e0f2d5316b808fdf177b0264e404d29b9d4653e71924c332",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7d13cf22",
+      "source_content": "```mdx-code-block\n<Tabs groupId=\"api-config-ex\">\n<TabItem value=\"preset\" label=\"Preset options\">\n```",
+      "source_content_hash": "3ff29f0dccc84a204fb7e2948c164012507b2bc45233866cd976d7669ce3b56c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "If you use a preset, configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic):",
+      "source_content_hash": "d753151f79e9e7754ec6c5e1406170d3ce424dfa27e4e3e6f16b18ee59070917",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c808e01e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // highlight-next-line\n        debug: true, // This will enable the plugin in production\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "4df07a131a92920b18689adff232e917ce3bf94a5e5e2a3dfcdc465feb987398",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"plugin\" label=\"Plugin Options\">\n```",
+      "source_content_hash": "e05fc95965c64d1e906a974cafb868815a28e7aa290a9417f7e869cd4acac92a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "If you are using a standalone plugin, provide options directly to the plugin:",
+      "source_content_hash": "497d1fed2b94a88e44449764e92151b7c0957b867e15298992a3d52b6c1a7aa0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7fa46732",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // highlight-next-line\n  plugins: ['@docusaurus/plugin-debug'],\n};\n```",
+      "source_content_hash": "4e8a0697e3ba832efb54396767aa559016a70f9d9d58bca9ec2604001565e57f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "64071bcc",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.1.1/api/plugins/plugin-debug.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.749318+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

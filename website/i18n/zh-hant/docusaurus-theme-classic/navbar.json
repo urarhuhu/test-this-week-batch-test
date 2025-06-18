@@ -1,0 +1,34 @@
+{
+  "title": {
+    "message": "Docusaurus",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "文件",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Blog": {
+    "message": "部落格",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Showcase": {
+    "message": "展示區",
+    "description": "Navbar item with label Showcase"
+  },
+  "item.label.Community": {
+    "message": "社群",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Tests": {
+    "message": "測試",
+    "description": "Navbar item with label Tests"
+  },
+  "item.label.Debug": {
+    "message": "除錯",
+    "description": "Navbar item with label Debug"
+  }
+}

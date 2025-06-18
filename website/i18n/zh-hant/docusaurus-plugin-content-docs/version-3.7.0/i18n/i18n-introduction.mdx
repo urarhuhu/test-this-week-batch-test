@@ -1,0 +1,137 @@
+---
+id: introduction
+slug: /i18n/introduction
+---
+
+# 國際化 (i18n) - 簡介
+
+透過國際化 ([i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)) 支援，**翻譯 Docusaurus 網站非常容易**。
+
+## 目標 {#goals}
+
+理解 Docusaurus 國際化支援背後的**設計決策**非常重要。
+
+如需更多背景資訊，可閱讀初始的 [RFC](https://github.com/facebook/docusaurus/issues/3317) 和 [PR](https://github.com/facebook/docusaurus/pull/3325)。
+
+### 國際化目標 {#i18n-goals}
+
+Docusaurus 國際化系統的目標是：
+
+- **簡單**：只需將翻譯檔案放在正確的檔案系統位置
+- **靈活的翻譯流程**：可使用 Git（單一儲存庫、分支或子模組）、SaaS 軟體、FTP
+- **靈活的部署選項**：單一網域、多重網域或混合部署
+- **模組化**：允許插件作者提供國際化支援
+- **低運行負擔**：文件主要是靜態內容，不需要繁重的 JavaScript 函式庫或填充程式
+- **可擴展的建置時間**：允許獨立建置和部署本地化網站
+- **本地化資源**：網站圖片可能包含需要翻譯的文字
+- **無耦合**：不強制使用任何 SaaS，但仍可整合
+- **易於與 [Crowdin](https://crowdin.com/) 搭配使用**：許多 Docusaurus v1 網站使用 Crowdin，應能遷移至 v2
+- **良好的 SEO 預設值**：我們為您設置有用的 SEO 標頭，如 [`hreflang`](https://developers.google.com/search/docs/advanced/crawling/localized-versions)
+- **RTL 支援**：支援從右至左閱讀的語言（阿拉伯語、希伯來語等），且易於實作
+- **預設翻譯**：經典主題標籤已為您翻譯成[多種語言](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)
+
+### 非國際化目標 {#i18n-non-goals}
+
+我們不提供以下支援：
+
+- **自動語言檢測**：此功能較為主觀，最好由[伺服器（您的託管服務提供商）](../deployment.mdx)處理
+- **翻譯 SaaS 軟體**：您需自行了解所選的外部工具
+- **網址段翻譯**：技術複雜且 SEO 價值低
+
+## 翻譯流程 {#translation-workflow}
+
+### 概述 {#overview}
+
+建立翻譯版 Docusaurus 網站的流程概述：
+
+1. **配置**：在 [`docusaurus.config.js`](../api/docusaurus.config.js.mdx#i18n) 中宣告預設語言和替代語言
+2. **翻譯**：將翻譯檔案放在正確的檔案系統位置
+3. **部署**：使用單一或多重網域策略建置和部署您的網站
+
+### 翻譯檔案 {#translation-files}
+
+您將處理三種翻譯檔案。
+
+#### Markdown 檔案 {#markdown-files}
+
+這是您 Docusaurus 網站的主要內容。
+
+Markdown 和 MDX 文件會整體翻譯，以完整保留翻譯上下文，而非將每個句子拆分為獨立字串。
+
+#### JSON 檔案 {#json-files}
+
+JSON 用於翻譯：
+
+- 您的 React 程式碼：`src/pages` 中的獨立 React 頁面或其他元件
+- 透過 `themeConfig` 提供的版面標籤：導覽列、頁尾
+- 透過插件選項提供的版面標籤：文件側邊欄分類標籤、部落格側邊欄標題...
+
+使用的 JSON 格式稱為 **Chrome i18n**：
+
+```json
+{
+  "myTranslationKey1": {
+    "message": "Translated message 1",
+    "description": "myTranslationKey1 is used on the homepage"
+  },
+  "myTranslationKey2": {
+    "message": "Translated message 2",
+    "description": "myTranslationKey2 is used on the FAQ page"
+  }
+}
+```
+
+選擇此格式有兩個原因：
+
+- **描述屬性**：為翻譯者提供額外上下文幫助
+- **廣泛支援**：[Chrome擴充功能](https://developer.chrome.com/docs/extensions/mv2/i18n-messages/)、[Crowdin](https://support.crowdin.com/file-formats/chrome-json/)、[Transifex](https://docs.transifex.com/formats/chrome-json)、[Phrase](https://help.phrase.com/help/chrome-json-messages)、[Applanga](https://www.applanga.com/docs/formats/chrome_i18n_json)等
+
+#### 資料檔案 {#data-files}
+
+部分插件會讀取需整體本地化的外部資料檔案。例如部落格插件使用的[`authors.yml`](../blog.mdx#global-authors)檔案，可透過在`i18n/[locale]/docusaurus-plugin-content-blog/authors.yml`路徑下建立副本來實現翻譯。
+
+### 翻譯檔案存放位置 {#translation-files-location}
+
+翻譯檔案需建立在正確的檔案系統路徑下。
+
+每個語言版本與插件都有專屬的`i18n`子目錄：
+
+```
+website/i18n/[locale]/[pluginName]/...
+```
+
+:::note
+
+多實例插件的路徑格式為`website/i18n/[locale]/[pluginName]-[pluginId]/...`。
+
+:::
+
+為簡易法語版Docusaurus網站進行翻譯後，目錄結構如下：
+
+```bash
+website/i18n
+└── fr
+    ├── code.json  # Any text label present in the React code
+    │              # Includes text labels from the themes' code
+    ├── docusaurus-plugin-content-blog # translation data the blog plugin needs
+    │   └── 2020-01-01-hello.md
+    │
+    ├── docusaurus-plugin-content-docs # translation data the docs plugin needs
+    │   ├── current
+    │   │   ├── doc1.md
+    │   │   └── doc2.mdx
+    │   └── current.json
+    │
+    └── docusaurus-theme-classic # translation data the classic theme needs
+        ├── footer.json   # Text labels in your footer theme config
+        └── navbar.json   # Text labels in your navbar theme config
+```
+
+JSON檔案可透過[`docusaurus write-translations`](../cli.mdx#docusaurus-write-translations-sitedir)CLI指令初始化。各插件在對應目錄下提供自有翻譯內容，而`code.json`檔案則定義React程式碼中使用的文字標籤。
+
+每個內容插件或主題皆有**自訂的翻譯檔案存放規則**：
+
+- [文件國際化](../api/plugins/plugin-content-docs.mdx#i18n)
+- [部落格國際化](../api/plugins/plugin-content-blog.mdx#i18n)
+- [頁面國際化](../api/plugins/plugin-content-pages.mdx#i18n)
+- [主題國際化](../api/themes/theme-configuration.mdx#i18n)

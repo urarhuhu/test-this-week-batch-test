@@ -1,0 +1,264 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/static-assets.mdx",
+  "source_file_content_hash": "afcc48ddee706113c4ec6f225e246d32289dcf869c48c41f3a6ac7e6797ef9f4",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Static assets are the non-code files that are directly copied to the build output. Learn about how they are handled and what the best practices of using static assets are.\n---",
+      "source_content_hash": "f9453549ec4da59e0d98ed05143bfb832c5970459601d79963d026ff6ff014d8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Static Assets",
+      "source_content_hash": "41b748ce447ed3e3d47935605c3e86b52b97c81ae83f911ac796069384b265fb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Static assets are the non-code files that are directly copied to the build output. They include images, stylesheets, favicons, fonts, etc.",
+      "source_content_hash": "54081b0c9c2b316cf0c02953bba6ff6d010961aead5495bae96473e111e5fe1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "By default, you are suggested to put these assets in the `static` folder. Every file you put into **that directory will be copied** into the root of the generated `build` folder with the directory hierarchy preserved. E.g. if you add a file named `sun.jpg` to the static folder, it will be copied to `build/sun.jpg`.",
+      "source_content_hash": "dbedd68fb70b98de0f6f3f58aaad3060190a7daa065607d179c184d2410b6902",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "This means that:",
+      "source_content_hash": "1da19765a4a9a836b4014defe651336421672ab320667b5f0d25f0cca131c5df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "- for site `baseUrl: '/'`, the image `/static/img/docusaurus.png` will be served at `/img/docusaurus.png`.\n- for site `baseUrl: '/subpath/'`, the image `/static/img/docusaurus.png` will be served at `/subpath/img/docusaurus.png`.",
+      "source_content_hash": "34fb6087d7e91265bdbffbd1894920b8f75ea9d01b0444f183ba9c0d4c54ab7c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "You can customize the static directory sources in `docusaurus.config.js`. For example, we can add `public` as another possible path:",
+      "source_content_hash": "35ad31524fc45d259927c0d0af318089c2e7abd98e981cbe8f9f688473aa300d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6e5ba8fb",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  title: 'My site',\n  staticDirectories: ['public', 'static'],\n  // ...\n};\n```",
+      "source_content_hash": "628f7f0666d6cd289b5e0a32ded922272bcfa9d179818d78acd44912fcad7309",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Now, all files in `public` as well as `static` will be copied to the build output.",
+      "source_content_hash": "f2deeb7c07d563adba3336e9300e1164a2a094879fdee921c3e2f60bbeed1b02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Referencing your static asset {#referencing-your-static-asset}",
+      "source_content_hash": "ed67b088bcd6ee76901096e0de3a29a80e7e6b262a672b7677d4d8bd91173e35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "### In JSX {#in-jsx}",
+      "source_content_hash": "d7af8284662f8606dbd83a2634b8c9f8d0f11c832e4b77e36d9eb1642275497a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "In JSX, you can reference assets from the `static` folder in your code using absolute URLs, but this is not ideal because changing the site `baseUrl` will **break those links**. For the image `<img src=\"/img/docusaurus.png\" />` served at `https://example.com/test`, the browser will try to resolve it from the URL root, i.e. as `https://example.com/img/docusaurus.png`, which will fail because it's actually served at `https://example.com/test/img/docusaurus.png`.",
+      "source_content_hash": "0053a2e1adf8dd9a601881e85c19493f47468a0d88e2cb9d463a05b2afb3f5c6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "You can `import()` or `require()` the static asset (recommended), or use the `useBaseUrl` utility function: both prepend the `baseUrl` to paths for you.",
+      "source_content_hash": "9ff1165db7e01e57a7aca06d1389bd5ea976e9f604a4675e403a29ea8da10c26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Examples:",
+      "source_content_hash": "1889f03338b79bbad8bdcdc925ef5e83069569c17e433174ef9a49f62e7d5ee7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```jsx title=\"MyComponent.js\"\nimport DocusaurusImageUrl from '@site/static/img/docusaurus.png';\n\n<img src={DocusaurusImageUrl} />;\n```",
+      "source_content_hash": "42c21ad913fedd95b47973893f93792d7ef605377031002b1d909c2220c9cfc3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```jsx title=\"MyComponent.js\"\n<img src={require('@site/static/img/docusaurus.png').default} />\n```",
+      "source_content_hash": "c8fa9867aa58bd51990fd7f1c96482cf5ec4bf1b1e8e87e5f5900290e2dbb1db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```jsx title=\"MyComponent.js\"\nimport useBaseUrl from '@docusaurus/useBaseUrl';\n\n<img src={useBaseUrl('/img/docusaurus.png')} />;\n```",
+      "source_content_hash": "fe2fb9bd80378d2e7e8af18a31cec66503116f628cda26e7362aaef29e19ec78",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "You can also import SVG files: they will be transformed into React components.",
+      "source_content_hash": "4774f6816601927cc7103c019191c70ae18e70bbf74cb302580cd90d75720c41",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb80afe1",
+      "source_content": "```jsx title=\"MyComponent.js\"\nimport DocusaurusLogoWithKeytar from '@site/static/img/docusaurus_keytar.svg';\n\n<DocusaurusLogoWithKeytar title=\"Docusaurus Logo\" className=\"logo\" />;\n```",
+      "source_content_hash": "08a4755484404e979b25c1c7f0f10ea1f4046953b90854e6a2bb6ca9ce638afa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### In Markdown {#in-markdown}",
+      "source_content_hash": "08edec1deee8aaa22fa7bf581ea7c3d08ed5cc5714b28641ca97f14a94e26d26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "In Markdown, you can stick to using absolute paths when writing links or images **in Markdown syntax** because Docusaurus handles them as `require` calls instead of URLs when parsing the Markdown. See [Markdown static assets](./guides/markdown-features/markdown-features-assets.mdx).",
+      "source_content_hash": "45e1b40f8fef07039bc6923be89b4f0bb11fc91ede4942a75f0a1a8dec22e743",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5d4925eb",
+      "source_content": "```md\nYou write a link like this: [Download this document](/files/note.docx)\n\nDocusaurus changes that to: <a href={require('static/files/note.docx')}>Download this document</a>\n```",
+      "source_content_hash": "5eea0121bc4fba178f03d00905f0dba4dc6e822ec94ef92d3f63bbe0f44306f7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c1d6a7ca",
+      "source_content": ":::warning[use Markdown syntax]\n\nDocusaurus will only parse links that are in Markdown syntax. If your asset references are using the JSX tag `<a>` / `<img>`, nothing will be done.\n\n:::",
+      "source_content_hash": "e29ef61ab5656f2ad00922ba65512977e7d264e17fd04381d9c6e3636fa339fd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "98355e36",
+      "source_content": "### In CSS {#in-css}",
+      "source_content_hash": "556f6e9201c16de89ec5927042fe80f9a48e8b5ceaa6dda8d93e89b07b89ac2c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "In CSS, the `url()` function is commonly used to reference assets like fonts and images. To reference a static asset, use absolute paths:",
+      "source_content_hash": "e70e32f298d7673036144f7acfdf7fa15a0bc54e442a0af511019f7084beb430",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```css\n@font-face {\n  font-family: 'Caroline';\n  src: url('/font/Caroline.otf');\n}\n```",
+      "source_content_hash": "17c34e7357242f18b5a48fb2ee26fc365bd129c56f8bb05216137f97555c9fe1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "The `static/font/Caroline.otf` asset will be loaded by the bundler.",
+      "source_content_hash": "62ffce136204b1b77b3a52f7f85163d3a5bf0078de6ce43bb15b89402fb57c54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "61dc1473",
+      "source_content": ":::warning[important takeaway]\n\nOne important takeaway: **never hardcode your base URL!** The base URL is considered an implementation detail and should be easily changeable. All paths, even when they look like URL slugs, are actually file paths.\n\nIf you find the URL slug mental model more understandable, here's a rule of thumb:\n\n- Pretend you have a base URL like `/test/` when writing JSX so you don't use an absolute URL path like `src=\"/img/thumbnail.png\"` but instead `require` the asset.\n- Pretend it's `/` when writing Markdown or CSS so you always use absolute paths without the base URL.\n\n:::",
+      "source_content_hash": "fa41dcdea7d8c36c7d3c5d5c029b70b3a831af5affd77beac963d4bcd1646713",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a138e327",
+      "source_content": "## Caveats {#caveats}",
+      "source_content_hash": "143e638fbeeb0217cc8f79456cd2d2ea32fd90bf4cab9132ddf517bd747dc073",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Keep in mind that:",
+      "source_content_hash": "c5d6f0abbbead4e9edb64120c648424f14f01b5c32aee4cd2f85301c9582bac4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意以下事項："
+      }
+    },
+    {
+      "segment_id": "cd1d0fe2",
+      "source_content": "- By default, none of the files in the `static` folder will be post-processed, hashed, or minified.\n  - However, as we've demonstrated above, we are usually able to convert them to `require` calls for you so they do get processed. This is good for aggressive caching and better user experience.\n- Missing files referenced via hard-coded absolute paths will not be detected at compilation time and will result in a 404 error.\n- By default, GitHub Pages runs published files through [Jekyll](https://jekyllrb.com/). Since Jekyll will discard any files that begin with `_`, it is recommended that you disable Jekyll by adding an empty file named `.nojekyll` file to your `static` directory if you are using GitHub pages for hosting.",
+      "source_content_hash": "442c1f02fff358281b27e3ad73c8286b971bc0bea125ddf759a2851aeb42e2cd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 預設情況下，`static` 資料夾中的檔案都不會經過後處理、雜湊或最小化。\n  - 但如上述範例所示，我們通常能將其轉換為 `require` 呼叫以進行處理。這有利於實現積極緩存並提升使用者體驗。\n- 若透過硬編碼的絕對路徑參照缺失檔案，編譯時不會被偵測到，將導致 404 錯誤。\n- GitHub Pages 預設會使用 [Jekyll](https://jekyllrb.com/) 處理發佈的檔案。由於 Jekyll 會忽略所有以 `_` 開頭的檔案，若您使用 GitHub Pages 託管，建議在 `static` 目錄中添加名為 `.nojekyll` 的空檔案來停用 Jekyll。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/static-assets.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.048984+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "afcc48ddee706113c4ec6f225e246d32289dcf869c48c41f3a6ac7e6797ef9f4"
+  }
+}

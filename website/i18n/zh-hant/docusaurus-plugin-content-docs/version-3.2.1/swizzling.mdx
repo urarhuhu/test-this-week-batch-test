@@ -1,0 +1,328 @@
+---
+description: Customize your site's appearance through creating your own theme components
+---
+
+# 元件替換 (Swizzling)
+
+本章節將介紹如何在 Docusaurus 中進行版面配置的自訂。
+
+> 似曾相識...？
+
+本節與[樣式與版面](./styling-layout.mdx)類似，但這次我們將自訂 React 元件本身，而非其外觀。我們將討論 Docusaurus 的核心概念：**元件替換 (swizzling)**，這項技術能實現**更深層的網站客製化**。
+
+實務上，元件替換允許您**用自己實作的元件取代主題元件**，主要分為兩種模式：
+
+- [**完整替換 (Ejecting)**](#ejecting)：建立原始主題元件的**副本**，可進行完整**客製化**
+- [**包裝替換 (Wrapping)**](#wrapping)：建立原始主題元件的**包裝器**，可進行**功能增強**
+
+<details>
+
+<summary>Why is it called swizzling?</summary>
+
+**The name comes from Objective-C and Swift-UI**: [method swizzling](https://pspdfkit.com/blog/2019/swizzling-in-swift/) is the process of changing the implementation of an existing selector (method).
+
+**For Docusaurus, component swizzling means providing an alternative component that takes precedence over the component provided by the theme.**
+
+You can think of it as [Monkey Patching](https://en.wikipedia.org/wiki/Monkey_patch) for React components, enabling you to override the default implementation. Gatsby has a similar concept called [theme shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/).
+
+To gain a deeper understanding of this, you have to understand [how theme components are resolved](./advanced/client.mdx#theme-aliases).
+
+</details>
+
+## 元件替換流程
+
+### 概述
+
+Docusaurus 提供便利的**互動式 CLI** 來替換元件，通常只需記住以下指令：
+
+```bash npm2yarn
+npm run swizzle
+```
+
+該指令會在您的 `src/theme` 目錄生成新元件，範例如下：
+
+```mdx-code-block
+<Tabs>
+<TabItem value="Ejecting">
+```
+
+```jsx title="src/theme/SomeComponent.js"
+import React from 'react';
+
+export default function SomeComponent(props) {
+  // You can fully customize this implementation
+  // including changing the JSX, CSS and React hooks
+  return (
+    <div className="some-class">
+      <h1>Some Component</h1>
+      <p>Some component implementation details</p>
+    </div>
+  );
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="Wrapping">
+```
+
+```jsx title="src/theme/SomeComponent.js"
+import React from 'react';
+import SomeComponent from '@theme-original/SomeComponent';
+
+export default function SomeComponentWrapper(props) {
+  // You can enhance the original component,
+  // including adding extra props or JSX elements around it
+  return (
+    <>
+      <SomeComponent {...props} />
+    </>
+  );
+}
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+若要查看所有可替換的主題與元件清單，請執行：
+
+```bash npm2yarn
+npm run swizzle -- --list
+```
+
+使用 `--help` 參數查看所有可用 CLI 選項，或參考 [swizzle CLI 文件](./cli.mdx#docusaurus-swizzle)。
+
+:::note
+
+替換元件後，請**重新啟動開發伺服器**，以便 Docusaurus 識別新元件。
+
+:::
+
+:::warning[建議優先選擇安全方案]
+
+請務必了解[哪些元件屬於**安全替換範圍**](#what-is-safe-to-swizzle)。部分元件是主題的**內部實作細節**。
+
+:::
+
+:::info
+
+`docusaurus swizzle` 僅是協助自動化替換元件的工具。您也可以手動建立 `src/theme/SomeComponent.js` 檔案，Docusaurus 會[自動解析](./advanced/client.mdx#theme-aliases)。此命令背後並無特殊魔法！
+
+:::
+
+### 完整替換 (Ejecting) {#ejecting}
+
+完整替換主題元件是指**建立原始主題元件的副本**，您可對其進行**完整客製化與覆寫**。
+
+若要完整替換主題元件，請使用互動式 swizzle CLI 或搭配 `--eject` 參數：
+
+```bash npm2yarn
+npm run swizzle [theme name] [component name] -- --eject
+```
+
+範例：
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-classic Footer -- --eject
+```
+
+此操作會將當前 `<Footer />` 元件的實作複製到您網站的 `src/theme` 目錄。Docusaurus 將使用此 `<Footer>` 元件副本取代原始元件。您現在可以完全重新實作 `<Footer>` 元件。
+
+```jsx title="src/theme/Footer/index.js"
+import React from 'react';
+
+export default function Footer(props) {
+  return (
+    <footer>
+      <h1>This is my custom site footer</h1>
+      <p>And it is very different from the original</p>
+    </footer>
+  );
+}
+```
+
+:::warning
+
+完整替換[**不安全**](#what-is-safe-to-swizzle)元件時，可能會複製大量內部程式碼，後續需自行維護。這可能增加 Docusaurus 升級難度，若接收的 props 或使用的內部主題 API 發生變更，您需自行遷移客製化內容。
+
+**請盡可能優先選擇[包裝替換](#wrapping)**：需維護的程式碼量較少。
+
+:::
+
+:::tip[重新混寫]
+
+為了在 Docusaurus 升級後保持抽出的元件處於最新狀態，請重新執行抽出命令並使用 `git diff` 比較變更。建議在檔案頂部寫下簡短註解說明您所做的修改，以便在重新抽出後能更輕鬆地重新套用變更。
+
+:::
+
+### 包裝 {#wrapping}
+
+包裝主題元件是指**建立一個包裝器**環繞原始主題元件，藉此**增強**其功能。
+
+若要包裝主題元件，請使用互動式混寫 CLI 或搭配 `--wrap` 選項：
+
+```bash npm2yarn
+npm run swizzle [theme name] [component name] -- --wrap
+```
+
+範例：
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-classic Footer -- --wrap
+```
+
+這將在您網站的 `src/theme` 目錄中建立一個包裝器。Docusaurus 現在會使用 `<FooterWrapper>` 元件而非原始元件。您現在可以在原始元件周圍添加自訂功能。
+
+```jsx title="src/theme/Footer/index.js"
+import React from 'react';
+import Footer from '@theme-original/Footer';
+
+export default function FooterWrapper(props) {
+  return (
+    <>
+      <section>
+        <h2>Extra section</h2>
+        <p>This is an extra section that appears above the original footer</p>
+      </section>
+      <Footer {...props} />
+    </>
+  );
+}
+```
+
+<details>
+  <summary>What is this <code>@theme-original</code> thing?</summary>
+
+Docusaurus uses [theme aliases](./advanced/client.mdx#theme-aliases) to resolve the theme components to use. The newly created wrapper takes the `@theme/SomeComponent` alias. `@theme-original/SomeComponent` permits to import original component that the wrapper shadows without creating an infinite import loop where the wrapper imports itself.
+
+</details>
+
+:::tip
+
+包裝主題是**在現有元件周圍添加額外元件**而不需[抽出](#ejecting)的絕佳方式。例如，您可以輕鬆在每篇部落格文章下方加入自訂留言系統：
+
+```jsx title="src/theme/BlogPostItem.js"
+import React from 'react';
+import BlogPostItem from '@theme-original/BlogPostItem';
+import MyCustomCommentSystem from '@site/src/MyCustomCommentSystem';
+
+export default function BlogPostItemWrapper(props) {
+  return (
+    <>
+      <BlogPostItem {...props} />
+      <MyCustomCommentSystem />
+    </>
+  );
+}
+```
+
+:::
+
+## 哪些元件可以安全混寫？ {#what-is-safe-to-swizzle}
+
+> 能力越大，責任越大
+
+某些主題元件是主題的**內部實作細節**。Docusaurus 允許您混寫它們，但**可能具有風險**。
+
+<details>
+
+<summary>Why is it risky?</summary>
+
+Theme authors (including us) might have to update their theme over time: changing the component props, name, file system location, types... For example, consider a component that receives two props `name` and `age`, but after a refactor, it now receives a `person` prop with the above two properties. Your component, which still expects these two props, will render `undefined` instead.
+
+Moreover, internal components may simply disappear. If a component is called `Sidebar` and it's later renamed to `DocSidebar`, your swizzled component will be completely ignored.
+
+**Theme components marked as unsafe may change in a backward-incompatible way between theme minor versions.** When upgrading a theme (or Docusaurus), your customizations might **behave unexpectedly**, and can even **break your site**.
+
+</details>
+
+對於每個主題元件，混寫 CLI 會標示主題作者宣告的**3種不同安全等級**：
+
+- **安全**：此元件可安全混寫，其公開 API 被視為穩定，且在主題**主要版本**內不應發生破壞性變更
+- **不安全**：此元件是主題實作細節，不建議混寫，可能在主題**次要版本**中發生破壞性變更
+- **禁止**：混寫 CLI 會阻止您混寫此元件，因為它完全沒有設計為可混寫
+
+:::note
+
+某些元件可能適合包裝但不適合抽出。
+
+:::
+
+:::info
+
+不必過度**害怕混寫不安全元件**：只需記住可能發生**破壞性變更**，您或許需要在次要版本升級時手動更新自訂內容。
+
+:::
+
+:::note[回報使用案例]
+
+如果您有**強烈需求必須混寫不安全元件**，請[**在此回報**](https://github.com/facebook/docusaurus/discussions/5468)，我們將共同尋找解決方案使其變得安全。
+
+:::
+
+## 應該混寫哪個元件？ {#which-component-should-i-swizzle}
+
+要精確判斷該混寫哪個元件才能達成預期效果並非總是顯而易見。提供大多數主題元件的 `@docusaurus/theme-classic` 約有[100個元件](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)！
+
+:::tip
+
+若要列印 `@docusaurus/theme-classic` 所有元件概覽：
+
+```bash npm2yarn
+npm run swizzle @docusaurus/theme-classic -- --list
+```
+
+:::
+
+您可以按照以下步驟定位適合混寫的元件：
+
+1. **元件描述**。部分元件提供簡短說明，這是找到正確元件的好方法。
+2. **元件名稱**。官方主題元件採用語義化命名，您可從名稱推斷其功能。swizzle CLI 允許輸入部分元件名稱來縮小選擇範圍。例如執行 `yarn swizzle @docusaurus/theme-classic` 後輸入 `Doc`，將只列出與文檔相關的元件。
+3. **從高層級元件開始**。元件形成樹狀結構，部分元件會導入其他元件。每條路由都會關聯一個頂層元件（大多列於[內容外掛路由](./advanced/routing.mdx#routing-in-content-plugins)）。例如所有部落格文章頁面的最頂層元件都是 `@theme/BlogPostPage`。您可以先swizzle此元件，再向下遍歷元件樹定位目標元件。找到正確元件後，請刪除其他swizzle產生的檔案以避免維護過多元件。
+4. **閱讀[主題原始碼](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)**並善用搜尋功能。
+
+:::tip[直接提問！]
+
+若仍不確定該swizzle哪個元件來實現需求，可透過我們的[支援管道](/community/support)尋求幫助。
+
+我們也希望更了解您的客製化需求，請[提交案例討論](https://github.com/facebook/docusaurus/discussions/5468)。
+
+:::
+
+## 是否必須swizzle？ {#do-i-need-to-swizzle}
+
+Swizzle意味著您需維護與Docusaurus內部API互動的React程式碼。在客製化網站時，請優先考慮以下替代方案：
+
+1. **使用CSS**。CSS規則和選擇器通常能實現相當程度的客製化，詳見[樣式與版面](./styling-layout.mdx)。
+2. **使用翻譯功能**。雖然看似不直觀，但翻譯本質上是自訂文字標籤的方式。例如若網站預設語言為`en`，仍可執行`yarn write-translations -l en`後編輯生成的`code.json`，詳見[i18n教學](./i18n/i18n-tutorial.mdx)。
+
+:::tip
+
+**範圍越小越好**。若必須swizzle，請僅swizzle相關部分並盡量減少自行維護的程式碼。swizzle小型元件通常能降低升級時的**破壞性變更**風險。
+
+[封裝](#wrapping)也是比[彈出](#ejecting)更安全的替代方案。
+
+:::
+
+## 使用`<Root>`封裝您的網站 {#wrapper-your-site-with-root}
+
+`<Root>`元件會渲染在React樹的**最頂層**（高於主題`<Layout>`）且**永不卸載**，非常適合用於添加不該因導航而重新初始化的狀態邏輯（使用者認證狀態、購物車狀態等）。
+
+請手動swizzle此元件，在`src/theme/Root.js`建立檔案：
+
+```js title="src/theme/Root.js"
+import React from 'react';
+
+// Default implementation, that you can customize
+export default function Root({children}) {
+  return <>{children}</>;
+}
+```
+
+:::tip
+
+可用此元件渲染React Context providers。
+
+:::

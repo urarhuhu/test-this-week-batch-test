@@ -1,0 +1,95 @@
+---
+sidebar_position: 9
+slug: /api/plugins/@docusaurus/plugin-css-cascade-layers
+---
+
+# 📦 plugin-css-cascade-layers
+
+import APITable from '@site/src/components/APITable';
+
+:::caution[實驗性功能]
+
+此插件主要設計為透過 [Docusaurus `future.v4.useCssCascadeLayers` 標記](../docusaurus.config.js.mdx#future) 由經典預設集內部使用，但亦可作為獨立插件使用。若您有使用需求，請[在此告知我們](https://github.com/facebook/docusaurus/pull/11142)，協助我們設計符合 Docusaurus 未來發展的 API。
+
+:::
+
+此插件用於將 Docusaurus 網站的 CSS 模組封裝於 [CSS 層疊層級](https://css-tricks.com/css-cascade-layers/)中。此現代 CSS 功能已獲所有主流瀏覽器廣泛支援，可將 CSS 規則分組至特定層級，賦予您對 CSS 層疊更強的控制力。
+
+使用此插件可實現：
+
+- 為任何 CSS 模組（包含未分層的第三方 CSS）套用頂層 `@layer myLayer { ... }` 區塊規則
+- 定義明確的層級排序
+
+:::caution
+
+欲正確使用此插件，建議您充分理解 [CSS 層疊層級](https://css-tricks.com/css-cascade-layers/)、[CSS 層疊機制](https://developer.mozilla.org/docs/Web/CSS/CSS_cascade/Cascade)及[優先級](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)。
+
+:::
+
+## 安裝方式 {#installation}
+
+```bash npm2yarn
+npm install --save @docusaurus/plugin-css-cascade-layers
+```
+
+:::tip
+
+若您使用 `@docusaurus/preset-classic` 預設集，此插件會透過 [`siteConfig.future.v4.useCssCascadeLayers`](../docusaurus.config.js.mdx#future) 標記自動完成配置。
+
+:::
+
+## 配置選項 {#configuration}
+
+可接受欄位：
+
+```mdx-code-block
+<APITable>
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `layers` | `Layers` | **Built-in layers** | An object representing all the CSS cascade layers you want to use, and whether the layer should be applied to a given file path. See examples and types below. |
+
+```mdx-code-block
+</APITable>
+```
+
+### 類型定義 {#types}
+
+#### `Layers` {#EditUrlFunction}
+
+```ts
+type Layers = Record<
+  string, // layer name
+  (filePath: string) => boolean // layer matcher
+>;
+```
+
+`layers` 物件定義方式：
+
+- 鍵(key)：層級名稱
+- 值(value)：判斷指定 CSS 模組檔案是否應歸入該層級的函式
+
+:::caution[順序重要性]
+
+物件順序至關重要：
+
+- 鍵的順序決定了 CSS 層級的明確排序
+- 當多個層級匹配檔案路徑時，僅會套用第一個匹配的層級
+
+:::
+
+### 配置範例 {#ex-config}
+
+您可透過插件選項配置此插件。
+
+```js
+const options = {
+  layers: {
+    'docusaurus.infima': (filePath) =>
+      filePath.includes('/node_modules/infima/dist'),
+    'docusaurus.theme-classic': (filePath) =>
+      filePath.includes('/node_modules/@docusaurus/theme-classic/lib'),
+  },
+};
+```

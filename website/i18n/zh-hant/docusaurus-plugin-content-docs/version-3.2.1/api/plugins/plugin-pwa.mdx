@@ -1,0 +1,303 @@
+---
+sidebar_position: 9
+slug: /api/plugins/@docusaurus/plugin-pwa
+---
+
+# 📦 plugin-pwa
+
+Docusaurus Plugin to add PWA support using [Workbox](https://developers.google.com/web/tools/workbox). This plugin generates a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers) in production build only, and allows you to create fully PWA-compliant documentation site with offline and installation support.
+
+## Installation {#installation}
+
+```bash npm2yarn
+npm install --save @docusaurus/plugin-pwa
+```
+
+## Configuration {#configuration}
+
+Create a [PWA manifest](https://web.dev/add-manifest/) at `./static/manifest.json`.
+
+Modify `docusaurus.config.js` with a minimal PWA config, like:
+
+```js title="docusaurus.config.js"
+export default {
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      },
+    ],
+  ],
+};
+```
+
+## Progressive Web App {#progressive-web-app}
+
+Having a service worker installed is not enough to make your application a PWA. You'll need to at least include a [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and have the correct tags in `<head>` ([Options > pwaHead](#pwahead)).
+
+After deployment, you can use [Lighthouse](https://developers.google.com/web/tools/lighthouse) to run an audit on your site.
+
+For a more exhaustive list of what it takes for your site to be a PWA, refer to the [PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
+
+## App installation support {#app-installation-support}
+
+If your browser supports it, you should be able to install a Docusaurus site as an app.
+
+![A screen recording of the installation process. A button appears in the address bar of the browser, which displays a dialog asking "install this application?" when clicked. After clicking the "Install" button, a new application is opened in the operating system, opening to the Docusaurus homepage.](/img/pwa_install.gif)
+
+:::note
+
+App installation requires the HTTPS protocol and a valid manifest.
+
+:::
+
+## Offline mode (precaching) {#offline-mode-precaching}
+
+We enable users to browse a Docusaurus site offline, by using service-worker precaching.
+
+The [workbox-precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) page explains the idea:
+
+> One feature of service workers is the ability to save a set of files to the cache when the service worker is installing. This is often referred to as "precaching", since you are caching content ahead of the service worker being used.
+>
+> The main reason for doing this is that it gives developers control over the cache, meaning they can determine when and how long a file is cached as well as serve it to the browser without going to the network, meaning it can be used to create web apps that work offline.
+>
+> Workbox takes a lot of the heavy lifting out of precaching by simplifying the API and ensuring assets are downloaded efficiently.
+
+By default, offline mode is enabled when the site is installed as an app. See the `offlineModeActivationStrategies` option for details.
+
+After the site has been precached, the service worker will serve cached responses for later visits. When a new build is deployed along with a new service worker, the new one will begin installing and eventually move to a waiting state. During this waiting state, a reload popup will show and ask the user to reload the page for new content. Until the user either clears the application cache or clicks the `reload` button on the popup, the service worker will continue serving the old content.
+
+:::warning
+
+Offline mode / precaching requires downloading all the static assets of the site ahead of time, and can consume unnecessary bandwidth. It may not be a good idea to activate it for all kind of sites.
+
+:::
+
+## Options {#options}
+
+### `debug` {#debug}
+
+- 類型：`boolean`
+- 預設值：`false`
+
+啟用除錯模式：
+
+- Workbox 日誌
+- 額外的 Docusaurus 日誌
+- 未優化的 SW 檔案輸出
+- 原始碼映射
+
+### `offlineModeActivationStrategies` {#offlinemodeactivationstrategies}
+
+- 類型：`('appInstalled' | 'mobile' | 'saveData'| 'queryString' | 'always')[]`
+- 預設值：`['appInstalled', 'queryString', 'standalone']`
+
+啟用離線模式的策略：
+
+- `appInstalled`：針對已將網站安裝為應用程式的使用者啟用（並非 100% 可靠）
+- `standalone`：針對以獨立模式執行應用程式的使用者啟用（通常是 PWA 安裝後的情況）
+- `queryString`：若查詢字串包含 `offlineMode=true` 則啟用（方便進行 PWA 除錯）
+- `mobile`：針對行動裝置使用者啟用（`width <= 996px`）
+- `saveData`：針對 `navigator.connection.saveData === true` 的使用者啟用
+- `always`：針對所有使用者啟用
+
+:::warning
+
+請謹慎使用：部分使用者可能不喜歡被強制使用離線模式。
+
+:::
+
+:::danger
+
+無法以可靠的方式偵測頁面是否以 PWA 形式渲染。
+
+`appinstalled` 事件已[從規範中移除](https://github.com/w3c/manifest/pull/836)，且 [`navigator.getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API 僅在最新版 Chrome 中支援，並需在 manifest 中宣告 `related_applications`。
+
+[`standalone` 策略](https://petelepage.com/blog/2019/07/is-my-pwa-installed/)是啟用離線模式的良好備用方案（至少在執行已安裝的應用程式時）。
+
+:::
+
+### `injectManifestConfig` {#injectmanifestconfig}
+
+傳遞給 `workbox.injectManifest()` 的 [Workbox 選項](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-InjectManifestOptions)。此選項可讓您控制哪些資源會被預先快取，並在離線時可用。
+
+- 類型：`InjectManifestOptions`
+- 預設值：`{}`
+
+```js title="docusaurus.config.js"
+export default {
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        injectManifestConfig: {
+          manifestTransforms: [
+            //...
+          ],
+          modifyURLPrefix: {
+            //...
+          },
+          // We already add regular static assets (HTML, images...) to be available offline
+          // You can add more files according to your needs
+          globPatterns: ['**/*.{pdf,docx,xlsx}'],
+          // ...
+        },
+      },
+    ],
+  ],
+};
+```
+
+### `pwaHead` {#pwahead}
+
+- 類型：`({ tagName: string; [attributeName: string]: string })[]`
+- 預設值：`[]`
+
+包含 `tagName` 和屬性鍵值對的物件陣列，用於注入到 `<head>` 標籤中。技術上您可以透過此方式注入任何 head 標籤，但理想情況下用於使您的網站符合 PWA 規範的標籤。以下是使您的應用程式完全符合規範的標籤列表：
+
+```js
+export default {
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#000',
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'mask-icon',
+            href: '/img/docusaurus.svg',
+            color: 'rgb(37, 194, 160)',
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileImage',
+            content: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileColor',
+            content: '#000',
+          },
+        ],
+      },
+    ],
+  ],
+};
+```
+
+### `swCustom` {#swcustom}
+
+- 類型：`string | undefined`
+- 預設值：`undefined`
+
+適用於額外的 Workbox 規則。您可以在這裡執行服務工作者能做的任何事情，並充分利用 workbox 函式庫的功能。程式碼會被轉譯，因此您可以使用現代 ES6+ 語法。
+
+例如，快取外部路由的檔案：
+
+```js
+import {registerRoute} from 'workbox-routing';
+import {StaleWhileRevalidate} from 'workbox-strategies';
+
+// default fn export receiving some useful params
+export default function swCustom(params) {
+  const {
+    debug, // :boolean
+    offlineMode, // :boolean
+  } = params;
+
+  // Cache responses from external resources
+  registerRoute((context) => {
+    return [
+      /graph\.facebook\.com\/.*\/picture/,
+      /netlify\.com\/img/,
+      /avatars1\.githubusercontent/,
+    ].some((regex) => context.url.href.match(regex));
+  }, new StaleWhileRevalidate());
+}
+```
+
+模組應具有 `default` 函式匯出，並接收一些參數。
+
+### `swRegister` {#swregister}
+
+- 類型：`string | false`
+- 預設值：`'docusaurus-plugin-pwa/src/registerSW.js'`
+
+在 Docusaurus 應用程式之前新增一個進入點，以便註冊可以在應用程式執行前完成。預設的 `registerSW.js` 檔案足以進行簡單的註冊。
+
+傳遞 `false` 將完全停用註冊功能。
+
+## Manifest 範例 {#manifest-example}
+
+The Docusaurus site manifest can serve as an inspiration:
+
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+
+<CodeBlock className="language-json">
+  {JSON.stringify(require('@site/static/manifest.json'),null,2)}
+</CodeBlock>
+```
+
+## Customizing reload popup {#customizing-reload-popup}
+
+The `@theme/PwaReloadPopup` component is rendered when a new service worker is waiting to be installed, and we suggest a reload to the user. You can [swizzle](../../swizzling.mdx) this component and implement your own UI. It will receive an `onReload` callback as props, which should be called when the `reload` button is clicked. This will tell the service worker to install the waiting service worker and reload the page.
+
+The default theme includes an implementation for the reload popup and uses [Infima Alerts](https://infima.dev/docs/components/alert).
+
+![A screen recording of the reload process. An alert box shows in the bottom right of the window, saying "New content available". After clicking the "Refresh" button, the page's main heading changes from "Introduction" to "PWA :))".](/img/pwa_reload.gif)
+
+Your component can render `null`, but this is not recommended: users won't have a way to get up-to-date content.

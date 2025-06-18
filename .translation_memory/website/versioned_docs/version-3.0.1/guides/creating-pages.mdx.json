@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/guides/creating-pages.mdx",
+  "source_file_content_hash": "51a298c68933e04f58921a9f0e5ca97a1b1f76210c00798f707c67bedef3845f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /creating-pages\nsidebar_label: Pages\n---",
+      "source_content_hash": "7886584118dd4991364ff5e7bb377debc72d5a9d615c913d245902e4a5a10b22",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Creating Pages",
+      "source_content_hash": "186076596ff866ec164445f01784cde206a5c20298ed09c68e92e5a0fb7dc36a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 建立頁面"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "In this section, we will learn about creating pages in Docusaurus.",
+      "source_content_hash": "6758dd61e1e9f018062825409e4a8b7209891820c97ebc2f77d40922477d4d62",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本章節將介紹如何在 Docusaurus 中建立頁面。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The `@docusaurus/plugin-content-pages` plugin empowers you to create **one-off standalone pages** like a showcase page, playground page, or support page. You can use React components, or Markdown.",
+      "source_content_hash": "ff6b2587031f2b24e499aab5d6ce648d9d77c7242a92299189de95bf3661e381",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`@docusaurus/plugin-content-pages` 插件讓您能建立**獨立單頁**，例如展示頁、遊樂場頁面或支援頁面。您可以使用 React 元件或 Markdown 來建立。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::note\n\nPages do not have sidebars, only [docs](./docs/docs-introduction.mdx) do.\n\n:::",
+      "source_content_hash": "c4ef0ea0fb9f7727f389df54a92a0730847b4fa28be466e5abb928722e779a1a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n頁面沒有側邊欄，只有[文件](./docs/docs-introduction.mdx)才有。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "440191a5",
+      "source_content": ":::info\n\nCheck the [Pages Plugin API Reference documentation](./../api/plugins/plugin-content-pages.mdx) for an exhaustive list of options.\n\n:::",
+      "source_content_hash": "56a3c1dc3d26ebc46ae0633379fd3166a757b5092dfe51a33660ead397360e84",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n詳盡的選項列表請參閱[頁面插件 API 參考文件](./../api/plugins/plugin-content-pages.mdx)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Add a React page {#add-a-react-page}",
+      "source_content_hash": "1edbc0ee059c7511672683c809f360d4c4a4bbfd55a0db02fdc24c3f742c1c81",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新增 React 頁面 {#add-a-react-page}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "React is used as the UI library to create pages. Every page component should export a React component, and you can leverage the expressiveness of React to build rich and interactive content.",
+      "source_content_hash": "ffb87f37abbe9d8cac4850e53994076e14f3ddd8a42d206cf593fe33166ef76a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 React 作為建立頁面的 UI 函式庫。每個頁面元件都應導出一個 React 元件，您可充分運用 React 的表現力來建立豐富的互動內容。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Create a file `/src/pages/helloReact.js`:",
+      "source_content_hash": "6f45bd606edf1a23446db956ec5caead2dfedf96d783ae9984bea87708d86422",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建立檔案 `/src/pages/helloReact.js`："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```jsx title=\"/src/pages/helloReact.js\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\n\nexport default function Hello() {\n  return (\n    <Layout title=\"Hello\" description=\"Hello React Page\">\n      <div\n        style={{\n          display: 'flex',\n          justifyContent: 'center',\n          alignItems: 'center',\n          height: '50vh',\n          fontSize: '20px',\n        }}>\n        <p>\n          Edit <code>pages/helloReact.js</code> and save to reload.\n        </p>\n      </div>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "b3eee632cfba0e139b6e50dc1208ab86bd8ab37f1b2e63e67c46dacd675194f0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Once you save the file, the development server will automatically reload the changes. Now open [`http://localhost:3000/helloReact`](http://localhost:3000/helloReact) and you will see the new page you just created.",
+      "source_content_hash": "47324ce2b053105ded2b8bee71d19629f77c6426beeb32f6734a20a4a687a64b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "儲存檔案後，開發伺服器會自動重新載入變更。現在開啟 [`http://localhost:3000/helloReact`](http://localhost:3000/helloReact) 即可看到您剛建立的新頁面。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Each page doesn't come with any styling. You will need to import the `Layout` component from `@theme/Layout` and wrap your contents within that component if you want the navbar and/or footer to appear.",
+      "source_content_hash": "2fb32e384735f15820b64d5a925a257d1433cba331c331241afe46ace2214723",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個頁面預設不包含任何樣式。若需要顯示導覽列和/或頁尾，您需從 `@theme/Layout` 匯入 `Layout` 元件，並將內容包裹在該元件中。"
+      }
+    },
+    {
+      "segment_id": "7cde057a",
+      "source_content": ":::tip\n\nYou can also create TypeScript pages with the `.tsx` extension (`helloReact.tsx`).\n\n:::",
+      "source_content_hash": "4e9e9dd6c2bfdfd84ae5d4aafc912f19272fabec80850c00e7c59296b598f9f8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您也可使用 `.tsx` 副檔名建立 TypeScript 頁面 (`helloReact.tsx`)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "## Add a Markdown page {#add-a-markdown-page}",
+      "source_content_hash": "561b5e50dd1d899522f10230c8d1c34d9aef7683f33f215c20f3b2eea5d7ad80",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新增 Markdown 頁面 {#add-a-markdown-page}"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "Create a file `/src/pages/helloMarkdown.md`:",
+      "source_content_hash": "17d724bc485def36a69beb77be5a086caf452d9a288bf5f9659c312a3edecfd2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建立檔案 `/src/pages/helloMarkdown.md`："
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```md title=\"/src/pages/helloMarkdown.md\"\n---\ntitle: my hello page title\ndescription: my hello page description\nhide_table_of_contents: true\n---\n\n# Hello\n\nHow are you?\n```",
+      "source_content_hash": "aadf020f43061d210296e42982b419763e38cdd20cc4849161aa5e5c7600d13b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "In the same way, a page will be created at [`http://localhost:3000/helloMarkdown`](http://localhost:3000/helloMarkdown).",
+      "source_content_hash": "49a9721fb2e68f9e6df393569a13090642b3b48e13f9d5c00880e38377b1103c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同樣地，系統會在 [`http://localhost:3000/helloMarkdown`](http://localhost:3000/helloMarkdown) 建立頁面。"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "Markdown pages are less flexible than React pages because it always uses the theme layout.",
+      "source_content_hash": "cbc2c2e38e2c7fb3410398bda5cc201b91b85115d789bc10150b14bb056ef6f8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 頁面的靈活性低於 React 頁面，因其始終使用主題佈局。"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Here's an [example Markdown page](/examples/markdownPageExample).",
+      "source_content_hash": "2013d01bedbe1d9bdfafd2945a344b7892087124bca457d85aa8e4f7d965fe69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這裡有個 [Markdown 頁面範例](/examples/markdownPageExample)。"
+      }
+    },
+    {
+      "segment_id": "de7ed16f",
+      "source_content": ":::tip\n\nYou can use the full power of React in Markdown pages too, refer to the [MDX](https://mdxjs.com/) documentation.\n\n:::",
+      "source_content_hash": "ec997383df0d2974cf1b5c70b0fdd9e08cea6ca0f6b554c8cc9b74356f2bc84c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您也可在 Markdown 頁面中充分運用 React 功能，詳見 [MDX](https://mdxjs.com/) 文件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "## Routing {#routing}",
+      "source_content_hash": "169511b1a4052ca04eaaaaadacb46d6a4b1c009e37a367fb1aa213c85827a5c6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 路由 {#routing}"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "If you are familiar with other static site generators like Jekyll and Next, this routing approach will feel familiar to you. Any JavaScript file you create under `/src/pages/` directory will be automatically converted to a website page, following the `/src/pages/` directory hierarchy. For example:",
+      "source_content_hash": "35163a15bdbd9df187bb53585f9a19dfe4c3e73a7b6d92257f02588a6a12e311",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您熟悉 Jekyll 或 Next 等靜態網站生成器，會對這種路由方式感到熟悉。在 `/src/pages/` 目錄下建立的任何 JavaScript 檔案，都會依循該目錄層級自動轉換為網站頁面。例如："
+      }
+    },
+    {
+      "segment_id": "e0019b35",
+      "source_content": "- `/src/pages/index.js` → `[baseUrl]`\n- `/src/pages/foo.js` → `[baseUrl]/foo`\n- `/src/pages/foo/test.js` → `[baseUrl]/foo/test`\n- `/src/pages/foo/index.js` → `[baseUrl]/foo/`",
+      "source_content_hash": "1d920ea9ba0bd297821ad8679582036d35fdae308bed4b8f44226a673e8c2f18",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `/src/pages/index.js` → `[baseUrl]`\n- `/src/pages/foo.js` → `[baseUrl]/foo`\n- `/src/pages/foo/test.js` → `[baseUrl]/foo/test`\n- `/src/pages/foo/index.js` → `[baseUrl]/foo/`"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "In this component-based development era, it is encouraged to co-locate your styling, markup, and behavior together into components. Each page is a component, and if you need to customize your page design with your own styles, we recommend co-locating your styles with the page component in its own directory. For example, to create a \"Support\" page, you could do one of the following:",
+      "source_content_hash": "03927a59b8fea7dcacee5e4f5a6abb0e4890b1266281082c481aa4e3580e7d2c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在這個元件化開發時代，建議將樣式、標記和行為集中封裝在元件中。每個頁面都是一個元件，若需用自訂樣式設計頁面，建議將樣式與頁面元件集中存放在同目錄下。例如要建立「支援」頁面，您可選擇："
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "- Add a `/src/pages/support.js` file\n- Create a `/src/pages/support/` directory and a `/src/pages/support/index.js` file.",
+      "source_content_hash": "ae44715701285d55d5a5bbe94ba6c134b0c83195005b9c42bfb63b60df6ca1b4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 新增 `/src/pages/support.js` 檔案\n- 建立 `/src/pages/support/` 目錄和 `/src/pages/support/index.js` 檔案"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "The latter is preferred as it has the benefits of letting you put files related to the page within that directory. For example, a CSS module file (`styles.module.css`) with styles meant to only be used on the \"Support\" page.",
+      "source_content_hash": "5d2372310a4410334bdde14e92ef9eead538f714c51588ec849f7e1f6c806554",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "後者更為理想，因其能將頁面相關檔案集中存放。例如專用於「支援」頁面的 CSS 模組檔案 (`styles.module.css`)。"
+      }
+    },
+    {
+      "segment_id": "72871d03",
+      "source_content": ":::note\n\nThis is merely a recommended directory structure, and you will still need to manually import the CSS module file within your component module (`support/index.js`).\n\n:::",
+      "source_content_hash": "8be44c259bcc4dbed1ed7c9968f075765f03cf314d0ba28e467d04c5650adb35",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n這僅是建議的目錄結構，您仍需手動在元件模組 (`support/index.js`) 中匯入 CSS 模組檔案。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "By default, any Markdown or JavaScript file starting with `_` will be ignored and no routes will be created for that file (see the `exclude` option).",
+      "source_content_hash": "e23d2f1041314c1a1e29fd06536d3d5614265b4e986387ab9def54d3f35d8a52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，任何以 `_` 開頭的 Markdown 或 JavaScript 檔案都會被忽略，且不會為該檔案建立路由（請參閱 `exclude` 選項）。"
+      }
+    },
+    {
+      "segment_id": "f155ef1e",
+      "source_content": "```bash\nmy-website\n├── src\n│   └── pages\n│       ├── styles.module.css\n│       ├── index.js\n│       ├── _ignored.js\n│       ├── _ignored-folder\n│       │   ├── Component1.js\n│       │   └── Component2.js\n│       └── support\n│           ├── index.js\n│           └── styles.module.css\n.\n```",
+      "source_content_hash": "39c636a029aded946f421b929e1b762f9c42f99a10b96f33d65aaf40ebbd14d8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f155ef1e"
+      }
+    },
+    {
+      "segment_id": "f5974367",
+      "source_content": ":::warning\n\nAll JavaScript/TypeScript files within the `src/pages/` directory will have corresponding website paths generated for them. If you want to create reusable components into that directory, use the `exclude` option (by default, files prefixed with `_`, test files(`.test.js`), and files in `__tests__` directory are not turned into pages).\n\n:::",
+      "source_content_hash": "b99012173510c812591f42643e0875e935c585785c058eba4afa773d02e47359",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n`src/pages/` 目錄下的所有 JavaScript/TypeScript 檔案都會自動生成對應的網站路徑。若需在該目錄建立可重複使用的元件，請使用 `exclude` 選項（預設情況下，以 `_` 開頭的檔案、測試檔案(`.test.js`) 及 `__tests__` 目錄中的檔案不會被轉換為頁面）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "13292277",
+      "source_content": "### Duplicate Routes {#duplicate-routes}",
+      "source_content_hash": "2eb550c3d1789f76b15669d90344b04d114c9116d915484a5cca894d98db1536",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 重複路由 {#duplicate-routes}"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "You may accidentally create multiple pages that are meant to be accessed on the same route. When this happens, Docusaurus will warn you about duplicate routes when you run `yarn start` or `yarn build`, but the site will still be built successfully. The page that was created last will be accessible, but it will override other conflicting pages. To resolve this issue, you should modify or remove any conflicting routes.",
+      "source_content_hash": "4541ae161b8362c49bc288a11508d15bca240565f935152d6342a59c40d56b4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可能會意外建立多個指向相同路由的頁面。發生此情況時，執行 `yarn start` 或 `yarn build` 時 Docusaurus 會發出重複路由警告，但網站仍會成功建置。最後建立的頁面將可存取，但會覆蓋其他衝突頁面。解決此問題需修改或移除衝突路由。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/guides/creating-pages.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.079350+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "51a298c68933e04f58921a9f0e5ca97a1b1f76210c00798f707c67bedef3845f"
+  }
+}

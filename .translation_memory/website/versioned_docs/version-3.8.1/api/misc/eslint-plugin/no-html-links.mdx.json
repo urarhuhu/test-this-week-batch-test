@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/api/misc/eslint-plugin/no-html-links.mdx",
+  "source_file_content_hash": "b7179197829c45973b373a530b405187a78e9511c6beab9a828011582158fa2b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /api/misc/@docusaurus/eslint-plugin/no-html-links\n---",
+      "source_content_hash": "7fbd85fbb2b4e9904a3e53e5b902c9c72fae8b7dbe69a5124918040cfa69286a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# no-html-links",
+      "source_content_hash": "470f072e740776611ad98c6026b3ffd4eefbab8d11efcfa37a2bb0d068aea22a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# no-html-links"
+      }
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_10c4cb47"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Ensure that the Docusaurus [`<Link>`](../../../docusaurus-core.mdx#link) component is used instead of `<a>` tags.",
+      "source_content_hash": "de78b28b2c52276784b8830368a482fe1613d312e4402f641bac070abb5ea336",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "確保使用 Docusaurus 的 [`<Link>`](../../../docusaurus-core.mdx#link) 元件而非 `<a>` 標籤。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The `<Link>` component has prefetching and preloading built-in. It also does build-time broken link detection, and helps Docusaurus understand your site's structure better.",
+      "source_content_hash": "5fd7cd19b024f8005981e65769ddde7a70b2d4910f8a7a971d90354166e871a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`<Link>` 元件內建預取(prefetching)與預載(preloading)功能，同時具備建置階段失效連結檢測機制，並能協助 Docusaurus 更完善地理解您的網站結構。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Rule Details {#details}",
+      "source_content_hash": "690b629e8ddc6e690cbd5cbf346df9a24a48806263051f247d6714c4a3c6ead7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則詳情 {#details}"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Examples of **incorrect** code for this rule:",
+      "source_content_hash": "7c6462bacad6bdc980d88d6feb75fba43108d257e6c559378586af7869988718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**錯誤**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```html\n<a href=\"/page\">go to page!</a>\n\n<a href=\"https://x.com/docusaurus\" target=\"_blank\">X</a>\n```",
+      "source_content_hash": "4362a5734650c41fb9e3d59dc37a2bd44b7cf8d83b334cac32cae8fcb00158a7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Examples of **correct** code for this rule:",
+      "source_content_hash": "76019e5c3c094061d1e3142f6873cc0ad1c55a6f9b9596980100921b3099184f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**正確**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```js\nimport Link from '@docusaurus/Link'\n\n<Link to=\"/page\">go to page!</Link>\n\n<Link to=\"https://x.com/docusaurus\">X</Link>\n```",
+      "source_content_hash": "b681302671287b73e4f15724ef30c04b6f82778a852b23617328685baf2698bc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Rule Configuration {#configuration}",
+      "source_content_hash": "592694473017d61078fea0d9b5331ffb2e358fd63ff89b3af19f326d9e213b46",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "be2d5397",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_be2d5397"
+      }
+    },
+    {
+      "segment_id": "388f52fd",
+      "source_content": "| Option | Type | Default | Description |\n| --- | --- | --- | --- |\n| `ignoreFullyResolved` | `boolean` | `false` | Set to true will not report any `<a>` tags with absolute URLs including a protocol. |",
+      "source_content_hash": "239ffb93b07659e43f50c7cd4ff8e128c269c4292cd329c1b70123edb5926e60",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_388f52fd"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/api/misc/eslint-plugin/no-html-links.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.360170+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "b7179197829c45973b373a530b405187a78e9511c6beab9a828011582158fa2b"
+  }
+}

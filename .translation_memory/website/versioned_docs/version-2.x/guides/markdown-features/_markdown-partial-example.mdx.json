@@ -1,0 +1,32 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/guides/markdown-features/_markdown-partial-example.mdx",
+  "source_file_content_hash": "42a1bac060a2b8f06d5c20bf1960c0f85faf73f4552c5b08e8832df5b583ef64",
+  "segments": [
+    {
+      "segment_id": "68c6737b",
+      "source_content": "<span>Hello {props.name}</span>",
+      "source_content_hash": "df24a057b0bd721b5e7654845c627f90d522364d562b5e9521f74b4c1ae15797",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "<span>你好 {props.name}</span>"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "This is text some content from `_markdown-partial-example.md`.",
+      "source_content_hash": "33ecebf09b6918160fdf9f72f91f065941c4e6c883eacbc44d2bd2b277b75446",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是來自 `_markdown-partial-example.md` 的部分文字內容。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/guides/markdown-features/_markdown-partial-example.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.096926+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "42a1bac060a2b8f06d5c20bf1960c0f85faf73f4552c5b08e8832df5b583ef64"
+  }
+}

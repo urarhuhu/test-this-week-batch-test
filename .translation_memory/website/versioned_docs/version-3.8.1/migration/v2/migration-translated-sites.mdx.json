@@ -1,0 +1,502 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/migration/v2/migration-translated-sites.mdx",
+  "source_file_content_hash": "f5dc2ea663f1a1abd09a1ba83b988cd1838ce4791aa2c6ee669ff955eb87da67",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration/v2/translated-sites\n---",
+      "source_content_hash": "487a528dcfb9dcdc60b782ad844dc4817762c8be8546e2001cd4bc95ade14d26",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Translated sites",
+      "source_content_hash": "df3172ddfecf8a607cb04af74a8b2c744fc22bdb1ca1842d1e912a8eae953c88",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 已翻譯的網站"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "This page explains how migrate a translated Docusaurus v1 site to Docusaurus v2.",
+      "source_content_hash": "21e6fe4675be34314604fd58ba3f6155b9dbfef072df3599501d84337ca73b49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本頁面說明如何將已翻譯的 Docusaurus v1 網站遷移至 Docusaurus v2。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## i18n differences {#i18n-differences}",
+      "source_content_hash": "a2c0124749d75c4d8325af4737b550f55ebc7b24a0b3a646c621af9e50398932",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 國際化差異 {#i18n-differences}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus v2 i18n is conceptually quite similar to Docusaurus v1 i18n with a few differences.",
+      "source_content_hash": "0b6a0737d1438460f508b7e803b8fa300d06737fa44af882e39a04cefe7ab1c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v2 的國際化功能在概念上與 Docusaurus v1 相當類似，但存在一些差異。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "It is not tightly coupled to Crowdin, and you can use Git or another SaaS instead.",
+      "source_content_hash": "4f5e37c2a681b775b6ce88c9db49ee579ec5482b44ece8aa92c23ef962bae3e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "它並未與 Crowdin 緊密耦合，您可以使用 Git 或其他 SaaS 服務替代。"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "### Different filesystem paths {#different-filesystem-paths}",
+      "source_content_hash": "0039ac9b2dd6b6dfcc1e5d66ce2d6bf3eb657f6bf157013108a29dbf1d911f4e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 不同的檔案系統路徑 {#different-filesystem-paths}"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "On Docusaurus v2, localized content is generally found at `website/i18n/[locale]`.",
+      "source_content_hash": "45aca7518d17910bec756406d00e0cd2c8c94f6b892a67f874fa5a85ffc6d99a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus v2 中，本地化內容通常位於 `website/i18n/[locale]`。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Docusaurus v2 is modular based on a plugin system, and each plugin is responsible to manage its own translations.",
+      "source_content_hash": "7e6795fa0959224caee26ce548ad588ff2edb30805f5e12db862b6f60435f163",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v2 基於插件系統模組化，每個插件需自行管理其翻譯內容。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Each plugin has its own i18n subfolder, like: `website/i18n/fr/docusaurus-plugin-content-blog`",
+      "source_content_hash": "4ff5792c15605e3360ec0b8b1f0ad3400059185da3ca9f9651c6dffe8cc70504",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個插件都有其專屬的 i18n 子資料夾，例如：`website/i18n/fr/docusaurus-plugin-content-blog`"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Updated translation APIs {#updated-translation-apis}",
+      "source_content_hash": "7cc534a97998ccee20f46983a5391920b489bb73fb459f30fbfbd34dbc567a4f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更新的翻譯 API {#updated-translation-apis}"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "With Docusaurus v1, you translate your pages with `<translate>`:",
+      "source_content_hash": "1cb8a603ed2d15dd60af6daac14b9adb691d2e8f07f86d9ac66161188b4f7c9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus v1 中，您使用 `<translate>` 來翻譯頁面："
+      }
+    },
+    {
+      "segment_id": "08021a08",
+      "source_content": "```jsx\nconst translate = require('../../server/translate.js').translate;\n\n<h2>\n  <translate desc=\"the header description\">\n    This header will be translated\n  </translate>\n</h2>;\n```",
+      "source_content_hash": "c1d9bc3f80bce67be36b75ee354afb7250e46c97191b7e36eedb1c4514a28507",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_08021a08"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "On Docusaurus v2, you translate your pages with `<Translate>`",
+      "source_content_hash": "f84f868e83ce100626eac755eb68832eb0a6c4949ef9dafd4c55931aa12ca328",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus v2 中，您需使用 `<Translate>` 來翻譯頁面"
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "```jsx\nimport Translate from '@docusaurus/Translate';\n\n<h2>\n  <Translate id=\"header.translation.id\" description=\"the header description\">\n    This header will be translated\n  </Translate>\n</h2>;\n```",
+      "source_content_hash": "df059e0802c8d41b25727883c8c040101e273ae0f17bff2b68a564742a24a99c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "5a149cd3",
+      "source_content": ":::note\n\nThe `write-translations` CLI still works to extract translations from your code.\n\nThe code translations are now added to `i18n/[locale]/code.json` using Chrome i18n JSON format.\n\n:::",
+      "source_content_hash": "181634371040fd8b6e610f0ebf62d4ff036b7e1f788f32a0a2a41906c8b0545c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n`write-translations` CLI 指令仍可用於從程式碼中提取翻譯內容。\n\n程式碼翻譯現在會以 Chrome i18n JSON 格式存入 `i18n/[locale]/code.json`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "### Stricter Markdown parser {#stricter-markdown-parser}",
+      "source_content_hash": "6e185f9b8d32a794fc41df541203b0303318465594ab69636d46b44d97ed25e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更嚴格的 Markdown 解析器 {#stricter-markdown-parser}"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Docusaurus v2 is using [MDX](https://mdxjs.com/) to parse Markdown files.",
+      "source_content_hash": "b5688d57b5b3dfc88c867abff0be735d424b850f15aae0cb0c00e018933a7a2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v2 使用 [MDX](https://mdxjs.com/) 來解析 Markdown 檔案。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "MDX compiles Markdown files to React components, is stricter than the Docusaurus v1 parser, and will make your build fail on error instead of rendering some bad content.",
+      "source_content_hash": "3c871b30caee2a3a57cf5a686fec6a1d1057bc8a6229750bed991ccc82df2de9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX 會將 Markdown 檔案編譯為 React 元件，其規範比 Docusaurus v1 的解析器更嚴格，當遇到錯誤時會導致建置失敗，而非渲染出有問題的內容。"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Also, the HTML elements must be replaced by JSX elements.",
+      "source_content_hash": "fb1642fa33217fa717e10e4132dfa7c0c1271e660aa564a62476b2ff0d79ef52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此外，HTML 元素必須替換為 JSX 元素。"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "This is particularly important for i18n because if your translations are not good on Crowdin and use invalid Markup, your v2 translated site might fail to build: you may need to do some translation cleanup to fix the errors.",
+      "source_content_hash": "d3ee03d96504bcc093fd0da57f3bfdd9562d879cb28411aa5c5fa387368f9095",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這對國際化尤其重要，因為若 Crowdin 上的翻譯品質不佳且使用了無效的標記，您的 v2 翻譯網站可能會建置失敗：您可能需要進行一些翻譯清理來修正錯誤。"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## Migration strategies {#migration-strategies}",
+      "source_content_hash": "57aa418e83ecf51a24ae07379b03dda399bd70cd2a8c25850239fcdd63064af4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 遷移策略 {#migration-strategies}"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "This section will help you figure out how to **keep your existing v1 translations after you migrate to v2**.",
+      "source_content_hash": "e2ef34cdf5cc3bd8c83a9c63825717b2bfd3de7f23946107f753a5d3f9b1577c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本節將協助您了解如何在遷移至 v2 後保留現有的 v1 翻譯內容。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "There are **multiple possible strategies** to migrate a Docusaurus v1 site using Crowdin, with different tradeoffs.",
+      "source_content_hash": "a8e4ccb142e359a1963f6c58b596844637395e1bff0551d6296267c4ffa69edc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於使用 Crowdin 的 Docusaurus v1 網站，存在多種可能的遷移策略，各有不同的權衡取捨。"
+      }
+    },
+    {
+      "segment_id": "32ef4bd1",
+      "source_content": ":::warning\n\nThis documentation is a best-effort to help you migrate, please help us improve it if you find a better way!\n\n:::",
+      "source_content_hash": "7a744daaccc1e09e9cb0aa2f8aaabc7248870e4afd81ed508d87d425d83d6da9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n本文件是為協助遷移所做的最大努力，若您發現更好的方法，請協助我們改進！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Before all, we recommend to:",
+      "source_content_hash": "726518402726a87f44aec45989738d261566add566401f0c0e632d93a27ca043",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "首先，我們建議："
+      }
+    },
+    {
+      "segment_id": "5efe9dee",
+      "source_content": "- Migrate your v1 Docusaurus site to v2 without the translations\n- Get familiar with the [new i18n system of Docusaurus v2](../../i18n/i18n-introduction.mdx) an\n- Make Crowdin work for your v2 site, using a new and untranslated Crowdin project and the [Crowdin tutorial](../../i18n/i18n-crowdin.mdx)",
+      "source_content_hash": "d26b3fb92cbe0071d9317cab8359680676895bef3cf05058eb969b640ae16e19",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 先在不包含翻譯內容的情況下，將您的 v1 Docusaurus 網站遷移至 v2\n- 熟悉 [Docusaurus v2 的新國際化系統](../../i18n/i18n-introduction.mdx)\n- 使用全新且未翻譯的 Crowdin 專案，並參考 [Crowdin 教學](../../i18n/i18n-crowdin.mdx) 讓 Crowdin 適用於您的 v2 網站"
+      }
+    },
+    {
+      "segment_id": "edb00ead",
+      "source_content": ":::danger\n\nDon't try to migrate without understanding both Crowdin and Docusaurus v2 i18n.\n\n:::",
+      "source_content_hash": "4debcf945f5fbf32f81c2bb8d620ae909e33b5c814103191e64fc0a6f155bfaf",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger\n\n在未充分理解 Crowdin 和 Docusaurus v2 國際化功能前，請勿嘗試進行遷移。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "### Create a new Crowdin project {#create-a-new-crowdin-project}",
+      "source_content_hash": "93e9bbd155d0e67b539dbad8df9f6f054b31cfd2241f5aeaa6e46f797543d0be",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 建立新的 Crowdin 專案 {#create-a-new-crowdin-project}"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "To avoid any **risk of breaking your v1 site in production**, one possible strategy is to duplicate the original v1 Crowdin project.",
+      "source_content_hash": "25c0ae694a09c1c1f932d5f8c536fa1fec25a7849c7cddee6a9916f0ae133d02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為避免任何可能導致生產環境中的 v1 網站中斷的風險，一種可能的策略是複製原始的 v1 Crowdin 專案。"
+      }
+    },
+    {
+      "segment_id": "8a58dc39",
+      "source_content": ":::info\n\nThis strategy was used to [upgrade the Jest website](https://jestjs.io/blog/2021/03/09/jest-website-upgrade).\n\n:::",
+      "source_content_hash": "29eb57861932bad975f1099fcc2653dc70981f3ffa06266256d667d69f0524b3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n此策略曾用於 [升級 Jest 網站](https://jestjs.io/blog/2021/03/09/jest-website-upgrade)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Unfortunately, Crowdin does not have any \"Duplicate/clone Project\" feature, which makes things complicated.",
+      "source_content_hash": "776b0a95ad6f06f762f492fe37cbe4c7b9af4dca55eddea08bfa4861b62f0e10",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遺憾的是，Crowdin 並未提供「複製/克隆專案」功能，這使得操作變得複雜。"
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "- Download the translation memory of your original project in `.tmx` format (`https://crowdin.com/project/<ORIGINAL_PROJECT>/settings#tm` > `View Records`)\n- Upload the translation memory to your new project (`https://crowdin.com/project/<NEW_PROJECT>/settings#tm` > `View Records`)\n- Reconfigure `crowdin.yml` for Docusaurus v2 according to the i18n docs\n- Upload the Docusaurus v2 source files with the Crowdin CLI to the new project\n- Mark sensitive strings like `id` or `slug` as \"hidden string\" on Crowdin\n- On the \"Translations\" tab, click on \"Pre-Translation > via TM\" (`https://crowdin.com/project/<NEW_PROJECT>/settings#translations`)\n- Try first with \"100% match\" (more content will be translated than \"Perfect\"), and pre-translate your sources\n- Download the Crowdin translations locally\n- Try to run/build your site and see if there are any errors",
+      "source_content_hash": "e2dd39794587046d8f448f2ccb45ced52a6671dc8bcce884e5f9834f6db2142e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 從原始專案下載翻譯記憶檔（`.tmx`格式）（`https://crowdin.com/project/<ORIGINAL_PROJECT>/settings#tm` > `View Records`）\n- 將翻譯記憶檔上傳至新專案（`https://crowdin.com/project/<NEW_PROJECT>/settings#tm` > `View Records`）\n- 根據i18n文件重新配置`crowdin.yml`以適應Docusaurus v2\n- 使用Crowdin CLI將Docusaurus v2原始檔案上傳至新專案\n- 在Crowdin上將敏感字串如`id`或`slug`標記為「隱藏字串」\n- 在「Translations」標籤頁中，點擊「Pre-Translation > via TM」（`https://crowdin.com/project/<NEW_PROJECT>/settings#translations`）\n- 先嘗試「100% match」（會比「Perfect」選項翻譯更多內容），並預翻譯你的原始檔案\n- 下載Crowdin翻譯至本地端\n- 嘗試執行/建置你的網站，查看是否有錯誤"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "You will likely have errors on your first-try: the pre-translation might try to translate things that it should not be translated (front matter, admonition, code blocks...), and the translated MD files might be invalid for the MDX parser.",
+      "source_content_hash": "598c6faf4a5e621941a4a32f3926d466dd23e4ba7b910a3caba77204415ec0eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "首次嘗試時很可能會遇到錯誤：預翻譯可能會嘗試翻譯不該翻譯的內容（front matter、admonition、程式碼區塊等），且翻譯後的MD檔案可能對MDX解析器無效。"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "You will have to fix all the errors until your site builds. You can do that by modifying the translated MD files locally, and fix your site for one locale at a time using `docusaurus build --locale fr`.",
+      "source_content_hash": "4e700115811fa7ccf0bfdfae3084f6e9a75c0427b24cd8402a4b724885ff3d3d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你必須修正所有錯誤直到網站能成功建置。可以透過修改本地端的翻譯MD檔案來解決，並使用`docusaurus build --locale fr`一次針對一個語系修正網站問題。"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "There is no ultimate guide we could write to fix these errors, but common errors are due to:",
+      "source_content_hash": "bf342f6dc2fe32a25ac7211a5ae504cd67221dd69d384eb74354c99d5de6c1d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們無法提供解決這些錯誤的終極指南，但常見錯誤原因包括："
+      }
+    },
+    {
+      "segment_id": "2ddd26d5",
+      "source_content": "- Not marking enough strings as \"hidden strings\" in Crowdin, leading to pre-translation trying to translate these strings.\n- Having bad v1 translations, leading to invalid markup in v2: bad HTML elements inside translations and unclosed tags\n- Anything rejected by the MDX parser, like using HTML elements instead of JSX elements (use the [MDX playground](https://mdxjs.com/playground/) for debugging)",
+      "source_content_hash": "ecdcd313722ba6621e09414f592fc52fd510cee271a82743c2dbaa1306829207",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 未在Crowdin中將足夠字串標記為「隱藏字串」，導致預翻譯嘗試翻譯這些字串。\n- 存在不良的v1翻譯，導致v2中出現無效標記：翻譯中包含不良HTML元素或未閉合標籤\n- 任何被MDX解析器拒絕的內容，例如使用HTML元素而非JSX元素（可使用[MDX playground](https://mdxjs.com/playground/)進行除錯）"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "You might want to repeat this pre-translation process, eventually trying the \"Perfect\" option and limiting pre-translation only some languages/files.",
+      "source_content_hash": "ca6e289df978414abf3557c3a9912bfacc62ed792dc869ca5caa67904f66a0d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你可能需要重複此預翻譯流程，最終嘗試「Perfect」選項並限制僅對部分語言/檔案進行預翻譯。"
+      }
+    },
+    {
+      "segment_id": "837540ee",
+      "source_content": ":::tip\n\nUse [`mdx-code-block`](../../i18n/i18n-crowdin.mdx#mdx-solutions) around problematic Markdown elements: Crowdin is less likely mess things up with code blocks.\n\n:::",
+      "source_content_hash": "6c5f1c7075ee634ed9059e94d8e672628af7d269c14255167174bc07dc9cefca",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n對有問題的Markdown元素使用[`mdx-code-block`](../../i18n/i18n-crowdin.mdx#mdx-solutions)：Crowdin較不容易在程式碼區塊中出錯。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5d8b9012",
+      "source_content": ":::note\n\nYou will likely notice that some things were translated on your old project, but are now untranslated in your new project.\n\nThe Crowdin Markdown parser is evolving other time and each Crowdin project has a different parser version, which can lead to pre-translation not being able to pre-translate all the strings.\n\nThis parser version is undocumented, and you will have to ask the Crowdin support to know your project's parser version and fix one specific version.\n\nUsing the same CLI version and parser version across the 2 Crowdin projects might give better results.\n\n:::",
+      "source_content_hash": "9cbd693e62495c27a19618766921118c3f9f4870108cfc2241d5bb9b64ee1e8d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n你可能會注意到舊專案中某些已翻譯的內容，在新專案中卻未翻譯。\n\nCrowdin的Markdown解析器會隨時間演進，且每個Crowdin專案的解析器版本不同，這可能導致預翻譯無法完整預翻譯所有字串。\n\n此解析器版本未公開文件化，你需要聯繫Crowdin支援以確認專案的解析器版本並固定特定版本。\n\n在兩個Crowdin專案中使用相同的CLI版本和解析器版本可能會獲得更好的結果。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a3f69fad",
+      "source_content": ":::danger\n\nCrowdin has an \"upload translations\" feature, but in our experience it does not give very good results for Markdown\n\n:::",
+      "source_content_hash": "6a616135f32fa3c2698f857d7bcbf346d40a21edf5549427f10e01c0e5968c15",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger\n\nCrowdin有「上傳翻譯」功能，但根據我們的經驗，此功能對Markdown檔案的處理效果不佳\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8b448c8b",
+      "source_content": "### Use the existing Crowdin project {#use-the-existing-crowdin-project}",
+      "source_content_hash": "22fa147fe9116d94e4207166f6f13b6db15d625b2231c9d6be6376a6afc84e87",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用現有的Crowdin專案 {#use-the-existing-crowdin-project}"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "If you don't mind modifying your existing Crowdin project and risking to mess things up, it may be possible to use the Crowdin branch system.",
+      "source_content_hash": "44e404547eb263ec527944dfa74afed5a96b73f633d9999dcca4fdaf0e6d0f57",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若不介意修改現有Crowdin專案並承擔可能出錯的風險，可以嘗試使用Crowdin的分支系統。"
+      }
+    },
+    {
+      "segment_id": "91f76522",
+      "source_content": ":::warning\n\nThis workflow has not been tested in practice, please report us how good it is.\n\n:::",
+      "source_content_hash": "0a1ad5cf08725214b29b6a45d9c51e37b3cdd0907bbde3fe998177f1dec2a725",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此工作流程尚未經過實際測試，請回報其效果如何。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "This way, you wouldn't need to create a new Crowdin project, transfer the translation memory, apply pre-translations, and try to fix the pre-translations errors.",
+      "source_content_hash": "cb59abe103a15b7f63ec769578e138b5aca2925d8723804936bca5ed65d5e2bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如此一來，你無需建立新Crowdin專案、轉移翻譯記憶、套用預翻譯或嘗試修正預翻譯錯誤。"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "You could create a Crowdin branch for Docusaurus v2, where you upload the v2 sources, and merge the Crowdin branch to main once ready.",
+      "source_content_hash": "1ee563882d76da2e598b9d12fdf5b30781b904136c4afcf06e29951f733501b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你可以為Docusaurus v2建立Crowdin分支，上傳v2原始檔案，並在準備完成後將分支合併至主線。"
+      }
+    },
+    {
+      "segment_id": "7312e69e",
+      "source_content": "### Use Git instead of Crowdin {#use-git-instead-of-crowdin}",
+      "source_content_hash": "ee95bc984826ca1270135984a46d4d2707274c8d0bab3c2702a93852f1507135",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 改用Git而非Crowdin {#use-git-instead-of-crowdin}"
+      }
+    },
+    {
+      "segment_id": "2dbfc5f7",
+      "source_content": "It is possible to migrate away of Crowdin, and add the translation files to Git instead.",
+      "source_content_hash": "65c8b5e2a0fe9e48d77bf23529ceb0eb25c4dfa2e7422f03ea07e6f29c53bbc9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可以完全遷移離開Crowdin，將翻譯檔案改為存放在Git中。"
+      }
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "Use the Crowdin CLI to download the v1 translated files, and put these translated files at the correct Docusaurus v2 filesystem location.",
+      "source_content_hash": "2a3815af219fa17f50a65ecef168d9c9736fa3746f38e5fcd6c23563f2d0eba5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用Crowdin CLI下載v1翻譯檔案，並將這些檔案放置於Docusaurus v2正確的檔案系統路徑中。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/migration/v2/migration-translated-sites.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.405180+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "f5dc2ea663f1a1abd09a1ba83b988cd1838ce4791aa2c6ee669ff955eb87da67"
+  }
+}

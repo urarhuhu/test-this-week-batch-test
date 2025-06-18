@@ -1,0 +1,772 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.4.0/guides/docs/versioning.mdx",
+  "source_file_content_hash": "4ab7398f3b449318474079bd4b48dcc37f24e6d25796f8a4b11dae8fb02150d1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /versioning\n---",
+      "source_content_hash": "3be26a7192d8744f976bb51089f93ca9933a2889fa5be75b0db7441f985a4c23",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Versioning",
+      "source_content_hash": "a23ec7652711ec273c4c563b2b5e8ba1d1dc4fb6186f55697f84d228613b900f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 版本控制"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "You can use the versioning CLI to create a new documentation version based on the latest content in the `docs` directory. That specific set of documentation will then be preserved and accessible even as the documentation in the `docs` directory continues to evolve.",
+      "source_content_hash": "c0b89f7cf7cfe7805533f386486a8cbc743fec8ad32e85ccaa981436f90f3185",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以使用版本控制 CLI 基於 `docs` 目錄中的最新內容創建新的文檔版本。該特定文檔集將被保留並可訪問，即使 `docs` 目錄中的文檔持續演進。"
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```mdx-code-block\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n```",
+      "source_content_hash": "ee7c7ccc3fc35d8459eb01cfa9b23771278098ad8ace52975ecedfe60785c012",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::warning\n\nThink about it before starting to version your documentation - it can become difficult for contributors to help improve it!\n\n:::",
+      "source_content_hash": "32817f25aa3e41055298b9466afe9e94058703b30cf475baefde6c2cee3cef26",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n在開始對文檔進行版本控制之前請三思——這可能會使貢獻者難以協助改進！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Most of the time, you don't need versioning as it will just increase your build time, and introduce complexity to your codebase. Versioning is **best suited for websites with high-traffic and rapid changes to documentation between versions**. If your documentation rarely changes, don't add versioning to your documentation.",
+      "source_content_hash": "6d928bfefee4fd968e503258be05f168c1a981d6bb64a701d719f520c20fae56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "大多數情況下，您不需要版本控制，因為這只會增加構建時間並為代碼庫引入複雜性。版本控制**最適合文檔流量高且版本間文檔變化迅速的網站**。如果您的文檔很少變更，請勿為文檔添加版本控制。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "To better understand how versioning works and see if it suits your needs, you can read on below.",
+      "source_content_hash": "d5f2f60c591b7d4696b1a1f8b0b2d8eb75fa4b8a89eb7724bcca633a0616e25d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要更好地理解版本控制的工作原理並判斷其是否適合您的需求，您可以繼續閱讀以下內容。"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Overview {#overview}",
+      "source_content_hash": "b59c5fa2fc40b0029bcce638255c9eed259608fd15ae6b734d2a2dcbebe6a78e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 概述 {#overview}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "A typical versioned doc site looks like below:",
+      "source_content_hash": "0ac4ce241dcdda3418385c6ef8a6756e0c33be7fd6fd09e6726f2960a32ef63a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "典型的版本化文檔網站如下所示："
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```bash\nwebsite\n├── sidebars.json        # sidebar for the current docs version\n├── docs                 # docs directory for the current docs version\n│   ├── foo\n│   │   └── bar.md       # https://mysite.com/docs/next/foo/bar\n│   └── hello.md         # https://mysite.com/docs/next/hello\n├── versions.json        # file to indicate what versions are available\n├── versioned_docs\n│   ├── version-1.1.0\n│   │   ├── foo\n│   │   │   └── bar.md   # https://mysite.com/docs/foo/bar\n│   │   └── hello.md\n│   └── version-1.0.0\n│       ├── foo\n│       │   └── bar.md   # https://mysite.com/docs/1.0.0/foo/bar\n│       └── hello.md\n├── versioned_sidebars\n│   ├── version-1.1.0-sidebars.json\n│   └── version-1.0.0-sidebars.json\n├── docusaurus.config.js\n└── package.json\n```",
+      "source_content_hash": "8788d7f854945b045cec45c3f6a61ec3715db41821633483239e59f45e8cb0d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "The `versions.json` file is a list of version names, ordered from newest to oldest.",
+      "source_content_hash": "2595a666df74b255f3b270d9f99a60bd2f381a7312462acd1b645281ec4c6810",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`versions.json` 文件是一個版本名稱列表，按從新到舊的順序排列。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "The table below explains how a versioned file maps to its version and the generated URL.",
+      "source_content_hash": "5d00acd7e390e7e4bc90866d33a6d34f094b7e1ff3214f92a573781c43d42d3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "下表解釋了版本化文件如何映射到其版本及生成的 URL。"
+      }
+    },
+    {
+      "segment_id": "96b8c6f1",
+      "source_content": "| Path                                    | Version        | URL               |\n| --------------------------------------- | -------------- | ----------------- |\n| `versioned_docs/version-1.0.0/hello.md` | 1.0.0          | /docs/1.0.0/hello |\n| `versioned_docs/version-1.1.0/hello.md` | 1.1.0 (latest) | /docs/hello       |\n| `docs/hello.md`                         | current        | /docs/next/hello  |",
+      "source_content_hash": "05e167ec7e222f675a1aef29f96c53871209823765ac0361d4522d9772c0e865",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_96b8c6f1"
+      }
+    },
+    {
+      "segment_id": "974ac4b5",
+      "source_content": ":::tip\n\nThe files in the `docs` directory belong to the `current` docs version.\n\nBy default, the `current` docs version is labeled as `Next` and hosted under `/docs/next/*`, but it is entirely configurable to fit your project's release lifecycle.\n\n:::",
+      "source_content_hash": "d3c09d729c3f1bbec5d8ed4539b5eb3b90583fd3aa62168a9ffb3f0b64b09066",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n`docs` 目錄中的文件屬於 `current` 文檔版本。\n\n默認情況下，`current` 文檔版本標記為 `Next` 並托管在 `/docs/next/*` 下，但完全可以根據項目的發布週期進行配置。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "### Terminology {#terminology}",
+      "source_content_hash": "f8a127d8ecafd0e3504e55a04e37b206ccb7d73df69705a8f3341892c3223ec3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 術語 {#terminology}"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "Note the terminology we use here.",
+      "source_content_hash": "aa7fb2e8d2e4e6799a418f140f5f5d81cfff2616e90b11cbf02f2c24ee33b44f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意此處使用的術語。"
+      }
+    },
+    {
+      "segment_id": "68209f5c",
+      "source_content": "<dl>\n  <dt>\n    <b>Current version</b>\n  </dt>\n  <dd>\n    {'The version placed in the '}\n    <code>./docs</code>\n    {' folder.'}\n  </dd>\n  <dt>\n    <b>Latest version / last version</b>\n  </dt>\n  <dd>\n    {'The version served by default for docs navbar items. Usually has path '}\n    <code>/docs</code>\n    {'.'}\n  </dd>\n</dl>",
+      "source_content_hash": "3399be00996a1ebfc2b852f5ee01e6cf9de315bee1c68c5054773d1b408022bf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_68209f5c"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "Current version is defined by the **file system location**, while latest version is defined by the **the navigation behavior**. They may or may not be the same version! (And the default configuration, as shown in the table above, would treat them as different: current version at `/docs/next` and latest at `/docs`.)",
+      "source_content_hash": "c9686010b7878fc26cbef570346fbeebb15f72fe0e3ecdf163ff003721c54b75",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當前版本由**文件系統位置**定義，而最新版本由**導航行為**定義。它們可能是也可能不是同一個版本！（默認配置，如上表所示，會將它們視為不同：當前版本在 `/docs/next`，最新版本在 `/docs`。）"
+      }
+    },
+    {
+      "segment_id": "e33a2404",
+      "source_content": "## Tutorials {#tutorials}",
+      "source_content_hash": "1a6fb06786a81188c04da5fa0eff0f25a63f17a606dff99c0fd3ab047a29a7d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 教程 {#tutorials}"
+      }
+    },
+    {
+      "segment_id": "b10963d7",
+      "source_content": "### Tagging a new version {#tagging-a-new-version}",
+      "source_content_hash": "1c6583a1b27c3349e91e7b999e772b28b2c453334842f6559347f89963d0515e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 標記新版本 {#tagging-a-new-version}"
+      }
+    },
+    {
+      "segment_id": "dee20070",
+      "source_content": "1. First, make sure the current docs version (the `./docs` directory) is ready to be frozen.\n2. Enter a new version number.",
+      "source_content_hash": "cff9afb4755471dce7a8826d29303f005dfa6b0b28655a742e686275e314eeca",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 首先，確保當前文檔版本（`./docs` 目錄）已準備好凍結。\n2. 輸入新版本號。"
+      }
+    },
+    {
+      "segment_id": "a476a172",
+      "source_content": "```bash npm2yarn\nnpm run docusaurus docs:version 1.1.0\n```",
+      "source_content_hash": "457bf4efdb9bde8771a5b3c9d7368151978f28b89fde7bca4782fb9b75341b7b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a476a172"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "When tagging a new version, the document versioning mechanism will:",
+      "source_content_hash": "720c7aa791410781f16f3d5e750e93bc66c90cecb40450fe125c2fed63ad20ea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "標記新版本時，文檔版本控制機制將："
+      }
+    },
+    {
+      "segment_id": "7a3b7c62",
+      "source_content": "- Copy the full `docs/` folder contents into a new `versioned_docs/version-[versionName]/` folder.\n- Create a versioned sidebars file based from your current [sidebar](./sidebar/index.mdx) configuration (if it exists) - saved as `versioned_sidebars/version-[versionName]-sidebars.json`.\n- Append the new version number to `versions.json`.",
+      "source_content_hash": "c73c80c5fe0a5be1425b375fbd5b4503afa125c570d03f39d599dc410f97900a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 將完整的 `docs/` 文件夾內容複製到新的 `versioned_docs/version-[versionName]/` 文件夾。\n- 根據當前[側邊欄](./sidebar/index.mdx)配置（如果存在）創建版本化側邊欄文件——保存為 `versioned_sidebars/version-[versionName]-sidebars.json`。\n- 將新版本號追加到 `versions.json`。"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "### Creating new docs {#creating-new-docs}",
+      "source_content_hash": "40b283daed63ad7efdd9cf3f44e374522d4da1081fbc3df9dc2f9d5edeb24cc8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 創建新文檔 {#creating-new-docs}"
+      }
+    },
+    {
+      "segment_id": "1b8037f4",
+      "source_content": "1. Place the new file into the corresponding version folder.\n2. Include the reference to the new file in the corresponding sidebar file according to the version number.",
+      "source_content_hash": "677c8d70541888edb48cdfa91200c8af0170405f0138be6a7c630346c386ed30",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 將新文件放入相應的版本文件夾。\n2. 根據版本號在相應的側邊欄文件中包含對新文件的引用。"
+      }
+    },
+    {
+      "segment_id": "342e4d80",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"Current version structure\">\n```",
+      "source_content_hash": "c56e08c1184992153744dff49aab8cfe4366cfbdaeade4b29fc891ada83e9b15",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_342e4d80"
+      }
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```bash\n# The new file.\ndocs/new.md\n\n# Edit the corresponding sidebar file.\nsidebars.js\n```",
+      "source_content_hash": "08f715fee22e3448d3ca38ad3d8c4287665cc5b60e7f9e40e33131e7b6880109",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b27056c4"
+      }
+    },
+    {
+      "segment_id": "a3a1b8eb",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"Older version structure\">\n```",
+      "source_content_hash": "dd045473c1b34a396d5893e3570c613534632b5f2fb7e3d083e8c0f563d6e92d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a3a1b8eb"
+      }
+    },
+    {
+      "segment_id": "43cca4d3",
+      "source_content": "```bash\n# The new file.\nversioned_docs/version-1.0.0/new.md\n\n# Edit the corresponding sidebar file.\nversioned_sidebars/version-1.0.0-sidebars.json\n```",
+      "source_content_hash": "b06fbeac385695a4e3f8e9e094d0e9f4e6db518cbafed6551a1a56fb5fee1fa6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_43cca4d3"
+      }
+    },
+    {
+      "segment_id": "8a061704",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8a061704"
+      }
+    },
+    {
+      "segment_id": "fd42cd42",
+      "source_content": ":::tip\n\nVersioned sidebar files are, like standard sidebar files, relative to the content root for the given version — so for the example above, your versioned sidebar file may look like:\n\n```json\n{\n  \"sidebar\": [\n    {\n      \"type\": \"autogenerated\",\n      \"dirName\": \".\"\n    }\n  ]\n}\n```\n\nor for a manual sidebar:\n\n```json\n{\n  \"sidebar\": [\n    {\n      \"type\": \"doc\",\n      \"id\": \"new\",\n      \"label\": \"New\"\n    }\n  ]\n}\n```\n\n:::",
+      "source_content_hash": "e97b89b37b9fbf49cc14f61769a93cec41979bcdd08742e4f4c370ae897042a8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n版本化側邊欄文件與標準側邊欄文件一樣，相對於給定版本的內容根目錄——因此對於上面的示例，您的版本化側邊欄文件可能如下所示：\n\n```json\n{\n  \"sidebar\": [\n    {\n      \"type\": \"autogenerated\",\n      \"dirName\": \".\"\n    }\n  ]\n}\n```\n\n或手動側邊欄：\n\n```json\n{\n  \"sidebar\": [\n    {\n      \"type\": \"doc\",\n      \"id\": \"new\",\n      \"label\": \"New\"\n    }\n  ]\n}\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a75f8411",
+      "source_content": "### Updating an existing version {#updating-an-existing-version}",
+      "source_content_hash": "6f42d2074e1bf9ffc52c5de0f642cb56ea420ea2cc2e50701ec679b217fea046",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更新現有版本 {#updating-an-existing-version}"
+      }
+    },
+    {
+      "segment_id": "39c48ff7",
+      "source_content": "You can update multiple docs versions at the same time because each directory in `versioned_docs/` represents specific routes when published.",
+      "source_content_hash": "3f5a6ef65f6e5d8178e17943e6dfd399245c591918ef8022516871daffd0ca93",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以同時更新多個文件版本，因為 `versioned_docs/` 中的每個目錄在發布時都代表特定的路由。"
+      }
+    },
+    {
+      "segment_id": "67a49da9",
+      "source_content": "1. Edit any file.\n2. Commit and push changes.\n3. It will be published to the version.",
+      "source_content_hash": "8681a92827e67b9374cd4502ce7b7b95423126b83dc9c30ff91573a930f460c7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 編輯任何文件。\n2. 提交並推送變更。\n3. 它將被發布到該版本。"
+      }
+    },
+    {
+      "segment_id": "4e2e17c5",
+      "source_content": "Example: When you change any file in `versioned_docs/version-2.6/`, it will only affect the docs for version `2.6`.",
+      "source_content_hash": "78473098f483c1cabfa7aeb5221892afb5d57717537fa98d8923ae151d1a4cf3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例：當您變更 `versioned_docs/version-2.6/` 中的任何文件時，只會影響版本 `2.6` 的文件。"
+      }
+    },
+    {
+      "segment_id": "cce332f2",
+      "source_content": "### Deleting an existing version {#deleting-an-existing-version}",
+      "source_content_hash": "449b0b1ca562ec8993bdaafb00e4205f228f911974ad30d6e231850b2a9e60c1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 刪除現有版本 {#deleting-an-existing-version}"
+      }
+    },
+    {
+      "segment_id": "9ebd9d9b",
+      "source_content": "You can delete/remove versions as well.",
+      "source_content_hash": "c84c9712af25adcbd1d741762f73575f983ce2c72cfd1f946aa973aa8669b3fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可以刪除/移除版本。"
+      }
+    },
+    {
+      "segment_id": "1a287dc7",
+      "source_content": "1. Remove the version from `versions.json`.",
+      "source_content_hash": "32b88ae1586ea8fd75f5f8aa3758a7840e83aa7a47a84c358e4b6d81b8e9677c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 從 `versions.json` 中移除該版本。"
+      }
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "d7631ae3",
+      "source_content": "```diff\n[\n  \"2.0.0\",\n  \"1.9.0\",\n  // highlight-next-line\n- \"1.8.0\"\n]\n```",
+      "source_content_hash": "7e6efb19d52162237941e08eabaff0ddf00804eca7be46e38a6c3902fab068d5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d7631ae3"
+      }
+    },
+    {
+      "segment_id": "e73f1e25",
+      "source_content": "2. Delete the versioned docs directory. Example: `versioned_docs/version-1.8.0`.\n3. Delete the versioned sidebars file. Example: `versioned_sidebars/version-1.8.0-sidebars.json`.",
+      "source_content_hash": "a10a5073855b31774a970babee8efba202da36c71e1e28dbe7dacea0de297961",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "2. 刪除版本化文件目錄。範例：`versioned_docs/version-1.8.0`。\n3. 刪除版本化側邊欄文件。範例：`versioned_sidebars/version-1.8.0-sidebars.json`。"
+      }
+    },
+    {
+      "segment_id": "e457c208",
+      "source_content": "## Configuring versioning behavior {#configuring-versioning-behavior}",
+      "source_content_hash": "5e443c986193b56d529c22aeacb7e42f05197eec8e54871d064c41705b411bf8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置版本化行為 {#configuring-versioning-behavior}"
+      }
+    },
+    {
+      "segment_id": "eeeea5ce",
+      "source_content": "The \"current\" version is the version name for the `./docs` folder. There are different ways to manage versioning, but two very common patterns are:",
+      "source_content_hash": "7cbc4455ab1660ac08167bb4312b21a4f9ee7a460f7be723bf1e9b3b7ce3f8d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "「當前」版本是 `./docs` 文件夾的版本名稱。管理版本化有不同方式，但兩種非常常見的模式是："
+      }
+    },
+    {
+      "segment_id": "9f118c66",
+      "source_content": "- You release v1, and start immediately working on v2 (including its docs). In this case, the **current version** is v2, which is in the `./docs` source folder, and can be browsed at `example.com/docs/next`. The **latest version** is v1, which is in the `./versioned_docs/version-1` source folder, and is browsed by most of your users at `example.com/docs`.\n- You release v1, and will maintain it for some time before thinking about v2. In this case, the **current version** and **latest version** will both be point to v1, since the v2 docs doesn't even exist yet!",
+      "source_content_hash": "d5dd5cdbecf1c27ae76655835eacafcce9cdcdeac65e026b0d05d107211bb71d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 您發布了 v1，並立即開始開發 v2（包括其文件）。在這種情況下，**當前版本**是 v2，位於 `./docs` 源文件夾中，可以在 `example.com/docs/next` 瀏覽。**最新版本**是 v1，位於 `./versioned_docs/version-1` 源文件夾中，大多數用戶在 `example.com/docs` 瀏覽。\n- 您發布了 v1，並將維護一段時間才會考慮 v2。在這種情況下，**當前版本**和**最新版本**都指向 v1，因為 v2 文件甚至還不存在！"
+      }
+    },
+    {
+      "segment_id": "09f901c3",
+      "source_content": "Docusaurus defaults work great for the first use case. We will label the current version as \"next\" and you can even choose not to publish it.",
+      "source_content_hash": "e3ded43f0d8e96d9b673554506924c27c0e835b61e7a349f4b2fc2f2c6108394",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的預設值非常適合第一種使用情境。我們會將當前版本標記為「next」，您甚至可以選擇不發布它。"
+      }
+    },
+    {
+      "segment_id": "be0f7233",
+      "source_content": "**For the 2nd use case**: if you release v1 and don't plan to work on v2 anytime soon, instead of versioning v1 and having to maintain the docs in 2 folders (`./docs` + `./versioned_docs/version-1.0.0`), you may consider \"pretending\" that the current version is a cut version by giving it a path and a label:",
+      "source_content_hash": "067ce391dfa42bbabdf954d6ec7dafe7c268f54ef456cd2726863f498c2f833a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**對於第二種使用情境**：如果您發布了 v1 並且不打算很快開發 v2，與其版本化 v1 並必須維護兩個文件夾中的文件（`./docs` + `./versioned_docs/version-1.0.0`），您可以考慮「假裝」當前版本是一個已切割的版本，通過給它一個路徑和標籤："
+      }
+    },
+    {
+      "segment_id": "eff3427d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    '@docusaurus/preset-classic',\n    docs: {\n      // highlight-start\n      lastVersion: 'current',\n      versions: {\n        current: {\n          label: '1.0.0',\n          path: '1.0.0',\n        },\n      },\n      // highlight-end\n    },\n  ],\n};\n```",
+      "source_content_hash": "00a4c35e5327e0d9a87bd77981ac2b020036edf0a0f4819108c8a787a07981f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eff3427d"
+      }
+    },
+    {
+      "segment_id": "d119b75c",
+      "source_content": "The docs in `./docs` will be served at `/docs/1.0.0` instead of `/docs/next`, and `1.0.0` will become the default version we link to in the navbar dropdown, and you will only need to maintain a single `./docs` folder.",
+      "source_content_hash": "0ed9eab617726f3f501ebbbe780bc7adeb01c954017e0ec352765bc6712d5470",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`./docs` 中的文件將在 `/docs/1.0.0` 提供，而不是 `/docs/next`，而 `1.0.0` 將成為我們在導航欄下拉選單中連結的預設版本，您只需要維護單一的 `./docs` 文件夾。"
+      }
+    },
+    {
+      "segment_id": "8f4e752e",
+      "source_content": "We offer these plugin options to customize versioning behavior:",
+      "source_content_hash": "cb9bf96cabf93a463f02fcad00180d4838eb5c089265fe1e12c16dafd92a3845",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供這些插件選項來自訂版本化行為："
+      }
+    },
+    {
+      "segment_id": "8aacd6aa",
+      "source_content": "- `disableVersioning`: Explicitly disable versioning even with versions. This will make the site only include the current version.\n- `includeCurrentVersion`: Include the current version (the `./docs` folder) of your docs.\n  - **Tip**: turn it off if the current version is a work-in-progress, not ready to be published.\n- `lastVersion`: Sets which version \"latest version\" (the `/docs` route) refers to.\n  - **Tip**: `lastVersion: 'current'` makes sense if your current version refers to a major version that's constantly patched and released. The actual route base path and label of the latest version are configurable.\n- `onlyIncludeVersions`: Defines a subset of versions from `versions.json` to be deployed.\n  - **Tip**: limit to 2 or 3 versions in dev and deploy previews to improve startup and build time.\n- `versions`: A dictionary of version metadata. For each version, you can customize the following:\n  - `label`: the label displayed in the versions dropdown and banner.\n  - `path`: the route base path of this version. By default, latest version has `/` and current version has `/next`.\n  - `banner`: one of `'none'`, `'unreleased'`, and `'unmaintained'`. Determines what's displayed at the top of every doc page. Any version above the latest version would be \"unreleased\", and any version below would be \"unmaintained\".\n  - `badge`: show a badge with the version name at the top of a doc of that version.\n  - `className`: add a custom `className` to the `<html>` element of doc pages of that version.",
+      "source_content_hash": "f83860eb6bab6fabf52329eb142f11c2227e91f371c91dcfc8ed50838d713e7f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `disableVersioning`: 明確停用版本控制，即使存在多個版本。這將使網站僅包含當前版本。\n- `includeCurrentVersion`: 包含當前版本（`./docs` 資料夾）的文件。\n  - **提示**：若當前版本是進行中的工作且尚未準備發布，可關閉此選項。\n- `lastVersion`: 設定「最新版本」（`/docs` 路由）所指向的版本。\n  - **提示**：若當前版本指向一個持續修補和發布的主要版本，`lastVersion: 'current'` 是合理的設定。最新版本的實際路由基礎路徑和標籤是可配置的。\n- `onlyIncludeVersions`: 定義從 `versions.json` 中部署的版本子集。\n  - **提示**：在開發和部署預覽中限制為 2 或 3 個版本，以提升啟動和建置時間。\n- `versions`: 版本元數據的字典。每個版本可自定義以下內容：\n  - `label`: 在版本下拉選單和橫幅中顯示的標籤。\n  - `path`: 此版本的基礎路由路徑。預設情況下，最新版本為 `/`，當前版本為 `/next`。\n  - `banner`: 可選 `'none'`、`'unreleased'` 或 `'unmaintained'`。決定每個文件頁面頂部顯示的內容。任何高於最新版本的版本會標記為「未發布」，低於的則標記為「未維護」。\n  - `badge`: 在該版本的文件頂部顯示版本名稱的徽章。\n  - `className`: 為該版本的文件頁面 `<html>` 元素添加自定義 `className`。"
+      }
+    },
+    {
+      "segment_id": "41e7f712",
+      "source_content": "See [docs plugin configuration](../../api/plugins/plugin-content-docs.mdx#configuration) for more details.",
+      "source_content_hash": "a728657c9232e53d1cf4fef0521abac203510cdf2c498aae6afb681f2edb7f44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳見 [文件插件配置](../../api/plugins/plugin-content-docs.mdx#configuration)。"
+      }
+    },
+    {
+      "segment_id": "371cb514",
+      "source_content": "## Navbar items {#navbar-items}",
+      "source_content_hash": "d2b965653937665db1e25dd38ef269864fb222c4535c44497f9a4117a079047e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 導航欄項目 {#navbar-items}"
+      }
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "We offer several navbar items to help you quickly set up navigation without worrying about versioned routes.",
+      "source_content_hash": "f09ee0b3ce2080260b61ed9c1c81a5ab1773938666336f4e692ba2353433531d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供多種導航欄項目，幫助您快速設定導航，無需擔心版本化路由。"
+      }
+    },
+    {
+      "segment_id": "44c87a8c",
+      "source_content": "- [`doc`](../../api/themes/theme-configuration.mdx#navbar-doc-link): a link to a doc.\n- [`docSidebar`](../../api/themes/theme-configuration.mdx#navbar-doc-sidebar): a link to the first item in a sidebar.\n- [`docsVersion`](../../api/themes/theme-configuration.mdx#navbar-docs-version): a link to the main doc of the currently viewed version.\n- [`docsVersionDropdown`](../../api/themes/theme-configuration.mdx#navbar-docs-version-dropdown): a dropdown containing all the versions available.",
+      "source_content_hash": "9397373887b68f3906f614777b7144db28cc4aa6126e446e999b93be4b7c841d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [`doc`](../../api/themes/theme-configuration.mdx#navbar-doc-link): 指向文件的連結。\n- [`docSidebar`](../../api/themes/theme-configuration.mdx#navbar-doc-sidebar): 指向側邊欄第一項的連結。\n- [`docsVersion`](../../api/themes/theme-configuration.mdx#navbar-docs-version): 指向當前查看版本的主要文件的連結。\n- [`docsVersionDropdown`](../../api/themes/theme-configuration.mdx#navbar-docs-version-dropdown): 包含所有可用版本的下拉選單。"
+      }
+    },
+    {
+      "segment_id": "f50056c0",
+      "source_content": "These links would all look for an appropriate version to link to, in the following order:",
+      "source_content_hash": "4b45b68c4785f23d2c10af0aeadf403b08a40319cd0b355c90307af30cd47e97",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些連結會按以下順序尋找合適的版本進行連結："
+      }
+    },
+    {
+      "segment_id": "1eb85a80",
+      "source_content": "1. **Active version**: the version that the user is currently browsing, if she is on a page provided by this doc plugin. If she's not on a doc page, fall back to...\n2. **Preferred version**: the version that the user last viewed. If there's no history, fall back to...\n3. **Latest version**: the default version that we navigate to, configured by the `lastVersion` option.",
+      "source_content_hash": "678f65c448887de28a19d24614214faaa3637e80813536baed1134a9ed39cc73",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. **當前瀏覽版本**：若使用者正在瀏覽此文件插件提供的頁面，則為其當前查看的版本。若不在文件頁面，則回退至...\n2. **偏好版本**：使用者上次查看的版本。若無歷史記錄，則回退至...\n3. **最新版本**：由 `lastVersion` 選項配置的預設導航版本。"
+      }
+    },
+    {
+      "segment_id": "16efe6ee",
+      "source_content": "## Recommended practices {#recommended-practices}",
+      "source_content_hash": "d307a96cd6b0f6b480bf5d9f33c7ca84a88a761b3b4cd3313674f3ac8cb46760",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 推薦實踐 {#recommended-practices}"
+      }
+    },
+    {
+      "segment_id": "d59d3f3c",
+      "source_content": "### Version your documentation only when needed {#version-your-documentation-only-when-needed}",
+      "source_content_hash": "075ac23de732f391539044fcae5241d7b3f23e288c9a98abeda27fb9422a619c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 僅在需要時對文件進行版本控制 {#version-your-documentation-only-when-needed}"
+      }
+    },
+    {
+      "segment_id": "b632973a",
+      "source_content": "For example, you are building documentation for your npm package `foo` and you are currently in version 1.0.0. You then release a patch version for a minor bug fix and it's now 1.0.1.",
+      "source_content_hash": "5ec29c74e162456d617786c6b4618304ae938e3d70bf17b01b4a84d2c48e5189",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，您正在為 npm 套件 `foo` 建置文件，當前版本為 1.0.0。隨後您發布了一個修補版本以解決小錯誤，版本變為 1.0.1。"
+      }
+    },
+    {
+      "segment_id": "2f8456b2",
+      "source_content": "Should you cut a new documentation version 1.0.1? **You probably shouldn't**. 1.0.1 and 1.0.0 docs shouldn't differ according to semver because there are no new features!. Cutting a new version for it will only just create unnecessary duplicated files.",
+      "source_content_hash": "c2464d18e559cc5a7d0ba71a6420c4f09d7627b2cfc717a4788a3f74177f8163",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您是否需要為文件新增 1.0.1 版本？**可能不需要**。根據 semver 規範，1.0.1 和 1.0.0 的文件不應有差異，因為沒有新增功能！為其建立新版本只會產生不必要的重複文件。"
+      }
+    },
+    {
+      "segment_id": "9a53bcb1",
+      "source_content": "### Keep the number of versions small {#keep-the-number-of-versions-small}",
+      "source_content_hash": "88921248243ccd48f7b228751a873e3c78ff0cbb165c4764fbf2120c681cc0fa",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 保持版本數量較少 {#keep-the-number-of-versions-small}"
+      }
+    },
+    {
+      "segment_id": "bed77f05",
+      "source_content": "As a good rule of thumb, try to keep the number of your versions below 10. You will **very likely** to have a lot of obsolete versioned documentation that nobody even reads anymore. For example, [Jest](https://jestjs.io/versions) is currently in version `27.4`, and only maintains several latest documentation versions with the lowest being `25.X`. Keep it small 😊",
+      "source_content_hash": "7e6d938433b91284cb974f3a9d34f6a4f58c76a1a61177a34b8d8429da80a787",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "作為一個良好的經驗法則，盡量將版本數量控制在 10 個以下。您**很可能**會擁有許多無人閱讀的過時版本化文件。例如，[Jest](https://jestjs.io/versions) 當前版本為 `27.4`，但僅維護幾個最新文件版本，最低版本為 `25.X`。保持精簡 😊"
+      }
+    },
+    {
+      "segment_id": "cf0804ee",
+      "source_content": ":::tip[archive older versions]\n\nIf you deploy your site on a Jamstack provider (e.g. [Netlify](../../deployment.mdx)), the provider will save each production build as a snapshot under an immutable URL. You can include archived versions that will never be rebuilt as external links to these immutable URLs. The Jest website and the Docusaurus website both use such pattern to keep the number of actively built versions low.\n\n:::",
+      "source_content_hash": "c1a8702326d572a24ec6ef6a65d2fbf8d69cb3f3a039aaee4b41eebccf657806",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[封存舊版文件]\n\n若您將網站部署於 Jamstack 供應商（如 [Netlify](../../deployment.mdx)），供應商會將每次正式環境建構存為不可變更的網址快照。您可將不再重建的封存版本設為這些永久網址的外部連結。Jest 官方網站與 Docusaurus 官網均採用此模式，以減少需主動建構的版本數量。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f996c0b9",
+      "source_content": "### Use absolute import within the docs {#use-absolute-import-within-the-docs}",
+      "source_content_hash": "e9ff1435c1f826bfeb4e81eb57845d46f756cd356960293aeb61e4d863620d7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 在文件中使用絕對路徑導入 {#use-absolute-import-within-the-docs}"
+      }
+    },
+    {
+      "segment_id": "4e994fc3",
+      "source_content": "Don't use relative paths import within the docs. Because when we cut a version the paths no longer work (the nesting level is different, among other reasons). You can utilize the `@site` alias provided by Docusaurus that points to the `website` directory. Example:",
+      "source_content_hash": "4fcc478d942577d96c205fa84c30aac0e28a3e1be170a6e79c2f4ea1869dc23b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請避免在文件內使用相對路徑導入。因當我們建立新版本時，這些路徑將失效（嵌套層級改變等因素）。您可使用 Docusaurus 提供的 `@site` 別名，其指向 `website` 目錄。範例："
+      }
+    },
+    {
+      "segment_id": "45bc4861",
+      "source_content": "```diff\n- import Foo from '../src/components/Foo';\n+ import Foo from '@site/src/components/Foo';\n```",
+      "source_content_hash": "94075d14de3a1e8014558c5c16f0d957ec86bab5a830682081efa43d88ffd583",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_45bc4861"
+      }
+    },
+    {
+      "segment_id": "ad966a7e",
+      "source_content": "### Link docs by file paths {#link-docs-by-file-paths}",
+      "source_content_hash": "baee99f461be77c7bf3525c076ff797edf51cf5f7e8e5f0f2000901c5d3019ca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 透過檔案路徑連結文件 {#link-docs-by-file-paths}"
+      }
+    },
+    {
+      "segment_id": "6c4ea90c",
+      "source_content": "Refer to other docs by relative file paths with the `.md` extension, so that Docusaurus can rewrite them to actual URL paths during building. Files will be linked to the correct corresponding version.",
+      "source_content_hash": "2c1c85c4d1e164f08fc42a33f61b0d91ef891adfd0880cc3b4fba898aca6409d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請以附有 `.md` 副檔名的相對檔案路徑參照其他文件，如此 Docusaurus 才能在建置時將其重寫為實際 URL 路徑。檔案將被正確連結至對應版本。"
+      }
+    },
+    {
+      "segment_id": "ac2ed4ad",
+      "source_content": "```md\nThe [@hello](hello.mdx#paginate) document is great!\n\nSee the [Tutorial](../getting-started/tutorial.mdx) for more info.\n```",
+      "source_content_hash": "ce8e2b5f5e45ea620d366d5dbb36649dbee2906fdfa5ac726741a9695461206c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ac2ed4ad"
+      }
+    },
+    {
+      "segment_id": "d96e8afa",
+      "source_content": "### Global or versioned collocated assets {#global-or-versioned-collocated-assets}",
+      "source_content_hash": "090b3f1715915fbdc7280ce25876f515812d3017084e2300081be7ec5267462f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 全域或版本化共置資源 {#global-or-versioned-collocated-assets}"
+      }
+    },
+    {
+      "segment_id": "e020f7ed",
+      "source_content": "You should decide if assets like images and files are per-version or shared between versions.",
+      "source_content_hash": "286221868d53c012b282ee9ed94522d739ac9a64b47c003c9bf834331fbdf37a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您應決定資源（如圖片與檔案）是否需區分版本，或跨版本共用。"
+      }
+    },
+    {
+      "segment_id": "d83b50df",
+      "source_content": "If your assets should be versioned, put them in the docs version, and use relative paths:",
+      "source_content_hash": "a47cb9a6e63e64ad93f01f8c968ad1d64d64b0b2a38cd213a5fd57f01382593a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若資源需版本化，請將其置於文件版本目錄內，並使用相對路徑："
+      }
+    },
+    {
+      "segment_id": "d7bc17bf",
+      "source_content": "```md\n![img alt](./myImage.png)\n\n[download this file](./file.pdf)\n```",
+      "source_content_hash": "9e957def6768cec89e77620d34fedfe47dc03455750d707270e588b4a76dbb37",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d7bc17bf"
+      }
+    },
+    {
+      "segment_id": "1dffcdf5",
+      "source_content": "If your assets are global, put them in `/static` and use absolute paths:",
+      "source_content_hash": "6f68344763163a3c06a54b545753970afccb2db8fe27dc17e1dcca83909fa595",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若資源為全域性，請將其置於 `/static` 並使用絕對路徑："
+      }
+    },
+    {
+      "segment_id": "548d1943",
+      "source_content": "```md\n![img alt](/myImage.png)\n\n[download this file](/file.pdf)\n```",
+      "source_content_hash": "2ea0732847eacd65f4de33b7f1f941a174ac9b1f6e60a1da635b31403a5095d4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_548d1943"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.4.0/guides/docs/versioning.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.221526+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "4ab7398f3b449318474079bd4b48dcc37f24e6d25796f8a4b11dae8fb02150d1"
+  }
+}

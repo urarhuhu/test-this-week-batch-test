@@ -1,0 +1,152 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/guides/markdown-features/markdown-features-links.mdx",
+  "source_file_content_hash": "22d916f195c2e966cc0c8f82b9c9400a07bdca6a9ac5231a9f28c757060d1288",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: links\ndescription: Links to other pages in Markdown\nslug: /markdown-features/links\n---",
+      "source_content_hash": "f08f34bcc036b92ca8da1360804238506d8062eb3f75164ee8f37f9c83f102aa",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Markdown links",
+      "source_content_hash": "ea1015287f2a7bb7ab9cdc0e5f57a0c502ae0c8adcadc437f779feda758977b4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Markdown 連結"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "There are two ways of adding a link to another page: through a **URL path** and a **file path**.",
+      "source_content_hash": "e99741ec0adb8f7a5fdd4d6d97d8d156af209f711bdd331d1c7b5ac86c086ce2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有兩種方式可以添加指向其他頁面的連結：透過 **URL 路徑** 和 **檔案路徑**。"
+      }
+    },
+    {
+      "segment_id": "43a8bc7e",
+      "source_content": "```md\n- [URL path to another document](./installation)\n- [file path to another document](./installation.mdx)\n```",
+      "source_content_hash": "4596e36f423751f245ed18eb0508f2b04bb9a3da8abb36f2b0376ab8e593a83c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_43a8bc7e"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "URL paths are unprocessed by Docusaurus, and you can see them as directly rendering to `<a href=\"./installation\">`, i.e. it will be resolved according to the page's URL location, rather than its file-system location.",
+      "source_content_hash": "df5d056159bc3e51713807367cc490286e85ac0f1c8baf29efbad5cc0363e8d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "URL 路徑不會經過 Docusaurus 處理，你可以將其視為直接渲染成 `<a href=\"./installation\">`，也就是它會根據頁面的 URL 位置而非檔案系統位置來解析。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "If you want to reference another Markdown file **included by the same plugin**, you could use the relative path of the document you want to link to. Docusaurus' Markdown loader will convert the file path to the target file's URL path (and hence remove the `.md` extension).",
+      "source_content_hash": "3c414c838e19364e7b724feee04bb63f19f59e9a6131b39eae37d98356efbb75",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果你想引用 **同一個插件處理** 的另一個 Markdown 檔案，可以使用目標文件的相對路徑。Docusaurus 的 Markdown 載入器會將檔案路徑轉換為目標檔案的 URL 路徑（因此會移除 `.md` 副檔名）。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "For example, if you are in `docs/folder/doc1.md` and you want to reference `docs/folder/doc2.md`, `docs/folder/subfolder/doc3.md` and `docs/otherFolder/doc4.md`:",
+      "source_content_hash": "15e29564a6d6e4f6971a86dd931550c1cca082d07cec2eec4c11281812e1ae93",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "舉例來說，如果你在 `docs/folder/doc1.md` 中，想要引用 `docs/folder/doc2.md`、`docs/folder/subfolder/doc3.md` 和 `docs/otherFolder/doc4.md`："
+      }
+    },
+    {
+      "segment_id": "9eee5787",
+      "source_content": "```md title=\"docs/folder/doc1.md\"\nI am referencing a [document](doc2.mdx).\n\nReference to another [document in a subfolder](subfolder/doc3.mdx).\n\n[Relative document](../otherFolder/doc4.mdx) referencing works as well.\n```",
+      "source_content_hash": "6d2dc27efb2bc277448914af1e481979d4aba71e3bcd16de242d898ddcb5a89b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9eee5787"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Relative file paths are resolved against the current file's directory. Absolute file paths, on the other hand, are resolved relative to the **content root**, usually `docs/`, `blog/`, or [localized ones](../../i18n/i18n-tutorial.mdx) like `i18n/zh-Hans/plugin-content-docs/current`.",
+      "source_content_hash": "b2e5db67f47147f6f2ea5b9f6cd065529fd4f648b43a6b08db43b814ef804d6e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "相對檔案路徑是根據當前檔案所在的目錄來解析。而絕對檔案路徑則是相對於 **內容根目錄** 來解析，通常是 `docs/`、`blog/` 或本地化目錄如 `i18n/zh-Hans/plugin-content-docs/current`。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Absolute file paths can also be relative to the site directory. However, beware that links that begin with `/docs/` or `/blog/` are **not portable** as you would need to manually update them if you create new doc versions or localize them.",
+      "source_content_hash": "c2fd688865bcef154f5c7fcc2655b68be1e0bc0b6b3bb20fc335a59b7fa329a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "絕對檔案路徑也可以相對於網站目錄。但請注意，以 `/docs/` 或 `/blog/` 開頭的連結 **不可移植**，因為如果你建立新的文件版本或進行本地化時，需要手動更新這些連結。"
+      }
+    },
+    {
+      "segment_id": "6543a19e",
+      "source_content": "```md\nYou can write [links](/otherFolder/doc4.mdx) relative to the content root (`/docs/`).\n\nYou can also write [links](/docs/otherFolder/doc4.mdx) relative to the site directory, but it's not recommended.\n```",
+      "source_content_hash": "7182ba7d834b4772aecbee57f71ded1c8c0934e4d6d67478eddb2c710a285fef",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6543a19e"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Using relative _file_ paths (with `.md` extensions) instead of relative _URL_ links provides the following benefits:",
+      "source_content_hash": "5b009bc03e59d750245b744b93b1579ac1f4820d4a0dd26cfca16b790aa82acc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用相對的 _檔案_ 路徑（包含 `.md` 副檔名）而非相對的 _URL_ 連結有以下優點："
+      }
+    },
+    {
+      "segment_id": "8612da05",
+      "source_content": "- Links will keep working on the GitHub interface and many Markdown editors\n- You can customize the files' slugs without having to update all the links\n- Moving files around the folders can be tracked by your editor, and some editors may automatically update file links\n- A [versioned doc](../docs/versioning.mdx) will link to another doc of the exact same version\n- Relative URL links are very likely to break if you update the [`trailingSlash` config](../../api/docusaurus.config.js.mdx#trailingSlash)",
+      "source_content_hash": "ca87ea493e619d01d9aae4f0fb6a58ec4cff5f768bbeee706ee60459c247f127",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 連結在 GitHub 介面和許多 Markdown 編輯器中仍能正常運作\n- 你可以自訂檔案的 slug 而無需更新所有連結\n- 移動檔案時，你的編輯器可能會追蹤這些變更，部分編輯器甚至會自動更新檔案連結\n- [版本化文件](../docs/versioning.mdx) 會連結到相同版本的另一份文件\n- 相對 URL 連結在更新 [`trailingSlash` 設定](../../api/docusaurus.config.js.mdx#trailingSlash) 時很可能會失效"
+      }
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::warning\n\nMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.\n\n:::",
+      "source_content_hash": "45c0996af56d7b16ddec52784aca53536cab7fc955d3ad872fb84acaafa73233",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\nMarkdown 檔案引用僅在來源檔案和目標檔案由同一個插件實例處理時才能運作。這是我們 Markdown 處理架構的技術限制，未來將會修正。如果你需要在插件之間連結檔案（例如從部落格文章連結到文件頁面），則必須使用 URL 連結。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/guides/markdown-features/markdown-features-links.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.185822+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "22d916f195c2e966cc0c8f82b9c9400a07bdca6a9ac5231a9f28c757060d1288"
+  }
+}

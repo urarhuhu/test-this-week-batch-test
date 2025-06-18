@@ -1,0 +1,1314 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/migration/v2/migration-manual.mdx",
+  "source_file_content_hash": "a488d2f2ca49c3d243766c590ab952143b8328305c7a1bfb4a0c1f246f8e49aa",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration/v2/manual\ntoc_max_heading_level: 4\n---",
+      "source_content_hash": "6b11f4b15d33cb028f03f2f29f2647108789b9a2b2ad658c146ca142a7ded869",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Manual migration",
+      "source_content_hash": "706d41854fc400363aaae75fc045ee5f8b84b9c48d0f4d8b2b716ebf946a0763",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 手動遷移"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "This manual migration process should be run after the [automated migration process](./migration-automated.mdx), to complete the missing parts, or debug issues in the migration CLI output.",
+      "source_content_hash": "a54e8bb424cdd69c98ecf2850ddc1f453b2109d3d9d3bc03aa926c8fc4e38405",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此手動遷移流程應在[自動遷移流程](./migration-automated.mdx)之後執行，以補齊缺失部分或調試遷移 CLI 輸出的問題。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Project setup {#project-setup}",
+      "source_content_hash": "14a0ef537810512ce0ae28b584eacae1cb79b029d29fec9fa8a551d1f91d5d8c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 專案設定 {#project-setup}"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### `package.json` {#packagejson}",
+      "source_content_hash": "d53fe5712baaf73bfd6698f82da90e0239750b7b2c2d8b0a79db8a409fdf054b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `package.json` {#packagejson}"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "#### Scoped package names {#scoped-package-names}",
+      "source_content_hash": "9f98e4d83b08d66c6cc7f3a3727c1ef45ba6c843baeed6e4f24d280ad48b3bbf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 作用域套件名稱 {#scoped-package-names}"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "In Docusaurus 2, we use scoped package names:",
+      "source_content_hash": "9185682a5a218ba41cbd77c574c49b07bff94a49707ed061de46507377265bdb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus 2 中，我們採用作用域套件名稱："
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "- `docusaurus` → `@docusaurus/core`",
+      "source_content_hash": "2208d79a44bacee37bcab58696e388e45eb1b620b9b4b37b93bda9d99dbc1fcc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `docusaurus` → `@docusaurus/core`"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "This provides a clear distinction between Docusaurus' official packages and community maintained packages. In another words, all Docusaurus' official packages are namespaced under `@docusaurus/`.",
+      "source_content_hash": "7f9a0d43e10147bbadf8bfc6b444c4c6ca5c610941ba29b7c37eae8c8fcf830d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這能明確區分 Docusaurus 官方套件與社群維護套件。換言之，所有 Docusaurus 官方套件皆命名於 `@docusaurus/` 之下。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Meanwhile, the default doc site functionalities provided by Docusaurus 1 are now provided by `@docusaurus/preset-classic`. Therefore, we need to add this dependency as well:",
+      "source_content_hash": "c786c478c5951fbd0fa82b2a7a93fa34e144474d315559c7be871873d32307d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同時，Docusaurus 1 預設提供的文件站功能現由 `@docusaurus/preset-classic` 提供，因此需額外添加此依賴："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```diff title=\"package.json\"\n{\n  dependencies: {\n-   \"docusaurus\": \"^1.x.x\",\n+   \"@docusaurus/core\": \"^2.0.0-beta.0\",\n+   \"@docusaurus/preset-classic\": \"^2.0.0-beta.0\",\n  }\n}\n```",
+      "source_content_hash": "0d913599053bbdfedbb20fd7fe50ef6205f8516af89d89ee5d661ec6228b76bd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "b56ef571",
+      "source_content": ":::tip\n\nPlease use the most recent Docusaurus 2 version, which you can check out [here](https://www.npmjs.com/package/@docusaurus/core) (using the `latest` tag).\n\n:::",
+      "source_content_hash": "ffa7e65c5eaec3a7167b6e3b6b29d83840650473eb488b03929c4a59c965bbe9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n請使用最新的 Docusaurus 2 版本，您可於[此處](https://www.npmjs.com/package/@docusaurus/core)查閱（使用 `latest` 標籤）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "782c902a",
+      "source_content": "#### CLI commands {#cli-commands}",
+      "source_content_hash": "e95f71f01d0313d50300bee6f4091d85c0a146c1569e0a7db16ff0d9885dd916",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### CLI 指令 {#cli-commands}"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Meanwhile, CLI commands are renamed to `docusaurus <command>` (instead of `docusaurus-command`).",
+      "source_content_hash": "3026aa10b77eeff2a45b382f6febba66027e3b41db51c1d3cc7a92fb95e24dde",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同時，CLI 指令更名為 `docusaurus <command>`（原為 `docusaurus-command`）。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "The `\"scripts\"` section of your `package.json` should be updated as follows:",
+      "source_content_hash": "6a9ec1e7cbd156c50c0519d8923819f100f778c90c18a8de9f68d7cc1680ecda",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的 `package.json` 中 `\"scripts\"` 區塊應更新如下："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```json {3-6} title=\"package.json\"\n{\n  \"scripts\": {\n    \"start\": \"docusaurus start\",\n    \"build\": \"docusaurus build\",\n    \"swizzle\": \"docusaurus swizzle\",\n    \"deploy\": \"docusaurus deploy\"\n    // ...\n  }\n}\n```",
+      "source_content_hash": "24b08ff0d5ab49d10407781fccb07c28ebc59e3490987e490348c9a1911d959c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "A typical Docusaurus 2 `package.json` may look like this:",
+      "source_content_hash": "ddb2b10b36edf23e982961c8c8bc8a4fa3762a0fe5cf556483fa4124f2e2dcc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "典型的 Docusaurus 2 `package.json` 範例如下："
+      }
+    },
+    {
+      "segment_id": "3c08ed05",
+      "source_content": "```json title=\"package.json\"\n{\n  \"scripts\": {\n    \"docusaurus\": \"docusaurus\",\n    \"start\": \"docusaurus start\",\n    \"build\": \"docusaurus build\",\n    \"swizzle\": \"docusaurus swizzle\",\n    \"deploy\": \"docusaurus deploy\",\n    \"serve\": \"docusaurus serve\",\n    \"clear\": \"docusaurus clear\"\n  },\n  \"dependencies\": {\n    \"@docusaurus/core\": \"^2.0.0-beta.0\",\n    \"@docusaurus/preset-classic\": \"^2.0.0-beta.0\",\n    \"clsx\": \"^1.1.1\",\n    \"react\": \"^17.0.2\",\n    \"react-dom\": \"^17.0.2\"\n  },\n  \"browserslist\": {\n    \"production\": [\">0.5%\", \"not dead\", \"not op_mini all\"],\n    \"development\": [\n      \"last 1 chrome version\",\n      \"last 1 firefox version\",\n      \"last 1 safari version\"\n    ]\n  }\n}\n```",
+      "source_content_hash": "ad34fee673347f6eef5d5c09763baa981310ed182cf7c400cd21fe7daa26ad3c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3c08ed05"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "### Update references to the `build` directory {#update-references-to-the-build-directory}",
+      "source_content_hash": "b0743a942bc0a7ae1578b6a7ccd99de14c9c6a2651491862c55488231581eb02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更新對 `build` 目錄的參照 {#update-references-to-the-build-directory}"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "In Docusaurus 1, all the build artifacts are located within `website/build/<PROJECT_NAME>`.",
+      "source_content_hash": "c7cef12be0a33c6b0bf848bbb27bfabbcfa0ddd92d911686b2fa3c454ac44034",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus 1 中，所有建構產出物位於 `website/build/<PROJECT_NAME>`。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "In Docusaurus 2, it is now moved to just `website/build`. Make sure that you update your deployment configuration to read the generated files from the correct `build` directory.",
+      "source_content_hash": "1f19a45885f8e78bbe76a7ab830f1545c895a0443612b7c69e79492dc9103f77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 已將其移至 `website/build`。請確保更新部署配置，從正確的 `build` 目錄讀取生成檔案。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "If you are deploying to GitHub pages, make sure to run `yarn deploy` instead of `yarn publish-gh-pages` script.",
+      "source_content_hash": "09ec26327d937a9c80bd732840b740ff5156104fcd8131a6a4ff13c1709137a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若部署至 GitHub Pages，請執行 `yarn deploy` 而非 `yarn publish-gh-pages` 指令。"
+      }
+    },
+    {
+      "segment_id": "b10963d7",
+      "source_content": "### `.gitignore` {#gitignore}",
+      "source_content_hash": "1f04d71278eae75992b115dd4ed699728cff088b2184040a913124bc73172ea2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `.gitignore` {#gitignore}"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "The `.gitignore` in your `website` should contain:",
+      "source_content_hash": "9c6f6e0bca6e7d9d1532bd4501e778c51723d5021dddef8bf47e090526627c11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的 `website` 目錄中 `.gitignore` 應包含："
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```bash title=\".gitignore\"\n# dependencies\n/node_modules\n\n# production\n/build\n\n# generated files\n.docusaurus\n.cache-loader\n\n# misc\n.DS_Store\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\n\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n```",
+      "source_content_hash": "0708537369cc4ab4f3f7275f2c486867af8e3eddc88ae549b2871504f757fa22",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "64d57278",
+      "source_content": "### `README` {#readme}",
+      "source_content_hash": "ed5d2cfe54de232a985b055e454c924a37c75e104ca825f12c8375977d9b5118",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `README` {#readme}"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "The D1 website may have an existing README file. You can modify it to reflect the D2 changes, or copy the default [Docusaurus v2 README](https://github.com/facebook/docusaurus/blob/main/packages/create-docusaurus/templates/shared/README.md).",
+      "source_content_hash": "01890038d8d53cc8175376d7e21f81a3d5f55ed9e6f0598507ae1fd6122b88b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "D1 網站可能已有 README 檔案。您可修改其內容以反映 D2 變更，或複製預設的 [Docusaurus v2 README](https://github.com/facebook/docusaurus/blob/main/packages/create-docusaurus/templates/shared/README.md)。"
+      }
+    },
+    {
+      "segment_id": "36d6c3de",
+      "source_content": "## Site configurations {#site-configurations}",
+      "source_content_hash": "134977d9926b5bce20a91085ccb3538ad751d5f497dfc18db610848a883630c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 站台配置 {#site-configurations}"
+      }
+    },
+    {
+      "segment_id": "4dd6a631",
+      "source_content": "### `docusaurus.config.js` {#docusaurusconfigjs}",
+      "source_content_hash": "537e49bf21a0d42f72d805873220379b219f2e57736a51d3adf923761f830703",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus.config.js` {#docusaurusconfigjs}"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Rename `siteConfig.js` to `docusaurus.config.js`.",
+      "source_content_hash": "56bd94ea37a44219b71049532c76583a4123d7b69dd346ee203bbb943bae1a3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將 `siteConfig.js` 更名為 `docusaurus.config.js`。"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "In Docusaurus 2, we split each functionality (blog, docs, pages) into plugins for modularity. Presets are bundles of plugins and for backward compatibility we built a `@docusaurus/preset-classic` preset which bundles most of the essential plugins present in Docusaurus 1.",
+      "source_content_hash": "fffa546bb3417d388bd907b78b16ee948e72e53af3903ac61f57b3525d9b9e6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 將各功能（部落格、文件、頁面）拆分為插件以實現模組化。預設集為插件組合包，為保持向後兼容性，我們建立了 `@docusaurus/preset-classic` 預設集，其中包含 Docusaurus 1 的大部分核心插件。"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "Add the following preset configuration to your `docusaurus.config.js`.",
+      "source_content_hash": "1759d30917fca2cecc62292f5648400a99c01fc3a0a087a0ac6bd837f363b34d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請將以下預設集配置加入您的 `docusaurus.config.js`。"
+      }
+    },
+    {
+      "segment_id": "8d1b00fd",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          // Docs folder path relative to website dir.\n          path: '../docs',\n          // Sidebars file relative to website dir.\n          sidebarPath: require.resolve('./sidebars.json'),\n        },\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "d9cc3b5bb652835ffaa7e1b8648f2db99ee0895221a46a930f0f26ba38571f3c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8d1b00fd"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "We recommend moving the `docs` folder into the `website` folder and that is also the default directory structure in v2. [Vercel](https://vercel.com) supports [Docusaurus project deployments out-of-the-box](https://github.com/vercel/vercel/tree/main/examples/docusaurus) if the `docs` directory is within the `website`. It is also generally better for the docs to be within the website so that the docs and the rest of the website code are co-located within one `website` directory.",
+      "source_content_hash": "432da845a260db7fe0e8d62475f2479917f97a7c334823b132993b3d3f76c0f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議將 `docs` 資料夾移至 `website` 資料夾內，這也是 v2 版本的預設目錄結構。[Vercel](https://vercel.com) 支援[開箱即用的 Docusaurus 專案部署](https://github.com/vercel/vercel/tree/main/examples/docusaurus)，前提是 `docs` 目錄必須位於 `website` 內。將文檔與網站程式碼集中存放在同一個 `website` 目錄下，通常也是較好的做法。"
+      }
+    },
+    {
+      "segment_id": "a8f09c71",
+      "source_content": "If you are migrating your Docusaurus v1 website, and there are pending documentation pull requests, you can temporarily keep the `/docs` folder to its original place, to avoid producing conflicts.",
+      "source_content_hash": "47aad9b0f851bef00ae887fda862d9e4bb7ab4e77bfe4c1a290940e1b0478f32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您正在遷移 Docusaurus v1 網站，且有待處理的文檔拉取請求(pull requests)，可以暫時保留 `/docs` 資料夾在原位置，以避免產生衝突。"
+      }
+    },
+    {
+      "segment_id": "d2a3d4c7",
+      "source_content": "Refer to migration guide below for each field in `siteConfig.js`.",
+      "source_content_hash": "8d325ad6beb8e74ff73c27b327eeb7afad407d3fd2da984b02b5bbeb08757801",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請參閱下方遷移指南，了解 `siteConfig.js` 中每個欄位的處理方式。"
+      }
+    },
+    {
+      "segment_id": "d4eab4a6",
+      "source_content": "### Updated fields {#updated-fields}",
+      "source_content_hash": "e25458be491aa035cab8d897afce4452876a062f730853f0d6c0940315da7e26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更新的欄位 {#updated-fields}"
+      }
+    },
+    {
+      "segment_id": "a5905b07",
+      "source_content": "#### `baseUrl`, `tagline`, `title`, `url`, `favicon`, `organizationName`, `projectName`, `githubHost`, `scripts`, `stylesheets` {#baseurl-tagline-title-url-favicon-organizationname-projectname-githubhost-scripts-stylesheets}",
+      "source_content_hash": "1ff28f157096727649966253e64ee832a70ed14b25c01dc3ed91e8c702120f59",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `baseUrl`, `tagline`, `title`, `url`, `favicon`, `organizationName`, `projectName`, `githubHost`, `scripts`, `stylesheets` {#baseurl-tagline-title-url-favicon-organizationname-projectname-githubhost-scripts-stylesheets}"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "No actions needed, these configuration fields were not modified.",
+      "source_content_hash": "9c4a4637edd1b130297a8629ed100edc3b95400889b9089d53ee16843ff4afbc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "無需任何操作，這些配置欄位保持不變。"
+      }
+    },
+    {
+      "segment_id": "58f98d22",
+      "source_content": "#### `colors` {#colors}",
+      "source_content_hash": "1a9b961629a0f910d0f250df28bea0380528b676f8d2abe8f734542865e7f9b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `colors` {#colors}"
+      }
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "Deprecated. We wrote a custom CSS framework for Docusaurus 2 called [Infima](https://infima.dev/) which uses CSS variables for theming. The docs are not quite ready yet and we will update here when it is. To overwrite Infima's CSS variables, create your own CSS file (e.g. `./src/css/custom.css`) and import it globally by passing it as an option to `@docusaurus/preset-classic`:",
+      "source_content_hash": "319e4741bd82dbadcfa7e43dda8c5440a12fa732d23e8ef0a76a2d073a84286d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "已棄用。我們為 Docusaurus 2 開發了名為 [Infima](https://infima.dev/) 的自訂 CSS 框架，使用 CSS 變數進行主題設定。相關文檔尚未完全準備就緒，我們將在完成後更新此處說明。若要覆寫 Infima 的 CSS 變數，請建立自己的 CSS 檔案（例如 `./src/css/custom.css`），並通過將其作為選項傳遞給 `@docusaurus/preset-classic` 來全局導入："
+      }
+    },
+    {
+      "segment_id": "a1af15b5",
+      "source_content": "```js {7-9} title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        theme: {\n          customCss: [require.resolve('./src/css/custom.css')],\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "6c745c1f44e8dd58ad8d189a68003a0d2f9229d945e6be2039911de7c8eab907",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "0427bb2b",
+      "source_content": "Infima uses 7 shades of each color.",
+      "source_content_hash": "b273099a8704b500e45343f51b3ceaac92205e9e392e3374404a1f6f75c7b4b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Infima 對每種顏色使用 7 種色調。"
+      }
+    },
+    {
+      "segment_id": "0152e600",
+      "source_content": "```css title=\"/src/css/custom.css\"\n/**\n * You can override the default Infima variables here.\n * Note: this is not a complete list of --ifm- variables.\n */\n:root {\n  --ifm-color-primary: #25c2a0;\n  --ifm-color-primary-dark: rgb(33, 175, 144);\n  --ifm-color-primary-darker: rgb(31, 165, 136);\n  --ifm-color-primary-darkest: rgb(26, 136, 112);\n  --ifm-color-primary-light: rgb(70, 203, 174);\n  --ifm-color-primary-lighter: rgb(102, 212, 189);\n  --ifm-color-primary-lightest: rgb(146, 224, 208);\n}\n```",
+      "source_content_hash": "13ac6e1254b3ecd6a273e02f6075e1249d49073819719b9e0b71b4c78039b480",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7e563909",
+      "source_content": "We recommend using [ColorBox](https://www.colorbox.io/) to find the different shades of colors for your chosen primary color.",
+      "source_content_hash": "0bccc35218ba6fd3289df4ba19c76373c792882670327d2f9d3825d9f38e716b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建議使用 [ColorBox](https://www.colorbox.io/) 為您選擇的主色尋找不同色調。"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "Alternatively, use the following tool to generate the different shades for your website and copy the variables into `src/css/custom.css`.",
+      "source_content_hash": "fc924cc9cec75d8910c1cb721c4fabf902a8af19d3c40dec0a8dd75a68965d7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "或者，使用以下工具為您的網站生成不同色調，並將變數複製到 `src/css/custom.css` 中。"
+      }
+    },
+    {
+      "segment_id": "ab749a12",
+      "source_content": "import ColorGenerator from '@site/src/components/ColorGenerator';",
+      "source_content_hash": "cdc1dfd29be8d178a8c55d34197b9d963ffc6e66ec343d54bd5af4a20f38e472",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "84f9d7d5",
+      "source_content": "<ColorGenerator />",
+      "source_content_hash": "49d5c59188567c8fd7b77e699cb43105c6d911ed579dfb85a67e8cb0810f50c0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "49007f24",
+      "source_content": "#### `footerIcon`, `copyright`, `ogImage`, `twitterImage`, `docsSideNavCollapsible` {#footericon-copyright-ogimage-twitterimage-docssidenavcollapsible}",
+      "source_content_hash": "1006c35471514e20feb645ea3fb0852af2a69761714616dbaa0ab60bb2e59913",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `footerIcon`, `copyright`, `ogImage`, `twitterImage`, `docsSideNavCollapsible` {#footericon-copyright-ogimage-twitterimage-docssidenavcollapsible}"
+      }
+    },
+    {
+      "segment_id": "be0f7233",
+      "source_content": "Site meta info such as assets, SEO, copyright info are now handled by themes. To customize them, use the `themeConfig` field in your `docusaurus.config.js`:",
+      "source_content_hash": "77150a1026ccab96c794ffda31877bab78fe34da7a6eb5e1a6f19b28bf04c6d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "網站元資訊（如資源、SEO、版權資訊）現在由主題處理。要自訂這些內容，請在 `docusaurus.config.js` 中使用 `themeConfig` 欄位："
+      }
+    },
+    {
+      "segment_id": "eff3427d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  themeConfig: {\n    footer: {\n      logo: {\n        alt: 'Meta Open Source Logo',\n        src: '/img/meta_oss_logo.png',\n        href: 'https://opensource.facebook.com/',\n      },\n      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`, // You can also put own HTML here.\n    },\n    image: 'img/docusaurus.png',\n    // ...\n  },\n};\n```",
+      "source_content_hash": "e8b6292199d0f834316bd62c9c3922d922f93be796d4400a70968cfa8f735efb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "67dfd717",
+      "source_content": "#### `headerIcon`, `headerLinks` {#headericon-headerlinks}",
+      "source_content_hash": "cd94da84a8273aef681ea64c729821eec7dbfff0aa7d271c61d2f7c2f8c326a4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `headerIcon`, `headerLinks` {#headericon-headerlinks}"
+      }
+    },
+    {
+      "segment_id": "ba12acea",
+      "source_content": "In Docusaurus 1, header icon and header links were root fields in `siteConfig`:",
+      "source_content_hash": "5369e9cae790c2e9075dc7d176a3afe6a5697128e4ac3497592e1949f126863f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus 1 中，標頭圖示和標頭連結是 `siteConfig` 的根欄位："
+      }
+    },
+    {
+      "segment_id": "9d31dc8f",
+      "source_content": "```js title=\"siteConfig.js\"\nheaderIcon: 'img/docusaurus.svg',\nheaderLinks: [\n  { doc: \"doc1\", label: \"Getting Started\" },\n  { page: \"help\", label: \"Help\" },\n  { href: \"https://github.com/\", label: \"GitHub\" },\n  { blog: true, label: \"Blog\" },\n],\n```",
+      "source_content_hash": "a64d9c020d2552b301742b0c1e0ec2846981059d7ca92c1bfea15ed36b614978",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b0c30ab4",
+      "source_content": "Now, these two fields are both handled by the theme:",
+      "source_content_hash": "5e739469ca3299963e04c97dc1f2814a3bec5678cb7e6e523ab3b797501a9e87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在，這兩個欄位都由主題處理："
+      }
+    },
+    {
+      "segment_id": "fc50cfb2",
+      "source_content": "```js {6-19} title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  themeConfig: {\n    navbar: {\n      title: 'Docusaurus',\n      logo: {\n        alt: 'Docusaurus Logo',\n        src: 'img/docusaurus.svg',\n      },\n      items: [\n        {to: 'docs/doc1', label: 'Getting Started', position: 'left'},\n        {to: 'help', label: 'Help', position: 'left'},\n        {\n          href: 'https://github.com/',\n          label: 'GitHub',\n          position: 'right',\n        },\n        {to: 'blog', label: 'Blog', position: 'left'},\n      ],\n    },\n    // ...\n  },\n};\n```",
+      "source_content_hash": "44a408e6e2186c727e619f85afad257d308ae84d27105208a31cdb794d3baaca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "04f25754",
+      "source_content": "#### `algolia` {#algolia}",
+      "source_content_hash": "a62863408c880990bf368551dae31976fdf6080edb521c856bf10d9298a53934",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `algolia` {#algolia}"
+      }
+    },
+    {
+      "segment_id": "37cbaa50",
+      "source_content": "```js {4-8} title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  themeConfig: {\n    algolia: {\n      apiKey: '47ecd3b21be71c5822571b9f59e52544',\n      indexName: 'docusaurus-2',\n      algoliaOptions: { //... },\n    },\n    // ...\n  },\n};\n```",
+      "source_content_hash": "4a98704a2b4a059d22c3d4d17c43a36b72644784533fc2a3538e95f9ed1f24bf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "e3cb5206",
+      "source_content": ":::warning\n\nYour Algolia DocSearch v1 config (found [here](https://github.com/algolia/docsearch-configs/blob/master/configs)) should be updated for Docusaurus v2 ([example](https://github.com/algolia/docsearch-configs/tree/master/configs/docusaurus-2.json)).\n\nYou can contact the DocSearch team (@shortcuts, @s-pace) for support. They can update it for you and trigger a recrawl of your site to restore the search (otherwise you will have to wait up to 24h for the next scheduled crawl)\n\n:::",
+      "source_content_hash": "230b596133fe8db80e1ef4bfe78eb14bb31a8decd7e78db3126f2663747a6e3d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n您的 Algolia DocSearch v1 配置（位於[此處](https://github.com/algolia/docsearch-configs/blob/master/configs)）需要針對 Docusaurus v2 進行更新（[範例](https://github.com/algolia/docsearch-configs/tree/master/configs/docusaurus-2.json)）。\n\n您可以聯繫 DocSearch 團隊 (@shortcuts, @s-pace) 獲取支援。他們可以為您更新配置並觸發站點重新爬取以恢復搜索功能（否則您可能需要等待最多 24 小時直到下一次計劃爬取）\n\n:::"
+      }
+    },
+    {
+      "segment_id": "9cdf9229",
+      "source_content": "#### `blogSidebarCount` {#blogsidebarcount}",
+      "source_content_hash": "2ff96da396ae0de87ab51b462df795877f701a8beeb5332b806b512c638946c7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `blogSidebarCount` {#blogsidebarcount}"
+      }
+    },
+    {
+      "segment_id": "5e0ab881",
+      "source_content": "Deprecated. Pass it as a blog option to `@docusaurus/preset-classic` instead:",
+      "source_content_hash": "34f08bcc449cdc1a09a8373b47415e1c159a2f67580ee6cff296536944120f68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "已棄用。請將其作為部落格選項傳遞給 `@docusaurus/preset-classic`："
+      }
+    },
+    {
+      "segment_id": "7a5ad31f",
+      "source_content": "```js {8} title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          postsPerPage: 10,\n        },\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "59e5c17e13994abcf3e967c9d4209482aefcd9b16d049e85c2507319db06dd90",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "89da6bb6",
+      "source_content": "#### `cname` {#cname}",
+      "source_content_hash": "695e2a35c41de4646a00d2b17e9b01ef95b4914f925df92b00e78cd149fb2566",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `cname` {#cname}"
+      }
+    },
+    {
+      "segment_id": "e8bf4d18",
+      "source_content": "Deprecated. Create a `CNAME` file in your `static` folder instead with your custom domain. Files in the `static` folder will be copied into the root of the `build` folder during execution of the build command.",
+      "source_content_hash": "58da5d1ec643799a1ca9f5679218bc18d0899f798963e63caf14998dee2cd25c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "已棄用。請改為在 `static` 資料夾中創建一個 `CNAME` 檔案，並填入您的自訂網域。執行建置命令時，`static` 資料夾中的檔案將被複製到 `build` 資料夾的根目錄。"
+      }
+    },
+    {
+      "segment_id": "8dfbc79d",
+      "source_content": "#### `customDocsPath`, `docsUrl`, `editUrl`, `enableUpdateBy`, `enableUpdateTime` {#customdocspath-docsurl-editurl-enableupdateby-enableupdatetime}",
+      "source_content_hash": "70620e822e389c86fc313db78835e63beba246320711611a8c7275c3eef0dff3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `customDocsPath`, `docsUrl`, `editUrl`, `enableUpdateBy`, `enableUpdateTime` {#customdocspath-docsurl-editurl-enableupdateby-enableupdatetime}"
+      }
+    },
+    {
+      "segment_id": "0302cdc1",
+      "source_content": "**BREAKING**: `editUrl` should point to (website) Docusaurus project instead of `docs` directory.",
+      "source_content_hash": "a366be592a8e0cfc231a8443dc52c912b435d256216a20623897e7bc041248b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**重大變更**：`editUrl` 現在應指向 (網站) Docusaurus 專案，而非 `docs` 目錄。"
+      }
+    },
+    {
+      "segment_id": "9802de48",
+      "source_content": "Deprecated. Pass it as an option to `@docusaurus/preset-classic` docs instead:",
+      "source_content_hash": "96c74b08fb07e165156a3e9f5649e5e817db7009dfceac8b89e6dbc77ba6a779",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "已棄用。請改為將其作為選項傳遞給 `@docusaurus/preset-classic` 的 docs 設定："
+      }
+    },
+    {
+      "segment_id": "ebf9dda2",
+      "source_content": "```js {8-20} title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          // Equivalent to `customDocsPath`.\n          path: 'docs',\n          // Equivalent to `editUrl` but should point to `website` dir instead of `website/docs`.\n          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website',\n          // Equivalent to `docsUrl`.\n          routeBasePath: 'docs',\n          // Remark and Rehype plugins passed to MDX. Replaces `markdownOptions` and `markdownPlugins`.\n          remarkPlugins: [],\n          rehypePlugins: [],\n          // Equivalent to `enableUpdateBy`.\n          showLastUpdateAuthor: true,\n          // Equivalent to `enableUpdateTime`.\n          showLastUpdateTime: true,\n        },\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "de38b81ee865b232f84f9c264cbaf6d15205b512ba39ff08350cbd6d65fbe8bf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ebf9dda2"
+      }
+    },
+    {
+      "segment_id": "a6f3574e",
+      "source_content": "#### `gaTrackingId` {#gatrackingid}",
+      "source_content_hash": "8d66538b25e50262244fb623eb79a7030465536b04f718545a7c66ca6c5672bd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `gaTrackingId` {#gatrackingid}"
+      }
+    },
+    {
+      "segment_id": "d14a389e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // ...\n        // highlight-start\n        googleAnalytics: {\n          trackingID: 'UA-141789564-1',\n        },\n        // highlight-end\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "a66738405a4a6ed7ac67a0c2589aeb3aac1105f9c043c8db6bf52012520940b8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d14a389e"
+      }
+    },
+    {
+      "segment_id": "63b4ae1d",
+      "source_content": "#### `gaGtag` {#gagtag}",
+      "source_content_hash": "bd6a35d4c2996bfefea75b8d9c1028debd099f11575198abd96784fa948f064f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `gaGtag` {#gagtag}"
+      }
+    },
+    {
+      "segment_id": "fb74007a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // ...\n        // highlight-start\n        gtag: {\n          trackingID: 'UA-141789564-1',\n        },\n        // highlight-end\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "8bd12115f75d335bbe876aaf6222950804ec60178b5c35510d5c97dc84a76261",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_fb74007a"
+      }
+    },
+    {
+      "segment_id": "5d1aec8a",
+      "source_content": "### Removed fields {#removed-fields}",
+      "source_content_hash": "c8071eb93b4b954dbb3cfaf055c545dbc7cf2d259c58ba6daeb70262af81ae92",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 已移除的欄位 {#removed-fields}"
+      }
+    },
+    {
+      "segment_id": "ff95ec03",
+      "source_content": "The following fields are all deprecated, you may remove from your configuration file.",
+      "source_content_hash": "54a8f662b33b260762f6f0a90633b168335efeb9693f40900a3ce97125ab10a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下欄位均已棄用，您可以從設定檔中移除。"
+      }
+    },
+    {
+      "segment_id": "738dcc8b",
+      "source_content": "- `blogSidebarTitle`\n- `cleanUrl` - Clean URL is used by default now.\n- `defaultVersionShown` - Versioning is not ported yet. You'd be unable to migration to Docusaurus 2 if you are using versioning. Stay tuned.\n- `disableHeaderTitle`\n- `disableTitleTagline`\n- `docsSideNavCollapsible` is available at `docsPluginOptions.sidebarCollapsible`, and this is turned on by default now.\n- `facebookAppId`\n- `facebookComments`\n- `facebookPixelId`\n- `fonts`\n- `highlight` - We now use [Prism](https://prismjs.com/) instead of [highlight.js](https://highlightjs.org/).\n- `markdownOptions` - We use MDX in v2 instead of Remarkable. Your Markdown options have to be converted to Remark/Rehype plugins.\n- `markdownPlugins` - We use MDX in v2 instead of Remarkable. Your Markdown plugins have to be converted to Remark/Rehype plugins.\n- `manifest`\n- `onPageNav` - This is turned on by default now.\n- `separateCss` - It can imported in the same manner as `custom.css` mentioned above.\n- `scrollToTop`\n- `scrollToTopOptions`\n- `translationRecruitingLink`\n- `twitter`\n- `twitterUsername`\n- `useEnglishUrl`\n- `users`\n- `usePrism` - We now use [Prism](https://prismjs.com/) instead of [highlight.js](https://highlightjs.org/)\n- `wrapPagesHTML`",
+      "source_content_hash": "56f0fe0752c6a18f68c383972ba6e92cdae9c04973a6b490fbee38b60fdeda7d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `blogSidebarTitle`\n- `cleanUrl` - 現在預設使用簡潔 URL。\n- `defaultVersionShown` - 版本功能尚未移植。如果您使用版本功能，將無法遷移至 Docusaurus 2。請持續關注。\n- `disableHeaderTitle`\n- `disableTitleTagline`\n- `docsSideNavCollapsible` 現在可在 `docsPluginOptions.sidebarCollapsible` 中設定，且預設為開啟。\n- `facebookAppId`\n- `facebookComments`\n- `facebookPixelId`\n- `fonts`\n- `highlight` - 我們現在使用 [Prism](https://prismjs.com/) 而非 [highlight.js](https://highlightjs.org/)。\n- `markdownOptions` - v2 使用 MDX 而非 Remarkable。您的 Markdown 選項需轉換為 Remark/Rehype 插件。\n- `markdownPlugins` - v2 使用 MDX 而非 Remarkable。您的 Markdown 插件需轉換為 Remark/Rehype 插件。\n- `manifest`\n- `onPageNav` - 現在預設為開啟。\n- `separateCss` - 可以像上述的 `custom.css` 一樣導入。\n- `scrollToTop`\n- `scrollToTopOptions`\n- `translationRecruitingLink`\n- `twitter`\n- `twitterUsername`\n- `useEnglishUrl`\n- `users`\n- `usePrism` - 我們現在使用 [Prism](https://prismjs.com/) 而非 [highlight.js](https://highlightjs.org/)\n- `wrapPagesHTML`"
+      }
+    },
+    {
+      "segment_id": "c15f089c",
+      "source_content": "We intend to implement many of the deprecated config fields as plugins in future. Help will be appreciated!",
+      "source_content_hash": "c79adfc01466e7d5f3eb4a6006a6ddc1fb6941e011e647b3c544495e293a11a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們計劃在未來將許多已棄用的設定欄位實現為插件。歡迎貢獻協助！"
+      }
+    },
+    {
+      "segment_id": "b6ec34ca",
+      "source_content": "## Urls {#urls}",
+      "source_content_hash": "6b754afad9a661bd9a2d8aab33ce81683b02e33983c4ad7e4a2756254f8957a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 網址 {#urls}"
+      }
+    },
+    {
+      "segment_id": "0beac34c",
+      "source_content": "In v1, all pages were available with or without the `.html` extension.",
+      "source_content_hash": "5dd3924393f8665f2957c607f9f2f17bfe99b5397e3160b52b0093dc40c1ab22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 v1 中，所有頁面均可透過帶或不帶 `.html` 副檔名的網址存取。"
+      }
+    },
+    {
+      "segment_id": "a4e26c9f",
+      "source_content": "For example, these 2 pages exist:",
+      "source_content_hash": "0ccff4faf6c13a16bf01bca7c5e48fe5b98d47030b2a96a2e4a991ba32647da6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，以下兩個頁面同時存在："
+      }
+    },
+    {
+      "segment_id": "3d8e07fd",
+      "source_content": "- [`https://v1.docusaurus.io/docs/en/installation`](https://v1.docusaurus.io/docs/en/installation)\n- [`https://v1.docusaurus.io/docs/en/installation.html`](https://v1.docusaurus.io/docs/en/installation.html)",
+      "source_content_hash": "9a3fb8e05af747a96b54585f6d1d42e8b6289d252138bbe02209098fe4660a8b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [`https://v1.docusaurus.io/docs/en/installation`](https://v1.docusaurus.io/docs/en/installation)\n- [`https://v1.docusaurus.io/docs/en/installation.html`](https://v1.docusaurus.io/docs/en/installation.html)"
+      }
+    },
+    {
+      "segment_id": "1230856c",
+      "source_content": "If [`cleanUrl`](https://v1.docusaurus.io/docs/en/site-config#cleanurl-boolean) was:",
+      "source_content_hash": "d4fcf3a1449ff9367f1a920c735e410a1ba5c5ce7a96782ee7e94d6639aff3c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果 [`cleanUrl`](https://v1.docusaurus.io/docs/en/site-config#cleanurl-boolean) 設定為："
+      }
+    },
+    {
+      "segment_id": "a437f6eb",
+      "source_content": "- `true`: links would target `/installation`\n- `false`: links would target `/installation.html`",
+      "source_content_hash": "64b3225333ad1167fb82cf515e77e756f5536b6bd8229c8ca4aab5cbd93ce054",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `true`：連結將指向 `/installation`\n- `false`：連結將指向 `/installation.html`"
+      }
+    },
+    {
+      "segment_id": "ec3c0760",
+      "source_content": "In v2, by default, the canonical page is `/installation`, and not `/installation.html`.",
+      "source_content_hash": "901e94cd01d34ce086ad85639b2989ecd6d0617df819e095942fe083ad43c213",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 v2 中，預設情況下，標準頁面網址為 `/installation`，而非 `/installation.html`。"
+      }
+    },
+    {
+      "segment_id": "69d6e4be",
+      "source_content": "If you had `cleanUrl: false` in v1, it's possible that people published links to `/installation.html`.",
+      "source_content_hash": "eb360c036d86ae5d7c10300f1639158955761bf97a68549dc6714f10f579e11b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您在 v1 中設定 `cleanUrl: false`，可能有人已發布指向 `/installation.html` 的連結。"
+      }
+    },
+    {
+      "segment_id": "5e15188a",
+      "source_content": "For SEO reasons, and avoiding breaking links, you should configure server-side redirect rules on your hosting provider.",
+      "source_content_hash": "c8d1545d8b0a60a4ac6e1d2c3189679788519abccf0b3a00254fecfa0c3f8781",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了 SEO 並避免連結失效，您應在託管服務商處設定伺服器端重新導向規則。"
+      }
+    },
+    {
+      "segment_id": "db871df4",
+      "source_content": "As an escape hatch, you could use [@docusaurus/plugin-client-redirects](../../api/plugins/plugin-client-redirects.mdx) to create client-side redirects from `/installation.html` to `/installation`.",
+      "source_content_hash": "b90d5ab703c9715097b4d1afae0df3268ceeb91bace32cb12e36007b4bf33980",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "作為應急方案，您可以使用 [@docusaurus/plugin-client-redirects](../../api/plugins/plugin-client-redirects.mdx) 創建客戶端重新導向，將 `/installation.html` 導向 `/installation`。"
+      }
+    },
+    {
+      "segment_id": "a320d8a8",
+      "source_content": "```js\nmodule.exports = {\n  plugins: [\n    [\n      '@docusaurus/plugin-client-redirects',\n      {\n        fromExtensions: ['html'],\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "0336d072688004921302315406480bca46d60f0453f5f915f84976787bd615dc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a320d8a8"
+      }
+    },
+    {
+      "segment_id": "ebe19e6f",
+      "source_content": "If you want to keep the `.html` extension as the canonical URL of a page, docs can declare a `slug: installation.html` front matter.",
+      "source_content_hash": "9e59bb309ba5a6511a574d9a0b3d867fe825153464a758ac51097148691e2f8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若想保留 `.html` 副檔名作為頁面的標準網址，可在文件 front matter 中宣告 `slug: installation.html`。"
+      }
+    },
+    {
+      "segment_id": "a06e043d",
+      "source_content": "## Components {#components}",
+      "source_content_hash": "e6c03db808895570efadfbaf83bec767cf6eaae99f514fb8ffc522d03e0626e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 元件 {#components}"
+      }
+    },
+    {
+      "segment_id": "8be68b91",
+      "source_content": "### Sidebar {#sidebar}",
+      "source_content_hash": "b43945a24ad48373c6e1daacb1e902f5adc57ae26f1f6ce7b48c153d363dae15",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 側邊欄 {#sidebar}"
+      }
+    },
+    {
+      "segment_id": "cb857be4",
+      "source_content": "In previous version, nested sidebar category is not allowed and sidebar category can only contain doc ID. However, v2 allows infinite nested sidebar and we have many types of [Sidebar Item](../../guides/docs/sidebar/items.mdx) other than document.",
+      "source_content_hash": "ec54f6c82aa804a867c189cece09016188a683611b4e3c285f4f54ecd5ad0125",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "舊版本中不允許嵌套側邊欄分類，且分類僅能包含文件 ID。然而 v2 版本允許無限嵌套側邊欄，並提供多種[側邊欄項目類型](../../guides/docs/sidebar/items.mdx)而不限於文件。"
+      }
+    },
+    {
+      "segment_id": "ae95f665",
+      "source_content": "You'll have to migrate your sidebar if it contains category type. Rename `subcategory` to `category` and `ids` to `items`.",
+      "source_content_hash": "e0cd80df81729980d9f604fbd0145987f943d28db34742e4e6da697d063548b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您的側邊欄包含分類類型需進行遷移：將 `subcategory` 更名為 `category`，`ids` 更名為 `items`。"
+      }
+    },
+    {
+      "segment_id": "86aac3bf",
+      "source_content": "```diff title=\"sidebars.json\"\n{\n- type: 'subcategory',\n+ type: 'category',\n  label: 'My Example Subcategory',\n+ items: ['doc1'],\n- ids: ['doc1']\n},\n```",
+      "source_content_hash": "7b0ced0b311dbd8bfe3ad3782e8a9d08ea108ed53cdb60c7c3f9fa5c03c6da80",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_86aac3bf"
+      }
+    },
+    {
+      "segment_id": "58e141d3",
+      "source_content": "### Footer {#footer}",
+      "source_content_hash": "b713a8a822d1643b9ee679e7d17aaf4b9c91aa2e53f067b085240093a7239b1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 頁尾 {#footer}"
+      }
+    },
+    {
+      "segment_id": "de7b71a3",
+      "source_content": "`website/core/Footer.js` is no longer needed. If you want to modify the default footer provided by Docusaurus, [swizzle](../../swizzling.mdx) it:",
+      "source_content_hash": "146730153ab512f500e7fe5c2fb7b857851fd9dc4d68bbec7716bb8b748dcf4a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "不再需要 `website/core/Footer.js`。若要修改 Docusaurus 預設頁尾，請透過[元件替換](../../swizzling.mdx)機制："
+      }
+    },
+    {
+      "segment_id": "09e58fc0",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic Footer\n```",
+      "source_content_hash": "095f8f542e563fb9d1d4567b5a6d9c2c981cd7d5cab5920823a74cca51976511",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_09e58fc0"
+      }
+    },
+    {
+      "segment_id": "3441f612",
+      "source_content": "This will copy the current `<Footer />` component used by the theme to a `src/theme/Footer` directory under the root of your site, you may then edit this component for customization.",
+      "source_content_hash": "c429c1b5ea4778834144996c25d6b56d8dc59f84c9f57c9c7312266addcaa167",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此操作會將當前主題使用的 `<Footer />` 元件複製到網站根目錄下的 `src/theme/Footer` 目錄，您可編輯此元件進行客製化。"
+      }
+    },
+    {
+      "segment_id": "d6ee8a64",
+      "source_content": "Do not swizzle the Footer just to add the logo on the left. The logo is intentionally removed in v2 and moved to the bottom. Just configure the footer in `docusaurus.config.js` with `themeConfig.footer`:",
+      "source_content_hash": "393ac26d9dc9205444f898a961d3db5f89272f12ead7e11c36c8336046e55670",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請勿僅為在左側添加標誌而替換頁尾元件。v2 版本已刻意移除左側標誌並移至底部，請直接在 `docusaurus.config.js` 中透過 `themeConfig.footer` 配置："
+      }
+    },
+    {
+      "segment_id": "b6fff5fe",
+      "source_content": "```js\nmodule.exports = {\n  themeConfig: {\n    footer: {\n      logo: {\n        alt: 'Meta Open Source Logo',\n        src: '/img/meta_oss_logo.png',\n        href: 'https://opensource.facebook.com',\n      },\n    },\n  },\n};\n```",
+      "source_content_hash": "c7e15fc176204231045e5037311ddd1701dbf9fcf2b14b052423fbc4cf2657a2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b6fff5fe"
+      }
+    },
+    {
+      "segment_id": "2fbc2fb8",
+      "source_content": "### Pages {#pages}",
+      "source_content_hash": "24a4aa164efda0cb921d9f779b6c3e149c891273ba41e06650c3cd9d1ed40425",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 頁面 {#pages}"
+      }
+    },
+    {
+      "segment_id": "a58d6660",
+      "source_content": "Please refer to [creating pages](guides/creating-pages.mdx) to learn how Docusaurus 2 pages work. After reading that, notice that you have to move `pages/en` files in v1 to `src/pages` instead.",
+      "source_content_hash": "47bff5b7ed9aeda38ba5e2e1b7ea00c5fe404cf21be6bc120a81428f9e779555",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請參閱[建立頁面](guides/creating-pages.mdx)了解 Docusaurus 2 的頁面運作機制。閱讀後請注意需將 v1 的 `pages/en` 檔案移至 `src/pages`。"
+      }
+    },
+    {
+      "segment_id": "0ac62679",
+      "source_content": "In Docusaurus v1, pages received the `siteConfig` object as props.",
+      "source_content_hash": "8263dd13b080777d547c9ad9743fc2ec0b1e4bb89b76a31dbbb2d35d92f8c2d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus v1 中，頁面會接收 `siteConfig` 物件作為 props。"
+      }
+    },
+    {
+      "segment_id": "50cd4f87",
+      "source_content": "In Docusaurus v2, get the `siteConfig` object from `useDocusaurusContext` instead.",
+      "source_content_hash": "caedbb19b29c6bb6a2293927f1ad63961e07b9e278d431f4b17dd34660be4e14",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus v2 中，請改用 `useDocusaurusContext` 獲取 `siteConfig` 物件。"
+      }
+    },
+    {
+      "segment_id": "b575518d",
+      "source_content": "In v2, you have to apply the theme layout around each page. The Layout component takes metadata props.",
+      "source_content_hash": "de5372edf77db83f187a88d96ddeac7e07d07cd010feb2dc5124876c6e6cdfac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "v2 版本中需在每個頁面外層套用主題佈局元件。Layout 元件接收元資料 props。"
+      }
+    },
+    {
+      "segment_id": "b20523b9",
+      "source_content": "`CompLibrary` is deprecated in v2, so you have to write your own React component or use Infima styles (Docs will be available soon, sorry about that! In the meanwhile, inspect the V2 website or view https://infima.dev/ to see what styles are available).",
+      "source_content_hash": "aa2da7ffab1626b1a47a165322e52af0e7c585840218c132d8b2a64ccb26307d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "v2 已棄用 `CompLibrary`，您需自行編寫 React 元件或使用 Infima 樣式（相關文件即將推出，敬請見諒！期間可檢查 V2 網站或查看 https://infima.dev/ 了解可用樣式）。"
+      }
+    },
+    {
+      "segment_id": "b5bd7d92",
+      "source_content": "You can migrate CommonJS to ES6 imports/exports.",
+      "source_content_hash": "3750783b21ad61fdd7d60b303cd5db160e1b03cf2e15ca9482871b7663e874c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可將 CommonJS 遷移至 ES6 的 import/export 語法。"
+      }
+    },
+    {
+      "segment_id": "eed7cff5",
+      "source_content": "Here's a typical Docusaurus v2 page:",
+      "source_content_hash": "e63b9012717fa2f0cb74141f124a9cd1a5ef972330b8da8b4aeaf84253151929",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是典型的 Docusaurus v2 頁面範例："
+      }
+    },
+    {
+      "segment_id": "6ed66131",
+      "source_content": "```jsx\nimport React from 'react';\nimport Link from '@docusaurus/Link';\nimport useDocusaurusContext from '@docusaurus/useDocusaurusContext';\nimport Layout from '@theme/Layout';\n\nconst MyPage = () => {\n  const {siteConfig} = useDocusaurusContext();\n  return (\n    <Layout title={siteConfig.title} description={siteConfig.tagline}>\n      <div className=\"hero text--center\">\n        <div className=\"container \">\n          <div className=\"padding-vert--md\">\n            <h1 className=\"hero__title\">{siteConfig.title}</h1>\n            <p className=\"hero__subtitle\">{siteConfig.tagline}</p>\n          </div>\n          <div>\n            <Link\n              to=\"/docs/get-started\"\n              className=\"button button--lg button--outline button--primary\">\n              Get started\n            </Link>\n          </div>\n        </div>\n      </div>\n    </Layout>\n  );\n};\n\nexport default MyPage;\n```",
+      "source_content_hash": "5bfbc710085e0248e6e1919f9b5552f90959708946e1f4ba4fe6b06eb6b62257",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6ed66131"
+      }
+    },
+    {
+      "segment_id": "e4db19e2",
+      "source_content": "The following code could be helpful for migration of various pages:",
+      "source_content_hash": "38f76ae5555231183ae6dbc807d1267b486032aeba00c12d1303f33b8fadceaf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "下列程式碼可能有助於各類頁面遷移："
+      }
+    },
+    {
+      "segment_id": "e2e3c26b",
+      "source_content": "- Index page - [Flux](https://github.com/facebook/flux/blob/master/website/src/pages/index.js/) (recommended), [Docusaurus 2](https://github.com/facebook/docusaurus/blob/main/website/src/pages/index.js/), [Hermes](https://github.com/facebook/hermes/blob/main/website/src/pages/index.js/)\n- Help/Support page - [Docusaurus 2](https://github.com/facebook/docusaurus/blob/main/website/src/pages/help.js/), [Flux](http://facebook.github.io/flux/support)",
+      "source_content_hash": "c7183a43ed9e596ca887bcd8c4a8334f6a2f83049df320e8ec23d5f3c843e85f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 首頁 - [Flux](https://github.com/facebook/flux/blob/master/website/src/pages/index.js/)（推薦）、[Docusaurus 2](https://github.com/facebook/docusaurus/blob/main/website/src/pages/index.js/)、[Hermes](https://github.com/facebook/hermes/blob/main/website/src/pages/index.js/)\n- 幫助/支援頁 - [Docusaurus 2](https://github.com/facebook/docusaurus/blob/main/website/src/pages/help.js/)、[Flux](http://facebook.github.io/flux/support)"
+      }
+    },
+    {
+      "segment_id": "2e4f8998",
+      "source_content": "## Content {#content}",
+      "source_content_hash": "680b381d16f51b1ee273546cced74dd38a2335a4c404c9e71896c8310161acf4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 內容 {#content}"
+      }
+    },
+    {
+      "segment_id": "784ca671",
+      "source_content": "### Replace AUTOGENERATED_TABLE_OF_CONTENTS {#replace-autogenerated_table_of_contents}",
+      "source_content_hash": "325489b2cc706917f8835b941e0005ab450319f40d7a63cb04373e1971bcb4cc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 取代 AUTOGENERATED_TABLE_OF_CONTENTS {#replace-autogenerated_table_of_contents}"
+      }
+    },
+    {
+      "segment_id": "d55ba54d",
+      "source_content": "This feature is replaced by [inline table of content](../../guides/markdown-features/markdown-features-toc.mdx#inline-table-of-contents)",
+      "source_content_hash": "70926730922f1e7b04a91c6d2e5903c9d7a0958c51f30ee0c2b9b9264afcecbd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此功能已被[行內目錄](../../guides/markdown-features/markdown-features-toc.mdx#inline-table-of-contents)取代"
+      }
+    },
+    {
+      "segment_id": "169dc225",
+      "source_content": "### Update Markdown syntax to be MDX-compatible {#update-markdown-syntax-to-be-mdx-compatible}",
+      "source_content_hash": "a731c5aa8a2f3971f27fab0445dd146a1afbedc65480991f32b4907d180ba5b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 將 Markdown 語法更新為 MDX 相容格式 {#update-markdown-syntax-to-be-mdx-compatible}"
+      }
+    },
+    {
+      "segment_id": "df08ff06",
+      "source_content": "In Docusaurus 2, the Markdown syntax has been changed to [MDX](https://mdxjs.com/). Hence there might be some broken syntax in the existing docs which you would have to update. A common example is self-closing tags like `<img>` and `<br>` which are valid in HTML would have to be explicitly closed now ( `<img/>` and `<br/>`). All tags in MDX documents have to be valid JSX.",
+      "source_content_hash": "984dbf474245a1a16bfd21bf40ded84144eac85b61724a0c6c5dd5fe29da775c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 已將 Markdown 語法改為 [MDX](https://mdxjs.com/)，因此現有文件可能需修正不兼容語法。常見範例如 HTML 中有效的自閉合標籤 `<img>` 和 `<br>`，現在需明確閉合為 `<img/>` 和 `<br/>`。MDX 文件中的所有標籤都必須是有效的 JSX。"
+      }
+    },
+    {
+      "segment_id": "aa8e8b02",
+      "source_content": "Front matter is parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter). If your front matter use special characters like `:`, you now need to quote it: `title: Part 1: my part1 title` → `title: \"Part 1: my part1 title\"`.",
+      "source_content_hash": "82b7fa3c81e5b31ced739aede7d4af19bc9a6e7dad21fe103b5589a6d73ca795",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Front matter 由 [gray-matter](https://github.com/jonschlinkert/gray-matter) 解析。若您的 front matter 包含特殊字元（如 `:`），現在需加上引號：`title: Part 1: my part1 title` → `title: \"Part 1: my part1 title\"`。"
+      }
+    },
+    {
+      "segment_id": "7c02538b",
+      "source_content": "**Tips**: You might want to use some online tools like [HTML to JSX](https://transform.tools/html-to-jsx) to make the migration easier.",
+      "source_content_hash": "fbcf152465abefa9fc2680a05d3b0a745ea17459c6b0375bc45110f0268adba7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**提示**：您可以使用 [HTML 轉 JSX](https://transform.tools/html-to-jsx) 等線上工具簡化遷移流程。"
+      }
+    },
+    {
+      "segment_id": "f60afbc8",
+      "source_content": "### Language-specific code tabs {#language-specific-code-tabs}",
+      "source_content_hash": "9ec80385bd6774bc9f434b5d14aeda307eb0c1693583f65840ba3eb43576126e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 語言專屬程式碼分頁 {#language-specific-code-tabs}"
+      }
+    },
+    {
+      "segment_id": "9cd9a56c",
+      "source_content": "Refer to the [multi-language support code blocks](../../guides/markdown-features/markdown-features-code-blocks.mdx#multi-language-support-code-blocks) section.",
+      "source_content_hash": "ac8a6db9f3e16cb5916ccb312376457c0702cc2a23e1904ebc854a89f4f81b5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請參閱[多語言支援程式碼區塊](../../guides/markdown-features/markdown-features-code-blocks.mdx#multi-language-support-code-blocks)章節。"
+      }
+    },
+    {
+      "segment_id": "ec16fe06",
+      "source_content": "### Front matter {#front-matter}",
+      "source_content_hash": "b7d6b1832ac391ee60a5a6a7c5bdbe4f899a453a3cbfd2f16d0d9cae946a8302",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Front matter {#front-matter}"
+      }
+    },
+    {
+      "segment_id": "11ca2290",
+      "source_content": "The Docusaurus front matter fields for the blog have been changed from camelCase to snake_case to be consistent with the docs.",
+      "source_content_hash": "21c1719bb92305648b8244892259053a543f6c7cea4fa30e5693dc61d52da2eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格的 Docusaurus front matter 欄位已從駝峰式命名改為蛇底式命名，以與文件規範保持一致。"
+      }
+    },
+    {
+      "segment_id": "f585071d",
+      "source_content": "The fields `authorFBID` and `authorTwitter` have been deprecated. They are only used for generating the profile image of the author which can be done via the `authors` field.",
+      "source_content_hash": "d5408861ec511f35350d03b8138e5e28522d1ef4b23c5e2fd745d84bb8165423",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`authorFBID` 與 `authorTwitter` 欄位已棄用。這些欄位僅用於產生作者頭像，現可透過 `authors` 欄位實現相同功能。"
+      }
+    },
+    {
+      "segment_id": "c1c9d70b",
+      "source_content": "## Deployment {#deployment}",
+      "source_content_hash": "e0af772ab2f55ff3db9ebb772e77719b53aae8c30f3cfdce0c853b8a78c6b526",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署 {#deployment}"
+      }
+    },
+    {
+      "segment_id": "e5a40cc3",
+      "source_content": "The `CNAME` file used by GitHub Pages is not generated anymore, so be sure you have created it in `/static/CNAME` if you use a custom domain.",
+      "source_content_hash": "1570b946a23b1ed03973aa7f9c7b81d1e890b275323d9bea0c4755c3679d77e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub Pages 使用的 `CNAME` 檔案不再自動生成，若使用自訂網域，請確認已在 `/static/CNAME` 建立該檔案。"
+      }
+    },
+    {
+      "segment_id": "efd1b767",
+      "source_content": "The blog RSS feed is now hosted at `/blog/rss.xml` instead of `/blog/feed.xml`. You may want to configure server-side redirects so that users' subscriptions keep working.",
+      "source_content_hash": "865b5cbf279a85b5facd6053206179f06759e8b33662b0494af882ec47fe441c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格 RSS 訂閱網址變更為 `/blog/rss.xml`（原為 `/blog/feed.xml`）。建議設定伺服器端重新導向，以確保使用者訂閱持續有效。"
+      }
+    },
+    {
+      "segment_id": "5daa5c12",
+      "source_content": "## Test your site {#test-your-site}",
+      "source_content_hash": "d6e7ef2354770f342c966c2bdacfb9490c263cdea683e01d09cab3ed4da1ddd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 測試網站 {#test-your-site}"
+      }
+    },
+    {
+      "segment_id": "99599192",
+      "source_content": "After migration, your folder structure should look like this:",
+      "source_content_hash": "b6eacae5710aba148a39c383bb2c89361bddf62c6a8a0d5fb88ced8b1771cff5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遷移完成後，目錄結構應如下所示："
+      }
+    },
+    {
+      "segment_id": "c7a2b8ea",
+      "source_content": "```bash\nmy-project\n├── docs\n└── website\n    ├── blog\n    ├── src\n    │   ├── css\n    │   │   └── custom.css\n    │   └── pages\n    │       └── index.js\n    ├── package.json\n    ├── sidebars.json\n    ├── .gitignore\n    ├── docusaurus.config.js\n    └── static\n```",
+      "source_content_hash": "bdd026efd3074546f80fdb5a4d0f2be4566bfeab3ada0e7b7994eff7533b02e8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c7a2b8ea"
+      }
+    },
+    {
+      "segment_id": "673173a8",
+      "source_content": "Start the development server and fix any errors:",
+      "source_content_hash": "d25edcaecb698cbc2b666bef2a5ebe3a6a815d98700b191e9a5fcb2fa734719f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "啟動開發伺服器並修正錯誤："
+      }
+    },
+    {
+      "segment_id": "c2af46bc",
+      "source_content": "```bash npm2yarn\ncd website\nnpm start\n```",
+      "source_content_hash": "de98259a0f5334d22c5e7e9d3a1c14e16793ba4db1aac83a81dfbb93decef328",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c2af46bc"
+      }
+    },
+    {
+      "segment_id": "0756e68c",
+      "source_content": "You can also try to build the site for production:",
+      "source_content_hash": "47bc9ce3b230451cf4e2948712687ed610146ea8872ca29bdf1c7427eb62ca8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您亦可嘗試建置正式環境版本："
+      }
+    },
+    {
+      "segment_id": "dd286a16",
+      "source_content": "```bash npm2yarn\nnpm run build\n```",
+      "source_content_hash": "f59d77928ebca01a2394f334d2c0386fe8af6dffab32db943c054660fabcee6f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dd286a16"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/migration/v2/migration-manual.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.101283+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "a488d2f2ca49c3d243766c590ab952143b8328305c7a1bfb4a0c1f246f8e49aa"
+  }
+}

@@ -1,0 +1,286 @@
+---
+description: Configuring your site's behavior through docusaurus.config.js and more.
+---
+
+# 配置
+
+import TOCInline from '@theme/TOCInline';
+
+:::info
+
+查閱 [**`docusaurus.config.js` API 參考文檔**](api/docusaurus.config.js.mdx) 以獲取完整的選項列表。
+
+:::
+
+Docusaurus 對於配置有獨特的設計理念。我們鼓勵您將網站相關的所有信息集中到一個地方。我們會保護此文件的字段，並確保整個網站都能方便地訪問這個數據對象。
+
+維護良好的 `docusaurus.config.js` 可以幫助您、您的協作者以及開源貢獻者專注於文檔撰寫，同時仍能自定義網站。
+
+## 聲明 `docusaurus.config.js` 的語法 {#syntax-to-declare-docusaurus-config}
+
+`docusaurus.config.js` 文件在 Node.js 環境中運行，應該導出以下兩種之一：
+
+- 一個**配置對象**
+- 一個創建配置對象的**函數**
+
+:::info
+
+`docusaurus.config.js` 文件支持：
+
+- [**ES 模塊**](https://flaviocopes.com/es-modules/)
+- [**CommonJS**](https://flaviocopes.com/commonjs/)
+- [**TypeScript**](./typescript-support.mdx#typing-config)
+
+限制條件：
+
+- **必須**使用 `export default /* 您的配置 */`（或 `module.exports`）導出 Docusaurus 配置
+- **可選**使用 `import Lib from 'lib'`（或 `require('lib')`）導入 Node.js 包
+
+:::
+
+Docusaurus 允許我們以多種**等效方式**聲明其配置，以下所有配置示例都會產生完全相同的結果：
+
+```js title="docusaurus.config.js"
+export default {
+  title: 'Docusaurus',
+  url: 'https://docusaurus.io',
+  // your site config ...
+};
+```
+
+```js title="docusaurus.config.js"
+module.exports = {
+  title: 'Docusaurus',
+  url: 'https://docusaurus.io',
+  // your site config ...
+};
+```
+
+```ts title="docusaurus.config.ts"
+import type {Config} from '@docusaurus/types';
+
+export default {
+  title: 'Docusaurus',
+  url: 'https://docusaurus.io',
+  // your site config ...
+} satisfies Config;
+```
+
+```js title="docusaurus.config.js"
+const config = {
+  title: 'Docusaurus',
+  url: 'https://docusaurus.io',
+  // your site config ...
+};
+
+export default config;
+```
+
+```js title="docusaurus.config.js"
+export default function configCreator() {
+  return {
+    title: 'Docusaurus',
+    url: 'https://docusaurus.io',
+    // your site config ...
+  };
+}
+```
+
+```js title="docusaurus.config.js"
+export default async function createConfigAsync() {
+  return {
+    title: 'Docusaurus',
+    url: 'https://docusaurus.io',
+    // your site config ...
+  };
+}
+```
+
+:::tip[使用僅支持 ESM 的包]
+
+使用異步配置創建器對於導入僅支持 ESM 的模塊（尤其是大多數 Remark 插件）非常有用。可以通過動態導入來導入此類模塊：
+
+```js title="docusaurus.config.js"
+export default async function createConfigAsync() {
+  // 使用動態導入代替 require('esm-lib')
+  // highlight-next-line
+  const lib = await import('lib');
+
+  return {
+    title: 'Docusaurus',
+    url: 'https://docusaurus.io',
+    // 您網站配置的其餘部分...
+  };
+}
+```
+
+:::
+
+## `docusaurus.config.js` 包含哪些內容？ {#what-goes-into-a-docusaurusconfigjs}
+
+即使您正在開發網站，也不應該從頭開始編寫 `docusaurus.config.js`。所有模板都帶有一個 `docusaurus.config.js`，其中包含常見選項的默認值。
+
+然而，了解配置的設計和實現方式對您會有幫助。
+
+Docusaurus 配置的高層次概述可分為以下幾類：
+
+<TOCInline toc={toc} minHeadingLevel={3} maxHeadingLevel={3} />
+
+### 網站元數據 {#site-metadata}
+
+網站元數據包含基本的全局元數據，如 `title`、`url`、`baseUrl` 和 `favicon`。
+
+這些元數據用於多個地方，例如網站的標題和標題、瀏覽器標籤圖標、社交分享（Facebook、X）信息，甚至用於生成提供靜態文件的正確路徑。
+
+### 部署配置 {#deployment-configurations}
+
+部署配置如 `projectName`、`organizationName` 和可選的 `deploymentBranch` 在您使用 `deploy` 命令部署網站時使用。
+
+建議查閱[部署文檔](deployment.mdx)以獲取更多信息。
+
+### 主題、插件和預設配置 {#theme-plugin-and-preset-configurations}
+
+在 `themes`、`plugins` 和 `presets` 欄位中分別列出您網站的[主題](./using-plugins.mdx#using-themes)、[插件](./using-plugins.mdx)和[預設集](./using-plugins.mdx#using-presets)。這些通常是 npm 套件：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  plugins: [
+    '@docusaurus/plugin-content-blog',
+    '@docusaurus/plugin-content-pages',
+  ],
+  themes: ['@docusaurus/theme-classic'],
+};
+```
+
+:::tip
+
+Docusaurus 支援[**模組簡寫**](./using-plugins.mdx#module-shorthands)，可將上述配置簡化為：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  plugins: ['content-blog', 'content-pages'],
+  themes: ['classic'],
+};
+```
+
+:::
+
+也可以從本地目錄載入：
+
+```js title="docusaurus.config.js"
+import path from 'path';
+
+export default {
+  // ...
+  themes: [path.resolve(__dirname, '/path/to/docusaurus-local-theme')],
+};
+```
+
+若要為插件或主題指定選項，請在配置文件中將插件或主題名稱替換為包含名稱和選項物件的陣列：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  plugins: [
+    [
+      'content-blog',
+      {
+        path: 'blog',
+        routeBasePath: 'blog',
+        include: ['*.md', '*.mdx'],
+        // ...
+      },
+    ],
+    'content-pages',
+  ],
+};
+```
+
+若要為預設集中捆綁的插件或主題指定選項，需透過 `presets` 欄位傳遞選項。此範例中，`docs` 指代 `@docusaurus/plugin-content-docs`，`theme` 指代 `@docusaurus/theme-classic`。
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.js',
+        },
+        theme: {
+          customCss: ['./src/css/custom.css'],
+        },
+      },
+    ],
+  ],
+};
+```
+
+:::tip
+
+`presets: [['classic', {...}]]` 簡寫形式同樣有效。
+
+:::
+
+如需進一步配置主題、插件和預設集的協助，請參閱[使用插件](./using-plugins.mdx)。
+
+### 自訂配置 {#custom-configurations}
+
+Docusaurus 會防止 `docusaurus.config.js` 出現未知欄位。要添加自訂欄位，需在 `customFields` 中定義。
+
+範例：
+
+```js title="docusaurus.config.js"
+export default {
+  // ...
+  // highlight-start
+  customFields: {
+    image: '',
+    keywords: [],
+  },
+  // highlight-end
+  // ...
+};
+```
+
+## 從元件存取配置 {#accessing-configuration-from-components}
+
+您的配置物件將可供網站所有元件使用，可透過 React 上下文以 `siteConfig` 形式存取。
+
+基礎範例：
+
+```jsx
+import React from 'react';
+// highlight-next-line
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+const Hello = () => {
+  // highlight-start
+  const {siteConfig} = useDocusaurusContext();
+  // highlight-end
+  const {title, tagline} = siteConfig;
+
+  return <div>{`${title} · ${tagline}`}</div>;
+};
+```
+
+:::tip
+
+若僅需在客戶端使用這些欄位，可建立自己的 JS 檔案並以 ES6 模組形式導入，無需將其放入 `docusaurus.config.js`。
+
+:::
+
+## 自訂 Babel 配置 {#customizing-babel-configuration}
+
+對於新建的 Docusaurus 專案，我們會自動在專案根目錄生成 `babel.config.js`。
+
+```js title="babel.config.js"
+export default {
+  presets: ['@docusaurus/core/lib/babel/preset'],
+};
+```
+
+大多數情況下此配置即可滿足需求。若要自訂 Babel 配置（例如添加 Flow 支援），可直接編輯此檔案。變更生效需重新啟動 Docusaurus 開發伺服器。

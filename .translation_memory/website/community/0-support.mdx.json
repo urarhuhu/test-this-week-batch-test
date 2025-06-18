@@ -1,0 +1,142 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "community/0-support.mdx",
+  "source_file_content_hash": "d3bf6632daa41ffe9f50f1ace140d903c58af23e7f74bb3438c0e2532bb6e138",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Support",
+      "source_content_hash": "88cd7a9a3c99df17916956b536117225c58572f2695f1c7a93e14205b6c5475a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 支援"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Docusaurus has a community of thousands of developers.",
+      "source_content_hash": "5df19c49ebad433cd87840fcd95c8bb33cb1142853f6feef70d2f7bf272922ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 擁有數千名開發者組成的社群。"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "On this page we've listed some Docusaurus-related communities that you can be a part of; see the other pages in this section for additional online and in-person learning materials.",
+      "source_content_hash": "9eb569576f8bc050a93d99c5b2c1e70d2a998d485077456f1598dbb150bb0e1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本頁面列出了您可以參與的 Docusaurus 相關社群；請參閱本節其他頁面以獲取更多線上及線下學習資源。"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Before participating in Docusaurus' communities, [please read our Code of Conduct](https://engineering.fb.com/codeofconduct/). We have adopted the [Contributor Covenant](https://www.contributor-covenant.org/) and we expect that all community members adhere to the guidelines within.",
+      "source_content_hash": "9147201ab92820b80d62f66ec9a11502fc52ec4105d3c042cb0c348ff8bf93ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在參與 Docusaurus 社群之前，[請先閱讀我們的行為準則](https://engineering.fb.com/codeofconduct/)。我們採用了 [貢獻者公約](https://www.contributor-covenant.org/)，並期望所有社群成員遵守其中的準則。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Stack Overflow {#stack-overflow}",
+      "source_content_hash": "d21ad5581fc34ba62c45aaf7018645af47c3945dfbdc8609f5e517405d5862e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Stack Overflow {#stack-overflow}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Stack Overflow is a popular forum to ask code-level questions or if you're stuck with a specific error. Read through the [existing questions](https://stackoverflow.com/questions/tagged/docusaurus) tagged with **docusaurus** or [ask your own](https://stackoverflow.com/questions/ask?tags=docusaurus)!",
+      "source_content_hash": "e8af923dbe1c31cf90731d5174a386c426ea0efae6ddea069f013045ad5c31aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Stack Overflow 是詢問程式碼層級問題或解決特定錯誤的熱門論壇。瀏覽標記為 **docusaurus** 的[現有問題](https://stackoverflow.com/questions/tagged/docusaurus)或[提出您的問題](https://stackoverflow.com/questions/ask?tags=docusaurus)！"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Discussion forums {#discussion-forums}",
+      "source_content_hash": "418624271c2be1dac1ee12666811c3cb6690543bde7a3d43b40634c0cb66fd2a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 討論論壇 {#discussion-forums}"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "There are many online forums for discussion about best practices and application architecture as well as the future of Docusaurus. If you have an answerable code-level question, Stack Overflow is usually a better fit.",
+      "source_content_hash": "8fa8895b1771e1f406b6531f3207f037a28f6a4ab5860f828a059aa8f8cc35a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有許多線上論壇可供討論最佳實踐、應用程式架構以及 Docusaurus 的未來發展。如果您有可解答的程式碼層級問題，Stack Overflow 通常是更適合的選擇。"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "- [Docusaurus online chat](https://discord.gg/docusaurus)\n  - [#help-and-questions](https://discord.gg/fwbcrQ3dHR) for user help\n  - [#contributors](https://discord.gg/6g6ASPA) for contributing help\n- [Reddit's Docusaurus community](https://www.reddit.com/r/docusaurus/)",
+      "source_content_hash": "c4a8955cba5daf919cc17ae1f0c2a853b948d4670a2a65b17ab5e0885fb7b975",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Docusaurus 線上聊天室](https://discord.gg/docusaurus)\n  - [#help-and-questions](https://discord.gg/fwbcrQ3dHR) 用於使用者求助\n  - [#contributors](https://discord.gg/6g6ASPA) 用於貢獻者協助\n- [Reddit 上的 Docusaurus 社群](https://www.reddit.com/r/docusaurus/)"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Feature requests {#feature-requests}",
+      "source_content_hash": "80206d8f2699217ab2d5da643de1627c5bc193a89f800acd16a7674ccabae2e3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 功能請求 {#feature-requests}"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "For new feature requests, you can create a post on our [feature requests board (Canny)](/feature-requests), which is a handy tool for road-mapping and allows for sorting by upvotes, which gives the core team a better indicator of what features are in high demand, as compared to GitHub issues which are harder to triage. Refrain from making a Pull Request for new features (especially large ones) as someone might already be working on it or will be part of our roadmap. Talk to us first!",
+      "source_content_hash": "513dd4aa98118c53b98dc94c7aaeaca4dea529221d86acd2d5e29ee6382e3141",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於新功能請求，您可以在我們的[功能請求看板 (Canny)](/feature-requests)上發文。該工具便於路線規劃，並可依投票數排序，讓核心團隊更清楚哪些功能需求較高，相較於較難分類的 GitHub 議題。請避免直接為新功能（尤其是大型功能）提交 Pull Request，因為可能已有人在開發或已列入我們的開發路線。請先與我們討論！"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## News {#news}",
+      "source_content_hash": "bb6e5e0543eab2c513901a93a08f42280040472db796aa1d42cbf0ad3702575a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新聞 {#news}"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "For the latest news about Docusaurus, [follow **@docusaurus** on X](https://x.com/docusaurus) and the [official Docusaurus blog](/blog) on this website.",
+      "source_content_hash": "ef13dbf0c12997196077cc2508f86aba85be0f55ce1b215cfc917eebef7f3d85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有關 Docusaurus 的最新消息，請在 X 上[追蹤 **@docusaurus**](https://x.com/docusaurus) 並關注本網站的[官方 Docusaurus 部落格](/blog)。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current/0-support.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.021304+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "d3bf6632daa41ffe9f50f1ace140d903c58af23e7f74bb3438c0e2532bb6e138"
+  }
+}

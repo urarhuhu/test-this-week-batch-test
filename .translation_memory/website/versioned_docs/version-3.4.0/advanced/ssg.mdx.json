@@ -1,0 +1,482 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.4.0/advanced/ssg.mdx",
+  "source_file_content_hash": "59982ea0525fc92a51eab870501c8e5b637bcf96065a3e5fac15be33c9f669d6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_label: Static site generation\ndescription: Docusaurus statically renders your React code into HTML, allowing faster load speed and better SEO.\n---",
+      "source_content_hash": "fec258513966f77cb0b2ecea901755898f69ed6750ceca835a6b04e66f7918c1",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Static site generation (SSG)",
+      "source_content_hash": "9fd94e8ad4c49004a9b28c4ed9df0ba7e6a4ce62b016ef4d714072123905e32a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 靜態網站生成 (SSG)"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "In [architecture](architecture.mdx), we mentioned that the theme is run in Webpack. But beware: that doesn't mean it always has access to browser globals! The theme is built twice:",
+      "source_content_hash": "b79e342886763f96dc258ea15e0ce70961d485b3d38c13687baa8bd7496dc0e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在[架構說明](architecture.mdx)中，我們提到主題是在 Webpack 中運行的。但請注意：這並不意味著它總能訪問瀏覽器全局變量！主題會被構建兩次："
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "- During **server-side rendering**, the theme is compiled in a sandbox called [React DOM Server](https://reactjs.org/docs/react-dom-server.html). You can see this as a \"headless browser\", where there is no `window` or `document`, only React. SSR produces static HTML pages.\n- During **client-side rendering**, the theme is compiled to JavaScript that gets eventually executed in the browser, so it has access to browser variables.",
+      "source_content_hash": "2c4eee5569c81e40d97039fc64c2a2b8c42c517ad7fe58cdea9238deddadebf7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **伺服器端渲染**期間，主題會在名為 [React DOM Server](https://reactjs.org/docs/react-dom-server.html) 的沙箱中編譯。您可以將其視為「無頭瀏覽器」，其中沒有 `window` 或 `document`，只有 React。SSR 會產生靜態 HTML 頁面。\n- **客戶端渲染**期間，主題會被編譯為最終在瀏覽器中執行的 JavaScript，因此可以訪問瀏覽器變量。"
+      }
+    },
+    {
+      "segment_id": "2e76584d",
+      "source_content": ":::info[SSR or SSG?]\n\n_Server-side rendering_ and _static site generation_ can be different concepts, but we use them interchangeably.\n\nStrictly speaking, Docusaurus is a static site generator, because there's no server-side runtime—we statically render to HTML files that are deployed on a CDN, instead of dynamically pre-rendering on each request. This differs from the working model of [Next.js](https://nextjs.org/).\n\n:::",
+      "source_content_hash": "ae2b2d63d58e38a932215509b6be248fde6bfd034abd0ab6ea05527128515ee2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[SSR 還是 SSG？]\n\n_伺服器端渲染_和_靜態網站生成_可能是不同的概念，但我們會交替使用它們。\n\n嚴格來說，Docusaurus 是一個靜態網站生成器，因為它沒有伺服器端運行時——我們會靜態渲染成部署在 CDN 上的 HTML 文件，而不是在每次請求時動態預渲染。這與 [Next.js](https://nextjs.org/) 的工作模式不同。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Therefore, while you probably know not to access Node globals like `process` ([or can we?](#node-env)) or the `'fs'` module, you can't freely access browser globals either.",
+      "source_content_hash": "2e96fa3fe2302d69db70042028888cdd48b061845ec8bca8768e6cf539f5c361",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "因此，雖然您可能知道不該訪問 Node 全局變量如 `process`（[或者可以嗎？](#node-env)）或 `'fs'` 模塊，但您也不能隨意訪問瀏覽器全局變量。"
+      }
+    },
+    {
+      "segment_id": "41a8ae85",
+      "source_content": "```jsx\nimport React from 'react';\n\nexport default function WhereAmI() {\n  return <span>{window.location.href}</span>;\n}\n```",
+      "source_content_hash": "eed3809af34e09ee6984a9f868aff7b5307a2c8f05bf87d94e20119b4a32300b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41a8ae85"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "This looks like idiomatic React, but if you run `docusaurus build`, you will get an error:",
+      "source_content_hash": "d1bd67a607fb80f407a3ac98c954bb7d9f8f5e6207b27a93beb484686d82305a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這看起來像是典型的 React 代碼，但如果您運行 `docusaurus build`，將會收到錯誤："
+      }
+    },
+    {
+      "segment_id": "a2110253",
+      "source_content": "```\nReferenceError: window is not defined\n```",
+      "source_content_hash": "843d1cbb3e6ac96b39924fac7b8de20b19f0fc78c8835c844a213335fd878a8f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a2110253"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "This is because during server-side rendering, the Docusaurus app isn't actually run in browser, and it doesn't know what `window` is.",
+      "source_content_hash": "9e310774f9916af7d650f535b20767261044e2ee9a33a80c306b13c645e94abf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是因為在伺服器端渲染期間，Docusaurus 應用實際上並未在瀏覽器中運行，它不知道 `window` 是什麼。"
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "```mdx-code-block\n<details id=\"node-env\">\n<summary>What about <code>process.env.NODE_ENV</code>?</summary>\n```",
+      "source_content_hash": "7118692a7e0c9a09b9581ab6ae4ba541cc78b3d5199844bbd10bc595718409d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "One exception to the \"no Node globals\" rule is `process.env.NODE_ENV`. In fact, you can use it in React, because Webpack injects this variable as a global:",
+      "source_content_hash": "7d3dc1982e1202f3a0113d547226a5e880ce6153d37e4241e5294ae0fb346fc0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "「無 Node 全局變量」規則的一個例外是 `process.env.NODE_ENV`。事實上，您可以在 React 中使用它，因為 Webpack 會將此變量注入為全局變量："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```jsx\nimport React from 'react';\n\nexport default function expensiveComp() {\n  if (process.env.NODE_ENV === 'development') {\n    return <>This component is not shown in development</>;\n  }\n  const res = someExpensiveOperationThatLastsALongTime();\n  return <>{res}</>;\n}\n```",
+      "source_content_hash": "7257d64c2593bcfba24b196ac902c005ac3dd1c17ab21f2e502c72dbfb25821e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "During Webpack build, the `process.env.NODE_ENV` will be replaced with the value, either `'development'` or `'production'`. You will then get different build results after dead code elimination:",
+      "source_content_hash": "6534c58febae2e065e282d9e2af400695e97edf8e4f0dc2cd05b8fa2fe493327",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Webpack 構建期間，`process.env.NODE_ENV` 將被替換為實際值，可能是 `'development'` 或 `'production'`。經過死碼消除後，您將獲得不同的構建結果："
+      }
+    },
+    {
+      "segment_id": "1bcdac85",
+      "source_content": "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+      "source_content_hash": "86702643a5c3bdf74257ff6062535897129ed9144c4f5b70edfe338fef3e5c73",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1bcdac85"
+      }
+    },
+    {
+      "segment_id": "750e2f7e",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"Development\">\n```",
+      "source_content_hash": "bf9524336bdfbba73fe2d5590f5c2992b9c1745c8fd48024f9053a4b8fde6c53",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_750e2f7e"
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```diff\nimport React from 'react';\n\nexport default function expensiveComp() {\n  // highlight-next-line\n  if ('development' === 'development') {\n+   return <>This component is not shown in development</>;\n  }\n- const res = someExpensiveOperationThatLastsALongTime();\n- return <>{res}</>;\n}\n```",
+      "source_content_hash": "ad51474e1e6541dca71f0fd48b755f40221cbe8de5da40538aeb46603a6bd039",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "9f4336b3",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"Production\">\n```",
+      "source_content_hash": "034001439d639e0006ab9530e38beb22b0871821490154039556124f54c24021",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f4336b3"
+      }
+    },
+    {
+      "segment_id": "8c3563d3",
+      "source_content": "```diff\nimport React from 'react';\n\nexport default function expensiveComp() {\n  // highlight-next-line\n- if ('production' === 'development') {\n-   return <>This component is not shown in development</>;\n- }\n+ const res = someExpensiveOperationThatLastsALongTime();\n+ return <>{res}</>;\n}\n```",
+      "source_content_hash": "590143dcccf5f19de8869d35cd578fd76370af12faf768b7873fa5bc4038ce30",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8c3563d3"
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n</details>\n```",
+      "source_content_hash": "cd7fcc874beb0330a6dbf44132616dd91ce59391edc601a5f594c076e5daf79a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "54bafb10",
+      "source_content": "## Understanding SSR {#understanding-ssr}",
+      "source_content_hash": "b3666697772a9bcc9ef1d1aabfbd751528eacdb34c41219edb587bcbb2987a1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 理解 SSR {#understanding-ssr}"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "React is not just a dynamic UI runtime—it's also a templating engine. Because Docusaurus sites mostly contain static contents, it should be able to work without any JavaScript (which React runs in), but only plain HTML/CSS. And that's what server-side rendering offers: statically rendering your React code into HTML, without any dynamic content. An HTML file has no concept of client state (it's purely markup), hence it shouldn't rely on browser APIs.",
+      "source_content_hash": "453eeb9f05855cf1887990b30774a6254a3d4688b53baa4fda49b80390a2e1af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "React 不僅是一個動態 UI 運行時——它也是一個模板引擎。由於 Docusaurus 網站主要包含靜態內容，它應該能夠在沒有任何 JavaScript（React 運行的環境）的情況下工作，僅使用純 HTML/CSS。這就是伺服器端渲染提供的功能：將您的 React 代碼靜態渲染為 HTML，不包含任何動態內容。HTML 文件沒有客戶端狀態的概念（它純粹是標記），因此不應依賴瀏覽器 API。"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "These HTML files are the first to arrive at the user's browser screen when a URL is visited (see [routing](routing.mdx)). Afterwards, the browser fetches and runs other JS code to provide the \"dynamic\" parts of your site—anything implemented with JavaScript. However, before that, the main content of your page is already visible, allowing faster loading.",
+      "source_content_hash": "0ed3bdd88e73cbaaf7495ab10bf2f914ab39197388ed98db722e4b5e4715238f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當用戶訪問 URL 時，這些 HTML 文件會首先到達用戶的瀏覽器屏幕（參見[路由](routing.mdx)）。之後，瀏覽器會獲取並運行其他 JS 代碼，以提供網站的「動態」部分——任何用 JavaScript 實現的功能。然而，在此之前，頁面的主要內容已經可見，從而實現更快的加載。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "In CSR-only apps, all DOM elements are generated on client side with React, and the HTML file only ever contains one root element for React to mount DOM to; in SSR, React is already facing a fully built HTML page, and it only needs to correlate the DOM elements with the virtual DOM in its model. This step is called \"hydration\". After React has hydrated the static markup, the app starts to work as any normal React app.",
+      "source_content_hash": "b0e0bea8a82dae4321f95b92ff53ecb8bf62b417310577135055c0f0571f824d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在僅 CSR 的應用中，所有 DOM 元素都是在客戶端由 React 生成的，HTML 文件只包含一個根元素供 React 掛載 DOM；而在 SSR 中，React 已經面對一個完全構建的 HTML 頁面，它只需要將 DOM 元素與其模型中的虛擬 DOM 關聯起來。這一步驟稱為「水合」。在 React 完成對靜態標記的水合後，應用程序開始像任何普通的 React 應用一樣工作。"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Note that Docusaurus is ultimately a single-page application, so static site generation is only an optimization (_progressive enhancement_, as it's called), but our functionality does not fully depend on those HTML files. This is contrary to site generators like [Jekyll](https://jekyllrb.com/) and [Docusaurus v1](https://v1.docusaurus.io/), where all files are statically transformed to markup, and interactiveness is added through external JavaScript linked with `<script>` tags. If you inspect the build output, you will still see JS assets under `build/assets/js`, which are, really, the core of Docusaurus.",
+      "source_content_hash": "61339257a6e0f17539c827d5d74fe28f9a7a76958fabd66e585e4590e13c7b6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意，Docusaurus 本質上是一個單頁應用程式，因此靜態網站生成僅是一種優化手段（稱為「漸進增強」），但我們的功能並不完全依賴於這些 HTML 檔案。這與 [Jekyll](https://jekyllrb.com/) 和 [Docusaurus v1](https://v1.docusaurus.io/) 等網站生成器不同，後者會將所有檔案靜態轉換為標記語言，並通過 `<script>` 標籤連結的外部 JavaScript 添加互動性。如果您檢查建置輸出，仍然會看到 `build/assets/js` 下的 JS 資源，這些才是 Docusaurus 的核心。"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "## Escape hatches {#escape-hatches}",
+      "source_content_hash": "00ccd299d1f111069f591141ef5089551aa1f5214d0b9f3257ca4925b20055b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 緊急逃生艙 {#escape-hatches}"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "If you want to render any dynamic content on your screen that relies on the browser API to be functional at all, for example:",
+      "source_content_hash": "8d2a128b582fffeffb64b214befcaab8cb270332316cd1c2e4510cd122d96d08",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您需要在畫面上渲染任何依賴瀏覽器 API 才能正常運作的動態內容，例如："
+      }
+    },
+    {
+      "segment_id": "2ddd26d5",
+      "source_content": "- Our [live codeblock](../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor), which runs in the browser's JS runtime\n- Our [themed image](../guides/markdown-features/markdown-features-assets.mdx#themed-images) that detects the user's color scheme to display different images\n- The JSON viewer of our debug panel which uses the `window` global for styling",
+      "source_content_hash": "730ae7be6a7813b75789a60bed78cf1015c8104ce62d6a214ebbc69284332cdd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 我們的 [即時代碼區塊](../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor)，它在瀏覽器的 JS 運行時中執行\n- 我們的 [主題化圖片](../guides/markdown-features/markdown-features-assets.mdx#themed-images)，它會檢測使用者的配色方案以顯示不同的圖片\n- 除錯面板的 JSON 檢視器，它使用 `window` 全域變數進行樣式設定"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "You may need to escape from SSR since static HTML can't display anything useful without knowing the client state.",
+      "source_content_hash": "d7811101367c001f5998282b6879c8f2da954f434665995e527bb1a2475e1cff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可能需要避開 SSR，因為靜態 HTML 在不知道客戶端狀態的情況下無法顯示任何有用的內容。"
+      }
+    },
+    {
+      "segment_id": "837540ee",
+      "source_content": ":::warning\n\nIt is important for the first client-side render to produce the exact same DOM structure as server-side rendering, otherwise, React will correlate virtual DOM with the wrong DOM elements.\n\nTherefore, the naïve attempt of `if (typeof window !== 'undefined) {/* render something */}` won't work appropriately as a browser vs. server detection, because the first client render would instantly render different markup from the server-generated one.\n\nYou can read more about this pitfall in [The Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/).\n\n:::",
+      "source_content_hash": "b69ebdbf3f031cfdaea60b5b59406d0027d7481428bdcb98bc9d90b69be00299",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n客戶端的首次渲染必須產生與伺服器端渲染完全相同的 DOM 結構，這一點非常重要，否則 React 會將虛擬 DOM 與錯誤的 DOM 元素關聯起來。\n\n因此，單純使用 `if (typeof window !== 'undefined) {/* 渲染某些內容 */}` 作為瀏覽器與伺服器的檢測方法並不合適，因為客戶端的首次渲染會立即產生與伺服器生成內容不同的標記。\n\n您可以在 [The Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/) 中閱讀更多關於這個陷阱的資訊。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "We provide several more reliable ways to escape SSR.",
+      "source_content_hash": "7d214df75f8da4ebbc75fa1ca8579d49e201de0fb123fa05d3d9ac11ed795a87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供了幾種更可靠的方法來避開 SSR。"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "### `<BrowserOnly>` {#browseronly}",
+      "source_content_hash": "7e6accf5ef6b209ecf942b746cf48671f09f72bbfaa09cb1ca7d4e8aaaf12817",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `<BrowserOnly>` {#browseronly}"
+      }
+    },
+    {
+      "segment_id": "e77cf7c6",
+      "source_content": "If you need to render some component in browser only (for example, because the component relies on browser specifics to be functional at all), one common approach is to wrap your component with [`<BrowserOnly>`](../docusaurus-core.mdx#browseronly) to make sure it's invisible during SSR and only rendered in CSR.",
+      "source_content_hash": "8fcbae65c885b1c9f2a4e3216d4b4e087c6907f046391b477dc8c85755edc2b0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您需要僅在瀏覽器中渲染某些元件（例如，因為該元件依賴於瀏覽器特定功能才能正常運作），常見的方法是將您的元件包裝在 [`<BrowserOnly>`](../docusaurus-core.mdx#browseronly) 中，以確保它在 SSR 期間不可見，僅在 CSR 中渲染。"
+      }
+    },
+    {
+      "segment_id": "6e57b94c",
+      "source_content": "```jsx\nimport BrowserOnly from '@docusaurus/BrowserOnly';\n\nfunction MyComponent(props) {\n  return (\n    // highlight-start\n    <BrowserOnly fallback={<div>Loading...</div>}>\n      {() => {\n        const LibComponent =\n          require('some-lib-that-accesses-window').LibComponent;\n        return <LibComponent {...props} />;\n      }}\n    </BrowserOnly>\n    // highlight-end\n  );\n}\n```",
+      "source_content_hash": "71112773f0100723d6dfa7704f565599cfeb5a1001cb43ad602defb7fdbdbd69",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6e57b94c"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "It's important to realize that the children of `<BrowserOnly>` is not a JSX element, but a function that _returns_ an element. This is a design decision. Consider this code:",
+      "source_content_hash": "676cfa8c1ec5d993b2e476bda85a624762493131cf860302468f719c019dab5f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "重要的是要理解，`<BrowserOnly>` 的子元素不是一個 JSX 元素，而是一個 _返回_ 元素的函數。這是一個設計決策。考慮以下程式碼："
+      }
+    },
+    {
+      "segment_id": "b68d496b",
+      "source_content": "```jsx\nimport BrowserOnly from '@docusaurus/BrowserOnly';\n\nfunction MyComponent() {\n  return (\n    <BrowserOnly>\n      {/* highlight-start */}\n      {/* DON'T DO THIS - doesn't actually work */}\n      <span>page url = {window.location.href}</span>\n      {/* highlight-end */}\n    </BrowserOnly>\n  );\n}\n```",
+      "source_content_hash": "4db4b425f7b35bcf3b833a86b7478a02689bfe165e7ec42f115cc9a857a38854",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b68d496b"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "While you may expect that `BrowserOnly` hides away the children during server-side rendering, it actually can't. When the React renderer tries to render this JSX tree, it does see the `{window.location.href}` variable as a node of this tree and tries to render it, although it's actually not used! Using a function ensures that we only let the renderer see the browser-only component when it's needed.",
+      "source_content_hash": "237f9c532f88bef82be46197b7d9deca08ffcb158d28b771f23c0826ffe97e6b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然您可能期望 `BrowserOnly` 在伺服器端渲染時隱藏子元素，但實際上它無法做到。當 React 渲染器嘗試渲染這個 JSX 樹時，它確實會將 `{window.location.href}` 變量視為該樹的一個節點並嘗試渲染它，儘管實際上並未使用它！使用函數可以確保我們僅在需要時才讓渲染器看到瀏覽器專用的元件。"
+      }
+    },
+    {
+      "segment_id": "e1642ab4",
+      "source_content": "### `useIsBrowser` {#useisbrowser}",
+      "source_content_hash": "50c525310ce74b75fbbf9207c3c609af5a963d75d2389ae86637ce6b0dbd5964",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useIsBrowser` {#useisbrowser}"
+      }
+    },
+    {
+      "segment_id": "674abb31",
+      "source_content": "You can also use the `useIsBrowser()` hook to test if the component is currently in a browser environment. It returns `false` in SSR and `true` is CSR, after first client render. Use this hook if you only need to perform certain conditional operations on client-side, but not render an entirely different UI.",
+      "source_content_hash": "56a723cdc857c69f089d6dad244d2494cc0df8ea53a9430591f1027be84d827e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可以使用 `useIsBrowser()` 鉤子來測試元件當前是否處於瀏覽器環境中。它在 SSR 中返回 `false`，在首次客戶端渲染後的 CSR 中返回 `true`。如果您僅需要在客戶端執行某些條件操作，而不是渲染完全不同的 UI，可以使用此鉤子。"
+      }
+    },
+    {
+      "segment_id": "ebc385af",
+      "source_content": "```jsx\nimport useIsBrowser from '@docusaurus/useIsBrowser';\n\nfunction MyComponent() {\n  const isBrowser = useIsBrowser();\n  const location = isBrowser ? window.location.href : 'fetching location...';\n  return <span>{location}</span>;\n}\n```",
+      "source_content_hash": "d7ee8fe1dfec50a4cea142ba05a7178c76ca7c32918e05b80a917bcf39e3aa61",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ebc385af"
+      }
+    },
+    {
+      "segment_id": "be4b1cbf",
+      "source_content": "### `useEffect` {#useeffect}",
+      "source_content_hash": "56f819406ad95fc2fe6adbadeb9acf4477633a9551c95833dfa50abc6d4e75e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useEffect` {#useeffect}"
+      }
+    },
+    {
+      "segment_id": "b27c61de",
+      "source_content": "Lastly, you can put your logic in `useEffect()` to delay its execution until after first CSR. This is most appropriate if you are only performing side-effects but don't _get_ data from the client state.",
+      "source_content_hash": "72ad77059701525e6813dd0dbcdc65313e756d434a7d58fc80191aea7160d6d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "最後，您可以將邏輯放在 `useEffect()` 中，以延遲其執行直到首次 CSR 之後。這最適合於僅執行副作用但不 _獲取_ 客戶端狀態資料的情況。"
+      }
+    },
+    {
+      "segment_id": "de34d0f2",
+      "source_content": "```jsx\nfunction MyComponent() {\n  useEffect(() => {\n    // Only logged in the browser console; nothing is logged during server-side rendering\n    console.log(\"I'm now in the browser\");\n  }, []);\n  return <span>Some content...</span>;\n}\n```",
+      "source_content_hash": "e61b7cf5cbc241e9a76e2683f135aca0030fd156c4e64db4bd7123ff8db55cf4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de34d0f2"
+      }
+    },
+    {
+      "segment_id": "a7628008",
+      "source_content": "### `ExecutionEnvironment` {#executionenvironment}",
+      "source_content_hash": "49588495f6be5deeff38767e8acfd03a3b59ed74a3ec762d4f28216d704f3bd3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `ExecutionEnvironment` {#executionenvironment}"
+      }
+    },
+    {
+      "segment_id": "7e563909",
+      "source_content": "The [`ExecutionEnvironment`](../docusaurus-core.mdx#executionenvironment) namespace contains several values, and `canUseDOM` is an effective way to detect browser environment.",
+      "source_content_hash": "bfa36f889a919a3b83cb1fe6822ef0e9e972088246da94d97fccf54e058568b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[`ExecutionEnvironment`](../docusaurus-core.mdx#executionenvironment) 命名空間包含多個值，其中 `canUseDOM` 是檢測瀏覽器環境的有效方法。"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "Beware that it essentially checked `typeof window !== 'undefined'` under the hood, so you should not use it for rendering-related logic, but only imperative code, like reacting to user input by sending web requests, or dynamically importing libraries, where DOM isn't updated at all.",
+      "source_content_hash": "70bbcd4682afa9c88eff7e530f4d26cb953bc0ff63011dcb226cbb57ea02cfa1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意，它本質上是在底層檢查 `typeof window !== 'undefined'`，因此不應將其用於渲染相關邏輯，而僅適用於命令式代碼，例如透過發送網路請求來響應用戶輸入，或動態載入函式庫，這些情況下完全不會更新 DOM。"
+      }
+    },
+    {
+      "segment_id": "f377fafa",
+      "source_content": "```js title=\"a-client-module.js\"\nimport ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';\n\nif (ExecutionEnvironment.canUseDOM) {\n  document.title = \"I'm loaded!\";\n}\n```",
+      "source_content_hash": "ab63ee25e4ccd2e119c679f8ee2b597f993c22b5585b2288a0227a3abf878865",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f377fafa"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.4.0/advanced/ssg.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.197046+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "59982ea0525fc92a51eab870501c8e5b637bcf96065a3e5fac15be33c9f669d6"
+  }
+}

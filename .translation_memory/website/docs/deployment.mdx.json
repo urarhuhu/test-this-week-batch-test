@@ -1,0 +1,1520 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/deployment.mdx",
+  "source_file_content_hash": "b40aeb9fa81d3b35a5ed464e17e8111daa93ee68b82e8893d78e486ef18eab25",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Deploy your Docusaurus app for production on a range of static site hosting services.\n---",
+      "source_content_hash": "0c8a2e113ec049dae00817fea41460465ab503566810b644dc18d8cbba4864a0",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Deployment",
+      "source_content_hash": "e79aff752ccc89a4a49fab42efd92880bf43784945e3b993f9147f0f152272d9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 部署"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "To build the static files of your website for production, run:",
+      "source_content_hash": "1d027315ded539cd491ed68c81ada7bc05daf6a120a544dac23433a411654b9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要為生產環境建置網站的靜態檔案，請執行："
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```bash npm2yarn\nnpm run build\n```",
+      "source_content_hash": "f59d77928ebca01a2394f334d2c0386fe8af6dffab32db943c054660fabcee6f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Once it finishes, the static files will be generated within the `build` directory.",
+      "source_content_hash": "c7198600cb9d2b2ae3adffd33398c64eca3cd05fc780b54e2ca5ee472772220f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "完成後，靜態檔案將生成於 `build` 目錄中。"
+      }
+    },
+    {
+      "segment_id": "ac44a45c",
+      "source_content": ":::note\n\nThe only responsibility of Docusaurus is to build your site and emit static files in `build`.\n\nIt is now up to you to choose how to host those static files.\n\n:::",
+      "source_content_hash": "ab6b09ea3b265e5a56ca065fbb0c3ab1ceacdeec0966ac148c4176dd940726d0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\nDocusaurus 的唯一職責是建置您的網站並在 `build` 目錄中生成靜態檔案。\n\n現在由您選擇如何託管這些靜態檔案。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "You can deploy your site to static site hosting services such as [Vercel](https://vercel.com/), [GitHub Pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), [Render](https://render.com/docs/static-sites), and [Surge](https://surge.sh/help/getting-started-with-surge).",
+      "source_content_hash": "0060aa0f887214d2d8e3c50fb7266229f2e76c7fdc957617bba844bbe7f44536",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以將網站部署到靜態網站託管服務，例如 [Vercel](https://vercel.com/)、[GitHub Pages](https://pages.github.com/)、[Netlify](https://www.netlify.com/)、[Render](https://render.com/docs/static-sites) 和 [Surge](https://surge.sh/help/getting-started-with-surge)。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "A Docusaurus site is statically rendered, and it can generally work without JavaScript!",
+      "source_content_hash": "1d9196b17925e21b7ed72e065fd88a999b5fd89a0c2c35f338c34d5b63d3f0d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 網站是靜態渲染的，通常可以在沒有 JavaScript 的情況下運作！"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "The following parameters are required in `docusaurus.config.js` to optimize routing and serve files from the correct location:",
+      "source_content_hash": "2723e5a9ffe50a9ab76ab39ffbeb9ac9b88c8e2ca58b841a055ef0207ddfda3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下參數在 `docusaurus.config.js` 中是必需的，以優化路由並從正確的位置提供檔案："
+      }
+    },
+    {
+      "segment_id": "5a6ce6be",
+      "source_content": "| Name | Description |\n| --- | --- |\n| `url` | URL for your site. For a site deployed at `https://my-org.com/my-project/`, `url` is `https://my-org.com/`. |\n| `baseUrl` | Base URL for your project, with a trailing slash. For a site deployed at `https://my-org.com/my-project/`, `baseUrl` is `/my-project/`. |",
+      "source_content_hash": "c591aa44487905a0706910e44810f078cdb02e7bdcf5a56b8270f37d66afc3b0",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5a6ce6be"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## Testing your Build Locally {#testing-build-locally}",
+      "source_content_hash": "21e2bcc09fd8642d71ded14e22fe162f767849a69143a5cf9a24cac48271708c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 本地測試建置 {#testing-build-locally}"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "It is important to test your build locally before deploying it for production. Docusaurus provides a [`docusaurus serve`](cli.mdx#docusaurus-serve-sitedir) command for that:",
+      "source_content_hash": "5027d5a2e22f66ebe7253a6f648dcc088ce182b411413f4535e83f75aa59b879",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在部署到生產環境之前，本地測試建置非常重要。Docusaurus 提供了 [`docusaurus serve`](cli.mdx#docusaurus-serve-sitedir) 命令來實現這一點："
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```bash npm2yarn\nnpm run serve\n```",
+      "source_content_hash": "6d55b9af1f0afc20a11b3fc93ea50275b4af1ac9c495294cd7f6fcc38094c6a2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "By default, this will load your site at [`http://localhost:3000/`](http://localhost:3000/).",
+      "source_content_hash": "e98a74c2b30ddd62f5a11ad1eb1932108c881b8ab79f517f4e9aee9501cc5d22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，這將在 [`http://localhost:3000/`](http://localhost:3000/) 載入您的網站。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Trailing slash configuration {#trailing-slashes}",
+      "source_content_hash": "73d198831b738a565e6e9adee7c7458b21f473f8ffea6179b0fdfcbdd8b0d94b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 尾斜線配置 {#trailing-slashes}"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Docusaurus has a [`trailingSlash` config](./api/docusaurus.config.js.mdx#trailingSlash) to allow customizing URLs/links and emitted filename patterns.",
+      "source_content_hash": "e7c6642de20430442f881a449fe1f081e955259d85dac996f449541772c19823",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 有一個 [`trailingSlash` 配置](./api/docusaurus.config.js.mdx#trailingSlash)，允許自訂 URL/連結和生成的檔案名稱模式。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "The default value generally works fine. Unfortunately, each static hosting provider has a **different behavior**, and deploying the exact same site to various hosts can lead to distinct results. Depending on your host, it can be useful to change this config.",
+      "source_content_hash": "1cd036ca9e6a85e111e4e006d5674b85b92f25b56a78c747f0689b2724113b63",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設值通常運作良好。不幸的是，每個靜態託管提供者都有**不同的行為**，將完全相同的網站部署到不同的主機可能會導致不同的結果。根據您的主機，更改此配置可能很有用。"
+      }
+    },
+    {
+      "segment_id": "a646eac9",
+      "source_content": ":::tip\n\nUse [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) to understand better the behavior of your host and configure `trailingSlash` appropriately.\n\n:::",
+      "source_content_hash": "bc31898f2fd33285720d310ee2aefcc134f8bf623f3ae1fac60dfb03868e5945",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用 [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) 來更好地理解您主機的行為，並適當配置 `trailingSlash`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "## Using environment variables {#using-environment-variables}",
+      "source_content_hash": "d29319da99b8247ec2fbec51d97d0afee68cbb5af189b2d703cbc76663ca1776",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用環境變數 {#using-environment-variables}"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Putting potentially sensitive information in the environment is common practice. However, in a typical Docusaurus website, the `docusaurus.config.js` file is the only interface to the Node.js environment (see [our architecture overview](advanced/architecture.mdx)), while everything else (MDX pages, React components, etc.) are client side and do not have direct access to the `process` global variable. In this case, you can consider using [`customFields`](api/docusaurus.config.js.mdx#customFields) to pass environment variables to the client side.",
+      "source_content_hash": "8249a95433b33bbb4f9142cfb0ee63dea57cff968c9255db3f4cb402217bd02d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將潛在敏感資訊放在環境中是常見的做法。然而，在典型的 Docusaurus 網站中，`docusaurus.config.js` 檔案是與 Node.js 環境的唯一介面（參見[我們的架構概述](advanced/architecture.mdx)），而其他所有內容（MDX 頁面、React 組件等）都是客戶端，無法直接存取 `process` 全域變數。在這種情況下，您可以考慮使用 [`customFields`](api/docusaurus.config.js.mdx#customFields) 將環境變數傳遞到客戶端。"
+      }
+    },
+    {
+      "segment_id": "3adc0ceb",
+      "source_content": "```js title=\"docusaurus.config.js\"\n// If you are using dotenv (https://www.npmjs.com/package/dotenv)\nimport 'dotenv/config';\n\nexport default {\n  title: '...',\n  url: process.env.URL, // You can use environment variables to control site specifics as well\n  // highlight-start\n  customFields: {\n    // Put your custom environment here\n    teamEmail: process.env.EMAIL,\n  },\n  // highlight-end\n};\n```",
+      "source_content_hash": "8f4db401591321e1cd13dac0a0e19fc60f09edd9f8d2129d554324e3f07cde52",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3adc0ceb"
+      }
+    },
+    {
+      "segment_id": "8a9e710a",
+      "source_content": "```jsx title=\"home.jsx\"\nimport useDocusaurusContext from '@docusaurus/useDocusaurusContext';\n\nexport default function Home() {\n  const {\n    siteConfig: {customFields},\n  } = useDocusaurusContext();\n  return <div>Contact us through {customFields.teamEmail}!</div>;\n}\n```",
+      "source_content_hash": "04da6dd2b7cab0f3ee2dbd1173b687a6a862d4f16af63f7e665f027b089a00ad",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8a9e710a"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "## Choosing a hosting provider {#choosing-a-hosting-provider}",
+      "source_content_hash": "aaccbca8a9d50da6dcc672d3717ef509613f70304c88f5cd4d1b3caa5251af95",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 選擇託管提供者 {#choosing-a-hosting-provider}"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "There are a few common hosting options:",
+      "source_content_hash": "6c48b56d6e72e541842bb308d7e9ddbc87e212da4e7f392c3376baba3bb2905f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有幾個常見的託管選項："
+      }
+    },
+    {
+      "segment_id": "d0b8a6db",
+      "source_content": "- [Self hosting](#self-hosting) with an HTTP server like Apache2 or Nginx.\n- Jamstack providers (e.g. [Netlify](#deploying-to-netlify) and [Vercel](#deploying-to-vercel)). We will use them as references, but the same reasoning can apply to other providers.\n- [GitHub Pages](#deploying-to-github-pages) (by definition, it is also Jamstack, but we compare it separately).",
+      "source_content_hash": "24569a6aeb30d859b3ce6cf1ae8dd9af46732266749ce348332455a69b48a4ac",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [自託管](#self-hosting) 使用 HTTP 伺服器如 Apache2 或 Nginx。\n- Jamstack 提供者（例如 [Netlify](#deploying-to-netlify) 和 [Vercel](#deploying-to-vercel)）。我們將以它們為參考，但相同的邏輯可以應用於其他提供者。\n- [GitHub Pages](#deploying-to-github-pages)（根據定義，它也是 Jamstack，但我們將其分開比較）。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "If you are unsure of which one to choose, ask the following questions:",
+      "source_content_hash": "0bfc174145fc2f8914ccc5014d05f707866d05f9573376d27fe47420d8ef1b09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您不確定選擇哪一個，請回答以下問題："
+      }
+    },
+    {
+      "segment_id": "c2059547",
+      "source_content": "<details>\n\n<summary>\n  How many resources (money, person-hours, etc.) am I willing to invest in this?\n</summary>\n\n- 🔴 Self-hosting requires experience in networking as well as Linux and web server administration. It's the most difficult option, and would require the most time to manage successfully. Expense-wise, cloud services are almost never free, and purchasing/deploying an onsite server can be even more costly.\n- 🟢 Jamstack providers can help you set up a working website in almost no time and offer features like server-side redirects that are easily configurable. Many providers offer generous build-time quotas even for free plans that you would almost never exceed. However, free plans have limits, and you would need to pay once you hit those limits. Check the pricing page of your provider for details.\n- 🟡 The GitHub Pages deployment workflow can be tedious to set up. (Evidence: see the length of [Deploying to GitHub Pages](#deploying-to-github-pages)!) However, this service (including build and deployment) is always free for public repositories, and we have detailed instructions to help you make it work.\n\n</details>",
+      "source_content_hash": "a44035c87b010e4f4b56c79085b3d6b36423a1c1f260218a59a4aad7455772ba",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c2059547"
+      }
+    },
+    {
+      "segment_id": "905803c8",
+      "source_content": "<details>\n\n<summary>How much server-side customization do I need?</summary>\n\n- 🟢 With self-hosting, you have access to the entire server's configuration. You can configure the virtual host to serve different content based on the request URL, you can do complicated server-side redirects, you can implement authentication, and so on. If you need a lot of server-side features, self-host your website.\n- 🟡 Jamstack usually offers some server-side configuration (e.g. URL formatting (trailing slashes), server-side redirects, etc.).\n- 🔴 GitHub Pages doesn't expose server-side configuration besides enforcing HTTPS and setting CNAME records.\n\n</details>",
+      "source_content_hash": "2ee02bb428e3d5a91e350e25a41c3ca64114d5066431ac2d6498c00cd6183480",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_905803c8"
+      }
+    },
+    {
+      "segment_id": "b9e4680c",
+      "source_content": "<details>\n\n<summary>Do I need collaboration-friendly deployment workflows?</summary>\n\n- 🟡 Self-hosted services can leverage continuous deployment functionality like Netlify, but more heavy-lifting is involved. Usually, you would designate a specific person to manage the deployment, and the workflow wouldn't be very git-based as opposed to the other two options.\n- 🟢 Netlify and Vercel have deploy previews for every pull request, which is useful for a team to review work before merging to production. You can also manage a team with different member access to the deployment.\n- 🟡 GitHub Pages cannot do deploy previews in a non-convoluted way. One repo can only be associated with one site deployment. On the other hand, you can control who has write access to the site's deployment.\n\n</details>",
+      "source_content_hash": "8fbc8239764c3557ebfa58ae9ddc81d9a645b947e0d7ca14689869dfc5ef54cd",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b9e4680c"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "There isn't a silver bullet. You need to weigh your needs and resources before making a choice.",
+      "source_content_hash": "c280cd001b5220242d48090902f40ff45db3d58a1fd0112589f88b449f1c9f51",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "沒有一個萬能的解決方案。您需要在做出選擇之前權衡您的需求和資源。"
+      }
+    },
+    {
+      "segment_id": "c766290e",
+      "source_content": "## Self-Hosting {#self-hosting}",
+      "source_content_hash": "a65879104f54faa8af40fcdd5daf38876b9b3cb4ce06ca015a83d65be38dae63",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "Docusaurus can be self-hosted using [`docusaurus serve`](cli.mdx#docusaurus-serve-sitedir). Change port using `--port` and `--host` to change host.",
+      "source_content_hash": "77ea139875baad9aaa6e0b6a06209fe9db84398f87663b04a69e7a5ee44966b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2f9d525",
+      "source_content": "```bash npm2yarn\nnpm run serve -- --build --port 80 --host 0.0.0.0\n```",
+      "source_content_hash": "5f973f6a6e8f5ccf754369d65866522baff3e73b3e9d978d0316bb309ea03294",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "51186659",
+      "source_content": ":::warning\n\nIt is not the best option, compared to a static hosting provider / CDN.\n\n:::",
+      "source_content_hash": "28f809613bd5e84aa877fd2ef67b1e5ed4cad7af9206857a6641e1cc5c50530e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9a6ceddd",
+      "source_content": ":::warning\n\nIn the following sections, we will introduce a few common hosting providers and how they should be configured to deploy Docusaurus sites most efficiently. Docusaurus is not affiliated with any of these services, and this information is provided for convenience only. Some of the write-ups are provided by third-parties, and recent API changes may not be reflected on our side. If you see outdated content, PRs are welcome.\n\nBecause we can only provide this content on a best-effort basis only, we have stopped accepting PRs adding new hosting options. You can, however, publish your writeup on a separate site (e.g. your blog, or the provider's official website), and ask us to include a link to your writeup.\n\n:::",
+      "source_content_hash": "454b7a8cf0367202fdb89082f2cfcfbd4373b6568096822c85ac132c5e059ecb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "55dc794c",
+      "source_content": "## Deploying to Netlify {#deploying-to-netlify}",
+      "source_content_hash": "04444ada25ffa9b6dcbf0e6f3c23a333d8609973ffc3a07218199296ffddb73c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "To deploy your Docusaurus sites to [Netlify](https://www.netlify.com/), first make sure the following options are properly configured:",
+      "source_content_hash": "47088b0639c1e70257de9582ff36a8fe27a14d9fcd4ffabc9f60e5f26db5ab8f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e9921a93",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // highlight-start\n  url: 'https://docusaurus-2.netlify.app', // Url to your site with no trailing slash\n  baseUrl: '/', // Base directory of your site relative to your repo\n  // highlight-end\n  // ...\n};\n```",
+      "source_content_hash": "eeec2324f9834d1c774bd2e426503dbea62e98707739765235d9fb91e5c08fbc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "39f476dc",
+      "source_content": "Then, [create your site with Netlify](https://app.netlify.com/start).",
+      "source_content_hash": "03c508eb30bdb2852326cb0ee19068344d48c37f53178b8b8c6c842799c00d9f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "827eb9a3",
+      "source_content": "While you set up the site, specify the build commands and directories as follows:",
+      "source_content_hash": "29a5d7022519ac1772cbcf77ff8ee7c859da3b373bbe8c40d771cfd260e59ff2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "35b64b93",
+      "source_content": "- build command: `npm run build`\n- publish directory: `build`",
+      "source_content_hash": "8b6ce96562e3865ca2942e05333872c2bd8278a90ce2cd5377ca933722f4a756",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "If you did not configure these build options, you may still go to \"Site settings\" -> \"Build & deploy\" after your site is created.",
+      "source_content_hash": "d053e78da955bd198b0e084fde81d26a3e30280b4ca71721dde4f5b3be5442ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dc72fd20",
+      "source_content": "Once properly configured with the above options, your site should deploy and automatically redeploy upon merging to your deploy branch, which defaults to `main`.",
+      "source_content_hash": "6e88ca5118769b667a8b036757f686e76ad09e020362fb4dccbbf41b3a6afb61",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5055654e",
+      "source_content": ":::warning\n\nSome Docusaurus sites put the `docs` folder outside of `website` (most likely former Docusaurus v1 sites):\n\n```bash\nrepo           # git root\n├── docs       # MD files\n└── website    # Docusaurus root\n```\n\nIf you decide to use the `website` folder as Netlify's base directory, Netlify will not trigger builds when you update the `docs` folder, and you need to configure a [custom `ignore` command](https://docs.netlify.com/configure-builds/common-configurations/ignore-builds/):\n\n```toml title=\"website/netlify.toml\"\n[build]\n  ignore = \"git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../docs/\"\n```\n\n:::",
+      "source_content_hash": "a989a496aa15a02938dfd165f2c7fe364972eff76b05de7437dbf031fad65c53",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "07d32b30",
+      "source_content": ":::warning\n\nBy default, Netlify adds trailing slashes to Docusaurus URLs.\n\nIt is recommended to disable the Netlify setting `Post Processing > Asset Optimization > Pretty Urls` to prevent lowercase URLs, unnecessary redirects, and 404 errors.\n\n**Be very careful**: the `Disable asset optimization` global checkbox is broken and does not really disable the `Pretty URLs` setting in practice. Please make sure to **uncheck it independently**.\n\nIf you want to keep the `Pretty Urls` Netlify setting on, adjust the `trailingSlash` Docusaurus config appropriately.\n\nRefer to [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) for more information.\n\n:::",
+      "source_content_hash": "bbe71920a6fdce2b23af8c741b2529b362ae704094ea8d59eda6d6efcd502ffd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "97496aad",
+      "source_content": "## Deploying to Vercel {#deploying-to-vercel}",
+      "source_content_hash": "278046a006197f40e2b4699c3a4db5855c8d2fd2e8bd1f0adbf5790783e4110d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "af834e0d",
+      "source_content": "Deploying your Docusaurus project to [Vercel](https://vercel.com/) will provide you with [various benefits](https://vercel.com/) in the areas of performance and ease of use.",
+      "source_content_hash": "3f72526b2c35c50dca9f294e4aa8ec77ecdcd247ea8abce27cc426ea46cefdb4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d75361e3",
+      "source_content": "To deploy your Docusaurus project with a [Vercel for Git Integration](https://vercel.com/docs/concepts/git), make sure it has been pushed to a Git repository.",
+      "source_content_hash": "55c4e78c2edb812f8b29b02a48e132b520317a7a4bf460b1310fe5e358d59af7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "Import the project into Vercel using the [Import Flow](https://vercel.com/import/git). During the import, you will find all relevant options preconfigured for you; however, you can choose to change any of these [options](https://vercel.com/docs/build-step#build-&-development-settings).",
+      "source_content_hash": "46efceab07efd62b6c4d37d17c68459c204804923d6af80660a1d127a19cf63b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [導入流程](https://vercel.com/import/git) 將專案導入 Vercel。在導入過程中，您會發現所有相關選項都已預先配置好；不過，您可以選擇更改其中任何 [選項](https://vercel.com/docs/build-step#build-&-development-settings)。"
+      }
+    },
+    {
+      "segment_id": "5eedf0a1",
+      "source_content": "After your project has been imported, all subsequent pushes to branches will generate [Preview Deployments](https://vercel.com/docs/platform/deployments#preview), and all changes made to the [Production Branch](https://vercel.com/docs/git-integrations#production-branch) (usually \"main\" or \"master\") will result in a [Production Deployment](https://vercel.com/docs/platform/deployments#production).",
+      "source_content_hash": "31aaee0eaa7b59f3d99aee89c11ad0b90d34e3e96c9558f7c8463b538ded45dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "專案導入後，所有後續推送至分支的動作都會生成 [預覽部署](https://vercel.com/docs/platform/deployments#preview)，而對 [生產分支](https://vercel.com/docs/git-integrations#production-branch)（通常是 \"main\" 或 \"master\"）的任何更改都會觸發 [生產部署](https://vercel.com/docs/platform/deployments#production)。"
+      }
+    },
+    {
+      "segment_id": "c7ab93a8",
+      "source_content": "## Deploying to GitHub Pages {#deploying-to-github-pages}",
+      "source_content_hash": "d5841ea48077ed1f57ec9e3099222fa9d7902b865a3c84178af38339dae42f82",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 GitHub Pages {#deploying-to-github-pages}"
+      }
+    },
+    {
+      "segment_id": "9ede513a",
+      "source_content": "Docusaurus provides an easy way to publish to [GitHub Pages](https://pages.github.com/), which comes free with every GitHub repository.",
+      "source_content_hash": "1146f18113983ca00df870fda1d24ccb7d5259f0814ed60a0bb22dbf057b4947",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供了一個簡單的方法來發布到 [GitHub Pages](https://pages.github.com/)，這是每個 GitHub 倉庫都附帶的免費服務。"
+      }
+    },
+    {
+      "segment_id": "43ad2e31",
+      "source_content": "### Overview {#github-pages-overview}",
+      "source_content_hash": "16ba81eecc9a48b698483ebd7b1a5fae5e34b83acb212de0b72f8bac58bedf4d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 概述 {#github-pages-overview}"
+      }
+    },
+    {
+      "segment_id": "01902900",
+      "source_content": "Usually, there are two repositories (at least two branches) involved in a publishing process: the branch containing the source files, and the branch containing the build output to be served with GitHub Pages. In the following tutorial, they will be referred to as **\"source\"** and **\"deployment\"**, respectively.",
+      "source_content_hash": "ec1471a225ba87c26f30ac4feb56984dd9eb9601ceddfbd168c855cd5faa4ef7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "通常，發布流程會涉及兩個倉庫（至少兩個分支）：包含源文件的分支，以及包含要通過 GitHub Pages 服務的構建輸出的分支。在以下教程中，它們將分別被稱為 **「源」** 和 **「部署」**。"
+      }
+    },
+    {
+      "segment_id": "dbeb30c1",
+      "source_content": "Each GitHub repository is associated with a GitHub Pages service. If the deployment repository is called `my-org/my-project` (where `my-org` is the organization name or username), the deployed site will appear at `https://my-org.github.io/my-project/`. If the deployment repository is called `my-org/my-org.github.io` (the _organization GitHub Pages repo_), the site will appear at `https://my-org.github.io/`.",
+      "source_content_hash": "991001ff1e6e60955deb377867c0b4d0fe464d78eb930bf3e3bba902386bb90c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個 GitHub 倉庫都關聯一個 GitHub Pages 服務。如果部署倉庫名為 `my-org/my-project`（其中 `my-org` 是組織名稱或用戶名），部署的網站將出現在 `https://my-org.github.io/my-project/`。如果部署倉庫名為 `my-org/my-org.github.io`（即 _組織 GitHub Pages 倉庫_），網站將出現在 `https://my-org.github.io/`。"
+      }
+    },
+    {
+      "segment_id": "b386bf00",
+      "source_content": ":::info\n\nIn case you want to use your custom domain for GitHub Pages, create a `CNAME` file in the `static` directory. Anything within the `static` directory will be copied to the root of the `build` directory for deployment. When using a custom domain, you should be able to move back from `baseUrl: '/projectName/'` to `baseUrl: '/'`, and also set your `url` to your custom domain.\n\nYou may refer to GitHub Pages' documentation [User, Organization, and Project Pages](https://help.github.com/en/articles/user-organization-and-project-pages) for more details.\n\n:::",
+      "source_content_hash": "c4099bd47c79eb76e06631a75d4b960beb8b55943277d64db21794e19b03277c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n如果您想為 GitHub Pages 使用自定義域名，請在 `static` 目錄中創建一個 `CNAME` 文件。`static` 目錄中的任何內容都會被複製到 `build` 目錄的根目錄以進行部署。使用自定義域名時，您可以將 `baseUrl: '/projectName/'` 改回 `baseUrl: '/'`，並將 `url` 設置為您的自定義域名。\n\n更多詳情，請參考 GitHub Pages 的文檔 [用戶、組織和項目頁面](https://help.github.com/en/articles/user-organization-and-project-pages)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8f4e752e",
+      "source_content": "GitHub Pages picks up deploy-ready files (the output from `docusaurus build`) from the default branch (`master` / `main`, usually) or the `gh-pages` branch, and either from the root or the `/docs` folder. You can configure that through `Settings > Pages` in your repository. This branch will be called the \"deployment branch\".",
+      "source_content_hash": "072bcc0ac119dbb3ac3622addda176e46ab3f0c1412a4f6e0d17fc091e1258b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub Pages 會從默認分支（通常是 `master` 或 `main`）或 `gh-pages` 分支，以及根目錄或 `/docs` 文件夾中提取部署就緒的文件（即 `docusaurus build` 的輸出）。您可以通過倉庫中的 `Settings > Pages` 來配置這一點。這個分支將被稱為「部署分支」。"
+      }
+    },
+    {
+      "segment_id": "f211c69a",
+      "source_content": "We provide a `docusaurus deploy` command that helps you deploy your site from the source branch to the deployment branch in one command: clone, build, and commit.",
+      "source_content_hash": "ae935aa9d7c74995f2684b56fec438cdefc3c0350b4a876e4515e245a8fe5330",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供了一個 `docusaurus deploy` 命令，幫助您通過一個命令從源分支部署到部署分支：克隆、構建和提交。"
+      }
+    },
+    {
+      "segment_id": "4147aea6",
+      "source_content": "### `docusaurus.config.js` settings {#docusaurusconfigjs-settings}",
+      "source_content_hash": "7c7b8fc6af5cc061006d55b481a3b43d7e7c00704f4af0ef9094ff5e9502f626",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus.config.js` 設置 {#docusaurusconfigjs-settings}"
+      }
+    },
+    {
+      "segment_id": "43287462",
+      "source_content": "First, modify your `docusaurus.config.js` and add the following params:",
+      "source_content_hash": "c54456aecd4d1d8411ff7c9bebd5b7eb437f4d921de81f2392860302940c3c4f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "首先，修改您的 `docusaurus.config.js` 並添加以下參數："
+      }
+    },
+    {
+      "segment_id": "cee68c12",
+      "source_content": "| Name | Description |\n| --- | --- |\n| `organizationName` | The GitHub user or organization that owns the deployment repository. |\n| `projectName` | The name of the deployment repository. |\n| `deploymentBranch` | The name of the deployment branch. It defaults to `'gh-pages'` for non-organization GitHub Pages repos (`projectName` not ending in `.github.io`). Otherwise, it needs to be explicit as a config field or environment variable. |",
+      "source_content_hash": "796a513e1858d1ccadc1520a8a1e1cdb3fdae2249a30cc99a6392ff834197ba9",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cee68c12"
+      }
+    },
+    {
+      "segment_id": "32fb7230",
+      "source_content": "These fields also have their environment variable counterparts which have a higher priority: `ORGANIZATION_NAME`, `PROJECT_NAME`, and `DEPLOYMENT_BRANCH`.",
+      "source_content_hash": "87e58d87be6c15dce95326e4cfa192b583c317c2037c29a547fb066f47df3f09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些字段也有其對應的環境變量，且優先級更高：`ORGANIZATION_NAME`、`PROJECT_NAME` 和 `DEPLOYMENT_BRANCH`。"
+      }
+    },
+    {
+      "segment_id": "1aa0d7db",
+      "source_content": ":::warning\n\nGitHub Pages adds a trailing slash to Docusaurus URLs by default. It is recommended to set a `trailingSlash` config (`true` or `false`, not `undefined`).\n\n:::",
+      "source_content_hash": "1ae1c4c41f51b4fe3aa7da27dea4218dd547525f149a5bef7a32a9f4aa0b522f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\nGitHub Pages 默認會為 Docusaurus URL 添加尾部斜杠。建議設置 `trailingSlash` 配置（`true` 或 `false`，不要設為 `undefined`）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "070ff7a2",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "703442ed",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  url: 'https://endiliey.github.io', // Your website URL\n  baseUrl: '/',\n  // highlight-start\n  projectName: 'endiliey.github.io',\n  organizationName: 'endiliey',\n  trailingSlash: false,\n  // highlight-end\n  // ...\n};\n```",
+      "source_content_hash": "d5e438179de2867d29e3dd613916df768225747156adb14ea90eae2eb7ae1c21",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_703442ed"
+      }
+    },
+    {
+      "segment_id": "c24708c8",
+      "source_content": ":::warning\n\nBy default, GitHub Pages runs published files through [Jekyll](https://jekyllrb.com/). Since Jekyll will discard any files that begin with `_`, it is recommended that you disable Jekyll by adding an empty file named `.nojekyll` file to your `static` directory.\n\n:::",
+      "source_content_hash": "5f4bb1af4b958cf2f9133dc667c18011cbabe589fcd00ba63af683dcf4767c5d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n默認情況下，GitHub Pages 會通過 [Jekyll](https://jekyllrb.com/) 運行發布的文件。由於 Jekyll 會丟棄任何以 `_` 開頭的文件，建議您在 `static` 目錄中添加一個名為 `.nojekyll` 的空文件來禁用 Jekyll。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0495d9eb",
+      "source_content": "### Environment settings {#environment-settings}",
+      "source_content_hash": "05e239b0ef4959152244e6f6f074d23e6af285420e86c9b12c4f646dd813cc80",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 環境設置 {#environment-settings}"
+      }
+    },
+    {
+      "segment_id": "ee1bcf33",
+      "source_content": "| Name | Description |\n| --- | --- |\n| `USE_SSH` | Set to `true` to use SSH instead of the default HTTPS for the connection to the GitHub repo. If the source repo URL is an SSH URL (e.g. `git@github.com:facebook/docusaurus.git`), `USE_SSH` is inferred to be `true`. |\n| `GIT_USER` | The username for a GitHub account that **has push access to the deployment repo**. For your own repositories, this will usually be your GitHub username. Required if not using SSH, and ignored otherwise. |\n| `GIT_PASS` | Personal access token of the git user (specified by `GIT_USER`), to facilitate non-interactive deployment (e.g. continuous deployment) |\n| `CURRENT_BRANCH` | The source branch. Usually, the branch will be `main` or `master`, but it could be any branch except for `gh-pages`. If nothing is set for this variable, then the current branch from which `docusaurus deploy` is invoked will be used. |\n| `GIT_USER_NAME` | The `git config user.name` value to use when pushing to the deployment repo |\n| `GIT_USER_EMAIL` | The `git config user.email` value to use when pushing to the deployment repo |",
+      "source_content_hash": "8ea270d2dd3ec615951a6e2c519770c7819dcf42e564c336feb140fd76749567",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ee1bcf33"
+      }
+    },
+    {
+      "segment_id": "60e22db4",
+      "source_content": "GitHub enterprise installations should work in the same manner as github.com; you only need to set the organization's GitHub Enterprise host as an environment variable:",
+      "source_content_hash": "4a281836fb74ccd69051cda40ed4b8b9bbd97abfa0749bc8117e1e246a34b7d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub 企業版安裝應以與 github.com 相同的方式工作；您只需將組織的 GitHub Enterprise 主機設置為環境變量："
+      }
+    },
+    {
+      "segment_id": "20c5b733",
+      "source_content": "| Name          | Description                                     |\n| ------------- | ----------------------------------------------- |\n| `GITHUB_HOST` | The domain name of your GitHub enterprise site. |\n| `GITHUB_PORT` | The port of your GitHub enterprise site.        |",
+      "source_content_hash": "d70c018848ad573e041e2d8b5e5a6dd5a824eca80adb6172e136446ea3999279",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_20c5b733"
+      }
+    },
+    {
+      "segment_id": "052c158b",
+      "source_content": "### Deploy {#deploy}",
+      "source_content_hash": "9ace79454591da6e00be262171b2f03a51bcba34bd099c9f873826375db26757",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 部署 {#deploy}"
+      }
+    },
+    {
+      "segment_id": "a01e2096",
+      "source_content": "Finally, to deploy your site to GitHub Pages, run:",
+      "source_content_hash": "0ce0379b65415e948b899909fa96828a7e01fea29c7bbebc696036977111e1e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "最後，要將您的網站部署到 GitHub Pages，請執行："
+      }
+    },
+    {
+      "segment_id": "e029f808",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"bash\" label=\"Bash\">\n```",
+      "source_content_hash": "9bdd529d356ae54b07082df054af17a95b3a4c80b04383560137f3e47e725428",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e029f808"
+      }
+    },
+    {
+      "segment_id": "97766080",
+      "source_content": "```bash\nGIT_USER=<GITHUB_USERNAME> yarn deploy\n```",
+      "source_content_hash": "5451e5cfbd002e37816f7d6c45f32b08bf6d18481589383a8a8a68ae46e20869",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_97766080"
+      }
+    },
+    {
+      "segment_id": "b19953ed",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"windows\" label=\"Windows\">\n```",
+      "source_content_hash": "29326fb7e9c10cb8a4fc18ab632633e0e9eac65970cf8769175ecc8bf4acfb2f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b19953ed"
+      }
+    },
+    {
+      "segment_id": "20bc07ce",
+      "source_content": "```batch\ncmd /C \"set \"GIT_USER=<GITHUB_USERNAME>\" && yarn deploy\"\n```",
+      "source_content_hash": "c916a39412a97b2224349c45bc6d37746a894acab942c295363ceda8c4dd6bb0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_20bc07ce"
+      }
+    },
+    {
+      "segment_id": "548d1943",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"powershell\" label=\"PowerShell\">\n```",
+      "source_content_hash": "9a8b6cb4898e2c90695fc30e2543ddcba3af862b51a38000d42d579b325551e7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_548d1943"
+      }
+    },
+    {
+      "segment_id": "9b899126",
+      "source_content": "```powershell\ncmd /C 'set \"GIT_USER=<GITHUB_USERNAME>\" && yarn deploy'\n```",
+      "source_content_hash": "1c914127c018222484adaa541223cb1bcabc467515f4cfa1474a1c2ff74ccc91",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9b899126"
+      }
+    },
+    {
+      "segment_id": "50bd5256",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50bd5256"
+      }
+    },
+    {
+      "segment_id": "7b7d9ba0",
+      "source_content": ":::warning\n\nBeginning in August 2021, GitHub requires every command-line sign-in to use the **personal access token** instead of the password. When GitHub prompts for your password, enter the PAT instead. See the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.\n\nAlternatively, you can use SSH (`USE_SSH=true`) to log in.\n\n:::",
+      "source_content_hash": "43c0b1f0430b33e72554d5ba970834c26f882031bce189ac48efd6af203f27ec",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n自 2021 年 8 月起，GitHub 要求所有命令行登入使用 **個人存取權杖 (PAT)** 而非密碼。當 GitHub 提示輸入密碼時，請改為輸入 PAT。詳情請參閱 [GitHub 文件](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)。\n\n或者，您也可以使用 SSH（`USE_SSH=true`）登入。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fb020fb7",
+      "source_content": "### Triggering deployment with GitHub Actions {#triggering-deployment-with-github-actions}",
+      "source_content_hash": "2b5fed012494f68723ad1764023953461062b62eef7596a833b2eb407b36a0a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 GitHub Actions 觸發部署 {#triggering-deployment-with-github-actions}"
+      }
+    },
+    {
+      "segment_id": "dbd18971",
+      "source_content": "[GitHub Actions](https://help.github.com/en/actions) allow you to automate, customize, and execute your software development workflows right in your repository.",
+      "source_content_hash": "d2da7a98ca525b86636ca1a2f9d9ea59f9d79aa75399787d13e23fca953f1edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[GitHub Actions](https://help.github.com/en/actions) 讓您可以直接在儲存庫中自動化、自訂並執行軟體開發工作流程。"
+      }
+    },
+    {
+      "segment_id": "d8492b16",
+      "source_content": "The workflow examples below assume your website source resides in the `main` branch of your repository (the _source branch_ is `main`), and your [publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) is configured for [publishing with a custom GitHub Actions Workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow).",
+      "source_content_hash": "678bdef8b150c025f75ea95a9d899869e04d079e113e4589e63f9b0522090667",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下工作流程範例假設您的網站原始碼位於儲存庫的 `main` 分支（_來源分支_ 為 `main`），且您的 [發布來源](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 已設定為 [使用自訂 GitHub Actions 工作流程發布](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow)。"
+      }
+    },
+    {
+      "segment_id": "4cba7b8e",
+      "source_content": "Our goal is that:",
+      "source_content_hash": "d52105cab33ba842311bc81f07d26a9b792feffc5f83ed81732b959a12a7cf85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們的目標是："
+      }
+    },
+    {
+      "segment_id": "3425bed4",
+      "source_content": "1. When a new pull request is made to `main`, there's an action that ensures the site builds successfully, without actually deploying. This job will be called `test-deploy`.\n2. When a pull request is merged to the `main` branch or someone pushes to the `main` branch directly, it will be built and deployed to GitHub Pages. This job will be called `deploy`.",
+      "source_content_hash": "ef892ba77f6a9459b80ca661d90ef2615e6fb8035fe0e82c1e0415405f7ca11a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 當有新的拉取請求提交到 `main` 分支時，有一個動作會確保網站成功建置，但不會實際部署。此工作將稱為 `test-deploy`。\n2. 當拉取請求合併到 `main` 分支或有人直接推送到 `main` 分支時，將會建置並部署到 GitHub Pages。此工作將稱為 `deploy`。"
+      }
+    },
+    {
+      "segment_id": "3d5e3f4c",
+      "source_content": "Here are two approaches to deploying your docs with GitHub Actions. Based on the location of your deployment repository, choose the relevant tab below:",
+      "source_content_hash": "ed6ef01e86b94bbeb8b3675ed09bea822f5b316b18787c4aeacc97c97c6bdfae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是兩種使用 GitHub Actions 部署文件的方法。根據您的部署儲存庫位置，選擇下方相關的標籤："
+      }
+    },
+    {
+      "segment_id": "1b6f847f",
+      "source_content": "- Source repo and deployment repo are the **same** repository.\n- The deployment repo is a **remote** repository, different from the source. Instructions for this scenario assume [publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) is the `gh-pages` branch.",
+      "source_content_hash": "b9700d4cbcf865249101eebd14554aedea650afb8a59f880c941837ce25f96c9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 來源儲存庫和部署儲存庫為 **同一個** 儲存庫。\n- 部署儲存庫是一個 **遠端** 儲存庫，與來源不同。此情境的說明假設 [發布來源](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 為 `gh-pages` 分支。"
+      }
+    },
+    {
+      "segment_id": "96757ef3",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"same\" label=\"Same\">\n```",
+      "source_content_hash": "2689c5486159b02817090d138c66c7fc8abad7e44a01f37db4afe8c8f11e1dea",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_96757ef3"
+      }
+    },
+    {
+      "segment_id": "d04a3ef5",
+      "source_content": "While you can have both jobs defined in the same workflow file, the original `deploy` workflow will always be listed as skipped in the PR check suite status, which is not indicative of the actual status and provides no value to the review process. We therefore propose to manage them as separate workflows instead.",
+      "source_content_hash": "e9b28af3701f7c661ea7acaa6b1b3659b68844d5247e23468bc9452b459649e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然您可以將兩個工作定義在同一個工作流程檔案中，但原始的 `deploy` 工作流程在 PR 檢查套件狀態中會始終顯示為已跳過，這無法反映實際狀態且對審查過程沒有幫助。因此，我們建議將它們作為獨立的工作流程管理。"
+      }
+    },
+    {
+      "segment_id": "02808b33",
+      "source_content": "<details>\n<summary>GitHub action files</summary>\n\nAdd these two workflow files:\n\n:::warning[Tweak the parameters for your setup]\n\nIf your Docusaurus project is not at the root of your repo, you may need to configure a [default working directory](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-set-the-default-shell-and-working-directory), and adjust the paths accordingly.\n\n:::\n\n<Tabs>\n  <TabItem value=\"npm\" label=\"npm\">\n\n```yml title=\".github/workflows/deploy.yml\"\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches:\n      - main\n    # Review gh actions docs if you want to further define triggers, paths, etc\n    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on\n\njobs:\n  build:\n    name: Build Docusaurus\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n      - name: Build website\n        run: npm run build\n\n      - name: Upload Build Artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: build\n\n  deploy:\n    name: Deploy to GitHub Pages\n    needs: build\n\n    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment\n    permissions:\n      pages: write # to deploy to Pages\n      id-token: write # to verify the deployment originates from an appropriate source\n\n    # Deploy to the github-pages environment\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n\n    runs-on: ubuntu-latest\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n```\n\n```yml title=\".github/workflows/test-deploy.yml\"\nname: Test deployment\n\non:\n  pull_request:\n    branches:\n      - main\n    # Review gh actions docs if you want to further define triggers, paths, etc\n    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on\n\njobs:\n  test-deploy:\n    name: Test deployment\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n      - name: Test build website\n        run: npm run build\n```\n\n  </TabItem>\n  <TabItem value=\"yarn\" label=\"Yarn\">\n\n```yml title=\".github/workflows/deploy.yml\"\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches:\n      - main\n    # Review gh actions docs if you want to further define triggers, paths, etc\n    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on\n\njobs:\n  build:\n    name: Build Docusaurus\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: yarn\n\n      - name: Install dependencies\n        run: yarn install --frozen-lockfile\n      - name: Build website\n        run: yarn build\n\n      - name: Upload Build Artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: build\n\n  deploy:\n    name: Deploy to GitHub Pages\n    needs: build\n\n    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment\n    permissions:\n      pages: write # to deploy to Pages\n      id-token: write # to verify the deployment originates from an appropriate source\n\n    # Deploy to the github-pages environment\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n\n    runs-on: ubuntu-latest\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n```\n\n```yml title=\".github/workflows/test-deploy.yml\"\nname: Test deployment\n\non:\n  pull_request:\n    branches:\n      - main\n    # Review gh actions docs if you want to further define triggers, paths, etc\n    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on\n\njobs:\n  test-deploy:\n    name: Test deployment\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: yarn\n\n      - name: Install dependencies\n        run: yarn install --frozen-lockfile\n      - name: Test build website\n        run: yarn build\n```\n\n  </TabItem>\n</Tabs>\n\n</details>",
+      "source_content_hash": "9907d92a6c61be83a697d1d8c971c534684b6def1a8a7535016d6647b76889d6",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_02808b33"
+      }
+    },
+    {
+      "segment_id": "32f99f1f",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"remote\" label=\"Remote\">\n```",
+      "source_content_hash": "4a8594b0af131d9b4f38e3e50b9ebd6e644175bf82e26d2bed4b37fb2bc1a257",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_32f99f1f"
+      }
+    },
+    {
+      "segment_id": "1b8b3b24",
+      "source_content": "A cross-repo publish is more difficult to set up because you need to push to another repo with permission checks. We will be using SSH to do the authentication.",
+      "source_content_hash": "6bc7c0fe740a6676b02f78fd92f96b2c75822971f9c1c4e4918346a0d095b01d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "跨儲存庫發布的設定較為複雜，因為您需要推送至另一個儲存庫並通過權限檢查。我們將使用 SSH 進行身份驗證。"
+      }
+    },
+    {
+      "segment_id": "3bbb6637",
+      "source_content": "1. Generate a new [SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Since this SSH key will be used in CI, make sure to not enter any passphrase.\n2. By default, your public key should have been created in `~/.ssh/id_rsa.pub`; otherwise, use the name you've provided in the previous step to add your key to [GitHub deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/).\n3. Copy the key to clipboard with `pbcopy < ~/.ssh/id_rsa.pub` and paste it as a [deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) in the deployment repository. Copy the file content if the command line doesn't work for you. Check the box for `Allow write access` before saving your deployment key.\n4. You'll need your private key as a [GitHub secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) to allow Docusaurus to run the deployment for you.\n5. Copy your private key with `pbcopy < ~/.ssh/id_rsa` and paste a GitHub secret with the name `GH_PAGES_DEPLOY` on your source repository. Copy the file content if the command line doesn't work for you. Save your secret.\n6. Create your [documentation workflow](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow) in the `.github/workflows/` directory. In this example it's the `deploy.yml` file.",
+      "source_content_hash": "936fa5802634e2f5d8ad0d77a05c9f9cff284f17096807256d35dac554e24f0c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 生成一個新的 [SSH 金鑰](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。由於此 SSH 金鑰將用於 CI 環境，請確保不要設定任何密碼。\n2. 預設情況下，您的公鑰應位於 `~/.ssh/id_rsa.pub`；若您在前一步驟使用了自訂名稱，請使用該名稱將金鑰新增至 [GitHub 部署金鑰](https://developer.github.com/v3/guides/managing-deploy-keys/)。\n3. 使用 `pbcopy < ~/.ssh/id_rsa.pub` 將金鑰複製到剪貼簿，並將其貼上為部署儲存庫的 [部署金鑰](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)。若命令列無法運作，請直接複製檔案內容。在儲存部署金鑰前，請勾選 `允許寫入存取` 選項。\n4. 您需要將私鑰設定為 [GitHub 秘密](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets)，以允許 Docusaurus 為您執行部署。\n5. 使用 `pbcopy < ~/.ssh/id_rsa` 複製您的私鑰，並在原始碼儲存庫中建立一個名為 `GH_PAGES_DEPLOY` 的 GitHub 秘密。若命令列無法運作，請直接複製檔案內容。儲存您的秘密。\n6. 在 `.github/workflows/` 目錄中建立您的 [文件工作流程](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow)。在此範例中，檔案名稱為 `deploy.yml`。"
+      }
+    },
+    {
+      "segment_id": "4e776de2",
+      "source_content": "At this point, you should have:",
+      "source_content_hash": "c5947385a9884226e3621104f03defe8ace393ab104288332696a2308e1c6ad9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此時，您應該已具備："
+      }
+    },
+    {
+      "segment_id": "649a5859",
+      "source_content": "- the source repo with the GitHub workflow set with the private SSH key as the GitHub Secret, and\n- your deployment repo set with the public SSH key in GitHub Deploy Keys.",
+      "source_content_hash": "fe639fa99a9d891575f791f2aea51d91253477c823c13304602bf3e83ca73e50",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 原始碼儲存庫：已設定 GitHub 工作流程，並將私密 SSH 金鑰設為 GitHub 秘密\n- 部署儲存庫：已在 GitHub 部署金鑰中設定公開 SSH 金鑰"
+      }
+    },
+    {
+      "segment_id": "e2f29716",
+      "source_content": "<details>\n\n<summary>GitHub action file</summary>\n\n:::warning\n\nPlease make sure that you replace `actions@github.com` with your GitHub email and `gh-actions` with your name.\n\nThis file assumes you are using Yarn. If you use npm, change `cache: yarn`, `yarn install --frozen-lockfile`, `yarn build` to `cache: npm`, `npm ci`, `npm run build` accordingly.\n\n:::\n\n```yml title=\".github/workflows/deploy.yml\"\nname: Deploy to GitHub Pages\n\non:\n  pull_request:\n    branches: [main]\n  push:\n    branches: [main]\n\npermissions:\n  contents: write\n\njobs:\n  test-deploy:\n    if: github.event_name != 'push'\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: yarn\n      - name: Install dependencies\n        run: yarn install --frozen-lockfile\n      - name: Test build website\n        run: yarn build\n  deploy:\n    if: github.event_name != 'pull_request'\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: yarn\n      - uses: webfactory/ssh-agent@v0.5.0\n        with:\n          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}\n      - name: Deploy to GitHub Pages\n        env:\n          USE_SSH: true\n        run: |\n          git config --global user.email \"actions@github.com\"\n          git config --global user.name \"gh-actions\"\n          yarn install --frozen-lockfile\n          yarn deploy\n```\n\n</details>",
+      "source_content_hash": "1120a9854f274f971730b8fc7af2ad435295e707a3cbc22e0b08195c696dbc6c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "77a5fbe6",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c25cd043",
+      "source_content": "<details>\n\n<summary>Site not deployed properly?</summary>\n\nAfter pushing to main, if you don't see your site published at the desired location (for example, it says \"There isn't a GitHub Pages site here\", or it's showing your repo's README.md file), try the following:\n\n- Wait about three minutes and refresh. It may take a few minutes for GitHub pages to pick up the new files.\n- Check your repo's landing page for a little green tick next to the last commit's title, indicating the CI has passed. If you see a cross, it means the build or deployment failed, and you should check the log for more debugging information.\n- Click on the tick and make sure you see a \"Deploy to GitHub Pages\" workflow. Names like \"pages build and deployment / deploy\" are GitHub's default workflows, indicating your custom deployment workflow failed to be triggered at all. Make sure the YAML files are placed under the `.github/workflows` folder, and that the trigger condition is set correctly (e.g., if your default branch is \"master\" instead of \"main\", you need to change the `on.push` property).\n- Under your repo's Settings > Pages, make sure the \"Source\" (which is the source for the _deployment_ files, not \"source\" as in our terminology) is set to \"gh-pages\" + \"/ (root)\", since we are using `gh-pages` as the deployment branch.\n\nIf you are using a custom domain:\n\n- Verify that you have the correct DNS records set up if you're using a custom domain. See [GitHub pages documentation on configuring custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages). Also, please be aware that it may take up to 24 hours for DNS changes to propagate through the internet.\n\n</details>",
+      "source_content_hash": "30910ff13ab69584e760a61801c809f449b42b55d7f0e633d562df3666b3b572",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "78254409",
+      "source_content": "### Triggering deployment with Travis CI {#triggering-deployment-with-travis-ci}",
+      "source_content_hash": "a2c8a0535deb6b10c33de793ef5cc9ad6953a3d87ea034c3ec5119ba4b36dd5f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 Travis CI 觸發部署 {#triggering-deployment-with-travis-ci}"
+      }
+    },
+    {
+      "segment_id": "8984e58e",
+      "source_content": "Continuous integration (CI) services are typically used to perform routine tasks whenever new commits are checked in to source control. These tasks can be any combination of running unit tests and integration tests, automating builds, publishing packages to npm, and deploying changes to your website. All you need to do to automate the deployment of your website is to invoke the `yarn deploy` script whenever your website is updated. The following section covers how to do just that using [Travis CI](https://travis-ci.com/), a popular continuous integration service provider.",
+      "source_content_hash": "9105f944b2149bbf0217bca1053c8fcf461344e4390e1edd62e856944331ca41",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "持續整合 (CI) 服務通常用於在原始碼控制中提交新提交時執行例行任務。這些任務可以是執行單元測試和整合測試、自動化建置、將套件發佈到 npm，以及將變更部署到您的網站等任何組合。要自動化網站的部署，您只需在網站更新時呼叫 `yarn deploy` 指令碼即可。以下章節將介紹如何使用流行的持續整合服務提供商 [Travis CI](https://travis-ci.com/) 來實現這一點。"
+      }
+    },
+    {
+      "segment_id": "7e786edc",
+      "source_content": "1. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.\n2. Using your GitHub account, [add the Travis CI app](https://github.com/marketplace/travis-ci) to the repository you want to activate.\n3. Open your Travis CI dashboard. The URL looks like `https://travis-ci.com/USERNAME/REPO`, and navigate to the `More options > Setting > Environment Variables` section of your repository.\n4. Create a new environment variable named `GH_TOKEN` with your newly generated token as its value, then `GH_EMAIL` (your email address) and `GH_NAME` (your GitHub username).\n5. Create a `.travis.yml` on the root of your repository with the following:",
+      "source_content_hash": "8cb33d254154e9a2092f1b7bafedb715034243f59325157523c3504715c1b15a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 前往 https://github.com/settings/tokens 並生成一個新的 [個人存取權杖](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)。建立權杖時，請授予其 `repo` 範圍，以確保其具備所需權限。\n2. 使用您的 GitHub 帳戶，[將 Travis CI 應用程式新增](https://github.com/marketplace/travis-ci) 至您要啟用的儲存庫。\n3. 開啟您的 Travis CI 儀表板（網址類似 `https://travis-ci.com/USERNAME/REPO`），並導航至儲存庫的 `更多選項 > 設定 > 環境變數` 區段。\n4. 建立一個名為 `GH_TOKEN` 的新環境變數，其值為您新生成的權杖，然後建立 `GH_EMAIL`（您的電子郵件地址）和 `GH_NAME`（您的 GitHub 使用者名稱）。\n5. 在儲存庫的根目錄中建立一個 `.travis.yml` 檔案，內容如下："
+      }
+    },
+    {
+      "segment_id": "281a0648",
+      "source_content": "```yml title=\".travis.yml\"\nlanguage: node_js\nnode_js:\n  - 18\nbranches:\n  only:\n    - main\ncache:\n  yarn: true\nscript:\n  - git config --global user.name \"${GH_NAME}\"\n  - git config --global user.email \"${GH_EMAIL}\"\n  - echo \"machine github.com login ${GH_NAME} password ${GH_TOKEN}\" > ~/.netrc\n  - yarn install\n  - GIT_USER=\"${GH_NAME}\" yarn deploy\n```",
+      "source_content_hash": "66915932dc2ec11102ec80a2294208b352c248bbd417db2e018d19f0a84e2763",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "445e9994",
+      "source_content": "Now, whenever a new commit lands in `main`, Travis CI will run your suite of tests and if everything passes, your website will be deployed via the `yarn deploy` script.",
+      "source_content_hash": "a02ecef64567bb9049f10008aaf5043b9ee0c330daf51f04f27b991e10421ace",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在，每當有新提交進入 `main` 分支時，Travis CI 將執行您的測試套件，若所有測試通過，您的網站將透過 `yarn deploy` 指令碼進行部署。"
+      }
+    },
+    {
+      "segment_id": "52dca3f0",
+      "source_content": "### Triggering deployment with Buddy {#triggering-deployment-with-buddy}",
+      "source_content_hash": "6302820a8ed71f5d4f98a07c74f41deda8571d3c5143cade44b48bf920a89563",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 Buddy 觸發部署 {#triggering-deployment-with-buddy}"
+      }
+    },
+    {
+      "segment_id": "12532805",
+      "source_content": "[Buddy](https://buddy.works/) is an easy-to-use CI/CD tool that allows you to automate the deployment of your portal to different environments, including GitHub Pages.",
+      "source_content_hash": "91632b6bfd7d9eaed3489a112c8b1bd4e061501f442747dd803f9586d456da37",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Buddy](https://buddy.works/) 是一個易於使用的 CI/CD 工具，可讓您將入口網站自動部署到不同環境，包括 GitHub Pages。"
+      }
+    },
+    {
+      "segment_id": "18982b56",
+      "source_content": "Follow these steps to create a pipeline that automatically deploys a new version of your website whenever you push changes to the selected branch of your project:",
+      "source_content_hash": "9d9ad0a34d64d9f3f5ce6172622e0b5db8af04e3acb5ec023f1561de680421b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請按照以下步驟建立一個管道，以便在您將變更推送至專案的選定分支時，自動部署網站的新版本："
+      }
+    },
+    {
+      "segment_id": "bbf872b0",
+      "source_content": "1. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.\n2. Sign in to your Buddy account and create a new project.\n3. Choose GitHub as your git hosting provider and select the repository with the code of your website.\n4. Using the left navigation panel, switch to the `Pipelines` view.\n5. Create a new pipeline. Define its name, set the trigger mode to `On push`, and select the branch that triggers the pipeline execution.\n6. Add a `Node.js` action.\n7. Add these commands in the action's terminal:",
+      "source_content_hash": "db0ca67055cc394983bef89b6d16a716e9a6ede8def77eaada029cefecab2cf8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6b0c7143",
+      "source_content": "```bash\nGIT_USER=<GH_PERSONAL_ACCESS_TOKEN>\ngit config --global user.email \"<YOUR_GH_EMAIL>\"\ngit config --global user.name \"<YOUR_GH_USERNAME>\"\nyarn deploy\n```",
+      "source_content_hash": "231e4d3780b406303b8aa191a7183dae59443beef0686f7ba8d4b22f978a792b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7458a98d",
+      "source_content": "After creating this simple pipeline, each new commit pushed to the branch you selected deploys your website to GitHub Pages using `yarn deploy`. Read [this guide](https://buddy.works/guides/react-docusaurus) to learn more about setting up a CI/CD pipeline for Docusaurus.",
+      "source_content_hash": "f1fba3d227ea86b06748f8848f7cb31c6849aa77c494f46bc5a1a4991cb57d9c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "680431f7",
+      "source_content": "### Using Azure Pipelines {#using-azure-pipelines}",
+      "source_content_hash": "cf128a26a51c13b76326ea60f87b5168ffff42a368b60009ab2f0c9c7cbfd5aa",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9956fb19",
+      "source_content": "1. Sign Up at [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) if you haven't already.\n2. Create an organization. Within the organization, create a project and connect your repository from GitHub.\n3. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the `repo` scope.\n4. In the project page (which looks like `https://dev.azure.com/ORG_NAME/REPO_NAME/_build`), create a new pipeline with the following text. Also, click on edit and add a new environment variable named `GH_TOKEN` with your newly generated token as its value, then `GH_EMAIL` (your email address) and `GH_NAME` (your GitHub username). Make sure to mark them as secret. Alternatively, you can also add a file named `azure-pipelines.yml` at your repository root.",
+      "source_content_hash": "70fd53aac82e5b2a7cb0dfa962be0d01f7a0ccf5492df805b572aadef9b53230",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "df975dc8",
+      "source_content": "```yml title=\"azure-pipelines.yml\"\ntrigger:\n  - main\n\npool:\n  vmImage: ubuntu-latest\n\nsteps:\n  - checkout: self\n    persistCredentials: true\n\n  - task: NodeTool@0\n    inputs:\n      versionSpec: '18'\n    displayName: Install Node.js\n\n  - script: |\n      git config --global user.name \"${GH_NAME}\"\n      git config --global user.email \"${GH_EMAIL}\"\n      git checkout -b main\n      echo \"machine github.com login ${GH_NAME} password ${GH_TOKEN}\" > ~/.netrc\n      yarn install\n      GIT_USER=\"${GH_NAME}\" yarn deploy\n    env:\n      GH_NAME: $(GH_NAME)\n      GH_EMAIL: $(GH_EMAIL)\n      GH_TOKEN: $(GH_TOKEN)\n    displayName: Install and build\n```",
+      "source_content_hash": "b2e8386616218eccd9b637cf38d0318b5797a6710be75d91af697a2fc3cff57a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "bbf433f2",
+      "source_content": "### Using Drone {#using-drone}",
+      "source_content_hash": "9f5af0113a0941e4c47df31cf385da236f4c236e07761b79e300681f5aa78f8e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f12e4485",
+      "source_content": "1. Create a new SSH key that will be the [deploy key](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys) for your project.\n2. Name your private and public keys to be specific and so that it does not overwrite your other [SSH keys](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).\n3. Go to `https://github.com/USERNAME/REPO/settings/keys` and add a new deploy key by pasting in the public key you just generated.\n4. Open your Drone.io dashboard and log in. The URL looks like `https://cloud.drone.io/USERNAME/REPO`.\n5. Click on the repository, click on activate repository, and add a secret called `git_deploy_private_key` with your private key value that you just generated.\n6. Create a `.drone.yml` on the root of your repository with the below text.",
+      "source_content_hash": "cefdf69241edbd9edc1a3b6d3338f76fb9005d8f3255eacc3c77c30dfa157cc2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c07f7ae7",
+      "source_content": "```yml title=\".drone.yml\"\nkind: pipeline\ntype: docker\ntrigger:\n  event:\n    - tag\n- name: Website\n  image: node\n  commands:\n    - mkdir -p $HOME/.ssh\n    - ssh-keyscan -t rsa github.com >> $HOME/.ssh/known_hosts\n    - echo \"$GITHUB_PRIVATE_KEY\" > \"$HOME/.ssh/id_rsa\"\n    - chmod 0600 $HOME/.ssh/id_rsa\n    - cd website\n    - yarn install\n    - yarn deploy\n  environment:\n    USE_SSH: true\n    GITHUB_PRIVATE_KEY:\n      from_secret: git_deploy_private_key\n```",
+      "source_content_hash": "594ab9b9388cfefd326d526e9971e9e06e7d544c5b51f8c5aceb59115233a5c4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "290bf8b4",
+      "source_content": "Now, whenever you push a new tag to GitHub, this trigger will start the drone CI job to publish your website.",
+      "source_content_hash": "2a77262cffd0e91486d8a3c19247fa2c6ef14cb233a1e544c10bec4e1b9132bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fbe6d4c2",
+      "source_content": "## Deploying to Flightcontrol {#deploying-to-flightcontrol}",
+      "source_content_hash": "dad3260f625b9a4e3799082c1bb58bfe7a8a9176d0783fa90d3606c9354a99f5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4e0d80a8",
+      "source_content": "[Flightcontrol](https://www.flightcontrol.dev/?ref=docusaurus) is a service that automatically builds and deploys your web apps to AWS Fargate directly from your Git repository. It gives you full access to inspect and make infrastructure changes without the limitations of a traditional PaaS.",
+      "source_content_hash": "0d0c2095685eb76fe65525d5ffb2f918453b08e961c7118493f4176ed5b3473e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "04d3d31d",
+      "source_content": "Get started by following [Flightcontrol's step-by-step Docusaurus guide](https://www.flightcontrol.dev/docs/reference/examples/docusaurus/?ref=docusaurus).",
+      "source_content_hash": "bd0df82d1ce5fcd666d668cfc548ce4af204cdeaa4414a3ea2999f1d2910ae94",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d9a41e3b",
+      "source_content": "## Deploying to Koyeb {#deploying-to-koyeb}",
+      "source_content_hash": "3f1a029cda7e543436c9436a9b93c897b6c7d076db04b350ac4801c0421ad294",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7c0d3afc",
+      "source_content": "[Koyeb](https://www.koyeb.com) is a developer-friendly serverless platform to deploy apps globally. The platform lets you seamlessly run Docker containers, web apps, and APIs with git-based deployment, native autoscaling, a global edge network, and built-in service mesh and discovery. Check out the [Koyeb's Docusaurus deployment guide](https://www.koyeb.com/tutorials/deploy-docusaurus-on-koyeb) to get started.",
+      "source_content_hash": "34032a291d8aefe79f1305380438b6c6076da0fef0e51e99ac8acb775f2dc711",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Koyeb](https://www.koyeb.com) 是一個對開發者友善的無伺服器平台，可全球部署應用程式。該平台讓您無縫運行 Docker 容器、網頁應用程式和 API，具備基於 Git 的部署、原生自動擴展、全球邊緣網絡，以及內建的服務網格和服務發現功能。查看 [Koyeb 的 Docusaurus 部署指南](https://www.koyeb.com/tutorials/deploy-docusaurus-on-koyeb) 以開始使用。"
+      }
+    },
+    {
+      "segment_id": "c77b71c6",
+      "source_content": "## Deploying to Render {#deploying-to-render}",
+      "source_content_hash": "acbf8cb36ac0941e1ec6309844176949490d2d374d7d3bbfef90feaa3166c134",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署到 Render {#deploying-to-render}"
+      }
+    },
+    {
+      "segment_id": "5c50226f",
+      "source_content": "[Render](https://render.com) offers [free static site hosting](https://render.com/docs/static-sites) with fully managed SSL, custom domains, a global CDN, and continuous auto-deploy from your Git repo. Get started in just a few minutes by following [Render's guide to deploying Docusaurus](https://render.com/docs/deploy-docusaurus).",
+      "source_content_hash": "c2fd49fd16f6cc00b5023927cc5b74a0674c14d976b4352a3bb28912db24b4f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Render](https://render.com) 提供 [免費的靜態網站託管服務](https://render.com/docs/static-sites)，包含全託管的 SSL、自訂網域、全球 CDN，以及從您的 Git 倉庫持續自動部署。只需幾分鐘即可開始，請遵循 [Render 的 Docusaurus 部署指南](https://render.com/docs/deploy-docusaurus)。"
+      }
+    },
+    {
+      "segment_id": "088bd6c5",
+      "source_content": "## Deploying to Qovery {#deploying-to-qovery}",
+      "source_content_hash": "3b0565c253983ea6d6d7b8590d744bab7b122241a4848dab353a2b2120a3c5ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署到 Qovery {#deploying-to-qovery}"
+      }
+    },
+    {
+      "segment_id": "b4c8c9d0",
+      "source_content": "[Qovery](https://www.qovery.com) is a fully-managed cloud platform that runs on your AWS, Digital Ocean, and Scaleway account where you can host static sites, backend APIs, databases, cron jobs, and all your other apps in one place.",
+      "source_content_hash": "18599fcd8da5768ccbbc3c2437e307191c42e3a71de4a6dc63d544fc9fd3100f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Qovery](https://www.qovery.com) 是一個全託管的雲端平台，運行在您的 AWS、Digital Ocean 和 Scaleway 帳戶上，您可以在同一個地方託管靜態網站、後端 API、資料庫、定時任務和所有其他應用程式。"
+      }
+    },
+    {
+      "segment_id": "c4beab34",
+      "source_content": "1. Create a Qovery account. Visit the [Qovery dashboard](https://console.qovery.com) to create an account if you don't already have one.\n2. Create a project.\n   - Click on **Create project** and give a name to your project.\n   - Click on **Next**.\n3. Create a new environment.\n   - Click on **Create environment** and give a name (e.g. staging, production).\n4. Add an application.\n   - Click on **Create an application**, give a name and select your GitHub or GitLab repository where your Docusaurus app is located.\n   - Define the main branch name and the root application path.\n   - Click on **Create**. After the application is created:\n   - Navigate to your application **Settings**\n   - Select **Port**\n   - Add port used by your Docusaurus application\n5. Deploy\n   - All you have to do now is to navigate to your application and click on **Deploy**.",
+      "source_content_hash": "9d1f1acb29952ece46f73ff6179ca2de0d24525ab57e6d3904f0848dbabfd184",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 創建一個 Qovery 帳戶。如果您還沒有帳戶，請訪問 [Qovery 儀表板](https://console.qovery.com) 創建一個帳戶。\n2. 創建一個專案。\n   - 點擊 **創建專案** 並為您的專案命名。\n   - 點擊 **下一步**。\n3. 創建一個新環境。\n   - 點擊 **創建環境** 並命名（例如 staging、production）。\n4. 添加一個應用程式。\n   - 點擊 **創建應用程式**，命名並選擇您的 GitHub 或 GitLab 倉庫，其中包含您的 Docusaurus 應用程式。\n   - 定義主分支名稱和應用程式的根路徑。\n   - 點擊 **創建**。應用程式創建後：\n   - 導航到您的應用程式 **設定**\n   - 選擇 **端口**\n   - 添加您的 Docusaurus 應用程式使用的端口\n5. 部署\n   - 現在您只需導航到您的應用程式並點擊 **部署**。"
+      }
+    },
+    {
+      "segment_id": "dd0c7dc2",
+      "source_content": "![Deploy the app](https://hub.qovery.com/img/heroku/heroku-1.png)",
+      "source_content_hash": "8b2f0d27c9acd50a1801f200672b3afd8189d9b24de67b1ada84a436318a912b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![部署應用程式](https://hub.qovery.com/img/heroku/heroku-1.png)"
+      }
+    },
+    {
+      "segment_id": "f4ae8e4a",
+      "source_content": "That's it. Watch the status and wait till the app is deployed. To open the application in your browser, click on **Action** and **Open** in your application overview.",
+      "source_content_hash": "97da70fd402dc337d60798f192c63d844194dfb3d33f850b5cb27b715a4e9014",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "就是這樣。觀察狀態並等待應用程式部署完成。要在瀏覽器中打開應用程式，請在應用程式概覽中點擊 **操作** 和 **打開**。"
+      }
+    },
+    {
+      "segment_id": "cf58b1a6",
+      "source_content": "## Deploying to Hostman {#deploying-to-hostman}",
+      "source_content_hash": "ab383e80533047f791b03434437a3f6b751d8139de44c9151f96cee4cf186335",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署到 Hostman {#deploying-to-hostman}"
+      }
+    },
+    {
+      "segment_id": "2fdac702",
+      "source_content": "[Hostman](https://hostman.com/) allows you to host static websites for free. Hostman automates everything, you just need to connect your repository and follow these easy steps:",
+      "source_content_hash": "a6bc9fee9b9cb834cb1dcb8971d03985ead0640ebf9ad0d1af3e92d866260b50",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Hostman](https://hostman.com/) 允許您免費託管靜態網站。Hostman 自動化一切，您只需連接您的倉庫並遵循這些簡單步驟："
+      }
+    },
+    {
+      "segment_id": "b80fe775",
+      "source_content": "1. Create a service.\n\n   - To deploy a Docusaurus static website, click **Create** in the top-left corner of your [Dashboard](https://dashboard.hostman.com/) and choose **Front-end app or static website**.\n\n2. Select the project to deploy.\n\n   - If you are logged in to Hostman with your GitHub, GitLab, or Bitbucket account, you will see the repository with your projects, including the private ones.\n\n   - Choose the project you want to deploy. It must contain the directory with the project's files (e.g. `website`).\n\n   - To access a different repository, click **Connect another repository**.\n\n   - If you didn't use your Git account credentials to log in, you'll be able to access the necessary account now, and then select the project.\n\n3. Configure the build settings.\n\n   - Next, the **Website customization** window will appear. Choose the **Static website** option from the list of frameworks.\n\n   - The **Directory with app** points at the directory that will contain the project's files after the build. If you selected the repository with the contents of the website (or `my_website`) directory during Step 2, you can leave it empty.\n\n   - The standard build command for Docusaurus is:\n\n     ```bash npm2yarn\n     npm run build\n     ```\n\n   - You can modify the build command if needed. You can enter multiple commands separated by `&&`.\n\n4. Deploy.\n\n   - Click **Deploy** to start the build process.\n\n   - Once it starts, you will enter the deployment log. If there are any issues with the code, you will get warning or error messages in the log specifying the cause of the problem. Usually, the log contains all the debugging data you'll need.\n\n   - When the deployment is complete, you will receive an email notification and also see a log entry. All done! Your project is up and ready.",
+      "source_content_hash": "72147a098621942a69437df19d865226464f5222b1c99065df390cf318484531",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 建立服務。\n\n   - 若要部署 Docusaurus 靜態網站，請在您的[儀表板](https://dashboard.hostman.com/)左上角點擊**建立**，並選擇**前端應用或靜態網站**。\n\n2. 選擇要部署的專案。\n\n   - 如果您使用 GitHub、GitLab 或 Bitbucket 帳號登入 Hostman，您將看到包含您專案的儲存庫，包括私人專案。\n\n   - 選擇您要部署的專案。該專案必須包含專案檔案所在的目錄（例如 `website`）。\n\n   - 若要存取其他儲存庫，請點擊**連接其他儲存庫**。\n\n   - 如果登入時未使用 Git 帳號憑證，您現在可以存取所需帳號，然後選擇專案。\n\n3. 設定建置選項。\n\n   - 接著會出現**網站自訂**視窗。從框架清單中選擇**靜態網站**選項。\n\n   - **應用程式目錄**指向建置後包含專案檔案的目錄。如果您在步驟 2 中選擇了包含網站內容（或 `my_website`）目錄的儲存庫，可以將其留空。\n\n   - Docusaurus 的標準建置指令為：\n\n     ```bash npm2yarn\n     npm run build\n     ```\n\n   - 如有需要，您可以修改建置指令。您可以輸入多個指令，並以 `&&` 分隔。\n\n4. 部署。\n\n   - 點擊**部署**以開始建置流程。\n\n   - 開始後，您將進入部署日誌。如果程式碼有任何問題，日誌中會顯示警告或錯誤訊息，指出問題原因。通常日誌會包含您所需的所有除錯資料。\n\n   - 部署完成後，您將收到電子郵件通知，並在日誌中看到一條記錄。大功告成！您的專案已上線並準備就緒。"
+      }
+    },
+    {
+      "segment_id": "7a60bcb2",
+      "source_content": "## Deploying to Surge {#deploying-to-surge}",
+      "source_content_hash": "119180253cc107ecc4a8a7fb28c82a5ca20b2504d24e491c7d6bee287815908e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 Surge {#deploying-to-surge}"
+      }
+    },
+    {
+      "segment_id": "298e69e7",
+      "source_content": "Surge is a [static web hosting platform](https://surge.sh/help/getting-started-with-surge) that you can use to deploy your Docusaurus project from the command line in seconds. Deploying your project to Surge is easy and free (including custom domains and SSL certs).",
+      "source_content_hash": "ca7ed1f50ecab9f64f5afc60daa7310faf8cd826c45b7d353c5190649f0b53de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Surge 是一個[靜態網站託管平台](https://surge.sh/help/getting-started-with-surge)，您可以用來在幾秒內從命令列部署 Docusaurus 專案。將專案部署至 Surge 既簡單又免費（包括自訂網域和 SSL 憑證）。"
+      }
+    },
+    {
+      "segment_id": "300faf76",
+      "source_content": "Deploy your app in a matter of seconds using Surge with the following steps:",
+      "source_content_hash": "e6fdeeeda348b146cc75a8e95aca0c88b0d339247c0dbfef96a4d48408fec649",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 Surge 只需以下步驟即可在幾秒內部署應用："
+      }
+    },
+    {
+      "segment_id": "880edfa3",
+      "source_content": "1. First, install Surge using npm by running the following command:\n   ```bash npm2yarn\n   npm install -g surge\n   ```\n2. To build the static files of your site for production in the root directory of your project, run:\n   ```bash npm2yarn\n   npm run build\n   ```\n3. Then, run this command inside the root directory of your project:\n   ```bash\n   surge build/\n   ```",
+      "source_content_hash": "58617d5565905ac461d746ba3e35fa5146822b6f75e53296c260b40fd09d3694",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 首先，使用 npm 安裝 Surge，執行以下指令：\n   ```bash npm2yarn\n   npm install -g surge\n   ```\n2. 在專案根目錄下執行以下指令，為生產環境建置網站的靜態檔案：\n   ```bash npm2yarn\n   npm run build\n   ```\n3. 接著，在專案根目錄下執行此指令：\n   ```bash\n   surge build/\n   ```"
+      }
+    },
+    {
+      "segment_id": "64033cff",
+      "source_content": "First-time users of Surge would be prompted to create an account from the command line (which happens only once).",
+      "source_content_hash": "fd8f8774cd62f8cfa8cfff4433c2049a71c6f1f29cd1ea97b7c3fb28d57a1853",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "首次使用 Surge 的用戶會從命令列提示建立帳號（僅此一次）。"
+      }
+    },
+    {
+      "segment_id": "d3d5ef7e",
+      "source_content": "Confirm that the site you want to publish is in the `build` directory. A randomly generated subdomain `*.surge.sh subdomain` is always given (which can be edited).",
+      "source_content_hash": "8e349e5571791285a86b91bd12cfd5c84a144bfb54a5612151d9b49294a0375d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "確認您要發佈的網站位於 `build` 目錄中。系統會自動分配一個隨機生成的子網域 `*.surge.sh`（可編輯）。"
+      }
+    },
+    {
+      "segment_id": "22a2b7a9",
+      "source_content": "### Using your domain {#using-your-domain}",
+      "source_content_hash": "9e45fccfabde9b6046f1340cc90879b31251fa5b5c2fae14bdda834bb034460e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用自訂網域 {#using-your-domain}"
+      }
+    },
+    {
+      "segment_id": "7491dd02",
+      "source_content": "If you have a domain name you can deploy your site using the command:",
+      "source_content_hash": "ff13b17a407b29352976ec10b0d6700bc36aba07bde24b869ea3f2ca4c175c38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您擁有網域名稱，可以使用以下指令部署網站："
+      }
+    },
+    {
+      "segment_id": "da43d576",
+      "source_content": "```bash\nsurge build/ your-domain.com\n```",
+      "source_content_hash": "4211c24b5c7b1dd75446ac9db451aeaf922a7eb731681e6ed38d73f5cb632a67",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_da43d576"
+      }
+    },
+    {
+      "segment_id": "0745a07e",
+      "source_content": "Your site is now deployed for free at `subdomain.surge.sh` or `your-domain.com` depending on the method you chose.",
+      "source_content_hash": "5c66e311dd383a175b41a54f6e6f10eecd0c0bb424a962d85d175b86a55bb581",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的網站現在已免費部署在 `subdomain.surge.sh` 或 `your-domain.com`（取決於您選擇的方法）。"
+      }
+    },
+    {
+      "segment_id": "1aa2de60",
+      "source_content": "### Setting up CNAME file {#setting-up-cname-file}",
+      "source_content_hash": "1b4810f49b574567ad8f3d5c7bf82337a8d5e4010e0b1a3403a274f429536c6a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 設定 CNAME 檔案 {#setting-up-cname-file}"
+      }
+    },
+    {
+      "segment_id": "d8903f53",
+      "source_content": "Store your domain in a CNAME file for future deployments with the following command:",
+      "source_content_hash": "b0954fa2189a1ac97a49d658fceb8eb6d6e25db253dd2673541d750b08d35340",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用以下指令將您的網域儲存在 CNAME 檔案中，以便未來部署："
+      }
+    },
+    {
+      "segment_id": "0d092ba7",
+      "source_content": "```bash\necho subdomain.surge.sh > CNAME\n```",
+      "source_content_hash": "f1a1227355a5c265137288e62a688a1102d479352315af6c0a611fe973e84a7c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0d092ba7"
+      }
+    },
+    {
+      "segment_id": "631bec9f",
+      "source_content": "You can deploy any other changes in the future with the command `surge`.",
+      "source_content_hash": "05f82633176320236ddb374cd9693aada38c1ad1bb57d18a7b090a4b0e1cddb9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "未來任何變更均可透過指令 `surge` 部署。"
+      }
+    },
+    {
+      "segment_id": "ced383e5",
+      "source_content": "## Deploying to Stormkit {#deploying-to-stormkit}",
+      "source_content_hash": "6ea83b6c0f439690bcc8c41427465afab8cb49bb438ffa0c23265f1e5de0ac75",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 Stormkit {#deploying-to-stormkit}"
+      }
+    },
+    {
+      "segment_id": "6c7e39a2",
+      "source_content": "You can deploy your Docusaurus project to [Stormkit](https://www.stormkit.io), a deployment platform for static websites, single-page applications (SPAs), and serverless functions. For detailed instructions, refer to this [guide](https://www.stormkit.io/blog/how-to-deploy-docusarous).",
+      "source_content_hash": "10e52028db5ea3d90368dbc9a302d130ea1d9754f3900d2e8b6c46b66c2cd914",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以將 Docusaurus 專案部署至 [Stormkit](https://www.stormkit.io)，這是一個針對靜態網站、單頁應用（SPA）和無伺服器功能的部署平台。詳細說明請參閱此[指南](https://www.stormkit.io/blog/how-to-deploy-docusarous)。"
+      }
+    },
+    {
+      "segment_id": "19e4f224",
+      "source_content": "## Deploying to QuantCDN {#deploying-to-quantcdn}",
+      "source_content_hash": "eb6d152885e654fefb9dd08ed4bb0010cbbb6cb9e3a11c765c7f060297e9228d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 QuantCDN {#deploying-to-quantcdn}"
+      }
+    },
+    {
+      "segment_id": "29d627da",
+      "source_content": "1. Install [Quant CLI](https://docs.quantcdn.io/docs/cli/get-started)\n2. Create a QuantCDN account by [signing up](https://dashboard.quantcdn.io/register)\n3. Initialize your project with `quant init` and fill in your credentials:\n   ```bash\n   quant init\n   ```\n4. Deploy your site.\n   ```bash\n   quant deploy\n   ```",
+      "source_content_hash": "7b8397d2592efbf42f207c9cb2e6ca51dc4196654ae6d7f25f16eb5ef79f4157",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 安裝 [Quant CLI](https://docs.quantcdn.io/docs/cli/get-started)\n2. 透過[註冊](https://dashboard.quantcdn.io/register)建立 QuantCDN 帳號\n3. 使用 `quant init` 初始化專案並填寫憑證：\n   ```bash\n   quant init\n   ```\n4. 部署您的網站\n   ```bash\n   quant deploy\n   ```"
+      }
+    },
+    {
+      "segment_id": "f6591ec0",
+      "source_content": "See [docs](https://docs.quantcdn.io/docs/cli/continuous-integration) and [blog](https://www.quantcdn.io/blog) for more examples and use cases for deploying to QuantCDN.",
+      "source_content_hash": "265c06d164fad9302fdb6aeadc50c88e4f27243b03647844198c7e1ec6859fc9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請參閱[文件](https://docs.quantcdn.io/docs/cli/continuous-integration)與[部落格](https://www.quantcdn.io/blog)以獲取更多部署至 QuantCDN 的範例與使用案例。"
+      }
+    },
+    {
+      "segment_id": "5a20d500",
+      "source_content": "## Deploying to Cloudflare Pages {#deploying-to-cloudflare-pages}",
+      "source_content_hash": "2ea7cbbfd0aec8a4fe9f039d44d53423ec6e794f8950d52ace95ef43b8c9e2df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 Cloudflare Pages {#deploying-to-cloudflare-pages}"
+      }
+    },
+    {
+      "segment_id": "f0b991ec",
+      "source_content": "[Cloudflare Pages](https://pages.cloudflare.com/) is a Jamstack platform for frontend developers to collaborate and deploy websites. Get started within a few minutes by following [this page](https://developers.cloudflare.com/pages/framework-guides/deploy-a-docusaurus-site/).",
+      "source_content_hash": "82d964c0a3a53f893a6fb16a3af329b3047686fa7703a7f856e5d7fd9cb90d88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Cloudflare Pages](https://pages.cloudflare.com/) 是一個讓前端開發者協作與部署網站的 Jamstack 平台。依照[此頁面](https://developers.cloudflare.com/pages/framework-guides/deploy-a-docusaurus-site/)指引，幾分鐘內即可開始使用。"
+      }
+    },
+    {
+      "segment_id": "cb244db6",
+      "source_content": "## Deploying to Azure Static Web Apps {#deploying-to-azure-static-web-apps}",
+      "source_content_hash": "0f79914ef34c53707e4f524c8bbd39954fd85422fbb0a3582cc9278eee347077",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 Azure Static Web Apps {#deploying-to-azure-static-web-apps}"
+      }
+    },
+    {
+      "segment_id": "3b7add9c",
+      "source_content": "[Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/overview) is a service that automatically builds and deploys full-stack web apps to Azure directly from the code repository, simplifying the developer experience for CI/CD. Static Web Apps separates the web application's static assets from its dynamic (API) endpoints. Static assets are served from globally-distributed content servers, making it faster for clients to retrieve files using servers nearby. Dynamic APIs are scaled with serverless architectures using an event-driven functions-based approach that is more cost-effective and scales on demand. Get started in a few minutes by following [this step-by-step guide](https://dev.to/azure/11-share-content-with-docusaurus-azure-static-web-apps-30hc).",
+      "source_content_hash": "25c4193200671665a256cecc96bdbcd174e00fc2b14abab04af7f784f9b2b75e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/overview) 是一項能直接從程式碼儲存庫自動建置並部署全端網頁應用至 Azure 的服務，簡化了 CI/CD 的開發者體驗。此服務將網頁應用的靜態資源與動態(API)端點分離，靜態資源透過全球分發的內容伺服器提供，讓用戶能從鄰近伺服器更快取得檔案；動態 API 則採用無伺服器架構，以事件驅動的函式為基礎進行擴展，更具成本效益且能依需求彈性擴容。請依照[這份逐步指南](https://dev.to/azure/11-share-content-with-docusaurus-azure-static-web-apps-30hc)，幾分鐘內即可開始使用。"
+      }
+    },
+    {
+      "segment_id": "e37d53fa",
+      "source_content": "## Deploying to Kinsta {#deploying-to-kinsta}",
+      "source_content_hash": "8d24fda1a1abc5613b847f182b3cf66d39283a43717a77f0de2a665eb9a3ed6a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署至 Kinsta {#deploying-to-kinsta}"
+      }
+    },
+    {
+      "segment_id": "142f8e53",
+      "source_content": "[Kinsta Static Site Hosting](https://kinsta.com/static-site-hosting) lets you deploy up to 100 static sites for free, custom domains with SSL, 100 GB monthly bandwidth, and 260+ Cloudflare CDN locations.",
+      "source_content_hash": "80b84959ea08eb5a81fa54858bb7695180a9bc0289db53bb7b03dc7aa358adbc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Kinsta 靜態網站託管服務](https://kinsta.com/static-site-hosting) 提供免費部署最多 100 個靜態網站，包含自訂網域與 SSL 憑證、每月 100 GB 流量，以及 260+ 個 Cloudflare CDN 節點。"
+      }
+    },
+    {
+      "segment_id": "0a2de819",
+      "source_content": "Get started in just a few clicks by following our [Docusaurus on Kinsta](https://kinsta.com/docs/docusaurus-example/) article.",
+      "source_content_hash": "b972a0b21baba6067376c8fe69b41230e399c66d5b6e14736736581c5edbc65a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "依照我們的 [Docusaurus 在 Kinsta 上的範例](https://kinsta.com/docs/docusaurus-example/) 文章，只需點擊幾下即可快速開始。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/deployment.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.063955+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "b40aeb9fa81d3b35a5ed464e17e8111daa93ee68b82e8893d78e486ef18eab25"
+  }
+}

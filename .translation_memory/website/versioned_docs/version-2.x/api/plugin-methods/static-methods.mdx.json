@@ -1,0 +1,262 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/api/plugin-methods/static-methods.mdx",
+  "source_file_content_hash": "5274244ca6434d1c0f86965e4d820ec965bfe762b1cdf7830d22b60298bd70d1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\n---",
+      "source_content_hash": "e93552de73713fd3d4c67121db57ba65cc2e8e129d1829ed5f8a7888cea6601e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Static methods",
+      "source_content_hash": "a7d86ddda2747dac26709deb2a0dd0ff35490ccfd64bf031bb5e2416b6c3a353",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 靜態方法"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Static methods are not part of the plugin instance—they are attached to the constructor function. These methods are used to validate and normalize the plugin options and theme config, which are then used as constructor parameters to initialize the plugin instance.",
+      "source_content_hash": "395679653986fd8f79be5002c6b7ee195266cff38e3b961c03dbdbbc13ff5299",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "靜態方法不屬於插件實例——它們是附加在構造函數上的方法。這些方法用於驗證和標準化插件選項與主題配置，這些參數隨後會作為構造函數參數來初始化插件實例。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## `validateOptions({options, validate})` {#validateOptions}",
+      "source_content_hash": "cb8e550e5e00ec0026f4fdb9da5b121db69800c227708eb4ae0fc4334042867b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `validateOptions({options, validate})` {#validateOptions}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Returns validated and normalized options for the plugin. This method is called before the plugin is initialized. You must return the options since they will be passed to the plugin during initialization.",
+      "source_content_hash": "1b6566a067c3de34c2e9ab789d6bea2890545afc6ccc80c0492a04555c8371b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "返回經過驗證和標準化的插件選項。此方法在插件初始化前調用。您必須返回選項，因為它們將在初始化時傳遞給插件。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "### `options` {#options}",
+      "source_content_hash": "27d5298b74e101fc5068af653dafd9cf01ff7cc76c85407a97de3ebcc640ecad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `options` {#options}"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "`validateOptions` is called with `options` passed to plugin for validation and normalization.",
+      "source_content_hash": "2705fea6d3315652fd3a9824fae08207c34cb244159fb9a17d393528c99fb2fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`validateOptions` 會接收傳遞給插件進行驗證和標準化的 `options`。"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "### `validate` {#validate}",
+      "source_content_hash": "fd85674a2cb510f76eeaaf147898eacf185e75873bb8902f8e5e67b28c325a6f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `validate` {#validate}"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "`validateOptions` is called with `validate` function which takes a **[Joi](https://www.npmjs.com/package/joi)** schema and options as the arguments, returns validated and normalized options. `validate` will automatically handle error and validation config.",
+      "source_content_hash": "3ccdd2f491fed9396dc63369d8ca17ff24a227b07b369088080441d45ecdab11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`validateOptions` 會接收 `validate` 函數，該函數接受 **[Joi](https://www.npmjs.com/package/joi)** 結構描述和選項作為參數，返回經過驗證和標準化的選項。`validate` 會自動處理錯誤和驗證配置。"
+      }
+    },
+    {
+      "segment_id": "cac45343",
+      "source_content": ":::tip\n\n[Joi](https://www.npmjs.com/package/joi) is recommended for validation and normalization of options.\n\nTo avoid mixing Joi versions, use `const {Joi} = require(\"@docusaurus/utils-validation\")`\n\n:::",
+      "source_content_hash": "94cb32e3c9d48d60bfee86a4dab504a2ec7457f450ccd1dfefa25c26d27e3a35",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n推薦使用 [Joi](https://www.npmjs.com/package/joi) 來驗證和標準化選項。\n\n為避免混用 Joi 版本，請使用 `const {Joi} = require(\"@docusaurus/utils-validation\")`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "If you don't use **[Joi](https://www.npmjs.com/package/joi)** for validation you can throw an Error in case of invalid options and return options in case of success.",
+      "source_content_hash": "4cd74afdb5e1d7c631c76840547100eb941310072990baf3e99db074f5b01563",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您不使用 **[Joi](https://www.npmjs.com/package/joi)** 進行驗證，可以在選項無效時拋出錯誤，並在成功時返回選項。"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```js title=\"my-plugin/src/index.js\"\nfunction myPlugin(context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // rest of methods\n  };\n}\n\n// highlight-start\nmyPlugin.validateOptions = ({options, validate}) => {\n  const validatedOptions = validate(myValidationSchema, options);\n  return validatedOptions;\n};\n// highlight-end\n\nmodule.exports = myPlugin;\n```",
+      "source_content_hash": "fa31f162c5362daa584081f6d2cf62885b6e1c35d167a8c0cbe9ee67e92c39af",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "In TypeScript, you can also choose to export this as a separate named export.",
+      "source_content_hash": "09984b80e04cd11fe88e1f989b817cb0fdb9b60f6dca33f9c2d2abde13b29e4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 TypeScript 中，您也可以選擇將其作為單獨的命名導出。"
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```ts title=\"my-plugin/src/index.ts\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // rest of methods\n  };\n}\n\n// highlight-start\nexport function validateOptions({options, validate}) {\n  const validatedOptions = validate(myValidationSchema, options);\n  return validatedOptions;\n}\n// highlight-end\n```",
+      "source_content_hash": "3ffdfd8b6dc90dd26bb4c0390b2ddc62ee3a4a772f64442005c385bdf3b5d20b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## `validateThemeConfig({themeConfig, validate})` {#validateThemeConfig}",
+      "source_content_hash": "bac739696cc9848011140ef4c23f89b973fb05269bcbf391fb7bd306f05b6d83",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `validateThemeConfig({themeConfig, validate})` {#validateThemeConfig}"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Return validated and normalized configuration for the theme.",
+      "source_content_hash": "84d1461a32602a88e5dc892a1ab54f9c1fbb17de6ebf0f893f2ba9a60ad32bc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "返回經過驗證和標準化的主題配置。"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "### `themeConfig` {#themeConfig}",
+      "source_content_hash": "782709f4994b816e5db654ff2cadbf1a82aeea78b9968387a2e6c20905a25855",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `themeConfig` {#themeConfig}"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "`validateThemeConfig` is called with `themeConfig` provided in `docusaurus.config.js` for validation and normalization.",
+      "source_content_hash": "7c9c564777de623bec741eec7db3b04ef6d6ed0bd062c24af2ea1b544cad6a56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`validateThemeConfig` 會接收 `docusaurus.config.js` 中提供的 `themeConfig` 進行驗證和標準化。"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "### `validate` {#validate-1}",
+      "source_content_hash": "1fe5f1584749f73066a2abcdc3e59744960becf73f98bc1964fea9e3dc0f1a8f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `validate` {#validate-1}"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "`validateThemeConfig` is called with `validate` function which takes a **[Joi](https://www.npmjs.com/package/joi)** schema and `themeConfig` as the arguments, returns validated and normalized options. `validate` will automatically handle error and validation config.",
+      "source_content_hash": "d605fde9fd034729e602ecf60d9848efab5d4a20c672f74489f1945da66a3e19",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`validateThemeConfig` 會接收 `validate` 函數，該函數接受 **[Joi](https://www.npmjs.com/package/joi)** 結構描述和 `themeConfig` 作為參數，返回經過驗證和標準化的選項。`validate` 會自動處理錯誤和驗證配置。"
+      }
+    },
+    {
+      "segment_id": "084f365a",
+      "source_content": ":::tip\n\n[Joi](https://www.npmjs.com/package/joi) is recommended for validation and normalization of theme config.\n\nTo avoid mixing Joi versions, use `const {Joi} = require(\"@docusaurus/utils-validation\")`\n\n:::",
+      "source_content_hash": "07bec44d6ebca51e0641d70ec4b0fdecd98ea2174ef417b6ba287344e83ff2fd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n推薦使用 [Joi](https://www.npmjs.com/package/joi) 來驗證和標準化主題配置。\n\n為避免混用 Joi 版本，請使用 `const {Joi} = require(\"@docusaurus/utils-validation\")`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "If you don't use **[Joi](https://www.npmjs.com/package/joi)** for validation you can throw an Error in case of invalid options.",
+      "source_content_hash": "0ae941298e6976a2cf59026c03e031e36341ae73dc86ad79b15897bbcd9473fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您不使用 **[Joi](https://www.npmjs.com/package/joi)** 進行驗證，可以在選項無效時拋出錯誤。"
+      }
+    },
+    {
+      "segment_id": "f6563256",
+      "source_content": "```js title=\"my-theme/src/index.js\"\nfunction myPlugin(context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // rest of methods\n  };\n}\n\n// highlight-start\nmyPlugin.validateThemeConfig = ({themeConfig, validate}) => {\n  const validatedThemeConfig = validate(myValidationSchema, options);\n  return validatedThemeConfig;\n};\n// highlight-end\n\nmodule.exports = validateThemeConfig;\n```",
+      "source_content_hash": "b9a6c4a7ae2da62c1c0ccea8bf1685214ea2c6ee1c6838d389a62d5524b6a7b2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f6563256"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "In TypeScript, you can also choose to export this as a separate named export.",
+      "source_content_hash": "09984b80e04cd11fe88e1f989b817cb0fdb9b60f6dca33f9c2d2abde13b29e4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 TypeScript 中，您也可以選擇將其作為單獨的命名導出。"
+      }
+    },
+    {
+      "segment_id": "c9873cf8",
+      "source_content": "```ts title=\"my-theme/src/index.ts\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // rest of methods\n  };\n}\n\n// highlight-start\nexport function validateThemeConfig({themeConfig, validate}) {\n  const validatedThemeConfig = validate(myValidationSchema, options);\n  return validatedThemeConfig;\n}\n// highlight-end\n```",
+      "source_content_hash": "941483d6dc6a79b21ac18453f7dba64b9ceea5e096a096a856b47774f8737b8e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c9873cf8"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/api/plugin-methods/static-methods.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.130480+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "5274244ca6434d1c0f86965e4d820ec965bfe762b1cdf7830d22b60298bd70d1"
+  }
+}

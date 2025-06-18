@@ -1,0 +1,204 @@
+---
+id: math-equations
+description: Writing LaTeX Math Equations
+slug: /markdown-features/math-equations
+---
+
+# 數學方程式
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
+可使用 [KaTeX](https://katex.org) 渲染數學方程式。
+
+啟用方式請參閱[下方說明](#configuration)。
+
+## 使用方法 {#usage}
+
+詳情請閱讀 [KaTeX](https://katex.org) 官方文件。
+
+### 行內公式 {#inline}
+
+在 `$` 符號之間編寫 LaTeX 方程式來插入行內數學公式：
+
+```latex
+Let $f\colon[a,b]\to\R$ be Riemann integrable. Let $F\colon[a,b]\to\R$ be
+$F(x)=\int_{a}^{x} f(t)\,dt$. Then $F$ is continuous, and at all $x$ such that
+$f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.
+```
+
+<BrowserWindow>
+
+Let $f\colon[a,b] \to \R$ be Riemann integrable. Let $F\colon[a,b]\to\R$ be $F(x)=
+\int_{a}^{x} f(t)\,dt$. Then $F$ is continuous, and at all $x$ such that $f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.
+
+</BrowserWindow>
+
+### 區塊公式 {#blocks}
+
+對於獨立方程式區塊或顯示模式，需換行並使用 `$$` 符號：
+
+```latex
+$$
+I = \int_0^{2\pi} \sin(x)\,dx
+$$
+```
+
+<BrowserWindow>
+
+$$
+I = \int_0^{2\pi} \sin(x)\,dx
+$$
+
+</BrowserWindow>
+
+## 啟用數學方程式功能 {#configuration}
+
+啟用 KaTeX 步驟：
+
+1. 安裝 `remark-math` 和 `rehype-katex` 插件：
+
+    ```bash npm2yarn
+    npm install --save remark-math@6 rehype-katex@7
+    ```
+
+    :::warning
+
+    請確保在 Docusaurus v3 (使用 MDX v3) 中使用 `remark-math 6` 和 `rehype-katex 7` 版本。其他版本可能無法正常運作。
+
+    :::
+
+2.  這兩個插件[僅支援 ES Modules 格式](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)。建議使用[ES Modules](https://flaviocopes.com/es-modules/)格式的設定檔：
+
+    ```js title="ES module docusaurus.config.js"
+    // highlight-start
+    import remarkMath from 'remark-math';
+    import rehypeKatex from 'rehype-katex';
+    // highlight-end
+
+    // highlight-start
+    export default {
+      presets: [
+        [
+          '@docusaurus/preset-classic',
+          {
+            docs: {
+              path: 'docs',
+              // highlight-start
+              remarkPlugins: [remarkMath],
+              rehypePlugins: [rehypeKatex],
+              // highlight-end
+            },
+          },
+        ],
+      ],
+    };
+    ```
+
+        <details>
+
+    <summary>
+      需要使用
+      [CommonJS](https://nodejs.org/api/modules.html#modules-commonjs-modules)
+      格式的設定檔？
+    </summary>
+
+            若需使用 CommonJS 格式設定檔，可透過動態導入和異步配置函數載入這些 ES 模組插件：
+
+    ```js title="CommonJS module docusaurus.config.js"
+    // highlight-start
+    module.exports = async function createConfigAsync() {
+      // highlight-end
+      return {
+        presets: [
+          [
+            '@docusaurus/preset-classic',
+            {
+              docs: {
+                path: 'docs',
+                // highlight-start
+                remarkPlugins: [(await import('remark-math')).default],
+                rehypePlugins: [(await import('rehype-katex')).default],
+                // highlight-end
+              },
+            },
+          ],
+        ],
+      };
+    };
+    ```
+
+        </details>
+
+3.  在設定檔的 `stylesheets` 區段加入 KaTeX CSS：
+
+    ```js
+    export default {
+      //...
+      stylesheets: [
+        {
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+          type: 'text/css',
+          integrity:
+            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+          crossorigin: 'anonymous',
+        },
+      ],
+    };
+    ```
+
+<details>
+<summary>See a config file example</summary>
+
+```js title="docusaurus.config.js"
+// highlight-start
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+// highlight-end
+
+export default {
+  title: 'Docusaurus',
+  tagline: 'Build optimized websites quickly, focus on your content',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          path: 'docs',
+          // highlight-start
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          // highlight-end
+        },
+      },
+    ],
+  ],
+  // highlight-start
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
+  // highlight-end
+};
+```
+
+</details>
+
+## 自托管 KaTeX 資源 {#self-hosting-katex-assets}
+
+從CDN來源載入樣式表、字體和JavaScript函式庫對於熱門函式庫和資源來說是個良好實踐，因為這能減少你需要託管的資源量。若您偏好自行託管`katex.min.css`（連同所需的KaTeX字體），可以從[KaTeX GitHub發佈頁](https://github.com/KaTeX/KaTeX/releases)下載最新版本，解壓後將`katex.min.css`和`fonts`目錄（僅需`.woff2`字體類型即可）複製到網站的`static`目錄中，並在`docusaurus.config.js`裡將樣式表的`href`從CDN網址替換為本地路徑（例如`/katex/katex.min.css`）。
+
+```js title="docusaurus.config.js"
+export default {
+  stylesheets: [
+    {
+      href: '/katex/katex.min.css',
+      type: 'text/css',
+    },
+  ],
+};
+```

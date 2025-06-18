@@ -1,0 +1,702 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/swizzling.mdx",
+  "source_file_content_hash": "d8ebb548c773e8ff6c11977230816e52c91a2aef3162e8e796e4c775cbfa25c6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Customize your site's appearance through creating your own theme components\n---",
+      "source_content_hash": "6ec4a4811cdaa830f9c3c9d642644120ff6c9a205e576e2dcc0b1773132b7477",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Swizzling",
+      "source_content_hash": "b1133029c3f1cdf29a150119b82c2052ae199b284b215fafbc7d4040913e9678",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 元件替換 (Swizzling)"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "In this section, we will introduce how customization of layout is done in Docusaurus.",
+      "source_content_hash": "ab4047d2c0ca933aa8bfd08698ff6206f64654551939f21c486ebc0c6c726153",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本章節將介紹如何在 Docusaurus 中進行佈局客製化。"
+      }
+    },
+    {
+      "segment_id": "cbf61009",
+      "source_content": "> Déjà vu...?",
+      "source_content_hash": "6a8a5cb6c603c0ca07a722cc6687233b127decb603ae08eade767f7e69b2d634",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 似曾相識...？"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "This section is similar to [Styling and Layout](./styling-layout.mdx), but this time, we will customize React components themselves, rather than what they look like. We will talk about a central concept in Docusaurus: **swizzling**, which allows **deeper site customizations**.",
+      "source_content_hash": "02504e5c29122dea7a368510230e9821f036ec7a5450d366223b276b0615eb3a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本節與[樣式與佈局](./styling-layout.mdx)類似，但這次我們將客製化 React 元件本身，而非其外觀。我們將探討 Docusaurus 的核心概念：**元件替換 (swizzling)**，這項技術能實現**更深層的網站客製化**。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "In practice, swizzling permits to **swap a theme component with your own implementation**, and it comes in 2 patterns:",
+      "source_content_hash": "49582b50b4ee51f0ae515f3e9601b8525912a9ef73906d1360c317cbac73ee54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實務上，元件替換允許您透過兩種模式**替換主題元件為自己的實作**："
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "- [**Ejecting**](#ejecting): creates a **copy** of the original theme component, which you can fully **customize**\n- [**Wrapping**](#wrapping): creates a **wrapper** around the original theme component, which you can **enhance**",
+      "source_content_hash": "311b7ca3828178eeb096769e5af784a93cf8ae6794698f7fdae30707b4e02192",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [**彈出 (Ejecting)**](#ejecting)：建立原始主題元件的**副本**，可進行完整**客製化**\n- [**包裝 (Wrapping)**](#wrapping)：建立原始主題元件的**包裝器**，可進行**功能增強**"
+      }
+    },
+    {
+      "segment_id": "21c93b79",
+      "source_content": "<details>\n\n<summary>Why is it called swizzling?</summary>\n\n**The name comes from Objective-C and Swift-UI**: [method swizzling](https://pspdfkit.com/blog/2019/swizzling-in-swift/) is the process of changing the implementation of an existing selector (method).\n\n**For Docusaurus, component swizzling means providing an alternative component that takes precedence over the component provided by the theme.**\n\nYou can think of it as [Monkey Patching](https://en.wikipedia.org/wiki/Monkey_patch) for React components, enabling you to override the default implementation. Gatsby has a similar concept called [theme shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/).\n\nTo gain a deeper understanding of this, you have to understand [how theme components are resolved](./advanced/client.mdx#theme-aliases).\n\n</details>",
+      "source_content_hash": "2c3b955b5ceaa32fba6edb777dde511784da6f6f8128ac5b12b0edf8ac0a1221",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_21c93b79"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Swizzling Process",
+      "source_content_hash": "fb5ff7af43a069faa4ca13150f873d3b8b9f948f334cb99cd2db696f76d8611c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 元件替換流程"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### Overview",
+      "source_content_hash": "baae707b217af6cc70173448eeaebf2e9e823284c0aa70b43a8a7496d52cdcb6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 概覽"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Docusaurus provides a convenient **interactive CLI** to swizzle components. You generally only need to remember the following command:",
+      "source_content_hash": "613f0d2df69c727dbf416833c8cd356b760d652bb4a5f1abb378b7a161f062f2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供便捷的**互動式 CLI** 來替換元件，通常只需記住以下指令："
+      }
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```bash npm2yarn\nnpm run swizzle\n```",
+      "source_content_hash": "689cf07f49583286d8c0d511b96e1cf2613d761133840ec642c9c0b628040baf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4dd51304"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "It will generate a new component in your `src/theme` directory, which should look like this example:",
+      "source_content_hash": "e1198d70af15adae0ce4d5df2b3592267af4fd24014c7908a33de55da94e6979",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "該指令會在您的 `src/theme` 目錄中生成新元件，範例如下："
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"Ejecting\">\n```",
+      "source_content_hash": "c595239d0710ce6c3a42163486cad0ca4841fc520802913597b17811a39ac1a2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "229d6705",
+      "source_content": "```jsx title=\"src/theme/SomeComponent.js\"\nimport React from 'react';\n\nexport default function SomeComponent(props) {\n  // You can fully customize this implementation\n  // including changing the JSX, CSS and React hooks\n  return (\n    <div className=\"some-class\">\n      <h1>Some Component</h1>\n      <p>Some component implementation details</p>\n    </div>\n  );\n}\n```",
+      "source_content_hash": "b4de0e0b6a748ee03d1d06a5caa298b8ba2148c312962e5b14f465c462fdd06e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_229d6705"
+      }
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"Wrapping\">\n```",
+      "source_content_hash": "5ed0704ff864a2dc73867ab1d7525915ad67bea5f629b52fd6a062e3fc899535",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5a41b4fb"
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```jsx title=\"src/theme/SomeComponent.js\"\nimport React from 'react';\nimport SomeComponent from '@theme-original/SomeComponent';\n\nexport default function SomeComponentWrapper(props) {\n  // You can enhance the original component,\n  // including adding extra props or JSX elements around it\n  return (\n    <>\n      <SomeComponent {...props} />\n    </>\n  );\n}\n```",
+      "source_content_hash": "c964e0db9ff9b40d0b0d0c0ac566abfe370151733b2b353e89b41cf0a088a882",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    },
+    {
+      "segment_id": "d8159289",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d8159289"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "To get an overview of all the themes and components available to swizzle, run:",
+      "source_content_hash": "4a77562b80bea5bc89fdd40447d740c2ba459b1141e8c96089e814b4cdf90081",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要查看所有可替換的主題與元件清單，請執行："
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```bash npm2yarn\nnpm run swizzle -- --list\n```",
+      "source_content_hash": "fd29d83c28836578d949c0e781d787f33766a9456a652b5e38f1ad788b794f76",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Use `--help` to see all available CLI options, or refer to the reference [swizzle CLI documentation](./cli.mdx#docusaurus-swizzle).",
+      "source_content_hash": "848d9aea2fb9d634818ed116cac33457065f9b7a568882cfbb88d3ce67da909c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 `--help` 查看所有可用 CLI 選項，或參考[元件替換 CLI 參考文件](./cli.mdx#docusaurus-swizzle)。"
+      }
+    },
+    {
+      "segment_id": "29662466",
+      "source_content": ":::tip[Removing Unneeded Swizzled Components]\n\nIf you decide that a previously swizzled component is no longer necessary, you can simply remove its file(s) from the `src/theme` directory. After removing the component, make sure to restart your development server to ensure the changes are properly reflected.\n\n:::",
+      "source_content_hash": "d6511c1b2df624e748366ba570743d5ec21ed4f7a1dbd197b17c93f528e97f1e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[移除不再需要的替換元件]\n\n若決定不再需要先前替換的元件，只需從 `src/theme` 目錄刪除其檔案。移除後請重新啟動開發伺服器以確保變更生效。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5ae4e2a6",
+      "source_content": ":::note\n\nAfter swizzling a component, **restart your dev server** in order for Docusaurus to know about the new component.\n\n:::",
+      "source_content_hash": "1d9e0414b4147259c633f51f415b90dd6cba240eaadae73f4b5fd9782bee9099",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n替換元件後，請**重新啟動開發伺服器**，讓 Docusaurus 識別新元件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "549cdcf9",
+      "source_content": ":::warning[Prefer staying on the safe side]\n\nBe sure to understand [which components are **safe to swizzle**](#what-is-safe-to-swizzle). Some components are **internal implementation details** of a theme.\n\n:::",
+      "source_content_hash": "ae731292fd2128c6256b2bd9a2f0fd9c00c512c557ac74b452eccb9c793601c0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[建議優先選擇安全方案]\n\n請務必了解[哪些元件可安全替換](#what-is-safe-to-swizzle)。部分元件是主題的**內部實作細節**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "da9f1cf7",
+      "source_content": ":::info\n\n`docusaurus swizzle` is only an automated way to help you swizzle the component. You can also create the `src/theme/SomeComponent.js` file manually, and Docusaurus will [resolve it](./advanced/client.mdx#theme-aliases). There's no internal magic behind this command!\n\n:::",
+      "source_content_hash": "b346dea1d6805dcdebf4fc049f48b071601b5fe56d6e4c69001a51ac4f19bc33",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n`docusaurus swizzle` 僅是協助自動化替換元件的工具。您也可以手動建立 `src/theme/SomeComponent.js` 檔案，Docusaurus 會[自動解析](./advanced/client.mdx#theme-aliases)。此命令背後並無特殊魔法！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c7fa1e8d",
+      "source_content": "### Ejecting {#ejecting}",
+      "source_content_hash": "b54ce6551c9a1b2ee40f8775a529b9019a2871ae91ea94672dfec8c093a8a5ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 彈出 (Ejecting) {#ejecting}"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Ejecting a theme component is the process of **creating a copy** of the original theme component, which you can **fully customize and override**.",
+      "source_content_hash": "09cd8c790622b05c04d80c6dcca23189504e2dd8e7b30dcf340c6b21837940ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "彈出主題元件是指**建立原始元件的副本**，您可對其進行**完整客製化與覆寫**。"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "To eject a theme component, use the swizzle CLI interactively, or with the `--eject` option:",
+      "source_content_hash": "a027593c47cb74e0c27ab28497755563bee7539d7a0f5c095a9c05c698f3a8b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要彈出主題元件，請使用互動式 swizzle CLI 或搭配 `--eject` 參數："
+      }
+    },
+    {
+      "segment_id": "4e583d18",
+      "source_content": "```bash npm2yarn\nnpm run swizzle [theme name] [component name] -- --eject\n```",
+      "source_content_hash": "5c807bc959c5fee2e6afbfe25c31b49aced233ba23251c43128ecad7f6dc1346",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4e583d18"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "An example:",
+      "source_content_hash": "53b34f6388cdf7fe46503dd47cbb22d9cae4a9c680da1cef86f6a12de084c669",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic Footer -- --eject\n```",
+      "source_content_hash": "0af89c6f86c289fab48a29c88a06b42fc63e3cd9e39c406eec59c18d27f3eb5c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_18fb666f"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "This will copy the current `<Footer />` component's implementation to your site's `src/theme` directory. Docusaurus will now use this `<Footer>` component copy instead of the original one. You are now free to completely re-implement the `<Footer>` component.",
+      "source_content_hash": "3117127db2a74b51b41081cf091366653ec504bb151aab44ce6bf058f2474c5d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此操作會將當前 `<Footer />` 元件的實作複製到您網站的 `src/theme` 目錄。Docusaurus 將使用此副本而非原始元件。您現在可完全重新實作 `<Footer>` 元件。"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```jsx title=\"src/theme/Footer/index.js\"\nimport React from 'react';\n\nexport default function Footer(props) {\n  return (\n    <footer>\n      <h1>This is my custom site footer</h1>\n      <p>And it is very different from the original</p>\n    </footer>\n  );\n}\n```",
+      "source_content_hash": "ef997a84ac6ea589614fdea42e8dd66d2dac50be944702ea8612aa5ba6c1d12a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "ff35cad6",
+      "source_content": ":::warning\n\nEjecting an [**unsafe**](#what-is-safe-to-swizzle) component can sometimes lead to copying a large amount of internal code, which you now have to maintain yourself. It can make Docusaurus upgrades more difficult, as you will need to migrate your customizations if the props received or internal theme APIs used have changed.\n\n**Prefer [wrapping](#wrapping) whenever possible**: the amount of code to maintain is smaller.\n\n:::",
+      "source_content_hash": "d2022c8748e0708fe6f5f6e053354938ae6e1f87473638106c3666a4e13c5fe6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n[**不安全**](#what-is-safe-to-swizzle)元件的彈出操作，有時會導致複製大量內部程式碼，這些程式碼現在需要自行維護。這可能使 Docusaurus 升級更加困難，因為如果接收到的屬性或使用的內部主題 API 發生變化，您將需要遷移自訂內容。\n\n**盡可能優先選擇[包裝](#wrapping)**：需要維護的程式碼量較少。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8830d530",
+      "source_content": ":::tip[Re-swizzling]\n\nTo keep ejected components up-to-date after a Docusaurus upgrade, re-run the eject command and compare the changes with `git diff`. You are also recommended to write a brief comment at the top of the file explaining what changes you have made, so that you could more easily re-apply your changes after re-ejection.\n\n:::",
+      "source_content_hash": "3e9fa4c12ad5e25fda37c21cf09ca5ed6de51329f91b464bed1ed4ffd55336f3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[重新彈出]\n\n為了在 Docusaurus 升級後保持彈出元件的最新狀態，請重新執行彈出命令並使用 `git diff` 比較變更。建議在檔案頂部寫一個簡短的註解，說明您所做的變更，這樣在重新彈出後可以更容易重新套用您的變更。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a5905b07",
+      "source_content": "### Wrapping {#wrapping}",
+      "source_content_hash": "a0ec1c9510ba28adb68ef815310819cfc871e5a9300b7f52f6ff8156519d5dd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 包裝 {#wrapping}"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "Wrapping a theme component is the process of **creating a wrapper** around the original theme component, which you can **enhance**.",
+      "source_content_hash": "218df4a5edd669e8f21f331abc2ac1affdc7ce994cce6d8fc5359c57d5aea52a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "包裝主題元件是**建立一個包裝器**圍繞原始主題元件的過程，您可以**增強**它。"
+      }
+    },
+    {
+      "segment_id": "b08ad0b4",
+      "source_content": "To wrap a theme component, use the swizzle CLI interactively, or with the `--wrap` option:",
+      "source_content_hash": "7c371f0b274813d0d962d6ce5be1da2ae6ed322e897fa388de9f0f6d8395d009",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要包裝一個主題元件，請使用互動式 swizzle CLI，或使用 `--wrap` 選項："
+      }
+    },
+    {
+      "segment_id": "90c0aa8a",
+      "source_content": "```bash npm2yarn\nnpm run swizzle [theme name] [component name] -- --wrap\n```",
+      "source_content_hash": "04ad626f9ad40152aa85a2a08b4df81821e5566a3918fb3bb485b3664aefdb04",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_90c0aa8a"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "An example:",
+      "source_content_hash": "53b34f6388cdf7fe46503dd47cbb22d9cae4a9c680da1cef86f6a12de084c669",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "9bc650e1",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic Footer -- --wrap\n```",
+      "source_content_hash": "6c8235d804eeec804f514bd0aaea338432fcc6c15d59ccdaf714f4ac06634272",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9bc650e1"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "This will create a wrapper in your site's `src/theme` directory. Docusaurus will now use the `<FooterWrapper>` component instead of the original one. You can now add customizations around the original component.",
+      "source_content_hash": "6951f72313a67b8cf4865f819ff27d5be66b746d2aad73be50accfe6693ed6f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這將在您網站的 `src/theme` 目錄中建立一個包裝器。Docusaurus 現在將使用 `<FooterWrapper>` 元件而不是原始元件。您現在可以在原始元件周圍添加自訂內容。"
+      }
+    },
+    {
+      "segment_id": "8185786b",
+      "source_content": "```jsx title=\"src/theme/Footer/index.js\"\nimport React from 'react';\nimport Footer from '@theme-original/Footer';\n\nexport default function FooterWrapper(props) {\n  return (\n    <>\n      <section>\n        <h2>Extra section</h2>\n        <p>This is an extra section that appears above the original footer</p>\n      </section>\n      <Footer {...props} />\n    </>\n  );\n}\n```",
+      "source_content_hash": "d5fa3fdcd339640c921f9db40e44e850c53ada52b085833673e5f5a061e879d3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8185786b"
+      }
+    },
+    {
+      "segment_id": "2d9a67ec",
+      "source_content": "<details>\n  <summary>What is this <code>@theme-original</code> thing?</summary>\n\nDocusaurus uses [theme aliases](./advanced/client.mdx#theme-aliases) to resolve the theme components to use. The newly created wrapper takes the `@theme/SomeComponent` alias. `@theme-original/SomeComponent` permits to import original component that the wrapper shadows without creating an infinite import loop where the wrapper imports itself.\n\n</details>",
+      "source_content_hash": "5fa698036204f3152620152fde7576e8f5437b5698e83905a7341bde49e6caa8",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2d9a67ec"
+      }
+    },
+    {
+      "segment_id": "a86ffe9d",
+      "source_content": ":::tip\n\nWrapping a theme is a great way to **add extra components around existing one** without [ejecting](#ejecting) it. For example, you can easily add a custom comment system under each blog post:\n\n```jsx title=\"src/theme/BlogPostItem.js\"\nimport React from 'react';\nimport BlogPostItem from '@theme-original/BlogPostItem';\nimport MyCustomCommentSystem from '@site/src/MyCustomCommentSystem';\n\nexport default function BlogPostItemWrapper(props) {\n  return (\n    <>\n      <BlogPostItem {...props} />\n      <MyCustomCommentSystem />\n    </>\n  );\n}\n```\n\n:::",
+      "source_content_hash": "c2d0fabe37401f0bce060689e7fcb286ebe65fcb2a1f8b4690a9db6b6d48b14c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n包裝主題是一種**在現有元件周圍添加額外元件**的好方法，而無需[彈出](#ejecting)它。例如，您可以輕鬆在每篇部落格文章下方添加自訂評論系統：\n\n```jsx title=\"src/theme/BlogPostItem.js\"\nimport React from 'react';\nimport BlogPostItem from '@theme-original/BlogPostItem';\nimport MyCustomCommentSystem from '@site/src/MyCustomCommentSystem';\n\nexport default function BlogPostItemWrapper(props) {\n  return (\n    <>\n      <BlogPostItem {...props} />\n      <MyCustomCommentSystem />\n    </>\n  );\n}\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8e2354b8",
+      "source_content": "## What is safe to swizzle? {#what-is-safe-to-swizzle}",
+      "source_content_hash": "bd2025f7fa6bdaa071d6fcc2180165f08348ae3a82a774e09c4509073cf179b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 什麼是安全的 swizzle 操作？ {#what-is-safe-to-swizzle}"
+      }
+    },
+    {
+      "segment_id": "628a6f26",
+      "source_content": "> With great power comes great responsibility",
+      "source_content_hash": "2ab6401aa281bb175aafb53a84a8acdf42e293c74fc021aa214bb53c149bf6ce",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 能力越大，責任越大"
+      }
+    },
+    {
+      "segment_id": "09d52457",
+      "source_content": "Some theme components are **internal implementation details** of a theme. Docusaurus allows you to swizzle them, but it **might be risky**.",
+      "source_content_hash": "ea76fe66e2fd23006bd4bd2ea7bbc13dd95aa0b679ecd36ff7a5f75db32b9745",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "某些主題元件是主題的**內部實現細節**。Docusaurus 允許您對其進行 swizzle 操作，但**可能具有風險**。"
+      }
+    },
+    {
+      "segment_id": "8750c0b5",
+      "source_content": "<details>\n\n<summary>Why is it risky?</summary>\n\nTheme authors (including us) might have to update their theme over time: changing the component props, name, file system location, types... For example, consider a component that receives two props `name` and `age`, but after a refactor, it now receives a `person` prop with the above two properties. Your component, which still expects these two props, will render `undefined` instead.\n\nMoreover, internal components may simply disappear. If a component is called `Sidebar` and it's later renamed to `DocSidebar`, your swizzled component will be completely ignored.\n\n**Theme components marked as unsafe may change in a backward-incompatible way between theme minor versions.** When upgrading a theme (or Docusaurus), your customizations might **behave unexpectedly**, and can even **break your site**.\n\n</details>",
+      "source_content_hash": "c09f1a1c1fbf25d07f098747edadc376c98114c4ca113a883b0d4285073b90dd",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8750c0b5"
+      }
+    },
+    {
+      "segment_id": "43287462",
+      "source_content": "For each theme component, the swizzle CLI will indicate **3 different levels of safety** declared by theme authors:",
+      "source_content_hash": "ec1cfadd450bda02d2d924b424e09f518e458e0f18b7e27eef8ae7858b94178f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於每個主題元件，swizzle CLI 會標示主題作者聲明的**3種不同安全級別**："
+      }
+    },
+    {
+      "segment_id": "ec457069",
+      "source_content": "- **Safe**: this component is safe to be swizzled, its public API is considered stable, and no breaking changes should happen within a theme **major version**\n- **Unsafe**: this component is a theme implementation detail, not safe to be swizzled, and breaking changes might happen within a theme **minor version**\n- **Forbidden**: the swizzle CLI will prevent you from swizzling this component, because it is not designed to be swizzled at all",
+      "source_content_hash": "60f5e1c00543e8993abab0cfc84191ed3729cc62d5417a3f70823b3106f5b68f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **安全**：此元件可以安全地進行 swizzle 操作，其公共 API 被認為是穩定的，且在主題**主要版本**內不應發生破壞性變更\n- **不安全**：此元件是主題的實現細節，不適合進行 swizzle 操作，且在主題**次要版本**內可能發生破壞性變更\n- **禁止**：swizzle CLI 將阻止您對此元件進行 swizzle 操作，因為它根本不設計用於 swizzle"
+      }
+    },
+    {
+      "segment_id": "bea06e2b",
+      "source_content": ":::note\n\nSome components might be safe to wrap, but not safe to eject.\n\n:::",
+      "source_content_hash": "3ea01093fbbba776f4e759c0f2b7ebe56f6e0feb2e71c9c874bfcefde38c3999",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n某些元件可能適合包裝，但不適合彈出。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ce356af6",
+      "source_content": ":::info\n\nDon't be too **afraid to swizzle unsafe components**: just keep in mind that **breaking changes** might happen, and you might need to upgrade your customizations manually on minor version upgrades.\n\n:::",
+      "source_content_hash": "08afdbdfeb9124ab47cc0beed155620950df1aff15716c96f7746c5b2a8a2d71",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n不要**過於害怕 swizzle 不安全元件**：只需記住**破壞性變更**可能會發生，您可能需要在次要版本升級時手動升級自訂內容。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d8378e81",
+      "source_content": ":::note[Report your use-case]\n\nIf you have a **strong use-case for swizzling an unsafe component**, please [**report it here**](https://github.com/facebook/docusaurus/discussions/5468) and we will work together to find a solution to make it safe.\n\n:::",
+      "source_content_hash": "bab00a1c9551bd625c39eff03c171f2368390b508a7f076e21c227675d5e3202",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note[報告您的使用案例]\n\n如果您有**強烈的需求需要 swizzle 不安全元件**，請[**在此報告**](https://github.com/facebook/docusaurus/discussions/5468)，我們將共同尋找解決方案使其變得安全。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bb74dfa2",
+      "source_content": "## Which component should I swizzle? {#which-component-should-i-swizzle}",
+      "source_content_hash": "b5cfea33420515fc4122e172a0a22174e23fa963e105817a11ac4bcf8f5f39cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 我應該 swizzle 哪個元件？ {#which-component-should-i-swizzle}"
+      }
+    },
+    {
+      "segment_id": "f4b938fe",
+      "source_content": "It is not always clear which component you should swizzle exactly to achieve the desired result. `@docusaurus/theme-classic`, which provides most of the theme components, has about [100 components](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)!",
+      "source_content_hash": "3deea3003a5e92ffd1d8ed07044b312933e4c3a3e90126de9b4c9fe538297ca0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要實現預期結果，通常並不明確應該具體 swizzle 哪個元件。提供大多數主題元件的 `@docusaurus/theme-classic` 約有[100個元件](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)！"
+      }
+    },
+    {
+      "segment_id": "bb4c48bc",
+      "source_content": ":::tip\n\nTo print an overview of all the `@docusaurus/theme-classic` components:\n\n```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic -- --list\n```\n\n:::",
+      "source_content_hash": "cbcb5ab244892cfcebc88c8a9bfb10043cedf06d6b8dd170a90995140adbc029",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若要列印所有 `@docusaurus/theme-classic` 元件的概覽：\n\n```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic -- --list\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "740d2e67",
+      "source_content": "You can follow these steps to locate the appropriate component to swizzle:",
+      "source_content_hash": "255959b8f4686d22dcdd8a3cea0e81ad195318bd0d1e31fcc3a7b560cf54b722",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以按照以下步驟來定位需要替換的適當元件："
+      }
+    },
+    {
+      "segment_id": "9de5fef5",
+      "source_content": "1. **Component description.** Some components provide a short description, which is a good way to find the right one.\n2. **Component name.** Official theme components are semantically named, so you should be able to infer its function from the name. The swizzle CLI allows you to enter part of a component name to narrow down the available choices. For example, if you run `yarn swizzle @docusaurus/theme-classic`, and enter `Doc`, only the docs-related components will be listed.\n3. **Start with a higher-level component.** Components form a tree with some components importing others. Every route will be associated with one top-level component that the route will render (most of them listed in [Routing in content plugins](./advanced/routing.mdx#routing-in-content-plugins)). For example, all blog post pages have `@theme/BlogPostPage` as the topmost component. You can start with swizzling this component, and then go down the component tree to locate the component that renders just what you are targeting. Don't forget to unswizzle the rest by deleting the files after you've found the correct one, so you don't maintain too many components.\n4. **Read the [theme source code](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)** and use search wisely.",
+      "source_content_hash": "d22a3fe67ab1476f223ff1000e230a13e1e5fc1211932179e3f3ff0a24b6035b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. **元件描述**。部分元件提供簡短說明，這是找到正確元件的好方法。\n2. **元件名稱**。官方主題元件皆採用語義化命名，因此您應能從名稱推斷其功能。替換 CLI 允許您輸入部分元件名稱來縮小可用選項範圍。例如，若執行 `yarn swizzle @docusaurus/theme-classic` 並輸入 `Doc`，則僅會列出與文檔相關的元件。\n3. **從高層級元件開始**。元件會形成樹狀結構，部分元件會導入其他元件。每條路由都會關聯一個頂層元件（大多數列於[內容外掛的路由](./advanced/routing.mdx#routing-in-content-plugins)中），該元件將由路由渲染。例如，所有部落格文章頁面的最頂層元件都是 `@theme/BlogPostPage`。您可以先替換此元件，然後沿元件樹向下定位到僅渲染您目標內容的元件。找到正確元件後，請務必刪除其餘替換檔案以避免維護過多元件。\n4. **閱讀[主題原始碼](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)**並善用搜尋功能。"
+      }
+    },
+    {
+      "segment_id": "1e1d7f4d",
+      "source_content": ":::tip[Just ask!]\n\nIf you still have no idea which component to swizzle to achieve the desired effect, you can reach out for help in one of our [support channels](/community/support).\n\nWe also want to understand better your fanciest customization use-cases, so please [**report them**](https://github.com/facebook/docusaurus/discussions/5468).\n\n:::",
+      "source_content_hash": "6631f49db739e1b01379ea75c8b039e4ed8791a4cd21802f0c1e1f558bbaa597",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[直接提問！]\n\n若仍不確定該替換哪個元件以實現預期效果，可透過我們的[支援管道](/community/support)尋求協助。\n\n我們也希望更了解您最精緻的客製化使用案例，請[**提交報告**](https://github.com/facebook/docusaurus/discussions/5468)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "793be93c",
+      "source_content": "## Do I need to swizzle? {#do-i-need-to-swizzle}",
+      "source_content_hash": "b00eafe0e682440a38edbb9405b5cc3ebbe671620d6b5443eac06325d20cd2e2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 是否需要替換元件？ {#do-i-need-to-swizzle}"
+      }
+    },
+    {
+      "segment_id": "4786f22b",
+      "source_content": "Swizzling ultimately means you have to maintain some additional React code that interact with Docusaurus internal APIs. If you can, think about the following alternatives when customizing your site:",
+      "source_content_hash": "99b299fcb047bdfd3a93f86b3322225e6d9f9dd049f9bbc78d1a0fe1212663e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "替換元件最終意味著您需維護與 Docusaurus 內部 API 互動的 React 程式碼。若有可能，在客製化網站時請考慮以下替代方案："
+      }
+    },
+    {
+      "segment_id": "acf357aa",
+      "source_content": "1. **Use CSS.** CSS rules and selectors can often help you achieve a decent degree of customization. Refer to [styling and layout](./styling-layout.mdx) for more details.\n2. **Use translations.** It may sound surprising, but translations are ultimately just a way to customize the text labels. For example, if your site's default language is `en`, you can still run `yarn write-translations -l en` and edit the `code.json` emitted. Refer to the [i18n tutorial](./i18n/i18n-tutorial.mdx) for more details.",
+      "source_content_hash": "8af35db0546e0a5fc19b7eb19c6e38ab4cf45f47e62a1cc800b9704280079da3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. **使用 CSS**。CSS 規則和選擇器通常可幫助實現相當程度的客製化。詳見[樣式與版面配置](./styling-layout.mdx)。\n2. **使用翻譯**。這聽起來可能令人驚訝，但翻譯本質上只是自訂文字標籤的一種方式。例如，若您的網站預設語言為 `en`，仍可執行 `yarn write-translations -l en` 並編輯生成的 `code.json`。詳見[國際化教學](./i18n/i18n-tutorial.mdx)。"
+      }
+    },
+    {
+      "segment_id": "3d4cb4c2",
+      "source_content": ":::tip\n\n**The smaller, the better.** If swizzling is inevitable, prefer to swizzle only the relevant part and maintain as little code on your own as possible. Swizzling a small component often means less risk of **breaking changes** during upgrade.\n\n[Wrapping](#wrapping) is also a far safer alternative to [ejecting](#ejecting).\n\n:::",
+      "source_content_hash": "ac4ce6b0ef07cea5acb55012301a8df4f876d985b993e979a184fbfe5ff3eb46",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n**越小越好**。若必須替換元件，請優先僅替換相關部分並自行維護最少量的程式碼。替換小型元件通常意味著升級時發生**重大變更**的風險較低。\n\n[封裝](#wrapping)也是比[彈出](#ejecting)更安全的替代方案。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2567fe3c",
+      "source_content": "## Wrapping your site with `<Root>` {#wrapper-your-site-with-root}",
+      "source_content_hash": "7ff58ee5c22301a183c370e441955af2a74d751f3b4ea3402205e2c9a9f52685",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用 `<Root>` 封裝您的網站 {#wrapper-your-site-with-root}"
+      }
+    },
+    {
+      "segment_id": "b16b56a2",
+      "source_content": "The `<Root>` component is rendered at the **very top** of the React tree, above the theme `<Layout>`, and **never unmounts**. It is the perfect place to add stateful logic that should not be re-initialized across navigations (user authentication status, shopping cart state...).",
+      "source_content_hash": "314d41cedd096d8cf4195b888effd437be38e97121f174513b3204a6816a1ac4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`<Root>` 元件會渲染在 React 樹的**最頂層**，位於主題 `<Layout>` 之上且**永不卸載**。它是添加不應在導航間重新初始化之狀態邏輯（使用者驗證狀態、購物車狀態等）的理想位置。"
+      }
+    },
+    {
+      "segment_id": "27f3a471",
+      "source_content": "Swizzle it **manually** by creating a file at `src/theme/Root.js`:",
+      "source_content_hash": "9afb5a1f4ada13479aa6d4f919ff101db9db3d6846654a746708d41f6e348d45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過在 `src/theme/Root.js` 建立檔案來**手動**替換它："
+      }
+    },
+    {
+      "segment_id": "20bc07ce",
+      "source_content": "```js title=\"src/theme/Root.js\"\nimport React from 'react';\n\n// Default implementation, that you can customize\nexport default function Root({children}) {\n  return <>{children}</>;\n}\n```",
+      "source_content_hash": "36279d26bcbd47112888e0dde479b12728bb1ee286dad4f9b89be57f2e28dde1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_20bc07ce"
+      }
+    },
+    {
+      "segment_id": "7358c1ab",
+      "source_content": ":::tip\n\nUse this component to render React Context providers.\n\n:::",
+      "source_content_hash": "9c5b3f71055b10ea03f37a33195782718d0076e19b1553be5813c90ea46f99a7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用此元件來渲染 React Context 提供者。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/swizzling.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.369819+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "d8ebb548c773e8ff6c11977230816e52c91a2aef3162e8e796e4c775cbfa25c6"
+  }
+}

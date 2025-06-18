@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/api/misc/eslint-plugin/prefer-docusaurus-heading.mdx",
+  "source_file_content_hash": "c8e345e6edde2bbce393d2b4d57828232d21f62cfc4ca51f95a5c77d9486cab8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /api/misc/@docusaurus/eslint-plugin/prefer-docusaurus-heading\n---",
+      "source_content_hash": "62da31dc3c56125dac402f3d5bffa182b8e0c3eea87ee09040732866d70bf860",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# prefer-docusaurus-heading",
+      "source_content_hash": "021c305cb6769fbf400643907c7a70376b932cf5ea0ec97c94fc00e15b16d233",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 優先使用 Docusaurus 標題組件"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Ensures that the `@theme/Heading` theme component provided by Docusaurus [`theme-classic`](../../themes/theme-classic.mdx) is used instead of `<hn>` tags for headings.",
+      "source_content_hash": "fcb3e043f8bf41b0533d813219ca4d908891b2ce1901c56f17d44da1af38e9c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "確保使用 Docusaurus [`theme-classic`](../../themes/theme-classic.mdx) 提供的 `@theme/Heading` 主題組件來替代 `<hn>` 標籤作為標題。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Rule Details {#details}",
+      "source_content_hash": "690b629e8ddc6e690cbd5cbf346df9a24a48806263051f247d6714c4a3c6ead7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則詳情 {#details}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Examples of **incorrect** code for this rule:",
+      "source_content_hash": "7c6462bacad6bdc980d88d6feb75fba43108d257e6c559378586af7869988718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**錯誤**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "b9c7a144",
+      "source_content": "```html\n<h1>This is heading 1</h1>\n\n<h2>This is heading 2</h2>\n\n<h3>This is heading 3</h3>\n```",
+      "source_content_hash": "cd58fc9d4ac4db4b83ce25990e41c0bbb6f5a139397f446419585454a187e090",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b9c7a144"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Examples of **correct** code for this rule:",
+      "source_content_hash": "76019e5c3c094061d1e3142f6873cc0ad1c55a6f9b9596980100921b3099184f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**正確**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "41a8ae85",
+      "source_content": "```javascript\nimport Heading from '@theme/Heading'\n\n<Heading as='h1'>This is heading 1</Heading>\n\n<Heading as='h2'>This is heading 2</Heading>\n\n<Heading as='h3'>This is heading 3</Heading>\n```",
+      "source_content_hash": "80ab34672b77ce8ed85a1c3946719d9cfa43119a42e74f8bfd5f3b346238b372",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41a8ae85"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/api/misc/eslint-plugin/prefer-docusaurus-heading.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.012106+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "c8e345e6edde2bbce393d2b4d57828232d21f62cfc4ca51f95a5c77d9486cab8"
+  }
+}

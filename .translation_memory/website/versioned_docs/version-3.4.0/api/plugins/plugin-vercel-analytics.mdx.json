@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.4.0/api/plugins/plugin-vercel-analytics.mdx",
+  "source_file_content_hash": "5f97f8e111e2aa7197e7c0eb32f735daecee8e3f228d105faac31fe1d8246f5e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 11\nslug: /api/plugins/@docusaurus/plugin-vercel-analytics\n---",
+      "source_content_hash": "0794168e4418672b8ccc48fc70fcbdcf4a3907bf6d4b896acc2d1ba5cd9022d3",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-vercel-analytics",
+      "source_content_hash": "be70c8f1639bfbc3edfd802849460c2a2fac38ff592e386597db0df01380b01c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-vercel-analytics"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "[Vercel Analytics](https://vercel.com/docs/analytics) provides comprehensive insights into your website's visitors, tracking top pages, referrers, and demographics like location, operating systems, and browser info.",
+      "source_content_hash": "f7efad35f6478a9ebdce14c44f97207bad0b34b78845379b8ca7d2a6b1ddc617",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Vercel Analytics](https://vercel.com/docs/analytics) 提供全面的網站訪客洞察，可追蹤熱門頁面、流量來源及地理位置、作業系統和瀏覽器等人口統計資料。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::warning[production only]\n\nThis plugin is always inactive in development and **only active in production** (`docusaurus build`) to avoid polluting the analytics statistics.\n\n:::",
+      "source_content_hash": "3d52368470673559adbefd00f2a284c15cac6e230ce387324f40584ad64e445f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[僅限生產環境]\n\n此插件在開發環境中始終處於非活躍狀態，**僅在生產環境** (`docusaurus build`) 下啟用，以避免污染分析統計數據。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-vercel-analytics\n```",
+      "source_content_hash": "1a9053d3b05b5a46b9f1d2a4b8f5aeace354802e08353a223b127e438a2afab6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受字段："
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "84112082",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `mode` | `string` | `'auto'` | Override the automatic environment detection. Read the [official docs](https://vercel.com/docs/analytics/package#mode) for details. |\n| `debug` | `boolean` | `undefined` | Enable browser console logging of analytics events. Read the [official docs](https://vercel.com/docs/analytics/package#debug) for details. |",
+      "source_content_hash": "24f077a95c669f1d8680d52dd01567206b2af220919b7c470a60d3b0b284f742",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_84112082"
+      }
+    },
+    {
+      "segment_id": "be2d5397",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_be2d5397"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "You can configure this plugin through plugin options.",
+      "source_content_hash": "41dec5de4a915ed94b3a6764ed0b2530b6c71a123c57bb0157766a8adcfa07fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以通過插件選項配置此插件。"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      'vercel-analytics',\n      {\n        debug: true,\n        mode: 'auto',\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "fef4380882f4e4c68bb47ea09ad5aa29f897adc42b4df1c87b103e18b9624fb7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.4.0/api/plugins/plugin-vercel-analytics.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.293594+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "5f97f8e111e2aa7197e7c0eb32f735daecee8e3f228d105faac31fe1d8246f5e"
+  }
+}

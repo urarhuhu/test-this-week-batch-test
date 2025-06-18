@@ -1,0 +1,63 @@
+---
+sidebar_position: 2
+slug: /api/themes/@docusaurus/theme-classic
+---
+
+# 📦 經典主題
+
+import APITable from '@site/src/components/APITable';
+
+Docusaurus 的經典主題。
+
+有關配置的更多詳情，您可以參考[主題配置頁面](theme-configuration.mdx)。
+
+```bash npm2yarn
+npm install --save @docusaurus/theme-classic
+```
+
+:::tip
+
+如果您已安裝 `@docusaurus/preset-classic`，則無需將其作為依賴項單獨安裝。
+
+:::
+
+## 配置 {#configuration}
+
+可接受字段：
+
+```mdx-code-block
+<APITable>
+```
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `customCss` | <code>string[] \| string</code> | `[]` | Stylesheets to be imported globally as [client modules](../../advanced/client.mdx#client-modules). Relative paths are resolved against the site directory. |
+
+```mdx-code-block
+</APITable>
+```
+
+:::note
+
+主題的大部分配置在 `themeConfig` 中完成，詳見[主題配置](./theme-configuration.mdx)。
+
+:::
+
+### 配置範例 {#ex-config}
+
+您可以通過預設選項或插件選項來配置此主題。
+
+:::tip
+
+大多數 Docusaurus 用戶通過預設選項配置此插件。
+
+:::
+
+```js config-tabs
+// Preset Options: theme
+// Plugin Options: @docusaurus/theme-classic
+
+const config = {
+  customCss: './src/css/custom.css',
+};
+```

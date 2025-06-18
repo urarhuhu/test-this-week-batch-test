@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.4.0/advanced/plugins.mdx",
+  "source_file_content_hash": "b0e5449f0663461c2f650191b78e1786c38056a772ee29125510cf1bdb695422",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Plugins",
+      "source_content_hash": "687f7e20fac40fcedadc8a0fa36d35efb103974fe23b722fea0a15bae9bc055b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 外掛程式"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Plugins are the building blocks of features in a Docusaurus site. Each plugin handles its own individual feature. Plugins may work and be distributed as part of a bundle via presets.",
+      "source_content_hash": "7a6408a0afc1cd166ca1e7c6d2e51ffac1b04cc1708d40b58825011ba22e295a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外掛程式是 Docusaurus 網站功能的基礎構件。每個外掛程式負責處理其獨立功能。外掛程式可透過預設集以套件組合形式運作和分發。"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "## Creating plugins {#creating-plugins}",
+      "source_content_hash": "75480f2a2ec940b56593bfa0e0e9d8f514c1e0f3152e332884cf70f5cd011444",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 建立外掛程式 {#creating-plugins}"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "A plugin is a function that takes two parameters: `context` and `options`. It returns a plugin instance object (or a promise). You can create plugins as functions or modules. For more information, refer to the [plugin method references section](../api/plugin-methods/README.mdx).",
+      "source_content_hash": "e6eb0a84e65a1434a4a6b1e4345595d4229c5ed65d5b9322a375f264290b95dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外掛程式是一個接收兩個參數的函式：`context` 和 `options`。它會回傳一個外掛程式實例物件（或 Promise）。您可以將外掛程式建立為函式或模組。更多資訊請參閱[外掛程式方法參考章節](../api/plugin-methods/README.mdx)。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "### Function definition {#function-definition}",
+      "source_content_hash": "375905ad23a956dffafb437ae8a86ba4e860f9ff8d4dcc1387c666e6b5a15565",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 函式定義 {#function-definition}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "You can use a plugin as a function directly included in the Docusaurus config file:",
+      "source_content_hash": "fddf6c280de7b4554d3ce6adc6cafda8c24029600efbc6c17a87fb464ca52fff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以直接在 Docusaurus 配置檔案中以函式形式使用外掛程式："
+      }
+    },
+    {
+      "segment_id": "b9c7a144",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  plugins: [\n    // highlight-start\n    async function myPlugin(context, options) {\n      // ...\n      return {\n        name: 'my-plugin',\n        async loadContent() {\n          // ...\n        },\n        async contentLoaded({content, actions}) {\n          // ...\n        },\n        /* other lifecycle API */\n      };\n    },\n    // highlight-end\n  ],\n};\n```",
+      "source_content_hash": "657e2ee6cc676a9ca5425cf8f9312f1d6e9cbf14aedc8a4414d476ca5e94b6c4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b9c7a144"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "### Module definition {#module-definition}",
+      "source_content_hash": "5734577eff9a7f18f968b6a0c6cf0b3d596f71afe321623ac27c90adeedfb911",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 模組定義 {#module-definition}"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "You can use a plugin as a module path referencing a separate file or npm package:",
+      "source_content_hash": "5dadc2157fed26873773f854b04b145e450946c2284ed04485eb43879d6549ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以將外掛程式作為參考獨立檔案或 npm 套件的模組路徑使用："
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  plugins: [\n    // without options:\n    './my-plugin',\n    // or with options:\n    ['./my-plugin', options],\n  ],\n};\n```",
+      "source_content_hash": "060ee86712a78179a00d67e79c5b7ca003969f8bbbfc85df3132cfdc17c0da0a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "Then in the folder `my-plugin`, you can create an `index.js` such as this:",
+      "source_content_hash": "2946100ab95fcf6790607bf40774e58e05cfb3bb5ee5856ef52c8f42a549a76c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著在 `my-plugin` 資料夾中，您可以建立如下的 `index.js`："
+      }
+    },
+    {
+      "segment_id": "3ce8f045",
+      "source_content": "```js title=\"my-plugin/index.js\"\nexport default async function myPlugin(context, options) {\n  // ...\n  return {\n    name: 'my-plugin',\n    async loadContent() {\n      /* ... */\n    },\n    async contentLoaded({content, actions}) {\n      /* ... */\n    },\n    /* other lifecycle API */\n  };\n}\n```",
+      "source_content_hash": "8a714b84b86b2afe2d3d520d0a2e5211aa8edb2e26bad9668c58ed572378f52f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3ce8f045"
+      }
+    },
+    {
+      "segment_id": "a635fada",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "---"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "You can view all plugins installed in your site using the [debug plugin's metadata panel](/__docusaurus/debug/metadata).",
+      "source_content_hash": "9b82cde5a763f604e6efaf477b8ede221eec194695360cb5c130d178705dfc99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以使用[除錯外掛程式的中繼資料面板](/__docusaurus/debug/metadata)查看網站中安裝的所有外掛程式。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Plugins come as several types:",
+      "source_content_hash": "337ed577646f6507b420dc521e37802b68ec558f3e075f76ded5d8674d452f1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外掛程式有以下幾種類型："
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "- `package`: an external package you installed\n- `project`: a plugin you created in your project, given to Docusaurus as a local file path\n- `local`: a plugin created using the function definition\n- `synthetic`: a \"fake plugin\" Docusaurus created internally, so we take advantage of our modular architecture and don't let the core do much special work. You won't see this in the metadata because it's an implementation detail.",
+      "source_content_hash": "56b06866a51cf160a65962b386651e9fea1a9dc9d13b3acd99bebf5688c801e0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `package`：您安裝的外部套件\n- `project`：您在專案中建立並以本地檔案路徑提供給 Docusaurus 的外掛程式\n- `local`：使用函式定義建立的外掛程式\n- `synthetic`：Docusaurus 內部建立的「虛擬外掛程式」，以便利用模組化架構，不讓核心處理太多特殊工作。您不會在中繼資料中看到此類型，因為這是實作細節。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "You can access them on the client side with `useDocusaurusContext().siteMetadata.pluginVersions`.",
+      "source_content_hash": "315894feb353f7127e8f0e8489f48606cd08c326362ce9130eecfa5397d23148",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以在客戶端透過 `useDocusaurusContext().siteMetadata.pluginVersions` 存取它們。"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Plugin design {#plugin-design}",
+      "source_content_hash": "a167796a8954b812505964b76220735d92e8272b6a5d56abc77cedc103916dc2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 外掛程式設計 {#plugin-design}"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "Docusaurus' implementation of the plugins system provides us with a convenient way to hook into the website's lifecycle to modify what goes on during development/build, which involves (but is not limited to) extending the webpack config, modifying the data loaded, and creating new components to be used in a page.",
+      "source_content_hash": "0cf0fbf8de89c48c581221f301c4c43ac3a027f53f6b49bf520f297a32b14d26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的外掛程式系統實作提供了一種便捷方式，可掛鉤至網站生命週期來修改開發/建置過程中的行為，這包括（但不限於）擴充 webpack 配置、修改載入的資料，以及建立用於頁面的新元件。"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "### Theme design {#theme-design}",
+      "source_content_hash": "ac8e3b07d2a60e26d70ea62c3730dd5d6feaadf513f5bdf11c204f32dc88f7c6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題設計 {#theme-design}"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "When plugins have loaded their content, the data is made available to the client side through actions like [`createData` + `addRoute`](../api/plugin-methods/lifecycle-apis.mdx#addRoute) or [`setGlobalData`](../api/plugin-methods/lifecycle-apis.mdx#setGlobalData). This data has to be _serialized_ to plain strings, because [plugins and themes run in different environments](./architecture.mdx). Once the data arrives on the client side, the rest becomes familiar to React developers: data is passed along components, components are bundled with Webpack, and rendered to the window through `ReactDOM.render`...",
+      "source_content_hash": "cacc729567c5628afb15e5a30fe93b8d16b589ac4ccfe4f8811b89f46ca6fba6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當外掛程式載入其內容後，資料會透過 [`createData` + `addRoute`](../api/plugin-methods/lifecycle-apis.mdx#addRoute) 或 [`setGlobalData`](../api/plugin-methods/lifecycle-apis.mdx#setGlobalData) 等操作提供給客戶端。這些資料必須被_序列化_為純文字字串，因為[外掛程式和主題執行於不同環境](./architecture.mdx)。一旦資料抵達客戶端，後續流程對 React 開發者來說就很熟悉了：資料沿元件傳遞，元件與 Webpack 打包，並透過 `ReactDOM.render` 渲染至視窗..."
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "**Themes provide the set of UI components to render the content.** Most content plugins need to be paired with a theme in order to be actually useful. The UI is a separate layer from the data schema, which makes swapping designs easy.",
+      "source_content_hash": "0871f2cfb76ce3f995966423b13d96d3ecaba1387c9430cdf3002a3a3ae755f5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**主題提供用於渲染內容的 UI 元件集合。** 多數內容外掛程式需要搭配主題才能實際發揮作用。UI 是與資料結構分離的獨立層，這使得設計更換變得容易。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "For example, a Docusaurus blog may consist of a blog plugin and a blog theme.",
+      "source_content_hash": "954c9cbefb4911f99aed9f2dfb65fe4bd53a98ff896108fbf0bda0d629d428ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，Docusaurus 部落格可能由部落格外掛程式和部落格主題組成。"
+      }
+    },
+    {
+      "segment_id": "8a58dc39",
+      "source_content": ":::note\n\nThis is a contrived example: in practice, `@docusaurus/theme-classic` provides the theme for docs, blog, and layouts.\n\n:::",
+      "source_content_hash": "0e736274c51a128430f5388960876cc8bcff3ea04bfbae9f34d695374e638f97",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n這是個刻意簡化的範例：實際上 `@docusaurus/theme-classic` 會為文件、部落格和佈局提供主題。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // highlight-next-line\n  themes: ['theme-blog'],\n  plugins: ['plugin-content-blog'],\n};\n```",
+      "source_content_hash": "3885f953181387d2e50ffc90cd13bad6ea262245a4614082d66adb3698d61ea1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "And if you want to use Bootstrap styling, you can swap out the theme with `theme-blog-bootstrap` (another fictitious non-existing theme):",
+      "source_content_hash": "dd782191ef7c2bbc0482cc243dec093ff7ae4c4a8a3700938aee35add47cad86",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您想使用 Bootstrap 樣式，可以替換為 `theme-blog-bootstrap` 主題（另一個虛構的假設主題）："
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // highlight-next-line\n  themes: ['theme-blog-bootstrap'],\n  plugins: ['plugin-content-blog'],\n};\n```",
+      "source_content_hash": "b476387644d000e03c027304ebb94d359b9b8be6e37bdb4273a9cba46cd37706",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "Now, although the theme receives the same data from the plugin, how the theme chooses to _render_ the data as UI can be drastically different.",
+      "source_content_hash": "7cafba0111356b748dabb645300ba32f5a0a9d95518a0d8ae92fd60bfcedf53b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在，雖然主題從外掛程式接收相同的資料，但主題選擇如何將資料_渲染_為 UI 的方式可能截然不同。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "While themes share the exact same lifecycle methods with plugins, themes' implementations can look very different from those of plugins based on themes' designed objectives.",
+      "source_content_hash": "6320fbdeb545ee978965b7ebbebf8422709a154d3516e488ebbb4e6ff7a095d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然主題與外掛程式共享完全相同的生命週期方法，但基於主題的設計目標，其實作方式可能與外掛程式大不相同。"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Themes are designed to complete the build of your Docusaurus site and supply the components used by your site, plugins, and the themes themselves. A theme still acts like a plugin and exposes some lifecycle methods, but most likely they would not use [`loadContent`](../api/plugin-methods/lifecycle-apis.mdx#loadContent), since they only receive data from plugins, but don't generate data themselves; themes are typically also accompanied by an `src/theme` directory full of components, which are made known to the core through the [`getThemePath`](../api/plugin-methods/extend-infrastructure.mdx#getThemePath) lifecycle.",
+      "source_content_hash": "66f9ef563b7f0257b75e33c2ec1ac33dd1b6a275622ca50c53cdc48e07f5bba3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "主題的設計目的是完成 Docusaurus 網站的建構，並提供網站、插件及主題本身所使用的元件。主題仍像插件一樣運作並公開部分生命週期方法，但很可能不會使用 [`loadContent`](../api/plugin-methods/lifecycle-apis.mdx#loadContent)，因為它們僅接收來自插件的資料，而不自行產生資料；主題通常還伴隨一個充滿元件的 `src/theme` 目錄，這些元件透過 [`getThemePath`](../api/plugin-methods/extend-infrastructure.mdx#getThemePath) 生命週期讓核心知曉。"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "To summarize:",
+      "source_content_hash": "a69708d2da617d97fee24887c34c3458cc971e33274c1808c09a762cdc183a7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "總結如下："
+      }
+    },
+    {
+      "segment_id": "40a587f3",
+      "source_content": "- Themes share the same lifecycle methods with Plugins\n- Themes are run after all existing Plugins\n- Themes add component aliases by providing `getThemePath`.",
+      "source_content_hash": "2e7c4e19abd18e828248d2b080a60049e5deb112c38bde6be5b905477d907cd2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 主題與插件共享相同的生命週期方法\n- 主題在所有現有插件之後執行\n- 主題透過提供 `getThemePath` 來新增元件別名。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.4.0/advanced/plugins.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.199426+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "b0e5449f0663461c2f650191b78e1786c38056a772ee29125510cf1bdb695422"
+  }
+}

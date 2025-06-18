@@ -1,0 +1,252 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/typescript-support.mdx",
+  "source_file_content_hash": "5367f9087319731bdb56a8f1bb559b144b3ee99389cf5b35d6b0095aacf9ac4b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Docusaurus is written in TypeScript and provides first-class TypeScript support.\n---",
+      "source_content_hash": "3036a72bb50ad0c9fd60d44db4e97aacc8c8c6079dfb0803b18c46f0bc434463",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# TypeScript Support",
+      "source_content_hash": "d84d00239deda305545573b370010b059ee088fcf72c0986235b5e400a9789d1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# TypeScript 支援"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus is written in TypeScript and provides first-class TypeScript support.",
+      "source_content_hash": "a2b8ee43c818ee1ed1fa39da19cd085118450e839c5640610e6473f4557407c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用 TypeScript 編寫，並提供一流的 TypeScript 支援。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Initialization {#initialization}",
+      "source_content_hash": "de3a22527272cd0f8160bb5d274a1b86009dc893cb1941248fe2f654180579a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 初始化 {#initialization}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus supports writing and using TypeScript theme components. If the init template provides a TypeScript variant, you can directly initialize a site with full TypeScript support by using the `--typescript` flag.",
+      "source_content_hash": "3c6c1b702a59bd74f6b3594478e66ac75e9972c3120ec3a29a76cb8b49fea6f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 支援編寫和使用 TypeScript 主題元件。若初始化模板提供 TypeScript 變體，您可直接透過 `--typescript` 標誌初始化具有完整 TypeScript 支援的站點。"
+      }
+    },
+    {
+      "segment_id": "b9c7a144",
+      "source_content": "```bash\nnpx create-docusaurus@latest my-website classic --typescript\n```",
+      "source_content_hash": "c661e955cb890e28b3af2cc2e504d63be37eb5505fb5faa87612834f6d6cfb4c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b9c7a144"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Below are some guides on how to migrate an existing project to TypeScript.",
+      "source_content_hash": "ddfa34ebbe5abe7ef09888ba1891d0d10319e9e00e851dd719b0ab136a09b218",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是將現有專案遷移至 TypeScript 的指南。"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## Setup {#setup}",
+      "source_content_hash": "a2c3b327b6de8a7a4e73648d09cd46e3d793cfbb1b168642be5bb137bc21d541",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設定 {#setup}"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "To start using TypeScript, add `@docusaurus/module-type-aliases` and the base TS config to your project:",
+      "source_content_hash": "5426df5274c23d413584c184942a2d22814da8f52996aa853a38e433da7aa76e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要開始使用 TypeScript，請將 `@docusaurus/module-type-aliases` 和基礎 TS 配置加入您的專案："
+      }
+    },
+    {
+      "segment_id": "41a8ae85",
+      "source_content": "```bash npm2yarn\nnpm install --save-dev typescript @docusaurus/module-type-aliases @tsconfig/docusaurus\n```",
+      "source_content_hash": "5c9bae3c175d3e44bfba2fd45b8ffb47efd5e174f31c807a863248707bb9f3cc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41a8ae85"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Then add `tsconfig.json` to your project root with the following content:",
+      "source_content_hash": "84fa0897537ad1ee6c53835af6e02a86920cbd56fa21263aab3ebe3987959456",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著在專案根目錄新增包含以下內容的 `tsconfig.json`："
+      }
+    },
+    {
+      "segment_id": "0c911872",
+      "source_content": "```json title=\"tsconfig.json\"\n{\n  \"extends\": \"@tsconfig/docusaurus/tsconfig.json\",\n  \"compilerOptions\": {\n    \"baseUrl\": \".\"\n  }\n}\n```",
+      "source_content_hash": "0f1a48ffaf74a0a15e739b3490aad77cb76ba8e737d492e0b84016316337d344",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0c911872"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Docusaurus doesn't use this `tsconfig.json` to compile your project. It is added just for a nicer Editor experience, although you can choose to run `tsc` to type check your code for yourself or on CI.",
+      "source_content_hash": "ffabf656315d2d4f1a883d91fb116a1834062b96dfc945f2187ca07b98761584",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 不會使用此 `tsconfig.json` 來編譯您的專案。它僅用於提升編輯器體驗，但您可選擇執行 `tsc` 來自行或在 CI 上進行程式碼型別檢查。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Now you can start writing TypeScript theme components.",
+      "source_content_hash": "02ea55f4a8ee8cbc8dd159d52a02dd473a60813871251947a3140e9465615fdc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在您可以開始編寫 TypeScript 主題元件。"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Typing the config file {#typing-config}",
+      "source_content_hash": "91d4063014e6afd23b052f043bd77974a8645975dbab36e948d46c40ec843ac3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設定檔型別標註 {#typing-config}"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "It is **not possible** to use a TypeScript config file in Docusaurus unless you compile it yourself to JavaScript.",
+      "source_content_hash": "24ea672f5d4426047265142d31c436dcb83b14ccad4a1bd8b8a6bcefd8499619",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "除非自行編譯為 JavaScript，否則**無法**在 Docusaurus 中使用 TypeScript 設定檔。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "We recommend using [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html):",
+      "source_content_hash": "a255fde16f81f99bedd37f380f4a39e6ca7ab6ee04162bd1b77a7f9f702b782c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議使用 [JSDoc 型別註解](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)："
+      }
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```js title=\"docusaurus.config.js\"\n// highlight-next-line\n// @ts-check\n\n// highlight-next-line\n/** @type {import('@docusaurus/types').Plugin} */\nfunction MyPlugin(context, options) {\n  return {\n    name: 'my-plugin',\n  };\n}\n\n// highlight-next-line\n/** @type {import('@docusaurus/types').Config} */\nconst config = {\n  title: 'Docusaurus',\n  tagline: 'Build optimized websites quickly, focus on your content',\n  organizationName: 'facebook',\n  projectName: 'docusaurus',\n  plugins: [MyPlugin],\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      // highlight-next-line\n      /** @type {import('@docusaurus/preset-classic').Options} */\n      ({\n        docs: {\n          path: 'docs',\n          sidebarPath: 'sidebars.js',\n        },\n        blog: {\n          path: 'blog',\n          postsPerPage: 5,\n        },\n      }),\n    ],\n  ],\n  themeConfig:\n    // highlight-next-line\n    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */\n    ({\n      colorMode: {\n        defaultMode: 'dark',\n      },\n      navbar: {\n        hideOnScroll: true,\n        title: 'Docusaurus',\n        logo: {\n          alt: 'Docusaurus Logo',\n          src: 'img/docusaurus.svg',\n          srcDark: 'img/docusaurus_keytar.svg',\n        },\n      },\n    }),\n};\n\nmodule.exports = config;\n```",
+      "source_content_hash": "14d7c7261b51f363e1ac7634926916c912e1f628e1ae4282ad603f111fa7e025",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_48ec8149"
+      }
+    },
+    {
+      "segment_id": "467b2691",
+      "source_content": ":::tip\n\nType annotations are very useful and help your IDE understand the type of config objects!\n\nThe best IDEs (VS Code, WebStorm, IntelliJ...) will provide a nice auto-completion experience.\n\n:::",
+      "source_content_hash": "0bd9493ce017193b20392c2119b6de22cedb32714456aa8ff7ad08942d405ddb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n型別註解非常實用，能幫助您的 IDE 理解配置物件的型別！\n\n最佳 IDE（VS Code、WebStorm、IntelliJ...）將提供優異的自動完成體驗。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "da9f1cf7",
+      "source_content": ":::info\n\nBy default, the Docusaurus TypeScript config does not type-check JavaScript files.\n\nThe `// @ts-check` comment ensures the config file is properly type-checked when running `npx tsc`.\n\n:::",
+      "source_content_hash": "a59c154a949ecaf59b3ca546291e0b831595611425416d79e7f40ec64a502318",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n預設情況下，Docusaurus TypeScript 配置不會對 JavaScript 檔案進行型別檢查。\n\n`// @ts-check` 註解可確保執行 `npx tsc` 時正確檢查設定檔型別。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b9b8694c",
+      "source_content": "## Swizzling TypeScript theme components {#swizzling-typescript-theme-components}",
+      "source_content_hash": "0e8afd7f54d248f96b991ca0c65e2869e0e43e7c4980fb72fe9e20973c158d77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 替換 TypeScript 主題元件 {#swizzling-typescript-theme-components}"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "For themes that support TypeScript theme components, you can add the `--typescript` flag to the end of the `swizzle` command to get TypeScript source code. For example, the following command will generate `index.tsx` and `styles.module.css` into `src/theme/Footer`.",
+      "source_content_hash": "8df61f29931739d2d06449bb726516e4c87b3e4cfab9a2226924a000a65bd66b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於支援 TypeScript 主題元件的主題，您可在 `swizzle` 命令末尾新增 `--typescript` 標誌以取得 TypeScript 原始碼。例如，以下命令將在 `src/theme/Footer` 中生成 `index.tsx` 和 `styles.module.css`。"
+      }
+    },
+    {
+      "segment_id": "4e583d18",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic Footer -- --typescript\n```",
+      "source_content_hash": "b4465835f6d7f58190d61476e518c1ba17f478278fc0677fcd581dc6be132ac2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4e583d18"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "All official Docusaurus themes support TypeScript theme components, including [`theme-classic`](./api/themes/theme-classic.mdx), [`theme-live-codeblock`](./api/themes/theme-live-codeblock.mdx), and [`theme-search-algolia`](./api/themes/theme-search-algolia.mdx). If you are a Docusaurus theme package author who wants to add TypeScript support, see the [Lifecycle APIs docs](./api/plugin-methods/extend-infrastructure.mdx#getTypeScriptThemePath).",
+      "source_content_hash": "ea20968adf62582e9f1488f7bc3fd3b6fb4b11fa7c6335dcbf075b19bda9d7a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有官方 Docusaurus 主題均支援 TypeScript 主題元件，包括 [`theme-classic`](./api/themes/theme-classic.mdx)、[`theme-live-codeblock`](./api/themes/theme-live-codeblock.mdx) 和 [`theme-search-algolia`](./api/themes/theme-search-algolia.mdx)。若您是希望新增 TypeScript 支援的 Docusaurus 主題套件作者，請參閱 [生命週期 API 文件](./api/plugin-methods/extend-infrastructure.mdx#getTypeScriptThemePath)。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/typescript-support.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.111067+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "5367f9087319731bdb56a8f1bb559b144b3ee99389cf5b35d6b0095aacf9ac4b"
+  }
+}

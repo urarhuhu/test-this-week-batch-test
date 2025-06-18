@@ -1,0 +1,47 @@
+---
+slug: /api/misc/@docusaurus/eslint-plugin/no-html-links
+---
+
+# no-html-links
+
+import APITable from '@site/src/components/APITable';
+
+確保使用 Docusaurus 的 [`<Link>`](../../../docusaurus-core.mdx#link) 元件而非 `<a>` 標籤。
+
+`<Link>` 元件內建預取(prefetching)與預載(preloading)功能，同時具備建置階段失效連結檢測能力，並能幫助 Docusaurus 更理解您的網站結構。
+
+## 規則詳情 {#details}
+
+此規則的**錯誤**程式碼範例：
+
+```html
+<a href="/page">go to page!</a>
+
+<a href="https://x.com/docusaurus" target="_blank">X</a>
+```
+
+此規則的**正確**程式碼範例：
+
+```js
+import Link from '@docusaurus/Link'
+
+<Link to="/page">go to page!</Link>
+
+<Link to="https://x.com/docusaurus">X</Link>
+```
+
+## 規則配置 {#configuration}
+
+可接受欄位：
+
+```mdx-code-block
+<APITable>
+```
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `ignoreFullyResolved` | `boolean` | `false` | Set to true will not report any `<a>` tags with absolute URLs including a protocol. |
+
+```mdx-code-block
+</APITable>
+```

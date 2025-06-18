@@ -1,0 +1,182 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/migration/v2/migration-automated.mdx",
+  "source_file_content_hash": "72fb0d0db6cd8d6e05b34b86680365eb3684effcf88cc9843efd2f44ef994e8f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration/v2/automated\n---",
+      "source_content_hash": "bbb4cd4b4e06dc4a86c45a091e2279047025d155fa62b90cad46d17221d5fd53",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Automated migration",
+      "source_content_hash": "dbd29d6f90027dd7363e7cbd3e6ce4336b64d56c205991e28c997ae8162befb9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 自動化遷移"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "The migration CLI automatically migrates your v1 website to a v2 website.",
+      "source_content_hash": "74635ebbc57e6075da9e698f96df6bc854494c950c425cab12e58fbc61f5749c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遷移 CLI 會自動將您的 v1 網站遷移至 v2 網站。"
+      }
+    },
+    {
+      "segment_id": "0d5e1c45",
+      "source_content": ":::info\n\nManual work is still required after using the migration CLI, as we can't automate a full migration\n\n:::",
+      "source_content_hash": "4e6ddadcbe89f82bb5319bc16af72c3d82131938d9aa12ef85e90c420233c0ac",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n使用遷移 CLI 後仍需要手動操作，因為我們無法自動化完成整個遷移過程\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "The migration CLI migrates:",
+      "source_content_hash": "4b7c2a8ffdc0cbbe641b10a52867bbb749ea8029453c910f97c0172db233789e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遷移 CLI 會遷移以下內容："
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "- Site configurations (from `siteConfig.js` to `docusaurus.config.js`)\n- `package.json`\n- `sidebars.json`\n- `/docs`\n- `/blog`\n- `/static`\n- `versioned_sidebar.json` and `/versioned_docs` if your site uses versioning",
+      "source_content_hash": "b5cae109dcea83db1541e098ebfe1b4acaf82cb2b688b1203c4286b419053280",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 網站配置（從 `siteConfig.js` 遷移至 `docusaurus.config.js`）\n- `package.json`\n- `sidebars.json`\n- `/docs`\n- `/blog`\n- `/static`\n- 如果您的網站使用版本控制，還會遷移 `versioned_sidebar.json` 和 `/versioned_docs`"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "To use the migration CLI, follow these steps:",
+      "source_content_hash": "963d03a9ea23865e0b627682c946dd6dc13f7f022f60ebc528c2874eaf8c6c18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用遷移 CLI 的步驟如下："
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "1. Before using the migration CLI, ensure that `/docs`, `/blog`, `/static`, `sidebars.json`, `siteConfig.js`, `package.json` follow the expected structure.\n\n2. To migrate your v1 website, run the migration CLI with the appropriate filesystem paths:",
+      "source_content_hash": "3264ecf40581a68e112f65e2e396fee58d41ff7d7c2b3fe91b00025272fcab94",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 在使用遷移 CLI 之前，請確保 `/docs`、`/blog`、`/static`、`sidebars.json`、`siteConfig.js`、`package.json` 符合預期的結構。\n\n2. 要遷移您的 v1 網站，請使用適當的文件系統路徑運行遷移 CLI："
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```bash\n# migration command format\nnpx @docusaurus/migrate migrate <v1 website directory> <desired v2 website directory>\n\n# example\nnpx @docusaurus/migrate migrate ./v1-website ./v2-website\n```",
+      "source_content_hash": "ad7cbde4304b0b0bc0b6cd40cec31d8dc30d8c3dd7928bb072220baf96fe88cb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "3. To view your new website locally, go into your v2 website's directory and start your development server.",
+      "source_content_hash": "9093bcc420e20a1cdcf98e457d3bbf77ce59e92e5e31fc370f725dc3282c81a9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "3. 要在本地查看您的新網站，請進入 v2 網站的目錄並啟動開發伺服器。"
+      }
+    },
+    {
+      "segment_id": "bca33820",
+      "source_content": "```bash npm2yarn\ncd ./v2-website\nnpm install\nnpm start\n```",
+      "source_content_hash": "dadcb7ea195313dc30ff3a022fbde56895f052301be73eb686ab4a23b641c7bf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bca33820"
+      }
+    },
+    {
+      "segment_id": "3a76cadb",
+      "source_content": ":::danger\n\nThe migration CLI updates existing files. Be sure to have committed them first!\n\n:::",
+      "source_content_hash": "87e3a2fe8502b4edbcb88d25bf0d60ae1a975f1ce91ad8f2abfd857dae869516",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger\n\n遷移 CLI 會更新現有文件。請務必先提交這些文件！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "#### Options {#options}",
+      "source_content_hash": "bffc8405114cc4562899104bd636a4fe1a183224e36591105b134e6b672b8499",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options}"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "You can add option flags to the migration CLI to automatically migrate Markdown content and pages to v2. It is likely that you will still need to make some manual changes to achieve your desired result.",
+      "source_content_hash": "3a1e0aec243d91966247348c1d905e6936edce81a41d691142521249debb1ab0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以向遷移 CLI 添加選項標誌，以自動將 Markdown 內容和頁面遷移至 v2。您可能仍需要進行一些手動更改以達到預期結果。"
+      }
+    },
+    {
+      "segment_id": "0b4652a4",
+      "source_content": "| Name     | Description                                            |\n| -------- | ------------------------------------------------------ |\n| `--mdx`  | Add this flag to convert Markdown to MDX automatically |\n| `--page` | Add this flag to migrate pages automatically           |",
+      "source_content_hash": "d59b7b2ba3cdaa66cfb23f50de80bf7fca4d60e542beeb98061411a4095d2bad",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0b4652a4"
+      }
+    },
+    {
+      "segment_id": "3adc0ceb",
+      "source_content": "```bash\n# example using options\nnpx @docusaurus/migrate migrate --mdx --page ./v1-website ./v2-website\n```",
+      "source_content_hash": "31a77422ec809cfcaf0ec3c41cda6351f275cb6bc702ab6716c5ad8afa6a4f2c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3adc0ceb"
+      }
+    },
+    {
+      "segment_id": "cc486557",
+      "source_content": ":::danger\n\nThe migration of pages and MDX is still a work in progress.\n\nWe recommend you to try to run the pages without these options, commit, and then try to run the migration again with the `--page` and `--mdx` options.\n\nThis way, you'd be able to easily inspect and fix the diff.\n\n:::",
+      "source_content_hash": "94823173bc17b2ed7b647214b4d9c8d3a4e0e6d580da70da8cb5daa0b4c5ed3a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger\n\n頁面和 MDX 的遷移仍在進行中。\n\n我們建議您先嘗試在不使用這些選項的情況下運行頁面，提交後再嘗試使用 `--page` 和 `--mdx` 選項運行遷移。\n\n這樣，您將能夠輕鬆檢查和修復差異。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/migration/v2/migration-automated.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.398593+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "72fb0d0db6cd8d6e05b34b86680365eb3684effcf88cc9843efd2f44ef994e8f"
+  }
+}

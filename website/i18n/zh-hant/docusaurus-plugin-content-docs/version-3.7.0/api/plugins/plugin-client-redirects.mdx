@@ -1,0 +1,127 @@
+---
+sidebar_position: 4
+slug: /api/plugins/@docusaurus/plugin-client-redirects
+---
+
+# 📦 plugin-client-redirects
+
+import APITable from '@site/src/components/APITable';
+
+Docusaurus 插件，用於生成**客戶端重定向**。
+
+此插件會將額外的 HTML 頁面寫入您的靜態網站，透過 JavaScript 將用戶重定向至現有的 Docusaurus 頁面。
+
+:::warning[僅限生產環境]
+
+此插件在開發環境中始終處於非活動狀態，**僅在生產環境中生效**，因為它作用於構建輸出。
+
+:::
+
+:::warning
+
+建議盡可能使用伺服器端重定向。
+
+在使用此插件前，應先確認您的託管服務提供商是否未提供此功能。
+
+:::
+
+## 安裝 {#installation}
+
+```bash npm2yarn
+npm install --save @docusaurus/plugin-client-redirects
+```
+
+## 配置 {#configuration}
+
+可接受字段：
+
+```mdx-code-block
+<APITable>
+```
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `fromExtensions` | `string[]` | `[]` | The extensions to be removed from the route after redirecting. |
+| `toExtensions` | `string[]` | `[]` | The extensions to be appended to the route after redirecting. |
+| `redirects` | <code>[RedirectRule](#RedirectRule)[]</code> | `[]` | The list of redirect rules. |
+| `createRedirects` | <code>[CreateRedirectsFn](#CreateRedirectsFn)</code> | `undefined` | A callback to create a redirect rule. Docusaurus query this callback against every path it has created, and use its return value to output more paths. |
+
+```mdx-code-block
+</APITable>
+```
+
+:::note
+
+此插件還會讀取 [`siteConfig.onDuplicateRoutes`](../docusaurus.config.js.mdx#onDuplicateRoutes) 配置，以調整當多個文件將被發送到相同位置時的日誌級別。
+
+:::
+
+### 類型 {#types}
+
+#### `RedirectRule` {#RedirectRule}
+
+```ts
+type RedirectRule = {
+  to: string;
+  from: string | string[];
+};
+```
+
+:::note
+
+「來源」與「目標」的概念是此插件的核心。「來源」指您想要_創建_的路徑，即一個將被寫入的額外 HTML 文件；「目標」指您想要重定向_至_的路徑，通常是 Docusaurus 已知的路由。
+
+這就是為什麼同一個「目標」可以有多個「來源」：我們會創建多個 HTML 文件，它們都重定向至同一個目的地。另一方面，一個「來源」絕不能有多個「目標」：寫入的 HTML 文件需要有一個確定的目的地。
+
+:::
+
+#### `CreateRedirectsFn` {#CreateRedirectsFn}
+
+```ts
+// The parameter `path` is a route that Docusaurus has already created. It can
+// be seen as the "to", and your return value is the "from". Returning a falsy
+// value will not create any redirect pages for this particular path.
+type CreateRedirectsFn = (path: string) => string[] | string | null | undefined;
+```
+
+### 配置範例 {#ex-config}
+
+以下是一個配置範例：
+
+```js title="docusaurus.config.js"
+export default {
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      // highlight-start
+      {
+        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            to: '/docs/newDoc',
+            from: '/docs/oldDoc',
+          },
+          // Redirect from multiple old paths to the new path
+          {
+            to: '/docs/newDoc2',
+            from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+          },
+        ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/community')) {
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [
+              existingPath.replace('/community', '/docs/team'),
+              existingPath.replace('/community', '/docs/support'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
+      },
+      // highlight-end
+    ],
+  ],
+};
+```

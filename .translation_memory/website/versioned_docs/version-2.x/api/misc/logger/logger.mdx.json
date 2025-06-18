@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/api/misc/logger/logger.mdx",
+  "source_file_content_hash": "f67164ad47481a22c9bb339996d730146c7a0c7ce29acac8ee7b9a77e3d0e3a3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\nslug: /api/misc/@docusaurus/logger\n---",
+      "source_content_hash": "00c0e8bfe9c1a419c42cb6deacffcf212948b7934b2c814ef0c81a6cbc0249c7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 logger",
+      "source_content_hash": "9d28561b8c1d657c8408fa330cceddc3d26f0ec2930a8bc62c6cbc14d211256b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 記錄器"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "An encapsulated logger for semantically formatting console messages.",
+      "source_content_hash": "c3a73ffe558b15e83154f4923f33430a3d6501b395289b8527bd1ce1955a2445",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "一個封裝的記錄器，用於語義化格式化控制台訊息。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Authors of packages in the Docusaurus ecosystem are encouraged to use this package to provide unified log formats.",
+      "source_content_hash": "c19cba2b13e7889c7dfd941e4626bd1c8f4b530f74d9b334717f4478b56af58b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "鼓勵 Docusaurus 生態系統中的套件作者使用此套件來提供統一的日誌格式。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## APIs",
+      "source_content_hash": "5b8019238c5c31094c54d5b962f21baaba2fd6036fda8ee384569b0964d92331",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## API"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "It exports a single object as default export: `logger`. `logger` has the following properties:",
+      "source_content_hash": "03b10a5f283b86836c6b6c57b4e3f161f1ab88d4638019f4959a7186007cb6b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "它導出一個單一物件作為默認導出：`logger`。`logger` 具有以下屬性："
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- Some useful colors.\n  - `red`\n  - `yellow`\n  - `green`\n  - `bold`\n  - `dim`\n- Formatters. These functions all have the signature `(msg: unknown) => string`. Note that their implementations are not guaranteed. You should only care about their semantics.\n  - `path`: formats a file path.\n  - `url`: formats a URL.\n  - `name`: formats an identifier.\n  - `code`: formats a code snippet.\n  - `subdue`: subdues the text.\n  - `num`: formats a number.\n- The `interpolate` function. It is a template literal tag. The syntax can be found below.\n- Logging functions. All logging functions can both be used as normal functions (similar to the `console.log` family, but only accepts one parameter) or template literal tags.\n  - `info`: prints information.\n  - `warn`: prints a warning that should be paid attention to.\n  - `error`: prints an error (not necessarily halting the program) that signals significant problems.\n  - `success`: prints a success message.\n- The `report` function. It takes a `ReportingSeverity` value (`ignore`, `log`, `warn`, `throw`) and reports a message according to the severity.",
+      "source_content_hash": "2c52fa319af0396f5efeeba0efee90e67c7c1872baa29d66d0f7708f9720ce46",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 一些有用的顏色。\n  - `red`\n  - `yellow`\n  - `green`\n  - `bold`\n  - `dim`\n- 格式化器。這些函數都具有簽名 `(msg: unknown) => string`。請注意，它們的實現不保證。您只需關心它們的語義。\n  - `path`：格式化文件路徑。\n  - `url`：格式化 URL。\n  - `name`：格式化標識符。\n  - `code`：格式化代碼片段。\n  - `subdue`：淡化文本。\n  - `num`：格式化數字。\n- `interpolate` 函數。它是一個模板字面量標籤。語法如下所示。\n- 日誌函數。所有日誌函數既可以作為普通函數使用（類似於 `console.log` 系列，但只接受一個參數），也可以作為模板字面量標籤。\n  - `info`：打印信息。\n  - `warn`：打印需要注意的警告。\n  - `error`：打印錯誤（不一定是停止程序），表示存在嚴重問題。\n  - `success`：打印成功訊息。\n- `report` 函數。它接受一個 `ReportingSeverity` 值（`ignore`、`log`、`warn`、`throw`）並根據嚴重性報告訊息。"
+      }
+    },
+    {
+      "segment_id": "26794fc5",
+      "source_content": ":::warning[A word on the `error` formatter]\n\nBeware that an `error` message, even when it doesn't hang the program, is likely going to cause confusion. When users inspect logs and find an `[ERROR]`, even when the build succeeds, they will assume something is going wrong. Use it sparingly.\n\nDocusaurus only uses `logger.error` when printing messages immediately before throwing an error, or when user has set the reporting severity of `onBrokenLink`, etc. to `\"error\"`.\n\nIn addition, `warn` and `error` will color the **entire** message for better attention. If you are printing large blocks of help text about an error, better use `logger.info`.\n\n:::",
+      "source_content_hash": "75f5423775058d5b6be82c0e6a7760d00f5e2e5e164aedbffdd1e3b4d00df311",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[關於 `error` 格式化器的說明]\n\n請注意，`error` 訊息即使不會使程序掛起，也可能會引起混淆。當用戶檢查日誌並發現 `[ERROR]` 時，即使構建成功，他們也會認為出了問題。請謹慎使用。\n\nDocusaurus 僅在打印訊息後立即拋出錯誤時，或當用戶將 `onBrokenLink` 等的報告嚴重性設置為 `\"error\"` 時，才使用 `logger.error`。\n\n此外，`warn` 和 `error` 會為整個訊息著色以引起更好的注意。如果您要打印關於錯誤的大塊幫助文本，最好使用 `logger.info`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "### Using the template literal tag",
+      "source_content_hash": "7458e6c55cadf2b2cac3b802bd4537cb1f85c38a35ca7b4a198a46315fc72e29",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用模板字面量標籤"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "The template literal tag evaluates the template and expressions embedded. `interpolate` returns a new string, while other logging functions prints it. Below is a typical usage:",
+      "source_content_hash": "0f41c7fb11b9c371c82ebb4b3c976bf55d93f271f8e737cd2618805021c093ea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "模板字面量標籤評估模板和嵌入的表達式。`interpolate` 返回一個新字符串，而其他日誌函數則打印它。以下是一個典型用法："
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```js\nlogger.info`Hello name=${name}! You have number=${money} dollars. Here are the ${\n  items.length > 1 ? 'items' : 'item'\n} on the shelf: ${items}\nTo buy anything, enter code=${'buy x'} where code=${'x'} is the item's name; to quit, press code=${'Ctrl + C'}.`;\n```",
+      "source_content_hash": "32f58132ce11067047e69dd09c31219004acfd9fd8c181107c41978706275f08",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "An embedded expression is optionally preceded by a flag in the form `[a-z]+=` (a few lowercase letters, followed by an equals sign, directly preceding the embedded expression). If the expression is not preceded by any flag, it's printed out as-is. Otherwise, it's formatted with one of the formatters:",
+      "source_content_hash": "36ba03d5e841a9f8174aef1b5de39b1c443c3c4ef2173d806692198f54593d7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "嵌入的表達式可以選擇在前面加上一個標誌，形式為 `[a-z]+=`（幾個小寫字母，後跟等號，直接位於嵌入的表達式之前）。如果表達式前面沒有任何標誌，則按原樣打印。否則，它會由以下格式化器之一格式化："
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "- `path=`: `path`\n- `url=`: `url`\n- `name=`: `name`\n- `code=`: `code`\n- `subdue=`: `subdue`\n- `number=`: `num`",
+      "source_content_hash": "5dc49d8cdb139beeb8dfe7863eb414521f76f04c74c7c4a8a5dbd3066268f866",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `path=`：`path`\n- `url=`：`url`\n- `name=`：`name`\n- `code=`：`code`\n- `subdue=`：`subdue`\n- `number=`：`num`"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "If the expression is an array, it's formatted by `` `\\n- ${array.join('\\n- ')}\\n` `` (note it automatically gets a leading line end). Each member is formatted by itself and the bullet is not formatted. So you would see the above message printed as:",
+      "source_content_hash": "ea6ac99fafe7186e480c9096b28039528717ff4e94f63bf67b3ad8ad7cb96a38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果表達式是一個數組，則由 `` `\\n- ${array.join('\\n- ')}\\n` `` 格式化（請注意它會自動獲得一個前導行結束符）。每個成員自行格式化，項目符號不格式化。因此，您會看到上述訊息打印為："
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "![Some text output in the terminal, containing array, code, name, and number formatting](./demo.png)",
+      "source_content_hash": "ac16ea41e82d6f9edf0d7c01c6e0102c35a8286bfd50bbd86c10e6652fed3f42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![終端中的一些文本輸出，包含數組、代碼、名稱和數字格式化](./demo.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/api/misc/logger/logger.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.050497+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "f67164ad47481a22c9bb339996d730146c7a0c7ce29acac8ee7b9a77e3d0e3a3"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/2.2/index.mdx",
+  "source_file_content_hash": "02dab0df2760d14bb04460522004c5114228133b558460fc986e112eb1fc4d5e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 2.2\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2022-10-29\n---",
+      "source_content_hash": "26fb7cf32ac05522c4558d5dc4f1ab5f6f933376db935ee4534b6689ee3cbfbc",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 2.2**.",
+      "source_content_hash": "a4e5e0ca61520003ac04597f6c035ae435f1dc43d96d7c8b5cf44c6f63808ba4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 2.2** 版本發布。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The upgrade should be easy: as explained in our [release process documentation](/community/release-process), minor versions respect [Semantic Versioning](https://semver.org/).",
+      "source_content_hash": "c798b6e35eb0c79c81cf7d49c78ac7cde6fc60897b64f9cfc3abb86bb45cd729",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該很簡單：如我們的[發布流程文件](/community/release-process)所述，次要版本遵循[語意化版本控制](https://semver.org/)規範。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus 2.2 social card](./img/social-card.png)",
+      "source_content_hash": "5a61e714933fc8ba9b10f702c28c07f2a2d813faf6bb48124143bbe304895fc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 2.2 社群媒體卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點功能"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### Mermaid diagrams",
+      "source_content_hash": "cf6f456c67a3e1685d1a7ef7347b60c8fa50248b8228a970ca006addb442939b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Mermaid 圖表"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "In [#7490](https://github.com/facebook/docusaurus/pull/7490), we added support for Mermaid diagrams. This fills the gap between GitHub Flavored Markdown which also [added support recently](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/). You can create Mermaid diagrams using Markdown code blocks:",
+      "source_content_hash": "d399edd0bb4c37f70c35f9b1ca2e03a52b50dfe080bda5cfe488bfbdbef413bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#7490](https://github.com/facebook/docusaurus/pull/7490) 中，我們新增了對 Mermaid 圖表的支援。這填補了 GitHub Flavored Markdown 近期也[新增支援](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/)的功能缺口。您可以使用 Markdown 代碼區塊來建立 Mermaid 圖表："
+      }
+    },
+    {
+      "segment_id": "41a8ae85",
+      "source_content": "````md\n```mermaid\nsequenceDiagram\n    participant Alice\n    participant Bob\n    Alice->>John: Hello John, how are you?\n    loop Health check\n        John->>John: Fight against hypochondria\n    end\n    Note right of John: Rational thoughts <br/>prevail!\n    John-->>Alice: Great!\n    John->>Bob: How about you?\n    Bob-->>John: Jolly good!\n```\n````",
+      "source_content_hash": "06fd3c1243e64927aa083f58513f2ca33a5830a7f0ead215a5a37c87f213d2e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41a8ae85"
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "````mdx-code-block\nimport BrowserWindow from '@site/src/components/BrowserWindow';\n\n<BrowserWindow>\n\n```mermaid\nsequenceDiagram\n    participant Alice\n    participant Bob\n    Alice->>John: Hello John, how are you?\n    loop Health check\n        John->>John: Fight against hypochondria\n    end\n    Note right of John: Rational thoughts <br/>prevail!\n    John-->>Alice: Great!\n    John->>Bob: How about you?\n    Bob-->>John: Jolly good!\n```\n\n</BrowserWindow>\n\n````",
+      "source_content_hash": "df26558d16ae86431b6063b6f0eb407193bd8eecbdee71bae5a7e900ca88f23d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Make sure to check the [documentation](/docs/markdown-features/diagrams), and the [more advanced examples](/tests/pages/diagrams)",
+      "source_content_hash": "a7217fea61632db11672a32331e2510f5002ef29bd576c5b11afe378088320de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請務必查閱[說明文件](/docs/markdown-features/diagrams)以及[進階範例](/tests/pages/diagrams)"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "### Config `headTags`",
+      "source_content_hash": "05e2e380a6336b5f98f435ad7e1775c1cf73c3fa5bc286009c6dd3e799289c95",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 設定檔 `headTags`"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "In [#8151](https://github.com/facebook/docusaurus/pull/8151), we added the ability to apply arbitrary HTML `<head>` tags to all pages of your site.",
+      "source_content_hash": "1d64515280bdc81b437856e14f6d7d40b8367fbecd7930c552dc9a305af51372",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#8151](https://github.com/facebook/docusaurus/pull/8151) 中，我們新增了為網站所有頁面套用任意 HTML `<head>` 標籤的功能。"
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  headTags: [\n    {\n      tagName: 'link',\n      attributes: {\n        rel: 'icon',\n        href: '/img/docusaurus.png',\n      },\n    },\n  ],\n};\n```",
+      "source_content_hash": "f4807b07b326557ff3b7af8c522089621b4b17ac4ebdffac7f057827329190db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "### Accessibility",
+      "source_content_hash": "321ff451abff7aadf8af30548109eae882e802908be7ec73ab484ea66a8bce6f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 無障礙性"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "We did several accessibility improvements:",
+      "source_content_hash": "83056584e2696427a484733555670fd6363913277938e2e3f09a2b5030ed8ba4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們進行了多項無障礙性改進："
+      }
+    },
+    {
+      "segment_id": "cc9271fb",
+      "source_content": "- [#8207](https://github.com/facebook/docusaurus/pull/8207): improves keyboard navigation for mobile drawer hamburger button\n- [#8161](https://github.com/facebook/docusaurus/pull/8161): improves keyboard navigation for tabs\n- [#8204](https://github.com/facebook/docusaurus/pull/8204): makes the skip to content button support progressive enhancement\n- [#8174](https://github.com/facebook/docusaurus/pull/8174): improves screen reader announcement when toggling between light/dark mode",
+      "source_content_hash": "be25a2196f7950a954b923a6ecaa03c6536b77f113be8431a7648b1e1cf85148",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#8207](https://github.com/facebook/docusaurus/pull/8207): 改善行動版抽屜選單漢堡按鈕的鍵盤導航\n- [#8161](https://github.com/facebook/docusaurus/pull/8161): 改善標籤頁的鍵盤導航\n- [#8204](https://github.com/facebook/docusaurus/pull/8204): 讓「跳至內容」按鈕支援漸進增強\n- [#8174](https://github.com/facebook/docusaurus/pull/8174): 改善切換淺色/深色模式時的螢幕閱讀器提示"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "### Developer Experience",
+      "source_content_hash": "0aa6ecd08cecf542a7ec05db16b114e07d767d9864bdfd553c5a86cacf1ccb33",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 開發者體驗"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "We made validation stricter and improved error messages:",
+      "source_content_hash": "ff22ad6ed0d63235ff36805eed5c9b43da510afd29f83196bb89fab16fd1690f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們強化了驗證機制並改進錯誤訊息："
+      }
+    },
+    {
+      "segment_id": "b0dbe2f3",
+      "source_content": "- [#8234](https://github.com/facebook/docusaurus/pull/8234): in case of doc processing failure, prints the problematic markdown file path in the error message\n- [#8192](https://github.com/facebook/docusaurus/pull/8192) and [#8159](https://github.com/facebook/docusaurus/pull/8159): validates `siteConfig.url` more strictly and with better error message\n- [#8066](https://github.com/facebook/docusaurus/pull/8066): makes config `url` and `baseUrl` fail-safe and less sensitive to the presence or absence of a leading or trailing slash",
+      "source_content_hash": "6a29058f8e9e8e788319371adff7838612ba275aa39b08c8aae243bbf6ab0b0f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#8234](https://github.com/facebook/docusaurus/pull/8234): 當文件處理失敗時，在錯誤訊息中顯示有問題的 markdown 檔案路徑\n- [#8192](https://github.com/facebook/docusaurus/pull/8192) 和 [#8159](https://github.com/facebook/docusaurus/pull/8159): 更嚴格驗證 `siteConfig.url` 並提供更清晰的錯誤訊息\n- [#8066](https://github.com/facebook/docusaurus/pull/8066): 使設定檔中的 `url` 和 `baseUrl` 更具容錯性，減少對前導或結尾斜線的敏感性"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "### Translations",
+      "source_content_hash": "1ecceac87af04e40fa9d1fe5ad527d2293336e4e195c13b072d0c5d00958879d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "We completed the default theme translation support for multiple languages:",
+      "source_content_hash": "35ea66fb5d6dd152a5fad7df87aa5911fc47c46ecf295b8b476bb3f7d2b820ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們完成了預設主題對多種語言的翻譯支援："
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "- 🇹🇷 [#8105](https://github.com/facebook/docusaurus/pull/8105): completes Turkish translations\n- 🇷🇺 [#8253](https://github.com/facebook/docusaurus/pull/8253): completes Russian translations\n- 🇫🇷 [#8243](https://github.com/facebook/docusaurus/pull/8243): completes French translations\n- 🇯🇵 [#8075](https://github.com/facebook/docusaurus/pull/8075): completes Japanese translations",
+      "source_content_hash": "52ee564481cbef2b7142bb60f3e37d6c0509c8f41fa804533318055827a4b82c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 🇹🇷 [#8105](https://github.com/facebook/docusaurus/pull/8105): 完成土耳其語翻譯\n- 🇷🇺 [#8253](https://github.com/facebook/docusaurus/pull/8253): 完成俄語翻譯\n- 🇫🇷 [#8243](https://github.com/facebook/docusaurus/pull/8243): 完成法語翻譯\n- 🇯🇵 [#8075](https://github.com/facebook/docusaurus/pull/8075): 完成日語翻譯"
+      }
+    },
+    {
+      "segment_id": "72871d03",
+      "source_content": ":::tip\n\nCompleting theme translations is an [ongoing effort](https://github.com/facebook/docusaurus/issues/3526) and an easy way to contribute to Docusaurus. We add new theme features regularly, for which we often [need new translations](https://github.com/facebook/docusaurus/issues/3526).\n\n:::",
+      "source_content_hash": "46b181d681890bb5fcda323bc7e0fcefd9f297b3bb0d83d218cb5eb2a0aaf77c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n完成主題翻譯是一項[持續進行的工作](https://github.com/facebook/docusaurus/issues/3526)，也是為 Docusaurus 做出貢獻的簡單方式。我們會定期新增主題功能，通常需要[新的翻譯](https://github.com/facebook/docusaurus/issues/3526)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他值得注意的變更包括："
+      }
+    },
+    {
+      "segment_id": "2979d081",
+      "source_content": "- [#8210](https://github.com/facebook/docusaurus/pull/8210): the `docusaurus swizzle` CLI has a new `--config` option\n- [#8109](https://github.com/facebook/docusaurus/pull/8109): mobile navigation performance optimizations, prefetch resources earlier\n- [#8059](https://github.com/facebook/docusaurus/pull/8059): versions/locales navbar dropdowns preserve hash and querystring on navigation\n- [#8227](https://github.com/facebook/docusaurus/pull/8227): the client redirect plugin preserves hash and querystring on redirect",
+      "source_content_hash": "95bc195a5f1c85361d341976833b44dff521a3d0c214c7b04a0f793106bafdd1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#8210](https://github.com/facebook/docusaurus/pull/8210): `docusaurus swizzle` CLI 新增了 `--config` 選項\n- [#8109](https://github.com/facebook/docusaurus/pull/8109): 行動端導航效能優化，提前預載資源\n- [#8059](https://github.com/facebook/docusaurus/pull/8059): 版本/語言導航欄下拉選單在導航時保留錨點和查詢字串\n- [#8227](https://github.com/facebook/docusaurus/pull/8227): 客戶端重定向插件在重定向時保留錨點和查詢字串"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Check the **[2.2.0 changelog entry](/changelog/2.2.0)** for an exhaustive list of changes.",
+      "source_content_hash": "79605f2c21b3294661390ec4f43e69bd71106ff039388b05ac6a3a6e0dd684fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查看 **[2.2.0 變更日誌條目](/changelog/2.2.0)** 以獲取完整的變更列表。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/2.2/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.011672+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "02dab0df2760d14bb04460522004c5114228133b558460fc986e112eb1fc4d5e"
+  }
+}

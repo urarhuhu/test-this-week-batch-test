@@ -1,0 +1,546 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/using-plugins.mdx",
+  "source_file_content_hash": "c0e6121dbf452dd0637416ca88728bf8a490c51cbafec772d489ca5f89f78bc2",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Using Plugins",
+      "source_content_hash": "33bd02b12ee2e23ba5ff154fec6d5634807716ee567b924bad30941b3be44efe",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "**The Docusaurus core doesn't provide any feature of its own.** All features are delegated to individual plugins: the [docs](./guides/docs/docs-introduction.mdx) feature provided by the [docs plugin](./api/plugins/plugin-content-docs.mdx); the [blog](./blog.mdx) feature provided by the [blog plugin](./api/plugins/plugin-content-blog.mdx); or individual [pages](./guides/creating-pages.mdx) provided by the [pages plugin](./api/plugins/plugin-content-pages.mdx). If there are no plugins installed, the site won't contain any routes.",
+      "source_content_hash": "20f96eb17a5264d384a4e734b5746cef01922c3b645a738b973e3cd4126294a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "You may not need to install common plugins one-by-one though: they can be distributed as a bundle in a [preset](#using-presets). For most users, plugins are configured through the preset configuration.",
+      "source_content_hash": "499accb3d847df41098a1e385bfd4ad74ab213bdb102c0e609ff76c9e678a7ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "We maintain a [list of official plugins](./api/plugins/overview.mdx), but the community has also created some [unofficial plugins](/community/resources#community-plugins). If you want to add any feature: autogenerating doc pages, executing custom scripts, integrating other services... be sure to check out the list: someone may have implemented it for you!",
+      "source_content_hash": "10314f58d258f2304662bfec2e29bb682dc207ae71d60090e095206e352ed463",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "If you are feeling energetic, you can also read [the plugin guide](./advanced/plugins.mdx) or [plugin method references](./api/plugin-methods/README.mdx) for how to make a plugin yourself.",
+      "source_content_hash": "e29eb50bc85891970d6b24f4d03b8a6a21d05859f58f6de2e6b27499dc268e50",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Installing a plugin {#installing-a-plugin}",
+      "source_content_hash": "884e03c9bcd8e3a706e1c5ceb9c7fd03382f9682a1a1631bf0323109957b6e85",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "A plugin is usually an npm package, so you install them like other npm packages using npm.",
+      "source_content_hash": "5fe10247845dad5faedad9e7a1fac60799532002176396dce57b95fa2d80517f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```bash npm2yarn\nnpm install --save docusaurus-plugin-name\n```",
+      "source_content_hash": "9d233623f463167c4686815f9f498748fbffa9d60638ea9b3354bda601d34e44",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Then you add it in your site's `docusaurus.config.js`'s `plugins` option:",
+      "source_content_hash": "fe09a93b7d9d2990b8a54acb389afa1f96188816944080cc881f7e0b867b0e6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cbbebf8e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  // highlight-next-line\n  plugins: ['@docusaurus/plugin-content-pages'],\n};\n```",
+      "source_content_hash": "b577fe415651f5073e7af87e6b28b252cae797746fdfaaba5fa72d89eb5c1514",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Docusaurus can also load plugins from your local directory, with something like the following:",
+      "source_content_hash": "b74c8b48fb44bf173ad95e7fc29f5f8fa925822f16227d4ce68bf322621a5803",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  // highlight-next-line\n  plugins: ['./src/plugins/docusaurus-local-plugin'],\n};\n```",
+      "source_content_hash": "f68ffcc11482784c48dd42c3688ec7a6436bbd7e23479486f33670da22748d2e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Paths should be absolute or relative to the config file.",
+      "source_content_hash": "3a7d21f5aa9c367f68193049d7a5a97f02df379a870775028ca5ee754b55d77c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "## Configuring plugins {#configuring-plugins}",
+      "source_content_hash": "98aaf7794e55985e34b1be86666c0421f1295635587bdf450ded03b393b71b1f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "For the most basic usage of plugins, you can provide just the plugin name or the path to the plugin.",
+      "source_content_hash": "72f808ce6e5eae9ea6cecd98410d3ca080a112aa34e78fd529accb0f1c13d0ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "However, plugins can have options specified by wrapping the name and an options object in a two-member tuple inside your config. This style is usually called \"Babel Style\".",
+      "source_content_hash": "1b5b0531928c9493b2ed18e2d6157916ae9b56ddfa7398c2c918b8cfc1a3dbf2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b75ddc12",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  plugins: [\n    // highlight-start\n    [\n      '@docusaurus/plugin-xxx',\n      {\n        /* options */\n      },\n    ],\n    // highlight-end\n  ],\n};\n```",
+      "source_content_hash": "0a947017ea70c3134a881d89cae9849e87af159ef6071b9041fa9ac0fa1b5eb7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    // Basic usage.\n    '@docusaurus/plugin-debug',\n\n    // With options object (babel style)\n    [\n      '@docusaurus/plugin-sitemap',\n      {\n        changefreq: 'weekly',\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "4d3fa2e29c015326899d56b6945cbeed86efe64b580fa75c5e5edf8ac481bc8f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "## Multi-instance plugins and plugin IDs {#multi-instance-plugins-and-plugin-ids}",
+      "source_content_hash": "4f4f7e2742abf3bd7a1cbda03684b01fc0b23ef971b9a2368be2edb4ee2f6877",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "All Docusaurus content plugins can support multiple plugin instances. For example, it may be useful to have [multiple docs plugin instances](./guides/docs/docs-multi-instance.mdx) or [multiple blogs](./blog.mdx#multiple-blogs). It is required to assign a unique ID to each plugin instance, and by default, the plugin ID is `default`.",
+      "source_content_hash": "e6d339c9c6a8b3e4b30fe87a375f5ee28c535f29fec7f76f34e66065b3d6b108",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8c3563d3",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-content-docs',\n      {\n        // highlight-next-line\n        id: 'docs-1',\n        // other options\n      },\n    ],\n    [\n      '@docusaurus/plugin-content-docs',\n      {\n        // highlight-next-line\n        id: 'docs-2',\n        // other options\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "7f84e3134ce9132c59e5bad7c3996f02443133316da199d9a1d7d7d5a538fbe4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "549cdcf9",
+      "source_content": ":::note\n\nAt most one plugin instance can be the \"default plugin instance\", by omitting the `id` attribute, or using `id: 'default'`.\n\n:::",
+      "source_content_hash": "826b0469565e26a460be67bf7174294ac89cb40eef26e03174daf4601f64a4dc",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "## Using themes {#using-themes}",
+      "source_content_hash": "ad6ebd13dccdf4879b9765716a9811a6790e21b5ee07bf7b8d8dfdfde9816732",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "Themes are loaded in the exact same way as plugins. From the consumer perspective, the `themes` and `plugins` entries are interchangeable when installing and configuring a plugin. The only nuance is that themes are loaded after plugins, and it's possible for [a theme to override a plugin's default theme components](./advanced/client.mdx#theme-aliases).",
+      "source_content_hash": "38cb0c011558fea55e1b9b1622e793eae2f853f31512969b6b79956229abde36",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a7a2b727",
+      "source_content": ":::tip\n\nThe `themes` and `plugins` options lead to different [shorthand resolutions](#module-shorthands), so if you want to take advantage of shorthands, be sure to use the right entry!\n\n:::",
+      "source_content_hash": "8c3f9d610640c147d1c5c141ba6412cf25d372ec2e482b0f808f524ddb78e618",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3917a88d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  // highlight-next-line\n  themes: ['@docusaurus/theme-classic', '@docusaurus/theme-live-codeblock'],\n};\n```",
+      "source_content_hash": "73b1d514b32175ff44adb2927a27ed95944ab32899f06ce4fdc84bb9565c5617",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c766290e",
+      "source_content": "## Using presets {#using-presets}",
+      "source_content_hash": "c5e46baab05f6b01a0a467f78e5631f94f8814d403be72bcc1931a9c0aa929f1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "Presets are bundles of plugins and themes. For example, instead of letting you register and configure `@docusaurus/plugin-content-docs`, `@docusaurus/plugin-content-blog`, etc. one after the other in the config file, we have `@docusaurus/preset-classic` preset allows you to configure them in one centralized place.",
+      "source_content_hash": "1971eede9b0ee7b08f47cf996dca2d6449c0cb4ff9504a07883e1179266cd81c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設集（presets）是插件與主題的組合套件。舉例來說，與其讓您在配置文件中逐一註冊並設定 `@docusaurus/plugin-content-docs`、`@docusaurus/plugin-content-blog` 等插件，我們提供了 `@docusaurus/preset-classic` 預設集，讓您能在單一集中位置配置這些功能。"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "### `@docusaurus/preset-classic` {#docusauruspreset-classic}",
+      "source_content_hash": "7a491b8fec50be56b9e6e12d79775b615d3c91f7c6d04077519a5aa8aa4f2f22",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `@docusaurus/preset-classic` {#docusauruspreset-classic}"
+      }
+    },
+    {
+      "segment_id": "e77cf7c6",
+      "source_content": "The classic preset is shipped by default to new Docusaurus websites created with [`create-docusaurus`](./installation.mdx#scaffold-project-website). It contains the following themes and plugins:",
+      "source_content_hash": "098e8a512abd90c2180a0e7d1c8b55b7ae00c61c616feab3948e2e2966fd9a8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "經典預設集預設會隨 [`create-docusaurus`](./installation.mdx#scaffold-project-website) 建立的新 Docusaurus 網站一同安裝。它包含以下主題與插件："
+      }
+    },
+    {
+      "segment_id": "8c9c56b6",
+      "source_content": "- [`@docusaurus/theme-classic`](./api/themes/theme-configuration.mdx)\n- [`@docusaurus/theme-search-algolia`](./api/themes/theme-search-algolia.mdx)\n- [`@docusaurus/plugin-content-docs`](./api/plugins/plugin-content-docs.mdx)\n- [`@docusaurus/plugin-content-blog`](./api/plugins/plugin-content-blog.mdx)\n- [`@docusaurus/plugin-content-pages`](./api/plugins/plugin-content-pages.mdx)\n- [`@docusaurus/plugin-debug`](./api/plugins/plugin-debug.mdx)\n- [`@docusaurus/plugin-google-gtag`](./api/plugins/plugin-google-gtag.mdx)\n- [`@docusaurus/plugin-google-tag-manager`](./api/plugins/plugin-google-tag-manager.mdx)\n- [`@docusaurus/plugin-google-analytics`](./api/plugins/plugin-google-analytics.mdx) (**deprecated**)\n- [`@docusaurus/plugin-sitemap`](./api/plugins/plugin-sitemap.mdx)\n- [`@docusaurus/plugin-svgr`](./api/plugins/plugin-svgr.mdx)",
+      "source_content_hash": "38cf69285c3457ff944951c31e941d0928cb2a90953448ef439a556627c4f52a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [`@docusaurus/theme-classic`](./api/themes/theme-configuration.mdx)\n- [`@docusaurus/theme-search-algolia`](./api/themes/theme-search-algolia.mdx)\n- [`@docusaurus/plugin-content-docs`](./api/plugins/plugin-content-docs.mdx)\n- [`@docusaurus/plugin-content-blog`](./api/plugins/plugin-content-blog.mdx)\n- [`@docusaurus/plugin-content-pages`](./api/plugins/plugin-content-pages.mdx)\n- [`@docusaurus/plugin-debug`](./api/plugins/plugin-debug.mdx)\n- [`@docusaurus/plugin-google-gtag`](./api/plugins/plugin-google-gtag.mdx)\n- [`@docusaurus/plugin-google-tag-manager`](./api/plugins/plugin-google-tag-manager.mdx)\n- [`@docusaurus/plugin-google-analytics`](./api/plugins/plugin-google-analytics.mdx) (**已棄用**)\n- [`@docusaurus/plugin-sitemap`](./api/plugins/plugin-sitemap.mdx)\n- [`@docusaurus/plugin-svgr`](./api/plugins/plugin-svgr.mdx)"
+      }
+    },
+    {
+      "segment_id": "3e8f45da",
+      "source_content": "The classic preset will relay each option entry to the respective plugin/theme.",
+      "source_content_hash": "9b17414d7fddcf27c4385d093f62bc1fa4893b8dcaca6c4d2f18cc929df837e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "經典預設集會將每個配置選項轉發給對應的插件/主題。"
+      }
+    },
+    {
+      "segment_id": "d58c5dc0",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // Debug defaults to true in dev, false in prod\n        debug: undefined,\n        // Will be passed to @docusaurus/theme-classic.\n        theme: {\n          customCss: ['./src/css/custom.css'],\n        },\n        // Will be passed to @docusaurus/plugin-content-docs (false to disable)\n        docs: {},\n        // Will be passed to @docusaurus/plugin-content-blog (false to disable)\n        blog: {},\n        // Will be passed to @docusaurus/plugin-content-pages (false to disable)\n        pages: {},\n        // Will be passed to @docusaurus/plugin-sitemap (false to disable)\n        sitemap: {},\n        // Will be passed to @docusaurus/plugin-svgr (false to disable)\n        svgr: {},\n        // Will be passed to @docusaurus/plugin-google-gtag (only enabled when explicitly specified)\n        gtag: {},\n        // Will be passed to @docusaurus/plugin-google-tag-manager (only enabled when explicitly specified)\n        googleTagManager: {},\n        // DEPRECATED: Will be passed to @docusaurus/plugin-google-analytics (only enabled when explicitly specified)\n        googleAnalytics: {},\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "33e7748ee350b195108bbe597896b9e9d4adf71e5ec393ca7dc4127810ee07ed",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d58c5dc0"
+      }
+    },
+    {
+      "segment_id": "cce332f2",
+      "source_content": "### Installing presets {#installing-presets}",
+      "source_content_hash": "405045b5e54a37e785926bbe23cba427bf5e3145be88f58295eea7e74d109c22",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 安裝預設集 {#installing-presets}"
+      }
+    },
+    {
+      "segment_id": "9ebd9d9b",
+      "source_content": "A preset is usually an npm package, so you install them like other npm packages using npm.",
+      "source_content_hash": "2634ebeeac2c365fe0d4f3a99ad85e30bf89380b6e28898a3900cb60d26f5d01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設集通常是 npm 套件，因此您可以使用 npm 像安裝其他套件一樣安裝它們。"
+      }
+    },
+    {
+      "segment_id": "54dd003b",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/preset-classic\n```",
+      "source_content_hash": "1e028bd2f67056829c23336feafe3e06bf35e1be979997a709bc302d67edc432",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_54dd003b"
+      }
+    },
+    {
+      "segment_id": "c5e0bb3d",
+      "source_content": "Then, add it in your site's `docusaurus.config.js`'s `presets` option:",
+      "source_content_hash": "cdc96569ce5f6e6d65530603c59d0169a2d2f0227c2fbacabc1575c20b9862ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著，將其添加到您網站的 `docusaurus.config.js` 的 `presets` 選項中："
+      }
+    },
+    {
+      "segment_id": "03af811a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  // highlight-next-line\n  presets: ['@docusaurus/preset-classic'],\n};\n```",
+      "source_content_hash": "a37afb5b9a8a013d6a33913b3c3abcd0bdc99e067c118ff2a7b65f029cf74e90",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_03af811a"
+      }
+    },
+    {
+      "segment_id": "e6ac016e",
+      "source_content": "Preset paths can be relative to the config file:",
+      "source_content_hash": "ad63ee276258158e7acab8fad6f563fffc4be6bd09e9942b17332b16d8dafa59",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設集的路徑可以是相對於配置文件的相對路徑："
+      }
+    },
+    {
+      "segment_id": "5b2e44c7",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  // highlight-next-line\n  presets: ['./src/presets/docusaurus-local-preset'],\n};\n```",
+      "source_content_hash": "7ebae796ca2af89713e37f947e518b3e89b844fd124a94d729b583bfe8974066",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5b2e44c7"
+      }
+    },
+    {
+      "segment_id": "be106497",
+      "source_content": "### Creating presets {#creating-presets}",
+      "source_content_hash": "a0ff5880969c092ad5db2587486922054ce1f32cc719dc9eb2ea058e5d3d7116",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 建立預設集 {#creating-presets}"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "A preset is a function with the same shape as the [plugin constructor](./api/plugin-methods/README.mdx#plugin-constructor). It should return an object of `{ plugins: PluginConfig[], themes: PluginConfig[] }`, in the same as how they are accepted in the site config. For example, you can specify a preset that includes the following themes and plugins:",
+      "source_content_hash": "b176ecc3281d19498acd0e9fb204e69f5f1069e130c7c7a0c344d70f6cb26eac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設集是一個與[插件建構函式](./api/plugin-methods/README.mdx#plugin-constructor)結構相同的函式。它應返回一個 `{ plugins: PluginConfig[], themes: PluginConfig[] }` 物件，其格式與網站配置中接受的格式相同。例如，您可以指定一個包含以下主題與插件的預設集："
+      }
+    },
+    {
+      "segment_id": "7f271936",
+      "source_content": "```js title=\"src/presets/docusaurus-preset-multi-docs.js\"\nexport default function preset(context, opts = {}) {\n  return {\n    themes: [['docusaurus-theme-awesome', opts.theme]],\n    plugins: [\n      // Using three docs plugins at the same time!\n      // Assigning a unique ID for each without asking the user to do it\n      ['@docusaurus/plugin-content-docs', {...opts.docs1, id: 'docs1'}],\n      ['@docusaurus/plugin-content-docs', {...opts.docs2, id: 'docs2'}],\n      ['@docusaurus/plugin-content-docs', {...opts.docs3, id: 'docs3'}],\n    ],\n  };\n}\n```",
+      "source_content_hash": "6d683af61d89a4dbfc3e910fbd127fa75b576ea7914c77747d57d43c9a31e4d0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7f271936"
+      }
+    },
+    {
+      "segment_id": "d3912b2e",
+      "source_content": "Then in your Docusaurus config, you may configure the preset:",
+      "source_content_hash": "877a04a0c9aafff0a2c7513eaefa4058085069554dd03da693b4893cbfb3e394",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然後在您的 Docusaurus 配置中，您可以配置該預設集："
+      }
+    },
+    {
+      "segment_id": "4542e6c9",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    // highlight-start\n    [\n      './src/presets/docusaurus-preset-multi-docs.js',\n      {\n        theme: {hello: 'world'},\n        docs1: {path: '/docs'},\n        docs2: {path: '/community'},\n        docs3: {path: '/api'},\n      },\n    ],\n    // highlight-end\n  ],\n};\n```",
+      "source_content_hash": "4ceb48052f005675da716b9add357d67732c4dadfa6f75c16c31d41583a6ca76",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4542e6c9"
+      }
+    },
+    {
+      "segment_id": "13440cd7",
+      "source_content": "This is equivalent of doing:",
+      "source_content_hash": "5e92409e185656610cdaa2b2a21f784b4be9cfa625384f28c1d2760970e226e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這等同於："
+      }
+    },
+    {
+      "segment_id": "9d91602e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themes: [['docusaurus-theme-awesome', {hello: 'world'}]],\n  plugins: [\n    ['@docusaurus/plugin-content-docs', {id: 'docs1', path: '/docs'}],\n    ['@docusaurus/plugin-content-docs', {id: 'docs2', path: '/community'}],\n    ['@docusaurus/plugin-content-docs', {id: 'docs3', path: '/api'}],\n  ],\n};\n```",
+      "source_content_hash": "9857298e79dfae7e517f61fb1a6368b24c4d86e91d8834d05c29b1513afa8474",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9d91602e"
+      }
+    },
+    {
+      "segment_id": "bb5297fc",
+      "source_content": "This is especially useful when some plugins and themes are intended to be used together. You can even link their options together, e.g. pass one option to multiple plugins.",
+      "source_content_hash": "a1df5a3d4576d750632de06785c680ae5978d017eef82f62bbf1807e09409cff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當某些插件與主題需要一起使用時，這種方式特別有用。您甚至可以將它們的選項連結在一起，例如將一個選項傳遞給多個插件。"
+      }
+    },
+    {
+      "segment_id": "bb74dfa2",
+      "source_content": "## Module shorthands {#module-shorthands}",
+      "source_content_hash": "6727c6492f958a7ec97cc84bbef013f73c457069507e4ca765a982826225a455",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 模組簡寫 {#module-shorthands}"
+      }
+    },
+    {
+      "segment_id": "f4b938fe",
+      "source_content": "Docusaurus supports shorthands for plugins, themes, and presets. When it sees a plugin/theme/preset name, it tries to load one of the following, in that order:",
+      "source_content_hash": "8cc2c8143ec7c859e5a9b4c3662b93ea76f8204dce41b9e7fd1a409a5ac13e1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 支援插件、主題與預設集的簡寫形式。當它看到一個插件/主題/預設集名稱時，會嘗試按以下順序載入："
+      }
+    },
+    {
+      "segment_id": "08cc9caa",
+      "source_content": "- `[name]` (like `content-docs`)\n- `@docusaurus/[moduleType]-[name]` (like `@docusaurus/plugin-content-docs`)\n- `docusaurus-[moduleType]-[name]` (like `docusaurus-plugin-content-docs`)",
+      "source_content_hash": "2642e1fd4dd84cc7cc069fc33d632872ddb240f21bda2ddb2566663b1b783989",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `[name]`（例如 `content-docs`）\n- `@docusaurus/[moduleType]-[name]`（例如 `@docusaurus/plugin-content-docs`）\n- `docusaurus-[moduleType]-[name]`（例如 `docusaurus-plugin-content-docs`）"
+      }
+    },
+    {
+      "segment_id": "53e725dc",
+      "source_content": "where `moduleType` is one of `'preset'`, `'theme'`, `'plugin'`, depending on which field the module name is declared in. The first module name that's successfully found is loaded.",
+      "source_content_hash": "93fd025cdbf4a70d7b97589ed2cd2dc86496ed7a65210c8d44cb95dc24bc845c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其中 `moduleType` 是 `'preset'`、`'theme'` 或 `'plugin'` 之一，取決於模組名稱宣告在哪個欄位中。系統會載入第一個成功找到的模組名稱。"
+      }
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "If the name is scoped (beginning with `@`), the name is first split into scope and package name by the first slash:",
+      "source_content_hash": "0686b0273ad8fa96f8b5eacbbb6b95dca56341723d9c5b3fab902dd12adede37",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果名稱帶有作用域（以 `@` 開頭），則會先按第一個斜線將名稱拆分為作用域與套件名稱："
+      }
+    },
+    {
+      "segment_id": "a54efbd2",
+      "source_content": "```\n@scope\n^----^\n scope  (no name!)\n\n@scope/awesome\n^----^ ^-----^\n scope   name\n\n@scope/awesome/main\n^----^ ^----------^\n scope     name\n```",
+      "source_content_hash": "2b982073e890d7485c8b0444df43822bb17c1bd97deb742906a6f7738287189b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a54efbd2"
+      }
+    },
+    {
+      "segment_id": "c95293b9",
+      "source_content": "If there is no name (like `@jquery`), `[scope]/docusaurus-[moduleType]` (i.e. `@jquery/docusaurus-plugin`) is loaded. Otherwise, the following are attempted:",
+      "source_content_hash": "ca2dc96b7c1fbb0aff67b1e36518737679597cd5f1486b7e1f371197ef253358",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若名稱不存在（例如 `@jquery`），則會載入 `[scope]/docusaurus-[moduleType]`（即 `@jquery/docusaurus-plugin`）。否則，系統將嘗試以下路徑："
+      }
+    },
+    {
+      "segment_id": "3d08375e",
+      "source_content": "- `[scope]/[name]` (like `@jquery/content-docs`)\n- `[scope]/docusaurus-[moduleType]-[name]` (like `@jquery/docusaurus-plugin-content-docs`)",
+      "source_content_hash": "303fe27d742f416541fe5127dc0129a44b2b9df1c3de12b1eeee9d7fe711bb59",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `[scope]/[name]`（例如 `@jquery/content-docs`）\n- `[scope]/docusaurus-[moduleType]-[name]`（例如 `@jquery/docusaurus-plugin-content-docs`）"
+      }
+    },
+    {
+      "segment_id": "4786f22b",
+      "source_content": "Below are some examples, for a plugin registered in the `plugins` field. Note that unlike [ESLint](https://eslint.org/docs/user-guide/configuring/plugins#configuring-plugins) or [Babel](https://babeljs.io/docs/en/options#name-normalization) where a consistent naming convention for plugins is mandated, Docusaurus permits greater naming freedom, so the resolutions are not certain, but follows the priority defined above.",
+      "source_content_hash": "2ccfb0fe9e340dbbea1030a34a3d03ac8a76d0b0e3af203f2a0871d3c0120872",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下為註冊在 `plugins` 欄位的插件範例。需注意與 [ESLint](https://eslint.org/docs/user-guide/configuring/plugins#configuring-plugins) 或 [Babel](https://babeljs.io/docs/en/options#name-normalization) 強制要求插件命名規範不同，Docusaurus 允許更自由的命名方式，因此解析結果並非絕對，而是依循上述優先級進行。"
+      }
+    },
+    {
+      "segment_id": "7f2b8447",
+      "source_content": "| Declaration | May be resolved as |\n| --- | --- |\n| `awesome` | `docusaurus-plugin-awesome` |\n| `sitemap` | [`@docusaurus/plugin-sitemap`](./api/plugins/plugin-sitemap.mdx) |\n| `@my-company` | `@my-company/docusaurus-plugin` (the only possible resolution!) |\n| `@my-company/awesome` | `@my-company/docusaurus-plugin-awesome` |\n| `@my-company/awesome/web` | `@my-company/docusaurus-plugin-awesome/web` |",
+      "source_content_hash": "f13250481f69a55b4166cf67eee197c01b499db90e536ecb6f02cf7d633d199c",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7f2b8447"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/using-plugins.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.041121+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "c0e6121dbf452dd0637416ca88728bf8a490c51cbafec772d489ca5f89f78bc2"
+  }
+}

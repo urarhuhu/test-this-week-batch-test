@@ -1,0 +1,132 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/api/plugins/plugin-ideal-image.mdx",
+  "source_file_content_hash": "bb34ef77a1805bb2b6f29b2017c190a1f40fe1e3d6705be690ccc03765cde0f8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 8\nslug: /api/plugins/@docusaurus/plugin-ideal-image\n---",
+      "source_content_hash": "420fa08a68ad8d55b7628ae183b79bb6cb4f067058d5ed14023a837644e43735",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-ideal-image",
+      "source_content_hash": "1f45ac57de2492913ca0d01c6ecb39c45ed6e2571e0ae6a6fff8718e967a0e15",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-ideal-image"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Docusaurus Plugin to generate an almost ideal image (responsive, lazy-loading, and low quality placeholder).",
+      "source_content_hash": "b690bc4e3c0c5de86828497c2fe9e31459b2e4afae132cf4a160ebdd0485f70e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 插件，用於生成近乎理想的圖片（響應式、懶加載和低質量佔位圖）。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::info\n\nBy default, the plugin is **inactive in development** so you could always view full-scale images. If you want to debug the ideal image behavior, you could set the [`disableInDev`](#disableInDev) option to `false`.\n\n:::",
+      "source_content_hash": "d7013b39cb3a9eee1b0fb45bfa4f3f19564a6ed84825c9a3cbb449d0effff9eb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n預設情況下，該插件在開發環境中處於**非活動狀態**，以便您始終可以查看全尺寸圖片。如果您想調試理想圖片行為，可以將 [`disableInDev`](#disableInDev) 選項設置為 `false`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-ideal-image\n```",
+      "source_content_hash": "1852d26ca555de543abc346d9d431541452e6b61148bc6f551af8467b786bef1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用方法 {#usage}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "This plugin supports the PNG and JPG formats only.",
+      "source_content_hash": "1403279556d1e940a2f76f4e246f39793b8d1aada0b330070fb25332a9221ced",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此插件僅支援 PNG 和 JPG 格式。"
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```jsx\nimport Image from '@theme/IdealImage';\nimport thumbnail from './path/to/img.png';\n\n// your React code\n<Image img={thumbnail} />\n\n// or\n<Image img={require('./path/to/img.png')} />\n```",
+      "source_content_hash": "1b16681528b435485f6bd3c786bed7e793726ad51fabec273301ee773f6e0796",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "84650edb",
+      "source_content": ":::warning\n\nThis plugin registers a [Webpack loader](https://webpack.js.org/loaders/) that changes the type of imported/require images:\n\n- Before: `string`\n- After: `{preSrc: string, src: import(\"@theme/IdealImage\").SrcImage}`\n\n:::",
+      "source_content_hash": "724288b8ee1d045f06ef0ea9085cc28941df588c06486ac21bd1fc7ed876de39",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此插件註冊了一個 [Webpack 加載器](https://webpack.js.org/loaders/)，會改變導入/請求的圖片類型：\n\n- 之前：`string`\n- 之後：`{preSrc: string, src: import(\"@theme/IdealImage\").SrcImage}`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::warning[For pnpm users]\n\nStarting with [pnpm 10](https://github.com/pnpm/pnpm/releases/tag/v10.0.0), running `pnpm install` won't run dependency install scripts by default. You'll need additional pnpm configuration ([issue](https://github.com/lovell/sharp/issues/4343)) for our `sharp` image resizing dependency to install correctly, such as:\n\n```json title=\"package.json\"\n{\n  \"pnpm\": {\n    \"onlyBuiltDependencies\": [\"fsevents\"]\n  }\n}\n```\n\n## Configuration {#configuration}\n\nAccepted fields:\n\n```mdx-code-block\n<APITable>\n```\n\n| Option | Type | Default | Description |\n| --- | --- | --- | --- |\n| `name` | `string` | `ideal-img/[name].[hash:hex:7].[width].[ext]` | Filename template for output files. |\n| `sizes` | `number[]` | _original size_ | Specify all widths you want to use. If a specified size exceeds the original image's width, the latter will be used (i.e. images won't be scaled up). |\n| `size` | `number` | _original size_ | Specify one width you want to use; if the specified size exceeds the original image's width, the latter will be used (i.e. images won't be scaled up) |\n| `min` | `number` |  | As an alternative to manually specifying `sizes`, you can specify `min`, `max` and `steps`, and the sizes will be generated for you. |\n| `max` | `number` |  | See `min` above |\n| `steps` | `number` | `4` | Configure the number of images generated between `min` and `max` (inclusive) |\n| `quality` | `number` | `85` | JPEG compression quality |\n| `disableInDev` | `boolean` | `true` | You can test ideal image behavior in dev mode by setting this to `false`. **Tip**: use [network throttling](https://www.browserstack.com/guide/how-to-perform-network-throttling-in-chrome) in your browser to simulate slow networks. |\n\n```mdx-code-block\n</APITable>\n```\n\n### Example configuration {#ex-config}\n\nHere's an example configuration:\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-ideal-image',\n      // highlight-start\n      {\n        quality: 70,\n        max: 1030, // max resized image's size.\n        min: 640, // min resized image's size. if original is lower, use that size.\n        steps: 2, // the max number of images generated between min and max (inclusive)\n        disableInDev: false,\n      },\n      // highlight-end\n    ],\n  ],\n};\n```",
+      "source_content_hash": "af828cb491e78790ad681906c604da1f37abf334dd9e8e14ed1033b96443ef00",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[針對 pnpm 用戶]\n\n從 [pnpm 10](https://github.com/pnpm/pnpm/releases/tag/v10.0.0) 開始，運行 `pnpm install` 預設不會執行依賴項的安裝腳本。為了讓我們的 `sharp` 圖片調整大小依賴項正確安裝，您需要額外的 pnpm 配置（[問題](https://github.com/lovell/sharp/issues/4343)），例如：\n\n```json title=\"package.json\"\n{\n  \"pnpm\": {\n    \"onlyBuiltDependencies\": [\"fsevents\"]\n  }\n}\n```\n\n## 配置 {#configuration}\n\n接受的字段：\n\n```mdx-code-block\n<APITable>\n```\n\n| 選項 | 類型 | 預設值 | 描述 |\n| --- | --- | --- | --- |\n| `name` | `string` | `ideal-img/[name].[hash:hex:7].[width].[ext]` | 輸出文件的文件名模板。 |\n| `sizes` | `number[]` | _原始尺寸_ | 指定您想要使用的所有寬度。如果指定的大小超過原始圖片的寬度，則使用後者（即圖片不會被放大）。 |\n| `size` | `number` | _原始尺寸_ | 指定您想要使用的一個寬度；如果指定的大小超過原始圖片的寬度，則使用後者（即圖片不會被放大） |\n| `min` | `number` |  | 作為手動指定 `sizes` 的替代方案，您可以指定 `min`、`max` 和 `steps`，系統將為您生成尺寸。 |\n| `max` | `number` |  | 參見上面的 `min` |\n| `steps` | `number` | `4` | 配置在 `min` 和 `max` 之間（包括兩端）生成的圖片數量 |\n| `quality` | `number` | `85` | JPEG 壓縮質量 |\n| `disableInDev` | `boolean` | `true` | 您可以通過將此選項設置為 `false` 來在開發模式下測試理想圖片行為。**提示**：在瀏覽器中使用[網絡節流](https://www.browserstack.com/guide/how-to-perform-network-throttling-in-chrome)來模擬慢速網絡。 |\n\n```mdx-code-block\n</APITable>\n```\n\n### 示例配置 {#ex-config}\n\n以下是一個示例配置：\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-ideal-image',\n      // highlight-start\n      {\n        quality: 70,\n        max: 1030, // 調整後圖片的最大尺寸。\n        min: 640, // 調整後圖片的最小尺寸。如果原始尺寸更小，則使用原始尺寸。\n        steps: 2, // 在 min 和 max 之間（包括兩端）生成的圖片最大數量\n        disableInDev: false,\n      },\n      // highlight-end\n    ],\n  ],\n};\n```"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/api/plugins/plugin-ideal-image.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.345159+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "bb34ef77a1805bb2b6f29b2017c190a1f40fe1e3d6705be690ccc03765cde0f8"
+  }
+}

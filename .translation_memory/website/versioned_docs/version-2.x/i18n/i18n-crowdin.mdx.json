@@ -1,0 +1,1216 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/i18n/i18n-crowdin.mdx",
+  "source_file_content_hash": "3dbeb5598a09469c0197b2441a21e5ac2aa2ec900322730ce585c09fe9e59bd9",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: crowdin\nslug: /i18n/crowdin\ntoc_max_heading_level: 4\n---",
+      "source_content_hash": "253e6065675706ba43f39aa475fe48e619669710ee0698f9837844eb6e2d9ea4",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# i18n - Using Crowdin",
+      "source_content_hash": "67102794cac9fc63b673e5cd9fb5236de35d6de1ba60d1a71e67ab1c3dacf0e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "The i18n system of Docusaurus is **decoupled from any translation software**.",
+      "source_content_hash": "0687c6beedcbd88f362b5a6c1278c459173bbc663fdfb897941f46ac958e934b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "You can integrate Docusaurus with the **tools and SaaS of your choice**, as long as you put the **translation files at the correct location**.",
+      "source_content_hash": "dce2487645681a5399fed985d958f28879e1d054dab348fbb6250ec51bfa2632",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "We document the usage of [Crowdin](https://crowdin.com/), as **one** possible **integration example**.",
+      "source_content_hash": "02a65a856652ce2d41bae646f52e1498be673f9f826d1125a1744fb19c9e52e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ac44a45c",
+      "source_content": ":::warning\n\nThis is **not an endorsement of Crowdin** as the unique choice to translate a Docusaurus site, but it is successfully used by Facebook to translate documentation projects such as [Jest](https://jestjs.io/), [Docusaurus](https://docusaurus.io/), and [ReasonML](https://reasonml.github.io/).\n\nRefer to the **[Crowdin documentation](https://support.crowdin.com/)** and **[Crowdin support](mailto:support@crowdin.com)** for help.\n\n:::",
+      "source_content_hash": "29e4b697905375724dab488ec9db8a963644a62b4a81b0b0bfaa354b38b0943f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::tip\n\nUse this **[community-driven GitHub discussion](https://github.com/facebook/docusaurus/discussions/4052)** to discuss anything related to Docusaurus + Crowdin.\n\n:::",
+      "source_content_hash": "61053629a90ffb7332dea02b934e164877a6d67fb1b2d6c03ebbb67a3ac4721c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Crowdin overview {#crowdin-overview}",
+      "source_content_hash": "1f10308a49324403d3e628c706e3b79f358043b585ffdcbfd01539b7d0cd7464",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Crowdin is a translation SaaS, offering a [free plan for open-source projects](https://crowdin.com/page/open-source-project-setup-request).",
+      "source_content_hash": "4c7db4a76c415a24eac4896c30826304096692f357db4a8b551022e6ce1b4240",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "We recommend the following translation workflow:",
+      "source_content_hash": "9b8879dcb2a17d5821876dc4b31b03e809965819f00eb488a842c422b68bcddb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "- **Upload sources** to Crowdin (untranslated files)\n- Use Crowdin to **translate the content**\n- **Download translations** from Crowdin (localized translation files)",
+      "source_content_hash": "744e38175be36642bb14570c919a1681afb3b101e43d1eee8112247dffcebd4d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Crowdin provides a [CLI](https://support.crowdin.com/cli-tool/) to **upload sources** and **download translations**, allowing you to automate the translation process.",
+      "source_content_hash": "c240fda46c37101cc1f736613bdca282ea0b10b1d9379032bcade8e6ec7d07d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "The [`crowdin.yml` configuration file](https://support.crowdin.com/configuration-file/) is convenient for Docusaurus, and permits to **download the localized translation files at the expected location** (in `i18n/[locale]/..`).",
+      "source_content_hash": "b5941787909adaea593f4a1480aee7f2bb9536c75223005c16c971852f235d0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Read the **[official documentation](https://support.crowdin.com/)** to know more about advanced features and different translation workflows.",
+      "source_content_hash": "c0b7e8af682867b6165f806a7a6ecb349fd8c1f14ba4687378d0131654cf295f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "## Crowdin tutorial {#crowdin-tutorial}",
+      "source_content_hash": "f94b76a31a0bec9ebbd6d527a35b86ed1e6a3f059e54094d192bc13ea9bd1192",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "This is a walk-through of using Crowdin to translate a newly initialized English Docusaurus website into French, and assume you already followed the [i18n tutorial](./i18n-tutorial.mdx).",
+      "source_content_hash": "55ac966c49d4797cad47f2360f5babb9f742464172b194ac6638177d884f6f12",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "The end result can be seen at [docusaurus-crowdin-example.netlify.app](https://docusaurus-crowdin-example.netlify.app/) ([repository](https://github.com/slorber/docusaurus-crowdin-example)).",
+      "source_content_hash": "91cb7dd2a3aa25d8a6d8fd6f89f85abbdbf6b81fe0c456158220716d9f1f54a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "11c76fcc",
+      "source_content": "### Prepare the Docusaurus site {#prepare-the-docusaurus-site}",
+      "source_content_hash": "cb63aba09b3ec2ce8a1f4ff6ba88216f134e532d9a0f52933fd493c1ef3554ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "Initialize a new Docusaurus site:",
+      "source_content_hash": "9c8f12a4190c9b53e707f6b2040d23a76c3a0c769ac7f3e74bb026f2e3592c59",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f275f5fd",
+      "source_content": "```bash\nnpx create-docusaurus@latest website classic\n```",
+      "source_content_hash": "99fb9b012aafbe9394e575d2366a28c552de086f9cfa93445c0122fb8508c133",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Add the site configuration for the French language:",
+      "source_content_hash": "b024d9d72d3fe5928f49a262d4b72a870d78a3a225ae004ae9cdb29ace8a1ea4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c05ad55e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fr'],\n  },\n  themeConfig: {\n    navbar: {\n      items: [\n        // ...\n        {\n          type: 'localeDropdown',\n          position: 'left',\n        },\n        // ...\n      ],\n    },\n  },\n  // ...\n};\n```",
+      "source_content_hash": "3037bd75af685f99b87f180fea9228d65a9fe3a24131850d2bca13833e91a60d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "Translate the homepage:",
+      "source_content_hash": "50e4bde5ba456cf0afcb61e1488c3f15ec15f087630d1846fde5a23e616f4158",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "65400624",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Translate from '@docusaurus/Translate';\nimport Layout from '@theme/Layout';\n\nexport default function Home() {\n  return (\n    <Layout>\n      <h1 style={{margin: 20}}>\n        <Translate description=\"The homepage main heading\">\n          Welcome to my Docusaurus translated site!\n        </Translate>\n      </h1>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "b11dab67f2f89f5fdb432d08110a5b8bc1501011f926d8531e9b9f8a6d59bc48",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "94145a94",
+      "source_content": "### Create a Crowdin project {#create-a-crowdin-project}",
+      "source_content_hash": "875eec7d371d05fc2724d41cd84be29d6fa22808a9d0dfc77091f201ef281635",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Sign up on [Crowdin](https://crowdin.com/), and create a project.",
+      "source_content_hash": "246a4422a429c8ae18bd75f4038c998216bf7a0d49f159e11e9189a0e24d785d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "Use English as the source language, and French as the target language.",
+      "source_content_hash": "5b29f75991303b49c2b52805dd338af9f3fac676921e2612c21e5d033d7811c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "![Create a Crowdin project with english as source language, and french as target language](/img/crowdin/crowdin-create-project.png)",
+      "source_content_hash": "c01de942a0e5db71fda5c72d6176051ea1cfed5754f52b363664d76fa0671f27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "Your project is created, but it is empty for now. We will upload the files to translate in the next steps.",
+      "source_content_hash": "289542048d9226ed7535435d76eaf7b7d04aab5bf0edef4e5537102efb64e1aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "### Create the Crowdin configuration {#create-the-crowdin-configuration}",
+      "source_content_hash": "68001a4bc0bf02c6a572832f1d88cc5f51a8f1ce655e35814ecd5b13860c29dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "This configuration ([doc](https://support.crowdin.com/configuration-file/)) provides a mapping for the Crowdin CLI to understand:",
+      "source_content_hash": "c5265511c89619a8d682cbbf8887c558730af690e0db1e887be4d2789fa41a7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2890f5b2",
+      "source_content": "- Where to find the source files to upload (JSON and Markdown)\n- Where to download the files after translation (in `i18n/[locale]`)",
+      "source_content_hash": "06ab52bd82f407160dfa7fe1c602d6b8baf665f949e320312b73acb94cb3a63d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 上傳來源檔案的位置（JSON 和 Markdown）\n- 翻譯後下載檔案的位置（位於 `i18n/[locale]`）"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "Create `crowdin.yml` in `website`:",
+      "source_content_hash": "1323d0bd7ee40b2d6a289a7a3551a3368bd1939b7a20760296b1cf4b4ed11141",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 `website` 目錄下建立 `crowdin.yml`："
+      }
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```yml title=\"crowdin.yml\"\nproject_id: '123456'\napi_token_env: CROWDIN_PERSONAL_TOKEN\npreserve_hierarchy: true\nfiles:\n  # JSON translation files\n  - source: /i18n/en/**/*\n    translation: /i18n/%two_letters_code%/**/%original_file_name%\n  # Docs Markdown files\n  - source: /docs/**/*\n    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%\n  # Blog Markdown files\n  - source: /blog/**/*\n    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%\n```",
+      "source_content_hash": "f228c5edc4f54b50a29b822766e4258f1c357cc6d9c159155ba3a3dda11e61db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b27056c4"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "Crowdin has its own syntax for declaring source/translation paths:",
+      "source_content_hash": "46720f3c69abab2fbd1bf6c619f687304eb7b0b33d554eddc524ccba22e5e952",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Crowdin 有自己宣告來源/翻譯路徑的語法："
+      }
+    },
+    {
+      "segment_id": "292df6cb",
+      "source_content": "- `**/*`: everything in a subfolder\n- `%two_letters_code%`: the 2-letters variant of Crowdin target languages (`fr` in our case)\n- `**/%original_file_name%`: the translations will preserve the original folder/file hierarchy",
+      "source_content_hash": "2baa4d9febdc5c00b40530a034c274d892c1bd103c1b4102779083bfa42944ed",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `**/*`: 子資料夾中的所有內容\n- `%two_letters_code%`: Crowdin 目標語言的兩位字母代碼（本例中為 `fr`）\n- `**/%original_file_name%`: 翻譯將保留原始資料夾/檔案結構"
+      }
+    },
+    {
+      "segment_id": "af6c6e42",
+      "source_content": ":::info\n\nThe Crowdin CLI warnings are not always easy to understand.\n\nWe advise to:\n\n- change one thing at a time\n- re-upload sources after any configuration change\n- use paths starting with `/` (`./` does not work)\n- avoid fancy globbing patterns like `/docs/**/*.(md|mdx)` (does not work)\n\n:::",
+      "source_content_hash": "79bfcf6a3512d0813129059f42df5f8caf720d5a16b578ff6c8c65f13e1532fe",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\nCrowdin CLI 的警告訊息有時不易理解。\n\n建議：\n\n- 一次只修改一個設定\n- 任何配置變更後重新上傳來源檔案\n- 使用以 `/` 開頭的路徑（`./` 無效）\n- 避免複雜的 glob 模式如 `/docs/**/*.(md|mdx)`（無效）\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "#### Access token {#access-token}",
+      "source_content_hash": "6a8c14a1b058055f3971e51142644af2a72f1421264b9ae7dd41761ae2ff27f6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 存取權杖 {#access-token}"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "The `api_token_env` attribute defines the **env variable name** read by the Crowdin CLI.",
+      "source_content_hash": "2ece187171be31ceb11e0d085f45ea939df6c4c5ec61c6746e6a1ca68edbc3c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`api_token_env` 屬性定義了 Crowdin CLI 讀取的 **環境變數名稱**。"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "You can obtain a `Personal Access Token` on [your personal profile page](https://crowdin.com/settings#api-key).",
+      "source_content_hash": "7f8d1777a828d3355b7ec834ccbb1e70f9514fc63793e78a231512e9a265ae82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以在 [個人資料頁面](https://crowdin.com/settings#api-key) 取得 `Personal Access Token`。"
+      }
+    },
+    {
+      "segment_id": "50e02753",
+      "source_content": ":::tip\n\nYou can keep the default value `CROWDIN_PERSONAL_TOKEN`, and set this environment variable and on your computer and on the CI server to the generated access token.\n\n:::",
+      "source_content_hash": "bdc49c997d695f037040ef44b0c1638e76bf2c3e183194aedda80a1936e5689b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您可以保留預設值 `CROWDIN_PERSONAL_TOKEN`，並在本地電腦和 CI 伺服器上將此環境變數設為生成的存取權杖。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b1fb63b3",
+      "source_content": ":::warning\n\nA Personal Access Tokens grant **read-write access to all your Crowdin projects**.\n\nYou should **not commit** it, and it may be a good idea to create a dedicated **Crowdin profile for your company** instead of using a personal account.\n\n:::",
+      "source_content_hash": "c8476a30713d05998acd0ce238f6bf09cc06bd204dd2b9f2793b52152f10f8c8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n個人存取權杖會授予 **對所有 Crowdin 專案的讀寫權限**。\n\n您 **不應提交** 此權杖，建議為公司建立專用的 **Crowdin 帳號** 而非使用個人帳戶。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "67edbbc4",
+      "source_content": "#### Other configuration fields {#other-configuration-fields}",
+      "source_content_hash": "411b1ba771fe05320e465970d56f07cd76e9e77dfe59abcc8401867c5d7c62ac",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 其他配置欄位 {#other-configuration-fields}"
+      }
+    },
+    {
+      "segment_id": "5b1ccdc9",
+      "source_content": "- `project_id`: can be hardcoded, and is found on `https://crowdin.com/project/<MY_PROJECT_NAME>/settings#api`\n- `preserve_hierarchy`: preserve the folder's hierarchy of your docs on Crowdin UI instead of flattening everything",
+      "source_content_hash": "b1285f7a7b5d00e21b083fc466363bfffce7a1003753126df4d4844db969eb5e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `project_id`: 可硬編碼，位於 `https://crowdin.com/project/<MY_PROJECT_NAME>/settings#api`\n- `preserve_hierarchy`: 在 Crowdin 介面中保留文件夾結構而非扁平化顯示"
+      }
+    },
+    {
+      "segment_id": "c66e62ef",
+      "source_content": "### Install the Crowdin CLI {#install-the-crowdin-cli}",
+      "source_content_hash": "ffada96b29fadfd57e94698256e1263f7306b66e3a26e45be1d9ea503d593b4d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 安裝 Crowdin CLI {#install-the-crowdin-cli}"
+      }
+    },
+    {
+      "segment_id": "fe25bd72",
+      "source_content": "This tutorial uses the CLI version `3.5.2`, but we expect `3.x` releases to keep working.",
+      "source_content_hash": "16b18017e25b3c177b7825d0e95b0ae97592d4c0fa8f665fcedfe10847cea3dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本教學使用 CLI 版本 `3.5.2`，但預期 `3.x` 版本均可正常運作。"
+      }
+    },
+    {
+      "segment_id": "c8a6ab3e",
+      "source_content": "Install the Crowdin CLI as an npm package to your Docusaurus site:",
+      "source_content_hash": "b9401e075a903fabb675e9b08091ef45e8435e701956f1bb9034329dedc22d7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將 Crowdin CLI 作為 npm 套件安裝至 Docusaurus 專案："
+      }
+    },
+    {
+      "segment_id": "f02969e0",
+      "source_content": "```bash npm2yarn\nnpm install @crowdin/cli@3\n```",
+      "source_content_hash": "d77cde6ed4674d7754bfba1d05cbcb371f0af4686b95d92adb37f538c50597b7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f02969e0"
+      }
+    },
+    {
+      "segment_id": "4899bc54",
+      "source_content": "Add a `crowdin` script:",
+      "source_content_hash": "ae1a532294f769a635c02f82590529d5ce7de8196c0a6a51eba2b95784c0f3b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新增 `crowdin` 指令："
+      }
+    },
+    {
+      "segment_id": "21f43a9a",
+      "source_content": "```json title=\"package.json\"\n{\n  \"scripts\": {\n    // ...\n    \"write-translations\": \"docusaurus write-translations\",\n    \"crowdin\": \"crowdin\"\n  }\n}\n```",
+      "source_content_hash": "6963e34b1f9ff7554fc9bf300cad68042bcb0421a80c2373312b0d4e2798e74a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_21f43a9a"
+      }
+    },
+    {
+      "segment_id": "48249e3c",
+      "source_content": "Test that you can run the Crowdin CLI:",
+      "source_content_hash": "15f8ff80787effb6dbce03e0eca3335a1487c2d22766c01e73638146f689faf5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "測試是否能執行 Crowdin CLI："
+      }
+    },
+    {
+      "segment_id": "cf50de8a",
+      "source_content": "```bash npm2yarn\nnpm run crowdin -- --version\n```",
+      "source_content_hash": "33c8e2e2a81b3cd7cb5a331f6ef2e06ed8c567a66fd63bf1465f14de4936bef6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cf50de8a"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "Set the `CROWDIN_PERSONAL_TOKEN` env variable on your computer, to allow the CLI to authenticate with the Crowdin API.",
+      "source_content_hash": "4c87afa8728b75b949834ba2cc9efedede30af35ad58deaf40aa68e5748a0305",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在電腦上設定 `CROWDIN_PERSONAL_TOKEN` 環境變數，讓 CLI 能通過 Crowdin API 驗證。"
+      }
+    },
+    {
+      "segment_id": "b88c26a7",
+      "source_content": ":::tip\n\nTemporarily, you can hardcode your personal token in `crowdin.yml` with `api_token: 'MY-TOKEN'`.\n\n:::",
+      "source_content_hash": "6eca9abbcbfd6f5c488ff37b69e9531c8fadd7f7e6dba720e505073e8b0a1669",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n暫時性地，您可以在 `crowdin.yml` 中硬編碼個人權杖：`api_token: 'MY-TOKEN'`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e594a4f9",
+      "source_content": "### Upload the sources {#upload-the-sources}",
+      "source_content_hash": "743c158e53dc072b3c59d90cd37700c92abd14f841e769aa138aa7896e34174c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 上傳來源檔案 {#upload-the-sources}"
+      }
+    },
+    {
+      "segment_id": "d8c366cc",
+      "source_content": "Generate the JSON translation files for the default language in `website/i18n/en`:",
+      "source_content_hash": "5f85da694eb8bb8e3d0aa758937215877b03810be2cd0670f4a38b770c5f37c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為預設語言生成 JSON 翻譯檔案至 `website/i18n/en`："
+      }
+    },
+    {
+      "segment_id": "daad2e28",
+      "source_content": "```bash npm2yarn\nnpm run write-translations\n```",
+      "source_content_hash": "a585da0c4031763abf78ee6dbc1e1cb0c67b72a6de7ff93c1162fd0e46bebc55",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_daad2e28"
+      }
+    },
+    {
+      "segment_id": "61e5dad6",
+      "source_content": "Upload all the JSON and Markdown translation files:",
+      "source_content_hash": "084b1db9ef40607a2eb4661d244e6fac4148cea393b5e13a031becc354f1d88c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "上傳所有 JSON 和 Markdown 翻譯檔案："
+      }
+    },
+    {
+      "segment_id": "18e3e63d",
+      "source_content": "```bash npm2yarn\nnpm run crowdin upload\n```",
+      "source_content_hash": "eabf51850da92f0cb2be30e36a3da0b54b8662857b07c57653de65a60da000a7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_18e3e63d"
+      }
+    },
+    {
+      "segment_id": "228d01d5",
+      "source_content": "![Crowdin CLI uploading Docusaurus source files](/img/crowdin/crowdin-upload-sources-cli.png)",
+      "source_content_hash": "b681f7dcbf0d6ea3cf8b443097bf45b374d14e961b4816676b48480abd3630b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Crowdin CLI 上傳 Docusaurus 來源檔案](/img/crowdin/crowdin-upload-sources-cli.png)"
+      }
+    },
+    {
+      "segment_id": "85b17c36",
+      "source_content": "Your source files are now visible on the Crowdin interface: `https://crowdin.com/project/<MY_PROJECT_NAME>/settings#files`",
+      "source_content_hash": "c7873c0e84c55d56209adcf4be51e142b11893560f8387f65a961598fad46857",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的來源檔案現在可在 Crowdin 介面查看：`https://crowdin.com/project/<MY_PROJECT_NAME>/settings#files`"
+      }
+    },
+    {
+      "segment_id": "d3912b2e",
+      "source_content": "![Crowdin UI showing Docusaurus source files](/img/crowdin/crowdin-source-files.png)",
+      "source_content_hash": "9d7d22d1e499a0da597bf7f05d3df0e7d170b0504f329e18ec0bb149c6d815dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Crowdin 介面顯示 Docusaurus 來源檔案](/img/crowdin/crowdin-source-files.png)"
+      }
+    },
+    {
+      "segment_id": "67dfd717",
+      "source_content": "### Translate the sources {#translate-the-sources}",
+      "source_content_hash": "88d457455047e892fa1b6bf6e0ed6479492c59968ebdbcc88c1b95cf0ddaf921",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯來源檔案 {#translate-the-sources}"
+      }
+    },
+    {
+      "segment_id": "ba12acea",
+      "source_content": "On `https://crowdin.com/project/<MY_PROJECT_NAME>`, click on the French target language.",
+      "source_content_hash": "d88eb6cc720decc26e12eda94abb7998348eb4ffac98e0ab9ef37ee5615e3918",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 `https://crowdin.com/project/<MY_PROJECT_NAME>` 頁面，點選法語目標語言。"
+      }
+    },
+    {
+      "segment_id": "4033c370",
+      "source_content": "![Crowdin UI showing French translation files](/img/crowdin/crowdin-french-translations.png)",
+      "source_content_hash": "5c7eb0d843b1e3a24a41f421ea369c3827b11e8b3e8a6eb27adb0bace3193260",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dfb6fc67",
+      "source_content": "Translate some Markdown files.",
+      "source_content_hash": "2883e1ae3407969fd4761a124b37cfdd1360762f2dffd09168bc3699f3ba71db",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "80dbdeb8",
+      "source_content": "![Crowdin UI to translate a Markdown file](/img/crowdin/crowdin-translate-markdown.png)",
+      "source_content_hash": "ff608944a7b23687108c10b262c0bf6d239a740bdd6ff4933316dce21f668a2e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "92dd4071",
+      "source_content": ":::tip\n\nUse `Hide String` to make sure translators **don't translate things that should not be**:\n\n- Front matter: `id`, `slug`, `tags` ...\n- Admonitions: `:::`, `:::note`, `:::tip` ...\n\n![Crowdin UI hide string](/img/crowdin/crowdin-hide-string.png)\n\n:::",
+      "source_content_hash": "112f54fdeba77e362e88046e22ce7856905270642ea770bf1f55dfe806ff845c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "15d5abf0",
+      "source_content": "Translate some JSON files.",
+      "source_content_hash": "c663443495ee09e3c6937ebd7138029ca8f4aafbc591951f9cdc792ab9ec2157",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "![Crowdin UI to translate a JSON file](/img/crowdin/crowdin-translate-json.png)",
+      "source_content_hash": "ca47f2eaae26ae15c655d443fd5ab6e69a536c7b779e058cd9581535433dccc9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b5c42d42",
+      "source_content": ":::info\n\nThe `description` attribute of JSON translation files is visible on Crowdin to help translate the strings.\n\n:::",
+      "source_content_hash": "33c995e3d358f35ef112b3b9885e2779d2b09f6556379fcec6de9cd53cb428f3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "425cd7b0",
+      "source_content": ":::tip\n\n**[Pre-translate](https://support.crowdin.com/pre-translation-via-machine/)** your site, and **fix pre-translation mistakes manually** (enable the Global Translation Memory in settings first).\n\nUse the `Hide String` feature first, as Crowdin is pre-translating things too optimistically.\n\n:::",
+      "source_content_hash": "99dedae470b9db0f495f4fb1b17f4bfdb4bc923e0390488d3313e3f98060f99a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "846134ef",
+      "source_content": "### Download the translations {#download-the-translations}",
+      "source_content_hash": "75ccb75c23c572249766e3fc1a5b99ec80ebae9f409592b5fa8a90bc70e9854c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "53e725dc",
+      "source_content": "Use the Crowdin CLI to download the translated JSON and Markdown files.",
+      "source_content_hash": "6e1e37922ff718ddb96a86092493fc29303344abd2dc56f9a0d5aae7ebbc00be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "79d8cec2",
+      "source_content": "```bash npm2yarn\nnpm run crowdin download\n```",
+      "source_content_hash": "ac7ec471559c85188ada20fc1ef9815ef93b016eef24810cfbf3d8f7c3002674",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "740d2e67",
+      "source_content": "The translated content should be downloaded in `i18n/fr`.",
+      "source_content_hash": "68b4fa5815927aa4c4d173d5865b772ecf82cc6bf634a579b2cc775b9ea1894e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e3bf03eb",
+      "source_content": "Start your site on the French locale:",
+      "source_content_hash": "ace6f230502c16dcc0e61d74bd4d7172b5708f964958218cfae01ffb6b585879",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb13dcb2",
+      "source_content": "```bash npm2yarn\nnpm run start -- --locale fr\n```",
+      "source_content_hash": "cb03a7f69b372ffc4020462fee71048686277912592f2ead73eff84fa9200e2d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "850ec775",
+      "source_content": "Make sure that your website is now translated in French at [`http://localhost:3000/fr/`](http://localhost:3000/fr/).",
+      "source_content_hash": "09a4b352f21ce8ba9b7c1e4572a40bf9107ff7609656e4c7e87c1f509c866e15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f8d1807a",
+      "source_content": "### Automate with CI {#automate-with-ci}",
+      "source_content_hash": "48496efc106fb5a926664cc758f2ae70dad4666df6a06041a77322d62adb7e68",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c95293b9",
+      "source_content": "We will configure the CI to **download the Crowdin translations at build time** and keep them outside of Git.",
+      "source_content_hash": "098dd81fd6810c7c698395df0958490036d12d9ac939252d80474d9f9d8c3f01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7ed923ee",
+      "source_content": "Add `website/i18n` to `.gitignore`.",
+      "source_content_hash": "4f1fb3c9175f39b196196362d3bc0c8451eb08393e47b1ac86a7073a063cf469",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a5a28988",
+      "source_content": "Set the `CROWDIN_PERSONAL_TOKEN` env variable on your CI.",
+      "source_content_hash": "40f307910c6df0110c4177624469f86ceb6ff683896700fb592d8f28dccb02e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6c4ea90c",
+      "source_content": "Create an npm script to `sync` Crowdin (extract sources, upload sources, download translations):",
+      "source_content_hash": "adcae11e3c438ca041dcf2e2e4e22d664424356650d576d0c4019481df5ac982",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ac2ed4ad",
+      "source_content": "```json title=\"package.json\"\n{\n  \"scripts\": {\n    \"crowdin:sync\": \"docusaurus write-translations && crowdin upload && crowdin download\"\n  }\n}\n```",
+      "source_content_hash": "7e2a64242d131118c427d58d2820f091d05e07c8219ebb7d7b91da0b1bf55456",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "e020f7ed",
+      "source_content": "Call the `npm run crowdin:sync` script in your CI, just before building the Docusaurus site.",
+      "source_content_hash": "266b517217825c7935726a0ddb6f8f218f66126b80864cf2f5798c93ae5077bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ef35d58d",
+      "source_content": ":::tip\n\nKeep your deploy-previews fast: don't download translations, and use `npm run build -- --locale en` for feature branches.\n\n:::",
+      "source_content_hash": "bf60f892d0ea895b233f744dbb626e2307971509a8c0b4225019e4926ea48cef",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8d220982",
+      "source_content": ":::warning\n\nCrowdin does not support well multiple concurrent uploads/downloads: it is preferable to only include translations to your production deployment, and keep deploy previews untranslated.\n\n:::",
+      "source_content_hash": "b1a59d56335ae070d3a53350d62359403907a9565de2160640428eaf5520194b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3d6aa925",
+      "source_content": "## Advanced Crowdin topics {#advanced-crowdin-topics}",
+      "source_content_hash": "a557a862c92ae87e4f763b7c17ab8276cd5fff9185fabab0ffe82c02edb53969",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8dfbc79d",
+      "source_content": "### MDX {#mdx}",
+      "source_content_hash": "344a8fa7587c0b197533348ed79e550ede57d2d9d7cb14020c2acf26c5787046",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "edc53889",
+      "source_content": ":::warning\n\nPay special attention to the JSX fragments in MDX documents!\n\n:::",
+      "source_content_hash": "c066f1fc58e0b150d0080859eadd3211b7d7983379f16cbdd1c0fcc037835cd4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a6efb0d1",
+      "source_content": "Crowdin **does not support officially MDX**, but they added **support for the `.mdx` extension**, and interpret such files as Markdown (instead of plain text).",
+      "source_content_hash": "10f5a36ae240feca3d9ab6514555c98c3fe5624a879363751d9e01457aa79ca1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "42a9e250",
+      "source_content": "#### MDX problems {#mdx-problems}",
+      "source_content_hash": "a205ce471534d4b4aba248c5e70401fcc9f688dd6e7b1b48e10d1287ffc4a387",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e4ab192a",
+      "source_content": "Crowdin thinks that the JSX syntax is embedded HTML and can mess up with the JSX markup when you download the translations, leading to a site that fails to build due to invalid JSX.",
+      "source_content_hash": "34612391f259ad21ea951e2fafcec6aec0940f4fc830633b1b6edfd351757f87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6fecc583",
+      "source_content": "Simple JSX fragments using simple string props like `<Username name=\"Sebastien\"/>` will work fine; more complex JSX fragments using object/array props like `<User person={{name: \"Sebastien\"}}/>` are more likely to fail due to a syntax that does not look like HTML.",
+      "source_content_hash": "d3ff79986cba615f187bad3aac42b205f5020ddc1ceedb045b81a41f29d96ada",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "12e415c2",
+      "source_content": "#### MDX solutions {#mdx-solutions}",
+      "source_content_hash": "e4c9bb1f704a29365804a289262e45c88bd4b0b379af9ec8e54e889e8333043d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9cbb5424",
+      "source_content": "We recommend extracting the complex embedded JSX code as separate standalone components. We also added an `mdx-code-block` escape hatch syntax:",
+      "source_content_hash": "c4e2a5a44f4f83556e7cda42cce89744d039c16276821cf72b45225febba704a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議將複雜的嵌入式 JSX 代碼提取為獨立的組件。我們還添加了 `mdx-code-block` 作為應急語法："
+      }
+    },
+    {
+      "segment_id": "9f0775df",
+      "source_content": "`````text\n# How to deploy Docusaurus\n\nTo deploy Docusaurus, run the following command:\n\n````mdx-code-block \nimport Tabs from '@theme/Tabs';\n\nimport TabItem from '@theme/TabItem';\n\n<Tabs>\n  <TabItem value=\"bash\" label=\"Bash\">\n\n  ```bash\n  GIT_USER=<GITHUB_USERNAME> yarn deploy\n  ```\n\n  </TabItem>\n  <TabItem value=\"windows\" label=\"Windows\">\n\n  ```batch\n  cmd /C \"set \"GIT_USER=<GITHUB_USERNAME>\" && yarn deploy\"\n  ```\n\n  </TabItem>\n</Tabs>\n````\n`````",
+      "source_content_hash": "8a0d9161211fc5cca82c282aeadb2d0aeaae9dccacd6dd48a994ef405241dd0e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f0775df"
+      }
+    },
+    {
+      "segment_id": "dbea1fe8",
+      "source_content": "This will:",
+      "source_content_hash": "3f2cfbc950d5bec695c7f0e719d65abba8f2d9b6d876b6385ec5222731ac34f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這將："
+      }
+    },
+    {
+      "segment_id": "0cd3331b",
+      "source_content": "- be interpreted by Crowdin as code blocks (and not mess-up with the markup on download)\n- be interpreted by Docusaurus as regular JSX (as if it was not wrapped by any code block)\n- unfortunately opt-out of MDX tooling (IDE syntax highlighting, Prettier...)",
+      "source_content_hash": "cb97a41d89fbeb8e1d848203caa36d73c838e7855448fcfacef15149bbf97a97",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 被 Crowdin 視為代碼塊（下載時不會破壞標記結構）\n- 被 Docusaurus 視為常規 JSX（就像沒有被任何代碼塊包裹一樣）\n- 遺憾的是會脫離 MDX 工具鏈（如 IDE 語法高亮、Prettier...）"
+      }
+    },
+    {
+      "segment_id": "fa461c90",
+      "source_content": "### Docs versioning {#docs-versioning}",
+      "source_content_hash": "4eb4ebbbebe942c871256849760cfacd9d84fffaf5ede2f20c447d93c2298bc0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文檔版本控制 {#docs-versioning}"
+      }
+    },
+    {
+      "segment_id": "fe2c7f95",
+      "source_content": "Configure translation files for the `website/versioned_docs` folder.",
+      "source_content_hash": "639ef5c718c4a326152f5e106dc3ea59220047deb447520f69f41fdf76efa0a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為 `website/versioned_docs` 文件夾配置翻譯文件。"
+      }
+    },
+    {
+      "segment_id": "79496df8",
+      "source_content": "When creating a new version, the source strings will generally be quite similar to the current version (`website/docs`), and you don't want to translate the new version docs again and again.",
+      "source_content_hash": "0cafea0208616178c4cf7613aabeb65029651c8ecc30c288429f42ba4e644b4c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "創建新版本時，源字符串通常與當前版本（`website/docs`）非常相似，您不希望反覆翻譯新版本文檔。"
+      }
+    },
+    {
+      "segment_id": "860eb645",
+      "source_content": "Crowdin provides a `Duplicate Strings` setting.",
+      "source_content_hash": "95659608379f78355ed8861068b1485753b03eb7f6fea611471d314ed422ed68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Crowdin 提供「重複字符串」設置選項。"
+      }
+    },
+    {
+      "segment_id": "fee14fdc",
+      "source_content": "![Crowdin Duplicate Strings option setting](/img/crowdin/crowdin-settings-duplicate-strings.png)",
+      "source_content_hash": "8c5215cf73bb465a2a89ec5ba0f9768b54eb0a513807bbafbc70bc4361a7ed57",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Crowdin 重複字符串選項設置](/img/crowdin/crowdin-settings-duplicate-strings.png)"
+      }
+    },
+    {
+      "segment_id": "77f0732d",
+      "source_content": "We recommend using `Hide`, but the ideal setting depends on how much your versions are different.",
+      "source_content_hash": "261b1216eeb73d3208cace383cac0a2b8b94c3f4ce79a9922dd405af41410281",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議使用「隱藏」選項，但最佳設置取決於各版本間的差異程度。"
+      }
+    },
+    {
+      "segment_id": "b6d4643c",
+      "source_content": ":::warning\n\nNot using `Hide` leads to a much larger amount of `source strings` in quotas, and will affect the pricing.\n\n:::",
+      "source_content_hash": "97638c31b5f11aa62dbdcc1a5bc32743a657dd19fbcd6df6aa0993ebfd65ba79",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n不使用「隱藏」選項會大幅增加配額中的「源字符串」數量，從而影響定價。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "20ca1bf3",
+      "source_content": "### Multi-instance plugins {#multi-instance-plugins}",
+      "source_content_hash": "07cb9781bf32f86d5a12c8e95e64c2abcb1cb3f372a864d453b6467aa27028b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 多實例插件 {#multi-instance-plugins}"
+      }
+    },
+    {
+      "segment_id": "7ba83bb3",
+      "source_content": "You need to configure translation files for each plugin instance.",
+      "source_content_hash": "856bac7fc3fd4f594904e82751c72cb100810a980eff4d08a198ebf81ac67669",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您需要為每個插件實例配置翻譯文件。"
+      }
+    },
+    {
+      "segment_id": "f6c8bbba",
+      "source_content": "If you have a docs plugin instance with `id=ios`, you will need to configure those source files as well",
+      "source_content_hash": "17ccd16920099152cba707bff11bc577647c2605f0f951c703ea3197c4ab36bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您的文檔插件實例標識為 `id=ios`，則還需配置以下源文件："
+      }
+    },
+    {
+      "segment_id": "72cf9cce",
+      "source_content": "- `website/ios`\n- `website/ios_versioned_docs` (if versioned)",
+      "source_content_hash": "47778edb60971cfaae2165c130b245d25e51b588b82d5b0581ce6c2d9f88bd4f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `website/ios`\n- `website/ios_versioned_docs`（若啟用版本控制）"
+      }
+    },
+    {
+      "segment_id": "96cd7bb6",
+      "source_content": "### Maintaining your site {#maintaining-your-site}",
+      "source_content_hash": "faf59f3ef80811c349665861a4cf83ed62cee9091b6c830f6e72ddeeb925debc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 維護站點 {#maintaining-your-site}"
+      }
+    },
+    {
+      "segment_id": "a24efd7d",
+      "source_content": "Sometimes, you will **remove or rename a source file** on Git, and Crowdin will display CLI warnings:",
+      "source_content_hash": "b7989d6bd6a1f4afd15029cf64247a080b69d557a7c0479f3d9ac1b806ebe30c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有時您會在 Git 中**刪除或重命名源文件**，此時 Crowdin CLI 會顯示警告："
+      }
+    },
+    {
+      "segment_id": "69acbca3",
+      "source_content": "![Crowdin CLI: download translation warning](/img/crowdin/crowdin-download-translations-warning.png)",
+      "source_content_hash": "346ce87067222d3e4d924b933c4978ecf21848dcb42fe3f0f7d188c5834fb6c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Crowdin CLI：下載翻譯警告](/img/crowdin/crowdin-download-translations-warning.png)"
+      }
+    },
+    {
+      "segment_id": "e3448845",
+      "source_content": "When your sources are refactored, you should use the Crowdin UI to **update your Crowdin files manually**:",
+      "source_content_hash": "c8a7b6e5150d98cd0cdec604b6e56fdab313826f7394b8b232013945cf272e89",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當源代碼重構時，應使用 Crowdin 界面**手動更新 Crowdin 文件**："
+      }
+    },
+    {
+      "segment_id": "0273ea32",
+      "source_content": "![Crowdin UI: renaming a file](/img/crowdin/crowdin-files-rename.png)",
+      "source_content_hash": "ff717ade7fff74730e7dd221efecbbd90bcb4a6595aafc6daeab25d96893af26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Crowdin 界面：重命名文件](/img/crowdin/crowdin-files-rename.png)"
+      }
+    },
+    {
+      "segment_id": "81e59017",
+      "source_content": "### VCS (Git) integrations {#vcs-git-integrations}",
+      "source_content_hash": "681ae576ba8f3e9a852b6c2f50748f18debed0f5106ab5be114ca168255f0f5b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 版本控制系統（Git）集成 {#vcs-git-integrations}"
+      }
+    },
+    {
+      "segment_id": "ca714988",
+      "source_content": "Crowdin has multiple VCS integrations for [GitHub](https://support.crowdin.com/github-integration/), GitLab, Bitbucket.",
+      "source_content_hash": "cea5883c1a44b2071d1f167f2b1742bdbc7debadde2c9d3bbbac401d77308d32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Crowdin 提供多種 VCS 集成方案，包括 [GitHub](https://support.crowdin.com/github-integration/)、GitLab 和 Bitbucket。"
+      }
+    },
+    {
+      "segment_id": "988f5162",
+      "source_content": ":::warning[TL;DR]\n\nWe recommend avoiding them.\n\n:::",
+      "source_content_hash": "374d12134945524fef8b53ffd5a2df28a295fdbee753d9f93703eca6dc791981",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[簡而言之]\n\n我們建議避免使用這些集成。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "72dd1482",
+      "source_content": "It could have been helpful to be able to edit the translations in both Git and Crowdin, and have a **bi-directional sync** between the 2 systems.",
+      "source_content_hash": "6a81e2993c7f23df3f0a31d93d41fb91b41870bb80ac973f40e6e04331f305ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "理論上這本應實現雙向同步：允許用戶在 Git 和 Crowdin 兩端編輯翻譯，並保持系統間同步。"
+      }
+    },
+    {
+      "segment_id": "df64d276",
+      "source_content": "In practice, **it didn't work very reliably** for a few reasons:",
+      "source_content_hash": "23c1ecb22c3ee085edbcc0a76dd9ba7b1df92a904130e8b69a36d35b0a558324",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "但實際操作中存在**可靠性問題**："
+      }
+    },
+    {
+      "segment_id": "9e3efcee",
+      "source_content": "- The Crowdin -> Git sync works fine (with a pull request)\n- The Git -> Crowdin sync is manual (you have to press a button)\n- The heuristics used by Crowdin to match existing Markdown translations to existing Markdown sources are not 100% reliable, and you have to verify the result on Crowdin UI after any sync from Git\n- 2 users concurrently editing on Git and Crowdin can lead to a translation loss\n- It requires the `crowdin.yml` file to be at the root of the repository",
+      "source_content_hash": "f6ae95b060a809dc4792fe33885a262a8f543d7c777f1fb1d1b728d1a61a6007",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Crowdin → Git 同步正常（通過拉取請求）\n- Git → Crowdin 同步需手動觸發（需點擊按鈕）\n- Crowdin 用於匹配現有 Markdown 翻譯與源文件的啟發式算法並非 100% 可靠，每次從 Git 同步後都需在 Crowdin 界面驗證\n- 用戶同時在 Git 和 Crowdin 編輯可能導致翻譯丟失\n- 要求 `crowdin.yml` 文件必須位於倉庫根目錄"
+      }
+    },
+    {
+      "segment_id": "ccaaddaa",
+      "source_content": "### In-Context localization {#in-context-localization}",
+      "source_content_hash": "67c582f79eef9cc2672c27912fe1333d9fffefa972f7c642bbe048810ddf79ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 上下文本地化 {#in-context-localization}"
+      }
+    },
+    {
+      "segment_id": "e99b1eb5",
+      "source_content": "Crowdin has an [In-Context localization](https://support.crowdin.com/in-context-localization/) feature.",
+      "source_content_hash": "8f69720cc3cd074b3694b24d324aa327c76cb197152b3b3f721ffd4a549fa81a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Crowdin 提供[上下文本地化](https://support.crowdin.com/in-context-localization/)功能。"
+      }
+    },
+    {
+      "segment_id": "0839e295",
+      "source_content": ":::warning\n\nUnfortunately, it does not work yet for technical reasons, but we have good hope it can be solved.\n\nCrowdin replaces Markdown strings with technical IDs such as `crowdin:id12345`, but it does so too aggressively, including hidden strings, and messes up with front matter, admonitions, JSX...\n\n:::",
+      "source_content_hash": "7f292d8ffa0fd52a88049ec8e3a7f39d138feaab644b2fa573bd6ed36432dcc1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n由於技術限制，該功能目前無法正常工作，但我們認為未來可能解決此問題。\n\nCrowdin 會將 Markdown 字符串替換為技術性 ID（如 `crowdin:id12345`），但替換過程過於激進，會影響隱藏字符串、前言數據、提示框和 JSX 等結構。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "95a0af4d",
+      "source_content": "### Localize edit URLs {#localize-edit-urls}",
+      "source_content_hash": "dd19712d5720be0e0745e5f589fc3fb0ce0043210e1e6b6d2a3c284ae7dac090",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 本地化編輯鏈接 {#localize-edit-urls}"
+      }
+    },
+    {
+      "segment_id": "0d8c3e6f",
+      "source_content": "When the user is browsing a page at `/fr/doc1`, the edit button will link by default to the unlocalized doc at `website/docs/doc1.md`.",
+      "source_content_hash": "749fc96f3335a5fb655e2411e6c8fdd2bc8dfe9b5f8ceda3d6b9c6aaf4692f04",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當使用者瀏覽 `/fr/doc1` 頁面時，編輯按鈕預設會連結到未本地化的文件 `website/docs/doc1.md`。"
+      }
+    },
+    {
+      "segment_id": "b13a021c",
+      "source_content": "You may prefer the edit button to link to the Crowdin interface instead by using the `editUrl` function to customize the edit URLs on a per-locale basis.",
+      "source_content_hash": "ee3956dd4deb37d2462c038ef646f4b2c54d107dd75e1fa08110f390d8c5ee18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以使用 `editUrl` 函數按語言環境自訂編輯 URL，讓編輯按鈕改為連結至 Crowdin 介面。"
+      }
+    },
+    {
+      "segment_id": "d5b02573",
+      "source_content": "```js title=\"docusaurus.config.js\"\nconst DefaultLocale = 'en';\n\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          // highlight-start\n          editUrl: ({locale, versionDocsDirPath, docPath}) => {\n            // Link to Crowdin for French docs\n            if (locale !== DefaultLocale) {\n              return `https://crowdin.com/project/docusaurus-v2/${locale}`;\n            }\n            // Link to GitHub for English docs\n            return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;\n          },\n          // highlight-end\n        },\n        blog: {\n          // highlight-start\n          editUrl: ({locale, blogDirPath, blogPath}) => {\n            if (locale !== DefaultLocale) {\n              return `https://crowdin.com/project/docusaurus-v2/${locale}`;\n            }\n            return `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`;\n          },\n          // highlight-start\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "c83a52133b2de5ffb5a75cdedaf25b8599ac8da1919d014287cc3014b00c7ba8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d5b02573"
+      }
+    },
+    {
+      "segment_id": "786c875f",
+      "source_content": ":::note\n\nIt is currently **not possible to link to a specific file** in Crowdin.\n\n:::",
+      "source_content_hash": "f1cf43f435af35ba9c055cebb8037bb69164e38107e94e2bb298c21ae6f4699a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n目前**無法連結至 Crowdin 中的特定檔案**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0b6179bc",
+      "source_content": "### Example configuration {#example-configuration}",
+      "source_content_hash": "33eb5b93503bd760747fc9676451cce342a696031b608cd45da15cedf175e8cb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例設定 {#example-configuration}"
+      }
+    },
+    {
+      "segment_id": "d6ee8a64",
+      "source_content": "The **Docusaurus v2 configuration file** is a good example of using versioning and multi-instance:",
+      "source_content_hash": "ba2a12b44a48586dc792b6f22319af5310bcf07eb4de735ff81a60bb89666e49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**Docusaurus v2 設定檔**是使用版本控制與多實例的良好範例："
+      }
+    },
+    {
+      "segment_id": "b6fff5fe",
+      "source_content": "```mdx-code-block\nimport CrowdinConfigV2 from '!!raw-loader!@site/../crowdin-v2.yaml';\nimport CodeBlock from '@theme/CodeBlock';\n\n<CodeBlock className=\"language-yaml\" title=\"crowdin.yml\">\n  {CrowdinConfigV2.split('\\n')\n    // remove comments\n    .map((line) => !line.startsWith('#') && line)\n    .filter(Boolean)\n    .join('\\n')}\n</CodeBlock>\n```",
+      "source_content_hash": "92c8d8d4cb6b752aae5f589fe0ee7a8ad43dd2477df2b8ebc9e22468a2bf34db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b6fff5fe"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/i18n/i18n-crowdin.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.053967+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "3dbeb5598a09469c0197b2441a21e5ac2aa2ec900322730ce585c09fe9e59bd9"
+  }
+}

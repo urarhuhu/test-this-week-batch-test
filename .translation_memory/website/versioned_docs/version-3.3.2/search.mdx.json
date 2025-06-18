@@ -1,0 +1,722 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/search.mdx",
+  "source_file_content_hash": "ade56666355b8dca3f3f65f6e9b9be7a72c9b105ad116a8f3ee3f68540a96a65",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nkeywords:\n  - algolia\n  - search\n---",
+      "source_content_hash": "be28f7b65171d95ec17001caac9509a67fe59d796a29b1da1e6f1d8901ad9ca2",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Search",
+      "source_content_hash": "4cc4b9442bff697f6f3ed607f11143e0e168b8e246bdf1b51992cdf7e1ed6c39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 搜尋"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "There are a few options you can use to add search to your website:",
+      "source_content_hash": "790bdeec3dbc18d9a4800f7b46dcf94ee5ea40e3261ffc45d61a9dd8098043b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過以下幾種方式為網站添加搜尋功能："
+      }
+    },
+    {
+      "segment_id": "be33979e",
+      "source_content": "- 🥇 [Algolia DocSearch](#using-algolia-docsearch) (**official**)\n- 👥 [Typesense DocSearch](#using-typesense-docsearch)\n- 👥 [Local Search](#using-local-search)\n- 👥 [Your own `SearchBar` component](#using-your-own-search)",
+      "source_content_hash": "6f2c0c579d1f2fa14c9701a2921e714b93d8eebd65703eb45403caad97a2358b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 🥇 [Algolia DocSearch](#using-algolia-docsearch)（**官方支援**）\n- 👥 [Typesense DocSearch](#using-typesense-docsearch)\n- 👥 [本地搜尋](#using-local-search)\n- 👥 [自訂 `SearchBar` 元件](#using-your-own-search)"
+      }
+    },
+    {
+      "segment_id": "976d532b",
+      "source_content": ":::info\n\n🥇 Docusaurus provides **first-class support** for [Algolia DocSearch](#using-algolia-docsearch).\n\n👥 Other options are **maintained by the community**: please report bugs to their respective repositories.\n\n:::",
+      "source_content_hash": "df5c475762866fef71ede14b13c285681f5cf3c4ea3516ce3c97736bad2a8627",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n🥇 Docusaurus 對 [Algolia DocSearch](#using-algolia-docsearch) 提供**一級支援**。\n\n👥 其他選項由**社群維護**：請將問題回報至各自的程式庫。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## 🥇 Using Algolia DocSearch {#using-algolia-docsearch}",
+      "source_content_hash": "650ba837ee3a24fdf900d377a196b8933d1445cddcb110c5f27d2be00a3654a9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 🥇 使用 Algolia DocSearch {#using-algolia-docsearch}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Docusaurus has **official support** for [Algolia DocSearch](https://docsearch.algolia.com).",
+      "source_content_hash": "45f96d2e2c612c3773eed623af9d8e3aad361eec311f435c7d35d1e0a36c880d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus **官方支援** [Algolia DocSearch](https://docsearch.algolia.com)。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "The service is **free** for any developer documentation or technical blog: just make sure to read the [checklist](https://docsearch.algolia.com/docs/who-can-apply/) and [apply to the DocSearch program](https://docsearch.algolia.com/apply).",
+      "source_content_hash": "fdff204629b23448e4863564bfc84cb7ab752652c26b90852d536e907552dd43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "該服務對任何開發者文件或技術部落格**免費**：請務必閱讀[檢查清單](https://docsearch.algolia.com/docs/who-can-apply/)並[申請加入 DocSearch 計畫](https://docsearch.algolia.com/apply)。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "DocSearch crawls your website once a week (the schedule is configurable from the web interface) and aggregates all the content in an Algolia index. This content is then queried directly from your front-end using the Algolia API.",
+      "source_content_hash": "c7232bd897daf93837bbd41fc57bc295450ccd993d4cdd01308ff6e243057de6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "DocSearch 每週爬取您的網站一次（排程可透過網頁介面設定），並將所有內容彙總至 Algolia 索引中。這些內容隨後會透過 Algolia API 直接從前端查詢。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "If your website is [not eligible](https://docsearch.algolia.com/docs/who-can-apply) for the free, hosted version of DocSearch, or if your website sits behind a firewall and is not public, then you can [run your own](https://docsearch.algolia.com/docs/run-your-own/) DocSearch crawler.",
+      "source_content_hash": "f2563d0da037eb91cfbcfc73d09067523268108c8d83f007cac6ec28fdb2dae9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您的網站[不符合](https://docsearch.algolia.com/docs/who-can-apply)免費託管版 DocSearch 的資格，或網站位於防火牆後且非公開狀態，您可以[自行運行](https://docsearch.algolia.com/docs/run-your-own/) DocSearch 爬蟲。"
+      }
+    },
+    {
+      "segment_id": "b56ef571",
+      "source_content": ":::note\n\nBy default, the Docusaurus preset generates a [sitemap.xml](https://docusaurus.io/sitemap.xml) that the Algolia crawler can use.\n\n:::",
+      "source_content_hash": "36c91d9b292d7fab8e2bd9536d969ec86607e274c0d4368984a7edcf5c156d18",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n預設情況下，Docusaurus 預設配置會生成 Algolia 爬蟲可使用的 [sitemap.xml](https://docusaurus.io/sitemap.xml)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "33a4805e",
+      "source_content": ":::info[From the old docsearch?]\n\nYou can read more about migration from the legacy DocSearch infra in [our blog post](/blog/2021/11/21/algolia-docsearch-migration) or [the DocSearch migration docs](https://docsearch.algolia.com/docs/migrating-from-legacy).\n\n:::",
+      "source_content_hash": "19694c4edfb35f33cae79e60d1c10b02537e2eddeb246660a97b86b59e11c284",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[從舊版 docsearch 遷移？]\n\n您可以在[我們的部落格文章](/blog/2021/11/21/algolia-docsearch-migration)或 [DocSearch 遷移文件](https://docsearch.algolia.com/docs/migrating-from-legacy)中閱讀更多關於從舊版 DocSearch 基礎架構遷移的資訊。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "### Index Configuration {#algolia-index-configuration}",
+      "source_content_hash": "d1fa4d5523b019e4a627701202b261b4d0452983414ca543615740a58d97d2ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 索引配置 {#algolia-index-configuration}"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "After your application has been approved and deployed, you will receive an email with all the details for you to add DocSearch to your project. Editing and managing your crawls can be done via [the web interface](https://crawler.algolia.com/). Indices are readily available after deployment, so manual configuration usually isn't necessary.",
+      "source_content_hash": "b5a69ce8c0b7d31203bb1eae36d9870ab10575044e824bb574ea1537ee3b41d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "申請通過並部署後，您將收到一封包含所有詳細資訊的電子郵件，以便將 DocSearch 加入專案。可透過[網頁介面](https://crawler.algolia.com/)編輯和管理爬取作業。索引在部署後立即可用，因此通常無需手動配置。"
+      }
+    },
+    {
+      "segment_id": "7d0728d9",
+      "source_content": ":::danger[Use the recommended crawler config]\n\nIt is highly recommended to use our official [**Docusaurus v3 crawler configuration**](https://docsearch.algolia.com/docs/templates/#docusaurus-v3-template). We cannot support you if you choose a different crawler configuration.\n\n:::",
+      "source_content_hash": "1188f20c4ab2a9a2337b4bf8121697cff11790018ad8bf2bf53fd783e8880381",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[使用推薦的爬蟲配置]\n\n強烈建議使用我們官方的 [**Docusaurus v3 爬蟲配置**](https://docsearch.algolia.com/docs/templates/#docusaurus-v3-template)。若您選擇不同的爬蟲配置，我們將無法提供支援。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f90b9a6a",
+      "source_content": ":::warning[When updating your crawler config]\n\nThe crawler configuration contains a `initialIndexSettings`, which will only be used to initialize your Algolia index if it does not exist yet.\n\nIf you update your `initialIndexSettings` crawler setting, it is possible to update the index manually through the interface, but [the Algolia team recommends to delete your index and then restart a crawl](https://github.com/facebook/docusaurus/issues/9200#issuecomment-1667338492) to fully reinitialize it with the new settings.\n\n:::",
+      "source_content_hash": "483fad327ba2d4fc8ce7cf51ce9b75e01cab830ef540bf9865afae9386d6affc",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[更新爬蟲配置時]\n\n爬蟲配置包含 `initialIndexSettings`，僅在 Algolia 索引不存在時用於初始化。\n\n若更新 `initialIndexSettings` 爬蟲設定，可透過介面手動更新索引，但 [Algolia 團隊建議刪除索引後重新開始爬取](https://github.com/facebook/docusaurus/issues/9200#issuecomment-1667338492)，以完全使用新設定重新初始化。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "### Connecting Algolia {#connecting-algolia}",
+      "source_content_hash": "3036ad39e1b55ca2ab00c32597f7bb5d8fd2156ef1510bb20530e6c7569a9b26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 連接 Algolia {#connecting-algolia}"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "Docusaurus' own `@docusaurus/preset-classic` supports Algolia DocSearch integration. If you use the classic preset, no additional installation is needed.",
+      "source_content_hash": "6d897009e312120fa959aeb5b7ed1f2781bf21cfcb6af403417ac470eabcae3f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 自身的 `@docusaurus/preset-classic` 支援 Algolia DocSearch 整合。若使用經典預設配置，無需額外安裝。"
+      }
+    },
+    {
+      "segment_id": "c537a3d3",
+      "source_content": "<details>\n<summary>Installation steps when not using <code>@docusaurus/preset-classic</code></summary>\n\n1. Install the package:\n\n```bash npm2yarn\nnpm install --save @docusaurus/theme-search-algolia\n```\n\n2. Register the theme in `docusaurus.config.js`:\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  title: 'My site',\n  // ...\n  themes: ['@docusaurus/theme-search-algolia'],\n  themeConfig: {\n    // ...\n  },\n};\n```\n\n</details>",
+      "source_content_hash": "74279df48a61c72a4e2fe469213552be46bcb88add098e36b3344dfc756f73fa",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c537a3d3"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Then, add an `algolia` field in your `themeConfig`. **[Apply for DocSearch](https://docsearch.algolia.com/apply/)** to get your Algolia index and API key.",
+      "source_content_hash": "10e3bb074f5ce600c2e039fe39c339aecf8817b753ead85760f784d40bc44a17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著，在 `themeConfig` 中添加 `algolia` 欄位。**[申請 DocSearch](https://docsearch.algolia.com/apply/)** 以取得 Algolia 索引和 API 金鑰。"
+      }
+    },
+    {
+      "segment_id": "daa16011",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  themeConfig: {\n    // ...\n    // highlight-start\n    algolia: {\n      // The application ID provided by Algolia\n      appId: 'YOUR_APP_ID',\n\n      // Public API key: it is safe to commit it\n      apiKey: 'YOUR_SEARCH_API_KEY',\n\n      indexName: 'YOUR_INDEX_NAME',\n\n      // Optional: see doc section below\n      contextualSearch: true,\n\n      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.\n      externalUrlRegex: 'external\\\\.com|domain\\\\.com',\n\n      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs\n      replaceSearchResultPathname: {\n        from: '/docs/', // or as RegExp: /\\/docs\\//\n        to: '/',\n      },\n\n      // Optional: Algolia search parameters\n      searchParameters: {},\n\n      // Optional: path for search page that enabled by default (`false` to disable it)\n      searchPagePath: 'search',\n\n      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)\n      insights: false,\n\n      //... other Algolia params\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "55e6915f3a082684120434336df01568ffc4a771ec4171133ae2c2b9ecc78f34",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_daa16011"
+      }
+    },
+    {
+      "segment_id": "a1600d1d",
+      "source_content": ":::info\n\nThe `searchParameters` option used to be named `algoliaOptions` in Docusaurus v1.\n\nRefer to its [official DocSearch documentation](https://docsearch.algolia.com/docs/api#searchparameters) for possible values.\n\n:::",
+      "source_content_hash": "9b2977b5deaa1aa768f92474e0fcc3e5c0ad46b74872a8e0ab5d63ad1adabb0e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n在 Docusaurus v1 中，`searchParameters` 選項原名為 `algoliaOptions`。\n\n請參閱其 [官方 DocSearch 文件](https://docsearch.algolia.com/docs/api#searchparameters) 了解可能的參數值。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "34bfe80f",
+      "source_content": ":::warning\n\nThe search feature will not work reliably until Algolia crawls your site.\n\nIf search doesn't work after any significant change, please use the Algolia dashboard to **trigger a new crawl**.\n\n:::",
+      "source_content_hash": "bef8f737f55c38aae61f99d467df59eb546d232ac40e33f6d1ecb87e51104d2b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n在 Algolia 爬取您的網站之前，搜尋功能可能無法穩定運作。\n\n若搜尋在重大變更後失效，請透過 Algolia 儀表板 **手動觸發新一輪爬取**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "### Contextual search {#contextual-search}",
+      "source_content_hash": "0a558427d1d896ced60bb87f002f0b8057a36e57fb1b5bf889995abbf69cb902",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 上下文搜尋 {#contextual-search}"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "Contextual search is **enabled by default**.",
+      "source_content_hash": "8a017228301b1254b017f9498aeda203327a07acb1481ff8c9b1f6f06858cda1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "上下文搜尋功能 **預設啟用**。"
+      }
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "It ensures that search results are **relevant to the current language and version**.",
+      "source_content_hash": "de28f9b511e8a67422ac2625e21a22917ddc7ef41095765112da29a397c9db80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "它能確保搜尋結果 **與當前語言和版本相關**。"
+      }
+    },
+    {
+      "segment_id": "e9921a93",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  themeConfig: {\n    // ...\n    // highlight-start\n    algolia: {\n      contextualSearch: true,\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "f2ece3a8203dc66a0ff01295ada3b811f48f18ebc80153b202e4601b4aa78104",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e9921a93"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "Let's consider you have 2 docs versions (**v1** and **v2**) and 2 languages (`en` and `fr`).",
+      "source_content_hash": "c6e8b427f6aa14c169ee75e0ff9a52b6593ba0461a6f0f1397d3cd2cf5712036",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "假設您有 2 個文件版本 (**v1** 和 **v2**) 及 2 種語言 (`en` 和 `fr`)。"
+      }
+    },
+    {
+      "segment_id": "89cf7bac",
+      "source_content": "When browsing v2 docs, it would be odd to return search results for the v1 documentation. Sometimes v1 and v2 docs are quite similar, and you would end up with duplicate search results for the same query (one result per version).",
+      "source_content_hash": "a7a9358319ee37208c25c6cd1d9986a6a74e451ccc06702fe10da12ff1558ebc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當瀏覽 v2 文件時，若出現 v1 文件的搜尋結果會顯得突兀。有時 v1 與 v2 文件內容高度相似，可能導致相同查詢出現重複結果（每個版本各一筆）。"
+      }
+    },
+    {
+      "segment_id": "808b0414",
+      "source_content": "Similarly, when browsing the French site, it would be odd to return search results for the English docs.",
+      "source_content_hash": "d391b7a88b54362f54af55c43f96e8f00889076381ef070057dc3b5a4c172951",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "同理，瀏覽法文站點時，若顯示英文文件的搜尋結果也不合理。"
+      }
+    },
+    {
+      "segment_id": "61a78cbe",
+      "source_content": "To solve this problem, the contextual search feature understands that you are browsing a specific docs version and language, and will create the search query filters dynamically.",
+      "source_content_hash": "e071b7f8fbfff2c5bf5afa7359241fea764222573d4e74cf7a4b0e0dd887a8b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為解決此問題，上下文搜尋會動態識別您正在瀏覽的特定文件版本與語言，並自動建立對應的搜尋篩選條件。"
+      }
+    },
+    {
+      "segment_id": "471486dc",
+      "source_content": "- on `/en/docs/v1/myDoc`, search results will only include **English** results for the **v1** docs (+ other unversioned pages)\n- on `/fr/docs/v2/myDoc`, search results will only include **French** results for the **v2** docs (+ other unversioned pages)",
+      "source_content_hash": "f8ab51c8e950f7735e6add5e84037f672ba76379e5e8db3dc9ae65e64d8a6982",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 在 `/en/docs/v1/myDoc` 頁面，搜尋結果僅包含 **英文** 的 **v1** 文件（及其他未版本化的頁面）\n- 在 `/fr/docs/v2/myDoc` 頁面，搜尋結果僅包含 **法文** 的 **v2** 文件（及其他未版本化的頁面）"
+      }
+    },
+    {
+      "segment_id": "dc9de01a",
+      "source_content": ":::info\n\nWhen using `contextualSearch: true` (default), the contextual facet filters will be merged with the ones provided with `algolia.searchParameters.facetFilters` .\n\nFor specific needs, you can disable `contextualSearch` and define your own `facetFilters`:\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  themeConfig: {\n    // ...\n    // highlight-start\n    algolia: {\n      contextualSearch: false,\n      searchParameters: {\n        facetFilters: ['language:en', ['filter1', 'filter2'], 'filter3'],\n      },\n    },\n    // highlight-end\n  },\n};\n```\n\nRefer to the relevant [Algolia faceting documentation](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/).\n\n:::",
+      "source_content_hash": "f3bf384acbe6fd7f8c5bac7a066fc1e0d70510b3a70ae8b65482ab0d24fa80d7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n當啟用 `contextualSearch: true`（預設值）時，上下文篩選條件會與 `algolia.searchParameters.facetFilters` 提供的篩選器合併。\n\n若有特殊需求，可關閉 `contextualSearch` 並自訂 `facetFilters`：\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  themeConfig: {\n    // ...\n    // highlight-start\n    algolia: {\n      contextualSearch: false,\n      searchParameters: {\n        facetFilters: ['language:en', ['filter1', 'filter2'], 'filter3'],\n      },\n    },\n    // highlight-end\n  },\n};\n```\n\n詳見 [Algolia 面搜尋相關文件](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fe459619",
+      "source_content": ":::warning[Contextual search doesn't work?]\n\nIf you only get search results when Contextual Search is disabled, this is very likely because of an [index configuration issue](#algolia-no-search-results).\n\n:::",
+      "source_content_hash": "381242db93bb107a468b7eb53ca83430c52d29ed6f75993ff19d1d226d2aad29",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[上下文搜尋失效？]\n\n若僅在關閉上下文搜尋時才能獲得結果，極可能是因 [索引設定問題](#algolia-no-search-results) 所致。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "be106497",
+      "source_content": "### Styling your Algolia search {#styling-your-algolia-search}",
+      "source_content_hash": "c646b09084255dd15c0f12ae55b41bfed000507bbf75c551aa303860bd6431e9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 自訂 Algolia 搜尋樣式 {#styling-your-algolia-search}"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "By default, DocSearch comes with a fine-tuned theme that was designed for accessibility, making sure that colors and contrasts respect standards.",
+      "source_content_hash": "2c2db1e70dcfe6d691f5d7321fd54a17c8e919f29cf4a8a84f1e4e0b590d9054",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "DocSearch 預載符合無障礙標準的精心調校主題，確保色彩與對比度達標。"
+      }
+    },
+    {
+      "segment_id": "5eedf0a1",
+      "source_content": "Still, you can reuse the [Infima CSS variables](styling-layout.mdx#styling-your-site-with-infima) from Docusaurus to style DocSearch by editing the `/src/css/custom.css` file.",
+      "source_content_hash": "bfc2c0610e5dd79c9f404c415310ef7b669e647673eeb737ef809500d057c8bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您仍可透過編輯 `/src/css/custom.css` 檔案，套用 Docusaurus 的 [Infima CSS 變數](styling-layout.mdx#styling-your-site-with-infima) 來調整 DocSearch 樣式。"
+      }
+    },
+    {
+      "segment_id": "93bf74a6",
+      "source_content": "```css title=\"/src/css/custom.css\"\n[data-theme='light'] .DocSearch {\n  /* --docsearch-primary-color: var(--ifm-color-primary); */\n  /* --docsearch-text-color: var(--ifm-font-color-base); */\n  --docsearch-muted-color: var(--ifm-color-secondary-darkest);\n  --docsearch-container-background: rgba(94, 100, 112, 0.7);\n  /* Modal */\n  --docsearch-modal-background: var(--ifm-color-secondary-lighter);\n  /* Search box */\n  --docsearch-searchbox-background: var(--ifm-color-secondary);\n  --docsearch-searchbox-focus-background: var(--ifm-color-white);\n  /* Hit */\n  --docsearch-hit-color: var(--ifm-font-color-base);\n  --docsearch-hit-active-color: var(--ifm-color-white);\n  --docsearch-hit-background: var(--ifm-color-white);\n  /* Footer */\n  --docsearch-footer-background: var(--ifm-color-white);\n}\n\n[data-theme='dark'] .DocSearch {\n  --docsearch-text-color: var(--ifm-font-color-base);\n  --docsearch-muted-color: var(--ifm-color-secondary-darkest);\n  --docsearch-container-background: rgba(47, 55, 69, 0.7);\n  /* Modal */\n  --docsearch-modal-background: var(--ifm-background-color);\n  /* Search box */\n  --docsearch-searchbox-background: var(--ifm-background-color);\n  --docsearch-searchbox-focus-background: var(--ifm-color-black);\n  /* Hit */\n  --docsearch-hit-color: var(--ifm-font-color-base);\n  --docsearch-hit-active-color: var(--ifm-color-white);\n  --docsearch-hit-background: var(--ifm-color-emphasis-100);\n  /* Footer */\n  --docsearch-footer-background: var(--ifm-background-surface-color);\n  --docsearch-key-gradient: linear-gradient(\n    -26.5deg,\n    var(--ifm-color-emphasis-200) 0%,\n    var(--ifm-color-emphasis-100) 100%\n  );\n}\n```",
+      "source_content_hash": "0da9c7c8b7790a3e821390acbe9e6882c8f526974c5fe95edff5c982aee5fffe",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93bf74a6"
+      }
+    },
+    {
+      "segment_id": "4cb3b0aa",
+      "source_content": "### Customizing the Algolia search behavior {#customizing-the-algolia-search-behavior}",
+      "source_content_hash": "ddb839336542c2a7005487f4ba0c441ae4a14f5e1f5484f8b378d26ad9526bff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 調整 Algolia 搜尋行為 {#customizing-the-algolia-search-behavior}"
+      }
+    },
+    {
+      "segment_id": "2153a2fa",
+      "source_content": "Algolia DocSearch supports a [list of options](https://docsearch.algolia.com/docs/api/) that you can pass to the `algolia` field in the `docusaurus.config.js` file.",
+      "source_content_hash": "71ae4293260aecc95378a46ea409d8f4c2ac7fd9c874ccd10d2f340507221be5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Algolia DocSearch 支援透過 `docusaurus.config.js` 中的 `algolia` 欄位傳遞 [參數清單](https://docsearch.algolia.com/docs/api/)。"
+      }
+    },
+    {
+      "segment_id": "b1274b5e",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // ...\n    algolia: {\n      apiKey: 'YOUR_API_KEY',\n      indexName: 'YOUR_INDEX_NAME',\n      // Options...\n    },\n  },\n};\n```",
+      "source_content_hash": "d72df6e506e5d9d2e1d442956c7f9330904362e25f00f85ed63ead980cf1b338",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b1274b5e"
+      }
+    },
+    {
+      "segment_id": "9a53bcb1",
+      "source_content": "### Editing the Algolia search component {#editing-the-algolia-search-component}",
+      "source_content_hash": "779d1a5e154682af9f170ae865ba8ea8dad6e674598ea496c8f196fc5dd25643",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 修改 Algolia 搜尋元件 {#editing-the-algolia-search-component}"
+      }
+    },
+    {
+      "segment_id": "bed77f05",
+      "source_content": "If you prefer to edit the Algolia search React component, [swizzle](swizzling.mdx) the `SearchBar` component in `@docusaurus/theme-search-algolia`:",
+      "source_content_hash": "b04545d7cc28365af9339939da2d868652f8fdede2fc329d1a78a5969670e870",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若需直接編輯 Algolia 搜尋的 React 元件，可對 `@docusaurus/theme-search-algolia` 中的 `SearchBar` 元件進行 [swizzle 操作](swizzling.mdx)："
+      }
+    },
+    {
+      "segment_id": "34dd1969",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-search-algolia SearchBar\n```",
+      "source_content_hash": "2ac27fec73b02217e7c934ba938d4f347e8aa69aecd6fe82ad325b086360c529",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_34dd1969"
+      }
+    },
+    {
+      "segment_id": "fbbade7d",
+      "source_content": "### Troubleshooting {#algolia-troubleshooting}",
+      "source_content_hash": "d0524e84ccd51e6d88dfd89d3234253d07a914e29b4c6ca786e3b1ad71098b27",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 疑難排解 {#algolia-troubleshooting}"
+      }
+    },
+    {
+      "segment_id": "f0db2ff1",
+      "source_content": "Here are the most common issues Docusaurus users face when using Algolia DocSearch.",
+      "source_content_hash": "89e0368b7477f8098bc21756e937fbf0a66a19853ea7f6f46de467ccdc9047c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是 Docusaurus 用戶在使用 Algolia DocSearch 時最常遇到的問題。"
+      }
+    },
+    {
+      "segment_id": "f3fc8281",
+      "source_content": "#### No Search Results {#algolia-no-search-results}",
+      "source_content_hash": "74657745e8df64e0084e5dbe1ad7b03deb0b3b7463f6a099ce8765d249d75b77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 無搜尋結果 {#algolia-no-search-results}"
+      }
+    },
+    {
+      "segment_id": "60e22db4",
+      "source_content": "Seeing no search results is usually related to an **index configuration problem**.",
+      "source_content_hash": "54ffe49c06f7958d4f29bca79db91980cc1f7cc1eaf7f456bc865eb904cf9484",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若未顯示搜尋結果，通常與**索引配置問題**有關。"
+      }
+    },
+    {
+      "segment_id": "bcbf4b27",
+      "source_content": "<details>\n  <summary>How to check if I have an config problem?</summary>\n\nDocusaurus uses [Algolia faceting](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/) for its [Contextual Search](#contextual-search) feature, to create dynamic queries such as:\n\n```json\n[\n  \"language:en\",\n  [\n    \"docusaurus_tag:default\",\n    \"docusaurus_tag:docs-default-3.2.1\",\n    \"docusaurus_tag:docs-community-current\",\n    \"docusaurus_tag:docs-docs-tests-current\"\n  ]\n]\n```\n\nOn the Algolia UI, your index should allow to create facet queries on fields `docusaurus_tag`, `language`, `lang`, `version`, `type`, as shown in the screenshot below:\n\n![Algolia index showing appropriate faceting fields](/img/docsearch-troubleshoot-index-facets.jpg)\n\nAlternatively, if you disable [Contextual Search](#contextual-search) with `{contextualSearch: false}` (which we don't particularly recommend), Docusaurus will not use facet queries, and you should start seeing results.\n\n</details>",
+      "source_content_hash": "46dec7c5ae1a62dfc886fde495f432b515517a49cbdc1f2438311d0d7db1a970",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bcbf4b27"
+      }
+    },
+    {
+      "segment_id": "6b7807df",
+      "source_content": ":::danger[Use the recommended configuration]\n\nWe [recommend a specific crawler configuration](#algolia-index-configuration) for a good reason. We cannot support you if you choose to use a different configuration.\n\n:::",
+      "source_content_hash": "ca37ec1e1f91b783c081bc631174abb32d7e1dccfd66758fc702a53e89e42be8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[請使用推薦配置]\n\n我們[推薦特定爬蟲配置](#algolia-index-configuration)有其原因。若您選擇不同配置，我們將無法提供支援。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b682f1ac",
+      "source_content": "You can fix index configuration problems by following those steps:",
+      "source_content_hash": "982d18b425ba44031acd4d1c7fd67ad6dce0e26f0ae807362af941f85ff817c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過以下步驟修正索引配置問題："
+      }
+    },
+    {
+      "segment_id": "ea4a3cc2",
+      "source_content": "1. Use the [recommend crawler configuration](#algolia-index-configuration)\n2. Delete your index through the UI\n3. Trigger a new crawl through the UI\n4. Check your index is recreated with the appropriate faceting fields: `docusaurus_tag`, `language`, `lang`, `version`, `type`\n5. See that you now get search results, even with [Contextual Search](#contextual-search) enabled",
+      "source_content_hash": "a6f545f6cce2275e0db5e7018a5dc4cf46fa847a072d59ce54cc630bdd5484ba",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 使用[推薦爬蟲配置](#algolia-index-configuration)\n2. 透過介面刪除現有索引\n3. 透過介面觸發重新爬取\n4. 確認索引已重建並包含以下分面欄位：`docusaurus_tag`、`language`、`lang`、`version`、`type`\n5. 此時應能正常顯示搜尋結果（即使啟用[情境式搜尋](#contextual-search)）"
+      }
+    },
+    {
+      "segment_id": "6c2c7917",
+      "source_content": "### Support {#algolia-support}",
+      "source_content_hash": "7cd9d3f936d544d058e6197edd5b982cd8742221ba6ebb22853206562fff09e8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 支援服務 {#algolia-support}"
+      }
+    },
+    {
+      "segment_id": "c1e7eaab",
+      "source_content": "The Algolia DocSearch team can help you figure out search problems on your site.",
+      "source_content_hash": "7aa964844283a46d4114f2146c6a26f126d6d98ac6aec9411832864c78002c77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Algolia DocSearch 團隊可協助您排查網站搜尋問題。"
+      }
+    },
+    {
+      "segment_id": "e4ab192a",
+      "source_content": "You can reach out to Algolia via [their support page](https://algolia.com/support) or on [Discord](https://discord.gg/wr2m5j948P).",
+      "source_content_hash": "a9cc4b6ab11652adb2e7e68cc4c8528c3101dfdd4e085c1db21d143e3b4aecb7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過[Algolia 支援頁面](https://algolia.com/support)或[Discord](https://discord.gg/wr2m5j948P)聯繫他們。"
+      }
+    },
+    {
+      "segment_id": "6fecc583",
+      "source_content": "Docusaurus also has an `#algolia` channel on [Discord](https://discordapp.com/invite/docusaurus).",
+      "source_content_hash": "5386d1d679e016883e41544820cd75db95decaabb645f6104619a3773d01ae7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 在[Discord](https://discordapp.com/invite/docusaurus)上也設有 `#algolia` 頻道。"
+      }
+    },
+    {
+      "segment_id": "12e415c2",
+      "source_content": "## 👥 Using Typesense DocSearch {#using-typesense-docsearch}",
+      "source_content_hash": "f49ca9ca8485ee42d02608d62395dec319c4bc88c9815986275ccf6efb4306b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 👥 使用 Typesense DocSearch {#using-typesense-docsearch}"
+      }
+    },
+    {
+      "segment_id": "9cbb5424",
+      "source_content": "[Typesense](https://typesense.org) DocSearch works similar to Algolia DocSearch, except that your website is indexed into a Typesense search cluster.",
+      "source_content_hash": "e9c889f2bbc17a582aa2b76725050e92dace04d548fce5021adbb4f93debc279",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Typesense](https://typesense.org) DocSearch 運作方式類似 Algolia DocSearch，差別在於網站內容會被索引至 Typesense 搜尋叢集。"
+      }
+    },
+    {
+      "segment_id": "dbd18971",
+      "source_content": "Typesense is an [open source](https://github.com/typesense/typesense) instant-search engine that you can either:",
+      "source_content_hash": "d588ea5bed75e4497248b37e25546ec8e63fe47a6ac54d67bae7440cb5b7176b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Typesense 是[開源](https://github.com/typesense/typesense)的即時搜尋引擎，您可選擇："
+      }
+    },
+    {
+      "segment_id": "5fa0807b",
+      "source_content": "- [Self-Host](https://typesense.org/docs/guide/install-typesense.html#option-2-local-machine-self-hosting) on your own servers or\n- Use the Managed [Typesense Cloud](https://cloud.typesense.org) service.",
+      "source_content_hash": "56e97cfe99fff384264b497141ab2ea20f2e8aa1c62a8d43d3a10d47237d3810",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 在自有伺服器上[自行託管](https://typesense.org/docs/guide/install-typesense.html#option-2-local-machine-self-hosting)\n- 使用託管服務 [Typesense Cloud](https://cloud.typesense.org)"
+      }
+    },
+    {
+      "segment_id": "eb398072",
+      "source_content": "Similar to Algolia DocSearch, there are two components:",
+      "source_content_hash": "ffbaf844877ce7124f9d476d02b558c9cc7913b4bd6e7782484ffb9875e63237",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "與 Algolia DocSearch 類似，系統包含兩個元件："
+      }
+    },
+    {
+      "segment_id": "0a314ba1",
+      "source_content": "- [typesense-docsearch-scraper](https://github.com/typesense/typesense-docsearch-scraper) - which scrapes your website and indexes the data in your Typesense cluster.\n- [docusaurus-theme-search-typesense](https://github.com/typesense/docusaurus-theme-search-typesense) - a search bar UI component to add to your website.",
+      "source_content_hash": "956a5526d35a9382cc05f9fe697da5ec1386a82733fd2ad39b0390370b8e015d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [typesense-docsearch-scraper](https://github.com/typesense/typesense-docsearch-scraper) - 負責爬取網站並將資料索引至 Typesense 叢集\n- [docusaurus-theme-search-typesense](https://github.com/typesense/docusaurus-theme-search-typesense) - 可整合至網站的搜尋列 UI 元件"
+      }
+    },
+    {
+      "segment_id": "0274aeec",
+      "source_content": "Read a step-by-step walk-through of how to [run typesense-docsearch-scraper here](https://typesense.org/docs/guide/docsearch.html#step-1-set-up-docsearch-scraper) and how to [install the Search Bar in your Docusaurus Site here](https://typesense.org/docs/guide/docsearch.html#option-a-docusaurus-powered-sites).",
+      "source_content_hash": "11f55c00bb0133d21c3f1cd9a7464144f9431a93b42a9dbf9988c513ffd9b442",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請參閱[如何執行 typesense-docsearch-scraper 的逐步指南](https://typesense.org/docs/guide/docsearch.html#step-1-set-up-docsearch-scraper)，以及[如何在 Docusaurus 網站安裝搜尋列](https://typesense.org/docs/guide/docsearch.html#option-a-docusaurus-powered-sites)。"
+      }
+    },
+    {
+      "segment_id": "d3c1b1bc",
+      "source_content": "## 👥 Using Local Search {#using-local-search}",
+      "source_content_hash": "500ffb13fcfcedb4438bc8b6176159948d8078fa3ba9313bcb9514024c024b65",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 👥 使用本地搜尋 {#using-local-search}"
+      }
+    },
+    {
+      "segment_id": "9d56f8f8",
+      "source_content": "You can use a local search plugin for websites where the search index is small and can be downloaded to your users' browsers when they visit your website.",
+      "source_content_hash": "b495c546bf71e076ac8b18af4cf7dd0349f66c0a33c7706caa0847755b42ee04",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若搜尋索引體積較小，可讓使用者在瀏覽網站時下載至本地端，此時適合採用本地搜尋外掛。"
+      }
+    },
+    {
+      "segment_id": "c08b6492",
+      "source_content": "You'll find a list of community-supported [local search plugins listed here](https://docusaurus.io/community/resources#search).",
+      "source_content_hash": "90e740d92b6a0b5774c4478dfcc5d62ce78b6c6431ab5b163fa0b01f2762bd5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可在[社群資源頁面](https://docusaurus.io/community/resources#search)找到由社群維護的本地搜尋外掛清單。"
+      }
+    },
+    {
+      "segment_id": "ccc4a3de",
+      "source_content": "## 👥 Using your own search {#using-your-own-search}",
+      "source_content_hash": "4c8834ff8cf3f74bed9a314ec8e6c5311ca4939ecf07a91f328b6f944cb27822",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 👥 使用自訂搜尋 {#using-your-own-search}"
+      }
+    },
+    {
+      "segment_id": "56f32447",
+      "source_content": "To use your own search, swizzle the `SearchBar` component in `@docusaurus/theme-classic`",
+      "source_content_hash": "1a5a03beaf15ec195899534ac2517e69d4cd657647335922b6356ca1fdae2240",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要使用自訂搜尋，請替換 `@docusaurus/theme-classic` 中的 `SearchBar` 元件"
+      }
+    },
+    {
+      "segment_id": "049ef044",
+      "source_content": "```bash npm2yarn\nnpm run swizzle @docusaurus/theme-classic SearchBar\n```",
+      "source_content_hash": "68be19bdc293c6561d75c7ebf6d9d4e1b17a00b7e0b2402ea2eff4e239b95bca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_049ef044"
+      }
+    },
+    {
+      "segment_id": "323eea94",
+      "source_content": "This will create an `src/theme/SearchBar` file in your project folder. Restart your dev server and edit the component, you will see that Docusaurus uses your own `SearchBar` component now.",
+      "source_content_hash": "353e2ff2d0242e93d7ad947b95cb31eb44e94b14602899e9e2e7dae66a8c5a4b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此操作會在專案目錄建立 `src/theme/SearchBar` 檔案。重新啟動開發伺服器並編輯該元件後，Docusaurus 將會改用您的自訂 `SearchBar` 元件。"
+      }
+    },
+    {
+      "segment_id": "b0c7a884",
+      "source_content": "**Notes**: You can alternatively [swizzle from Algolia SearchBar](#editing-the-algolia-search-component) and create your own search component from there.",
+      "source_content_hash": "d7f1fe9027562fb10b973b493288ce55ff3e527a0d9c3bc1f5e3bd7bf49f5fba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**注意**：您也可選擇[從 Algolia SearchBar 進行替換](#editing-the-algolia-search-component)，並以此為基礎建立自訂搜尋元件。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/search.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.209852+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ade56666355b8dca3f3f65f6e9b9be7a72c9b105ad116a8f3ee3f68540a96a65"
+  }
+}

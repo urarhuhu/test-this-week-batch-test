@@ -1,0 +1,83 @@
+---
+sidebar_position: 4
+---
+
+# 靜態方法
+
+靜態方法不屬於插件實例——它們附加在構造函數上。這些方法用於驗證和標準化插件選項與主題配置，這些參數隨後會作為構造函數參數來初始化插件實例。
+
+## `validateOptions({options, validate})` {#validateOptions}
+
+返回經過驗證和標準化的插件選項。此方法在插件初始化前被調用。您必須返回選項，因為它們會在初始化時傳遞給插件。
+
+### `options` {#options}
+
+`validateOptions` 會接收傳遞給插件的 `options` 進行驗證和標準化。
+
+### `validate` {#validate}
+
+`validateOptions` 會接收 `validate` 函數，該函數接受 **[Joi](https://www.npmjs.com/package/joi)** 結構描述和選項作為參數，返回經過驗證和標準化的選項。`validate` 會自動處理錯誤和驗證配置。
+
+:::tip
+
+推薦使用 [Joi](https://www.npmjs.com/package/joi) 來驗證和標準化選項。
+
+為避免混用 Joi 版本，請使用 `import {Joi} from '@docusaurus/utils-validation'`
+
+:::
+
+如果您不使用 **[Joi](https://www.npmjs.com/package/joi)** 進行驗證，可以在選項無效時拋出錯誤，並在成功時返回選項。
+
+```js title="my-plugin/src/index.js"
+export default function myPlugin(context, options) {
+  return {
+    name: 'docusaurus-plugin',
+    // rest of methods
+  };
+}
+
+// highlight-start
+export function validateOptions({options, validate}) {
+  const validatedOptions = validate(myValidationSchema, options);
+  return validatedOptions;
+}
+// highlight-end
+```
+
+## `validateThemeConfig({themeConfig, validate})` {#validateThemeConfig}
+
+返回經過驗證和標準化的主題配置。
+
+### `themeConfig` {#themeConfig}
+
+`validateThemeConfig` 會接收 `docusaurus.config.js` 中提供的 `themeConfig` 進行驗證和標準化。
+
+### `validate` {#validate-1}
+
+`validateThemeConfig` 會接收 `validate` 函數，該函數接受 **[Joi](https://www.npmjs.com/package/joi)** 結構描述和 `themeConfig` 作為參數，返回經過驗證和標準化的選項。`validate` 會自動處理錯誤和驗證配置。
+
+:::tip
+
+推薦使用 [Joi](https://www.npmjs.com/package/joi) 來驗證和標準化主題配置。
+
+為避免混用 Joi 版本，請使用 `import {Joi} from '@docusaurus/utils-validation'`
+
+:::
+
+如果您不使用 **[Joi](https://www.npmjs.com/package/joi)** 進行驗證，可以在選項無效時拋出錯誤。
+
+```js title="my-theme/src/index.js"
+export default function myPlugin(context, options) {
+  return {
+    name: 'docusaurus-plugin',
+    // rest of methods
+  };
+}
+
+// highlight-start
+export function validateThemeConfig({themeConfig, validate}) {
+  const validatedThemeConfig = validate(myValidationSchema, options);
+  return validatedThemeConfig;
+}
+// highlight-end
+```

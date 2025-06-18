@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "src/pages/examples/noIndex.mdx",
+  "source_file_content_hash": "2f43de21d24ad50b0edf0a13a941946e4c9b04de4369da13329a1a5cb00b3897",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# No Index Page example",
+      "source_content_hash": "2f314278779c3e302c1c3d982d9df0d9f36514d2349c4218affea773884456cc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 不索引頁面範例"
+      }
+    },
+    {
+      "segment_id": "5ff76467",
+      "source_content": "<head>\n  <meta name=\"robots\" content=\"nOiNdeX, NoFolLoW\" />\n</head>",
+      "source_content_hash": "c5fd3901262068da38e5719e7c89f19b46698fcff193948aeaa7bd8d320c831d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5ff76467"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "This page will not be indexed by search engines because it contains the page following [page metadata](/docs/seo#single-page-metadata) markup:",
+      "source_content_hash": "ab12069583d1a08245c1b68fc8f2759c69cb7d93c323f4ab6c6b4b3da668a020",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此頁面將不會被搜尋引擎索引，因為它包含以下[頁面元數據](/docs/seo#single-page-metadata)標記："
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```html\n<head>\n  <meta name=\"robots\" content=\"noindex, nofollow\" />\n</head>\n```",
+      "source_content_hash": "145ce7a03d6d5695d0766357b839828e89e1b098e7a32601c4050f283a7c3fb4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "ac44a45c",
+      "source_content": ":::tip\n\nThe sitemap plugin filters pages containing a `noindex` content value. This page doesn't appear in Docusaurus [sitemap.xml](pathname:///sitemap.xml) file.\n\n:::",
+      "source_content_hash": "15450d38c58d722407d855d4a578e83af39833543a8a196c755ef86992271812",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n站點地圖插件會過濾包含 `noindex` 內容值的頁面。此頁面不會出現在 Docusaurus 的 [sitemap.xml](pathname:///sitemap.xml) 檔案中。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cac45343",
+      "source_content": ":::note\n\nRobots directives are [case-insensitive](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives).\n\n:::",
+      "source_content_hash": "42fbcdf8353de5329c9f919cde4c99ba9a2dae6cf5cd0417375b8cfa558ecc19",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n機器人指令是[不區分大小寫](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)的。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-pages/examples/noIndex.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.087730+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "2f43de21d24ad50b0edf0a13a941946e4c9b04de4369da13329a1a5cb00b3897"
+  }
+}

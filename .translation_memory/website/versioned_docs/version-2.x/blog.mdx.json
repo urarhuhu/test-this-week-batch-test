@@ -1,0 +1,812 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/blog.mdx",
+  "source_file_content_hash": "6431c9f38970c624f465e41fb3f7f7cd64b8952f848b760b99acb2ce47f29dab",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Deploy a full-featured blog in no time with Docusaurus.\n---",
+      "source_content_hash": "7c17335f49f88127dc5c5fc5d9109dbb70f2995d0ea21d76e2b68db0802a06e5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Blog",
+      "source_content_hash": "5bf138ccc259e7faffdf8c0082a86bc8480776c8fb450947fe726b925ab752ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 部落格"
+      }
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+      "source_content_hash": "86702643a5c3bdf74257ff6062535897129ed9144c4f5b70edfe338fef3e5c73",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_10c4cb47"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The blog feature enables you to deploy a full-featured blog in no time.",
+      "source_content_hash": "d62e46726a3e068af154f1d1622fc2e7419020e8314c8c6b0111fde7797c1355",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格功能讓您能快速部署一個功能完整的部落格。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::info\n\nCheck the [Blog Plugin API Reference documentation](./api/plugins/plugin-content-blog.mdx) for an exhaustive list of options.\n\n:::",
+      "source_content_hash": "0087201e27369baededa9d9737dce595421fcfdcc7e134bd26a07919244cd85a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n詳盡的選項清單請參閱 [部落格插件 API 參考文件](./api/plugins/plugin-content-blog.mdx)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Initial setup {#initial-setup}",
+      "source_content_hash": "69e5595bf7d0beea285bd2d36a303c85aa3c271f7dbb32b20ac7d18b3abb05e1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 初始設定 {#initial-setup}"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "To set up your site's blog, start by creating a `blog` directory.",
+      "source_content_hash": "4018e187f0ee95a16b73999010b52b59e76a79ce68e5b54024cb0f5b9475eb20",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要設定網站的部落格，請先建立一個 `blog` 目錄。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Then, add an item link to your blog within `docusaurus.config.js`:",
+      "source_content_hash": "e1e214c85b2e70a291416ffa75b4a0ab3d61896ead9fca6c882b4dc274ed357e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接著，在 `docusaurus.config.js` 中加入部落格的連結項目："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  themeConfig: {\n    // ...\n    navbar: {\n      items: [\n        // ...\n        // highlight-next-line\n        {to: 'blog', label: 'Blog', position: 'left'}, // or position: 'right'\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "3b0f21dd753b9b344e1447378ab5450a99a1026a669404fbd9c9443a520e2267",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## Adding posts {#adding-posts}",
+      "source_content_hash": "8f9bddafd9403eacc1a4d27c02034b211ccd086263d38ef487422fbc89af4a44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新增文章 {#adding-posts}"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "To publish in the blog, create a Markdown file within the blog directory.",
+      "source_content_hash": "b80a08f0b2e4f9d22c40542a7d14f9c0fd26874ace1edd1fc0b7d1545039cd42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要在部落格發佈文章，請在部落格目錄中建立一個 Markdown 檔案。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "For example, create a file at `website/blog/2019-09-05-hello-docusaurus-v2.md`:",
+      "source_content_hash": "ab0acbefecbd3a24c0b9178defaea4187a25ab237fb728f0577a1e93715f9016",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，在 `website/blog/2019-09-05-hello-docusaurus-v2.md` 建立檔案："
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```md title=\"website/blog/2019-09-05-hello-docusaurus-v2.md\"\n---\ntitle: Welcome Docusaurus v2\ndescription: This is my first post on Docusaurus 2.\nslug: welcome-docusaurus-v2\nauthors:\n  - name: Joel Marcey\n    title: Co-creator of Docusaurus 1\n    url: https://github.com/JoelMarcey\n    image_url: https://github.com/JoelMarcey.png\n  - name: Sébastien Lorber\n    title: Docusaurus maintainer\n    url: https://sebastienlorber.com\n    image_url: https://github.com/slorber.png\ntags: [hello, docusaurus-v2]\nimage: https://i.imgur.com/mErPwqL.png\nhide_table_of_contents: false\n---\n\nWelcome to this blog. This blog is created with [**Docusaurus 2**](https://docusaurus.io/).\n\n<!--truncate-->\n\nThis is my first post on Docusaurus 2.\n\nA whole bunch of exploration to follow.\n```",
+      "source_content_hash": "374bc772dee1641df9ec761c642b4f8c258dd1f51692e51a130aa90077bd8c78",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "The [front matter](./guides/markdown-features/markdown-features-intro.mdx#front-matter) is useful to add more metadata to your blog post, for example, author information, but Docusaurus will be able to infer all necessary metadata without the front matter. For all possible fields, see [the API documentation](api/plugins/plugin-content-blog.mdx#markdown-front-matter).",
+      "source_content_hash": "fd4d8d0011b19af63945f57f77483f047f6b896251d08fbc93605bddbdf29634",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Front Matter](./guides/markdown-features/markdown-features-intro.mdx#front-matter) 可用於為部落格文章添加更多元資料，例如作者資訊，但即使沒有 front matter，Docusaurus 也能推斷出所有必要的元資料。所有可能的欄位請參閱 [API 文件](api/plugins/plugin-content-blog.mdx#markdown-front-matter)。"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Blog list {#blog-list}",
+      "source_content_hash": "a8b424cb6d5915b155212b1ec8168de179c6e390f97d70277d01c06d26bcb4a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部落格清單 {#blog-list}"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "The blog's index page (by default, it is at `/blog`) is the _blog list page_, where all blog posts are collectively displayed.",
+      "source_content_hash": "7d66631087a94d7a2676d10d8bcf1ff265131bbf7382fabb8ac3c12bf702525d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格的索引頁面（預設位於 `/blog`）是 _部落格清單頁面_，所有部落格文章會集中顯示在此。"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Use the `<!--truncate-->` marker in your blog post to represent what will be shown as the summary when viewing all published blog posts. Anything above `<!--truncate-->` will be part of the summary. Note that the portion above the truncate marker must be standalone renderable Markdown. For example:",
+      "source_content_hash": "4c00190787425d034d696db20dfc643105e6a6001c5d83bb1049fe23fee3ba80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在部落格文章中使用 `<!--truncate-->` 標記來表示在瀏覽所有已發佈文章時顯示的摘要內容。`<!--truncate-->` 上方的所有內容都會成為摘要的一部分。請注意，截斷標記上方的部分必須是獨立可渲染的 Markdown。例如："
+      }
+    },
+    {
+      "segment_id": "9f4336b3",
+      "source_content": "```md\n---\ntitle: Truncation Example\n---\n\nAll these will be part of the blog post summary.\n\nEven this.\n\n<!--truncate-->\n\nBut anything from here on down will not be.\n\nNot this.\n\nOr this.\n```",
+      "source_content_hash": "6c898df7a2edb4396d1613eea820d50c5c446d277594bcf73843cd265e78619c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f4336b3"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "By default, 10 posts are shown on each blog list page, but you can control pagination with the `postsPerPage` option in the plugin configuration. If you set `postsPerPage: 'ALL'`, pagination will be disabled and all posts will be displayed on the first page. You can also add a meta description to the blog list page for better SEO:",
+      "source_content_hash": "bad89dd6609577ace2cc2aa703fcf396bc3d3347aa4411182b29514e8e7742bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，每個部落格清單頁面會顯示 10 篇文章，但您可以透過插件配置中的 `postsPerPage` 選項控制分頁。如果設定 `postsPerPage: 'ALL'`，則會停用分頁功能，所有文章都會顯示在第一頁。您也可以為部落格清單頁面添加元描述以提升 SEO："
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          blogTitle: 'Docusaurus blog!',\n          blogDescription: 'A Docusaurus powered blog!',\n          postsPerPage: 'ALL',\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "a223f185d163e767613d0f08972fad41f4518b8579081db7066fff93a1603c77",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "c7fa1e8d",
+      "source_content": "## Blog sidebar {#blog-sidebar}",
+      "source_content_hash": "a75474e58880cab410bf17aaf151434907f842c2d1b572a35705db493bbc68c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部落格側邊欄 {#blog-sidebar}"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "The blog sidebar displays recent blog posts. The default number of items shown is 5, but you can customize with the `blogSidebarCount` option in the plugin configuration. By setting `blogSidebarCount: 0`, the sidebar will be completely disabled, with the container removed as well. This will increase the width of the main container. Specially, if you have set `blogSidebarCount: 'ALL'`, _all_ posts will be displayed.",
+      "source_content_hash": "cc2b0cfe1cb7bc904a64bd051c00445fed5d86e3d1e5d3f93cb43291d37d88a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格側邊欄會顯示最近的部落格文章。預設顯示的項目數量為 5，但您可以透過插件配置中的 `blogSidebarCount` 選項自訂。設定 `blogSidebarCount: 0` 會完全停用側邊欄，並移除其容器，這將增加主容器的寬度。特別的是，如果設定 `blogSidebarCount: 'ALL'`，則會顯示 _所有_ 文章。"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "You can also alter the sidebar heading text with the `blogSidebarTitle` option. For example, if you have set `blogSidebarCount: 'ALL'`, instead of the default \"Recent posts\", you may rather make it say \"All posts\":",
+      "source_content_hash": "4f0bee6e6a7ceb99ec8780bf3dbd5e3d73d9f16c219577efc2ce10e00a89401b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可以透過 `blogSidebarTitle` 選項修改側邊欄的標題文字。例如，如果設定 `blogSidebarCount: 'ALL'`，您可能希望將預設的「最新文章」改為「所有文章」："
+      }
+    },
+    {
+      "segment_id": "4e583d18",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          blogSidebarTitle: 'All posts',\n          blogSidebarCount: 'ALL',\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "5a2ce4ec8b2a3b009b22b83448e8cc21be895b15ac1ba9300f6f20633b47b720",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4e583d18"
+      }
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "## Blog post date {#blog-post-date}",
+      "source_content_hash": "435d71934594210d73ba83a4cdf4c23b626ba2b657f0e1cb0768f5fa6db46ea3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部落格文章日期 {#blog-post-date}"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "Docusaurus will extract a `YYYY-MM-DD` date from a file/folder name such as `YYYY-MM-DD-my-blog-post-title.md`.",
+      "source_content_hash": "2a780f2baf8542485369da03cc5d767a0297d019f156e65370df1fc6146b5fd2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會從檔案/資料夾名稱（例如 `YYYY-MM-DD-my-blog-post-title.md`）中提取 `YYYY-MM-DD` 格式的日期。"
+      }
+    },
+    {
+      "segment_id": "40e141c5",
+      "source_content": "<details>\n<summary>Example supported patterns</summary>\n\n| Pattern | Example |\n| --- | --- |\n| Single file | `2021-05-28-my-blog-post-title.md` |\n| MDX file | `2021-05-28-my-blog-post-title.mdx` |\n| Single folder + `index.md` | `2021-05-28-my-blog-post-title/index.md` |\n| Folder named by date | `2021-05-28/my-blog-post-title.md` |\n| Nested folders by date | `2021/05/28/my-blog-post-title.md` |\n| Partially nested folders by date | `2021/05-28-my-blog-post-title.md` |\n| Nested folders + `index.md` | `2021/05/28/my-blog-post-title/index.md` |\n| Date in the middle of path | `category/2021/05-28-my-blog-post-title.md` |\n\nThe date will be excised from the path and appended to the beginning of the URL slug.\n\n</details>",
+      "source_content_hash": "1ee24dae12456c1f6e14d0d19f68afdcd6782872456da9378e1f689703c6b082",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_40e141c5"
+      }
+    },
+    {
+      "segment_id": "51127396",
+      "source_content": ":::tip\n\nUsing a folder can be convenient to co-locate blog post images alongside the Markdown file.\n\n:::",
+      "source_content_hash": "5d50a1e3b28a4419a88cf7aae7c548f5df5d45f48ea1166a0e414889658ad1e6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用資料夾可以方便地將部落格文章的圖片與 Markdown 檔案放在同一位置。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "This naming convention is optional, and you can also provide the date as front matter. Since the front matter follows YAML syntax where the datetime notation is supported, you can use front matter if you need more fine-grained publish dates. For example, if you have multiple posts published on the same day, you can order them according to the time of the day:",
+      "source_content_hash": "bfbd66723e0be9de51c396b9915a179504ea98bab3d2f6f5a073e62c12c89e52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此命名慣例是選用的，您也可以透過 front matter 提供日期。由於 front matter 遵循支援日期時間標記法的 YAML 語法，如果您需要更精確的發佈時間，可以使用 front matter。例如，如果同一天有多篇文章發佈，您可以根據一天中的時間來排序："
+      }
+    },
+    {
+      "segment_id": "7eccd6ba",
+      "source_content": "```md title=\"earlier-post.md\"\n---\ndate: 2021-09-13T10:00\n---\n```",
+      "source_content_hash": "1602e9c82b5edf6ef516f217a82fdb0666e17c1b7799da7224cf79750828dbab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7eccd6ba"
+      }
+    },
+    {
+      "segment_id": "904df6eb",
+      "source_content": "```md title=\"later-post.md\"\n---\ndate: 2021-09-13T18:00\n---\n```",
+      "source_content_hash": "bbf928c7b337f41d5357a95f4fd5529f9d170c29a7fe04a6b04f65c38e740b57",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_904df6eb"
+      }
+    },
+    {
+      "segment_id": "c4ac6a6f",
+      "source_content": "## Blog post authors {#blog-post-authors}",
+      "source_content_hash": "c9b6da71e076c6871f0fc27b3a7c2bf20fca0925df923a73a34102b7ea3b9f2b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部落格文章作者 {#blog-post-authors}"
+      }
+    },
+    {
+      "segment_id": "b49a7009",
+      "source_content": "Use the `authors` front matter field to declare blog post authors. An author should have at least a `name` or an `image_url`. Docusaurus uses information like `url`, `email`, and `title`, but any other information is allowed.",
+      "source_content_hash": "5f7139cd989af42e9faadccc51bd299ca5031226f0b23b009ebbae080b183046",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 `authors` 前置資料欄位來宣告部落格文章作者。作者至少需具備 `name` 或 `image_url` 屬性。Docusaurus 會使用 `url`、`email` 和 `title` 等資訊，但也允許包含其他任意資訊。"
+      }
+    },
+    {
+      "segment_id": "af250a10",
+      "source_content": "### Inline authors {#inline-authors}",
+      "source_content_hash": "3c987849a5211147ebd62e8ff6310dd755f7c05d7864de94cd76938ea28c21ee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 行內作者 {#inline-authors}"
+      }
+    },
+    {
+      "segment_id": "295367fa",
+      "source_content": "Blog post authors can be declared directly inside the front matter:",
+      "source_content_hash": "e12aa0633f72c7822034bc148414faa907240cd350634f553267e4abde01a952",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格文章作者可直接在前置資料中宣告："
+      }
+    },
+    {
+      "segment_id": "edfcc73c",
+      "source_content": "```mdx-code-block\n<Tabs groupId=\"author-front-matter\">\n<TabItem value=\"single\" label=\"Single author\">\n```",
+      "source_content_hash": "7a67d80cc92d59d20a990680695ef796a8c0beca11a4ee9f581adec6f789b74f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_edfcc73c"
+      }
+    },
+    {
+      "segment_id": "ec2ce541",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors:\n  name: Joel Marcey\n  title: Co-creator of Docusaurus 1\n  url: https://github.com/JoelMarcey\n  image_url: https://github.com/JoelMarcey.png\n  email: jimarcey@gmail.com\n---\n```",
+      "source_content_hash": "d3debeebade75dbd61a1ebf7b8d47940f550d989697132e845832072bf856e54",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ec2ce541"
+      }
+    },
+    {
+      "segment_id": "b3890715",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"multiple\" label=\"Multiple authors\">\n```",
+      "source_content_hash": "bfa1bcae7f11c728ef5c3d45e10f162d01c4f915e74d3cfe896d75273166d02e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b3890715"
+      }
+    },
+    {
+      "segment_id": "af7c5c4e",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors:\n  - name: Joel Marcey\n    title: Co-creator of Docusaurus 1\n    url: https://github.com/JoelMarcey\n    image_url: https://github.com/JoelMarcey.png\n    email: jimarcey@gmail.com\n  - name: Sébastien Lorber\n    title: Docusaurus maintainer\n    url: https://sebastienlorber.com\n    image_url: https://github.com/slorber.png\n---\n```",
+      "source_content_hash": "6951c7f259690ec9e6a57e4d2cc859e7f7c4bfb8e4c69bc022af6383fc9e752e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_af7c5c4e"
+      }
+    },
+    {
+      "segment_id": "4d54a1e8",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4d54a1e8"
+      }
+    },
+    {
+      "segment_id": "979d0fc6",
+      "source_content": ":::tip\n\nThis option works best to get started, or for casual, irregular authors.\n\n:::",
+      "source_content_hash": "64dc25b657ed6422f28acffdc0084885dc5004f62a7b2d4c9f254691d4f11b63",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n此選項最適合快速開始使用，或適用於非固定、偶爾投稿的作者。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cefa4c3d",
+      "source_content": ":::info\n\nPrefer using the `authors` front matter, but the legacy `author_*` front matter remains supported:\n\n```md title=\"my-blog-post.md\"\n---\nauthor: Joel Marcey\nauthor_title: Co-creator of Docusaurus 1\nauthor_url: https://github.com/JoelMarcey\nauthor_image_url: https://github.com/JoelMarcey.png\n---\n```\n\n:::",
+      "source_content_hash": "de0f6dced4d7928dbf6ab29da1627aa5e949d36184ec319ce7f8056c1ca32080",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n建議優先使用 `authors` 前置資料，但舊版 `author_*` 前置資料仍受支援：\n\n```md title=\"my-blog-post.md\"\n---\nauthor: Joel Marcey\nauthor_title: Docusaurus 1 共同創建者\nauthor_url: https://github.com/JoelMarcey\nauthor_image_url: https://github.com/JoelMarcey.png\n---\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "365a11aa",
+      "source_content": "### Global authors {#global-authors}",
+      "source_content_hash": "0dcd7fef910d37a3db84eb2c22cfbee6d15824aa7c7a8e5a05aed32d2c5b8e7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 全域作者 {#global-authors}"
+      }
+    },
+    {
+      "segment_id": "15d5abf0",
+      "source_content": "For regular blog post authors, it can be tedious to maintain authors' information inlined in each blog post.",
+      "source_content_hash": "ec78ea9c115c1fe606c95e6e0f2478a591194be0fe7dc8e874a852589e2fc576",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於固定投稿的部落格作者，若要在每篇文章中維護作者資訊會相當繁瑣。"
+      }
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "It is possible to declare those authors globally in a configuration file:",
+      "source_content_hash": "a82780c19e27d0a6332fbef0a78a029dd8211435788cbd690b0c9c5928e38c4b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以在設定檔中全域宣告這些作者："
+      }
+    },
+    {
+      "segment_id": "5b5a3953",
+      "source_content": "```yml title=\"website/blog/authors.yml\"\njmarcey:\n  name: Joel Marcey\n  title: Co-creator of Docusaurus 1\n  url: https://github.com/JoelMarcey\n  image_url: https://github.com/JoelMarcey.png\n  email: jimarcey@gmail.com\n\nslorber:\n  name: Sébastien Lorber\n  title: Docusaurus maintainer\n  url: https://sebastienlorber.com\n  image_url: https://github.com/slorber.png\n```",
+      "source_content_hash": "0dfd5354c7a4ce9eb9a2f5cc27b0d5df531ba67bb95ce03c6fa649f994a6b613",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5b5a3953"
+      }
+    },
+    {
+      "segment_id": "01f7f55c",
+      "source_content": ":::tip\n\nUse the `authorsMapPath` plugin option to configure the path. JSON is also supported.\n\n:::",
+      "source_content_hash": "f0ab4cc24e241be6de32da66fbe25f078bbb3718514f76c1a345fa8a112a9b2c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n使用 `authorsMapPath` 插件選項來設定路徑。也支援 JSON 格式。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bed77f05",
+      "source_content": "In blog posts front matter, you can reference the authors declared in the global configuration file:",
+      "source_content_hash": "c8257426861ccc3d080d4ed5678a5d6ea40aa03531bc4d4f61b6e62a6995eff0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在部落格文章的前置資料中，您可以引用全域設定檔中宣告的作者："
+      }
+    },
+    {
+      "segment_id": "34dd1969",
+      "source_content": "```mdx-code-block\n<Tabs groupId=\"author-front-matter\">\n<TabItem value=\"single\" label=\"Single author\">\n```",
+      "source_content_hash": "7a67d80cc92d59d20a990680695ef796a8c0beca11a4ee9f581adec6f789b74f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_34dd1969"
+      }
+    },
+    {
+      "segment_id": "ca8f8565",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors: jmarcey\n---\n```",
+      "source_content_hash": "7e95a0826797b318d03282759e6c7eceb8aa9c995f7e7456767f5e8306daea9f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ca8f8565"
+      }
+    },
+    {
+      "segment_id": "98fbc9ce",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"multiple\" label=\"Multiple authors\">\n```",
+      "source_content_hash": "bfa1bcae7f11c728ef5c3d45e10f162d01c4f915e74d3cfe896d75273166d02e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_98fbc9ce"
+      }
+    },
+    {
+      "segment_id": "be1986a6",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors: [jmarcey, slorber]\n---\n```",
+      "source_content_hash": "e87218b46e096eb83d61544861ccc2490626d4a7dc574571bcebb679318c5b04",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_be1986a6"
+      }
+    },
+    {
+      "segment_id": "7a5ad31f",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a5ad31f"
+      }
+    },
+    {
+      "segment_id": "59f8c92b",
+      "source_content": ":::info\n\nThe `authors` system is very flexible and can suit more advanced use-case:\n\n<details>\n  <summary>Mix inline authors and global authors</summary>\n\nYou can use global authors most of the time, and still use inline authors:\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - jmarcey\n  - slorber\n  - name: Inline Author name\n    title: Inline Author Title\n    url: https://github.com/inlineAuthor\n    image_url: https://github.com/inlineAuthor\n---\n```\n\n</details>\n\n<details>\n  <summary>Local override of global authors</summary>\n\nYou can customize the global author's data on per-blog-post basis:\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - key: jmarcey\n    title: Joel Marcey's new title\n  - key: slorber\n    name: Sébastien Lorber's new name\n---\n```\n\n</details>\n\n<details>\n  <summary>Localize the author's configuration file</summary>\n\nThe configuration file can be localized, just create a localized copy of it at:\n\n```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-blog/authors.yml\n```\n\n</details>\n\n:::",
+      "source_content_hash": "3a5e4d9b0bbbf897a5c64cbcb7e3456f85584a4786574b2d50c1be91b16fdc60",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n`authors` 系統非常靈活，可滿足更進階的使用情境：\n\n<details>\n  <summary>混合行內作者與全域作者</summary>\n\n您可以多數時候使用全域作者，同時仍保留使用行內作者：\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - jmarcey\n  - slorber\n  - name: 行內作者名稱\n    title: 行內作者標題\n    url: https://github.com/inlineAuthor\n    image_url: https://github.com/inlineAuthor\n---\n```\n\n</details>\n\n<details>\n  <summary>全域作者的局部覆寫</summary>\n\n您可以針對單篇部落格文章自訂全域作者的資料：\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - key: jmarcey\n    title: Joel Marcey 的新標題\n  - key: slorber\n    name: Sébastien Lorber 的新名稱\n---\n```\n\n</details>\n\n<details>\n  <summary>本地化作者設定檔</summary>\n\n設定檔可進行本地化，只需在以下路徑建立其本地化副本：\n\n```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-blog/authors.yml\n```\n\n</details>\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d67645cb",
+      "source_content": "An author, either declared through front matter or through the authors map, needs to have a name or an avatar, or both. If all authors of a post don't have names, Docusaurus will display their avatars compactly. See [this test post](/tests/blog/2022/01/20/image-only-authors) for the effect.",
+      "source_content_hash": "50fe756fccf2bd52ba708583af1ce46c97e7853c0921e765f7a946c3412a6c1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "無論是透過前置資料或作者對映檔宣告的作者，都必須具備名稱或頭像（或兩者皆有）。若某篇文章的所有作者皆未提供名稱，Docusaurus 會以緊湊方式顯示其頭像。效果可參見[此測試文章](/tests/blog/2022/01/20/image-only-authors)。"
+      }
+    },
+    {
+      "segment_id": "51512191",
+      "source_content": ":::warning[Feed generation]\n\n[RSS feeds](#feed) require the author's email to be set for the author to appear in the feed.\n\n:::",
+      "source_content_hash": "d018b7d84a0c5a8331f82297972785a3c44d3ceaa97bb05ec124b3fbb2a2c44e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[訂閱源生成]\n\n[RSS 訂閱源](#feed)需設定作者的電子郵件，該作者才會出現在訂閱源中。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "34416204",
+      "source_content": "## Reading time {#reading-time}",
+      "source_content_hash": "79099e518db46001faef6d261cb1799e4cdcce4238a9b8907176bf2e8c947709",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 閱讀時間 {#reading-time}"
+      }
+    },
+    {
+      "segment_id": "4bfb1f31",
+      "source_content": "Docusaurus generates a reading time estimation for each blog post based on word count. We provide an option to customize this.",
+      "source_content_hash": "17505e130b082f7e22bd3bb48f2bf44173c86f8fadb98cfc9be2f75a46496b6a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會根據字數為每篇部落格文章生成閱讀時間估算。我們提供選項供您自訂此功能。"
+      }
+    },
+    {
+      "segment_id": "253b84c5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          showReadingTime: true, // When set to false, the \"x min read\" won't be shown\n          readingTime: ({content, frontMatter, defaultReadingTime}) =>\n            defaultReadingTime({content, options: {wordsPerMinute: 300}}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "36b83ffa012217b6a3472fd02f350dccb2537f1af2b01f3c826f853eb00e4a07",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_253b84c5"
+      }
+    },
+    {
+      "segment_id": "e3f3475c",
+      "source_content": "The `readingTime` callback receives three parameters: the blog content text as a string, front matter as a record of string keys and their values, and the default reading time function. It returns a number (reading time in minutes) or `undefined` (disable reading time for this page).",
+      "source_content_hash": "2fc17c1eea3bc494daefd311b45706978a29b7b3552ee99b40a0b0dc0063d9ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`readingTime` 回調函數接收三個參數：部落格內容文字（字串形式）、前端資料（鍵值對記錄）以及預設閱讀時間計算函數。它會返回一個數字（閱讀時間分鐘數）或 `undefined`（停用該頁面的閱讀時間顯示）。"
+      }
+    },
+    {
+      "segment_id": "b63b9ccf",
+      "source_content": "The default reading time is able to accept additional options: `wordsPerMinute` as a number (default: 300), and `wordBound` as a function from string to boolean. If the string passed to `wordBound` should be a word bound (spaces, tabs, and line breaks by default), the function should return `true`.",
+      "source_content_hash": "0b850e98e6535954f71057a6aab8e3fcf7ac4b27131e972435c35fce7921eb2b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設閱讀時間計算可接受額外選項：`wordsPerMinute`（數字，預設值300）和 `wordBound`（字串轉布林值的函數）。當傳入 `wordBound` 的字串應被視為單詞邊界（預設包含空格、製表符和換行符）時，該函數應返回 `true`。"
+      }
+    },
+    {
+      "segment_id": "264c8a21",
+      "source_content": ":::tip\n\nUse the callback for all your customization needs:\n\n```mdx-code-block\n<Tabs>\n<TabItem value=\"disable-per-post\" label=\"Per-post disabling\">\n```\n\n**Disable reading time on one page:**\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          showReadingTime: true,\n          // highlight-start\n          readingTime: ({content, frontMatter, defaultReadingTime}) =>\n            frontMatter.hide_reading_time\n              ? undefined\n              : defaultReadingTime({content}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\nUsage:\n\n```md \"my-blog-post.md\"\n---\nhide_reading_time: true\n---\n\nThis page will no longer display the reading time stats!\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"passing-options\" label=\"Passing options\">\n```\n\n**Pass options to the default reading time function:**\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          readingTime: ({content, defaultReadingTime}) =>\n            defaultReadingTime({content, options: {wordsPerMinute: 100}}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"using-custom-algo\" label=\"Using custom algorithms\">\n```\n\n**Use a custom implementation of reading time:**\n\n```js title=\"docusaurus.config.js\"\nconst myReadingTime = require('./myReadingTime');\n\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-next-line\n          readingTime: ({content}) => myReadingTime(content),\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n</Tabs>\n```\n\n:::",
+      "source_content_hash": "7c276589fb2fcd0cbd3b302ec629e6332c0c2004cf20a755a092e66f691ff69d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n所有自訂需求均可透過回調函數實現：\n\n```mdx-code-block\n<Tabs>\n<TabItem value=\"disable-per-post\" label=\"單篇文章停用\">\n```\n\n**停用特定頁面的閱讀時間：**\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          showReadingTime: true,\n          // highlight-start\n          readingTime: ({content, frontMatter, defaultReadingTime}) =>\n            frontMatter.hide_reading_time\n              ? undefined\n              : defaultReadingTime({content}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\n使用方式：\n\n```md \"my-blog-post.md\"\n---\nhide_reading_time: true\n---\n\n此頁面將不再顯示閱讀時間統計！\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"passing-options\" label=\"傳遞選項\">\n```\n\n**傳遞選項至預設閱讀時間函數：**\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          readingTime: ({content, defaultReadingTime}) =>\n            defaultReadingTime({content, options: {wordsPerMinute: 100}}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"using-custom-algo\" label=\"自訂演算法\">\n```\n\n**使用自訂閱讀時間計算邏輯：**\n\n```js title=\"docusaurus.config.js\"\nconst myReadingTime = require('./myReadingTime');\n\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-next-line\n          readingTime: ({content}) => myReadingTime(content),\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n</Tabs>\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0d37b206",
+      "source_content": "## Feed {#feed}",
+      "source_content_hash": "4cda86523dec40e9f2c9a26b7cfdc0dc177cf7814f94d0326e25cbac29804365",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 訂閱源 {#feed}"
+      }
+    },
+    {
+      "segment_id": "44314141",
+      "source_content": "You can generate RSS / Atom / JSON feed by passing `feedOptions`. By default, RSS and Atom feeds are generated. To disable feed generation, set `feedOptions.type` to `null`.",
+      "source_content_hash": "6792cbdc35a8ab7364f56b05a64ae1545f5cbc0d78a8f585ea6c4ef7020c91de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過設定 `feedOptions` 可生成 RSS/Atom/JSON 訂閱源。預設會生成 RSS 和 Atom 訂閱源。若要停用訂閱源生成，請將 `feedOptions.type` 設為 `null`。"
+      }
+    },
+    {
+      "segment_id": "f3e9a624",
+      "source_content": "```ts\ntype FeedType = 'rss' | 'atom' | 'json';\n\ntype BlogOptions = {\n  feedOptions?: {\n    type?: FeedType | 'all' | FeedType[] | null;\n    title?: string;\n    description?: string;\n    copyright: string;\n    language?: string; // possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes\n    /** Allow control over the construction of BlogFeedItems */\n    createFeedItems?: (params: {\n      blogPosts: BlogPost[];\n      siteConfig: DocusaurusConfig;\n      outDir: string;\n      defaultCreateFeedItems: (params: {\n        blogPosts: BlogPost[];\n        siteConfig: DocusaurusConfig;\n        outDir: string;\n      }) => Promise<BlogFeedItem[]>;\n    }) => Promise<BlogFeedItem[]>;\n  };\n};\n```",
+      "source_content_hash": "52cb8aa8db7bf133043fc4d9f1e5acbdb07a95863ad8850835d1e979aa89ba8b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f3e9a624"
+      }
+    },
+    {
+      "segment_id": "b20523b9",
+      "source_content": "Example usage:",
+      "source_content_hash": "21eddf0bab8eb72f66078a107da27d93c6221bf506374c84a693bb4b5f15983c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "3ea84404",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          feedOptions: {\n            type: 'all',\n            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,\n            createFeedItems: async (params) => {\n              const {blogPosts, defaultCreateFeedItems, ...rest} = params;\n              return defaultCreateFeedItems({\n                // keep only the 10 most recent blog posts in the feed\n                blogPosts: blogPosts.filter((item, index) => index < 10),\n                ...rest,\n              });\n            },\n          },\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "c9884fc7b0289bb927536a7d5b344264960d045b23cbf206bbdc1d82433a062c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3ea84404"
+      }
+    },
+    {
+      "segment_id": "75f427fc",
+      "source_content": "The feeds can be found at:",
+      "source_content_hash": "276bbb5fdf0cd7e336a68cdf62017f883dee0ed88206c953eea77618533ca5e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "訂閱源存放路徑如下："
+      }
+    },
+    {
+      "segment_id": "bf6bc5cb",
+      "source_content": "<Tabs>\n<TabItem value=\"RSS\">\n\n```text\nhttps://example.com/blog/rss.xml\n```\n\n</TabItem>\n<TabItem value=\"Atom\">\n\n```text\nhttps://example.com/blog/atom.xml\n```\n\n</TabItem>\n<TabItem value=\"JSON\">\n\n```text\nhttps://example.com/blog/feed.json\n```\n\n</TabItem>\n</Tabs>",
+      "source_content_hash": "19bbd8ffed49643dc845b3fbd1b51928419c35c5d45df0c64468fb3e98107489",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bf6bc5cb"
+      }
+    },
+    {
+      "segment_id": "f60afbc8",
+      "source_content": "## Advanced topics {#advanced-topics}",
+      "source_content_hash": "b9b77f5f1c804877cdf7105bd1647584ff49e49c6956b101e25dae194816e40c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 進階主題 {#advanced-topics}"
+      }
+    },
+    {
+      "segment_id": "08ad3c7d",
+      "source_content": "### Blog-only mode {#blog-only-mode}",
+      "source_content_hash": "d817b78d48a44726d30659ff183c73000d1f289f76d75a5c3de6dad45d8edbef",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 純部落格模式 {#blog-only-mode}"
+      }
+    },
+    {
+      "segment_id": "c6dee347",
+      "source_content": "You can run your Docusaurus 2 site without a dedicated landing page and instead have your blog's post list page as the index page. Set the `routeBasePath` to be `'/'` to serve the blog through the root route `example.com/` instead of the subroute `example.com/blog/`.",
+      "source_content_hash": "46a40602b8d480e4a78613c31f481153b02ec79efc84c0fe71038732a4cc18f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以讓 Docusaurus 2 站點不顯示獨立首頁，改以部落格文章列表作為首頁。將 `routeBasePath` 設為 `'/'` 即可透過根路徑 `example.com/`（而非子路徑 `example.com/blog/`）提供部落格服務。"
+      }
+    },
+    {
+      "segment_id": "050e4316",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // highlight-next-line\n        docs: false, // Optional: disable the docs plugin\n        blog: {\n          // highlight-next-line\n          routeBasePath: '/', // Serve the blog at the site's root\n          /* other blog options */\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "1ccd2b5523c55f5acc39daf6e0d892c5a830fad818d7be75487fdd74e6f49594",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_050e4316"
+      }
+    },
+    {
+      "segment_id": "8bd01601",
+      "source_content": ":::warning\n\nDon't forget to delete the existing homepage at `./src/pages/index.js` or else there will be two files mapping to the same route!\n\n:::",
+      "source_content_hash": "8e357c9bf6372d7c136a7787c33660eec05551548ca2e9a339c2494286bc966d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n請務必刪除現有的首頁檔案 `./src/pages/index.js`，否則會出現兩個檔案映射至相同路由的情況！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "06d90c31",
+      "source_content": ":::tip\n\nThere's also a \"Docs-only mode\" for those who only want to use the docs. Read [Docs-only mode](./guides/docs/docs-introduction.mdx) for detailed instructions or a more elaborate explanation of `routeBasePath`.\n\n:::",
+      "source_content_hash": "46d6f6645e61ea3c9e34c0ea898185132da9501588c3f769b7f4032b00ef3fed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n針對僅需文件功能的用戶，另有「純文件模式」可用。詳見[純文件模式](./guides/docs/docs-introduction.mdx)獲取詳細說明或更深入的 `routeBasePath` 解釋。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "359c9ff0",
+      "source_content": "### Multiple blogs {#multiple-blogs}",
+      "source_content_hash": "22cb888529955c99102141c5ce9e4f5282147971e96029986a55b411f6204185",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 多重部落格 {#multiple-blogs}"
+      }
+    },
+    {
+      "segment_id": "929f4d2d",
+      "source_content": "By default, the classic theme assumes only one blog per website and hence includes only one instance of the blog plugin. If you would like to have multiple blogs on a single website, it's possible too! You can add another blog by specifying another blog plugin in the `plugins` option for `docusaurus.config.js`.",
+      "source_content_hash": "1e1b75f4e412737e1a6def3811a3365c889adb8ca52a5e20167878af2e46335e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "57163c70",
+      "source_content": "Set the `routeBasePath` to the URL route that you want your second blog to be accessed on. Note that the `routeBasePath` here has to be different from the first blog or else there could be a collision of paths! Also, set `path` to the path to the directory containing your second blog's entries.",
+      "source_content_hash": "670c64da509d9cd73703cd96581c209e41fdf22394fdc2ef0c3eb893002c1044",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0756e68c",
+      "source_content": "As documented for [multi-instance plugins](./using-plugins.mdx#multi-instance-plugins-and-plugin-ids), you need to assign a unique ID to the plugins.",
+      "source_content_hash": "2a7844ab683e4203bd574587e3c0a90b93f35ecc84659397ea0b6d3d22d14865",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dd286a16",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  plugins: [\n    [\n      '@docusaurus/plugin-content-blog',\n      {\n        /**\n         * Required for any multi-instance plugin\n         */\n        id: 'second-blog',\n        /**\n         * URL route for the blog section of your site.\n         * *DO NOT* include a trailing slash.\n         */\n        routeBasePath: 'my-second-blog',\n        /**\n         * Path to data on filesystem relative to site dir.\n         */\n        path: './my-second-blog',\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "f05a94eec80eb016e0e5847cc6bd948988ef5767c72da66cf86d3d7e15c97894",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9d12cb42",
+      "source_content": "As an example, we host a second blog [here](/tests/blog).",
+      "source_content_hash": "54db3816cf97bb6e28c24b89c7dae2284a3a56f2a7aefca76c3bdc83f8ee6613",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/blog.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.060727+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "6431c9f38970c624f465e41fb3f7f7cd64b8952f848b760b99acb2ce47f29dab"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/guides/markdown-features/markdown-features-head-metadata.mdx",
+  "source_file_content_hash": "ac16a8473d7e674d0177451f53579ca9fae3f3900cc015bb3e5ba5eef2bce7e6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: head-metadata\ndescription: Declaring page-specific head metadata through MDX\nslug: /markdown-features/head-metadata\n---",
+      "source_content_hash": "b037cf86b4e72c84e81d7891e1f221cb28e6049fa016a72b868361d7621818bd",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Head metadata",
+      "source_content_hash": "4a012ec492a17831bf15c190d7f4d9caf4c705d3a7bce89721eb0ccb34e13cf4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 頁首元數據"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Customizing head metadata {#customizing-head-metadata}",
+      "source_content_hash": "79b58c33dd11325a2ff3d166772ee76209a5048507e55772fdec568d462fed3e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 自訂頁首元數據 {#customizing-head-metadata}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus automatically sets useful page metadata in `<html>`, `<head>` and `<body>` for you. It is possible to add extra metadata (or override existing ones) with the `<head>` tag in Markdown files:",
+      "source_content_hash": "47611f72368fafc4c7cebae6f7fa2c03f9e663cda51a91339b1e07ce72d01a65",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會自動為您設置 `<html>`、`<head>` 和 `<body>` 中有用的頁面元數據。您可以在 Markdown 文件中使用 `<head>` 標籤來添加額外的元數據（或覆蓋現有的元數據）："
+      }
+    },
+    {
+      "segment_id": "b9c7a144",
+      "source_content": "```md title=\"markdown-features-head-metadata.mdx\"\n---\nid: head-metadata\ntitle: Head Metadata\n---\n\n<!-- highlight-start -->\n<head>\n  <html className=\"some-extra-html-class\" />\n  <body className=\"other-extra-body-class\" />\n  <title>Head Metadata customized title!</title>\n  <meta charSet=\"utf-8\" />\n  <meta name=\"twitter:card\" content=\"summary\" />\n  <link rel=\"canonical\" href=\"https://docusaurus.io/docs/markdown-features/head-metadata\" />\n</head>\n<!-- highlight-end -->\n\n# Head Metadata\n\nMy text\n```",
+      "source_content_hash": "1c8c04ff247e968ea3f9ad93656c07be0cbb3a9ad62b4807d67d6916fb605426",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b9c7a144"
+      }
+    },
+    {
+      "segment_id": "ef6eebef",
+      "source_content": "```mdx-code-block\n<head>\n  <html className=\"some-extra-html-class\" />\n  <body className=\"other-extra-body-class\" />\n  <title>Head Metadata customized title!</title>\n  <meta charSet=\"utf-8\" />\n  <meta name=\"twitter:card\" content=\"summary\" />\n  <link rel=\"canonical\" href=\"https://docusaurus.io/docs/markdown-features/head-metadata\" />\n</head>\n```",
+      "source_content_hash": "83633bb1c9ba18467904c830142e8e2f88d6376d8d6d3132a5982bab897838c4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ef6eebef"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "This `<head>` declaration has been added to the current Markdown doc as a demo. Open your browser DevTools and check how this page's metadata has been affected.",
+      "source_content_hash": "93519df688c2e418c86e3a103fbb5dafdd9ef86afe8c1a0852a25e0f317d5412",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此 `<head>` 聲明已作為示範添加到當前 Markdown 文件中。打開瀏覽器的開發者工具，查看此頁面的元數據如何受到影響。"
+      }
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::note\n\nThis feature is built on top of the Docusaurus [`<Head>`](./../../docusaurus-core.mdx#head) component. Refer to [react-helmet](https://github.com/nfl/react-helmet) for exhaustive documentation.\n\n:::",
+      "source_content_hash": "2816b8664fa62659789e5b9f71bf7b0c9f53cbd45aa32f122723a00ad6a3e28a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n此功能基於 Docusaurus 的 [`<Head>`](./../../docusaurus-core.mdx#head) 組件構建。詳盡文檔請參考 [react-helmet](https://github.com/nfl/react-helmet)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "45aba823",
+      "source_content": ":::tip[You don't need this for regular SEO]\n\nContent plugins (e.g. docs and blog) provide front matter options like `description`, `keywords`, and `image`, which will be automatically applied to both `description` and `og:description`, while you would have to manually declare two metadata tags when using the `<head>` tag.\n\n:::",
+      "source_content_hash": "1cc4c588971f3daeacf4232b803fbb60bc11e52a6fee6bc61fe51f6c0bf3520f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[常規 SEO 無需此功能]\n\n內容插件（例如文檔和博客）提供 `description`、`keywords` 和 `image` 等前置元數據選項，這些選項會自動應用於 `description` 和 `og:description`，而使用 `<head>` 標籤時則需手動聲明兩個元數據標籤。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Markdown page description {#markdown-page-description}",
+      "source_content_hash": "b8036677380b9acda3ec76306069c51fe85d75665b66b975fb7b1c9f8dc315d6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Markdown 頁面描述 {#markdown-page-description}"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "The Markdown pages' description metadata may be used in more places than the head metadata. For example, the docs plugin's [generated category index](../docs/sidebar/items.mdx#generated-index-page) uses the description metadata for the doc cards.",
+      "source_content_hash": "a96401e01c11025ed0cdc77207541991b9326ed2d21e0a8de059823877dacf3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 頁面的描述元數據可能用於比頁首元數據更多的地方。例如，文檔插件的[生成的分類索引頁](../docs/sidebar/items.mdx#generated-index-page)使用描述元數據來顯示文檔卡片。"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "By default, the description is the first content-ful line, with some efforts to convert it to plain text. For example, the following file...",
+      "source_content_hash": "155a5451fa79765d00c651be192103788c780da02f95f9a395e421403abda40f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "默認情況下，描述是第一行有實際內容的文字，並會嘗試將其轉換為純文本。例如，以下文件..."
+      }
+    },
+    {
+      "segment_id": "5d4925eb",
+      "source_content": "```md\n# Title\n\nMain content... May contain some [links](./file.mdx) or **emphasis**.\n```",
+      "source_content_hash": "6fed4c6a1f51f2d15d63da376cd4d065f85cb704fda8fc37f64f93d00a58cedd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5d4925eb"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "...will have the default description \"Main content... May contain some links or emphasis\". However, **it's not designed to be fully functional**. Where it fails to produce reasonable descriptions, you can explicitly provide one through front matter:",
+      "source_content_hash": "073408c0cf601ab81e6d5a48876702037a2cdc02485d837191cfae4c96f7a363",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "...將具有默認描述「主要內容...可能包含一些鏈接或強調」。然而，**這並非設計為完全功能性的**。當無法產生合理的描述時，您可以通過前置元數據明確提供一個："
+      }
+    },
+    {
+      "segment_id": "af983f82",
+      "source_content": "```md\n---\ndescription: This description will override the default.\n---\n\n# Title\n\nMain content... May contain some [links](./file.mdx) or **emphasis**.\n```",
+      "source_content_hash": "8c0cffa9c859bffb06de1aca5bc8fe0368d2e2fc55ecae58621d8cfc87313cd2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_af983f82"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/guides/markdown-features/markdown-features-head-metadata.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.124642+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ac16a8473d7e674d0177451f53579ca9fae3f3900cc015bb3e5ba5eef2bce7e6"
+  }
+}

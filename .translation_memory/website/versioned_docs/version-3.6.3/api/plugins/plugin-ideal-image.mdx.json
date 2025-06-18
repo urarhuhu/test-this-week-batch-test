@@ -1,0 +1,202 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.6.3/api/plugins/plugin-ideal-image.mdx",
+  "source_file_content_hash": "9a3c19712ec9b89d872db2bd834345303cb70c8d23a91b8797a8ac06e07c6d0b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 8\nslug: /api/plugins/@docusaurus/plugin-ideal-image\n---",
+      "source_content_hash": "420fa08a68ad8d55b7628ae183b79bb6cb4f067058d5ed14023a837644e43735",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-ideal-image",
+      "source_content_hash": "1f45ac57de2492913ca0d01c6ecb39c45ed6e2571e0ae6a6fff8718e967a0e15",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-ideal-image"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Docusaurus Plugin to generate an almost ideal image (responsive, lazy-loading, and low quality placeholder).",
+      "source_content_hash": "b690bc4e3c0c5de86828497c2fe9e31459b2e4afae132cf4a160ebdd0485f70e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 插件，用於生成近乎理想的圖片（響應式、懶加載和低質量佔位圖）。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::info\n\nBy default, the plugin is **inactive in development** so you could always view full-scale images. If you want to debug the ideal image behavior, you could set the [`disableInDev`](#disableInDev) option to `false`.\n\n:::",
+      "source_content_hash": "d7013b39cb3a9eee1b0fb45bfa4f3f19564a6ed84825c9a3cbb449d0effff9eb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n預設情況下，該插件在開發環境中處於**非活動狀態**，以便您始終可以查看完整尺寸的圖片。如果您想調試理想圖片行為，可以將 [`disableInDev`](#disableInDev) 選項設置為 `false`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-ideal-image\n```",
+      "source_content_hash": "1852d26ca555de543abc346d9d431541452e6b61148bc6f551af8467b786bef1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用方法 {#usage}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "This plugin supports the PNG and JPG formats only.",
+      "source_content_hash": "1403279556d1e940a2f76f4e246f39793b8d1aada0b330070fb25332a9221ced",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "該插件僅支持 PNG 和 JPG 格式。"
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```jsx\nimport Image from '@theme/IdealImage';\nimport thumbnail from './path/to/img.png';\n\n// your React code\n<Image img={thumbnail} />\n\n// or\n<Image img={require('./path/to/img.png')} />\n```",
+      "source_content_hash": "1b16681528b435485f6bd3c786bed7e793726ad51fabec273301ee773f6e0796",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "84650edb",
+      "source_content": ":::warning\n\nThis plugin registers a [Webpack loader](https://webpack.js.org/loaders/) that changes the type of imported/require images:\n\n- Before: `string`\n- After: `{preSrc: string, src: import(\"@theme/IdealImage\").SrcImage}`\n\n:::",
+      "source_content_hash": "724288b8ee1d045f06ef0ea9085cc28941df588c06486ac21bd1fc7ed876de39",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n該插件註冊了一個 [Webpack 加載器](https://webpack.js.org/loaders/)，會改變導入/require 圖片的類型：\n\n- 之前：`string`\n- 之後：`{preSrc: string, src: import(\"@theme/IdealImage\").SrcImage}`\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受的字段："
+      }
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_64b6f348"
+      }
+    },
+    {
+      "segment_id": "96b8c6f1",
+      "source_content": "| Option | Type | Default | Description |\n| --- | --- | --- | --- |\n| `name` | `string` | `ideal-img/[name].[hash:hex:7].[width].[ext]` | Filename template for output files. |\n| `sizes` | `number[]` | _original size_ | Specify all widths you want to use. If a specified size exceeds the original image's width, the latter will be used (i.e. images won't be scaled up). |\n| `size` | `number` | _original size_ | Specify one width you want to use; if the specified size exceeds the original image's width, the latter will be used (i.e. images won't be scaled up) |\n| `min` | `number` |  | As an alternative to manually specifying `sizes`, you can specify `min`, `max` and `steps`, and the sizes will be generated for you. |\n| `max` | `number` |  | See `min` above |\n| `steps` | `number` | `4` | Configure the number of images generated between `min` and `max` (inclusive) |\n| `quality` | `number` | `85` | JPEG compression quality |\n| `disableInDev` | `boolean` | `true` | You can test ideal image behavior in dev mode by setting this to `false`. **Tip**: use [network throttling](https://www.browserstack.com/guide/how-to-perform-network-throttling-in-chrome) in your browser to simulate slow networks. |",
+      "source_content_hash": "5b9715a52c82aea93eb5a48ddc8eee534148aee98f18046c8d87d0817adac7bc",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_96b8c6f1"
+      }
+    },
+    {
+      "segment_id": "1d510af2",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1d510af2"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 示例配置 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "Here's an example configuration:",
+      "source_content_hash": "cd39f89d5932884cf6e700296d41ca0fdce5ff18a65f9e6ff904dffa3d91cbe2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是一個示例配置："
+      }
+    },
+    {
+      "segment_id": "9f3b4022",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-ideal-image',\n      // highlight-start\n      {\n        quality: 70,\n        max: 1030, // max resized image's size.\n        min: 640, // min resized image's size. if original is lower, use that size.\n        steps: 2, // the max number of images generated between min and max (inclusive)\n        disableInDev: false,\n      },\n      // highlight-end\n    ],\n  ],\n};\n```",
+      "source_content_hash": "c247edc13d714587db8050d4c7059ef438d137cbbe63cde60f7a94a50eb2f19d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f3b4022"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.6.3/api/plugins/plugin-ideal-image.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.288936+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "9a3c19712ec9b89d872db2bd834345303cb70c8d23a91b8797a8ac06e07c6d0b"
+  }
+}

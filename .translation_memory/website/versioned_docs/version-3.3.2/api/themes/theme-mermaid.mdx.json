@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/api/themes/theme-mermaid.mdx",
+  "source_file_content_hash": "05b097910fa6d57525f44e14db74ad465365f4aa91592260af227814a4ba3aa5",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\nslug: /api/themes/@docusaurus/theme-mermaid\n---",
+      "source_content_hash": "5e6476be07d1f25fb23f230468489457c6164abbea40046133d0918c2e15affe",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 theme-mermaid",
+      "source_content_hash": "c8f5d5fb15acb3cbbb17ba2173166a156a6fdc58c194d0a464bd0131b439235b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 theme-mermaid"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "This theme provides a `@theme/Mermaid` component that is powered by [mermaid](https://mermaid-js.github.io/). You can read more on [diagrams](../../guides/markdown-features/markdown-features-diagrams.mdx) documentation.",
+      "source_content_hash": "b4757a0b75aeecb05d17e6a8cbd5c2c978447aad235e4fbdd4cc0279c0211454",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此主題提供由 [mermaid](https://mermaid-js.github.io/) 驅動的 `@theme/Mermaid` 元件。您可以在[圖表](../../guides/markdown-features/markdown-features-diagrams.mdx)文件中閱讀更多相關資訊。"
+      }
+    },
+    {
+      "segment_id": "71b63116",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/theme-mermaid\n```",
+      "source_content_hash": "bbf3d0bf3b2822ed06ebe88143eae8cf839abb3e25aa8624152f03de723a22db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71b63116"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "41ad46a6",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themes: ['@docusaurus/theme-mermaid'],\n  // In order for Mermaid code blocks in Markdown to work,\n  // you also need to enable the Remark plugin with this option\n  markdown: {\n    mermaid: true,\n  },\n};\n```",
+      "source_content_hash": "b005d95b4f9b9334ee1dd31277fca2e24237af6e68d7e5f0ba962a2e90cec797",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41ad46a6"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/api/themes/theme-mermaid.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.162623+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "05b097910fa6d57525f44e14db74ad465365f4aa91592260af227814a4ba3aa5"
+  }
+}

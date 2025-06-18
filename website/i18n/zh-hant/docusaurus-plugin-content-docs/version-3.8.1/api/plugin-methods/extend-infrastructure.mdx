@@ -1,0 +1,132 @@
+---
+sidebar_position: 2
+---
+
+# 擴充基礎設施
+
+Docusaurus 提供如熱重載、CLI 和元件替換等基礎設施，可透過外部插件進行擴充。
+
+## `getPathsToWatch()` {#getPathsToWatch}
+
+指定插件和主題需要監控的路徑。開發伺服器會監控這些路徑，當監控路徑中的內容變更時，重新載入插件生命週期。請注意，插件和主題模組最初是由 Node 的 `context` 和 `options` 呼叫，您可用於獲取網站相關的必要目錄資訊。
+
+此方法適用於伺服器端使用的檔案，因為主題檔案會由 Webpack 開發伺服器自動監控。
+
+範例：
+
+```js title="docusaurus-plugin/src/index.js"
+import path from 'path';
+
+export default function (context, options) {
+  return {
+    name: 'docusaurus-plugin',
+    // highlight-start
+    getPathsToWatch() {
+      const contentPath = path.resolve(context.siteDir, options.path);
+      return [`${contentPath}/**/*.{ts,tsx}`];
+    },
+    // highlight-end
+  };
+}
+```
+
+## `extendCli(cli)` {#extendCli}
+
+註冊額外指令以增強 Docusaurus 的 CLI。`cli` 是一個 [commander](https://www.npmjs.com/package/commander/v/5.1.0) 物件。
+
+:::warning
+
+commander 版本很重要！我們使用 commander v5，請確保您參考正確版本的 API 文件。
+
+:::
+
+範例：
+
+```js title="docusaurus-plugin/src/index.js"
+export default function (context, options) {
+  return {
+    name: 'docusaurus-plugin',
+    // highlight-start
+    extendCli(cli) {
+      cli
+        .command('roll')
+        .description('Roll a random number between 1 and 1000')
+        .action(() => {
+          console.log(Math.floor(Math.random() * 1000 + 1));
+        });
+    },
+    // highlight-end
+  };
+}
+```
+
+## `getThemePath()` {#getThemePath}
+
+回傳主題元件所在目錄的路徑。當使用者呼叫 `swizzle` 時，會呼叫 `getThemePath` 並使用其回傳的路徑來尋找您的主題元件。相對路徑會以包含入口點的資料夾為基準進行解析。
+
+例如，您的 `getThemePath` 可以是：
+
+```js title="my-theme/src/index.js"
+export default function (context, options) {
+  return {
+    name: 'my-theme',
+    // highlight-start
+    getThemePath() {
+      return './theme';
+    },
+    // highlight-end
+  };
+}
+```
+
+## `getTypeScriptThemePath()` {#getTypeScriptThemePath}
+
+與 `getThemePath()` 類似，應回傳 TypeScript 主題元件原始碼所在目錄的路徑。此路徑僅用於替換 TypeScript 主題元件，且此路徑下的主題元件**不會**由 Webpack 解析。因此，它不能取代 `getThemePath()`。通常，您可以讓 `getTypeScriptThemePath()` 回傳的路徑作為原始碼目錄，而讓 `getThemePath()` 回傳的路徑作為編譯後的 JavaScript 輸出目錄。
+
+:::tip
+
+給 TypeScript 主題作者的建議：強烈建議您讓編譯後的輸出盡可能易於閱讀。僅移除型別註解，不要轉譯任何語法，因為它們會由 Webpack 的 Babel loader 根據目標瀏覽器版本進行處理。
+
+您還應使用 Prettier 格式化這些檔案。請記住——JS 檔案會直接由您的使用者使用。
+
+:::
+
+範例：
+
+```js title="my-theme/src/index.js"
+export default function (context, options) {
+  return {
+    name: 'my-theme',
+    // highlight-start
+    getThemePath() {
+      // Where compiled JavaScript output lives
+      return '../lib/theme';
+    },
+    getTypeScriptThemePath() {
+      // Where TypeScript source code lives
+      return '../src/theme';
+    },
+    // highlight-end
+  };
+}
+```
+
+## `getSwizzleComponentList()` {#getSwizzleComponentList}
+
+**這是一個靜態方法，不依附於任何插件實例。**
+
+回傳被認為可安全替換的穩定元件清單。這些元件可在不使用 `--danger` 的情況下進行替換。預設情況下，所有元件都被視為不穩定。若回傳空陣列，則所有元件都被視為不穩定。若回傳 `undefined`，則所有元件都被視為穩定。
+
+```js title="my-theme/src/index.js"
+export function getSwizzleComponentList() {
+  return [
+    'CodeBlock',
+    'DocSidebar',
+    'Footer',
+    'NotFound',
+    'SearchBar',
+    'hooks/useTheme',
+    'prism-include-languages',
+  ];
+}
+```

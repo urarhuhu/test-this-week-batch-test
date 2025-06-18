@@ -1,0 +1,262 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.8.1/api/plugins/plugin-css-cascade-layers.mdx",
+  "source_file_content_hash": "ed06255d552e4263f2b8de1a84b8ce6bda3d103139e78203a747512c6aaf9e13",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 9\nslug: /api/plugins/@docusaurus/plugin-css-cascade-layers\n---",
+      "source_content_hash": "3eba99f79683118ac9ed217075e028a95f125a3168e9cb04c9d08b2a2a7679f6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-css-cascade-layers",
+      "source_content_hash": "a889b76aca238ad224bec6b1e458f7f733f88bacd2c2ff4965b4e2d8415f23e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-css-cascade-layers"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "6cae1da3",
+      "source_content": ":::caution[Experimental]\n\nThis plugin is mostly designed to be used internally by the classic preset through the [Docusaurus `future.v4.useCssCascadeLayers` flag](../docusaurus.config.js.mdx#future), although it can also be used as a standalone plugin. Please [let us know here](https://github.com/facebook/docusaurus/pull/11142) if you have a use case for it and help us design an API that makes sense for the future of Docusaurus.\n\n:::",
+      "source_content_hash": "0274806babe083622071e7a4939ec1153e2f365447456688414765baf0c78225",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::caution[實驗性功能]\n\n此插件主要設計為透過 [Docusaurus `future.v4.useCssCascadeLayers` 標記](../docusaurus.config.js.mdx#future)由經典預設集內部使用，但亦可作為獨立插件使用。若您有相關使用案例，請[於此處告知我們](https://github.com/facebook/docusaurus/pull/11142)，協助我們設計符合 Docusaurus 未來發展的 API。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "A plugin for wrapping CSS modules of your Docusaurus site in [CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/). This modern CSS feature is widely supported by all browsers. It allows grouping CSS rules in layers of specificity and gives you more control over the CSS cascade.",
+      "source_content_hash": "f4bcb961e4d3c568f1ba587b69408c9d0c7cc58324adcc0c3b5d440537af2ea8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此插件用於將 Docusaurus 網站的 CSS 模組封裝於 [CSS 層疊層級](https://css-tricks.com/css-cascade-layers/)中。此現代 CSS 功能已獲所有主流瀏覽器廣泛支援，可將 CSS 規則分組至特定層級，賦予您對 CSS 層疊更精確的控制權。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Use this plugin to:",
+      "source_content_hash": "c0ab6c15413304e80e8a3eff14d9545d73a6dfba828142f2352dfa8dd1942922",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用此插件可實現："
+      }
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "- apply a top-level `@layer myLayer { ... }` block rule around any CSS module, including un-layered third-party CSS.\n- define an explicit layer ordering",
+      "source_content_hash": "a022b77af6f1332be88fb8a5af594722e22845c96a198440e09a0fff788d6b3b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 為任何 CSS 模組（包含未分層的第三方 CSS）套用頂層 `@layer myLayer { ... }` 區塊規則\n- 定義明確的層級排序"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::caution\n\nTo use this plugin properly, it's recommended to have a solid understanding of [CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/), the [CSS Cascade](https://developer.mozilla.org/docs/Web/CSS/CSS_cascade/Cascade) and [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity).\n\n:::",
+      "source_content_hash": "86acb77e671f60139f8a9b9929a248c13be2191fad6c76c42b33c4f6ced34c8b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::caution\n\n為正確使用此插件，建議您充分理解 [CSS 層疊層級](https://css-tricks.com/css-cascade-layers/)、[CSS 層疊機制](https://developer.mozilla.org/docs/Web/CSS/CSS_cascade/Cascade)及[優先級計算](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝方式 {#installation}"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-css-cascade-layers\n```",
+      "source_content_hash": "4b28e6c4f01f30c353e2a3d4beb691f039562aa3303e89ddd37c635aadeca924",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "26b47687",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, this plugin is automatically configured for you with the [`siteConfig.future.v4.useCssCascadeLayers`](../docusaurus.config.js.mdx#future) flag.\n\n:::",
+      "source_content_hash": "11849a5dc324edd5097ac266b9dae3cb202552dd057b06462b9de2f1391914b6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您使用 `@docusaurus/preset-classic` 預設集，此插件會透過 [`siteConfig.future.v4.useCssCascadeLayers`](../docusaurus.config.js.mdx#future) 標記自動完成配置。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置選項 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "61cbcc6c",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `layers` | `Layers` | **Built-in layers** | An object representing all the CSS cascade layers you want to use, and whether the layer should be applied to a given file path. See examples and types below. |",
+      "source_content_hash": "e46d9ba729de0428726d54a53f260787d460cda571783facdb8130dfd8251044",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_61cbcc6c"
+      }
+    },
+    {
+      "segment_id": "ac961110",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ac961110"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "### Types {#types}",
+      "source_content_hash": "034686b12f78982c1e0199ff93724cd49daf8a7ddf6e6948ebd61df99af28c7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型定義 {#types}"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "#### `Layers` {#EditUrlFunction}",
+      "source_content_hash": "62b18c7abf26f19c1451730b0c30f2a7ab8f4775fcccf3ac26cb124cd99024c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `Layers` {#EditUrlFunction}"
+      }
+    },
+    {
+      "segment_id": "c05ad55e",
+      "source_content": "```ts\ntype Layers = Record<\n  string, // layer name\n  (filePath: string) => boolean // layer matcher\n>;\n```",
+      "source_content_hash": "4ca145442a0834c8a5d3c42e99e72ac9a6a3c27e5eb68b8a8e2b6a38e6cee1ff",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c05ad55e"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "The `layers` object is defined by:",
+      "source_content_hash": "8467554b7c8bc53d959a7923b18d7c99e0125393f8d38f5d21105391bf7c6be7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`layers` 物件定義方式："
+      }
+    },
+    {
+      "segment_id": "af7d8a35",
+      "source_content": "- key: the name of a layer\n- value: a function to define if a given CSS module file should be in that layer",
+      "source_content_hash": "a8b5508dc5adc288959f641464d759f391d6deee863f018c0e0ebd20d896bd63",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 鍵名：層級名稱\n- 鍵值：判斷指定 CSS 模組檔案是否應歸入該層級的函式"
+      }
+    },
+    {
+      "segment_id": "32ef4bd1",
+      "source_content": ":::caution[Order matters]\n\nThe object order matters:\n\n- the keys order defines an explicit CSS layer order\n- when multiple layers match a file path, only the first layer will apply\n\n:::",
+      "source_content_hash": "4605b928aee87128789362a7ee4b8df9eaa223ae785a7ab9408dd18ae270d170",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::caution[順序重要性]\n\n物件順序具有關鍵影響：\n- 鍵名順序決定了 CSS 層級的明確排序\n- 當多個層級匹配檔案路徑時，僅會套用第一個匹配的層級\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "You can configure this plugin through plugin options.",
+      "source_content_hash": "41dec5de4a915ed94b3a6764ed0b2530b6c71a123c57bb0157766a8adcfa07fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過插件選項配置此插件。"
+      }
+    },
+    {
+      "segment_id": "8c3563d3",
+      "source_content": "```js\nconst options = {\n  layers: {\n    'docusaurus.infima': (filePath) =>\n      filePath.includes('/node_modules/infima/dist'),\n    'docusaurus.theme-classic': (filePath) =>\n      filePath.includes('/node_modules/@docusaurus/theme-classic/lib'),\n  },\n};\n```",
+      "source_content_hash": "689ac477484ada6e8716bd3dd9fe8d1b91f1eae08c8aa10bbcd85f7647435db3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8c3563d3"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1/api/plugins/plugin-css-cascade-layers.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.410310+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ed06255d552e4263f2b8de1a84b8ce6bda3d103139e78203a747512c6aaf9e13"
+  }
+}

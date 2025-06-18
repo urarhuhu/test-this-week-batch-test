@@ -1,0 +1,312 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-docs/version-3.8.1.json",
+  "source_file_content_hash": "3b1fc59cf7eb6f79caa033e65519ed6ceb6bb11fd5c4a5e853eac70fb62ce3ca",
+  "segments": [
+    {
+      "segment_id": "version.label",
+      "source_content": "3.8.1",
+      "source_content_hash": "20a66812315a1b6c85872c8858dd9585f025c7ff9e4825e5c3d9d02465f56b69",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for version 3.8.1"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Getting Started",
+      "source_content": "Getting Started",
+      "source_content_hash": "d00eca1bae6742803906ab42a831e8b5396d15b6573ea13c139ec31631208ec1",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Getting Started in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Guides",
+      "source_content": "Guides",
+      "source_content_hash": "572cd72feb9a84e0c639af3ccae73f3a4406f69fe193eac69ab0678eee32baff",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Guides in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Guides.link.generated-index.title",
+      "source_content": "Docusaurus Guides",
+      "source_content_hash": "5ea2fc8f5bd0ee208ae0687a72d9c093d1713b6c6b39c8e85739c861c27ae3db",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The generated-index page title for category Guides in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Guides.link.generated-index.description",
+      "source_content": "Let's learn about the most important Docusaurus concepts!",
+      "source_content_hash": "29abc4b600356d9e5b3550f16e30017fd931d34d063a8af75da976ed2dfc180e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The generated-index page description for category Guides in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Docs",
+      "source_content": "Docs",
+      "source_content_hash": "7af023c43013b9a53fbff7dd4b5821588bba3319308878229740489152c43f6d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Docs in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Sidebar",
+      "source_content": "Sidebar",
+      "source_content_hash": "f7efa7bc1fc535ab733d92a56639bed62229ae3646bc9fd137e9cef2f6c1f1b2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Sidebar in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Markdown Features",
+      "source_content": "Markdown Features",
+      "source_content_hash": "82d42291484f2ffacd655c5b64a302ba980195282c49e75374490a318a07b28f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Markdown Features in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Internationalization",
+      "source_content": "Internationalization",
+      "source_content_hash": "b3c0b2d2da0d7b9f73560f5afb44abc8aeaa0dd9445cd595a5570208d273b348",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Internationalization in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Advanced Guides",
+      "source_content": "Advanced Guides",
+      "source_content_hash": "bc6c3af5727744781469e5ffac80a5ba471dcf498400a422af8bafaf8f4e41d0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Advanced Guides in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.Upgrading",
+      "source_content": "Upgrading",
+      "source_content_hash": "d8f1ee5bd44a95133c6743f54e0911a35b6cea628dc733592c4c5603092ce379",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Upgrading in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.category.To Docusaurus v2",
+      "source_content": "To Docusaurus v2",
+      "source_content_hash": "68c0d40124514a8d09dbd92a8302dc11fef79a1e8c5e5a3b20202e3c4ae4da36",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category To Docusaurus v2 in sidebar docs"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.doc.Tutorial",
+      "source_content": "Tutorial",
+      "source_content_hash": "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for the doc item Tutorial in sidebar docs, linking to the doc i18n/tutorial"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.doc.Using Git",
+      "source_content": "Using Git",
+      "source_content_hash": "8de3c39f1df7fdf7127d3b6c9c9ebc1fac559320347546afbcd8fe9e18866310",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for the doc item Using Git in sidebar docs, linking to the doc i18n/git"
+      }
+    },
+    {
+      "segment_id": "sidebar.docs.doc.Using Crowdin",
+      "source_content": "Using Crowdin",
+      "source_content_hash": "572a409f84e9e427dab47c15cd6af675e0599f1bda4e431aed7b37b6231e9ec7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for the doc item Using Crowdin in sidebar docs, linking to the doc i18n/crowdin"
+      }
+    },
+    {
+      "segment_id": "sidebar.api.category.Plugin method references",
+      "source_content": "Plugin method references",
+      "source_content_hash": "da158c278203adfc28948d6849d3a1e8b0bcdca006336f47b78b6a4ef1f9beb6",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Plugin method references in sidebar api"
+      }
+    },
+    {
+      "segment_id": "sidebar.api.category.Plugins",
+      "source_content": "Plugins",
+      "source_content_hash": "9514b7ff4860ead73491768e45cce0ce20e6e3473a7b272e496c43c875d80ac5",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Plugins in sidebar api"
+      }
+    },
+    {
+      "segment_id": "sidebar.api.category.Themes",
+      "source_content": "Themes",
+      "source_content_hash": "43ae3265b99f2f34e9079ca3e2241ca8729718d749b3eaa2a616628dc2d2f751",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Themes in sidebar api"
+      }
+    },
+    {
+      "segment_id": "sidebar.api.category.Miscellaneous",
+      "source_content": "Miscellaneous",
+      "source_content_hash": "5cb0b42660589925c804543d433ba0764dab859487e5a9ed855481dcbfec1f06",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Miscellaneous in sidebar api"
+      }
+    },
+    {
+      "segment_id": "sidebar.api.category.📦 eslint-plugin",
+      "source_content": "📦 eslint-plugin",
+      "source_content_hash": "3c52b6634e53559d23bc9ce117ee1f2a75cb31e6b6f3527125ffeeec9432067d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category 📦 eslint-plugin in sidebar api"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "version.label": {
+      "message": "3.8.1",
+      "description": "The label for version 3.8.1"
+    },
+    "sidebar.docs.category.Getting Started": {
+      "message": "Getting Started",
+      "description": "The label for category Getting Started in sidebar docs"
+    },
+    "sidebar.docs.category.Guides": {
+      "message": "Guides",
+      "description": "The label for category Guides in sidebar docs"
+    },
+    "sidebar.docs.category.Guides.link.generated-index.title": {
+      "message": "Docusaurus Guides",
+      "description": "The generated-index page title for category Guides in sidebar docs"
+    },
+    "sidebar.docs.category.Guides.link.generated-index.description": {
+      "message": "Let's learn about the most important Docusaurus concepts!",
+      "description": "The generated-index page description for category Guides in sidebar docs"
+    },
+    "sidebar.docs.category.Docs": {
+      "message": "Docs",
+      "description": "The label for category Docs in sidebar docs"
+    },
+    "sidebar.docs.category.Sidebar": {
+      "message": "Sidebar",
+      "description": "The label for category Sidebar in sidebar docs"
+    },
+    "sidebar.docs.category.Markdown Features": {
+      "message": "Markdown Features",
+      "description": "The label for category Markdown Features in sidebar docs"
+    },
+    "sidebar.docs.category.Internationalization": {
+      "message": "Internationalization",
+      "description": "The label for category Internationalization in sidebar docs"
+    },
+    "sidebar.docs.category.Advanced Guides": {
+      "message": "Advanced Guides",
+      "description": "The label for category Advanced Guides in sidebar docs"
+    },
+    "sidebar.docs.category.Upgrading": {
+      "message": "Upgrading",
+      "description": "The label for category Upgrading in sidebar docs"
+    },
+    "sidebar.docs.category.To Docusaurus v2": {
+      "message": "To Docusaurus v2",
+      "description": "The label for category To Docusaurus v2 in sidebar docs"
+    },
+    "sidebar.docs.doc.Tutorial": {
+      "message": "Tutorial",
+      "description": "The label for the doc item Tutorial in sidebar docs, linking to the doc i18n/tutorial"
+    },
+    "sidebar.docs.doc.Using Git": {
+      "message": "Using Git",
+      "description": "The label for the doc item Using Git in sidebar docs, linking to the doc i18n/git"
+    },
+    "sidebar.docs.doc.Using Crowdin": {
+      "message": "Using Crowdin",
+      "description": "The label for the doc item Using Crowdin in sidebar docs, linking to the doc i18n/crowdin"
+    },
+    "sidebar.api.category.Plugin method references": {
+      "message": "Plugin method references",
+      "description": "The label for category Plugin method references in sidebar api"
+    },
+    "sidebar.api.category.Plugins": {
+      "message": "Plugins",
+      "description": "The label for category Plugins in sidebar api"
+    },
+    "sidebar.api.category.Themes": {
+      "message": "Themes",
+      "description": "The label for category Themes in sidebar api"
+    },
+    "sidebar.api.category.Miscellaneous": {
+      "message": "Miscellaneous",
+      "description": "The label for category Miscellaneous in sidebar api"
+    },
+    "sidebar.api.category.📦 eslint-plugin": {
+      "message": "📦 eslint-plugin",
+      "description": "The label for category 📦 eslint-plugin in sidebar api"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.8.1.json",
+  "last_updated_timestamp": "2025-06-18T04:53:23.181667+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

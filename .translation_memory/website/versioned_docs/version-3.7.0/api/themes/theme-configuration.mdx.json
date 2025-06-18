@@ -1,0 +1,2172 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/api/themes/theme-configuration.mdx",
+  "source_file_content_hash": "951c63cfd3a681e119de1aa68ba641dea2bc343642fff668e170705e38707df6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\nsidebar_label: Configuration\nslug: /api/themes/configuration\ntoc_max_heading_level: 4\n---",
+      "source_content_hash": "5e98a053e714730445407dc60642ac4fc4fe05dbf47c911f8449d31b110a9e12",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "# Theme configuration",
+      "source_content_hash": "dd9035649cff88bbdfebab06fdb6ea46f7c37271706f98319ffce9a25b51b31e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 主題配置"
+      }
+    },
+    {
+      "segment_id": "73ddcfdf",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_73ddcfdf"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This configuration applies to all [main themes](./overview.mdx).",
+      "source_content_hash": "b7942b22a1e00b1d75ca34415d952e73bd4f18ffe4dc47512e3c07dc9ab1f5f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此配置適用於所有[主要主題](./overview.mdx)。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Common {#common}",
+      "source_content_hash": "293440d536b3ff0ee472294973aed9b5b05053034cdeabbe02dedf02f9228652",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 通用設定 {#common}"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### Color mode {#color-mode---dark-mode}",
+      "source_content_hash": "26c851674c19700c67f7df8506ae0a56861b7ae6418cf579a121e6ff921ac793",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 色彩模式 {#color-mode---dark-mode}"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "The classic theme provides by default light and dark mode support, with a navbar switch for the user.",
+      "source_content_hash": "1732e91ec43e1f76331a934cb86a823c1f2069ed39e8e57191568bafcb2aeca0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "經典主題預設提供淺色與深色模式支援，並在導覽列提供切換按鈕。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "It is possible to customize the color mode support within the `colorMode` object.",
+      "source_content_hash": "91430f9488da7803657be417a5498fed5dc2452c1259340c09d542743430a41e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過`colorMode`物件自訂色彩模式支援功能。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "fec94f74",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `defaultMode` | <code>'light' \\| 'dark'</code> | `'light'` | The color mode when user first visits the site. |\n| `disableSwitch` | `boolean` | `false` | Hides the switch in the navbar. Useful if you want to support a single color mode. |\n| `respectPrefersColorScheme` | `boolean` | `false` | Whether to use the `prefers-color-scheme` media-query, using user system preferences, instead of the hardcoded `defaultMode`. |",
+      "source_content_hash": "db843132800a5f5d0759143b5b8b4fd2230c327c4625087f4ad74cffceb832e1",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_fec94f74"
+      }
+    },
+    {
+      "segment_id": "6543a19e",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6543a19e"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-start\n    colorMode: {\n      defaultMode: 'light',\n      disableSwitch: false,\n      respectPrefersColorScheme: false,\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "eb1f70412d663e4646774be5b2c191fecb2b83b38c9e7e1048bcf25d31db6ebf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "45aba823",
+      "source_content": ":::warning\n\nWith `respectPrefersColorScheme: true`, the `defaultMode` is overridden by user system preferences.\n\nIf you only want to support one color mode, you likely want to ignore user system preferences.\n\n:::",
+      "source_content_hash": "c9dd1a82c919c1feb721f748b0514ac7511e2d9649fbf94360ebbdab8fa76d79",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n當`respectPrefersColorScheme: true`時，`defaultMode`會被使用者系統偏好設定覆寫。\n\n若您僅需支援單一色彩模式，建議忽略使用者系統偏好設定。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### Meta image {#meta-image}",
+      "source_content_hash": "3448716cf592820d42746f218dc4c8e70fef5dfa56228440404b4e1d8abb36a0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 元數據圖片 {#meta-image}"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "You can configure a default image that will be used for your meta tag, in particular `og:image` and `twitter:image`.",
+      "source_content_hash": "0a775b7b633d06de47d56b9f945b650cd3a5f13a092bb8ff7074b0fb54f38e21",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可配置預設圖片，該圖片將用於元標籤（特別是`og:image`與`twitter:image`）。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_67b24fc5"
+      }
+    },
+    {
+      "segment_id": "e9081399",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `image` | `string` | `undefined` | The meta image URL for the site. Relative to your site's \"static\" directory. Cannot be SVGs. Can be external URLs too. |",
+      "source_content_hash": "98231bdba02737ccd88ffe44ab58daac189c276bd43bd1eb8923277dc0c1034a",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e9081399"
+      }
+    },
+    {
+      "segment_id": "468b36ba",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_468b36ba"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-next-line\n    image: 'img/docusaurus.png',\n  },\n};\n```",
+      "source_content_hash": "83ad49a431413605a3812ac746ef269f6a0b15d61e740aa1da9408f69e588e25",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "### Metadata {#metadata}",
+      "source_content_hash": "ad36db7de44427438aa7ac0117eb506e613d21a6ea383a342f43335f169f7586",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 元數據 {#metadata}"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "You can configure additional HTML metadata (and override existing ones).",
+      "source_content_hash": "0179248e9bf5a97f8034dc6d873be057d588494aadd768f9f462fb64336d3a5b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可配置額外的HTML元數據（並覆寫現有元數據）。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "ec99e704",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ec99e704"
+      }
+    },
+    {
+      "segment_id": "d9b1ca37",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `metadata` | `Metadata[]` | `[]` | Any field will be directly passed to the `<meta />` tag. Possible fields include `id`, `name`, `property`, `content`, `itemprop`, etc. |",
+      "source_content_hash": "eff27917100160d88503a217eff820455cfffcc5ea0589f8d59707cf2d570408",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d9b1ca37"
+      }
+    },
+    {
+      "segment_id": "64071bcc",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_64071bcc"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-next-line\n    metadata: [{name: 'twitter:card', content: 'summary'}],\n  },\n};\n```",
+      "source_content_hash": "32b54813c1744424ff79b6ed6f67eaaa89354b6b3519bbd7afb2f56c05675c37",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "638efb88",
+      "source_content": "### Announcement bar {#announcement-bar}",
+      "source_content_hash": "4e425291dc9aa23ce9b65e0869b3fb3ff6152eb21df550dfbe8d23f1b3190e8d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 公告欄 {#announcement-bar}"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "Sometimes you want to announce something in your website. Just for such a case, you can add an announcement bar. This is a non-fixed and optionally dismissible panel above the navbar. All configuration are in the `announcementBar` object.",
+      "source_content_hash": "ca14c5fe0b6bbb3cc9ead66ca496555a18f06d5344af6b935d1b37b46a0d40b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "有時您需要在網站上發布公告。為此，您可以添加公告欄——這是一個非固定且可選擇關閉的面板，位於導覽列上方。所有配置皆位於`announcementBar`物件中。"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "e2c67c87",
+      "source_content": "```mdx-code-block\n<APITable name=\"announcement-bar\">\n```",
+      "source_content_hash": "77333533738c2d39173d15336d77688fa86a6cd04b67e91e78b3ea1063f1ab74",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e2c67c87"
+      }
+    },
+    {
+      "segment_id": "aeac09e3",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `id` | `string` | `'announcement-bar'` | Any value that will identify this message. |\n| `content` | `string` | `''` | The text content of the announcement. HTML will be interpolated. |\n| `backgroundColor` | `string` | `'#fff'` | Background color of the entire bar. |\n| `textColor` | `string` | `'#000'` | Announcement text color. |\n| `isCloseable` | `boolean` | `true` | Whether this announcement can be dismissed with a '×' button. |",
+      "source_content_hash": "e1c08ba21628b0da6134ff5168a302c75c52d810fc81207cb918559a09cf2d07",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_aeac09e3"
+      }
+    },
+    {
+      "segment_id": "8d1b00fd",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8d1b00fd"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "01a167f4",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-start\n    announcementBar: {\n      id: 'support_us',\n      content:\n        'We are looking to revamp our docs, please fill <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"#\">this survey</a>',\n      backgroundColor: '#fafbfc',\n      textColor: '#091E42',\n      isCloseable: false,\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "542764157f21df94238a26faef7d9f35b4ab78e7b65a8a0cda1957772a8a2b33",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_01a167f4"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "## Plugins",
+      "source_content_hash": "87f3ca36661d23b0b5d5b1992fda0cb9ed133cb77eba3a51ab233abc652f234d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 插件配置"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Our [main themes](./overview.mdx) offer additional theme configuration options for Docusaurus core content plugins.",
+      "source_content_hash": "131288293b9dcdfccc9d62fa94d9e3ca87fd8bec09fa729bbe00c269a7778afa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們的[主要主題](./overview.mdx)為Docusaurus核心內容插件提供額外主題配置選項。"
+      }
+    },
+    {
+      "segment_id": "f6a06609",
+      "source_content": "### Docs",
+      "source_content_hash": "18f71e495ed744a4be0ab1455476cf1131ee63dc6150108ad905305c213d14e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文檔插件"
+      }
+    },
+    {
+      "segment_id": "414aa732",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-overview\">\n```",
+      "source_content_hash": "3c3eb0d861e6c66dbf077f6e53eac81977146ca997b8780c613c088e455b7d40",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_414aa732"
+      }
+    },
+    {
+      "segment_id": "961dee84",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `versionPersistence` | `'localStorage' \\| 'none'` | `undefined` | Defines the browser persistence of the preferred docs version. |\n| `sidebar.hideable` | `boolean` | `false` | Show a hide button at the bottom of the sidebar. |\n| `sidebar.autoCollapseCategories` | `boolean` | `false` | Automatically collapse all sibling categories of the one you navigate to. |",
+      "source_content_hash": "3f73b6b3327d10a885086e1644284a40db75c8a0fb50ee0865ab3fff63d23b3c",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_961dee84"
+      }
+    },
+    {
+      "segment_id": "31b98214",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_31b98214"
+      }
+    },
+    {
+      "segment_id": "39c48ff7",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "b26685f5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    docs: {\n      // highlight-start\n      versionPersistence: 'localStorage',\n      sidebar: {\n        hideable: false,\n        autoCollapseCategories: false,\n      },\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "aa84f7545e4ad1161b2bf632872f80ba0667c482e9a646fcd73ebc0255d5cd02",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b26685f5"
+      }
+    },
+    {
+      "segment_id": "17fd5988",
+      "source_content": "### Blog",
+      "source_content_hash": "6c5454239993d07a91c273f287594ef1df0066aca194c7690e68a352fcf6848c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 部落格插件"
+      }
+    },
+    {
+      "segment_id": "46dadadd",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-overview\">\n```",
+      "source_content_hash": "3c3eb0d861e6c66dbf077f6e53eac81977146ca997b8780c613c088e455b7d40",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_46dadadd"
+      }
+    },
+    {
+      "segment_id": "8ed03d97",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `sidebar.groupByYear` | `boolean` | `true` | Group sidebar blog posts by years. |",
+      "source_content_hash": "2998742f86616347d693dd65a9f6feec3e3082e87baf2e0729b32259eb0db48f",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8ed03d97"
+      }
+    },
+    {
+      "segment_id": "5b2e44c7",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5b2e44c7"
+      }
+    },
+    {
+      "segment_id": "e4d8cd8a",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "配置範例："
+      }
+    },
+    {
+      "segment_id": "ff27b4c2",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    blog: {\n      // highlight-start\n      sidebar: {\n        groupByYear: true,\n      },\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "239d648925962a8ef30c3dd93fbfc3166a65088253407b74e5979bb0445b5a5b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ff27b4c2"
+      }
+    },
+    {
+      "segment_id": "8e2354b8",
+      "source_content": "## Navbar {#navbar}",
+      "source_content_hash": "293f957dd112d173da71c6930db5fb1e646036424deb164aa5c001faacee0820",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 導覽列 {#navbar}"
+      }
+    },
+    {
+      "segment_id": "dbeb30c1",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "489cbec9",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-overview\">\n```",
+      "source_content_hash": "3c3eb0d861e6c66dbf077f6e53eac81977146ca997b8780c613c088e455b7d40",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_489cbec9"
+      }
+    },
+    {
+      "segment_id": "f6742aea",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `title` | `string` | `undefined` | Title for the navbar. |\n| `logo` | _See below_ | `undefined` | Customization of the logo object. |\n| `items` | `NavbarItem[]` | `[]` | A list of navbar items. See specification below. |\n| `hideOnScroll` | `boolean` | `false` | Whether the navbar is hidden when the user scrolls down. |\n| `style` | <code>'primary' \\| 'dark'</code> | Same as theme | Sets the navbar style, ignoring the dark/light theme. |",
+      "source_content_hash": "44283f1cdce1c95fa69871076e4dd75e67873f9102d6dce3b290d23523b7186a",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f6742aea"
+      }
+    },
+    {
+      "segment_id": "03859cae",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_03859cae"
+      }
+    },
+    {
+      "segment_id": "52dd49af",
+      "source_content": "### Navbar logo {#navbar-logo}",
+      "source_content_hash": "21fd26c33d3304a991ed020badc9bb8607a68147e2e8fbb0c7e842964e5939d6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 導覽列標誌 {#navbar-logo}"
+      }
+    },
+    {
+      "segment_id": "ceb4fd26",
+      "source_content": "The logo can be placed in [static folder](static-assets.mdx). Logo URL is set to base URL of your site by default. Although you can specify your own URL for the logo, if it is an external link, it will open in a new tab. In addition, you can override a value for the target attribute of logo link, it can come in handy if you are hosting docs website in a subdirectory of your main website, and in which case you probably do not need a link in the logo to the main website will open in a new tab.",
+      "source_content_hash": "3fcc61b07211389346ef9911dad34f5dc2718ca97513901004b82419e59ea3c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "標誌可置於[靜態資源目錄](static-assets.mdx)中。標誌URL預設設為您網站的基礎URL。雖然您可以指定自訂標誌URL，但若為外部連結，將在新分頁開啟。此外，您可覆寫標誌連結的target屬性值，這在將文檔網站託管於主網站子目錄時特別有用——此情況下您可能不需要標誌連結在新分頁開啟主網站。"
+      }
+    },
+    {
+      "segment_id": "65be34cb",
+      "source_content": "To improve dark mode support, you can also set a different logo for this mode.",
+      "source_content_hash": "9fd869e0e8dfe4f77a5093580007008aa07eb91b2083a41812fc413c4fc2b357",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為增強深色模式支援，您亦可為此模式設定不同標誌。"
+      }
+    },
+    {
+      "segment_id": "32fb7230",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受的欄位："
+      }
+    },
+    {
+      "segment_id": "868a2ef9",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-logo\">\n```",
+      "source_content_hash": "fb63c2608ca4dee2d6446609b1efb083f627d7edd77a655da00491c71358b1e7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_868a2ef9"
+      }
+    },
+    {
+      "segment_id": "8f6a7793",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `alt` | `string` | `undefined` | Alt tag for the logo image. |\n| `src` | `string` | **Required** | URL to the logo image. Base URL is appended by default. |\n| `srcDark` | `string` | `logo.src` | An alternative image URL to use in dark mode. |\n| `href` | `string` | `siteConfig.baseUrl` | Link to navigate to when the logo is clicked. |\n| `width` | <code>string \\| number</code> | `undefined` | Specifies the `width` attribute. |\n| `height` | <code>string \\| number</code> | `undefined` | Specifies the `height` attribute. |\n| `target` | `string` | Calculated based on `href` (external links will open in a new tab, all others in the current one). | The `target` attribute of the link; controls whether the link is opened in a new tab, the current one, or otherwise. |\n| `className` | `string` | `undefined` | CSS class applied to the image. |\n| `style` | `object` | `undefined` | CSS inline style object. React/JSX flavor, using camelCase properties. |",
+      "source_content_hash": "6d1a24930243f1365952679d8e143cd092f00c73ee3fbf0e44cfa61046ad0a67",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8f6a7793"
+      }
+    },
+    {
+      "segment_id": "cb0a9597",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb0a9597"
+      }
+    },
+    {
+      "segment_id": "52d45a2c",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例設定："
+      }
+    },
+    {
+      "segment_id": "d1748707",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      title: 'Site Title',\n      // highlight-start\n      logo: {\n        alt: 'Site Logo',\n        src: 'img/logo.svg',\n        srcDark: 'img/logo_dark.svg',\n        href: 'https://docusaurus.io/',\n        target: '_self',\n        width: 32,\n        height: 32,\n        className: 'custom-navbar-logo-class',\n        style: {border: 'solid red'},\n      },\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "3ed07565219da0650131b7d7a7adce3fb0509aea013ccc594bcab8570ae97c44",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d1748707"
+      }
+    },
+    {
+      "segment_id": "0b7ed806",
+      "source_content": "### Navbar items {#navbar-items}",
+      "source_content_hash": "10fb062bf19779f4a799de501c883d061333e928e26f5cc6b953e0692e531c55",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 導覽列項目 {#navbar-items}"
+      }
+    },
+    {
+      "segment_id": "8517ac25",
+      "source_content": "You can add items to the navbar via `themeConfig.navbar.items`.",
+      "source_content_hash": "b21ca1df2684ac5fd6bdb077beacbbebfe2e4fe34d9bb8c54837bfb00999dc25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過 `themeConfig.navbar.items` 新增項目至導覽列。"
+      }
+    },
+    {
+      "segment_id": "9b048e5d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      // highlight-start\n      items: [\n        {\n          type: 'doc',\n          position: 'left',\n          docId: 'introduction',\n          label: 'Docs',\n        },\n        {to: 'blog', label: 'Blog', position: 'left'},\n        {\n          type: 'docsVersionDropdown',\n          position: 'right',\n        },\n        {\n          type: 'localeDropdown',\n          position: 'right',\n        },\n        {\n          href: 'https://github.com/facebook/docusaurus',\n          position: 'right',\n          className: 'header-github-link',\n          'aria-label': 'GitHub repository',\n        },\n      ],\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "8eada595e5c67d68e6bd707dc2b422713ed1d92a1f054b15adf1673772026180",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9b048e5d"
+      }
+    },
+    {
+      "segment_id": "a30b7214",
+      "source_content": "The items can have different behaviors based on the `type` field. The sections below will introduce you to all the types of navbar items available.",
+      "source_content_hash": "e2615ecccda397f8a7caa77c8f7e7865119d4e44583aa17884e55d6ebeabfc35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "根據 `type` 欄位的不同，項目可具備不同行為。以下章節將介紹所有可用的導覽列項目類型。"
+      }
+    },
+    {
+      "segment_id": "95ba516f",
+      "source_content": "#### Navbar link {#navbar-link}",
+      "source_content_hash": "41368f7c5be316153fd9c00a721c7760ea85038e8bc7b944ca2a79869eabaead",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導覽列連結 {#navbar-link}"
+      }
+    },
+    {
+      "segment_id": "6c135b48",
+      "source_content": "By default, Navbar items are regular links (internal or external).",
+      "source_content_hash": "301610bb8dc58c86775f5d17cf09bbf4c9eb04e80041f58dc66a168e1727992b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，導覽列項目為常規連結（內部或外部）。"
+      }
+    },
+    {
+      "segment_id": "f10c482a",
+      "source_content": "React Router should automatically apply active link styling to links, but you can use `activeBasePath` in edge cases. For cases in which a link should be active on several different paths (such as when you have multiple doc folders under the same sidebar), you can use `activeBaseRegex`. `activeBaseRegex` is a more flexible alternative to `activeBasePath` and takes precedence over it -- Docusaurus parses it into a regular expression that is tested against the current URL.",
+      "source_content_hash": "ff106908bc19bc8878ee67a1af35dfe8c5fde50d19473f4f197dd3170480f259",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "React Router 應會自動將活動連結樣式套用至連結，但在邊緣情況下您可使用 `activeBasePath`。若某連結需在多個不同路徑下保持活動狀態（例如當您在同一側邊欄下有多個文件夾時），可使用 `activeBaseRegex`。`activeBaseRegex` 是比 `activeBasePath` 更靈活的替代方案，且優先於後者——Docusaurus 會將其解析為正則表達式並與當前 URL 進行比對。"
+      }
+    },
+    {
+      "segment_id": "b3b952f2",
+      "source_content": "Outbound (external) links automatically get `target=\"_blank\" rel=\"noopener noreferrer\"` attributes.",
+      "source_content_hash": "6f995e0130fa30ef633d98308d785a372f3da48850d875ebb86d0039678142e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外站（外部）連結會自動獲得 `target=\"_blank\" rel=\"noopener noreferrer\"` 屬性。"
+      }
+    },
+    {
+      "segment_id": "e17d0554",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受的欄位："
+      }
+    },
+    {
+      "segment_id": "bab21133",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-link\">\n```",
+      "source_content_hash": "2b6322777bc7f907568a494e143f54b1a462dcbe634828ac21cd8a9307fa99ed",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bab21133"
+      }
+    },
+    {
+      "segment_id": "b893c8fb",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'default'` | Optional | Sets the type of this item to a link. |\n| `label` | `string` | **Required** | The name to be shown for this item. |\n| `html` | `string` | Optional | Same as `label`, but renders pure HTML instead of text content. |\n| `to` | `string` | **Required** | Client-side routing, used for navigating within the website. The baseUrl will be automatically prepended to this value. |\n| `href` | `string` | **Required** | A full-page navigation, used for navigating outside of the website. **Only one of `to` or `href` should be used.** |\n| `prependBaseUrlToHref` | `boolean` | `false` | Prepends the baseUrl to `href` values. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `activeBasePath` | `string` | `to` / `href` | To apply the active class styling on all routes starting with this path. This usually isn't necessary. |\n| `activeBaseRegex` | `string` | `undefined` | Alternative to `activeBasePath` if required. |\n| `className` | `string` | `''` | Custom CSS class (for styling any item). |",
+      "source_content_hash": "e4fa9957e9163504587b7ed017e0fab1561e4b7c9b870246f9a03ab035d298ab",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b893c8fb"
+      }
+    },
+    {
+      "segment_id": "4770f21e",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4770f21e"
+      }
+    },
+    {
+      "segment_id": "324aaccc",
+      "source_content": ":::note\n\nIn addition to the fields above, you can specify other arbitrary attributes that can be applied to a HTML link.\n\n:::",
+      "source_content_hash": "de40e84c0a73d8c8f0d46d3c2e879f8aff2ffd934a327bc8a168701dbebed08f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n除上述欄位外，您還可指定其他任意屬性，這些屬性將套用至 HTML 連結。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "249869cc",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例設定："
+      }
+    },
+    {
+      "segment_id": "dddd618c",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          to: 'docs/introduction',\n          // Only one of \"to\" or \"href\" should be used\n          // href: 'https://www.facebook.com',\n          label: 'Introduction',\n          // Only one of \"label\" or \"html\" should be used\n          // html: '<b>Introduction</b>'\n          position: 'left',\n          activeBaseRegex: 'docs/(next|v8)',\n          target: '_blank',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "5931d7b481d3bf07713871be7a820b10855ecc0e2e6cc58b3b478ed4696698ab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dddd618c"
+      }
+    },
+    {
+      "segment_id": "fa8c4ad8",
+      "source_content": "#### Navbar dropdown {#navbar-dropdown}",
+      "source_content_hash": "421b8bf534c497a19f64900a21830c082156986a5025647d3ed591a61b5b86d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導覽列下拉選單 {#navbar-dropdown}"
+      }
+    },
+    {
+      "segment_id": "b0e8431f",
+      "source_content": "Navbar items of the type `dropdown` has the additional `items` field, an inner array of navbar items.",
+      "source_content_hash": "e940fac3f5933301a2e83ff67aafbfe99005c9ad173df3f72f010aa886d3dcad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "類型為 `dropdown` 的導覽列項目具備額外的 `items` 欄位，即導覽列項目的內部陣列。"
+      }
+    },
+    {
+      "segment_id": "158df793",
+      "source_content": "Navbar dropdown items only accept the following **\"link-like\" item types**:",
+      "source_content_hash": "dd0e7abdb544e85dca780a6bc9c37dbab03cf0a3b060a5204cc5dae49aeac9c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "導覽列下拉選單項目僅接受以下**「連結式」項目類型**："
+      }
+    },
+    {
+      "segment_id": "a4d99962",
+      "source_content": "- [Navbar link](#navbar-link)\n- [Navbar doc link](#navbar-doc-link)\n- [Navbar docs version](#navbar-docs-version)\n- [Navbar doc sidebar](#navbar-doc-sidebar)\n- [Navbar with custom HTML](#navbar-with-custom-html)",
+      "source_content_hash": "4708864ac53a3cf1c1a35f2a8ce38579dd8d2afb966973e4fb669d640e4b11ed",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [導覽列連結](#navbar-link)\n- [導覽列文件連結](#navbar-doc-link)\n- [導覽列文件版本](#navbar-docs-version)\n- [導覽列文件側邊欄](#navbar-doc-sidebar)\n- [含自訂 HTML 的導覽列](#navbar-with-custom-html)"
+      }
+    },
+    {
+      "segment_id": "e3448845",
+      "source_content": "Note that the dropdown base item is a clickable link as well, so this item can receive any of the props of a [plain navbar link](#navbar-link).",
+      "source_content_hash": "6b9f23efc46dac64d5c19d8bab88050fa1b9798ed7b408db6df9693df0d8da6a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意，下拉選單基礎項目本身也是可點擊的連結，因此該項目可接受[純導覽列連結](#navbar-link)的任何屬性。"
+      }
+    },
+    {
+      "segment_id": "0273ea32",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受的欄位："
+      }
+    },
+    {
+      "segment_id": "86df7636",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-dropdown\">\n```",
+      "source_content_hash": "18ee212458740afb70f8b63cf766f56242a5fecdc43c12cf64e93027695d8168",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_86df7636"
+      }
+    },
+    {
+      "segment_id": "e5eba26c",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'dropdown'` | Optional | Sets the type of this item to a dropdown. |\n| `label` | `string` | **Required** | The name to be shown for this item. |\n| `items` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | **Required** | The items to be contained in the dropdown. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |",
+      "source_content_hash": "789bf11762874d491d98797d7c6d79edd000b5dbf62101b7fdeff376d89198f9",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e5eba26c"
+      }
+    },
+    {
+      "segment_id": "e62154c6",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e62154c6"
+      }
+    },
+    {
+      "segment_id": "c15f089c",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例設定："
+      }
+    },
+    {
+      "segment_id": "bf952824",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'dropdown',\n          label: 'Community',\n          position: 'left',\n          items: [\n            {\n              label: 'Facebook',\n              href: 'https://www.facebook.com',\n            },\n            {\n              type: 'doc',\n              label: 'Social',\n              docId: 'social',\n            },\n            // ... more items\n          ],\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "8567982746385703951673dc4f95bc425ada39aaae0d28f95e6d124b4aa03ae9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bf952824"
+      }
+    },
+    {
+      "segment_id": "86bedbf7",
+      "source_content": "#### Navbar doc link {#navbar-doc-link}",
+      "source_content_hash": "991c16a40d1ab88095aac5701367e72f78fdba85f28a52173a0741bf626ac944",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導覽列文件連結 {#navbar-doc-link}"
+      }
+    },
+    {
+      "segment_id": "508bf572",
+      "source_content": "If you want to link to a specific doc, this special navbar item type will render the link to the doc of the provided `docId`. It will get the class `navbar__link--active` as long as you browse a doc of the same sidebar.",
+      "source_content_hash": "48c68ef58621027798e46e67ab56744e3db348f0362f5aca3f8df446c0ede12b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若需連結至特定文件，此特殊導覽列項目類型將渲染指向所提供 `docId` 文件的連結。只要您瀏覽同一側邊欄的文件，該連結就會獲得 `navbar__link--active` 類別。"
+      }
+    },
+    {
+      "segment_id": "3353b597",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受的欄位："
+      }
+    },
+    {
+      "segment_id": "7584896b",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-doc-link\">\n```",
+      "source_content_hash": "21ab0d513f7b7b19cd8f4c095f0be60dfd0ce3700785da69decf6348eb6e3b3b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7584896b"
+      }
+    },
+    {
+      "segment_id": "b35e5dde",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'doc'` | **Required** | Sets the type of this item to a doc link. |\n| `docId` | `string` | **Required** | The ID of the doc that this item links to. |\n| `label` | `string` | `docId` | The name to be shown for this item. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `docsPluginId` | `string` | `'default'` | The ID of the docs plugin that the doc belongs to. |",
+      "source_content_hash": "2e01d46b68f83ce16b6dd1cc7bc66d0d6bdb2b78881bb06c1bdf50181cb0b01f",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b35e5dde"
+      }
+    },
+    {
+      "segment_id": "684c7294",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_684c7294"
+      }
+    },
+    {
+      "segment_id": "a1988152",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例設定："
+      }
+    },
+    {
+      "segment_id": "619d970f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'doc',\n          position: 'left',\n          docId: 'introduction',\n          label: 'Docs',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "65c62eacff76b957b48827650617bc3b417e6c8feba6c735ee4d2d58d47606bd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_619d970f"
+      }
+    },
+    {
+      "segment_id": "edfde901",
+      "source_content": "#### Navbar linked to a sidebar {#navbar-doc-sidebar}",
+      "source_content_hash": "3f885df27a8505e81607013071cacc990e2c3ee038278a41929e5fca15fa233c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 連結至側邊欄的導覽列 {#navbar-doc-sidebar}"
+      }
+    },
+    {
+      "segment_id": "e67afabd",
+      "source_content": "You can link a navbar item to the first document link (which can be a doc link or a generated category index) of a given sidebar without having to hardcode a doc ID.",
+      "source_content_hash": "fb6905d0b1163e1f3e4bc91aa97658c3c3ddca4eef6d4649135a3754cdd9ea2c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可將導覽列項目連結至指定側邊欄的第一個文件連結（可以是文件連結或生成的分類索引），而無需硬編碼文件 ID。"
+      }
+    },
+    {
+      "segment_id": "cee5aad9",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受的欄位："
+      }
+    },
+    {
+      "segment_id": "eb4ec70e",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-doc-sidebar\">\n```",
+      "source_content_hash": "c891ab55455fa4453a5b238d86507998a9e50cff8cb0cfd93dded7cb89841026",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eb4ec70e"
+      }
+    },
+    {
+      "segment_id": "4de17b7e",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'docSidebar'` | **Required** | Sets the type of this navbar item to a sidebar's first document. |\n| `sidebarId` | `string` | **Required** | The ID of the sidebar that this item is linked to. |\n| `label` | `string` | First document link's sidebar label | The name to be shown for this item. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `docsPluginId` | `string` | `'default'` | The ID of the docs plugin that the sidebar belongs to. |",
+      "source_content_hash": "466c315c34da9f62e877a8dc34bddc17f5b677de742268ff88a8364cfabd664e",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4de17b7e"
+      }
+    },
+    {
+      "segment_id": "17dd27f0",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_17dd27f0"
+      }
+    },
+    {
+      "segment_id": "6701b8fe",
+      "source_content": ":::tip\n\nUse this navbar item type if your sidebar is updated often and the order is not stable.\n\n:::",
+      "source_content_hash": "0f995ca8b92db7cbb6cd8dcaf6ba27b81d6d3992fd8eb51b8a2dc41614f5bb33",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您的側邊欄經常更新且順序不穩定，請使用此導覽列項目類型。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "aad65e01",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例設定："
+      }
+    },
+    {
+      "segment_id": "7c7c6915",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'docSidebar',\n          position: 'left',\n          sidebarId: 'api',\n          label: 'API',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "4d1a556e02ee83123a580bb75083307e97451930f394136e30b80cd0625da8e4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7c7c6915"
+      }
+    },
+    {
+      "segment_id": "ad07f53a",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorial: [\n    {\n      type: 'autogenerated',\n      dirName: 'guides',\n    },\n  ],\n  api: [\n    // highlight-next-line\n    'cli', // The navbar item will be linking to this doc\n    'docusaurus-core',\n    {\n      type: 'autogenerated',\n      dirName: 'api',\n    },\n  ],\n};\n```",
+      "source_content_hash": "ab3e31cafbc3c9aa6334202898e01e768de1ab3e7a34733b9f8c8c06b27e7191",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ad07f53a"
+      }
+    },
+    {
+      "segment_id": "5e6eca4f",
+      "source_content": "#### Navbar docs version dropdown {#navbar-docs-version-dropdown}",
+      "source_content_hash": "53c77b6163eee61cdff8164e6e45b8f8d8cda3be0b1bbdb61c608d4846347b02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導覽列文件版本下拉選單 {#navbar-docs-version-dropdown}"
+      }
+    },
+    {
+      "segment_id": "aa8e8b02",
+      "source_content": "If you use docs with versioning, this special navbar item type that will render a dropdown with all your site's available versions.",
+      "source_content_hash": "f3640289feb2d197b7ffc99c5d4aa77d8046f698a6b78985173fb33bf80be787",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用版本化文件，此特殊導航欄項目類型將渲染一個下拉選單，顯示您網站所有可用的版本。"
+      }
+    },
+    {
+      "segment_id": "7c02538b",
+      "source_content": "The user will be able to switch from one version to another, while staying on the same doc (as long as the doc ID is constant across versions).",
+      "source_content_hash": "227402bf5df7d759fc4521ae14a71c38f96fbf848e622465d29666b8a48fa813",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用者可以在不同版本間切換，同時保持在相同文件上（只要文件ID在不同版本間保持不變）。"
+      }
+    },
+    {
+      "segment_id": "6bd1adf4",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受欄位："
+      }
+    },
+    {
+      "segment_id": "8a0b07d6",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-docs-version-dropdown\">\n```",
+      "source_content_hash": "5847f8884891f3bd34a3288bde922521749d57cb31ed9e82ad3e7a563ab522ac",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8a0b07d6"
+      }
+    },
+    {
+      "segment_id": "0fdd9cbc",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'docsVersionDropdown'` | **Required** | Sets the type of this item to a docs version dropdown. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |\n| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |\n| `docsPluginId` | `string` | `'default'` | The ID of the docs plugin that the doc versioning belongs to. |\n| `dropdownActiveClassDisabled` | `boolean` | `false` | Do not add the link active class when browsing docs. |",
+      "source_content_hash": "dc9a9bf3440ccaf808330f6856bea74773e51207af89c8c88325e2f937668c4f",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0fdd9cbc"
+      }
+    },
+    {
+      "segment_id": "dbf6429b",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dbf6429b"
+      }
+    },
+    {
+      "segment_id": "590f826a",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例配置："
+      }
+    },
+    {
+      "segment_id": "7a0a6213",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'docsVersionDropdown',\n          position: 'left',\n          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],\n          dropdownActiveClassDisabled: true,\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "7d44507e2b396c3e2473860d827a382833551a54758405b1fb809e38657d1888",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a0a6213"
+      }
+    },
+    {
+      "segment_id": "25cdc228",
+      "source_content": "#### Navbar docs version {#navbar-docs-version}",
+      "source_content_hash": "c4e62c5146dbdfde8302ea9d6139a5332f99105599c4f21fa4036ac5bc8c8670",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導航欄文件版本 {#navbar-docs-version}"
+      }
+    },
+    {
+      "segment_id": "57163c70",
+      "source_content": "If you use docs with versioning, this special navbar item type will link to the active/browsed version of your doc (depends on the current URL), and fallback to the latest version.",
+      "source_content_hash": "08b483bb7c38b1b8878b5f213883412ea502f49c0fd0cab7c3decd153c663b54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用版本化文件，此特殊導航欄項目類型將連結至您文件的當前瀏覽版本（取決於當前URL），並回退至最新版本。"
+      }
+    },
+    {
+      "segment_id": "0756e68c",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受欄位："
+      }
+    },
+    {
+      "segment_id": "dd286a16",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-docs-version\">\n```",
+      "source_content_hash": "465dbca7d1c04e836ac822c24349e3088facc293c87fbc740e0bf8a23ebef6ab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_dd286a16"
+      }
+    },
+    {
+      "segment_id": "54cc9601",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'docsVersion'` | **Required** | Sets the type of this item to a doc version link. |\n| `label` | `string` | The active/latest version label. | The name to be shown for this item. |\n| `to` | `string` | The active/latest version. | The internal link that this item points to. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `docsPluginId` | `string` | `'default'` | The ID of the docs plugin that the doc versioning belongs to. |",
+      "source_content_hash": "054860bdcae9cf97eaf35bd50e8ba343f7b2ef0f28b20805c859eee1cf22dffe",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_54cc9601"
+      }
+    },
+    {
+      "segment_id": "025bc303",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_025bc303"
+      }
+    },
+    {
+      "segment_id": "d441c3ac",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例配置："
+      }
+    },
+    {
+      "segment_id": "b8fc1709",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'docsVersion',\n          position: 'left',\n          to: '/path',\n          label: 'label',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "0bc9d40df1655bc5c768503215aa4062641b97c2a395465f67eeef31a2e5360c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b8fc1709"
+      }
+    },
+    {
+      "segment_id": "181610d7",
+      "source_content": "#### Navbar locale dropdown {#navbar-locale-dropdown}",
+      "source_content_hash": "dca97263e1b4336bccf2a2a5a00b18c27f5adde4f52d7e550bfec66dcc398ac8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導航欄語言下拉選單 {#navbar-locale-dropdown}"
+      }
+    },
+    {
+      "segment_id": "31bde43f",
+      "source_content": "If you use the [i18n feature](../../i18n/i18n-introduction.mdx), this special navbar item type will render a dropdown with all your site's available locales.",
+      "source_content_hash": "5219371604a5ee0dc3f8e519f242b0f0886af69a10803377c2b7b88aaadce921",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用[國際化功能](../../i18n/i18n-introduction.mdx)，此特殊導航欄項目類型將渲染一個下拉選單，顯示您網站所有可用的語言選項。"
+      }
+    },
+    {
+      "segment_id": "f62a3d7a",
+      "source_content": "The user will be able to switch from one locale to another, while staying on the same page.",
+      "source_content_hash": "a47874b0650cce68ac2cbc31f1dd335bb43bc70b1a9180921028c4826a18c352",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用者可以在不同語言間切換，同時保持在相同頁面。"
+      }
+    },
+    {
+      "segment_id": "664ad775",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受欄位："
+      }
+    },
+    {
+      "segment_id": "70763a02",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-locale-dropdown\">\n```",
+      "source_content_hash": "f61fdad2ce7dded4696e3eff8f77eb23abdb94e162a1748c29b3d2ac19e14124",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_70763a02"
+      }
+    },
+    {
+      "segment_id": "2f974c01",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'localeDropdown'` | **Required** | Sets the type of this item to a locale dropdown. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |\n| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |\n| `queryString` | `string` | `undefined` | The query string to be appended to the URL. |",
+      "source_content_hash": "5c769ec5afc18e8dc6683900409a6cc785dcc71ce7934acc099a615b92dcd94a",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2f974c01"
+      }
+    },
+    {
+      "segment_id": "a378b093",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a378b093"
+      }
+    },
+    {
+      "segment_id": "cfa0fec5",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例配置："
+      }
+    },
+    {
+      "segment_id": "fb23c1f8",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'localeDropdown',\n          position: 'left',\n          dropdownItemsAfter: [\n            {\n              to: 'https://my-site.com/help-us-translate',\n              label: 'Help us translate',\n            },\n          ],\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "cbe12f0960635b50e032f65f1fb456a785d3e1ee1e29b1e326a12c6623b8e3b1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_fb23c1f8"
+      }
+    },
+    {
+      "segment_id": "d20526c4",
+      "source_content": "#### Navbar search {#navbar-search}",
+      "source_content_hash": "5d6dede2b6f704c2c5228b138861643f1ff2f00c3b91c80590ba7b7240c3fb44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 導航欄搜尋 {#navbar-search}"
+      }
+    },
+    {
+      "segment_id": "75e2e289",
+      "source_content": "If you use the [search](../../search.mdx), the search bar will be the rightmost element in the navbar.",
+      "source_content_hash": "2b49d6069b6f5ff7699dbb45125d6299440c7daa72dcc5e100f138b7db82a006",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您使用[搜尋功能](../../search.mdx)，搜尋欄預設會出現在導航欄的最右側。"
+      }
+    },
+    {
+      "segment_id": "76fc3c77",
+      "source_content": "However, with this special navbar item type, you can change the default location.",
+      "source_content_hash": "dd453c5db8d97c3622732e724ceb79357d256b6b86ade99d1b3562fc337b968f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "但透過此特殊導航欄項目類型，您可以變更預設位置。"
+      }
+    },
+    {
+      "segment_id": "df975dc8",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-search\">\n```",
+      "source_content_hash": "e464988d9ef22b88240e8d352edd0accb50152de85aaa9837d9ac2800b0a4111",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_df975dc8"
+      }
+    },
+    {
+      "segment_id": "7939702e",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'search'` | **Required** | Sets the type of this item to a search bar. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `className` | `string` | / | Custom CSS class for this navbar item. |",
+      "source_content_hash": "2dd77f0d735db90ef270e6b449af9e9e9e4778d335d78dc24194751073e3f001",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7939702e"
+      }
+    },
+    {
+      "segment_id": "85cdbea4",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_85cdbea4"
+      }
+    },
+    {
+      "segment_id": "8c46963d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'search',\n          position: 'right',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "0a4570be12b0b944e5e1b528e7cc06b8a41730555a1eb8ab1ba120c9fd263ad2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8c46963d"
+      }
+    },
+    {
+      "segment_id": "1d33c085",
+      "source_content": "#### Navbar with custom HTML {#navbar-with-custom-html}",
+      "source_content_hash": "0ab6728334e62d4fb61b8522a4439d695f660d8c2ce131d63ddd2abc79467b06",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 自訂HTML的導航欄項目 {#navbar-with-custom-html}"
+      }
+    },
+    {
+      "segment_id": "82467fd7",
+      "source_content": "You can also render your own HTML markup inside a navbar item using this navbar item type.",
+      "source_content_hash": "c620fad23b728f0984dc4de8f155415881d15e31a375200be69b717a0a8d4637",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可以使用此導航欄項目類型，在導航欄項目中渲染自訂的HTML標記。"
+      }
+    },
+    {
+      "segment_id": "85c99f1f",
+      "source_content": "```mdx-code-block\n<APITable name=\"navbar-html\">\n```",
+      "source_content_hash": "474ae3374118907066286aeff11b2ac50b3841b92d79313d780f07e8eb8d2dd1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_85c99f1f"
+      }
+    },
+    {
+      "segment_id": "b35837a8",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `type` | `'html'` | **Required** | Sets the type of this item to a HTML element. |\n| `position` | <code>'left' \\| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |\n| `className` | `string` | `''` | Custom CSS class for this navbar item. |\n| `value` | `string` | `''` | Custom HTML to be rendered inside this navbar item. |",
+      "source_content_hash": "ebb05ba91847f7af22d4c764056b7aa714fa78c6aedfaf72a9707de9ec8dcb25",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b35837a8"
+      }
+    },
+    {
+      "segment_id": "0dbda15c",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0dbda15c"
+      }
+    },
+    {
+      "segment_id": "2993e70a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'html',\n          position: 'right',\n          value: '<button>Give feedback</button>',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "92602b041334184bf3b7ec452478fbf1f3a041375b345edcadedf3e710a1de96",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2993e70a"
+      }
+    },
+    {
+      "segment_id": "01d62133",
+      "source_content": "### Auto-hide sticky navbar {#auto-hide-sticky-navbar}",
+      "source_content_hash": "f97e89d6b3185a2e5a939655ae69cfce7aeebdfd0616847d995cbec356732b6e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 自動隱藏固定導航欄 {#auto-hide-sticky-navbar}"
+      }
+    },
+    {
+      "segment_id": "643e67b6",
+      "source_content": "You can enable this cool UI feature that automatically hides the navbar when a user starts scrolling down the page, and show it again when the user scrolls up.",
+      "source_content_hash": "f4e58252590505ad0e27112a4d7f99e1a6cf6b99a46d26d67f40ba918db139b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以啟用此酷炫的UI功能，當使用者開始向下滾動頁面時自動隱藏導航欄，並在使用者向上滾動時再次顯示。"
+      }
+    },
+    {
+      "segment_id": "eacc7740",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      // highlight-next-line\n      hideOnScroll: true,\n    },\n  },\n};\n```",
+      "source_content_hash": "095924e7eec3e113748d9dff295833bec2eab7991095c2e01517c6b5aa15b4a2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eacc7740"
+      }
+    },
+    {
+      "segment_id": "1586fb38",
+      "source_content": "### Navbar style {#navbar-style}",
+      "source_content_hash": "250e5a32d7c93ed3e6aac7b7ea9e246821d8227abc58d9ed95b0bd85aedb3b28",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 導航欄樣式 {#navbar-style}"
+      }
+    },
+    {
+      "segment_id": "cb63afa1",
+      "source_content": "You can set the static Navbar style without disabling the theme switching ability. The selected style will always apply no matter which theme user have selected.",
+      "source_content_hash": "2284f2b4d9c422c504fc7c0cc23a58e85e641afd7c8f2668b49dd9621b2c349b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以在不影響主題切換功能的情況下設定靜態導航欄樣式。無論使用者選擇何種主題，所選樣式都將始終應用。"
+      }
+    },
+    {
+      "segment_id": "b3cf5ea6",
+      "source_content": "Currently, there are two possible style options: `dark` and `primary` (based on the `--ifm-color-primary` color). You can see the styles preview in the [Infima documentation](https://infima.dev/docs/components/navbar/).",
+      "source_content_hash": "9a88807b9bef879e97f549db3cf22d593f8283e33497aaac4ea508324f49bea4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "目前有兩種可能的樣式選項：`dark`（深色）和`primary`（基於`--ifm-color-primary`顏色）。您可以在[Infima文件](https://infima.dev/docs/components/navbar/)中查看樣式預覽。"
+      }
+    },
+    {
+      "segment_id": "bd4efe0b",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      // highlight-next-line\n      style: 'primary',\n    },\n  },\n};\n```",
+      "source_content_hash": "740b769953470b4b33d8a5a31b2549964dfa04353da104a4d8516f8bbe4cac18",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bd4efe0b"
+      }
+    },
+    {
+      "segment_id": "a67fcebb",
+      "source_content": "## CodeBlock {#codeblock}",
+      "source_content_hash": "44800b750872104691e9032106372bae37c5cb2db64c33a23256a9c1f9fa281f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 代碼區塊 {#codeblock}"
+      }
+    },
+    {
+      "segment_id": "c8dd9e4a",
+      "source_content": "Docusaurus uses [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer) to highlight code blocks. All configuration are in the `prism` object.",
+      "source_content_hash": "0f42626a11befc50efafe108a25c80144ef56e03193249c0cada58ecfdc3305e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus使用[Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer)來高亮顯示代碼區塊。所有配置都在`prism`物件中。"
+      }
+    },
+    {
+      "segment_id": "dd1e5c41",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受欄位："
+      }
+    },
+    {
+      "segment_id": "d8b121d8",
+      "source_content": "```mdx-code-block\n<APITable name=\"codeblock\">\n```",
+      "source_content_hash": "87c99cb8f0eb416705ab5f7244826adf3a8b07f4861fb0b7ac516949cc8aae08",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d8b121d8"
+      }
+    },
+    {
+      "segment_id": "aabce7db",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `theme` | `PrismTheme` | `palenight` | The Prism theme to use for light-theme code blocks. |\n| `darkTheme` | `PrismTheme` | `palenight` | The Prism theme to use for dark-theme code blocks. |\n| `defaultLanguage` | `string` | `undefined` | The default language to use for code blocks not declaring any explicit language. |\n| `magicComments` | `MagicCommentConfig[]` | _see below_ | The list of [magic comments](../../guides/markdown-features/markdown-features-code-blocks.mdx#custom-magic-comments). |",
+      "source_content_hash": "4f8b7b22be980b65e3fd9fb97d856240a71ec35c716e79bcd7f59a60161b51d8",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_aabce7db"
+      }
+    },
+    {
+      "segment_id": "b8ee0cef",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b8ee0cef"
+      }
+    },
+    {
+      "segment_id": "22923b62",
+      "source_content": "```ts\ntype MagicCommentConfig = {\n  className: string;\n  line?: string;\n  block?: {start: string; end: string};\n};\n```",
+      "source_content_hash": "5b5fb90797e763df01f993a0283d56aa8f7ddffa15095a6a18d59fb3a42386f2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_22923b62"
+      }
+    },
+    {
+      "segment_id": "06b66d25",
+      "source_content": "```js\nconst defaultMagicComments = [\n  {\n    className: 'theme-code-block-highlighted-line',\n    line: 'highlight-next-line',\n    block: {start: 'highlight-start', end: 'highlight-end'},\n  },\n];\n```",
+      "source_content_hash": "fd353d3e9817d6c9cba7467e8149a0a3ed45d2d00d385f8507e336b1e3be2a4a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_06b66d25"
+      }
+    },
+    {
+      "segment_id": "00078527",
+      "source_content": "### Theme {#theme}",
+      "source_content_hash": "89587a9bcb5cb76e653dffe35c5c657fa5bd642ebec74db08bb79f000b2daf3b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題 {#theme}"
+      }
+    },
+    {
+      "segment_id": "c25cc016",
+      "source_content": "By default, we use [Palenight](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/prism-react-renderer/src/themes/palenight.ts) as syntax highlighting theme. You can specify a custom theme from the [list of available themes](https://github.com/FormidableLabs/prism-react-renderer/tree/master/packages/prism-react-renderer/src/themes). You may also use a different syntax highlighting theme when the site is in dark mode.",
+      "source_content_hash": "8d2a8f4a502458a637526eebd8d8692dd0064561deeb52607d8420b6304b7c98",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，我們使用 [Palenight](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/prism-react-renderer/src/themes/palenight.ts) 作為語法高亮主題。您可以從[可用主題清單](https://github.com/FormidableLabs/prism-react-renderer/tree/master/packages/prism-react-renderer/src/themes)中指定自訂主題。您也可以在網站處於深色模式時使用不同的語法高亮主題。"
+      }
+    },
+    {
+      "segment_id": "298e69e7",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "設定範例："
+      }
+    },
+    {
+      "segment_id": "a1c5198f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nimport {themes as prismThemes} from 'prism-react-renderer';\n\nexport default {\n  themeConfig: {\n    prism: {\n      // highlight-start\n      theme: prismThemes.github,\n      darkTheme: prismThemes.dracula,\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "a9df4573154d8c20b6e7d7ef99d4e2b8e8f85ffd93f05a66440206a53b6ff7d6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a1c5198f"
+      }
+    },
+    {
+      "segment_id": "5b949a49",
+      "source_content": ":::note\n\nIf you use the line highlighting Markdown syntax, you might need to specify a different highlight background color for the dark mode syntax highlighting theme. Refer to the [docs for guidance](../../guides/markdown-features/markdown-features-code-blocks.mdx#line-highlighting).\n\n:::",
+      "source_content_hash": "a85754d2ca27b7add349df3545aba14380c8c1eec0f27bad8129ee0dea10789e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n如果您使用行標記的 Markdown 語法，可能需要為深色模式語法高亮主題指定不同的標記背景顏色。請參閱[文件指南](../../guides/markdown-features/markdown-features-code-blocks.mdx#line-highlighting)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a36772d8",
+      "source_content": "### Default language {#default-language}",
+      "source_content_hash": "a518f0b77521dcb832ef41aab7c6339f3a97ff5c9aba1bb833818e796b4fdb4f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 預設語言 {#default-language}"
+      }
+    },
+    {
+      "segment_id": "3a3c99ec",
+      "source_content": "You can set a default language for code blocks if no language is added after the opening triple backticks (i.e. ```). Note that a valid [language name](https://prismjs.com/#supported-languages) must be passed.",
+      "source_content_hash": "d094492f8275e107456e2bf61416b4c5fe9e08b2ab07ea887102a52a350b9045",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以為程式碼區塊設定預設語言，當開頭三個反引號（即 ```）後未指定語言時使用。請注意，必須傳入有效的[語言名稱](https://prismjs.com/#supported-languages)。"
+      }
+    },
+    {
+      "segment_id": "8eb6587a",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "設定範例："
+      }
+    },
+    {
+      "segment_id": "6ea05cfa",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    prism: {\n      // highlight-next-line\n      defaultLanguage: 'javascript',\n    },\n  },\n};\n```",
+      "source_content_hash": "e202123b0f78846230055607d0e8c03c9f308cca7860bba7feb9bee57394280c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6ea05cfa"
+      }
+    },
+    {
+      "segment_id": "6cece64a",
+      "source_content": "## Footer {#footer-1}",
+      "source_content_hash": "5ab5346905c49a8a6cfcc983f0f75bfa1ad801d37081b5c9b94213c5603404f0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 頁尾 {#footer-1}"
+      }
+    },
+    {
+      "segment_id": "037370a0",
+      "source_content": "You can add logo and a copyright to the footer via `themeConfig.footer`. Logo can be placed in [static folder](static-assets.mdx). Logo URL works in the same way of the navbar logo.",
+      "source_content_hash": "d07505a3a68144444ec753701bf68a0d7157589baf1adc4167c6a53ab69afe71",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過 `themeConfig.footer` 在頁尾添加標誌和版權聲明。標誌可放置在[靜態資料夾](static-assets.mdx)中。標誌 URL 的運作方式與導覽列標誌相同。"
+      }
+    },
+    {
+      "segment_id": "cec570ea",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接受欄位："
+      }
+    },
+    {
+      "segment_id": "be84dc2f",
+      "source_content": "```mdx-code-block\n<APITable name=\"footer\">\n```",
+      "source_content_hash": "4b191034c121a5d44c0e6526f1529238e77ab108fc81bed800e5de32bb459656",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_be84dc2f"
+      }
+    },
+    {
+      "segment_id": "15f67aeb",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `logo` | `Logo` | `undefined` | Customization of the logo object. See [Navbar logo](#navbar-logo) for details. |\n| `copyright` | `string` | `undefined` | The copyright message to be displayed at the bottom, also supports custom HTML. |\n| `style` | <code>'dark' \\| 'light'</code> | `'light'` | The color theme of the footer component. |\n| `links` | <code>(Column \\| FooterLink)[]</code> | `[]` | The link groups to be present. |",
+      "source_content_hash": "04c3ed60ff29a39d87ae79866a1959fceb1794908c15862f2ceea85308352056",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15f67aeb"
+      }
+    },
+    {
+      "segment_id": "b2fdafec",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b2fdafec"
+      }
+    },
+    {
+      "segment_id": "7237427b",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "設定範例："
+      }
+    },
+    {
+      "segment_id": "a8374df9",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-start\n    footer: {\n      logo: {\n        alt: 'Meta Open Source Logo',\n        src: 'img/meta_oss_logo.png',\n        href: 'https://opensource.fb.com',\n        width: 160,\n        height: 51,\n      },\n      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "1465f3c788bacd51f9e12f3edb1831140d1ddb6bf4301e0ff2a45ee9cbe75695",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a8374df9"
+      }
+    },
+    {
+      "segment_id": "3039e409",
+      "source_content": "### Footer Links {#footer-links}",
+      "source_content_hash": "12f5ce178dcb62a54aa51ef38f3d18d908332bd26cf51f7925755e81ae6cd409",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 頁尾連結 {#footer-links}"
+      }
+    },
+    {
+      "segment_id": "1814b87f",
+      "source_content": "You can add links to the footer via `themeConfig.footer.links`. There are two types of footer configurations: **multi-column footers** and **simple footers**.",
+      "source_content_hash": "5b9734094f0e8fa651589b2869278eb79e0c28a760a933b075a4ec69cfa94c9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過 `themeConfig.footer.links` 在頁尾添加連結。頁尾設定有兩種型態：**多欄頁尾**和**簡易頁尾**。"
+      }
+    },
+    {
+      "segment_id": "c2e2b82d",
+      "source_content": "Multi-column footer links have a `title` and a list of `FooterItem`s for each column.",
+      "source_content_hash": "337d62312ea70a7d1a210cc2508f77f1b4c2648f3af20fedcc3fed6febee7801",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "多欄頁尾連結每欄包含一個 `title` 和一組 `FooterItem` 清單。"
+      }
+    },
+    {
+      "segment_id": "83fe359a",
+      "source_content": "```mdx-code-block\n<APITable name=\"footer-links\">\n```",
+      "source_content_hash": "73ab45e511116e3650f17b49d886f4f65fe19851d8881e7d0e22c368c024687a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_83fe359a"
+      }
+    },
+    {
+      "segment_id": "9429d23c",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `title` | `string` | `undefined` | Label of the section of these links. |\n| `items` | `FooterItem[]` | `[]` | Links in this section. |",
+      "source_content_hash": "e905f05bb897b5be6e45a84df78158cc256509964753a2fe5a6e29d364a1615a",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9429d23c"
+      }
+    },
+    {
+      "segment_id": "3ef0b830",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3ef0b830"
+      }
+    },
+    {
+      "segment_id": "36fe1bb5",
+      "source_content": "Accepted fields of each `FooterItem`:",
+      "source_content_hash": "0a3fd816ec8fc8ed4bc5d5a13831b9f6ca8cee2eb1a65c13d5e77b2ba6d97bcb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個 `FooterItem` 的接受欄位："
+      }
+    },
+    {
+      "segment_id": "53653c18",
+      "source_content": "```mdx-code-block\n<APITable name=\"footer-items\">\n```",
+      "source_content_hash": "4a5ac4547653bbcd659fb193f137d8e18c71ecaff2e9e410c96e97a17ce9e999",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_53653c18"
+      }
+    },
+    {
+      "segment_id": "3bc82ccd",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `label` | `string` | **Required** | Text to be displayed for this link. |\n| `to` | `string` | **Required** | Client-side routing, used for navigating within the website. The baseUrl will be automatically prepended to this value. |\n| `href` | `string` | **Required** | A full-page navigation, used for navigating outside of the website. **Only one of `to` or `href` should be used.** |\n| `html` | `string` | `undefined` | Renders the HTML pass-through instead of a simple link. In case `html` is used, no other options should be provided. |",
+      "source_content_hash": "1a1cb771581de21d98b177c2ce80a6a506914b80f5cd2ece373d7b0f719c3734",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3bc82ccd"
+      }
+    },
+    {
+      "segment_id": "901721b1",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_901721b1"
+      }
+    },
+    {
+      "segment_id": "9e8da850",
+      "source_content": "Example multi-column configuration:",
+      "source_content_hash": "57f6f02e94988d224f1fce12498fc79ca6ff0312006894b66a8d3b06942ff73a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "多欄設定範例："
+      }
+    },
+    {
+      "segment_id": "2956b167",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  footer: {\n    // highlight-start\n    links: [\n      {\n        title: 'Docs',\n        items: [\n          {\n            label: 'Style Guide',\n            to: 'docs/',\n          },\n          {\n            label: 'Second Doc',\n            to: 'docs/doc2/',\n          },\n        ],\n      },\n      {\n        title: 'Community',\n        items: [\n          {\n            label: 'Stack Overflow',\n            href: 'https://stackoverflow.com/questions/tagged/docusaurus',\n          },\n          {\n            label: 'Discord',\n            href: 'https://discordapp.com/invite/docusaurus',\n          },\n          {\n            label: 'X',\n            href: 'https://x.com/docusaurus',\n          },\n          {\n            html: `\n                <a href=\"https://www.netlify.com\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Deploys by Netlify\">\n                  <img src=\"https://www.netlify.com/img/global/badges/netlify-color-accent.svg\" alt=\"Deploys by Netlify\" width=\"114\" height=\"51\" />\n                </a>\n              `,\n          },\n        ],\n      },\n    ],\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "b2f9306549b65d9e015fee94fe61e597900166098e219c04206060a2e9e20c8d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2956b167"
+      }
+    },
+    {
+      "segment_id": "f64246f3",
+      "source_content": "A simple footer just has a list of `FooterItem`s displayed in a row.",
+      "source_content_hash": "4cb2e03aaa8314a6981afe0355c648d9266415c45ce0d3b7e6dbf12811c90308",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "簡易頁尾僅包含一列顯示的 `FooterItem` 清單。"
+      }
+    },
+    {
+      "segment_id": "b072f056",
+      "source_content": "Example simple configuration:",
+      "source_content_hash": "9df06732e356c84e2e4410832f032d340e255cc1805d31a1795ed2731d7b3512",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "簡易設定範例："
+      }
+    },
+    {
+      "segment_id": "3e8622e2",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  footer: {\n    // highlight-start\n    links: [\n      {\n        label: 'Stack Overflow',\n        href: 'https://stackoverflow.com/questions/tagged/docusaurus',\n      },\n      {\n        label: 'Discord',\n        href: 'https://discordapp.com/invite/docusaurus',\n      },\n      {\n        label: 'X',\n        href: 'https://x.com/docusaurus',\n      },\n      {\n        html: `\n            <a href=\"https://www.netlify.com\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Deploys by Netlify\">\n              <img src=\"https://www.netlify.com/img/global/badges/netlify-color-accent.svg\" alt=\"Deploys by Netlify\" width=\"114\" height=\"51\" />\n            </a>\n          `,\n      },\n    ],\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "c2dd3b921514f9b04d6dfb2bb41df4d0deacc168916a6d605109140c4b58987c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3e8622e2"
+      }
+    },
+    {
+      "segment_id": "26b81b99",
+      "source_content": "## Table of Contents {#table-of-contents}",
+      "source_content_hash": "3284ba91a3098d661ee03bcbd29fa2a8875eba92b51632ec0c3f66b8ee539318",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 目錄 {#table-of-contents}"
+      }
+    },
+    {
+      "segment_id": "874ab034",
+      "source_content": "You can adjust the default table of contents via `themeConfig.tableOfContents`.",
+      "source_content_hash": "5dc686f728ccd115f79210f447cdbf066e78bf64e8274f646cbc2a4d07eda6d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過 `themeConfig.tableOfContents` 調整預設目錄。"
+      }
+    },
+    {
+      "segment_id": "181a5d33",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_181a5d33"
+      }
+    },
+    {
+      "segment_id": "f1093dee",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `minHeadingLevel` | `number` | `2` | The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value. |\n| `maxHeadingLevel` | `number` | `3` | Max heading level displayed in the TOC. Should be an integer between 2 and 6. |",
+      "source_content_hash": "2deddc539955bec82a11382001e70f1cb61e03309a686836d3f5270eb77d7675",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f1093dee"
+      }
+    },
+    {
+      "segment_id": "eabc6893",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eabc6893"
+      }
+    },
+    {
+      "segment_id": "d7598ab1",
+      "source_content": "Example configuration:",
+      "source_content_hash": "ec30caa8d2e902d0a62e569a5942825977b96bc9abf648a215da9fb8d6bb334e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "設定範例："
+      }
+    },
+    {
+      "segment_id": "21fff09d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // highlight-start\n    tableOfContents: {\n      minHeadingLevel: 2,\n      maxHeadingLevel: 5,\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "59c232799d58c4278cddefc26a74cb1613e7956bc4c2a0d93c71b001d0a18ee8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_21fff09d"
+      }
+    },
+    {
+      "segment_id": "f602b5cb",
+      "source_content": "## Hooks {#hooks}",
+      "source_content_hash": "f865d5462da6cd5b577b89c40df32d921c7ec21946b411b774593eb3fcc85a75",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 鉤子 {#hooks}"
+      }
+    },
+    {
+      "segment_id": "a9d029bd",
+      "source_content": "### `useColorMode` {#use-color-mode}",
+      "source_content_hash": "108008f5d6252c615d9cfdbc42e54281604a8d2af4cf4566153ab596ea736ff1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `useColorMode` {#use-color-mode}"
+      }
+    },
+    {
+      "segment_id": "a796f167",
+      "source_content": "A React hook to access the color context. This context contains functions for setting light and dark mode and exposes boolean variable, indicating which mode is currently in use.",
+      "source_content_hash": "9ecf01cf52b2f48e70749383852f166fa496b2c732441528493958b890c9c36b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於存取色彩模式的 React 鉤子。此上下文包含設定淺色與深色模式的函式，並公開當前使用模式的布林變數。"
+      }
+    },
+    {
+      "segment_id": "c93da4ee",
+      "source_content": "Usage example:",
+      "source_content_hash": "46474fa200fee986f99e30ce8d6363fd86b3add65b305f55f1b70eb313970c1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用範例："
+      }
+    },
+    {
+      "segment_id": "afd431f6",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport {useColorMode} from '@docusaurus/theme-common';\n\nconst Example = () => {\n  // highlight-next-line\n  const {colorMode, setColorMode} = useColorMode();\n\n  return <h1>Dark mode is now {colorMode === 'dark' ? 'on' : 'off'}</h1>;\n};\n```",
+      "source_content_hash": "608660d9206fd6a2d4aa0ceddb4026b370f0d2ada3316470e3787d0277748f99",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_afd431f6"
+      }
+    },
+    {
+      "segment_id": "2f54b132",
+      "source_content": ":::note\n\nThe component calling `useColorMode` must be a child of the `Layout` component.\n\n```jsx\nfunction ExamplePage() {\n  return (\n    <Layout>\n      <Example />\n    </Layout>\n  );\n}\n```\n\n:::",
+      "source_content_hash": "348e65a4f1e08a52ef0e164fbf364c787abea55b984f942cba4a81682f3e7b9b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n呼叫 `useColorMode` 的元件必須是 `Layout` 元件的子元件。\n\n```jsx\nfunction ExamplePage() {\n  return (\n    <Layout>\n      <Example />\n    </Layout>\n  );\n}\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "82ad753d",
+      "source_content": "## i18n {#i18n}",
+      "source_content_hash": "8fc6a816714ea84a43f45dcec8ad8ed16efdecffd610899dbba8869a40b117cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 國際化 {#i18n}"
+      }
+    },
+    {
+      "segment_id": "31604857",
+      "source_content": "Read the [i18n introduction](../../i18n/i18n-introduction.mdx) first.",
+      "source_content_hash": "7f3f6f6c86b9b8b0e831ef8680f94c902afcbd8b33228361a1dcd764ca9b42b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請先閱讀[國際化介紹](../../i18n/i18n-introduction.mdx)。"
+      }
+    },
+    {
+      "segment_id": "95df67c3",
+      "source_content": "### Translation files location {#translation-files-location}",
+      "source_content_hash": "c4a2c001ab74402c22d2ce9621ec4331a59c8b9e0ab446f580b97d441bed9f1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯檔案位置 {#translation-files-location}"
+      }
+    },
+    {
+      "segment_id": "1fee89a8",
+      "source_content": "- **Base path**: `website/i18n/[locale]/docusaurus-theme-[themeName]`\n- **Multi-instance path**: N/A\n- **JSON files**: extracted with [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir)\n- **Markdown files**: N/A",
+      "source_content_hash": "a01a3df6949902ef8bd87670538b53df96083b1d18db2d562dbf14b1e55b8ed6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **基礎路徑**: `website/i18n/[locale]/docusaurus-theme-[themeName]`\n- **多實例路徑**: 不適用\n- **JSON 檔案**: 透過 [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir) 指令提取\n- **Markdown 檔案**: 不適用"
+      }
+    },
+    {
+      "segment_id": "5ad13a4c",
+      "source_content": "### Example file-system structure {#example-file-system-structure}",
+      "source_content_hash": "57da28ad906fdd886089988ed51e309efc11cd799e4c58ffb0d296344765dd14",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 檔案系統結構範例 {#example-file-system-structure}"
+      }
+    },
+    {
+      "segment_id": "f3110027",
+      "source_content": "```bash\nwebsite/i18n/[locale]/docusaurus-theme-classic\n│\n│ # translations for the theme\n├── navbar.json\n└── footer.json\n```",
+      "source_content_hash": "a7829de3a56426b52d9b115b57911bc31562983cfb64757531c29dded1c4248d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f3110027"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/api/themes/theme-configuration.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.346491+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "951c63cfd3a681e119de1aa68ba641dea2bc343642fff668e170705e38707df6"
+  }
+}

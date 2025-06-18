@@ -1,0 +1,52 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "src/pages/examples/markdownPageExample.mdx",
+  "source_file_content_hash": "e1d1306e3d5a39b5c2beb9f67feb56fa46d16c3ecfacb6dea380365edf7a78ae",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Markdown Page example\ndescription: Markdown Page example\nwrapperClassName: docusaurus-markdown-example\n---",
+      "source_content_hash": "1f843df349fcb96d81d06f0eb2e5bda2ac551afa2205f54e1aad43937561aa41",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Markdown page",
+      "source_content_hash": "300eb465303b32863a9e1d33f3cbd5557f9db10ee5b24f68145db74bee179898",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Markdown 頁面"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "This is a page generated from markdown to illustrate the Markdown page feature.",
+      "source_content_hash": "1b38c49b8d46d81f1bf5ac2fbd012fc80d405fac5e25fcfd32b46bd8fd449084",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是一個由 markdown 生成的頁面，用於展示 Markdown 頁面功能。"
+      }
+    },
+    {
+      "segment_id": "bb849aa9",
+      "source_content": ":::tip\n\nUse Markdown pages when you just want to focus on content and the default layout is good enough\n\n:::",
+      "source_content_hash": "c65667126e85f2cc1ffca3a4dc8ef15c5266f5920436416d20c3c96f40d265eb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n當您只想專注於內容且預設佈局已足夠時，請使用 Markdown 頁面\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-pages/examples/markdownPageExample.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.007690+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e1d1306e3d5a39b5c2beb9f67feb56fa46d16c3ecfacb6dea380365edf7a78ae"
+  }
+}

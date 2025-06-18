@@ -1,0 +1,218 @@
+---
+sidebar_label: Static site generation
+description: Docusaurus statically renders your React code into HTML, allowing faster load speed and better SEO.
+---
+
+# 靜態網站生成 (SSG)
+
+在[架構說明](architecture.mdx)中，我們提到主題是在 Webpack 中運行的。但請注意：這並不意味著它總能訪問瀏覽器全局變量！主題會被構建兩次：
+
+- **伺服器端渲染**期間，主題會在名為 [React DOM Server](https://reactjs.org/docs/react-dom-server.html) 的沙箱中編譯。您可以將其視為「無頭瀏覽器」，其中沒有 `window` 或 `document`，只有 React。SSR 會產生靜態 HTML 頁面。
+- **客戶端渲染**期間，主題會被編譯為最終在瀏覽器中執行的 JavaScript，因此可以訪問瀏覽器變量。
+
+:::info[SSR 還是 SSG？]
+
+_伺服器端渲染_和_靜態網站生成_可能是不同的概念，但我們會交替使用它們。
+
+嚴格來說，Docusaurus 是一個靜態網站生成器，因為它沒有伺服器端運行時——我們會靜態渲染成部署在 CDN 上的 HTML 文件，而不是在每次請求時動態預渲染。這與 [Next.js](https://nextjs.org/) 的工作模式不同。
+
+:::
+
+因此，雖然您可能知道不該訪問 Node 全局變量如 `process`（[或者可以嗎？](#node-env)）或 `'fs'` 模塊，但您也不能隨意訪問瀏覽器全局變量。
+
+```jsx
+import React from 'react';
+
+export default function WhereAmI() {
+  return <span>{window.location.href}</span>;
+}
+```
+
+這看起來像是典型的 React 代碼，但如果您運行 `docusaurus build`，將會收到錯誤：
+
+```
+ReferenceError: window is not defined
+```
+
+這是因為在伺服器端渲染期間，Docusaurus 應用實際上並未在瀏覽器中運行，它不知道 `window` 是什麼。
+
+```mdx-code-block
+<details id="node-env">
+<summary>What about <code>process.env.NODE_ENV</code>?</summary>
+```
+
+「無 Node 全局變量」規則的一個例外是 `process.env.NODE_ENV`。事實上，您可以在 React 中使用它，因為 Webpack 會將此變量注入為全局變量：
+
+```jsx
+import React from 'react';
+
+export default function expensiveComp() {
+  if (process.env.NODE_ENV === 'development') {
+    return <>This component is not shown in development</>;
+  }
+  const res = someExpensiveOperationThatLastsALongTime();
+  return <>{res}</>;
+}
+```
+
+在 Webpack 構建期間，`process.env.NODE_ENV` 將被替換為實際值，可能是 `'development'` 或 `'production'`。經過死碼消除後，您將獲得不同的構建結果：
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs>
+<TabItem value="Development">
+```
+
+```diff
+import React from 'react';
+
+export default function expensiveComp() {
+  // highlight-next-line
+  if ('development' === 'development') {
++   return <>This component is not shown in development</>;
+  }
+- const res = someExpensiveOperationThatLastsALongTime();
+- return <>{res}</>;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="Production">
+```
+
+```diff
+import React from 'react';
+
+export default function expensiveComp() {
+  // highlight-next-line
+- if ('production' === 'development') {
+-   return <>This component is not shown in development</>;
+- }
++ const res = someExpensiveOperationThatLastsALongTime();
++ return <>{res}</>;
+}
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+</details>
+```
+
+## 理解 SSR {#understanding-ssr}
+
+React 不僅是一個動態 UI 運行時——它也是一個模板引擎。由於 Docusaurus 網站主要包含靜態內容，它應該能夠在沒有任何 JavaScript（React 運行的環境）的情況下工作，僅使用純 HTML/CSS。這就是伺服器端渲染提供的功能：將您的 React 代碼靜態渲染為 HTML，不包含任何動態內容。HTML 文件沒有客戶端狀態的概念（它純粹是標記），因此不應依賴瀏覽器 API。
+
+當用戶訪問 URL 時，這些 HTML 文件會首先到達用戶的瀏覽器屏幕（參見[路由](routing.mdx)）。之後，瀏覽器會獲取並運行其他 JS 代碼，以提供網站的「動態」部分——任何用 JavaScript 實現的功能。然而，在此之前，頁面的主要內容已經可見，從而實現更快的加載。
+
+在僅 CSR 的應用中，所有 DOM 元素都是在客戶端由 React 生成的，HTML 文件只包含一個根元素供 React 掛載 DOM；而在 SSR 中，React 已經面對一個完全構建的 HTML 頁面，它只需要將 DOM 元素與其模型中的虛擬 DOM 關聯起來。這一步驟稱為「水合」。在 React 完成對靜態標記的水合後，應用程序開始像任何普通的 React 應用一樣工作。
+
+請注意，Docusaurus 本質上是一個單頁應用程式，因此靜態網站生成僅是一種優化手段（稱為「漸進增強」），但我們的功能並不完全依賴於這些 HTML 檔案。這與 [Jekyll](https://jekyllrb.com/) 和 [Docusaurus v1](https://v1.docusaurus.io/) 等網站生成器不同，後者會將所有檔案靜態轉換為標記語言，並通過 `<script>` 標籤連結的外部 JavaScript 添加互動性。如果您檢查建置輸出，仍然會看到 `build/assets/js` 下的 JS 資源，這些才是 Docusaurus 的核心。
+
+## 緊急逃生艙 {#escape-hatches}
+
+如果您需要在畫面上渲染任何依賴瀏覽器 API 才能正常運作的動態內容，例如：
+
+- 我們的 [即時代碼區塊](../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor)，它在瀏覽器的 JS 運行時中執行
+- 我們的 [主題化圖片](../guides/markdown-features/markdown-features-assets.mdx#themed-images)，它會檢測使用者的配色方案以顯示不同的圖片
+- 除錯面板的 JSON 檢視器，它使用 `window` 全域變數進行樣式設定
+
+您可能需要避開 SSR，因為靜態 HTML 在不知道客戶端狀態的情況下無法顯示任何有用的內容。
+
+:::warning
+
+客戶端的首次渲染必須產生與伺服器端渲染完全相同的 DOM 結構，這一點非常重要，否則 React 會將虛擬 DOM 與錯誤的 DOM 元素關聯起來。
+
+因此，單純使用 `if (typeof window !== 'undefined) {/* 渲染某些內容 */}` 作為瀏覽器與伺服器的檢測方法並不合適，因為客戶端的首次渲染會立即產生與伺服器生成內容不同的標記。
+
+您可以在 [The Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/) 中閱讀更多關於這個陷阱的資訊。
+
+:::
+
+我們提供了幾種更可靠的方法來避開 SSR。
+
+### `<BrowserOnly>` {#browseronly}
+
+如果您需要僅在瀏覽器中渲染某些元件（例如，因為該元件依賴於瀏覽器特定功能才能正常運作），常見的方法是將您的元件包裝在 [`<BrowserOnly>`](../docusaurus-core.mdx#browseronly) 中，以確保它在 SSR 期間不可見，僅在 CSR 中渲染。
+
+```jsx
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+function MyComponent(props) {
+  return (
+    // highlight-start
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => {
+        const LibComponent =
+          require('some-lib-that-accesses-window').LibComponent;
+        return <LibComponent {...props} />;
+      }}
+    </BrowserOnly>
+    // highlight-end
+  );
+}
+```
+
+重要的是要理解，`<BrowserOnly>` 的子元素不是一個 JSX 元素，而是一個 _返回_ 元素的函數。這是一個設計決策。考慮以下程式碼：
+
+```jsx
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+function MyComponent() {
+  return (
+    <BrowserOnly>
+      {/* highlight-start */}
+      {/* DON'T DO THIS - doesn't actually work */}
+      <span>page url = {window.location.href}</span>
+      {/* highlight-end */}
+    </BrowserOnly>
+  );
+}
+```
+
+雖然您可能期望 `BrowserOnly` 在伺服器端渲染時隱藏子元素，但實際上它無法做到。當 React 渲染器嘗試渲染這個 JSX 樹時，它確實會將 `{window.location.href}` 變量視為該樹的一個節點並嘗試渲染它，儘管實際上並未使用它！使用函數可以確保我們僅在需要時才讓渲染器看到瀏覽器專用的元件。
+
+### `useIsBrowser` {#useisbrowser}
+
+您也可以使用 `useIsBrowser()` 鉤子來測試元件當前是否處於瀏覽器環境中。它在 SSR 中返回 `false`，在首次客戶端渲染後的 CSR 中返回 `true`。如果您僅需要在客戶端執行某些條件操作，而不是渲染完全不同的 UI，可以使用此鉤子。
+
+```jsx
+import useIsBrowser from '@docusaurus/useIsBrowser';
+
+function MyComponent() {
+  const isBrowser = useIsBrowser();
+  const location = isBrowser ? window.location.href : 'fetching location...';
+  return <span>{location}</span>;
+}
+```
+
+### `useEffect` {#useeffect}
+
+最後，您可以將邏輯放在 `useEffect()` 中，以延遲其執行直到首次 CSR 之後。這最適合於僅執行副作用但不 _獲取_ 客戶端狀態資料的情況。
+
+```jsx
+function MyComponent() {
+  useEffect(() => {
+    // Only logged in the browser console; nothing is logged during server-side rendering
+    console.log("I'm now in the browser");
+  }, []);
+  return <span>Some content...</span>;
+}
+```
+
+### `ExecutionEnvironment` {#executionenvironment}
+
+[`ExecutionEnvironment`](../docusaurus-core.mdx#executionenvironment) 命名空間包含多個值，其中 `canUseDOM` 是檢測瀏覽器環境的有效方法。
+
+請注意，它本質上是在底層檢查 `typeof window !== 'undefined'`，因此不應將其用於渲染相關邏輯，而僅適用於命令式代碼，例如透過發送網路請求來響應用戶輸入，或動態載入函式庫，這些情況下完全不會更新 DOM。
+
+```js title="a-client-module.js"
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
+if (ExecutionEnvironment.canUseDOM) {
+  document.title = "I'm loaded!";
+}
+```

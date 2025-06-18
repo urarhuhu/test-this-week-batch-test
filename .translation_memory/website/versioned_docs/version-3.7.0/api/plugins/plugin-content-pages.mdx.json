@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/api/plugins/plugin-content-pages.mdx",
+  "source_file_content_hash": "ee043dc0c8abae5226550db484bab85bfcdc14c0f80b473b4114a03d622d71a5",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\nslug: /api/plugins/@docusaurus/plugin-content-pages\n---",
+      "source_content_hash": "98b3d330db2ee46e087d78d75eb86791c0eb5501dde99932660ee9b60d7a7175",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-content-pages",
+      "source_content_hash": "88e7b76d4c411e15f8c22b4a83597bfbf41707fdce182d45115dc545cee6caa7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-content-pages"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The default pages plugin for Docusaurus. The classic template ships with this plugin with default configurations. This plugin provides [creating pages](guides/creating-pages.mdx) functionality.",
+      "source_content_hash": "1dba06e9168b141eacf58b6072012a44c40e717bb89b2b31674fa6d5a78d0542",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的預設頁面插件。經典模板預設包含此插件並提供基本配置。此插件提供[建立頁面](guides/creating-pages.mdx)功能。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-content-pages\n```",
+      "source_content_hash": "30c2f15872f25b5c20affcd2e243dfdd1c561c3929ded2c3613f4790071c2c51",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "440191a5",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.\n\nYou can configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic).\n\n:::",
+      "source_content_hash": "737b2a008954011fd073f76b42dc5ff859f8bcaced754eff0b2741c9f733f873",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您使用 `@docusaurus/preset-classic` 預設配置，則無需額外安裝此插件作為依賴項。\n\n您可透過[預設選項](../../using-plugins.mdx#docusauruspreset-classic)配置此插件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "6c3c2cc2",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `path` | `string` | `'src/pages'` | Path to data on filesystem relative to site dir. Components in this directory will be automatically converted to pages. |\n| `editUrl` | <code>string \\| [EditUrlFn](#EditUrlFn)</code> | `undefined` | **Only for Markdown pages**. Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links. |\n| `editLocalizedFiles` | `boolean` | `false` | **Only for Markdown pages**. The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function. |\n| `routeBasePath` | `string` | `'/'` | URL route for the pages section of your site. **DO NOT** include a trailing slash. |\n| `include` | `string[]` | `['**/*.{js,jsx,ts,tsx,md,mdx}']` | Matching files will be included and processed. |\n| `exclude` | `string[]` | _See example configuration_ | No route will be created for matching files. |\n| `mdxPageComponent` | `string` | `'@theme/MDXPage'` | Component used by each MDX page. |\n| `remarkPlugins` | `[]` | `any[]` | Remark plugins passed to MDX. |\n| `rehypePlugins` | `[]` | `any[]` | Rehype plugins passed to MDX. |\n| `rehypePlugins` | `any[]` | `[]` | Recma plugins passed to MDX. |\n| `beforeDefaultRemarkPlugins` | `any[]` | `[]` | Custom Remark plugins passed to MDX before the default Docusaurus Remark plugins. |\n| `beforeDefaultRehypePlugins` | `any[]` | `[]` | Custom Rehype plugins passed to MDX before the default Docusaurus Rehype plugins. |\n| `showLastUpdateAuthor` | `boolean` | `false` | **Only for Markdown pages**. Whether to display the author who last updated the page. |\n| `showLastUpdateTime` | `boolean` | `false` | **Only for Markdown pages**. Whether to display the last date the page post was updated. This requires access to git history during the build, so will not work correctly with shallow clones (a common default for CI systems). With GitHub `actions/checkout`, use`fetch-depth: 0`. |",
+      "source_content_hash": "a0200a561ee439710b6688c9975847c809f90efda38ebab97e6d29e764de351b",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6c3c2cc2"
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### Types {#types}",
+      "source_content_hash": "034686b12f78982c1e0199ff93724cd49daf8a7ddf6e6948ebd61df99af28c7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型 {#types}"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "#### `EditUrlFn` {#EditUrlFn}",
+      "source_content_hash": "5b9ea13321f33c35b1f57f998b0799a64d34e09eab387667521c4ddf90c65132",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `EditUrlFn` {#EditUrlFn}"
+      }
+    },
+    {
+      "segment_id": "6d254e09",
+      "source_content": "```ts\ntype EditUrlFunction = (params: {\n  blogDirPath: string;\n  blogPath: string;\n  permalink: string;\n  locale: string;\n}) => string | undefined;\n```",
+      "source_content_hash": "a26233be255d8924524d713f94cda74c76bfff87e6d2468d4488eab2a06261ca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6d254e09"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "You can configure this plugin through preset options or plugin options.",
+      "source_content_hash": "118dd7722fc15d0951831695d6b79451361a000dc8a9de8138e737e9fe881ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可透過預設選項或插件選項配置此插件。"
+      }
+    },
+    {
+      "segment_id": "c1d6a7ca",
+      "source_content": ":::tip\n\nMost Docusaurus users configure this plugin through the preset options.\n\n:::",
+      "source_content_hash": "0a660704749473b8e0f2d5316b808fdf177b0264e404d29b9d4653e71924c332",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n多數 Docusaurus 使用者透過預設選項配置此插件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8a9e710a",
+      "source_content": "```js config-tabs\n// Preset Options: pages\n// Plugin Options: @docusaurus/plugin-content-pages\n\nconst config = {\n  path: 'src/pages',\n  routeBasePath: '',\n  include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],\n  exclude: [\n    '**/_*.{js,jsx,ts,tsx,md,mdx}',\n    '**/_*/**',\n    '**/*.test.{js,jsx,ts,tsx}',\n    '**/__tests__/**',\n  ],\n  mdxPageComponent: '@theme/MDXPage',\n  remarkPlugins: [require('./my-remark-plugin')],\n  rehypePlugins: [],\n  beforeDefaultRemarkPlugins: [],\n  beforeDefaultRehypePlugins: [],\n};\n```",
+      "source_content_hash": "389a14b4b7f1043e54d8ae0b46b5728f76783a5f1471ec588188705701ab39fc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8a9e710a"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "## Markdown front matter {#markdown-front-matter}",
+      "source_content_hash": "b854995dbf0992227ce760c6a3aa3c73e5d0080774b09ab62c46bfabed5f2f1b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Markdown 前置元資料 {#markdown-front-matter}"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "Markdown pages can use the following Markdown [front matter](../../guides/markdown-features/markdown-features-intro.mdx#front-matter) metadata fields, enclosed by a line `---` on either side.",
+      "source_content_hash": "51284b6b21a62806b1c92ab4fed7a4aad058c823f9fc1f91139196306784712c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 頁面可使用以下 Markdown [前置元資料](../../guides/markdown-features/markdown-features-intro.mdx#front-matter)欄位，需以 `---` 分隔線包夾。"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "d44e4104",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d44e4104"
+      }
+    },
+    {
+      "segment_id": "60fa5e52",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `title` | `string` | Markdown title | The blog post title. |\n| `description` | `string` | The first line of Markdown content | The description of your page, which will become the `<meta name=\"description\" content=\"...\"/>` and `<meta property=\"og:description\" content=\"...\"/>` in `<head>`, used by search engines. |\n| `keywords` | `string[]` | `undefined` | Keywords meta tag, which will become the `<meta name=\"keywords\" content=\"keyword1,keyword2,...\"/>` in `<head>`, used by search engines. |\n| `image` | `string` | `undefined` | Cover or thumbnail image that will be used as the `<meta property=\"og:image\" content=\"...\"/>` in the `<head>`, enhancing link previews on social media and messaging platforms. |\n| `wrapperClassName` | `string` |  | Class name to be added to the wrapper element to allow targeting specific page content. |\n| `hide_table_of_contents` | `boolean` | `false` | Whether to hide the table of contents to the right. |\n| `draft` | `boolean` | `false` | Draft pages will only be available during development. |\n| `unlisted` | `boolean` | `false` | Unlisted pages will be available in both development and production. They will be \"hidden\" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link. |",
+      "source_content_hash": "31c7ce201fceadf32fccbb060530ae7919aa4da09794133b264314c408478f26",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_60fa5e52"
+      }
+    },
+    {
+      "segment_id": "1a63b635",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1a63b635"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "4e583d18",
+      "source_content": "```md\n---\ntitle: Markdown Page\ndescription: Markdown page SEO description\nwrapperClassName: markdown-page\nhide_table_of_contents: false\ndraft: true\n---\n\nMarkdown page content\n```",
+      "source_content_hash": "f9764c1be0dff3b424d79dd6875bff06ea321198d2eceaed176df071ad0b24e5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4e583d18"
+      }
+    },
+    {
+      "segment_id": "c6868a9f",
+      "source_content": "## i18n {#i18n}",
+      "source_content_hash": "8fc6a816714ea84a43f45dcec8ad8ed16efdecffd610899dbba8869a40b117cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 國際化 {#i18n}"
+      }
+    },
+    {
+      "segment_id": "bb1346b6",
+      "source_content": "Read the [i18n introduction](../../i18n/i18n-introduction.mdx) first.",
+      "source_content_hash": "7f3f6f6c86b9b8b0e831ef8680f94c902afcbd8b33228361a1dcd764ca9b42b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請先閱讀[國際化介紹](../../i18n/i18n-introduction.mdx)。"
+      }
+    },
+    {
+      "segment_id": "734d40d8",
+      "source_content": "### Translation files location {#translation-files-location}",
+      "source_content_hash": "c4a2c001ab74402c22d2ce9621ec4331a59c8b9e0ab446f580b97d441bed9f1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯檔案位置 {#translation-files-location}"
+      }
+    },
+    {
+      "segment_id": "6892c8d2",
+      "source_content": "- **Base path**: `website/i18n/[locale]/docusaurus-plugin-content-pages`\n- **Multi-instance path**: `website/i18n/[locale]/docusaurus-plugin-content-pages-[pluginId]`\n- **JSON files**: extracted with [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir)\n- **Markdown files**: `website/i18n/[locale]/docusaurus-plugin-content-pages`",
+      "source_content_hash": "7bac372cc42a314370423ce978dd3a6894523864361d2807eeac4b7dbf16641a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **基礎路徑**: `website/i18n/[locale]/docusaurus-plugin-content-pages`\n- **多實例路徑**: `website/i18n/[locale]/docusaurus-plugin-content-pages-[pluginId]`\n- **JSON 檔案**: 透過 [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir) 指令提取\n- **Markdown 檔案**: `website/i18n/[locale]/docusaurus-plugin-content-pages`"
+      }
+    },
+    {
+      "segment_id": "35353302",
+      "source_content": "### Example file-system structure {#example-file-system-structure}",
+      "source_content_hash": "57da28ad906fdd886089988ed51e309efc11cd799e4c58ffb0d296344765dd14",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 檔案系統結構範例 {#example-file-system-structure}"
+      }
+    },
+    {
+      "segment_id": "3ad9440a",
+      "source_content": "```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-pages\n│\n│ # translations for website/src/pages\n├── first-markdown-page.md\n└── second-markdown-page.md\n```",
+      "source_content_hash": "2efbd3f8b999470a0d0307b030180ab7bd7f00e5eb4bd785cefb650ae7bbc8c2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3ad9440a"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/api/plugins/plugin-content-pages.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.338824+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ee043dc0c8abae5226550db484bab85bfcdc14c0f80b473b4114a03d622d71a5"
+  }
+}

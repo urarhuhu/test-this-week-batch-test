@@ -1,0 +1,234 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/guides/markdown-features/markdown-features-math-equations.mdx",
+  "source_file_content_hash": "2ad62cc947a84bdb69fbb1b1db46aed73166b58e13be70ab793616c9fe154cbb",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: math-equations\ndescription: Writing LaTeX Math Equations\nslug: /markdown-features/math-equations\n---",
+      "source_content_hash": "150a8e247c3ac1e89e9cfd8d21c364b3bf7e3195c00e0380d4a6d37e0dbb60ec",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Math Equations",
+      "source_content_hash": "d29eed4d4aecaa1de675ef44669fca3cb24e15c7c6ee2cebbae324a7b6f9253c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "623f74e7",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Mathematical equations can be rendered using [KaTeX](https://katex.org).",
+      "source_content_hash": "255484ffb2b3100d3a9333884b6908aa0f2bd49aba125eff6d3edfc0d0807515",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Please read [KaTeX](https://katex.org) documentation for more details.",
+      "source_content_hash": "740bd4dcc96978bae2e4abab76b2c65ccf4e2ce0359c74751740fe7338f0595b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "### Inline {#inline}",
+      "source_content_hash": "68be51621261a4b55624a0a8de05df74d6222c8c8fa357a864f02d54e9df00a8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Write inline math equations by wrapping LaTeX equations between `$`:",
+      "source_content_hash": "76d5397b86db6dc6196828587760dea7d46f5ad2dc70276cf1898c01dc5137d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cbbebf8e",
+      "source_content": "```latex\nLet $f\\colon[a,b]\\to\\R$ be Riemann integrable. Let $F\\colon[a,b]\\to\\R$ be\n$F(x)=\\int_{a}^{x} f(t)\\,dt$. Then $F$ is continuous, and at all $x$ such that\n$f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.\n```",
+      "source_content_hash": "97d438670cd56edb831aa5239d108a023964e7927c82605f57dab0086c0cd0f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "358a309f",
+      "source_content": "<BrowserWindow>\n\nLet $f\\colon[a,b] \\to \\R$ be Riemann integrable. Let $F\\colon[a,b]\\to\\R$ be $F(x)=\n\\int_{a}^{x} f(t)\\,dt$. Then $F$ is continuous, and at all $x$ such that $f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.\n\n</BrowserWindow>",
+      "source_content_hash": "f5b672a00a5263f76f0a7c0d4aa28dbed2dcfd45d7f7bb8ec23bcbba249e1152",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### Blocks {#blocks}",
+      "source_content_hash": "d90184473d6f208ca3cad21f97eb5ad67f071cc47e6ffc24ca6de86840b3e65a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "For equation block or display mode, use line breaks and `$$`:",
+      "source_content_hash": "7e313030dedb1def6e71d287ade6f3c9b822d18a14c34a3630b781f96d125fc3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```latex\n$$\nI = \\int_0^{2\\pi} \\sin(x)\\,dx\n$$\n```",
+      "source_content_hash": "4403dcfe7c42dbd849ab2c26e99493da5611cb661e14313731180d835167c724",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "e2ae1ac7",
+      "source_content": "<BrowserWindow>\n\n$$\nI = \\int_0^{2\\pi} \\sin(x)\\,dx\n$$\n\n</BrowserWindow>",
+      "source_content_hash": "65f6ac755f7c81eb4dfeb9b451a20dc52d4a82a6ba8e76af79b6608a052df015",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "To enable KaTeX, you need to install `remark-math` and `rehype-katex` plugins.",
+      "source_content_hash": "1e4549f7f0975c599cbd972032ca1b2ffff203f0c20797c7316b13598695c808",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb80afe1",
+      "source_content": "```bash npm2yarn\nnpm install --save remark-math@6 rehype-katex@7\n```",
+      "source_content_hash": "b47c7ac22079605eb2aca0ca5fd4901421d8b69a99745de5a50daa731cd0abe6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::warning\n\nMake sure to use `remark-math 6` and `rehype-katex 7` for Docusaurus v3 (using MDX v3). We can't guarantee other versions will work.\n\n:::",
+      "source_content_hash": "c78e637165d67ac5d4abcd5018bf12c95d80aef06c9beca2f0e19a54adcf801b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "Those 2 plugins are now [**only available as ES Modules**](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). To simplify usage, it is recommended to use an [**ES Modules**](https://flaviocopes.com/es-modules/) config file:",
+      "source_content_hash": "c1943cef8beb86c5261b00ff87f28fe365756f54b516b55d3e177d0af2877ba8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```js title=\"ES module docusaurus.config.js\"\n// highlight-start\nimport remarkMath from 'remark-math';\nimport rehypeKatex from 'rehype-katex';\n// highlight-end\n\n// highlight-start\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          path: 'docs',\n          // highlight-start\n          remarkPlugins: [remarkMath],\n          rehypePlugins: [rehypeKatex],\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "4e82f00bbb8558dd6929ab5b15b738a7456be25d28cd7218b59b92097debfc59",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "2ef748d1",
+      "source_content": "<details>\n    <summary>Using a [**CommonJS**](https://nodejs.org/api/modules.html#modules-commonjs-modules) config file?</summary>\n\n    If you decide to use a CommonJS config file, it is possible to load those ES module plugins thanks to dynamic imports and an async config creator function:\n\n```js title=\"CommonJS module docusaurus.config.js\"\n// highlight-start\nmodule.exports = async function createConfigAsync() {\n  // highlight-end\n  return {\n    presets: [\n      [\n        '@docusaurus/preset-classic',\n        {\n          docs: {\n            path: 'docs',\n            // highlight-start\n            remarkPlugins: [(await import('remark-math')).default],\n            rehypePlugins: [(await import('rehype-katex')).default],\n            // highlight-end\n          },\n        },\n      ],\n    ],\n  };\n};\n```\n\n</details>",
+      "source_content_hash": "fc044d394b3fd2c52d615baf892fd739ac820f6cc3621bf867d677b720e8ebbe",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Include the KaTeX CSS in your config under `stylesheets`:",
+      "source_content_hash": "81fa0862254e7e2c44b4b16d89fe1838fc5a5d3ef90df8e59f4b76e61a265feb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3917a88d",
+      "source_content": "```js\nstylesheets: [\n  {\n    href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',\n    type: 'text/css',\n    integrity:\n      'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',\n    crossorigin: 'anonymous',\n  },\n],\n```",
+      "source_content_hash": "98488721466d9c6ddde0f6f3260004122fc3c395048bc2b4093d0ebded98f326",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "Overall the changes look like:",
+      "source_content_hash": "e101e5aa25d4468cbd08853e202b6b11732bc6df47304e1c00a2afc0083ce305",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```js title=\"docusaurus.config.js\"\n// highlight-start\nimport remarkMath from 'remark-math';\nimport rehypeKatex from 'rehype-katex';\n// highlight-end\n\nexport default {\n  title: 'Docusaurus',\n  tagline: 'Build optimized websites quickly, focus on your content',\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          path: 'docs',\n          // highlight-start\n          remarkPlugins: [remarkMath],\n          rehypePlugins: [rehypeKatex],\n          // highlight-end\n        },\n      },\n    ],\n  ],\n  // highlight-start\n  stylesheets: [\n    {\n      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',\n      type: 'text/css',\n      integrity:\n        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',\n      crossorigin: 'anonymous',\n    },\n  ],\n  // highlight-end\n};\n```",
+      "source_content_hash": "2045b7fefec7642256fe1b833817af0d299268843eefebce20dd0fff2c59ff5b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a6b29dc7",
+      "source_content": "## Self-hosting KaTeX assets {#self-hosting-katex-assets}",
+      "source_content_hash": "37e50cbf704c4eb1fe07b4bcccd5caee82032406e262a35640c4ade7b7bcc1e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "dc72fd20",
+      "source_content": "Loading stylesheets, fonts, and JavaScript libraries from CDN sources is a good practice for popular libraries and assets, since it reduces the amount of assets you have to host. In case you prefer to self-host the `katex.min.css` (along with required KaTeX fonts), you can download the latest version from [KaTeX GitHub releases](https://github.com/KaTeX/KaTeX/releases), extract and copy `katex.min.css` and `fonts` directory (only `.woff2` font types should be enough) to your site's `static` directory, and in `docusaurus.config.js`, replace the stylesheet's `href` from the CDN URL to your local path (say, `/katex/katex.min.css`).",
+      "source_content_hash": "201e02bd332493d81cd5c8b1830669e4bb66cd6d8dbd346584bc0f6bdebd0832",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "82a37a1b",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  stylesheets: [\n    {\n      href: '/katex/katex.min.css',\n      type: 'text/css',\n    },\n  ],\n};\n```",
+      "source_content_hash": "2a6cd718c2277d450ae57791958c1642efaf634b27204d2e3e1a262612161604",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/guides/markdown-features/markdown-features-math-equations.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.477786+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

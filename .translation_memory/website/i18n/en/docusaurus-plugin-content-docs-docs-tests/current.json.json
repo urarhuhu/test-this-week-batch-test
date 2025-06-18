@@ -1,0 +1,1475 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-docs-docs-tests/current.json",
+  "source_file_content_hash": "a993e1ea5253251506a3c1b8a972d9710500c18cd6bdafeafe0525db2aa7d93c",
+  "segments": [
+    {
+      "segment_id": "version.label",
+      "source_content": "Next",
+      "source_content_hash": "1ff57a29d7c9d11bdf61c1b80f2b289b44c1ea844824d4b94a0d52b6ba5fc858",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for version current"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Tests",
+      "source_content": "Tests",
+      "source_content_hash": "e5c9d7030bada2fe792ad7e4a26ca44379a73f3fe16805ac1359e46759a1571a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Conflicts",
+      "source_content": "Conflicts",
+      "source_content_hash": "9f5ea35dc7f91d40a6037d922bd9af2fe2457c23ccda5ef8095d5c0d481b616d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Conflicts in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.File name conflict",
+      "source_content": "File name conflict",
+      "source_content_hash": "84f19be93aa27c77b15dadea5a3ddfce2aac8abc8acca4dc6c79e478d7ea3c43",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category File name conflict in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.File name conflict.link.generated-index.title",
+      "source_content": "File name conflict",
+      "source_content_hash": "84f19be93aa27c77b15dadea5a3ddfce2aac8abc8acca4dc6c79e478d7ea3c43",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The generated-index page title for category File name conflict in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.File name conflict.link.generated-index.description",
+      "source_content": "Testing what happens when 2 files have the same name but different position prefixes",
+      "source_content_hash": "9d3f7cc17504e224c7670b1d64bf3b62826cc03c68940ec49d0506be89b90ec5",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The generated-index page description for category File name conflict in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.ascii",
+      "source_content": "ascii",
+      "source_content_hash": "c543ece81605c7d202121c62080a0db4020fc2c75bfac35d101d7f3e93c93949",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category ascii in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.folder",
+      "source_content": "folder",
+      "source_content_hash": "034a0062488256f14c8b14d025ec3988b148938f7f9db94ca0ac73f4b3614d8a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category folder in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category Links",
+      "source_content": "Category Links",
+      "source_content_hash": "dec252eff01c4795056938c5f34328494e77930c50948617fed1be7b6c5b0593",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category Links in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Introduction",
+      "source_content": "Introduction",
+      "source_content_hash": "b605350bc00209520b7cd8f546322663356ba630708f71bbf30aead6b3dd608e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Introduction in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.no-index-doc",
+      "source_content": "no-index-doc",
+      "source_content_hash": "51576b113914f95fdbdeefe0b9db81b05cb667c8524a0dff605f99140a4424e8",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category no-index-doc in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.regular-category",
+      "source_content": "regular-category",
+      "source_content_hash": "4eccc5a20093fca923c859917ded7bddb95679504fbbfa8d09ee4326bd3f78b0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category regular-category in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category with a doc of category's name",
+      "source_content": "Category with a doc of category's name",
+      "source_content_hash": "50d0bd8f495c4ce11e4a27b76700f7e75b34cf68fc90b097f5ea6e08c7062b00",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category with a doc of category's name in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category with index.md doc",
+      "source_content": "Category with index.md doc",
+      "source_content_hash": "2d8aec8afd8228ab7cb6e9ab34b42e62bcdbd575c0400ecd9275d676670313e8",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category with index.md doc in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category with readme.md doc",
+      "source_content": "Category with readme.md doc",
+      "source_content_hash": "7080ddcf11a0713d5dde4e50f9537a0fe75321274427adee2705036c72f42f2d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category with readme.md doc in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.links",
+      "source_content": "links",
+      "source_content_hash": "eef8b9fd5d437dd991ce2695fcce6c416ea3068e5b448963f0a7c3cbd9ad98eb",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category links in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Sidebar Front Matter Tests",
+      "source_content": "Sidebar Front Matter Tests",
+      "source_content_hash": "e8ff65af16b8acd0dad1fe7642f1a0b49d4f6156759dfb0d38db42b43e8f882d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Sidebar Front Matter Tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Visibility",
+      "source_content": "Visibility",
+      "source_content_hash": "7448611d5f93aa8acac6a06d76c00b3f23d985bd7fbedbc771409a85ad4a23c5",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Visibility in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.only-drafts",
+      "source_content": "only-drafts",
+      "source_content_hash": "248300df5d93b3dc60679f32d13d7349aafcf1ea122e792e245605f78035e0fa",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category only-drafts in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Only Drafts - Subcategory index draft",
+      "source_content": "Only Drafts - Subcategory index draft",
+      "source_content_hash": "1e42a9f57cda6fc434f8c48c28af18daef28d04a3a239f42e49aafc75c9379c6",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Only Drafts - Subcategory index draft in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.only-unlisteds",
+      "source_content": "only-unlisteds",
+      "source_content_hash": "8b8fefef8652103b90fe6daca86cc9062508bf7460eec989260653b232a320d2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category only-unlisteds in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Only Unlisteds - Subcategory index unlisted",
+      "source_content": "Only Unlisteds - Subcategory index unlisted",
+      "source_content_hash": "c5ca4cf0b391998dcb0f7de11e176fcc3afb4120a97d1c798b96cd12997316a3",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Only Unlisteds - Subcategory index unlisted in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.some-drafts",
+      "source_content": "some-drafts",
+      "source_content_hash": "bfd9f4beaaf8183a35c5610003f208630912b70f51d9cf65c719c594c3f23307",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category some-drafts in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Some Drafts - Subcategory index draft",
+      "source_content": "Some Drafts - Subcategory index draft",
+      "source_content_hash": "14de78e3e6e76d612c6790a3544e6157b3c0f465b4ef6928525b87c32ebc9064",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Some Drafts - Subcategory index draft in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.some-unlisteds",
+      "source_content": "some-unlisteds",
+      "source_content_hash": "692ef29223b31a3fa283c89a7d93927e74fe93322c4c54c59b692fd92c81d28e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category some-unlisteds in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Subcategory index listed",
+      "source_content": "Subcategory index listed",
+      "source_content_hash": "b1cd9680b19b39da27e109bb00a2c3aa91e3412d46aa898114d6c1a43b31d1d2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Subcategory index listed in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Subcategory index unlisted",
+      "source_content": "Subcategory index unlisted",
+      "source_content_hash": "d5ce0acebe36fb655a77f935af1d0bc52c9dbd59b8f2d54bdf429a0411667838",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Subcategory index unlisted in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Sidebar item description tests",
+      "source_content": "Sidebar item description tests",
+      "source_content_hash": "3875ccf06e7c2859b5cb8fb89013b983565e22667b77a2eb6ff8851fbb7307b2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Sidebar item description tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category without description",
+      "source_content": "Category without description",
+      "source_content_hash": "ecb5c50ab7fccd6323c16c038c71e1e484354869993401748e7e17010a871e90",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category without description in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category with description",
+      "source_content": "Category with description",
+      "source_content_hash": "87cbec1c45b06005ea7ad1b8325ee185b478ccc02ecd9a2fbd011b906957bdf4",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category with description in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Another category with index",
+      "source_content": "Another category with index",
+      "source_content_hash": "8e0c1716b70f811030c32442c448302f292b6f0ae4878dbd5239586c5170767d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Another category with index in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Huge sidebar category",
+      "source_content": "Huge sidebar category",
+      "source_content_hash": "50eeb963705bd22824755fb5320d7d351980166991f40aad633bae9eb96c608b",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Huge sidebar category in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 0 (level 1)",
+      "source_content": "Category 0 (level 1)",
+      "source_content_hash": "045c19b3f3dedcfccc63bbad9f5588729ad3126966ec2ba167798a487f66438a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 0 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 0 (level 2)",
+      "source_content": "Category 0 (level 2)",
+      "source_content_hash": "70b64bf413036830fc4eaff8090c37742e9e76786721672ed5d6d91739b8008c",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 0 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 0 (level 3)",
+      "source_content": "Category 0 (level 3)",
+      "source_content_hash": "aef5bc096fec2891bde21b2cae17e5f22fa9fde29d50dbcf28d7632d86890dc7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 0 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 1 (level 3)",
+      "source_content": "Category 1 (level 3)",
+      "source_content_hash": "8900620f72dacef026a26f713dff02a70acf28c9ce08b1c8cbc25e9a9ead391f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 1 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 2 (level 3)",
+      "source_content": "Category 2 (level 3)",
+      "source_content_hash": "f1ae58a2f9ffa31b5c8326a7eaab7ecfd9bbe87b46813e425d3d4c9c8490c501",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 2 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 3 (level 3)",
+      "source_content": "Category 3 (level 3)",
+      "source_content_hash": "c21f6df9d84b6c06712ec67ce65ca369632131dd7fc6c6420cec3acf5b2338d0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 3 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 4 (level 3)",
+      "source_content": "Category 4 (level 3)",
+      "source_content_hash": "81495d4ebafa1f2c4b048b3e506edf3a348dc82d45258ea39423a6362b4cc62f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 4 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 5 (level 3)",
+      "source_content": "Category 5 (level 3)",
+      "source_content_hash": "6b39a723cc056a266c6f7e421a803b3d2de5abcf0d862154e069dec624907e42",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 5 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 6 (level 3)",
+      "source_content": "Category 6 (level 3)",
+      "source_content_hash": "70cd660b9354b69b15788ef099e96e80195a23d4b5a47e65ff1a08caf1b4504d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 6 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 7 (level 3)",
+      "source_content": "Category 7 (level 3)",
+      "source_content_hash": "a592f622e7dc01f4f8bf9d7eca3f073cc9f788b067397713157c249152af1189",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 7 (level 3) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 1 (level 2)",
+      "source_content": "Category 1 (level 2)",
+      "source_content_hash": "59853eadef14db9c8bc0df40dd47ffb58423ad8c1afc548b0f3f96be3031b397",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 1 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 2 (level 2)",
+      "source_content": "Category 2 (level 2)",
+      "source_content_hash": "f064f8ac447eae67f154d3c6863ac331c1a73e196c0c7c17fbf25e91474fcd44",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 2 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 3 (level 2)",
+      "source_content": "Category 3 (level 2)",
+      "source_content_hash": "73acdeaaf366818d8192dbfcac76f551ea7c4bee1ca1673a4b3997fcabd913d8",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 3 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 4 (level 2)",
+      "source_content": "Category 4 (level 2)",
+      "source_content_hash": "3449ae7022d021d39bb4a1699154867f92b4249d85ae67877e2521d31cf722ca",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 4 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 5 (level 2)",
+      "source_content": "Category 5 (level 2)",
+      "source_content_hash": "a0b7156d708e957230906aaaaa6443c300da8a0b50253a144604ea92655291d4",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 5 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 6 (level 2)",
+      "source_content": "Category 6 (level 2)",
+      "source_content_hash": "ba3525a02042d0b78a0bfeb35076869bdd57ff801995cd2ecdbd57f868e9594f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 6 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 7 (level 2)",
+      "source_content": "Category 7 (level 2)",
+      "source_content_hash": "0c06e6b1fc58a374dab08a6699404acdf23ce08b9f9f85cb4425a767e9156dfd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 7 (level 2) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 1 (level 1)",
+      "source_content": "Category 1 (level 1)",
+      "source_content_hash": "60a9ff1021926b7b0b2d1b3c9dfd13a5a0ae5c0472126918dae2e044cb9d4f77",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 1 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 2 (level 1)",
+      "source_content": "Category 2 (level 1)",
+      "source_content_hash": "c41104f3c49b66946ca36afbd10aacfbcdf9324edcfe9dfd5a1e35b4170609ea",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 2 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 3 (level 1)",
+      "source_content": "Category 3 (level 1)",
+      "source_content_hash": "9b43aa5293b8b17ca3046860354d4cc005449a1f95387f86c1500e10affa1e5f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 3 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 4 (level 1)",
+      "source_content": "Category 4 (level 1)",
+      "source_content_hash": "674c3b21168f2b9a7b4256bda2a07029858980191bca5e9c870b7a2d1de385a6",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 4 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 5 (level 1)",
+      "source_content": "Category 5 (level 1)",
+      "source_content_hash": "62a09a1ada086004f1a9cd397d6e3183792ad20eac70d99f6f7a795ca53f60d6",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 5 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 6 (level 1)",
+      "source_content": "Category 6 (level 1)",
+      "source_content_hash": "1cd40a35b55a83aa1d777569887747bd0598913fb51d6da5259cb93031e5c6b5",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 6 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Category 7 (level 1)",
+      "source_content": "Category 7 (level 1)",
+      "source_content_hash": "0855e6dac15af0336d3a8fa5e8719c75beb8aeaa131011390be2f052c2939214",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Category 7 (level 1) in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.Link tests",
+      "source_content": "Link tests",
+      "source_content_hash": "663bd6173191ce8ea70e8788ef6a1c6da426851c7d5dc99996f4ab2e277de22c",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category Link tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.TOC tests",
+      "source_content": "TOC tests",
+      "source_content_hash": "61304ce41b69d21b359f415a20dd50df6aef1962e0d0753d4c60e37e3a784ee2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category TOC tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.category.HTML items tests",
+      "source_content": "HTML items tests",
+      "source_content_hash": "db7ec6959297be7163050142cfeba407fe2880720f2f4addd3a4963dcc188b7b",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for category HTML items tests in sidebar sidebar"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.External Link test",
+      "source_content": "External Link test",
+      "source_content_hash": "0cc45be6a037b8d400a839013d11813a196de597dd9e9113392d370b0582ddba",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for link External Link test in sidebar sidebar, linking to https://docusaurus.io"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link without description",
+      "source_content": "Link without description",
+      "source_content_hash": "182cff421e4d999a3188aa5c6a7cb55c331ef678f304b9d605436d5eae08fe6e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "無描述連結"
+      },
+      "metadata": {
+        "json_description": "The label for link Link without description in sidebar sidebar, linking to https://docusaurus.io"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link with description",
+      "source_content": "Link with description",
+      "source_content_hash": "ca264aec2e2456b697351bd3ab1ba5e24098ecc58ba3d7b7ce482d83d90c6bbd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "含描述連結"
+      },
+      "metadata": {
+        "json_description": "The label for link Link with description in sidebar sidebar, linking to https://docusaurus.io"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link ",
+      "source_content": "Link ",
+      "source_content_hash": "bdc42286f86c181fa1ee3d68ffc04c1ab00cca58ee2e86a9b9edfe78c1ab5599",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結"
+      },
+      "metadata": {
+        "json_description": "The label for link Link  in sidebar sidebar, linking to https://docusaurus.io"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Test Test test test test test test",
+      "source_content": "Test Test test test test test test",
+      "source_content_hash": "4cce9d9d2ab1f4f43534b7481232300ed1d466bba77a865b40f5cdb44e5e68e7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "測試 測試 test test test test test"
+      },
+      "metadata": {
+        "json_description": "The label for link Test Test test test test test test in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 0 (level 1)",
+      "source_content": "Link 0 (level 1)",
+      "source_content_hash": "a34658aef816598be9bfa66018bd11ca3e4d0e62a50dbce4fe1ce47673adc1a0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 0 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 0 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 1 (level 1)",
+      "source_content": "Link 1 (level 1)",
+      "source_content_hash": "cbe31f630b84ed8d68cda05cb7a08c0ce1a6d549fddb1fa499d5bc398fc5ee54",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 1 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 1 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 2 (level 1)",
+      "source_content": "Link 2 (level 1)",
+      "source_content_hash": "f6887fa68b9d44144a19884c7a51094b23b38032ed08de2ea0f0cf775ad6ba7f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 2 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 2 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 3 (level 1)",
+      "source_content": "Link 3 (level 1)",
+      "source_content_hash": "2f2bcde50a46c7414d165967a754edaf627867ca9df2d06a06f6fea1d3a98f5e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 3 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 3 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 4 (level 1)",
+      "source_content": "Link 4 (level 1)",
+      "source_content_hash": "3abccb82a2cce325c0ea50841655ab419973617d9e94e89cb3a2041da1268e56",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 4 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 4 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 5 (level 1)",
+      "source_content": "Link 5 (level 1)",
+      "source_content_hash": "4b6a3606bec433fd780a112705bd4aadea649b2f45076b743c029f5e24be2ef3",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 5 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 5 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 6 (level 1)",
+      "source_content": "Link 6 (level 1)",
+      "source_content_hash": "f873aa3f2045288b5e7de2ca2a38e88b9d14123149cbbb6fb8b88e8f200fec0b",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 6 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 6 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 7 (level 1)",
+      "source_content": "Link 7 (level 1)",
+      "source_content_hash": "914df7686f3f847bd3e4e5d7e79202292f96acde88bfc28603b3d1eacb1abdfc",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 7 (第一層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 7 (level 1) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 0 (level 2)",
+      "source_content": "Link 0 (level 2)",
+      "source_content_hash": "93735b7d1809e36486796200925a3c9aab02affa9e02bfbbb2eae0a9973177e6",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 0 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 0 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 1 (level 2)",
+      "source_content": "Link 1 (level 2)",
+      "source_content_hash": "7cde3985f0216bc2f3cb33c521aed9d6d078cc7e59e5db9b02bc2d654a350df2",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 1 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 1 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 2 (level 2)",
+      "source_content": "Link 2 (level 2)",
+      "source_content_hash": "1b21022e8acdc14df2ecab00d779b2926d6f15e819d0402b73b92ca3072f2371",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 2 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 2 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 3 (level 2)",
+      "source_content": "Link 3 (level 2)",
+      "source_content_hash": "21f196f858993d8ad5eee86dba2f73d7d0a4eb03a4a82d417a0b5a5fb5e587c7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 3 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 3 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 4 (level 2)",
+      "source_content": "Link 4 (level 2)",
+      "source_content_hash": "ec7c190f633a40332ab3348bc8dd945ab5afd9e3e1982a9ef46c4e6fb9ecb5ec",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 4 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 4 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 5 (level 2)",
+      "source_content": "Link 5 (level 2)",
+      "source_content_hash": "478cd3a085dd7062b762124cadce0b068ece5ec397e61249a33b43e43a4b7f16",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 5 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 5 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 6 (level 2)",
+      "source_content": "Link 6 (level 2)",
+      "source_content_hash": "e8590f63e9e8425f37345425a8e3903edb5fd52234214e13b7d29a648343c959",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 6 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 6 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 7 (level 2)",
+      "source_content": "Link 7 (level 2)",
+      "source_content_hash": "ffa066fccc28796f6d9271f3314ac2cefc759abbd4dcd6d6f05e0fc880f587d0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 7 (第二層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 7 (level 2) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 0 (level 3)",
+      "source_content": "Link 0 (level 3)",
+      "source_content_hash": "d445425d5b12408ecd2e39c8c5b99b8e11e0a59a7e6f4e340d264dc988ca9bbd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 0 (第三層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 0 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 1 (level 3)",
+      "source_content": "Link 1 (level 3)",
+      "source_content_hash": "f41e9c608981443d14744285d05face2d8b368ebd024a581a48ad8d00795d4ed",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 1 (第三層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 1 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 2 (level 3)",
+      "source_content": "Link 2 (level 3)",
+      "source_content_hash": "eaa6e04e08bfa471118a0aeb35c29d621d510f435b4844c86acbc5072a79d338",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 2 (第三層級)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 2 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 3 (level 3)",
+      "source_content": "Link 3 (level 3)",
+      "source_content_hash": "d4b189c11071d9ed2d20544ccf57c72fd443886e85c85811f8fff547ca347500",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 3 (層級 3)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 3 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 4 (level 3)",
+      "source_content": "Link 4 (level 3)",
+      "source_content_hash": "46023734ae772b338c47a68fc656636e7bae6ae97c6900f40d3af447fb50aacd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 4 (層級 3)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 4 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 5 (level 3)",
+      "source_content": "Link 5 (level 3)",
+      "source_content_hash": "de199f8087ce7cfc5a845d343b2ec3df84bf91a380977315870da27ec288d40e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 5 (層級 3)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 5 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 6 (level 3)",
+      "source_content": "Link 6 (level 3)",
+      "source_content_hash": "f4010a0c5919ce239a663f79b5ecb7ace352b716e35f1a7b0f009abc39b9e068",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 6 (層級 3)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 6 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link 7 (level 3)",
+      "source_content": "Link 7 (level 3)",
+      "source_content_hash": "fceb6c1d0162d88c957139c6567a24d53e639a95f3ad1ba420cbb054c2a138b8",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 7 (層級 3)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link 7 (level 3) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.Link (level 4)",
+      "source_content": "Link (level 4)",
+      "source_content_hash": "95f3c0b9ec17fd015e9aab07d8eb1e02dab0aa99b5f0fc0d74cf39a5178904da",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "連結 (層級 4)"
+      },
+      "metadata": {
+        "json_description": "The label for link Link (level 4) in sidebar sidebar, linking to /"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.External link absolute",
+      "source_content": "External link absolute",
+      "source_content_hash": "2a1d7861a1f1ac382725d89eef10f00dff05a016960b5cc5c74564ec33a5aafe",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外部絕對連結"
+      },
+      "metadata": {
+        "json_description": "The label for link External link absolute in sidebar sidebar, linking to https://github.com/facebook/docusaurus"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.pathname:/// link",
+      "source_content": "pathname:/// link",
+      "source_content_hash": "1aeb8414653183d4c4d5889f4340563fb7754dec473e697557be30740e8b7f98",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "pathname:/// 連結"
+      },
+      "metadata": {
+        "json_description": "The label for link pathname:/// link in sidebar sidebar, linking to pathname:///some/local/path"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.link.pathname:/// link (no baseUrl)",
+      "source_content": "pathname:/// link (no baseUrl)",
+      "source_content_hash": "d75b3aaa90524cdc54d28501ee1cb71e49d347ca5b56b7a82ca925a1255fc6f7",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "pathname:/// 連結 (無 baseUrl)"
+      },
+      "metadata": {
+        "json_description": "The label for link pathname:/// link (no baseUrl) in sidebar sidebar, linking to pathname:///some/local/path"
+      }
+    },
+    {
+      "segment_id": "sidebar.sidebar.doc.Index",
+      "source_content": "Index",
+      "source_content_hash": "39c3be1198a2fddf18d03608348d9cfaf8823d2dda4d5ff13fdb851bd15d29ea",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "索引"
+      },
+      "metadata": {
+        "json_description": "The label for the doc item Index in sidebar sidebar, linking to the doc index"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "version.label": {
+      "message": "Next",
+      "description": "The label for version current"
+    },
+    "sidebar.sidebar.category.Tests": {
+      "message": "Tests",
+      "description": "The label for category Tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Conflicts": {
+      "message": "Conflicts",
+      "description": "The label for category Conflicts in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.File name conflict": {
+      "message": "File name conflict",
+      "description": "The label for category File name conflict in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.File name conflict.link.generated-index.title": {
+      "message": "File name conflict",
+      "description": "The generated-index page title for category File name conflict in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.File name conflict.link.generated-index.description": {
+      "message": "Testing what happens when 2 files have the same name but different position prefixes",
+      "description": "The generated-index page description for category File name conflict in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.ascii": {
+      "message": "ascii",
+      "description": "The label for category ascii in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.folder": {
+      "message": "folder",
+      "description": "The label for category folder in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category Links": {
+      "message": "Category Links",
+      "description": "The label for category Category Links in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Introduction": {
+      "message": "Introduction",
+      "description": "The label for category Introduction in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.no-index-doc": {
+      "message": "no-index-doc",
+      "description": "The label for category no-index-doc in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.regular-category": {
+      "message": "regular-category",
+      "description": "The label for category regular-category in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category with a doc of category's name": {
+      "message": "Category with a doc of category's name",
+      "description": "The label for category Category with a doc of category's name in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category with index.md doc": {
+      "message": "Category with index.md doc",
+      "description": "The label for category Category with index.md doc in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category with readme.md doc": {
+      "message": "Category with readme.md doc",
+      "description": "The label for category Category with readme.md doc in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.links": {
+      "message": "links",
+      "description": "The label for category links in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Sidebar Front Matter Tests": {
+      "message": "Sidebar Front Matter Tests",
+      "description": "The label for category Sidebar Front Matter Tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Visibility": {
+      "message": "Visibility",
+      "description": "The label for category Visibility in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.only-drafts": {
+      "message": "only-drafts",
+      "description": "The label for category only-drafts in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Only Drafts - Subcategory index draft": {
+      "message": "Only Drafts - Subcategory index draft",
+      "description": "The label for category Only Drafts - Subcategory index draft in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.only-unlisteds": {
+      "message": "only-unlisteds",
+      "description": "The label for category only-unlisteds in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Only Unlisteds - Subcategory index unlisted": {
+      "message": "Only Unlisteds - Subcategory index unlisted",
+      "description": "The label for category Only Unlisteds - Subcategory index unlisted in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.some-drafts": {
+      "message": "some-drafts",
+      "description": "The label for category some-drafts in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Some Drafts - Subcategory index draft": {
+      "message": "Some Drafts - Subcategory index draft",
+      "description": "The label for category Some Drafts - Subcategory index draft in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.some-unlisteds": {
+      "message": "some-unlisteds",
+      "description": "The label for category some-unlisteds in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Subcategory index listed": {
+      "message": "Subcategory index listed",
+      "description": "The label for category Subcategory index listed in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Subcategory index unlisted": {
+      "message": "Subcategory index unlisted",
+      "description": "The label for category Subcategory index unlisted in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Sidebar item description tests": {
+      "message": "Sidebar item description tests",
+      "description": "The label for category Sidebar item description tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category without description": {
+      "message": "Category without description",
+      "description": "The label for category Category without description in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category with description": {
+      "message": "Category with description",
+      "description": "The label for category Category with description in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Another category with index": {
+      "message": "Another category with index",
+      "description": "The label for category Another category with index in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Huge sidebar category": {
+      "message": "Huge sidebar category",
+      "description": "The label for category Huge sidebar category in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 0 (level 1)": {
+      "message": "Category 0 (level 1)",
+      "description": "The label for category Category 0 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 0 (level 2)": {
+      "message": "Category 0 (level 2)",
+      "description": "The label for category Category 0 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 0 (level 3)": {
+      "message": "Category 0 (level 3)",
+      "description": "The label for category Category 0 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 1 (level 3)": {
+      "message": "Category 1 (level 3)",
+      "description": "The label for category Category 1 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 2 (level 3)": {
+      "message": "Category 2 (level 3)",
+      "description": "The label for category Category 2 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 3 (level 3)": {
+      "message": "Category 3 (level 3)",
+      "description": "The label for category Category 3 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 4 (level 3)": {
+      "message": "Category 4 (level 3)",
+      "description": "The label for category Category 4 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 5 (level 3)": {
+      "message": "Category 5 (level 3)",
+      "description": "The label for category Category 5 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 6 (level 3)": {
+      "message": "Category 6 (level 3)",
+      "description": "The label for category Category 6 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 7 (level 3)": {
+      "message": "Category 7 (level 3)",
+      "description": "The label for category Category 7 (level 3) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 1 (level 2)": {
+      "message": "Category 1 (level 2)",
+      "description": "The label for category Category 1 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 2 (level 2)": {
+      "message": "Category 2 (level 2)",
+      "description": "The label for category Category 2 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 3 (level 2)": {
+      "message": "Category 3 (level 2)",
+      "description": "The label for category Category 3 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 4 (level 2)": {
+      "message": "Category 4 (level 2)",
+      "description": "The label for category Category 4 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 5 (level 2)": {
+      "message": "Category 5 (level 2)",
+      "description": "The label for category Category 5 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 6 (level 2)": {
+      "message": "Category 6 (level 2)",
+      "description": "The label for category Category 6 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 7 (level 2)": {
+      "message": "Category 7 (level 2)",
+      "description": "The label for category Category 7 (level 2) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 1 (level 1)": {
+      "message": "Category 1 (level 1)",
+      "description": "The label for category Category 1 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 2 (level 1)": {
+      "message": "Category 2 (level 1)",
+      "description": "The label for category Category 2 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 3 (level 1)": {
+      "message": "Category 3 (level 1)",
+      "description": "The label for category Category 3 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 4 (level 1)": {
+      "message": "Category 4 (level 1)",
+      "description": "The label for category Category 4 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 5 (level 1)": {
+      "message": "Category 5 (level 1)",
+      "description": "The label for category Category 5 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 6 (level 1)": {
+      "message": "Category 6 (level 1)",
+      "description": "The label for category Category 6 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Category 7 (level 1)": {
+      "message": "Category 7 (level 1)",
+      "description": "The label for category Category 7 (level 1) in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.Link tests": {
+      "message": "Link tests",
+      "description": "The label for category Link tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.TOC tests": {
+      "message": "TOC tests",
+      "description": "The label for category TOC tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.category.HTML items tests": {
+      "message": "HTML items tests",
+      "description": "The label for category HTML items tests in sidebar sidebar"
+    },
+    "sidebar.sidebar.link.External Link test": {
+      "message": "External Link test",
+      "description": "The label for link External Link test in sidebar sidebar, linking to https://docusaurus.io"
+    },
+    "sidebar.sidebar.link.Link without description": {
+      "message": "Link without description",
+      "description": "The label for link Link without description in sidebar sidebar, linking to https://docusaurus.io"
+    },
+    "sidebar.sidebar.link.Link with description": {
+      "message": "Link with description",
+      "description": "The label for link Link with description in sidebar sidebar, linking to https://docusaurus.io"
+    },
+    "sidebar.sidebar.link.Link ": {
+      "message": "Link ",
+      "description": "The label for link Link  in sidebar sidebar, linking to https://docusaurus.io"
+    },
+    "sidebar.sidebar.link.Test Test test test test test test": {
+      "message": "Test Test test test test test test",
+      "description": "The label for link Test Test test test test test test in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 0 (level 1)": {
+      "message": "Link 0 (level 1)",
+      "description": "The label for link Link 0 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 1 (level 1)": {
+      "message": "Link 1 (level 1)",
+      "description": "The label for link Link 1 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 2 (level 1)": {
+      "message": "Link 2 (level 1)",
+      "description": "The label for link Link 2 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 3 (level 1)": {
+      "message": "Link 3 (level 1)",
+      "description": "The label for link Link 3 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 4 (level 1)": {
+      "message": "Link 4 (level 1)",
+      "description": "The label for link Link 4 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 5 (level 1)": {
+      "message": "Link 5 (level 1)",
+      "description": "The label for link Link 5 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 6 (level 1)": {
+      "message": "Link 6 (level 1)",
+      "description": "The label for link Link 6 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 7 (level 1)": {
+      "message": "Link 7 (level 1)",
+      "description": "The label for link Link 7 (level 1) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 0 (level 2)": {
+      "message": "Link 0 (level 2)",
+      "description": "The label for link Link 0 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 1 (level 2)": {
+      "message": "Link 1 (level 2)",
+      "description": "The label for link Link 1 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 2 (level 2)": {
+      "message": "Link 2 (level 2)",
+      "description": "The label for link Link 2 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 3 (level 2)": {
+      "message": "Link 3 (level 2)",
+      "description": "The label for link Link 3 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 4 (level 2)": {
+      "message": "Link 4 (level 2)",
+      "description": "The label for link Link 4 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 5 (level 2)": {
+      "message": "Link 5 (level 2)",
+      "description": "The label for link Link 5 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 6 (level 2)": {
+      "message": "Link 6 (level 2)",
+      "description": "The label for link Link 6 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 7 (level 2)": {
+      "message": "Link 7 (level 2)",
+      "description": "The label for link Link 7 (level 2) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 0 (level 3)": {
+      "message": "Link 0 (level 3)",
+      "description": "The label for link Link 0 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 1 (level 3)": {
+      "message": "Link 1 (level 3)",
+      "description": "The label for link Link 1 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 2 (level 3)": {
+      "message": "Link 2 (level 3)",
+      "description": "The label for link Link 2 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 3 (level 3)": {
+      "message": "Link 3 (level 3)",
+      "description": "The label for link Link 3 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 4 (level 3)": {
+      "message": "Link 4 (level 3)",
+      "description": "The label for link Link 4 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 5 (level 3)": {
+      "message": "Link 5 (level 3)",
+      "description": "The label for link Link 5 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 6 (level 3)": {
+      "message": "Link 6 (level 3)",
+      "description": "The label for link Link 6 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link 7 (level 3)": {
+      "message": "Link 7 (level 3)",
+      "description": "The label for link Link 7 (level 3) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.Link (level 4)": {
+      "message": "Link (level 4)",
+      "description": "The label for link Link (level 4) in sidebar sidebar, linking to /"
+    },
+    "sidebar.sidebar.link.External link absolute": {
+      "message": "External link absolute",
+      "description": "The label for link External link absolute in sidebar sidebar, linking to https://github.com/facebook/docusaurus"
+    },
+    "sidebar.sidebar.link.pathname:/// link": {
+      "message": "pathname:/// link",
+      "description": "The label for link pathname:/// link in sidebar sidebar, linking to pathname:///some/local/path"
+    },
+    "sidebar.sidebar.link.pathname:/// link (no baseUrl)": {
+      "message": "pathname:/// link (no baseUrl)",
+      "description": "The label for link pathname:/// link (no baseUrl) in sidebar sidebar, linking to pathname:///some/local/path"
+    },
+    "sidebar.sidebar.doc.Index": {
+      "message": "Index",
+      "description": "The label for the doc item Index in sidebar sidebar, linking to the doc index"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-docs-tests/current.json",
+  "last_updated_timestamp": "2025-06-18T05:06:28.057942+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "a993e1ea5253251506a3c1b8a972d9710500c18cd6bdafeafe0525db2aa7d93c"
+  }
+}

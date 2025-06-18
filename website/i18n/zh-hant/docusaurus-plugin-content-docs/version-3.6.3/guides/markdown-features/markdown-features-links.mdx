@@ -1,0 +1,52 @@
+---
+id: links
+description: Links to other pages in Markdown
+slug: /markdown-features/links
+---
+
+# Markdown 連結
+
+有兩種方式可以添加指向其他頁面的連結：透過 **URL 路徑** 和 **檔案路徑**。
+
+```md
+- [URL path to another document](./installation)
+- [file path to another document](./installation.mdx)
+```
+
+URL 路徑不會經過 Docusaurus 處理，你可以將其視為直接渲染成 `<a href="./installation">`，也就是說它會根據頁面的 URL 位置而非檔案系統位置來解析。
+
+如果你想引用 **同一個插件處理** 的其他 Markdown 檔案，可以使用目標文件的相對路徑。Docusaurus 的 Markdown 載入器會將檔案路徑轉換為目標檔案的 URL 路徑（因此會移除 `.md` 副檔名）。
+
+舉例來說，如果你在 `docs/folder/doc1.md` 中，想要引用 `docs/folder/doc2.md`、`docs/folder/subfolder/doc3.md` 和 `docs/otherFolder/doc4.md`：
+
+```md title="docs/folder/doc1.md"
+I am referencing a [document](doc2.mdx).
+
+Reference to another [document in a subfolder](subfolder/doc3.mdx).
+
+[Relative document](../otherFolder/doc4.mdx) referencing works as well.
+```
+
+相對檔案路徑會以當前檔案所在目錄為基準進行解析。而絕對檔案路徑則會以 **內容根目錄** 為基準進行解析，通常是 `docs/`、`blog/` 或本地化目錄如 `i18n/zh-Hans/plugin-content-docs/current`。
+
+絕對檔案路徑也可以相對於網站目錄。但要注意，以 `/docs/` 或 `/blog/` 開頭的連結 **不可移植**，因為當你建立新的文件版本或本地化時，需要手動更新這些連結。
+
+```md
+You can write [links](/otherFolder/doc4.mdx) relative to the content root (`/docs/`).
+
+You can also write [links](/docs/otherFolder/doc4.mdx) relative to the site directory, but it's not recommended.
+```
+
+使用相對 _檔案_ 路徑（包含 `.md` 副檔名）而非相對 _URL_ 連結有以下優點：
+
+- 連結在 GitHub 介面和許多 Markdown 編輯器中仍能正常運作
+- 你可以自訂檔案的 slug 而無需更新所有連結
+- 移動檔案時，你的編輯器可以追蹤這些變更，部分編輯器甚至會自動更新檔案連結
+- [版本化文件](../docs/versioning.mdx) 會連結到完全相同版本的另一份文件
+- 如果你更新 [`trailingSlash` 設定](../../api/docusaurus.config.js.mdx#trailingSlash)，相對 URL 連結很可能會失效
+
+:::warning
+
+Markdown 檔案引用僅在來源檔案和目標檔案由同一個插件實例處理時才能運作。這是我們 Markdown 處理架構的技術限制，未來將會修正。如果你需要在不同插件之間連結檔案（例如從部落格文章連結到文件頁面），則必須使用 URL 連結。
+
+:::

@@ -1,0 +1,552 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/styling-layout.mdx",
+  "source_file_content_hash": "79914c678bd928f01664af5f865fbf8dab6205a74649f8dd01ae2f3971f95a9b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: A Docusaurus site is a pre-rendered single-page React application. You can style it the way you style React apps.\n---",
+      "source_content_hash": "e559565150e43d81d293e03ad8f14518e2ffa0cfb8a261961875faa9da0ae484",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "7335511f",
+      "source_content": "import ColorGenerator from '@site/src/components/ColorGenerator';",
+      "source_content_hash": "cdc1dfd29be8d178a8c55d34197b9d963ffc6e66ec343d54bd5af4a20f38e472",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7335511f"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Styling and Layout",
+      "source_content_hash": "5873a5bf32699d6a85e833c46ec3741a96998066a2f8c32bc1d5075f14d07940",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 樣式與佈局"
+      }
+    },
+    {
+      "segment_id": "0d5e1c45",
+      "source_content": ":::tip\n\nThis section is focused on styling through stylesheets. For more advanced customizations (DOM structure, React code...), refer to the [swizzling guide](./swizzling.mdx).\n\n:::",
+      "source_content_hash": "ba89f46a9281b4fe97485d46f1575529b91f711ff83d4f4c904b04a8bd008487",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n本節重點介紹通過樣式表進行樣式設定。如需更高級的自定義（DOM結構、React代碼等），請參考[swizzling指南](./swizzling.mdx)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "A Docusaurus site is a single-page React application. You can style it the way you style React apps.",
+      "source_content_hash": "043061424585b062821c004d06c9fbc64554972df73ce5263312c2bc1f789683",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus站點是一個單頁React應用程序。您可以按照React應用的方式對其進行樣式設定。"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "There are a few approaches/frameworks which will work, depending on your preferences and the type of website you are trying to build. Websites that are highly interactive and behave more like web apps will benefit from more modern styling approaches that co-locate styles with the components. Component styling can also be particularly useful when you wish to customize or swizzle a component.",
+      "source_content_hash": "a103b7c61905be1a1e3605a941b0722520df4b289c78be0cde198e10e299d7c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "根據您的偏好和試圖構建的網站類型，有幾種可行的方法/框架。對於行為更像網絡應用程序且高度互動的網站，現代樣式設定方法（將樣式與組件放在一起）會更有優勢。當您希望自定義或swizzle組件時，組件樣式設定也特別有用。"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## Global styles {#global-styles}",
+      "source_content_hash": "63276890470f4f75b175c407b8e7dd783f75cd3f3b6eda80ad1a07860e81ba5d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 全局樣式 {#global-styles}"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "This is the most traditional way of styling that most developers (including non-front-end developers) would be familiar with. It works fine for small websites that do not have much customization.",
+      "source_content_hash": "81f9811b704c4700587bf681a47cc321f348ddfd1cfed4f0d23256b25569e017",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是最傳統的樣式設定方式，大多數開發者（包括非前端開發者）都熟悉。對於沒有太多自定義的小型網站來說，這種方式效果很好。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "If you're using `@docusaurus/preset-classic`, you can create your own CSS files (e.g. `/src/css/custom.css`) and import them globally by passing them as an option of the classic theme.",
+      "source_content_hash": "31663c5419593a3e2f75218913e59714bbdd72749b26baf68ef095b3def9a669",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您使用`@docusaurus/preset-classic`，可以創建自己的CSS文件（例如`/src/css/custom.css`），並通過將其作為經典主題的選項來全局導入。"
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // highlight-start\n        theme: {\n          customCss: [require.resolve('./src/css/custom.css')],\n        },\n        // highlight-end\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "2b7576bb640463a48dddaca6118f8544f13081eccb92cd7c697ccdd91da31d42",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Any CSS you write within that file will be available globally and can be referenced directly using string literals.",
+      "source_content_hash": "1640ede8790776eea47b678bef554a568dc1d3c94575daf2062bf5d691067b4a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您在該文件中編寫的任何CSS都將全局可用，並可以直接使用字符串字面量引用。"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```css title=\"/src/css/custom.css\"\n.purple-text {\n  color: rebeccapurple;\n}\n```",
+      "source_content_hash": "79398e1f1e5ab94d6e520e010ee51b82b20bdc466ef37cbac855814ba921a8b4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```jsx\nfunction MyComponent() {\n  return (\n    <main>\n      <h1 className=\"purple-text\">Purple Heading!</h1>\n    </main>\n  );\n}\n```",
+      "source_content_hash": "0cb57a5352d1053c369019476f404b87b47a1217804cae2cb82d087422553980",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "If you want to add CSS to any element, you can open the DevTools in your browser to inspect its class names. Class names come in several kinds:",
+      "source_content_hash": "f7b7b452c4b205f45c1c82cd352ad27bbb5aa59057b99d9e1224a9cb6aec0a58",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果想為任何元素添加CSS，可以在瀏覽器中打開DevTools來檢查其類名。類名有以下幾種："
+      }
+    },
+    {
+      "segment_id": "ea0c7bae",
+      "source_content": "- **Theme class names**. These class names are listed exhaustively in [the next subsection](#theme-class-names). They don't have any default properties. You should always prioritize targeting those stable class names in your custom CSS.\n- **Infima class names**. These class names are found in the classic theme and usually follow the [BEM convention](http://getbem.com/naming/) of `block__element--modifier`. They are usually stable but are still considered implementation details, so you should generally avoid targeting them. However, you can [modify Infima CSS variables](#styling-your-site-with-infima).\n- **CSS module class names**. These class names have a hash in production (`codeBlockContainer_RIuc`) and are appended with a long file path in development. They are considered implementation details and you should almost always avoid targeting them in your custom CSS. If you must, you can use an [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) (`[class*='codeBlockContainer']`) that ignores the hash.",
+      "source_content_hash": "f16f6888760900aa81397fadb29db533c0f3f69b98cda8b6dee3212ecc231c79",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **主題類名**。這些類名在[下一小節](#theme-class-names)中詳盡列出。它們沒有任何默認屬性。在自定義CSS中，您應始終優先針對這些穩定的類名。\n- **Infima類名**。這些類名在經典主題中找到，通常遵循[BEM約定](http://getbem.com/naming/)的`block__element--modifier`格式。它們通常穩定，但仍被視為實現細節，因此一般應避免針對它們。不過，您可以[修改Infima CSS變量](#styling-your-site-with-infima)。\n- **CSS模塊類名**。這些類名在生產環境中帶有哈希值（`codeBlockContainer_RIuc`），在開發環境中則附加了長文件路徑。它們被視為實現細節，在自定義CSS中幾乎應始終避免針對它們。如果必須，可以使用忽略哈希值的[屬性選擇器](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)（`[class*='codeBlockContainer']`）。"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "### Theme Class Names {#theme-class-names}",
+      "source_content_hash": "abffbd5e61b2447b5bb15713310f51ed1df82d4d393c9c843e631a285ce8fa18",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題類名 {#theme-class-names}"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "We provide some stable CSS class names for robust and maintainable global layout styling. These names are theme-agnostic and meant to be targeted by custom CSS.",
+      "source_content_hash": "3cc826d0abe1a4311c352395904eb223392251fa6ea647e95975f81535dfa993",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們提供了一些穩定的CSS類名，用於強大且可維護的全局佈局樣式設定。這些名稱與主題無關，旨在供自定義CSS針對。"
+      }
+    },
+    {
+      "segment_id": "724adee0",
+      "source_content": ":::tip\n\nIf you can't find a way to create a robust CSS selector, please [report your customization use-case](https://github.com/facebook/docusaurus/discussions/5468) and we will consider adding new class names.\n\n:::",
+      "source_content_hash": "44dc39ef2763c4c7d019bcf2222e473af1fbd14c0cd37da0039570b6b62c015b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n如果找不到創建強大CSS選擇器的方法，請[報告您的自定義用例](https://github.com/facebook/docusaurus/discussions/5468)，我們將考慮添加新的類名。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "568a7359",
+      "source_content": "<details>\n\n<summary>Exhaustive list of stable class names</summary>\n\n```mdx-code-block\nimport ThemeClassNamesCode from '!!raw-loader!@site/../packages/docusaurus-theme-common/src/utils/ThemeClassNames.ts';\nimport CodeBlock from '@theme/CodeBlock';\n\n<CodeBlock className=\"language-ts\">\n  {ThemeClassNamesCode\n    // remove source comments\n    .replace(/\\/\\*[\\s\\S]*?\\*\\/|\\/\\/.*/g,'')\n    .replace(/^ *\\n/gm,'')\n    .trim()}\n</CodeBlock>\n```\n\n</details>",
+      "source_content_hash": "7e4b9f478b4319932aaccd63ff71dc3e69f9c550cbf1ee9f15e58fb7e67887cb",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_568a7359"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### Styling your site with Infima {#styling-your-site-with-infima}",
+      "source_content_hash": "b1e87313047e513f513b8fdeb577cf1b4db1cef8e5192cadd5c3152b2d40c05c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用Infima設定網站樣式 {#styling-your-site-with-infima}"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "`@docusaurus/preset-classic` uses [Infima](https://infima.dev/) as the underlying styling framework. Infima provides a flexible layout and common UI components styling suitable for content-centric websites (blogs, documentation, landing pages). For more details, check out the [Infima website](https://infima.dev/).",
+      "source_content_hash": "4391b87181dd99fd952c66337578b4dc0703d69dec7cc1398047e91c6e931f48",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`@docusaurus/preset-classic`使用[Infima](https://infima.dev/)作為底層樣式框架。Infima提供了適合以內容為中心的網站（博客、文檔、登陸頁面）的靈活佈局和常見UI組件樣式。更多詳情，請查看[Infima網站](https://infima.dev/)。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "When you scaffold your Docusaurus project with `create-docusaurus`, the website will be generated with basic Infima stylesheets and default styling. You can override Infima CSS variables globally.",
+      "source_content_hash": "59fcb49c2a6de585fc20ddb8c0383c2fed86d1f37e16a3772abee501106b222c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您使用`create-docusaurus`搭建Docusaurus項目時，網站將生成基本的Infima樣式表和默認樣式。您可以全局覆蓋Infima CSS變量。"
+      }
+    },
+    {
+      "segment_id": "a476a172",
+      "source_content": "```css title=\"/src/css/custom.css\"\n:root {\n  --ifm-color-primary: #25c2a0;\n  --ifm-code-font-size: 95%;\n}\n```",
+      "source_content_hash": "db842bed4a29790158850cb3c6233d1b3561c8c177311b97af7cede4a56c710b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a476a172"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Infima uses 7 shades of each color. We recommend using [ColorBox](https://www.colorbox.io/) to find the different shades of colors for your chosen primary color.",
+      "source_content_hash": "623d297e71aad0e43e343f1eb119dc8b0f9ab91b27177f2f194a56d1c081dd91",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Infima使用每種顏色的7種色調。我們建議使用[ColorBox](https://www.colorbox.io/)來為您選擇的主色找到不同的色調。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "Alternatively, use the following tool to generate the different shades for your website and copy the variables into `/src/css/custom.css`.",
+      "source_content_hash": "3a48f04c06f446854ad75a0de5a2801aba002900cca5d304448dcff9f3c78e3c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "或者，您可以使用以下工具為網站生成不同色調的變數，並將這些變數複製到 `/src/css/custom.css` 中。"
+      }
+    },
+    {
+      "segment_id": "65095059",
+      "source_content": "<ColorGenerator />",
+      "source_content_hash": "49d5c59188567c8fd7b77e699cb43105c6d911ed579dfb85a67e8cb0810f50c0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_65095059"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "### Dark Mode {#dark-mode}",
+      "source_content_hash": "8030b22058fba91fee8fc28bd357be56c883635c7523d0b7e0e48c5f9f52cf97",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 深色模式 {#dark-mode}"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "In light mode, the `<html>` element has a `data-theme=\"light\"` attribute; in dark mode, it's `data-theme=\"dark\"`. Therefore, you can scope your CSS to dark-mode-only by targeting `html` with a specific attribute.",
+      "source_content_hash": "af9ba08ca73159275b699dc9a8a33864c2ce6c6e1227f3d4fcbc2b9a90ecad15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在淺色模式下，`<html>` 元素會帶有 `data-theme=\"light\"` 屬性；在深色模式下則為 `data-theme=\"dark\"`。因此，您可以透過針對特定屬性的 `html` 元素來限定 CSS 僅在深色模式下生效。"
+      }
+    },
+    {
+      "segment_id": "36ae9dc7",
+      "source_content": "```css\n/* Overriding root Infima variables */\n[data-theme='dark'] {\n  --ifm-color-primary: #4e89e8;\n}\n/* Styling one class specially in dark mode */\n[data-theme='dark'] .purple-text {\n  color: plum;\n}\n```",
+      "source_content_hash": "d027104bd76b136ee9833af5e1a89d09dbf253ea2ca5fbe93503fd3e962bb4d0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_36ae9dc7"
+      }
+    },
+    {
+      "segment_id": "6b90258a",
+      "source_content": ":::tip\n\nIt is possible to initialize the Docusaurus theme directly from a `docusaurus-theme` query string parameter.\n\nExamples:\n\n- [`https://docusaurus.io/?docusaurus-theme=dark`](https://docusaurus.io/?docusaurus-theme=dark)\n- [`https://docusaurus.io/docs/configuration?docusaurus-theme=light`](https://docusaurus.io/docs/configuration?docusaurus-theme=light)\n\n:::",
+      "source_content_hash": "8867af244fc6ed0cecf8f49469d29e24563ae7577fb00b991b02a03ff6f85dc0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您可以直接透過 `docusaurus-theme` 查詢字串參數來初始化 Docusaurus 主題。\n\n範例：\n\n- [`https://docusaurus.io/?docusaurus-theme=dark`](https://docusaurus.io/?docusaurus-theme=dark)\n- [`https://docusaurus.io/docs/configuration?docusaurus-theme=light`](https://docusaurus.io/docs/configuration?docusaurus-theme=light)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fff17ff8",
+      "source_content": "### Mobile View {#mobile-view}",
+      "source_content_hash": "f9acc062388aa8aaf9b151b8500adda22a841ed27a4949ed13c56a7c11904107",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 行動裝置視圖 {#mobile-view}"
+      }
+    },
+    {
+      "segment_id": "8664ed0b",
+      "source_content": "Docusaurus uses `996px` as the cutoff between mobile screen width and desktop. If you want your layout to be different in the mobile view, you can use media queries.",
+      "source_content_hash": "34eb4888722a09be2fffd27ab229785aafeb4e549a944124c45054f1598bce1f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用 `996px` 作為行動裝置螢幕寬度與桌機的分界點。若您希望在行動裝置視圖中有不同的佈局，可以使用媒體查詢。"
+      }
+    },
+    {
+      "segment_id": "a6c3f55f",
+      "source_content": "```css\n.banner {\n  padding: 4rem;\n}\n/** In mobile view, reduce the padding */\n@media screen and (max-width: 996px) {\n  .heroBanner {\n    padding: 2rem;\n  }\n}\n```",
+      "source_content_hash": "b0d3cf1574b35ba35bf83f8d917586cd93852d6f7ec36efef198e753836f8e7c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a6c3f55f"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "## CSS modules {#css-modules}",
+      "source_content_hash": "535d92668d5e80daa2cc64ffaa416c2faaffe487653d0e659dde97c9d0233aee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## CSS 模組 {#css-modules}"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "To style your components using [CSS Modules](https://github.com/css-modules/css-modules), name your stylesheet files with the `.module.css` suffix (e.g. `welcome.module.css`). Webpack will load such CSS files as CSS modules and you have to reference the class names as properties of the imported CSS module (as opposed to using plain strings). This is similar to the convention used in [Create React App](https://facebook.github.io/create-react-app/docs/adding-a-css-modules-stylesheet).",
+      "source_content_hash": "547984e8370f22923976eb475735d36e51e0092efb001b02e6a5b5b064f2e95b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要使用 [CSS 模組](https://github.com/css-modules/css-modules) 來為元件添加樣式，請將樣式表檔案命名為 `.module.css` 後綴（例如 `welcome.module.css`）。Webpack 會將此類 CSS 檔案視為 CSS 模組載入，您必須將類別名稱作為導入 CSS 模組的屬性來引用（而非使用純字串）。這與 [Create React App](https://facebook.github.io/create-react-app/docs/adding-a-css-modules-stylesheet) 中使用的慣例類似。"
+      }
+    },
+    {
+      "segment_id": "b68d496b",
+      "source_content": "```css title=\"styles.module.css\"\n.main {\n  padding: 12px;\n}\n\n.heading {\n  font-weight: bold;\n}\n\n.contents {\n  color: #ccc;\n}\n```",
+      "source_content_hash": "be7a62411a52e50cfaa652d5db1edbfb7c9461f6cb19e56675b46ee9e8c8a44a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b68d496b"
+      }
+    },
+    {
+      "segment_id": "7eccd6ba",
+      "source_content": "```jsx\nimport styles from './styles.module.css';\n\nfunction MyComponent() {\n  return (\n    <main className={styles.main}>\n      <h1 className={styles.heading}>Hello!</h1>\n      <article className={styles.contents}>Lorem Ipsum</article>\n    </main>\n  );\n}\n```",
+      "source_content_hash": "03b12817582a4c992efb7642a9bd767360538268b753cf3d28a5e4695e9773b4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7eccd6ba"
+      }
+    },
+    {
+      "segment_id": "5cf1bce4",
+      "source_content": "The class names will be processed by webpack into a globally unique class name during build.",
+      "source_content_hash": "add8b392df4836a18570c331a880a3abda97d2747287fbdcf1c761b049e7df6e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在建置過程中，Webpack 會將類別名稱處理為全域唯一的類別名稱。"
+      }
+    },
+    {
+      "segment_id": "4b62f7d8",
+      "source_content": "## CSS-in-JS {#css-in-js}",
+      "source_content_hash": "4722dc268b701bc8b75519c9fdae3520cc63e4d8cc75fa7d7c8d105cf942ba9f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## CSS-in-JS {#css-in-js}"
+      }
+    },
+    {
+      "segment_id": "59f1eda1",
+      "source_content": ":::warning\n\nCSS-in-JS support is a work in progress, so libs like MUI may have display quirks. [Welcoming PRs](https://github.com/facebook/docusaurus/issues/1640).\n\n:::",
+      "source_content_hash": "5dbc26d6d5ae1d2a2360644400e8b1eb0d3c742bfe834c6bc07600f8031a2e6c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\nCSS-in-JS 的支援仍在開發中，因此像 MUI 這樣的函式庫可能會出現顯示問題。[歡迎提交 PR](https://github.com/facebook/docusaurus/issues/1640)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3bff4086",
+      "source_content": "## Sass/SCSS {#sassscss}",
+      "source_content_hash": "03603040ad88ad609c4207750febe79271792a346080e2c2410901d0849dc77c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Sass/SCSS {#sassscss}"
+      }
+    },
+    {
+      "segment_id": "015c0c6e",
+      "source_content": "To use Sass/SCSS as your CSS preprocessor, install the unofficial Docusaurus 2 plugin [`docusaurus-plugin-sass`](https://github.com/rlamana/docusaurus-plugin-sass). This plugin works for both global styles and the CSS modules approach:",
+      "source_content_hash": "b912764d1abd4aa9c58e1dd571313dda3a04f08b44da4242d586421aa8a6500d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若要使用 Sass/SCSS 作為 CSS 預處理器，請安裝非官方的 Docusaurus 2 外掛 [`docusaurus-plugin-sass`](https://github.com/rlamana/docusaurus-plugin-sass)。此外掛適用於全域樣式與 CSS 模組兩種方式："
+      }
+    },
+    {
+      "segment_id": "412352a8",
+      "source_content": "1. Install [`docusaurus-plugin-sass`](https://github.com/rlamana/docusaurus-plugin-sass):",
+      "source_content_hash": "95deb68fa67e4dffd5fb7292094349275b84207f1d8aa795305f0ebee37c15c2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 安裝 [`docusaurus-plugin-sass`](https://github.com/rlamana/docusaurus-plugin-sass)："
+      }
+    },
+    {
+      "segment_id": "bf3146e1",
+      "source_content": "```bash npm2yarn\nnpm install --save docusaurus-plugin-sass sass\n```",
+      "source_content_hash": "043e7f6a1f7f8b4db11153e38f3484e2ab493884993a4e3e598d0baaec968b7e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bf3146e1"
+      }
+    },
+    {
+      "segment_id": "41da8c12",
+      "source_content": "2. Include the plugin in your `docusaurus.config.js` file:",
+      "source_content_hash": "412f7d78735bc1f191f9a5c4a1c327d09cc1ccd3780f251d9578ec2d066ce0b1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "2. 在 `docusaurus.config.js` 檔案中包含此外掛："
+      }
+    },
+    {
+      "segment_id": "7079d2d5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  // highlight-next-line\n  plugins: ['docusaurus-plugin-sass'],\n  // ...\n};\n```",
+      "source_content_hash": "6c0d7389c704d93e479d706393410d320f01a1b2aff9fd0e0f64de797a035366",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7079d2d5"
+      }
+    },
+    {
+      "segment_id": "411173f9",
+      "source_content": "3. Write and import your stylesheets in Sass/SCSS as normal.",
+      "source_content_hash": "99e49ff03e95e315af82657bae60bc27dcad2ed77615f0903a34e8b239181a2e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "3. 照常撰寫並導入您的 Sass/SCSS 樣式表。"
+      }
+    },
+    {
+      "segment_id": "3079a4d2",
+      "source_content": "### Global styles using Sass/SCSS {#global-styles-using-sassscss}",
+      "source_content_hash": "f279e3eae6426e000c0994291975f5e5d9221c2c8662e66805ef0b0378ec89c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 Sass/SCSS 的全域樣式 {#global-styles-using-sassscss}"
+      }
+    },
+    {
+      "segment_id": "e4945edb",
+      "source_content": "You can now set the `customCss` property of `@docusaurus/preset-classic` to point to your Sass/SCSS file:",
+      "source_content_hash": "cac0b4fd433e1cb09e87d66475941d62aa8dec82f4f70febf569288e9f2cb384",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在您可以將 `@docusaurus/preset-classic` 的 `customCss` 屬性設定為指向您的 Sass/SCSS 檔案："
+      }
+    },
+    {
+      "segment_id": "1be6af7b",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // ...\n        theme: {\n          // highlight-next-line\n          customCss: [require.resolve('./src/css/custom.scss')],\n        },\n        // ...\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "db1244b9d04a2a6d3baf9fecd2be77555382459f5700d6dd6eff90ae140aa7c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1be6af7b"
+      }
+    },
+    {
+      "segment_id": "61d0a6d1",
+      "source_content": "### Modules using Sass/SCSS {#modules-using-sassscss}",
+      "source_content_hash": "f2e114eb0d867e7068e7c20919cbe2542f7fe7f16b8efa5ef38a266f02513349",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 使用 Sass/SCSS 的模組 {#modules-using-sassscss}"
+      }
+    },
+    {
+      "segment_id": "face5559",
+      "source_content": "Name your stylesheet files with the `.module.scss` suffix (e.g. `welcome.module.scss`) instead of `.css`. Webpack will use `sass-loader` to preprocess your stylesheets and load them as CSS modules.",
+      "source_content_hash": "538e5a944e1616f9183d0cd91645b3e583933bd5c331b1cf1d56c8fdc13c3de8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將樣式表檔案命名為 `.module.scss` 後綴（例如 `welcome.module.scss`）而非 `.css`。Webpack 會使用 `sass-loader` 預處理您的樣式表，並將其作為 CSS 模組載入。"
+      }
+    },
+    {
+      "segment_id": "cdbe4894",
+      "source_content": "```scss title=\"styles.module.scss\"\n.main {\n  padding: 12px;\n\n  article {\n    color: #ccc;\n  }\n}\n```",
+      "source_content_hash": "a604cecb05964a850a0ba13890ba142bb55b18323a9963f0c0b10cb1e5279c95",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cdbe4894"
+      }
+    },
+    {
+      "segment_id": "868a2ef9",
+      "source_content": "```jsx\nimport styles from './styles.module.scss';\n\nfunction MyComponent() {\n  return (\n    <main className={styles.main}>\n      <article>Lorem Ipsum</article>\n    </main>\n  );\n}\n```",
+      "source_content_hash": "eb79854819ca020f2f00ad0c3c50873da9e6044ab7042ce364cc49442a43bfd0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_868a2ef9"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/styling-layout.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.083619+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "79914c678bd928f01664af5f865fbf8dab6205a74649f8dd01ae2f3971f95a9b"
+  }
+}

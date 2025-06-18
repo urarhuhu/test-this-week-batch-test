@@ -1,0 +1,184 @@
+---
+description: How the Docusaurus client is structured
+---
+
+# 客戶端架構
+
+## 主題別名 {#theme-aliases}
+
+主題通過導出一組組件（例如 `Navbar`、`Layout`、`Footer`）來渲染從插件傳遞下來的數據。Docusaurus 和使用者通過使用 `@theme` webpack 別名導入這些組件：
+
+```js
+import Navbar from '@theme/Navbar';
+```
+
+`@theme` 別名可以指向以下幾個目錄，優先級如下：
+
+1. 使用者的 `website/src/theme` 目錄，這是一個具有最高優先級的特殊目錄。
+2. Docusaurus 主題包的 `theme` 目錄。
+3. Docusaurus 核心提供的備用組件（通常不需要）。
+
+這稱為_分層架構_：高優先級層提供的組件會遮蔽低優先級層，從而實現組件替換。給定以下結構：
+
+```
+website
+├── node_modules
+│   └── @docusaurus/theme-classic
+│       └── theme
+│           └── Navbar.js
+└── src
+    └── theme
+        └── Navbar.js
+```
+
+當導入 `@theme/Navbar` 時，`website/src/theme/Navbar.js` 具有優先權。這種行為稱為組件替換（swizzling）。如果你熟悉 Objective C，其中函數的實現可以在運行時交換，這裡的概念完全相同，只是改變 `@theme/Navbar` 指向的目標！
+
+我們已經討論過 `src/theme` 中的「使用者主題」如何通過 [`@theme-original`](../swizzling.mdx#wrapping) 別名重用主題組件。一個主題包也可以通過從初始主題導入組件，使用 `@theme-init` 導入來包裝另一個主題的組件。
+
+以下是一個使用此功能來增強默認主題 `CodeBlock` 組件，添加 `react-live` 遊玩功能的示例。
+
+```js
+import InitialCodeBlock from '@theme-init/CodeBlock';
+import React from 'react';
+
+export default function CodeBlock(props) {
+  return props.live ? (
+    <ReactLivePlayground {...props} />
+  ) : (
+    <InitialCodeBlock {...props} />
+  );
+}
+```
+
+詳情請查看 `@docusaurus/theme-live-codeblock` 的代碼。
+
+:::warning
+
+除非你想發布一個可重用的「主題增強器」（如 `@docusaurus/theme-live-codeblock`），否則你可能不需要使用 `@theme-init`。
+
+:::
+
+這些別名可能很難理解。讓我們想像以下情況：三個主題/插件和網站本身都試圖定義同一個組件，形成一個超級複雜的設置。Docusaurus 在內部將這些主題加載為一個「堆疊」。
+
+```text
++-------------------------------------------------+
+|        `website/src/theme/CodeBlock.js`         | <-- `@theme/CodeBlock` always points to the top
++-------------------------------------------------+
+| `theme-live-codeblock/theme/CodeBlock/index.js` | <-- `@theme-original/CodeBlock` points to the topmost non-swizzled component
++-------------------------------------------------+
+|  `plugin-awesome-codeblock/theme/CodeBlock.js`  |
++-------------------------------------------------+
+|     `theme-classic/theme/CodeBlock/index.js`    | <-- `@theme-init/CodeBlock` always points to the bottom
++-------------------------------------------------+
+```
+
+這個「堆疊」中的組件按照 `preset plugins > preset themes > plugins > themes > site` 的順序推入，因此 `website/src/theme` 中的替換組件總是在頂部，因為它是最後加載的。
+
+`@theme/*` 始終指向最頂層的組件——當 `CodeBlock` 被替換時，所有請求 `@theme/CodeBlock` 的其他組件都會收到替換後的版本。
+
+`@theme-original/*` 始終指向最頂層的非替換組件。這就是為什麼你可以在替換組件中導入 `@theme-original/CodeBlock`——它指向「組件堆疊」中的下一個，即主題提供的組件。插件作者不應嘗試使用此功能，因為你的組件可能是最頂層的組件，導致自我導入。
+
+`@theme-init/*` 始終指向最底層的組件——通常，這來自首次提供此組件的主題或插件。嘗試增強代碼塊的單個插件/主題可以安全地使用 `@theme-init/CodeBlock` 來獲取其基本版本。網站創建者通常不應使用此功能，因為你可能希望增強_最頂層_而不是_最底層_的組件。也有可能 `@theme-init/CodeBlock` 別名根本不存在——Docusaurus 只有在它指向與 `@theme-original/CodeBlock` 不同的組件時才會創建它，即當它由多個主題提供時。我們不會浪費別名！
+
+## 客戶端模塊 {#client-modules}
+
+客戶端模組是您網站打包的一部分，與主題組件類似。然而，它們通常具有副作用。客戶端模組可以是任何能被 Webpack 導入的內容——CSS、JS 等。JS 腳本通常在全局上下文中運行，例如註冊事件監聽器、創建全局變量等。
+
+這些模組會在 React 渲染初始 UI 之前就被全局導入。
+
+```js title="@docusaurus/core/App.tsx"
+// How it works under the hood
+import '@generated/client-modules';
+```
+
+插件和網站都可以通過 [`getClientModules`](../api/plugin-methods/lifecycle-apis.mdx#getClientModules) 和 [`siteConfig.clientModules`](../api/docusaurus.config.js.mdx#clientModules) 分別聲明客戶端模組。
+
+客戶端模組在服務器端渲染時也會被調用，因此請記得在訪問客戶端全局變量前檢查[執行環境](./ssg.mdx#escape-hatches)。
+
+```js title="mySiteGlobalJs.js"
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
+if (ExecutionEnvironment.canUseDOM) {
+  // As soon as the site loads in the browser, register a global event listener
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Period') {
+      location.assign(location.href.replace('.com', '.dev'));
+    }
+  });
+}
+```
+
+作為客戶端模組導入的 CSS 樣式表是[全局的](../styling-layout.mdx#global-styles)。
+
+```css title="mySiteGlobalCss.css"
+/* This stylesheet is global. */
+.globalSelector {
+  color: red;
+}
+```
+
+### 客戶端模組生命週期 {#client-module-lifecycles}
+
+除了引入副作用外，客戶端模組還可以選擇性地導出兩個生命週期函數：`onRouteUpdate` 和 `onRouteDidUpdate`。
+
+由於 Docusaurus 構建的是單頁應用，`script` 標籤只會在頁面首次加載時執行，而不會在頁面切換時重新執行。這些生命週期對於需要在每次新頁面加載時執行的命令式 JS 邏輯非常有用，例如操作 DOM 元素、發送分析數據等。
+
+對於每次路由切換，會有以下幾個重要時間點：
+
+1. 用戶點擊鏈接，導致路由器改變當前位置。
+2. Docusaurus 預加載下一個路由的資源，同時繼續顯示當前頁面的內容。
+3. 下一個路由的資源已加載完成。
+4. 新位置的路由組件被渲染到 DOM。
+
+`onRouteUpdate` 會在事件 (2) 時調用，而 `onRouteDidUpdate` 會在 (4) 時調用。它們都會接收當前位置和之前的位置（如果是首次加載，之前的位置可能是 `null`）。
+
+`onRouteUpdate` 可以選擇性地返回一個「清理」回調函數，該函數會在 (3) 時被調用。例如，如果您想顯示進度條，可以在 `onRouteUpdate` 中啟動一個定時器，並在回調中清除定時器。（經典主題已經通過這種方式提供了 `nprogress` 集成。）
+
+請注意，新頁面的 DOM 只有在事件 (4) 時才可用。如果您需要操作新頁面的 DOM，您可能會想使用 `onRouteDidUpdate`，它會在新頁面的 DOM 掛載後立即觸發。
+
+```js title="myClientModule.js"
+export function onRouteDidUpdate({location, previousLocation}) {
+  // Don't execute if we are still on the same page; the lifecycle may be fired
+  // because the hash changes (e.g. when navigating between headings)
+  if (location.pathname !== previousLocation?.pathname) {
+    const title = document.getElementsByTagName('h1')[0];
+    if (title) {
+      title.innerText += '❤️';
+    }
+  }
+}
+
+export function onRouteUpdate({location, previousLocation}) {
+  if (location.pathname !== previousLocation?.pathname) {
+    const progressBarTimeout = window.setTimeout(() => {
+      nprogress.start();
+    }, delay);
+    return () => window.clearTimeout(progressBarTimeout);
+  }
+  return undefined;
+}
+```
+
+或者，如果您使用 TypeScript 並希望利用上下文類型：
+
+```ts title="myClientModule.ts"
+import type {ClientModule} from '@docusaurus/types';
+
+const module: ClientModule = {
+  onRouteUpdate({location, previousLocation}) {
+    // ...
+  },
+  onRouteDidUpdate({location, previousLocation}) {
+    // ...
+  },
+};
+export default module;
+```
+
+這兩個生命週期都會在首次渲染時觸發，但它們不會在服務器端觸發，因此您可以安全地在其中訪問瀏覽器全局變量。
+
+:::tip[推薦使用 React]
+
+客戶端模組生命週期是純命令式的，您無法在其中使用 React Hooks 或訪問 React 上下文。如果您的操作是狀態驅動的或涉及複雜的 DOM 操作，您應該考慮[替換組件](../swizzling.mdx)。
+
+:::

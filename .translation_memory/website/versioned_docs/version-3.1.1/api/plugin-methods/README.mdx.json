@@ -1,0 +1,182 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.1.1/api/plugin-methods/README.mdx",
+  "source_file_content_hash": "c477fa93bbe6e07183034b0c38d997063e2b7380c90d6ae8a01bcad72b845ec2",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Plugin Method References",
+      "source_content_hash": "0596292adc1e9cfe6b709ceec3985cf30119db535ebdff11a31b6138989c88a4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 插件方法參考"
+      }
+    },
+    {
+      "segment_id": "13b248dc",
+      "source_content": ":::warning\n\nThis section is a work in progress. Anchor links or even URLs are not guaranteed to be stable.\n\n:::",
+      "source_content_hash": "f8e8360b7d519acb6e9533cf34c937f6018554953e320526965fe51c2c268b32",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此部分內容仍在開發中。錨點連結甚至網址均不保證穩定。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Plugin APIs are shared by themes and plugins—themes are loaded just like plugins.",
+      "source_content_hash": "40e1980a4d8a0e23cb91c0578d3d42ecc5a8da67dea07f163cd2a186fddd2643",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件API由主題和插件共享——主題的加載方式與插件相同。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Plugin module {#plugin-module}",
+      "source_content_hash": "cb095ae674862c2536912a3a58e74027e73c1843001668a0570a4e052d0c1445",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 插件模組 {#plugin-module}"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Every plugin is imported as a module. The module is expected to have the following members:",
+      "source_content_hash": "115c682b51931a61baccc1aa37b65482236d5158319cde48d8fad42794f4cb42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個插件都會作為模組導入。該模組預期包含以下成員："
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "- A **default export**: the constructor function for the plugin.\n- **Named exports**: the [static methods](./static-methods.mdx) called before plugins are initialized.",
+      "source_content_hash": "84e4d7346da5c0e8f795edaecff4c8c5c4bf53c9a0b149e41241ceb32d566412",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **預設導出**：插件的建構函式。\n- **命名導出**：在插件初始化前調用的[靜態方法](./static-methods.mdx)。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Plugin constructor {#plugin-constructor}",
+      "source_content_hash": "b55f896a000660094a2c4dd4905b6ba55052fa7fce90d6df4d40185435576448",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 插件建構函式 {#plugin-constructor}"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "The plugin module's default export is a constructor function with the signature `(context: LoadContext, options: PluginOptions) => Plugin | Promise<Plugin>`.",
+      "source_content_hash": "d5193518b437fe61a513ff7882ba9625547c19a8f1f64bfbca0f2f097f7b02b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件模組的預設導出是一個簽名為`(context: LoadContext, options: PluginOptions) => Plugin | Promise<Plugin>`的建構函式。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### `context` {#context}",
+      "source_content_hash": "804763b5760e2aa160c0a2ad0665c442c735b732d477b2d026c9fd3bdc320782",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `context` {#context}"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "`context` is plugin-agnostic, and the same object will be passed into all plugins used for a Docusaurus website. The `context` object contains the following fields:",
+      "source_content_hash": "c047b5a71160a7ee08d2a92f2f10f8f98db3d037f843d3b1e7c671d5d7063dfd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`context`是與插件無關的物件，同一個物件會被傳遞給Docusaurus網站使用的所有插件。`context`物件包含以下欄位："
+      }
+    },
+    {
+      "segment_id": "a89b882e",
+      "source_content": "```ts\ntype LoadContext = {\n  siteDir: string;\n  generatedFilesDir: string;\n  siteConfig: DocusaurusConfig;\n  outDir: string;\n  baseUrl: string;\n};\n```",
+      "source_content_hash": "cd2340ce45fbe791bf3160c84a18a4dba1d9ebfada7ed106a67fb1cd7701f085",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a89b882e"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "### `options` {#options}",
+      "source_content_hash": "27d5298b74e101fc5068af653dafd9cf01ff7cc76c85407a97de3ebcc640ecad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `options` {#options}"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "`options` are the [second optional parameter when the plugins are used](../../using-plugins.mdx#configuring-plugins). `options` are plugin-specific and are specified by users when they use them in `docusaurus.config.js`. If there's a [`validateOptions`](./static-methods.mdx#validateOptions) function exported, the `options` will be validated and normalized beforehand.",
+      "source_content_hash": "5b6d018c67c0f0899689042d674f4f624554e597cd021f0450da9f47771fcbbc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`options`是[使用插件時的第二個可選參數](../../using-plugins.mdx#configuring-plugins)。`options`是插件特定的，由使用者在`docusaurus.config.js`中配置時指定。如果導出了[`validateOptions`](./static-methods.mdx#validateOptions)函式，`options`會事先被驗證和標準化。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Alternatively, if a preset contains the plugin, the preset will then be in charge of passing the correct options into the plugin. It is up to the individual plugin to define what options it takes.",
+      "source_content_hash": "3b517980e26790b8233fb7362c866bfdf37dd1f8ed22fa1b495b4f014d5044f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "或者，如果預設配置包含了該插件，則預設配置將負責將正確的選項傳遞給插件。具體接受哪些選項由各個插件自行定義。"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Example {#example}",
+      "source_content_hash": "33e791d3c8415bc7cf9a4196cd14dd1d3ecafa5e908c5b6322b2dcf17c1e00ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 範例 {#example}"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Here's a mental model for a presumptuous plugin implementation.",
+      "source_content_hash": "efcd79b48d0a350b2b9befae0697dd878e6825d5302429a06026d6a55e616c3f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是一個假設性插件實現的心理模型。"
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```js\n// A JavaScript function that returns an object.\n// `context` is provided by Docusaurus. Example: siteConfig can be accessed from context.\n// `opts` is the user-defined options.\nexport default async function myPlugin(context, opts) {\n  return {\n    // A compulsory field used as the namespace for directories to cache\n    // the intermediate data for each plugin.\n    // If you're writing your own local plugin, you will want it to\n    // be unique in order not to potentially conflict with imported plugins.\n    // A good way will be to add your own project name within.\n    name: 'docusaurus-my-project-cool-plugin',\n\n    async loadContent() {\n      // The loadContent hook is executed after siteConfig and env has been loaded.\n      // You can return a JavaScript object that will be passed to contentLoaded hook.\n    },\n\n    async contentLoaded({content, actions}) {\n      // The contentLoaded hook is done after loadContent hook is done.\n      // `actions` are set of functional API provided by Docusaurus (e.g. addRoute)\n    },\n\n    async postBuild(props) {\n      // After docusaurus <build> finish.\n    },\n\n    // TODO\n    async postStart(props) {\n      // docusaurus <start> finish\n    },\n\n    // TODO\n    afterDevServer(app, server) {\n      // https://webpack.js.org/configuration/dev-server/#devserverbefore\n    },\n\n    // TODO\n    beforeDevServer(app, server) {\n      // https://webpack.js.org/configuration/dev-server/#devserverafter\n    },\n\n    configureWebpack(config, isServer, utils, content) {\n      // Modify internal webpack config. If returned value is an Object, it\n      // will be merged into the final config using webpack-merge;\n      // If the returned value is a function, it will receive the config as the 1st argument and an isServer flag as the 2nd argument.\n    },\n\n    getPathsToWatch() {\n      // Paths to watch.\n    },\n\n    getThemePath() {\n      // Returns the path to the directory where the theme components can\n      // be found.\n    },\n\n    getClientModules() {\n      // Return an array of paths to the modules that are to be imported\n      // in the client bundle. These modules are imported globally before\n      // React even renders the initial UI.\n    },\n\n    extendCli(cli) {\n      // Register an extra command to enhance the CLI of Docusaurus\n    },\n\n    injectHtmlTags({content}) {\n      // Inject head and/or body HTML tags.\n    },\n\n    async getTranslationFiles({content}) {\n      // Return translation files\n    },\n\n    translateContent({content, translationFiles}) {\n      // translate the plugin content here\n    },\n\n    translateThemeConfig({themeConfig, translationFiles}) {\n      // translate the site themeConfig here\n    },\n\n    async getDefaultCodeTranslationMessages() {\n      // return default theme translations here\n    },\n  };\n}\n\nexport function validateOptions({options, validate}) {\n  const validatedOptions = validate(myValidationSchema, options);\n  return validatedOptions;\n}\n\nexport function validateThemeConfig({themeConfig, validate}) {\n  const validatedThemeConfig = validate(myValidationSchema, options);\n  return validatedThemeConfig;\n}\n```",
+      "source_content_hash": "857b636b41f6c8019568d51f893dfc6855e23363603f7af221197b242069e776",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.1.1/api/plugin-methods/README.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.105207+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "c477fa93bbe6e07183034b0c38d997063e2b7380c90d6ae8a01bcad72b845ec2"
+  }
+}

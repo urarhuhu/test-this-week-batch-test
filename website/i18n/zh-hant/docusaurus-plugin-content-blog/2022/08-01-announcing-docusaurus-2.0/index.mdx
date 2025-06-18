@@ -1,0 +1,444 @@
+---
+title: Announcing Docusaurus 2.0
+authors:
+  - slorber
+  - Josh-Cena
+  - yangshun
+  - lex111
+  - zpao
+  - key: JMarcey
+    title: Co-creator of Docusaurus 1
+tags: [release]
+image: ./img/social-card.png
+---
+
+```mdx-code-block
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import ProductHuntCard from '@site/src/components/ProductHuntCard';
+import HackerNewsIcon from '@site/src/components/HackerNewsIcon';
+import ColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+import {ShowcaseCarouselV1, ShowcaseCarouselV2, ShowcaseCarouselV2Theming} from './ShowcaseCarousel';
+```
+
+今天，我們非常高興終於能**正式宣佈 Docusaurus 2.0** 的到來！🥳️
+
+在 [**Meta 開源專案**](https://opensource.fb.com/) 中，我們相信 Docusaurus 能協助您以**最小努力**打造**最優質的文件網站**，讓您專注於真正重要的事：撰寫內容。
+
+歷經**4年開發、[75個alpha版](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.75)與[22個beta版](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.22)**，新一代 Docusaurus 已**正式成熟**。從現在起，我們將嚴格遵循[語意化版本規範](https://semver.org/zh-Hant/)，並更頻繁地發布**主要版本更新**。
+
+![社交媒體預覽圖](./img/social-card.png)
+
+:::info[我們登上了 [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) 和 [Hacker News](https://news.ycombinator.com/item?id=32303052)！]
+
+**現在**正是展現您對 Docusaurus 支持的最佳時機！
+
+<div style={{display: 'flex'}}>
+  <ProductHuntCard />
+  <HackerNewsIcon />
+</div>
+
+:::
+
+:::tip
+
+趕時間？直接查看 [Docusaurus 2.0 的新功能](#whats-new-in-20)！
+
+:::
+
+## Docusaurus 究竟是什麼？
+
+Docusaurus 是一款**靜態網站生成器**，能協助您**快速建立**美觀的**文件網站**。
+
+專注於您的內容：只需撰寫**Markdown文件**。Docusaurus 將為您生成經過優化的**網站**，並可輕鬆**部署至任何地方**。
+
+Docusaurus 具備**完整功能**且極度**靈活**：我們提供精心設計的文件與部落格版面，開箱即用的版本控制、搜尋與國際化功能，同時兼顧無障礙存取與搜尋引擎優化。其彈性的主題系統可讓您**調整UI以符合品牌形象**，完美整合至主網站或文件入口。採用**React**技術實現**現代化客戶端導航**，並能打造**互動式文件**。
+
+![Slash介紹圖](/img/slash-introducing.svg)
+
+Docusaurus 的哲學符合**帕累托法則**：您只需投入**20%的精力**即可獲得**80%的成果**。這讓您能用**最小成本**打造可媲美頂尖水準的文件網站。
+
+<TweetQuote
+  url="https://x.com/rachelnabors/status/1452697991039660038"
+  handle="rachelnabors"
+  name="Rachel Nabors"
+  job="Former ReactJS & React-Native docs manager">
+  Unless you're spinning up a documentation team with engineering resources, you
+  probably want Docusaurus!
+</TweetQuote>
+
+Docusaurus 致力成為**最佳文件工具**，但您也能將其運用於**其他場景**：部落格、知識庫、開發者作品集、第二大腦，甚至快速生成登陸頁面！
+
+<TweetQuote
+  url="https://x.com/johnny_reilly/status/1551861926334025728"
+  handle="johnny_reilly"
+  name="Johnny Reilly"
+  job="Group Principal Engineer at Investec">
+  Using Docusaurus for my tech blog has been a fantastic choice. It looks
+  tremendous out-of-the-box and the awesome DX means I write way more
+</TweetQuote>
+
+:::tip
+
+立即透過我們的[線上遊樂場](/docs/playground)和[5分鐘教學](https://tutorial.docusaurus.io/)體驗 Docusaurus ⏱️
+
+:::
+
+## Docusaurus 的誕生故事
+
+Docusaurus 由**Facebook開源團隊**（現為[Meta開源](https://opensource.fb.com/)）於**2017年**創建。當時我們有大量內部與開源專案需要文件化。**撰寫優質文件已屬不易**，更遑論打造美觀網站所需的HTML、CSS與JavaScript。我們希望專案負責人能**專注於內容**，而**Markdown**正是最佳選擇。
+
+當時的解決方案是**不斷複製/貼上Jekyll模板**。這自然導致**維護困難**，因此我們開發了這個工具來**一勞永逸解決痛點**。
+
+**[Docusaurus v1 誕生了](/blog/2017/12-14-introducing-docusaurus.mdx)!**
+
+![Slash 的誕生](/img/slash-birth.png)
+
+它迅速在 Facebook 和前端生態系統中獲得動力，被許多知名專案採用，例如 [Prettier](https://prettier.io/)、[Babel](https://babeljs.io/)、[React-Native](https://archive.reactnative.dev/)、[KaTeX](https://katex.org/docs/)，當然還有 [Docusaurus v1](http://v1.docusaurus.io/) 本身。
+
+<ShowcaseCarouselV1 />
+
+<br />
+
+:::note
+
+請注意，上述範例網站使用了不同的顏色，但看起來仍然非常相似。
+
+:::
+
+## 邁向 Docusaurus 2.0
+
+[**Docusaurus v1**](http://v1.docusaurus.io/) 非常成功，但我們開始**質疑一些架構上的選擇**：
+
+- React 僅作為**伺服器端模板語言**使用，並未在客戶端使用
+- **主題系統相當有限**，除了用 CSS 更改一些顏色外，很難進行更高級的自訂
+- **文件版本控制系統令人困惑**，因為它基於差異演算法
+- 程式碼庫是**單一的**，既沒有經過良好測試，也不易擴展
+
+[**Docusaurus v2**](https://docusaurus.io/) 從頭開始**重建**，採用了新的**模組化架構**：
+
+- React 現在也在客戶端使用，實現了**現代單頁應用程式導航**
+- **外掛**讓社群能夠以第三方套件的形式貢獻有用的功能
+- **主題**比以往更加**靈活**
+- 文件版本控制現在基於快照副本，更容易理解
+- 我們保留了**v1 的所有優點**：文件、部落格、頁面、版本控制、國際化...
+- 我們實現了**多項新功能**
+
+更多細節請參閱 [Docusaurus 2 專案公告](/blog/2018/09-11-Towards-Docusaurus-2.mdx) 和 [v1 到 v2 遷移指南](https://docusaurus.io/docs/migration)
+
+## 誰在使用 Docusaurus 2.0？
+
+儘管處於預發布階段，**Docusaurus v2 在 NPM 下載量上很快就超越了 Docusaurus v1**：
+
+[![NPM 下載量：v2 超越 v1](./img/npm-downloads.png)](https://npmtrends.com/docusaurus-vs-@docusaurus/core)
+
+我們的 GitHub star 趨勢非常正面，可與主要框架競爭：
+
+[![GitHub stars：Docusaurus 表現出色](./img/star-history.png)](https://star-history.com/#facebook/docusaurus&vercel/next.js&gatsbyjs/gatsby&hexojs/hexo&nuxt/nuxt.js&vuejs/vuepress&11ty/eleventy&gohugoio/hugo&remix-run/remix&mkdocs/mkdocs&Timeline)
+
+如今，Docusaurus v2 在正式發布前就已經取得了巨大成功：
+
+- 我們收到了許多[感人的推薦](https://x.com/sebastienlorber/timelines/1392048416872706049)
+- 像 [1Password](https://blog.1password.com/docusaurus-documentation-framework/) 和 [Courier](https://www.courier.com/blog/how-we-built-our-documentation/) 這樣的公司正在記錄他們的積極體驗
+- 我們的[網站展示](/showcase)列出了數百個網站，而這只是冰山一角。
+
+<ShowcaseCarouselV2 />
+
+<br />
+
+:::tip
+
+歡迎將您的網站加入我們的[網站展示區](/showcase)！只需[在此留言](https://github.com/facebook/docusaurus/discussions/7826)，幾秒鐘即可完成。
+
+:::
+
+<TweetQuote
+  url="https://x.com/maxlynch/status/1549415692704825346"
+  handle="maxlynch"
+  name="Max Lynch"
+  job="Ionic co-founder and CEO">
+  We use Docusaurus everywhere now and love it
+</TweetQuote>
+
+<TweetQuote
+  url="https://x.com/supabase/status/1328960757149671425"
+  handle="supabase"
+  name="Supabase"
+  job="Open Source Firebase alternative">
+  We've been using V2 since January and it has been great
+</TweetQuote>
+
+<TweetQuote
+  url="https://x.com/gabrielcsapo/status/1415061312917233665"
+  handle="gabrielcsapo"
+  name="Gabriel Csapo"
+  job="Staff Software Engineer at LinkedIn">
+  Docusaurus is next level easy for literally everything you would need for
+  documentation in your project.
+</TweetQuote>
+
+<TweetQuote
+  url="https://x.com/ItWasMattGregg/status/1526682295075102721"
+  handle="ItWasMattGregg"
+  name="Matt Gregg"
+  job="Senior Front End Developer at Shopify">
+  Docusaurus is awesome. We use it
+</TweetQuote>
+
+## 2.0 版本有哪些新功能？
+
+很難一一列舉 Docusaurus v2 的所有新功能，我們將重點介紹最具影響力的功能。
+
+### MDX
+
+[MDX](https://github.com/mdx-js/mdx) 允許您在 Markdown 中**嵌入 React 組件**，這讓您能輕鬆打造頂尖的**互動式文檔體驗**。
+
+實際示範勝過千言萬語：
+
+```md title="docs/my-document.mdx"
+### Give it a try: press that button!
+
+import ColorModeToggle from '@theme/ColorModeToggle';
+
+<ColorModeToggle/>
+```
+
+```mdx-code-block
+<BrowserWindow>
+
+<h3>Give it a try: press that button!</h3>
+
+<ColorModeToggle/>
+
+</BrowserWindow>
+```
+
+:::info
+
+MDX 擁有自己的[插件系統](https://mdxjs.com/docs/extending-mdx/)，您可以自訂 Markdown 撰寫體驗，甚至創建自己的 Markdown 語法。
+
+:::
+
+<TweetQuote
+  url="https://x.com/HamelHusain/status/1551962275250053123"
+  handle="HamelHusain"
+  name="Hamel Husain"
+  job="Head Of Data Science at Outerbounds">
+  Docusaurus + MDX is great: we were able to implement a beautiful two-pane
+  layout and give the author fine-grained control on the placement of code and
+  corresponding prose.
+</TweetQuote>
+
+### 檔案系統慣例
+
+我們的目標是讓 Docusaurus 使用起來非常**直觀**。我們新增了檔案系統慣例，現在新增文檔頁面就像建立一個 Markdown 檔案一樣簡單。
+
+<LiteYouTubeEmbed
+  id="T3S8GyFIXjo"
+  params="autoplay=1&autohide=1&showinfo=0&rel=0"
+  title="Explain Like I'm 5: Docusaurus"
+  poster="maxresdefault"
+  webp
+/>
+
+<br />
+
+<TweetQuote
+  url="https://x.com/paularmstrong/status/1552005085168865281"
+  handle="paularmstrong"
+  name="Paul Armstrong"
+  job="Principal Engineer at Microsoft">
+  Using the auto-generated sidebars makes it so simple to just create a page and
+  not worry about any other configuration.
+</TweetQuote>
+
+### 插件系統
+
+Docusaurus 現在採用**模組化架構**並提供插件系統——我們的**核心功能**如文檔、部落格、頁面和搜尋都是由獨立插件驅動的。
+
+更重要的是，這讓我們的社群能夠**擴展 Docusaurus** 的功能。
+
+以下是一些範例：
+
+- [redocusaurus](https://github.com/rohit-gohri/redocusaurus)：與 [OpenAPI](https://www.openapis.org/) 和 [Redoc](https://github.com/Redocly/redoc) 無縫整合
+
+![redocusaurus 插件範例](./img/plugins/redocusaurus.png)
+
+- [docusaurus-preset-shiki-twoslash](https://www.npmjs.com/package/docusaurus-preset-shiki-twoslash)：使用 [Shiki](https://github.com/shikijs/shiki) 程式碼區塊語法高亮，並搭配 [TwoSlash](https://shikijs.github.io/twoslash/) TypeScript 編譯器提示
+
+![shiki-twoslash 插件範例](./img/plugins/shiki-twoslash.png)
+
+<TweetQuote
+  url="https://x.com/orta"
+  handle="orta"
+  name="Orta Therox"
+  job="Former TypeScript core team at Microsoft">
+  The plugin API was a breeze to use, and powerful enough that I could port the
+  code sample renderer from the TypeScript website site in a couple of hours.
+</TweetQuote>
+
+- [docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local)：這是內建 Algolia 插件之外的多種本地搜尋替代方案之一
+
+![本地搜尋插件範例](./img/plugins/search.png)
+
+:::tip
+
+我們在[社群資源](/community/resources)頁面中精選了一些優秀的插件列表。
+
+:::
+
+<TweetQuote
+  url="https://x.com/jodyheavener/status/1551974535452311552"
+  handle="jodyheavener"
+  name="Jody Heavener"
+  job="Senior Developer at 1Password">
+  The plugin system in Docusaurus v2 has made expanding 1Password's developer
+  portal so easy and fun. Super excited to show you what we've got cooking up.
+</TweetQuote>
+
+### 主題系統
+
+主題系統是 Docusaurus 最重要的功能之一：我們認為專業的文檔網站應該**符合您公司的品牌形象**，創造一致的體驗。
+
+Docusaurus 的主題系統在多重層級上提供了極大的**靈活性**：
+
+- 自訂 CSS 變數來調整顏色、字體等
+- 提供您自己的 CSS 樣式表
+- 從頭實作自己的主題
+- **覆寫預設主題的任何 React 組件**：我們稱之為 [swizzling](https://docusaurus.io/docs/swizzling)
+
+<TweetQuote
+  url="https://x.com/hung_dev/status/1546918275065741312"
+  handle="hung_dev"
+  name="
+Hung Viet Nguyen"
+  job="Creator of JestPreview">
+  I love Docusaurus Swizzling feature. It’s opinionated and flexible at the same
+  time. This is super cool since a framework usually needs to sacrifice one for
+  the other.
+</TweetQuote>
+
+這使得願意投入更多時間進行**客製化**的使用者能夠打造出**與眾不同**的網站外觀。
+
+<ShowcaseCarouselV2Theming />
+
+<TweetQuote
+  url="https://x.com/dabit3/status/1382855449813389315"
+  handle="dabit3"
+  name="Nader Dabit"
+  job="Web3 developer, Developer DAO founder">
+  So far it’s working out really nicely. It’s been really easy to style up the
+  way that we wanted it to look. No blockers at all.
+</TweetQuote>
+
+### 其他功能
+
+Docusaurus 2 提供了大量實用功能：
+
+- 主題：深色模式、更優的 UI/UX、彈性的 `themeConfig` 選項...
+- 文件版本控制：可調整的插件選項以適應工作流程
+- 文件側邊欄：可折疊分類、分類索引頁面...
+- 部落格：多位作者、作者對照表、歸檔頁面...
+- Markdown：標籤頁、數學公式、即時程式碼區塊、連結、彈性 front matter...
+- 搜尋：採用新版 Algolia DocSearch 3 體驗
+- 資源：輕鬆整合圖片與其他類型檔案
+- 國際化：配置選項、預設主題翻譯...
+- 無障礙：aria 標籤、色彩對比、跳至內容、鍵盤導航、漸進增強...
+- SEO：合理預設值、易於自訂、標準網址、社群卡片、禁止索引、網站地圖、微資料、hreflang...
+- PWA：為網站添加離線支援，並可安裝
+- 快速失敗：嚴格的配置驗證、偵測失效連結，防止不良生產環境部署
+- TypeScript 支援配置檔、插件、自訂頁面與主題開發
+- 遊樂場：透過 [docusaurus.new](https://docusaurus.new) 在瀏覽器中輕鬆評估 Docusaurus
+- Canary 版本：使用 @canary npm 標籤搶先體驗即將發布的版本
+- 測試：Docusaurus 經過完善測試，我們會實際使用功能並確保其持續運作
+
+<TweetQuote
+  url="https://x.com/alexbdebrie/status/1540010328335032320"
+  handle="alexbdebrie"
+  name="Alex DeBrie"
+  job="AWS Data Hero, author of The DynamoDB Book">
+  Recently, I was shocked at how good Docusaurus is out of the box. Super solid,
+  a good bit of configuration without being overwhelming, and the ability to
+  really customize the styling if you're braver than I am.
+</TweetQuote>
+
+## 為何現在推出 2.0？
+
+許多熱心追蹤者好奇**為何我們花了 4 年才發布 Docusaurus 2.0**，尤其測試版已相當成功且**廣泛用於生產環境**。
+
+原因是我們堅持**遵循[語意化版本控制](https://semver.org/)**，這意味著每當發布**重大變更**時，我們就會增加主版本號。
+
+這點至關重要：
+
+- 只要您僅使用[公開 API](/community/release-process#public-api-surface)，就能**保證次要版本升級簡單**
+- 符合前端生態系慣例
+- 主版本更新是徹底記錄重大變更的契機
+- 主/次版本更新可透過部落格文章宣傳新功能
+
+問題在於我們彈性的主題系統本質上形成了非常**隱性的 API 介面**，難以判斷何謂重大變更。高度客製化的 Docusaurus 網站有時升級困難，因為它們使用內部 API 實現客製化。我們投入時間進行主題重構並明確定義[公開 API](/community/release-process#public-api-surface)，使未來程式變更更安全。我們將持續擴展此公開主題 API，讓常見的網站客製化無需使用任何內部 API。
+
+:::info
+
+從現在起，Docusaurus 將**更頻繁發布主版本**。實際上，您可預期**每 2 至 4 個月就會有新主版本**。
+
+[主版本號並非神聖不可侵犯](https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html)，但我們仍會將重大變更集中處理，避免過於頻繁發布主版本。
+
+詳情請參閱我們的[發布流程](/community/release-process)文件。
+
+:::
+
+## 下一步規劃？
+
+![Slash 全力運作中](/img/slash-up-and-running.png)
+
+Docusaurus 3.0 的開發已啟動，此新版本將於數月內發布。我們會**在 Docusaurus 2.x 次要版本中回溯相容性變更**，讓社群能盡快在穩定管道中使用這些功能。
+
+以下是我們為 Docusaurus 未來主版本規劃的部分功能：
+
+- [升級至 MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)
+- [改進 Markdown 基礎架構](https://github.com/facebook/docusaurus/issues/4625)
+- [強化主題與 swizzle 功能](https://github.com/facebook/docusaurus/issues/6114)
+- [TailwindCSS 主題](https://github.com/facebook/docusaurus/issues/2961)
+- [主題：支援導航欄、文檔側邊欄、部落格側邊欄及頁腳的自定義項目類型](https://github.com/facebook/docusaurus/issues/7227)
+- [動態導航欄：導航欄項目激活策略](https://github.com/facebook/docusaurus/issues/4389)
+- [自定義社交卡片](https://github.com/facebook/docusaurus/issues/2968)
+- [CSS-in-JS 支援](https://github.com/facebook/docusaurus/issues/3236)
+- [使用 Node.js ES 模組](https://github.com/facebook/docusaurus/issues/6520)
+- [提升建置時間效能](https://github.com/facebook/docusaurus/issues/4765)
+- [擴展 Docusaurus 插件與 CMS 整合](https://github.com/facebook/docusaurus/issues/4138)
+
+## 感謝
+
+我們想向[所有貢獻者](https://github.com/facebook/docusaurus/graphs/contributors)表達我們的感激之情，包括：
+
+- Docusaurus 核心團隊：[Alexey Pyltsyn](https://github.com/lex111)、[Joshua Chen](https://github.com/Josh-Cena)、[Sébastien Lorber](https://github.com/slorber)、[Yangshun Tay](https://github.com/yangshun) 以及所有[前團隊成員](https://docusaurus.io/community/team)
+- [Joel Marcey](https://github.com/JoelMarcey) 創建了 Docusaurus 1.0 並在 Meta 開源支持 Docusaurus 2.0 項目
+- [Paul O’Shannessy](https://github.com/zpao) 在 Meta 開源支持所有 Docusaurus 後續版本的開發
+- [Eric Nakagawa](https://github.com/ericnakagawa) 創造了我們最可愛的吉祥物 Slash
+- [Endilie Yacop Sucipto](https://github.com/endiliey) 為 Docusaurus v2 的[初期重要工作](/blog/2020/01-07-tribute-to-endi.mdx)做出貢獻
+- [Clément Vannicatte](https://github.com/shortcuts)、[Kevin Granger](https://github.com/Shipow) 及整個 Algolia 團隊的支持
+- 所有社群成員，包括提交寶貴程式碼貢獻、改進文檔以及在 [Discord](https://discordapp.com/invite/docusaurus) 上回答問題的各位
+
+我們特別感謝所有 **Docusaurus 2.0 早期採用者**，他們評估了 alpha、beta 和 canary 版本，提供了大量**寶貴反饋**。我們衷心希望您在使用過程中有良好的體驗，並期待您繼續對 Docusaurus 3.0 的預發布版本提供反饋。
+
+在 [Meta 開源](https://opensource.fb.com/)中，Docusaurus 是我們**最成功的項目之一**。我們迫不及待想看到您創建的傑出文檔網站！別忘了**提交到我們的[網站展示區](/showcase)**！
+
+**現在，讓您的想像力自由奔放吧 🤪！**
+
+— Slash
+
+:::info[我們在 [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) 和 [Hacker News](https://news.ycombinator.com/item?id=32303052) 上！]
+
+🙏 與社群分享您使用 Docusaurus 的體驗！
+
+<div style={{display: 'flex'}}>
+  <ProductHuntCard />
+  <HackerNewsIcon />
+</div>
+
+:::
+
+![Slash 絨毛玩偶](./img/slash-plushies.jpg)

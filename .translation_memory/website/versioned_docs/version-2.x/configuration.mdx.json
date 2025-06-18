@@ -1,0 +1,366 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/configuration.mdx",
+  "source_file_content_hash": "a206e95fcc3e0f0738057aa9af4fa2175760ea00a5aaaa41ac16ea5b14b5586b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Configuring your site's behavior through docusaurus.config.js and more.\n---",
+      "source_content_hash": "ad4dd449847fe3a7ec79b3e93040e19ab34e35ebda522b01e202645a9e9124ca",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Configuration",
+      "source_content_hash": "2161b63730b0bebc097c747fcb2b4018682d66ce6b34c43dd9db4585ddb5d1c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import TOCInline from '@theme/TOCInline';",
+      "source_content_hash": "ecff7723b46248a52769f838f3a77ee791a6d3aec15d8cdb3775b3879ab251c6",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Docusaurus has a unique take on configurations. We encourage you to congregate information about your site into one place. We guard the fields of this file and facilitate making this data object accessible across your site.",
+      "source_content_hash": "537df768c429ff5bd1b18870e0d3c1c888379c90cf7d379a27f47c2ba58b5f61",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Keeping a well-maintained `docusaurus.config.js` helps you, your collaborators, and your open source contributors to be able to focus on documentation while still being able to customize the site.",
+      "source_content_hash": "94dcbb7e8bc32e97eba0ab8d3bda93dcc3b68a0e1f0a1b150019310b907866e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## What goes into a `docusaurus.config.js`? {#what-goes-into-a-docusaurusconfigjs}",
+      "source_content_hash": "057ebc77fccfe15b2b9ee022f3619409a2e81d01dfb3813c6cfa611eb1d5af1f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "You should not have to write your `docusaurus.config.js` from scratch even if you are developing your site. All templates come with a `docusaurus.config.js` that includes defaults for the common options.",
+      "source_content_hash": "258dd9d6fa60d0bd050e12bf206c0017ce38df368993895f6984b549b208a881",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "However, it can be helpful if you have a high-level understanding of how the configurations are designed and implemented.",
+      "source_content_hash": "540c629c6c66f180d6526cb5d60240213903400443c0084654bf67c8042e8e29",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "The high-level overview of Docusaurus configuration can be categorized into:",
+      "source_content_hash": "cba3362530a7eafa4c2662b849ac7039fbd4018efa3b5e66475bdb2dd46c9f71",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1485a88b",
+      "source_content": "<TOCInline toc={toc} minHeadingLevel={3} maxHeadingLevel={3} />",
+      "source_content_hash": "27e7b9a75431ca12bc67decc04bda0aa26a7c8e45e1e5065d6bde3b76207cc47",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "For exact reference to each of the configurable fields, you may refer to [**`docusaurus.config.js` API reference**](api/docusaurus.config.js.mdx).",
+      "source_content_hash": "6bc1026a774a8e7898dc5aba9ee20321ddc3a1cfdeaf847cb8b51c47fac6d69b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "### Site metadata {#site-metadata}",
+      "source_content_hash": "70b1e544df8a4d73539619946dd0826dfd71e87eaa395f11352fe4eac7d1ac7e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Site metadata contains the essential global metadata such as `title`, `url`, `baseUrl`, and `favicon`.",
+      "source_content_hash": "8c987fe0459310cf9dc5587eaeabfa4dfdf1c3abea2e6559f1ed0fac321b4b01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "They are used in several places such as your site's title and headings, browser tab icon, social sharing (Facebook, X) information or even to generate the correct path to serve your static files.",
+      "source_content_hash": "2bcb19401b7da0f171bbd59da96a696c0a995753432371546aa4c3d2bf94f37c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "### Deployment configurations {#deployment-configurations}",
+      "source_content_hash": "db17de22cf36d16914ba65c4326c9a31f00a0d980d0a85b5e1e465c587e5db4d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Deployment configurations such as `projectName`, `organizationName`, and optionally `deploymentBranch` are used when you deploy your site with the `deploy` command.",
+      "source_content_hash": "23b815074efa39169b64713de02c10983ec30eb87eadbf44371f4b86f2113337",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "It is recommended to check the [deployment docs](deployment.mdx) for more information.",
+      "source_content_hash": "d48ad21aef7f1323c33d37f691bc3846d531805f9159e1c26c69ae7e9459421c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "### Theme, plugin, and preset configurations {#theme-plugin-and-preset-configurations}",
+      "source_content_hash": "9bfb9a0c3b05e4bc8be015d11075c5b12278ed3447a5f2db611cd051dbcc4692",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "List the [themes](./using-plugins.mdx#using-themes), [plugins](./using-plugins.mdx), and [presets](./using-plugins.mdx#using-presets) for your site in the `themes`, `plugins`, and `presets` fields, respectively. These are typically npm packages:",
+      "source_content_hash": "39abaf0ed2ad3af6130930ec99431f1f7ebcb8674947e0a1af8c2a952a13b80d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "bca33820",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  plugins: [\n    '@docusaurus/plugin-content-blog',\n    '@docusaurus/plugin-content-pages',\n  ],\n  themes: ['@docusaurus/theme-classic'],\n};\n```",
+      "source_content_hash": "1dced5765e989c3898b734665ee6cbe83b70ce29c23179233e862d75001eb544",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a646eac9",
+      "source_content": ":::tip\n\nDocusaurus supports [**module shorthands**](./using-plugins.mdx#module-shorthands), allowing you to simplify the above configuration as:\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  plugins: ['content-blog', 'content-pages'],\n  themes: ['classic'],\n};\n```\n\n:::",
+      "source_content_hash": "6c6f97f0c96e6f6da5ad8bfaf0e058dcf6f8c0ce66074556c9770e1f1d23c8ef",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "They can also be loaded from local directories:",
+      "source_content_hash": "dc1cf28031ee0b5c8e3847ed9d07ae686639459c658df4fa212c4a78d8efc55b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nconst path = require('path');\n\nmodule.exports = {\n  // ...\n  themes: [path.resolve(__dirname, '/path/to/docusaurus-local-theme')],\n};\n```",
+      "source_content_hash": "87764916c1a7a0ba968f9da8b256094c5e6bb22204323abca1cf4a23e8430351",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "To specify options for a plugin or theme, replace the name of the plugin or theme in the config file with an array containing the name and an options object:",
+      "source_content_hash": "5e016cbee0f1633f1017408be255ce55fb54f2729bea245a5475c70d88043969",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a89f84e1",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  plugins: [\n    [\n      'content-blog',\n      {\n        path: 'blog',\n        routeBasePath: 'blog',\n        include: ['*.md', '*.mdx'],\n        // ...\n      },\n    ],\n    'content-pages',\n  ],\n};\n```",
+      "source_content_hash": "bfb0cfda766cb20d725d3a56f3903284263de14c1c4189d4b02d943fd4747d99",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "To specify options for a plugin or theme that is bundled in a preset, pass the options through the `presets` field. In this example, `docs` refers to `@docusaurus/plugin-content-docs` and `theme` refers to `@docusaurus/theme-classic`.",
+      "source_content_hash": "62212aed9d9402d2f0824f454173549707c3096d5a6b40a42e84dbe86e3e14ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          sidebarPath: require.resolve('./sidebars.js'),\n        },\n        theme: {\n          customCss: [require.resolve('./src/css/custom.css')],\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "c75b09a862cea6f3bcbe685ebfa4015440a632fc7c6d07fae853ce826c980bf2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9fe460fc",
+      "source_content": ":::tip\n\nThe `presets: [['classic', {...}]]` shorthand works as well.\n\n:::",
+      "source_content_hash": "f82a0a1bfc12fa1dc5d14a8c72800f2312755fa11e0b23e3b7e2a1db5519f3f0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "For further help configuring themes, plugins, and presets, see [Using Plugins](./using-plugins.mdx).",
+      "source_content_hash": "20a416d35fa38a569fc9502969d01ebd06d511ec8e0733e49093992e115ab7d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "47516512",
+      "source_content": "### Custom configurations {#custom-configurations}",
+      "source_content_hash": "6858874a4c31ca23610d21709380d52cc9e5e540037afb2afbafef6993c9a2c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "Docusaurus guards `docusaurus.config.js` from unknown fields. To add custom fields, define them in `customFields`.",
+      "source_content_hash": "bcaad8d42da7b59eb9ba89a193a18f0ec8ddbff227f7c710b02d4a3a69d952c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b474abd5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // ...\n  // highlight-start\n  customFields: {\n    image: '',\n    keywords: [],\n  },\n  // highlight-end\n  // ...\n};\n```",
+      "source_content_hash": "3cd25f67aad98693664819ef86b66328502b41b484761cdee9eabab373d2f516",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "## Accessing configuration from components {#accessing-configuration-from-components}",
+      "source_content_hash": "5a1d8dea6672f16de84c74985c52df44b3b8cc0b653b3d104f5b478b7a89910a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 從元件存取配置 {#accessing-configuration-from-components}"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "Your configuration object will be made available to all the components of your site. And you may access them via React context as `siteConfig`.",
+      "source_content_hash": "4d7b311a33c72e99c6b66afb4a5105bdbb7931e64d6cd4adea05c075d58adc3d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的配置物件將會提供給網站的所有元件使用。您可以透過 React 上下文以 `siteConfig` 的形式存取這些配置。"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "Basic example:",
+      "source_content_hash": "9c2021470366dfab0a112120d6c5cb7a9c6912e4496d5f3b1339971af009030b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "基本範例："
+      }
+    },
+    {
+      "segment_id": "7d56fc4b",
+      "source_content": "```jsx\nimport React from 'react';\n// highlight-next-line\nimport useDocusaurusContext from '@docusaurus/useDocusaurusContext';\n\nconst Hello = () => {\n  // highlight-start\n  const {siteConfig} = useDocusaurusContext();\n  // highlight-end\n  const {title, tagline} = siteConfig;\n\n  return <div>{`${title} · ${tagline}`}</div>;\n};\n```",
+      "source_content_hash": "d01aa165bdac274fea52b26e24c4a9d713032a759fc47a0be869ceb1021e68a5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d56fc4b"
+      }
+    },
+    {
+      "segment_id": "c5c025c0",
+      "source_content": ":::tip\n\nIf you just want to use those fields on the client side, you could create your own JS files and import them as ES6 modules, there is no need to put them in `docusaurus.config.js`.\n\n:::",
+      "source_content_hash": "7d04efddd1b5b308d4a222db2b9ad4fe50d750a4a5372eae425d8035cfc0f741",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n如果您只想在客戶端使用這些欄位，可以建立自己的 JS 檔案並將其作為 ES6 模組導入，無需將它們放入 `docusaurus.config.js` 中。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "89b740fe",
+      "source_content": "## Customizing Babel Configuration {#customizing-babel-configuration}",
+      "source_content_hash": "86d0b6dc2284010f48a7f9fecb07614f8760c7ecf6e7dd1da9f823a9f2b5eff2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 自訂 Babel 配置 {#customizing-babel-configuration}"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "For new Docusaurus projects, we automatically generated a `babel.config.js` in the project root.",
+      "source_content_hash": "acc55c8109c88046d2430e1a3aacd75b35e0497f39ef04ce61466aff12f558ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於新的 Docusaurus 專案，我們會自動在專案根目錄生成一個 `babel.config.js` 檔案。"
+      }
+    },
+    {
+      "segment_id": "5010ec34",
+      "source_content": "```js title=\"babel.config.js\"\nmodule.exports = {\n  presets: [require.resolve('@docusaurus/core/lib/babel/preset')],\n};\n```",
+      "source_content_hash": "851452113d1da21dadded08d3222bdd3f67040ea9406e92cc13b08486fd20eec",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5010ec34"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "Most of the time, this configuration will work just fine. If you want to customize your Babel configuration (e.g. to add support for Flow), you can directly edit this file. For your changes to take effect, you need to restart the Docusaurus dev server.",
+      "source_content_hash": "16d91953d81062b88e7cb9d874f985d69bbb3b3bb720110d6c67018bbacfa86a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "大多數情況下，這個配置都能正常運作。如果您想自訂 Babel 配置（例如新增 Flow 支援），可以直接編輯這個檔案。要使變更生效，您需要重新啟動 Docusaurus 開發伺服器。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/configuration.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.042889+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "a206e95fcc3e0f0738057aa9af4fa2175760ea00a5aaaa41ac16ea5b14b5586b"
+  }
+}

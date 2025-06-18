@@ -1,0 +1,682 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.2.1/blog.mdx",
+  "source_file_content_hash": "75b06390487b68f2a8bcbee47065360a006a3fcddb56d69adf6ddf1342a38b8a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Deploy a full-featured blog in no time with Docusaurus.\n---",
+      "source_content_hash": "7c17335f49f88127dc5c5fc5d9109dbb70f2995d0ea21d76e2b68db0802a06e5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Blog",
+      "source_content_hash": "5bf138ccc259e7faffdf8c0082a86bc8480776c8fb450947fe726b925ab752ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+      "source_content_hash": "86702643a5c3bdf74257ff6062535897129ed9144c4f5b70edfe338fef3e5c73",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The blog feature enables you to deploy a full-featured blog in no time.",
+      "source_content_hash": "d62e46726a3e068af154f1d1622fc2e7419020e8314c8c6b0111fde7797c1355",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::info\n\nCheck the [Blog Plugin API Reference documentation](./api/plugins/plugin-content-blog.mdx) for an exhaustive list of options.\n\n:::",
+      "source_content_hash": "0087201e27369baededa9d9737dce595421fcfdcc7e134bd26a07919244cd85a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Initial setup {#initial-setup}",
+      "source_content_hash": "69e5595bf7d0beea285bd2d36a303c85aa3c271f7dbb32b20ac7d18b3abb05e1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "To set up your site's blog, start by creating a `blog` directory.",
+      "source_content_hash": "4018e187f0ee95a16b73999010b52b59e76a79ce68e5b54024cb0f5b9475eb20",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Then, add an item link to your blog within `docusaurus.config.js`:",
+      "source_content_hash": "e1e214c85b2e70a291416ffa75b4a0ab3d61896ead9fca6c882b4dc274ed357e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    // ...\n    navbar: {\n      items: [\n        // ...\n        // highlight-next-line\n        {to: 'blog', label: 'Blog', position: 'left'}, // or position: 'right'\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "996dc4043a18f3b100e0a001e3500463cfff1b974b330af8c2e3b6cb4b90ad79",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## Adding posts {#adding-posts}",
+      "source_content_hash": "8f9bddafd9403eacc1a4d27c02034b211ccd086263d38ef487422fbc89af4a44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "To publish in the blog, create a Markdown file within the blog directory.",
+      "source_content_hash": "b80a08f0b2e4f9d22c40542a7d14f9c0fd26874ace1edd1fc0b7d1545039cd42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "For example, create a file at `website/blog/2019-09-05-hello-docusaurus.md`:",
+      "source_content_hash": "fa7c5de93a98b81b9990bbbae6823ca5b11bc74c6f272bf2478969e49613fbc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```md title=\"website/blog/2019-09-05-hello-docusaurus.md\"\n---\ntitle: Welcome Docusaurus\ndescription: This is my first post on Docusaurus.\nslug: welcome-docusaurus-v2\nauthors:\n  - name: Joel Marcey\n    title: Co-creator of Docusaurus 1\n    url: https://github.com/JoelMarcey\n    image_url: https://github.com/JoelMarcey.png\n  - name: Sébastien Lorber\n    title: Docusaurus maintainer\n    url: https://sebastienlorber.com\n    image_url: https://github.com/slorber.png\ntags: [hello, docusaurus-v2]\nimage: https://i.imgur.com/mErPwqL.png\nhide_table_of_contents: false\n---\n\nWelcome to this blog. This blog is created with [**Docusaurus 2**](https://docusaurus.io/).\n\n<!-- truncate -->\n\nThis is my first post on Docusaurus 2.\n\nA whole bunch of exploration to follow.\n```",
+      "source_content_hash": "09bd6cb5b53d37ad5bc41f2ba2f955275d4fb8116a0d090e1b15a1998927b9c6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "The [front matter](./guides/markdown-features/markdown-features-intro.mdx#front-matter) is useful to add more metadata to your blog post, for example, author information, but Docusaurus will be able to infer all necessary metadata without the front matter. For all possible fields, see [the API documentation](api/plugins/plugin-content-blog.mdx#markdown-front-matter).",
+      "source_content_hash": "fd4d8d0011b19af63945f57f77483f047f6b896251d08fbc93605bddbdf29634",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Blog list {#blog-list}",
+      "source_content_hash": "a8b424cb6d5915b155212b1ec8168de179c6e390f97d70277d01c06d26bcb4a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "The blog's index page (by default, it is at `/blog`) is the _blog list page_, where all blog posts are collectively displayed.",
+      "source_content_hash": "7d66631087a94d7a2676d10d8bcf1ff265131bbf7382fabb8ac3c12bf702525d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Use the `<!--truncate-->` marker in your blog post to represent what will be shown as the summary when viewing all published blog posts. Anything above `<!--truncate-->` will be part of the summary. Note that the portion above the truncate marker must be standalone renderable Markdown. For example:",
+      "source_content_hash": "4c00190787425d034d696db20dfc643105e6a6001c5d83bb1049fe23fee3ba80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9f4336b3",
+      "source_content": "```md title=\"website/blog/my-post.md\" {7}\n---\ntitle: Markdown blog truncation example\n---\n\nAll these will be part of the blog post summary.\n\n<!-- truncate -->\n\nBut anything from here on down will not be.\n```",
+      "source_content_hash": "a9df1a1302695c276b458a68da91ddc213b62e8f4b3be41dd38247cefd56a400",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "For files using the `.mdx` extension, use a [MDX](https://mdxjs.com/) comment `{/* truncate */}` instead:",
+      "source_content_hash": "c2eb8f15070e708c3d4d4bd18df87f0982ba905db8b31affa120ea57caa64749",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "19913a56",
+      "source_content": "```md title=\"website/blog/my-post.mdx\" {7}\n---\ntitle: MDX blog truncation Example\n---\n\nAll these will be part of the blog post summary.\n\n{/* truncate */}\n\nBut anything from here on down will not be.\n```",
+      "source_content_hash": "1c84e52da305d7ff18e0e8bb6fdf9c2e9ecc866f6dbb4a9c3a915cacac140f82",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "By default, 10 posts are shown on each blog list page, but you can control pagination with the `postsPerPage` option in the plugin configuration. If you set `postsPerPage: 'ALL'`, pagination will be disabled and all posts will be displayed on the first page. You can also add a meta description to the blog list page for better SEO:",
+      "source_content_hash": "bad89dd6609577ace2cc2aa703fcf396bc3d3347aa4411182b29514e8e7742bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7ded566f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          blogTitle: 'Docusaurus blog!',\n          blogDescription: 'A Docusaurus powered blog!',\n          postsPerPage: 'ALL',\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "1dd6bb9981477b20fa35f0b7a7864813e81bf34e17590ce1f5e532327f5052fe",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4dd6a631",
+      "source_content": "## Blog sidebar {#blog-sidebar}",
+      "source_content_hash": "a75474e58880cab410bf17aaf151434907f842c2d1b572a35705db493bbc68c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "The blog sidebar displays recent blog posts. The default number of items shown is 5, but you can customize with the `blogSidebarCount` option in the plugin configuration. By setting `blogSidebarCount: 0`, the sidebar will be completely disabled, with the container removed as well. This will increase the width of the main container. Specially, if you have set `blogSidebarCount: 'ALL'`, _all_ posts will be displayed.",
+      "source_content_hash": "cc2b0cfe1cb7bc904a64bd051c00445fed5d86e3d1e5d3f93cb43291d37d88a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "You can also alter the sidebar heading text with the `blogSidebarTitle` option. For example, if you have set `blogSidebarCount: 'ALL'`, instead of the default \"Recent posts\", you may rather make it say \"All posts\":",
+      "source_content_hash": "4f0bee6e6a7ceb99ec8780bf3dbd5e3d73d9f16c219577efc2ce10e00a89401b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "601bdf38",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          blogSidebarTitle: 'All posts',\n          blogSidebarCount: 'ALL',\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "f55ba6a35e3199f4b730fe41080a5dfc6b3b5fb38c8b86578f87b3488d24aa72",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b77e7669",
+      "source_content": "## Blog post date {#blog-post-date}",
+      "source_content_hash": "435d71934594210d73ba83a4cdf4c23b626ba2b657f0e1cb0768f5fa6db46ea3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "619c3209",
+      "source_content": "Docusaurus will extract a `YYYY-MM-DD` date from many patterns such as `YYYY-MM-DD-my-blog-post-title.md` or `YYYY/MM/DD/my-blog-post-title.md`. This enables you to easily group blog posts by year, by month, or to use a flat structure.",
+      "source_content_hash": "aea54c7fc87ff0c77babac8a2435967c321263bacfb4faf94ae84ec7ee6604d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "24d53e93",
+      "source_content": "<details>\n<summary>Supported date extraction patterns</summary>\n\n| Pattern | Example |\n| --- | --- |\n| Single file | `2021-05-28-my-blog-post-title.md` |\n| MDX file | `2021-05-28-my-blog-post-title.mdx` |\n| Single folder + `index.md` | `2021-05-28-my-blog-post-title/index.md` |\n| Folder named by date | `2021-05-28/my-blog-post-title.md` |\n| Nested folders by date | `2021/05/28/my-blog-post-title.md` |\n| Partially nested folders by date | `2021/05-28-my-blog-post-title.md` |\n| Nested folders + `index.md` | `2021/05/28/my-blog-post-title/index.md` |\n| Date in the middle of path | `category/2021/05-28-my-blog-post-title.md` |\n\nDocusaurus can extract the date from the posts using any of the naming patterns above. It is advisable to choose one pattern and apply it to all posts to avoid confusion.\n\n</details>",
+      "source_content_hash": "a346fbfc3f5caf01fdbd8905f451e4414e2f4c8ee56b2e9c3d33ca85d616e6de",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1699f2b9",
+      "source_content": ":::tip\n\nUsing a folder can be convenient to co-locate blog post images alongside the Markdown file.\n\n:::",
+      "source_content_hash": "5d50a1e3b28a4419a88cf7aae7c548f5df5d45f48ea1166a0e414889658ad1e6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "This naming convention is optional, and you can also provide the date as front matter. Since the front matter follows YAML syntax where the datetime notation is supported, you can use front matter if you need more fine-grained publish dates. For example, if you have multiple posts published on the same day, you can order them according to the time of the day:",
+      "source_content_hash": "bfbd66723e0be9de51c396b9915a179504ea98bab3d2f6f5a073e62c12c89e52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8185786b",
+      "source_content": "```md title=\"earlier-post.md\"\n---\ndate: 2021-09-13T10:00\n---\n```",
+      "source_content_hash": "1602e9c82b5edf6ef516f217a82fdb0666e17c1b7799da7224cf79750828dbab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d7c0a6db",
+      "source_content": "```md title=\"later-post.md\"\n---\ndate: 2021-09-13T18:00\n---\n```",
+      "source_content_hash": "bbf928c7b337f41d5357a95f4fd5529f9d170c29a7fe04a6b04f65c38e740b57",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "de588fa2",
+      "source_content": "## Blog post authors {#blog-post-authors}",
+      "source_content_hash": "c9b6da71e076c6871f0fc27b3a7c2bf20fca0925df923a73a34102b7ea3b9f2b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3799844b",
+      "source_content": "Use the `authors` front matter field to declare blog post authors. An author should have at least a `name` or an `image_url`. Docusaurus uses information like `url`, `email`, and `title`, but any other information is allowed.",
+      "source_content_hash": "5f7139cd989af42e9faadccc51bd299ca5031226f0b23b009ebbae080b183046",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8159e12a",
+      "source_content": "### Inline authors {#inline-authors}",
+      "source_content_hash": "3c987849a5211147ebd62e8ff6310dd755f7c05d7864de94cd76938ea28c21ee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6e5d54a8",
+      "source_content": "Blog post authors can be declared directly inside the front matter:",
+      "source_content_hash": "e12aa0633f72c7822034bc148414faa907240cd350634f553267e4abde01a952",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "bf3146e1",
+      "source_content": "```mdx-code-block\n<Tabs groupId=\"author-front-matter\">\n<TabItem value=\"single\" label=\"Single author\">\n```",
+      "source_content_hash": "7a67d80cc92d59d20a990680695ef796a8c0beca11a4ee9f581adec6f789b74f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5b2e44c7",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors:\n  name: Joel Marcey\n  title: Co-creator of Docusaurus 1\n  url: https://github.com/JoelMarcey\n  image_url: https://github.com/JoelMarcey.png\n  email: jimarcey@gmail.com\n---\n```",
+      "source_content_hash": "d3debeebade75dbd61a1ebf7b8d47940f550d989697132e845832072bf856e54",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "eff3427d",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"multiple\" label=\"Multiple authors\">\n```",
+      "source_content_hash": "bfa1bcae7f11c728ef5c3d45e10f162d01c4f915e74d3cfe896d75273166d02e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1be6af7b",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors:\n  - name: Joel Marcey\n    title: Co-creator of Docusaurus 1\n    url: https://github.com/JoelMarcey\n    image_url: https://github.com/JoelMarcey.png\n    email: jimarcey@gmail.com\n  - name: Sébastien Lorber\n    title: Docusaurus maintainer\n    url: https://sebastienlorber.com\n    image_url: https://github.com/slorber.png\n---\n```",
+      "source_content_hash": "6951c7f259690ec9e6a57e4d2cc859e7f7c4bfb8e4c69bc022af6383fc9e752e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "2f24891a",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6be537d9",
+      "source_content": ":::tip\n\nThis option works best to get started, or for casual, irregular authors.\n\n:::",
+      "source_content_hash": "64dc25b657ed6422f28acffdc0084885dc5004f62a7b2d4c9f254691d4f11b63",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d87c9fd2",
+      "source_content": ":::info\n\nPrefer using the `authors` front matter, but the legacy `author_*` front matter remains supported:\n\n```md title=\"my-blog-post.md\"\n---\nauthor: Joel Marcey\nauthor_title: Co-creator of Docusaurus 1\nauthor_url: https://github.com/JoelMarcey\nauthor_image_url: https://github.com/JoelMarcey.png\n---\n```\n\n:::",
+      "source_content_hash": "de0f6dced4d7928dbf6ab29da1627aa5e949d36184ec319ce7f8056c1ca32080",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fe3afe38",
+      "source_content": "### Global authors {#global-authors}",
+      "source_content_hash": "0dcd7fef910d37a3db84eb2c22cfbee6d15824aa7c7a8e5a05aed32d2c5b8e7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f50056c0",
+      "source_content": "For regular blog post authors, it can be tedious to maintain authors' information inlined in each blog post.",
+      "source_content_hash": "ec78ea9c115c1fe606c95e6e0f2478a591194be0fe7dc8e874a852589e2fc576",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "30aa9816",
+      "source_content": "It is possible to declare those authors globally in a configuration file:",
+      "source_content_hash": "a82780c19e27d0a6332fbef0a78a029dd8211435788cbd690b0c9c5928e38c4b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d76894b4",
+      "source_content": "```yml title=\"website/blog/authors.yml\"\njmarcey:\n  name: Joel Marcey\n  title: Co-creator of Docusaurus 1\n  url: https://github.com/JoelMarcey\n  image_url: https://github.com/JoelMarcey.png\n  email: jimarcey@gmail.com\n\nslorber:\n  name: Sébastien Lorber\n  title: Docusaurus maintainer\n  url: https://sebastienlorber.com\n  image_url: https://github.com/slorber.png\n```",
+      "source_content_hash": "0dfd5354c7a4ce9eb9a2f5cc27b0d5df531ba67bb95ce03c6fa649f994a6b613",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1df5df70",
+      "source_content": ":::tip\n\nUse the `authorsMapPath` plugin option to configure the path. JSON is also supported.\n\n:::",
+      "source_content_hash": "f0ab4cc24e241be6de32da66fbe25f078bbb3718514f76c1a345fa8a112a9b2c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "850ec775",
+      "source_content": "In blog posts front matter, you can reference the authors declared in the global configuration file:",
+      "source_content_hash": "c8257426861ccc3d080d4ed5678a5d6ea40aa03531bc4d4f61b6e62a6995eff0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7e9a9732",
+      "source_content": "```mdx-code-block\n<Tabs groupId=\"author-front-matter\">\n<TabItem value=\"single\" label=\"Single author\">\n```",
+      "source_content_hash": "7a67d80cc92d59d20a990680695ef796a8c0beca11a4ee9f581adec6f789b74f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6c91a0a1",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors: jmarcey\n---\n```",
+      "source_content_hash": "7e95a0826797b318d03282759e6c7eceb8aa9c995f7e7456767f5e8306daea9f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9b048e5d",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"multiple\" label=\"Multiple authors\">\n```",
+      "source_content_hash": "bfa1bcae7f11c728ef5c3d45e10f162d01c4f915e74d3cfe896d75273166d02e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7d27bd2e",
+      "source_content": "```md title=\"my-blog-post.md\"\n---\nauthors: [jmarcey, slorber]\n---\n```",
+      "source_content_hash": "e87218b46e096eb83d61544861ccc2490626d4a7dc574571bcebb679318c5b04",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d7bc17bf",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "89bf9f7b",
+      "source_content": ":::info\n\nThe `authors` system is very flexible and can suit more advanced use-case:\n\n<details>\n  <summary>Mix inline authors and global authors</summary>\n\nYou can use global authors most of the time, and still use inline authors:\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - jmarcey\n  - slorber\n  - name: Inline Author name\n    title: Inline Author Title\n    url: https://github.com/inlineAuthor\n    image_url: https://github.com/inlineAuthor\n---\n```\n\n</details>\n\n<details>\n  <summary>Local override of global authors</summary>\n\nYou can customize the global author's data on per-blog-post basis:\n\n```md title=\"my-blog-post.md\"\n---\nauthors:\n  - key: jmarcey\n    title: Joel Marcey's new title\n  - key: slorber\n    name: Sébastien Lorber's new name\n---\n```\n\n</details>\n\n<details>\n  <summary>Localize the author's configuration file</summary>\n\nThe configuration file can be localized, just create a localized copy of it at:\n\n```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-blog/authors.yml\n```\n\n</details>\n\n:::",
+      "source_content_hash": "3a5e4d9b0bbbf897a5c64cbcb7e3456f85584a4786574b2d50c1be91b16fdc60",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "323eea94",
+      "source_content": "An author, either declared through front matter or through the authors map, needs to have a name or an avatar, or both. If all authors of a post don't have names, Docusaurus will display their avatars compactly. See [this test post](/tests/blog/2022/01/20/image-only-authors) for the effect.",
+      "source_content_hash": "50fe756fccf2bd52ba708583af1ce46c97e7853c0921e765f7a946c3412a6c1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0ac4ea6c",
+      "source_content": ":::warning[Feed generation]\n\n[RSS feeds](#feed) require the author's email to be set for the author to appear in the feed.\n\n:::",
+      "source_content_hash": "d018b7d84a0c5a8331f82297972785a3c44d3ceaa97bb05ec124b3fbb2a2c44e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "357f5c2e",
+      "source_content": "## Reading time {#reading-time}",
+      "source_content_hash": "79099e518db46001faef6d261cb1799e4cdcce4238a9b8907176bf2e8c947709",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4da1b99c",
+      "source_content": "Docusaurus generates a reading time estimation for each blog post based on word count. We provide an option to customize this.",
+      "source_content_hash": "17505e130b082f7e22bd3bb48f2bf44173c86f8fadb98cfc9be2f75a46496b6a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "fb74007a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          showReadingTime: true, // When set to false, the \"x min read\" won't be shown\n          readingTime: ({content, frontMatter, defaultReadingTime}) =>\n            defaultReadingTime({content, options: {wordsPerMinute: 300}}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "14ac2b20a74780afb7438f5646b95f32163cb530c0f9cb513f59739595312a23",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f6c8bbba",
+      "source_content": "The `readingTime` callback receives three parameters: the blog content text as a string, front matter as a record of string keys and their values, and the default reading time function. It returns a number (reading time in minutes) or `undefined` (disable reading time for this page).",
+      "source_content_hash": "2fc17c1eea3bc494daefd311b45706978a29b7b3552ee99b40a0b0dc0063d9ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ff95ec03",
+      "source_content": "The default reading time is able to accept additional options: `wordsPerMinute` as a number (default: 300), and `wordBound` as a function from string to boolean. If the string passed to `wordBound` should be a word bound (spaces, tabs, and line breaks by default), the function should return `true`.",
+      "source_content_hash": "0b850e98e6535954f71057a6aab8e3fcf7ac4b27131e972435c35fce7921eb2b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3a6eeda5",
+      "source_content": ":::tip\n\nUse the callback for all your customization needs:\n\n```mdx-code-block\n<Tabs>\n<TabItem value=\"disable-per-post\" label=\"Per-post disabling\">\n```\n\n**Disable reading time on one page:**\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          showReadingTime: true,\n          // highlight-start\n          readingTime: ({content, frontMatter, defaultReadingTime}) =>\n            frontMatter.hide_reading_time\n              ? undefined\n              : defaultReadingTime({content}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\nUsage:\n\n```md \"my-blog-post.md\"\n---\nhide_reading_time: true\n---\n\nThis page will no longer display the reading time stats!\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"passing-options\" label=\"Passing options\">\n```\n\n**Pass options to the default reading time function:**\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          readingTime: ({content, defaultReadingTime}) =>\n            defaultReadingTime({content, options: {wordsPerMinute: 100}}),\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n<TabItem value=\"using-custom-algo\" label=\"Using custom algorithms\">\n```\n\n**Use a custom implementation of reading time:**\n\n```js title=\"docusaurus.config.js\"\nimport myReadingTime from './myReadingTime';\n\nexport default {\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-next-line\n          readingTime: ({content}) => myReadingTime(content),\n        },\n      },\n    ],\n  ],\n};\n```\n\n```mdx-code-block\n</TabItem>\n</Tabs>\n```\n\n:::",
+      "source_content_hash": "7044607525785a3815c87b7085267edb4cfe7005a198fe93701e96900a8f5631",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4439f5f5",
+      "source_content": "## Feed {#feed}",
+      "source_content_hash": "4cda86523dec40e9f2c9a26b7cfdc0dc177cf7814f94d0326e25cbac29804365",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d82906fc",
+      "source_content": "You can generate RSS / Atom / JSON feed by passing `feedOptions`. By default, RSS and Atom feeds are generated. To disable feed generation, set `feedOptions.type` to `null`.",
+      "source_content_hash": "6792cbdc35a8ab7364f56b05a64ae1545f5cbc0d78a8f585ea6c4ef7020c91de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1a51fda5",
+      "source_content": "```ts\ntype FeedType = 'rss' | 'atom' | 'json';\n\ntype BlogOptions = {\n  feedOptions?: {\n    type?: FeedType | 'all' | FeedType[] | null;\n    title?: string;\n    description?: string;\n    copyright: string;\n    language?: string; // possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes\n    limit?: number | false | null; // defaults to 20\n    /** Allow control over the construction of BlogFeedItems */\n    createFeedItems?: (params: {\n      blogPosts: BlogPost[];\n      siteConfig: DocusaurusConfig;\n      outDir: string;\n      defaultCreateFeedItems: (params: {\n        blogPosts: BlogPost[];\n        siteConfig: DocusaurusConfig;\n        outDir: string;\n      }) => Promise<BlogFeedItem[]>;\n    }) => Promise<BlogFeedItem[]>;\n  };\n};\n```",
+      "source_content_hash": "2d14c75da28b224440f6d935c2608aeb2616374d6af84b7fb29e6dd3c624b555",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "aad65e01",
+      "source_content": "Example usage:",
+      "source_content_hash": "21eddf0bab8eb72f66078a107da27d93c6221bf506374c84a693bb4b5f15983c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7c7c6915",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        blog: {\n          // highlight-start\n          feedOptions: {\n            type: 'all',\n            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,\n            createFeedItems: async (params) => {\n              const {blogPosts, defaultCreateFeedItems, ...rest} = params;\n              return defaultCreateFeedItems({\n                // keep only the 10 most recent blog posts in the feed\n                blogPosts: blogPosts.filter((item, index) => index < 10),\n                ...rest,\n              });\n            },\n          },\n          // highlight-end\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "97b0483c8a783539dfc467e71868f6ce8036e1191b9c223fe4e3cec971c558d9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5591470c",
+      "source_content": "The feeds can be found at:",
+      "source_content_hash": "276bbb5fdf0cd7e336a68cdf62017f883dee0ed88206c953eea77618533ca5e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f9bee8ee",
+      "source_content": "<Tabs>\n<TabItem value=\"RSS\">\n\n```text\nhttps://example.com/blog/rss.xml\n```\n\n</TabItem>\n<TabItem value=\"Atom\">\n\n```text\nhttps://example.com/blog/atom.xml\n```\n\n</TabItem>\n<TabItem value=\"JSON\">\n\n```text\nhttps://example.com/blog/feed.json\n```\n\n</TabItem>\n</Tabs>",
+      "source_content_hash": "19bbd8ffed49643dc845b3fbd1b51928419c35c5d45df0c64468fb3e98107489",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c1c9d70b",
+      "source_content": "## Advanced topics {#advanced-topics}",
+      "source_content_hash": "b9b77f5f1c804877cdf7105bd1647584ff49e49c6956b101e25dae194816e40c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9f1e5bd3",
+      "source_content": "### Blog-only mode {#blog-only-mode}",
+      "source_content_hash": "d817b78d48a44726d30659ff183c73000d1f289f76d75a5c3de6dad45d8edbef",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "efd1b767",
+      "source_content": "You can run your Docusaurus site without a dedicated landing page and instead have your blog's post list page as the index page. Set the `routeBasePath` to be `'/'` to serve the blog through the root route `example.com/` instead of the subroute `example.com/blog/`.",
+      "source_content_hash": "411c070e4b4d8bcc434e64d6f5578c1981ed055926e943a794ae1cd4ad03c2e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9d22e476",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        // highlight-next-line\n        docs: false, // Optional: disable the docs plugin\n        blog: {\n          // highlight-next-line\n          routeBasePath: '/', // Serve the blog at the site's root\n          /* other blog options */\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "377e2fb35d19bad1ea0d1e4b2cc2ce194ec29468da37793756c88febee4f574b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7a99187a",
+      "source_content": ":::warning\n\nDon't forget to delete the existing homepage at `./src/pages/index.js` or else there will be two files mapping to the same route!\n\n:::",
+      "source_content_hash": "8e357c9bf6372d7c136a7787c33660eec05551548ca2e9a339c2494286bc966d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4f7fc470",
+      "source_content": ":::warning\n\nIf you disable the docs plugin, don't forget to delete references to the docs plugin elsewhere in your configuration file. Notably, make sure to remove the docs-related navbar items.\n\n:::",
+      "source_content_hash": "fbe5d9e7da1290b1b4aebbb79fbfd7f850a5e74fd4eb7841004cea6cb9e5b5e9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "955f62fa",
+      "source_content": ":::tip\n\nThere's also a \"Docs-only mode\" for those who only want to use the docs. Read [Docs-only mode](./guides/docs/docs-introduction.mdx) for detailed instructions or a more elaborate explanation of `routeBasePath`.\n\n:::",
+      "source_content_hash": "46d6f6645e61ea3c9e34c0ea898185132da9501588c3f769b7f4032b00ef3fed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f9f3ab14",
+      "source_content": "### Multiple blogs {#multiple-blogs}",
+      "source_content_hash": "22cb888529955c99102141c5ce9e4f5282147971e96029986a55b411f6204185",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7a2e388c",
+      "source_content": "By default, the classic theme assumes only one blog per website and hence includes only one instance of the blog plugin. If you would like to have multiple blogs on a single website, it's possible too! You can add another blog by specifying another blog plugin in the `plugins` option for `docusaurus.config.js`.",
+      "source_content_hash": "1e1b75f4e412737e1a6def3811a3365c889adb8ca52a5e20167878af2e46335e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "359ebb36",
+      "source_content": "Set the `routeBasePath` to the URL route that you want your second blog to be accessed on. Note that the `routeBasePath` here has to be different from the first blog or else there could be a collision of paths! Also, set `path` to the path to the directory containing your second blog's entries.",
+      "source_content_hash": "670c64da509d9cd73703cd96581c209e41fdf22394fdc2ef0c3eb893002c1044",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "9044a765",
+      "source_content": "As documented for [multi-instance plugins](./using-plugins.mdx#multi-instance-plugins-and-plugin-ids), you need to assign a unique ID to the plugins.",
+      "source_content_hash": "2a7844ab683e4203bd574587e3c0a90b93f35ecc84659397ea0b6d3d22d14865",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6b20f0d3",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  // ...\n  plugins: [\n    [\n      '@docusaurus/plugin-content-blog',\n      {\n        /**\n         * Required for any multi-instance plugin\n         */\n        id: 'second-blog',\n        /**\n         * URL route for the blog section of your site.\n         * *DO NOT* include a trailing slash.\n         */\n        routeBasePath: 'my-second-blog',\n        /**\n         * Path to data on filesystem relative to site dir.\n         */\n        path: './my-second-blog',\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "d401445dc6607eee87e2907ab3f548659b3b37f268da26558b68820f24cb0c00",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7afc6b04",
+      "source_content": "As an example, we host a second blog [here](/tests/blog).",
+      "source_content_hash": "54db3816cf97bb6e28c24b89c7dae2284a3a56f2a7aefca76c3bdc83f8ee6613",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.2.1/blog.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.853487+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

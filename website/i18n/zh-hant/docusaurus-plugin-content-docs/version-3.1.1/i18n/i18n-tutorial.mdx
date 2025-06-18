@@ -1,0 +1,525 @@
+---
+id: tutorial
+description: This tutorial will walk you through the basics of the Docusaurus i18n system.
+slug: /i18n/tutorial
+---
+
+# 國際化(i18n) - 教學指南
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+本教學將帶您了解 **Docusaurus 國際化系統** 的基本操作。
+
+我們將為 **全新初始化的英文版 Docusaurus 網站** 新增 **法文翻譯**。
+
+使用 `npx create-docusaurus@latest website classic` 初始化新站點（如[此範例](https://github.com/facebook/docusaurus/tree/main/examples/classic)）。
+
+## 配置您的網站 {#configure-your-site}
+
+修改 `docusaurus.config.js` 以新增對法文語言的國際化支援。
+
+### 網站配置 {#site-configuration}
+
+使用 [網站國際化配置](./../api/docusaurus.config.js.mdx#i18n) 來宣告國際化語言環境：
+
+```js title="docusaurus.config.js"
+export default {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'fa'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        direction: 'rtl',
+      },
+    },
+  },
+};
+```
+
+地區名稱用於翻譯文件的存放位置，以及翻譯後語言環境的基礎 URL。當建置所有語言環境時，只有預設語言環境的名稱會從基礎 URL 中省略。
+
+Docusaurus 使用地區名稱提供 **合理的預設值**：`<html lang="...">` 屬性、地區標籤、日曆格式等。您可以使用 `localeConfigs` 自訂這些預設值。
+
+### 主題配置 {#theme-configuration}
+
+新增一個類型為 `localeDropdown` 的 **導航欄項目**，讓使用者可以選擇他們想要的語言環境：
+
+```js title="docusaurus.config.js"
+export default {
+  themeConfig: {
+    navbar: {
+      items: [
+        // highlight-start
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
+        // highlight-end
+      ],
+    },
+  },
+};
+```
+
+:::tip
+
+您可以傳遞一個查詢參數，當使用者使用下拉選單變更語言環境時，該參數會附加到 URL 中（例如 `queryString: '?persistLocale=true'`）。
+
+這對於在伺服器上實作自動語言環境偵測非常有用。例如，您可以使用此參數將使用者偏好的語言環境儲存在 cookie 中。
+
+:::
+
+### 啟動您的網站 {#start-your-site}
+
+以開發模式啟動您的本地化網站，使用您選擇的語言環境：
+
+```bash npm2yarn
+npm run start -- --locale fr
+```
+
+您的網站可透過 [`http://localhost:3000/fr/`](http://localhost:3000/fr/) 存取。
+
+我們尚未提供任何翻譯，因此網站大部分內容仍為未翻譯狀態。
+
+:::tip
+
+Docusaurus 為通用主題標籤提供 **預設翻譯**，例如分頁的「Next」和「Previous」。
+
+請協助我們完善這些 **[預設翻譯](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)**。
+
+:::
+
+:::warning
+
+每個語言環境都是 **獨立的單頁應用程式**：無法同時以所有語言環境啟動 Docusaurus 網站。
+
+:::
+
+## 翻譯您的網站 {#translate-your-site}
+
+所有法文語言環境的翻譯資料都儲存在 `website/i18n/fr` 中。每個插件在對應的資料夾下提供自己的翻譯內容，而 `code.json` 檔案則定義了 React 程式碼中使用的所有文字標籤。
+
+:::note
+
+在複製檔案後，請使用 `npm run start -- --locale fr` 重新啟動您的網站。編輯現有檔案時，熱重載的效果會更好。
+
+:::
+
+### 翻譯您的 React 程式碼 {#translate-your-react-code}
+
+對於您自己編寫的任何 React 程式碼：React 頁面、React 元件等，您將使用 [**翻譯 API**](../docusaurus-core.mdx#translate)。
+
+找出 React 程式碼中所有對使用者可見的文字標籤，並使用翻譯 API 進行標記。API 分為兩種：
+
+- `<Translate>` 元件將字串包裝為 JSX 元素；
+- `translate()` 回呼函式接收訊息並回傳字串。
+
+根據語境語義選擇更適合的用法。例如，`<Translate>` 可作為 React 子元素使用，而對於需要字串的 props 則可使用回調函數。
+
+:::warning
+
+JSX 元素是_物件_而非字串。在預期字串的上下文中使用（例如 [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option) 的子元素）會[強制轉型為字串](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)，導致返回 `"[object Object]"`。雖然我們鼓勵將 `<Translate>` 作為 JSX 子元素使用，但請僅在確實可行的情境下使用元素形式。
+
+:::
+
+```mdx-code-block
+<Tabs>
+<TabItem value="Before">
+```
+
+```jsx title="src/pages/index.js"
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+export default function Home() {
+  return (
+    <Layout>
+      {/* highlight-next-line */}
+      <h1>Welcome to my website</h1>
+      <main>
+        {/* highlight-start */}
+        You can also visit my
+        <Link to="https://docusaurus.io/blog">blog</Link>
+        {/* highlight-end */}
+        <img
+          src="/img/home.png"
+          // highlight-next-line
+          alt="Home icon"
+        />
+      </main>
+    </Layout>
+  );
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="After">
+```
+
+```jsx title="src/pages/index.js"
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+// highlight-next-line
+import Translate, {translate} from '@docusaurus/Translate';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>
+        {/* highlight-next-line */}
+        <Translate>Welcome to my website</Translate>
+      </h1>
+      <main>
+        {/* highlight-start */}
+        <Translate
+          id="homepage.visitMyBlog"
+          description="The homepage message to ask the user to visit my blog"
+          values={{
+            blogLink: (
+              <Link to="https://docusaurus.io/blog">
+                <Translate
+                  id="homepage.visitMyBlog.linkLabel"
+                  description="The label for the link to my blog">
+                  blog
+                </Translate>
+              </Link>
+            ),
+          }}>
+          {'You can also visit my {blogLink}'}
+        </Translate>
+        {/* highlight-end */}
+
+        <img
+          src="/img/home.png"
+          alt={
+            // highlight-start
+            translate({
+              message: 'Home icon',
+              description: 'The homepage icon alt message',
+            })
+            // highlight-end
+          }
+        />
+      </main>
+    </Layout>
+  );
+}
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+:::info
+
+Docusaurus 刻意提供**極簡輕量的翻譯運行時**，僅支援基礎的[佔位符插值](../docusaurus-core.mdx#interpolate)，採用 [ICU 訊息格式](https://formatjs.io/docs/core-concepts/icu-syntax/)的子集。
+
+多數文檔網站本質上是**靜態的**，無需進階的 i18n 功能（**複數形式**、**性別區分**等）。如需更複雜的用例，請使用 [react-intl](https://www.npmjs.com/package/react-intl) 這類函式庫。
+
+:::
+
+`docusaurus write-translations` 指令會靜態分析您網站中使用的所有 React 程式碼檔案，提取這些 API 的調用，並將其匯總至 `code.json` 檔案中。翻譯檔案將以從 ID 到翻譯訊息物件（包含已翻譯標籤及標籤描述）的映射形式儲存。在調用翻譯 API（`<Translate>` 或 `translate()`）時，您需指定預設未翻譯訊息或 ID，以便 Docusaurus 正確將每個翻譯條目與 API 調用關聯。
+
+:::warning[文字標籤必須為靜態]
+
+`docusaurus write-translations` 指令僅對程式碼進行**靜態分析**，不會實際運行您的網站。因此，動態訊息無法被提取，因為訊息是_表達式_而非_字串_：
+
+```jsx
+const items = [
+  {id: 1, title: 'Hello'},
+  {id: 2, title: 'World'},
+];
+
+function ItemsList() {
+  return (
+    <ul>
+      {/* 請勿如此操作：無法與 write-translations 指令相容 */}
+      {items.map((item) => (
+        <li key={item.id}>
+          <Translate>{item.title}</Translate>
+        </li>
+      ))}
+    <ul>
+  );
+}
+```
+
+此寫法在運行時仍能正常運作。但未來我們可能提供「無運行時」機制，透過 Babel 轉換將翻譯直接內嵌至 React 程式碼中，而非在運行時調用 API。因此，為確保未來相容性，應始終優先使用可靜態分析的訊息。例如，我們可將上述程式碼重構為：
+
+```jsx
+const items = [
+  {id: 1, title: <Translate>Hello</Translate>},
+  {id: 2, title: <Translate>World</Translate>},
+];
+
+function ItemsList() {
+  return (
+    <ul>
+      {/* 渲染時標題已預先翻譯！ */}
+      {items.map((item) => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    <ul>
+  );
+}
+```
+
+您可以將翻譯 API 的調用視為純粹的_標記_，用於告知 Docusaurus「此處的文字標籤需替換為翻譯訊息」。
+
+:::
+
+#### 複數形式處理 {#pluralization}
+
+執行 `write-translations` 時，您會注意到部分標籤已處理複數形式：
+
+```json title="i18n/en/code.json"
+{
+  // ...
+  "theme.blog.post.plurals": "One post|{count} posts"
+  // ...
+}
+```
+
+每種語言都有一組[可能的複數類別](https://unicode-org.github.io/cldr-staging/charts/37/supplemental/language_plural_rules.html)。Docusaurus 會按照 `["zero", "one", "two", "few", "many", "other"]` 的順序排列它們。例如，由於英語 (`en`) 有兩種複數形式（"one" 和 "other"），翻譯訊息會用管道符 (`|`) 分隔兩個標籤。而波蘭語 (`pl`) 有三種複數形式（"one"、"few" 和 "many"），您需要按順序提供三個標籤，並用管道符連接。
+
+您也可以為自己的程式碼訊息實現複數化：
+
+```jsx
+import {translate} from '@docusaurus/Translate';
+import {usePluralForm} from '@docusaurus/theme-common';
+
+function ItemsList({items}) {
+  // `usePluralForm` will provide the plural selector for the current locale
+  const {selectMessage} = usePluralForm();
+  // Select the appropriate pluralized label based on `items.length`
+  const message = selectMessage(
+    items.length,
+    translate(
+      {message: 'One item|{count} items'},
+      {count: items.length},
+    ),
+  );
+  return (
+    <>
+      <h2>{message}</h2>
+      <ul>{items.map((item) => <li key={item.id}>{item.title}</li>)}<ul>
+    </>
+  );
+}
+```
+
+:::note
+
+Docusaurus 使用 [`Intl.PluralRules`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules) 來解析和選擇複數形式。為了讓 `selectMessage` 正常運作，必須以正確順序提供正確數量的複數形式。
+
+:::
+
+### 翻譯插件數據 {#translate-plugin-data}
+
+JSON 翻譯文件用於處理程式碼中所有需要國際化的內容：
+
+- React 程式碼，包括您標記的翻譯標籤
+- 主題配置中的導覽列和頁尾標籤
+- `sidebars.js` 中的文檔側邊欄分類標籤
+- 插件選項中的部落格側邊欄標題
+- ...
+
+執行 [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) 命令：
+
+```bash npm2yarn
+npm run write-translations -- --locale fr
+```
+
+這將提取並初始化您需要翻譯的 JSON 翻譯文件。根目錄下的 `code.json` 文件包含從原始碼中提取的所有翻譯 API 調用，這些可能是您編寫的或由主題提供的，其中一些可能已經預設翻譯完成。
+
+```json title="i18n/fr/code.json"
+{
+  // No ID for the <Translate> component: the default message is used as ID
+  "Welcome to my website": {
+    "message": "Welcome to my website"
+  },
+  "home.visitMyBlog": {
+    "message": "You can also visit my {blog}",
+    "description": "The homepage message to ask the user to visit my blog"
+  },
+  "homepage.visitMyBlog.linkLabel": {
+    "message": "Blog",
+    "description": "The label for the link to my blog"
+  },
+  "Home icon": {
+    "message": "Home icon",
+    "description": "The homepage icon alt message"
+  }
+}
+```
+
+插件和主題也會生成自己的 JSON 翻譯文件，例如：
+
+```json title="i18n/fr/docusaurus-theme-classic/navbar.json"
+{
+  "title": {
+    "message": "My Site",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
+```
+
+翻譯 `i18n/fr` 中 JSON 文件的 `message` 屬性，現在您的網站佈局和首頁應該已經被翻譯了。
+
+### 翻譯 Markdown 文件 {#translate-markdown-files}
+
+官方 Docusaurus 內容插件廣泛使用 Markdown/MDX 文件，並允許您翻譯它們。
+
+#### 翻譯文檔 {#translate-the-docs}
+
+將您的文檔 Markdown 文件從 `docs/` 複製到 `i18n/fr/docusaurus-plugin-content-docs/current` 並進行翻譯：
+
+```bash
+mkdir -p i18n/fr/docusaurus-plugin-content-docs/current
+cp -r docs/** i18n/fr/docusaurus-plugin-content-docs/current
+```
+
+:::info
+
+請注意，`docusaurus-plugin-content-docs` 插件總是按版本劃分內容。`./docs` 文件夾中的數據將在 `current` 子文件夾和 `current.json` 文件中進行翻譯。有關「current」含義的更多信息，請參閱[文檔版本控制指南](../guides/docs/versioning.mdx#terminology)。
+
+:::
+
+#### 翻譯部落格 {#translate-the-blog}
+
+將您的部落格 Markdown 文件複製到 `i18n/fr/docusaurus-plugin-content-blog` 並進行翻譯：
+
+```bash
+mkdir -p i18n/fr/docusaurus-plugin-content-blog
+cp -r blog/** i18n/fr/docusaurus-plugin-content-blog
+```
+
+#### 翻譯頁面 {#translate-the-pages}
+
+將您的頁面 Markdown 文件複製到 `i18n/fr/docusaurus-plugin-content-pages` 並進行翻譯：
+
+```bash
+mkdir -p i18n/fr/docusaurus-plugin-content-pages
+cp -r src/pages/**.md i18n/fr/docusaurus-plugin-content-pages
+cp -r src/pages/**.mdx i18n/fr/docusaurus-plugin-content-pages
+```
+
+:::warning
+
+我們只複製 `.md` 和 `.mdx` 文件，因為 React 頁面已經通過 JSON 翻譯文件進行翻譯了。
+
+:::
+
+:::tip[使用明確的標題 ID]
+
+預設情況下，Markdown 標題 `### Hello World` 會自動生成 ID `hello-world`。其他文件可以透過 `[link](#hello-world)` 連結到它。然而，翻譯後標題變為 `### Bonjour le Monde`，ID 也會變成 `bonjour-le-monde`。
+
+自動生成的 ID 並不總是適合本地化網站，因為這需要你本地化所有錨點連結：
+
+```diff
+- [link](#hello-world).
++ [link](#bonjour-le-monde)
+```
+
+對於本地化網站，建議使用 **[明確的標題 ID](../guides/markdown-features/markdown-features-toc.mdx#heading-ids)**。
+
+:::
+
+## 部署你的網站 {#deploy-your-site}
+
+你可以選擇在 **單一網域** 下部署網站，或使用 **多個（子）網域**。
+
+### 單一網域部署 {#single-domain-deployment}
+
+執行以下指令：
+
+```bash npm2yarn
+npm run build
+```
+
+Docusaurus 會為 **每個語言版本建立一個單頁應用**：
+
+- `website/build`：預設的英文版本
+- `website/build/fr`：法文版本
+
+現在你可以將 `build` 資料夾 [部署](../deployment.mdx) 到你選擇的靜態託管服務。
+
+:::note
+
+Docusaurus 官方網站採用此策略：
+
+- [`https://docusaurus.io`](https://docusaurus.io)
+- [`https://docusaurus.io/fr`](https://docusaurus.io/fr)
+
+:::
+
+:::tip
+
+靜態託管服務通常會將 `/unknown/url` 重新導向至 `/404.html`，這會顯示 **英文的 404 頁面**。
+
+若要 **本地化 404 頁面**，請設定你的託管服務將 `/fr/*` 重新導向至 `/fr/404.html`。
+
+這並非總是可行，取決於你的託管服務：GitHub Pages 無法做到，但 [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling) 可以。
+
+:::
+
+### 多網域部署 {#multi-domain-deployment}
+
+你也可以為單一語言版本建置網站：
+
+```bash npm2yarn
+npm run build -- --locale fr
+```
+
+Docusaurus 不會添加 `/fr/` 網址前綴。
+
+在你的 [靜態託管服務](../deployment.mdx) 上：
+
+- 為每個語言版本建立一個部署
+- 設定適當的建置指令，使用 `--locale` 選項
+- 為每個部署設定你選擇的（子）網域
+
+:::warning
+
+此策略 **無法** 在 GitHub Pages 上使用，因為它只允許 **單一部署**。
+
+:::
+
+### 混合部署 {#hybrid}
+
+可以讓部分語言版本使用子路徑，其他使用子網域。
+
+也可以將每個語言版本部署為獨立的子網域，並在 CDN 層級將子網域整合到單一統一網域：
+
+- 將你的網站部署為 `fr.docusaurus.io`
+- 設定 CDN 從 `docusaurus.io/fr` 提供服務
+
+## 管理翻譯 {#managing-translations}
+
+Docusaurus 不關心你如何管理翻譯：它只需要所有翻譯檔案（JSON、Markdown 或其他資料檔案）在建置期間存在於檔案系統中。然而，作為網站創建者，你需要考慮如何管理翻譯，以便翻譯貢獻者能有效協作。
+
+我們將分享兩種常見的翻譯協作策略：[**使用 git**](./i18n-git.mdx) 和 [**使用 Crowdin**](./i18n-crowdin.mdx)。

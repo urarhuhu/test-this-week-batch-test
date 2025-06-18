@@ -1,0 +1,262 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/guides/markdown-features/markdown-features-intro.mdx",
+  "source_file_content_hash": "00f70c87ae8e5f40f1a6520821b4ff1300301f0b15157fda0bb558a086eab335",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: introduction\ndescription: Docusaurus uses MDX. Find out more about Docusaurus-specific features when writing Markdown.\nslug: /markdown-features\n---",
+      "source_content_hash": "364ff337f2d23d3e536fa7aea513790574c2ea0a8dc633ed73b54780db54316a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Markdown Features",
+      "source_content_hash": "24e7e43471ceade68c21c44fc2dff01570d4c0a7cc77a9644e81b425cbce9844",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Markdown 功能"
+      }
+    },
+    {
+      "segment_id": "623f74e7",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_623f74e7"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Documentation is one of your product's interfaces with your users. A well-written and well-organized set of docs helps your users understand your product quickly. Our aligned goal here is to help your users find and understand the information they need, as quickly as possible.",
+      "source_content_hash": "76c8d15046b46882cafc802c1dd8f93743b2441d118375e0e1e636ff3b98fbd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文件是產品與使用者之間的介面之一。一套撰寫良好且組織完善的說明文件，能幫助使用者快速理解您的產品。我們的共同目標是協助使用者以最快速度找到並理解所需資訊。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Docusaurus 2 uses modern tooling to help you compose your interactive documentation with ease. You may embed React components, or build live coding blocks where your users may play with the code on the spot. Start sharing your eureka moments with the code your audience cannot walk away from. It is perhaps the most effective way of attracting potential users.",
+      "source_content_hash": "0e3190d52c6e9fb036db56fcdb7c4fea407c677656fb4bd36d312421b465b239",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 採用現代化工具，讓您輕鬆編寫互動式文件。您可以嵌入 React 元件，或建立即時編碼區塊讓使用者現場操作程式碼。開始透過讓觀眾無法忽視的程式碼分享您的靈光時刻，這或許是吸引潛在使用者最有效的方式。"
+      }
+    },
+    {
+      "segment_id": "ac44a45c",
+      "source_content": ":::info\n\nThis section assumes you are using the official Docusaurus content plugins.\n\n:::",
+      "source_content_hash": "dcc481aed05e0bce5a9f7b9a2b9d27a81d32b262a343d12636d03dbf5921d3a6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n本節假設您正在使用官方的 Docusaurus 內容插件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Standard features {#standard-features}",
+      "source_content_hash": "42777478659ea8d9897bdb210079cac7c056340165611148516dd2898f9b11df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 標準功能 {#standard-features}"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Markdown is a syntax that enables you to write formatted content in a readable syntax.",
+      "source_content_hash": "9b840d1528845422938f5f4dfd2c1b5d20e5c3aa2ae312f73611375f9ce43ccd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 是一種讓您能用易讀語法編寫格式化內容的標記語言。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "We use [MDX](https://mdxjs.com/) as the parsing engine, which can do much more than just parsing [standard Markdown syntax](https://daringfireball.net/projects/markdown/syntax), like rendering React components inside your documents as well.",
+      "source_content_hash": "4921537fc167f5937526170f21fc30b0d6d2cdd2cb721ba7ae0d79f5fad09500",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們使用 [MDX](https://mdxjs.com/) 作為解析引擎，它不僅能解析[標準 Markdown 語法](https://daringfireball.net/projects/markdown/syntax)，還能在文件中渲染 React 元件。"
+      }
+    },
+    {
+      "segment_id": "08021a08",
+      "source_content": "```md\n### My Doc Section\n\nHello world message with some **bold** text, some _italic_ text, and a [link](/)\n\n![img alt](/img/docusaurus.png)\n```",
+      "source_content_hash": "64ec6afd0a796029871a1097feaba40383f5851dfc259a9f102fe00d35392048",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_08021a08"
+      }
+    },
+    {
+      "segment_id": "ef6eebef",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n\n<h3>My Doc Section</h3>\n\nHello world message with some **bold** text, some _italic_ text and a [link](/)\n\n![img alt](/img/docusaurus.png)\n\n</BrowserWindow>\n```",
+      "source_content_hash": "89fe39d3e06d9d583d1907d3a785a4d0250023985fa30baee0f0aabe5fcc63b9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ef6eebef"
+      }
+    },
+    {
+      "segment_id": "92b13a72",
+      "source_content": "<details>\n\n<summary>Markdown is declarative</summary>\n\nSome may assume a 1-1 correlation between Markdown and HTML, e.g., `![Preview](/img/docusaurus.png)` will always become `<img src=\"/img/docusaurus.png\" alt=\"Preview\" />`, as-is. However, _that is not the case_.\n\nThe Markdown syntax `![message](url)` only declaratively tells Docusaurus that an image needs to be inserted here, but we may do other things like transforming a [file path to URL path](./markdown-features-assets.mdx#images), so the generated markup may differ from the output of other Markdown renderers, or a naïve hand-transcription to the equivalent JSX/HTML code.\n\nIn general, you should only assume the _semantics_ of the markup (` ``` ` fences become [code blocks](./markdown-features-code-blocks.mdx); `>` becomes [quotes](#quotes), etc.), but not the actual compiled output.\n\n</details>",
+      "source_content_hash": "96f7ca40c75faf65af19746c5f378a904f43fb9f5aa853dd4302a1fdf0e32887",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_92b13a72"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "## Front matter {#front-matter}",
+      "source_content_hash": "47aeedb3986a1b2ce51ff33fe107cf412fdea66527819dd6ac6767accbe1c3d0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 前置元數據 {#front-matter}"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "Front matter is used to add metadata to your Markdown file. All content plugins have their own front matter schema, and use the front matter to enrich the default metadata inferred from the content or other configuration.",
+      "source_content_hash": "d308358ea651c42372973aeef6229b45e1b6ef542eeba4dd33a5d86c2ef8125f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "前置元數據用於為 Markdown 文件添加元資訊。所有內容插件都有各自的前置元數據結構，並利用這些數據來強化從內容或其他配置推斷出的預設元數據。"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Front matter is provided at the very top of the file, enclosed by three dashes `---`. The content is parsed as [YAML](https://yaml.org/spec/1.2.2/).",
+      "source_content_hash": "3e15fb49e3486d1c063be64eda1cb9ef7792f6c2154ef639f914b5b7fb758e32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "前置元數據位於文件頂部，由三個破折號 `---` 包圍。其內容以 [YAML](https://yaml.org/spec/1.2.2/) 格式解析。"
+      }
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```md\n---\ntitle: My Doc Title\nmore_data:\n  - Can be provided\n  - as: objects\n    or: arrays\n---\n```",
+      "source_content_hash": "b41c08c8cac8f79d5789f9a4b1013703321557de2a79c640dd76ea27aad90126",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a577a50"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Quotes {#quotes}",
+      "source_content_hash": "3367cb170bf760af7e9e53b2166225ded453d57ae7d7ffec4c0b1660b761b22e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 引用區塊 {#quotes}"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "Markdown quotes are beautifully styled:",
+      "source_content_hash": "db31e87d4de5a9677740c3d862ead7e6bb130a82fa03e5dc9a7097accf352cdf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 引用區塊經過精美樣式設計："
+      }
+    },
+    {
+      "segment_id": "a89f84e1",
+      "source_content": "```md\n> Easy to maintain open source documentation websites.\n>\n> — Docusaurus\n```",
+      "source_content_hash": "c6ed6ddaf648ef21a3eebb8be15bbbae3879beacdeded5e26342155efe8300ee",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a89f84e1"
+      }
+    },
+    {
+      "segment_id": "057a9dd8",
+      "source_content": "<BrowserWindow>\n\n> Easy to maintain open source documentation websites.\n>\n> — Docusaurus\n\n</BrowserWindow>",
+      "source_content_hash": "46fbfa5d58d0d7f7b710aae1433c71c2609c26d928b04ebae117db349c7a8d94",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_057a9dd8"
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "## Details {#details}",
+      "source_content_hash": "0bb1d6a078457a7272b26361d9be74f9b0072f8e066a40e549732faced8d8bae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 摺疊詳情 {#details}"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Markdown can embed HTML elements, and [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) HTML elements are beautifully styled:",
+      "source_content_hash": "e8a760b676d5329675e7ac826283fd1b977bd9fd4953743d47e95c82feaf7acb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 可嵌入 HTML 元素，而 [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) HTML 元素經過精美樣式設計："
+      }
+    },
+    {
+      "segment_id": "ec99e704",
+      "source_content": "```md\n### Details element example\n\n<details>\n  <summary>Toggle me!</summary>\n  <div>\n    <div>This is the detailed content</div>\n    <br/>\n    <details>\n      <summary>\n        Nested toggle! Some surprise inside...\n      </summary>\n      <div>😲😲😲😲😲</div>\n    </details>\n  </div>\n</details>\n```",
+      "source_content_hash": "fcb1ae40e7d6fe3b62e477f5d2343e47218701c762c5642558b6a372174805b4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ec99e704"
+      }
+    },
+    {
+      "segment_id": "83537d8d",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n\n<h3>Details element example</h3>\n\n<details>\n  <summary>Toggle me!</summary>\n  <div>\n    <div>This is the detailed content</div>\n    <br/>\n    <details>\n      <summary>\n        Nested toggle! Some surprise inside...\n      </summary>\n      <div>😲😲😲😲😲</div>\n    </details>\n  </div>\n</details>\n\n</BrowserWindow>\n```",
+      "source_content_hash": "1429946d1a50c5177f48a9e176297f490690d996cb3efde0fb06d0312ca4e56f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_83537d8d"
+      }
+    },
+    {
+      "segment_id": "a1600d1d",
+      "source_content": ":::note\n\nIn practice, those are not really HTML elements, but React JSX elements, which we'll cover next!\n\n:::",
+      "source_content_hash": "fa6f92c643d19975296b52ba967d7ecabfeb2b69fd09808d0af4f7593abe9ded",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n實際上這些並非真正的 HTML 元素，而是 React JSX 元素，我們將在後續章節說明！\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/guides/markdown-features/markdown-features-intro.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.136814+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "00f70c87ae8e5f40f1a6520821b4ff1300301f0b15157fda0bb558a086eab335"
+  }
+}

@@ -1,0 +1,156 @@
+---
+title: Introducing Docusaurus
+authors: JMarcey
+tags: [documentation, blog, docusaurus]
+---
+
+![](/img/slash-introducing.svg)
+
+我們非常高興向您介紹 [Docusaurus](https://github.com/facebook/docusaurus)，這款工具能協助您管理一個或多個開源網站。
+
+我們開發 [Docusaurus](https://docusaurus.io) 的初衷如下：
+
+1. 讓您專注於撰寫優質文件，無需操心網站基礎架構。
+1. 提供多數開源網站所需功能，如部落格支援、搜尋和版本控制。
+1. 便於一次性推送更新、新功能和錯誤修復給所有使用者。
+1. 最後，確保所有開源專案保持一致的視覺風格。
+
+<!--truncate-->
+
+Docusaurus 是一款專為團隊設計的工具，讓使用者無需考慮基礎架構與設計細節即可發布文件網站。其核心要求僅需提供 Markdown 格式的文件檔案、用 React 編寫的客製化首頁，以及少量配置調整。Docusaurus 會自動處理其餘工作，包括預設樣式、網站格式化和簡易文件導覽。使用者可透過 [安裝指南](https://v1.docusaurus.io/docs/en/installation.html) 使用 `npm` 或 `yarn` 快速初始化，該腳本會直接[生成一個開箱即用的範例網站](https://v1.docusaurus.io/docs/en/site-preparation.html)。
+
+Docusaurus 還內建多項核心網站與文件功能，包含[部落格支援](https://v1.docusaurus.io/docs/en/blog.html)、[國際化](https://v1.docusaurus.io/docs/en/translation.html)、[搜尋](https://v1.docusaurus.io/docs/en/search.html)和[版本控制](https://v1.docusaurus.io/docs/en/versioning.html)。即使專案當下不需要這些功能，啟用時也僅需調整配置選項，無需從頭建置基礎架構。當 Docusaurus 新增功能時，使用者只需執行 npm 或 yarn 更新並調整配置選項即可。團隊再也不必在每次新增功能時手動重構整個網站架構。
+
+## Docusaurus 的誕生
+
+![](/img/slash-birth.png)
+
+當 Facebook 最初啟動開源計畫時，許多團隊為各自的開源專案建立了客製化網站。這種做法在開源計畫團隊協助專案改善文件時產生了挑戰。由於每個網站都是獨特的，添加基礎功能（如部落格、統一導覽、搜尋等）都成為艱鉅任務。
+
+開源團隊嘗試透過基於 Jekyll 的標準模板來緩解此問題，該模板可作為專案網站的起點。我們要求新專案手動複製模板源碼至其代碼庫，撰寫文件後發布。此模板被多數新開源專案採用，部分現有專案甚至將其客製化網站遷移至新模板。
+
+「複製模板至代碼庫」方法的問題在於：即便平台一致，當需要推送更新時，已採用模板的整個專案集合將變得難以維護。這是因為專案複製模板後，我們便失去了對模板的控制權。專案可自由修改模板並添加專屬功能。雖然各專案共享相同的網站生成平台，但 divergence 程度已使其無法受益於模板後續新增的功能。我們無法簡單要求所有現有專案「複製」新版本模板，因為這可能破壞現有網站或移除他們自行添加的功能。取而代之的是，我們必須逐一手動為每個專案套用更新。當專案開始要求模板支援國際化功能時（這需要對模板結構與生成方式進行底層修改），此問題變得尤為嚴重。
+
+因此我們開始思考如何解決跨專案網站更新與一致性維護的挑戰。我們希望多個專案能共享相同的網站生成軟體，初始使用相同模板的同時，又能靈活自訂主題以滿足各自需求。專案應能擴展和調整網站，但當我們更新底層基礎設施時，應能無縫升級且不造成破壞性變更。
+
+Docusaurus 就此誕生！
+
+在 Facebook 內部，Docusaurus 讓我們能快速為不同專案建立文件網站，特別適合缺乏網頁開發經驗或僅需基礎展示頁面的團隊。它已支援進階功能如 Jest 的國際化和 React Native 的版本控制。當各專案提出新需求時，這些功能會被整合至 Docusaurus 並同步提供給所有專案！這大幅降低了維護不同專案網站的工作量，讓團隊能更專注於功能開發、錯誤修復和文件撰寫。
+
+## 快速入門
+
+![](/img/slash-up-and-running.png)
+
+我們希望 Docusaurus 的網站能簡單易用。只需執行一條[安裝](https://v1.docusaurus.io/docs/en/installation.html)指令並完成基本[配置](https://v1.docusaurus.io/docs/en/site-preparation.html)，即可獲得預設運行的網站。
+
+執行 `docusaurus-init` 後，您將看到類似以下的結構：
+
+```bash
+root-of-repo
+├── docs-examples-from-docusaurus
+│   ├── doc1.md
+│   ├── doc2.md
+│   ├── doc3.md
+│   ├── example-doc4.md
+│   └── example-doc5.md
+├── website
+│   ├── blog-examples-from-docusaurus
+│   │   ├── 2016-03-11-blog-post.md
+│   │   └── 2017-04-10-blog-post-two.md
+│   ├── core
+│   │   └── Footer.js
+│   ├── node_modules
+│   ├── package.json
+│   ├── pages
+│   ├── sidebars.json
+│   ├── siteConfig.js
+│   └── static
+```
+
+除 node_modules 和 package.json 外，所有目錄和文件皆用於自訂 Docusaurus 網站內容：docs 資料夾存放 Markdown 格式的[文件](https://v1.docusaurus.io/docs/en/blog.html)；blog 資料夾管理[部落格文章](https://v1.docusaurus.io/docs/en/blog.html)；siteConfig.js 負責主要[網站配置](https://v1.docusaurus.io/docs/en/site-config.html)；sidebars.json 定義文件[側邊欄](https://v1.docusaurus.io/docs/en/navigation.html)結構；pages 資料夾添加[自訂頁面](https://v1.docusaurus.io/docs/en/custom-pages.html)；static 資料夾存放靜態資源（如 CSS 和圖片）；core 資料夾則可調整網站核心組件（例如頁尾）。
+
+## Docusaurus 運作原理
+
+Docusaurus 主要使用 JavaScript 和 [React](https://facebook.github.io/react) 開發，取代舊版模板的 Jekyll。我們採用 [Remarkable](https://github.com/jonschlinkert/remarkable) 渲染 Markdown，並用 [highlight.js](https://highlightjs.org/) 實現程式碼區塊語法高亮。核心功能位於 [Docusaurus 代碼庫](https://github.com/facebook/docusaurus/)的 [lib 目錄](https://github.com/facebookexperimental/Docusaurus/tree/master/lib)，其結構如下：
+
+```bash
+root-of-Docusaurus
+├── lib
+│   ├── core
+│   ├── server
+│   │   ├── generate.js
+│   │   ├── server.js
+│   │   └── ...and more files
+│   ├── static
+│   ├── build-files.js
+│   ├── copy-examples.js
+│   ├── generate-feed.js
+│   ├── publish-gh-pages.js
+│   ├── rename-version.js
+│   ├── start-server.js
+│   ├── versions.js
+│   └── write-translations.js
+```
+
+關鍵文件為 build-files.js 和 start-server.js：前者用於構建外部網頁伺服器的實體文件，後者用於本地測試網站。兩者皆遵循相同流程，將所有 Markdown 和配置轉換為可運行的網站：
+
+1. 在 `siteConfig.js` 中處理您的網站設定
+1. 讀取存在於您 docs 目錄中所有 Markdown 文件的文件元數據
+1. 根據從元數據提取的 ID 為您的文件建立目錄
+1. 將 Markdown 轉換為 HTML，包括進行連結替換
+1. 這些文件將放置在編譯後網站的 build/docs 目錄中，任何翻譯版本將放在 build/docs 文件夾內的語言特定文件夾中
+1. 對部落格文章重複步驟 1-3
+1. 部落格文件將放置在編譯後網站的 build/blog 目錄中
+1. 讀取 main.css 文件並將任何用戶定義的 css 串接成主 css 文件，該文件將位於編譯後網站的 build/css 目錄中
+1. 將圖片複製到編譯後網站的 build/img 目錄中
+1. 將添加到網站 pages 文件夾的任何自定義頁面編譯/複製到編譯後網站的根 build 目錄中。任何翻譯版本將放在 build 文件夾內的語言特定文件夾中
+1. 建立 CNAME 和 sitemap.xml 文件並將它們添加到 build 中
+
+請注意，此過程並未完全考慮翻譯或版本控制的工作原理。這些功能的底層細節將留待未來的部落格文章說明。
+
+您編譯後網站的最終結構將類似於：
+
+```bash
+build
+├── website
+│   ├── CNAME
+│   ├── blog
+│   ├── css
+│   ├── docs
+│   ├── en
+│   ├── help.html # custom page
+│   ├── img
+│   ├── index.html # landing page
+│   ├── sitemap.xml
+│   └── users.html # custom page
+```
+
+## 社群
+
+![](/img/docusaurus.svg)
+
+我們歡迎您對 Docusaurus 的[貢獻](https://github.com/facebook/docusaurus/blob/master/CONTRIBUTING.md)，無論您是想將其用於自己的網站、想[貢獻](https://github.com/facebook/docusaurus/blob/master/CONTRIBUTING.md)給 Docusaurus 核心，還是僅僅有問題。請在 [GitHub](https://github.com/facebook/docusaurus) 和 [X](https://x.com/docusaurus) 上關注我們。
+
+## 致謝
+
+如果沒有 Docusaurus 核心團隊其他成員的工作，Docusaurus 就不會存在：[Eric Nakagawa](http://x.com/ericnakagawa)、[Hector Ramos](https://x.com/hectorramos)、[Eric Vicenti](https://x.com/EricVicenti) 和 [Frank Li](https://github.com/deltice) — 一位前 Facebook 實習生，他實現了核心技術和功能。
+
+還要特別感謝我們最早的 Docusaurus [採用者](https://v1.docusaurus.io/en/users.html)：
+
+- [BuckleScript](https://bucklescript.github.io/)
+- [FastText](https://fasttext.cc)
+- [Jest](https://jestjs.io)
+- [Make It Open](http://makeitopen.com)
+- [Prettier](https://prettier.io/)
+- [Reason-react](https://reasonml.github.io/reason-react/)
+- [React Native](https://facebook.github.io/react-native/)
+- [Relay](https://facebook.github.io/relay/)
+
+如果沒有他們致力於建立或將其網站遷移到該平台，我們就不會有今天的成就。
+
+## 資源
+
+- [閱讀我們的文檔](https://v1.docusaurus.io)
+- [關注我們的 X 動態](https://x.com/docusaurus)
+- [在 GitHub 上關注我們](https://github.com/facebook/docusaurus)
+- [關於 Docusaurus 吉祥物 Slash](https://v1.docusaurus.io/about-slash.html)

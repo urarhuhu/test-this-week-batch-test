@@ -1,0 +1,77 @@
+---
+sidebar_position: 6
+slug: /api/plugins/@docusaurus/plugin-google-analytics
+---
+
+# 📦 plugin-google-analytics
+
+import APITable from '@site/src/components/APITable';
+
+預設的 [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) 外掛程式。這是一個用於測量使用者如何與您的網站互動的 JavaScript 函式庫（僅在正式環境建置中有效）。如果您使用 Google Analytics 4，可能需要考慮改用 [plugin-google-gtag](./plugin-google-gtag.mdx)。
+
+:::danger[已棄用]
+
+此外掛程式**已棄用**，並將於 2023 年 7 月 1 日起失效。
+
+Google 正[逐步淘汰 Universal Analytics](https://blog.google/products/marketingplatform/analytics/prepare-for-future-with-google-analytics-4/)。
+
+若您仍在使用帶有 `UA-*` 追蹤 ID 的此外掛程式，應盡快建立 Google Analytics 4 帳戶，並改用 [`@docusaurus/plugin-google-gtag`](./plugin-google-gtag.mdx) 取代此外掛程式。更多詳情請參閱[此處](https://github.com/facebook/docusaurus/issues/7221)。
+
+:::
+
+:::warning[僅限正式環境]
+
+此外掛程式在開發環境中始終處於非活動狀態，**僅在正式環境中啟用**，以避免污染分析統計數據。
+
+:::
+
+## 安裝 {#installation}
+
+```bash npm2yarn
+npm install --save @docusaurus/plugin-google-analytics
+```
+
+:::tip
+
+若您使用 `@docusaurus/preset-classic` 預設配置，則無需將此外掛程式安裝為依賴項。
+
+您可以透過[預設選項](../../using-plugins.mdx#docusauruspreset-classic)配置此外掛程式。
+
+:::
+
+## 配置 {#configuration}
+
+接受欄位：
+
+```mdx-code-block
+<APITable>
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `trackingID` | `string` | **Required** | The tracking ID of your analytics service. |
+| `anonymizeIP` | `boolean` | `false` | Whether the IP should be anonymized when sending requests. |
+
+```mdx-code-block
+</APITable>
+```
+
+### 範例配置 {#ex-config}
+
+您可以透過預設選項或外掛程式選項配置此外掛程式。
+
+:::tip
+
+大多數 Docusaurus 使用者透過預設選項配置此外掛程式。
+
+:::
+
+```js config-tabs
+// Preset Options: googleAnalytics
+// Plugin Options: @docusaurus/plugin-google-analytics
+
+const config = {
+  trackingID: 'UA-141789564-1',
+  anonymizeIP: true,
+};
+```

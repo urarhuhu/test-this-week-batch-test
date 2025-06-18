@@ -1,0 +1,50 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.1.1/guides/whats-next.mdx",
+  "source_file_content_hash": "75a414ef883c31ee0bc5cb2c84e343684e001ddbedc9620fe8f7c1499ddf05be",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# What's next?",
+      "source_content_hash": "b1bafb42eeca7c1caa3a4dc048e72edac500a4505ab6a27b7670f846e288ef41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Congratulations! You have understood most core features of Docusaurus now. You have:",
+      "source_content_hash": "ca878c16e1f4d785e293abcc7748afde56187cc01c49b4873763c3e20bca4084",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "17ded777",
+      "source_content": "- [Used the pages plugin](./creating-pages.mdx) to create a standalone React / Markdown page\n- [Used the docs plugin](./docs/docs-introduction.mdx) to create documentation pages. This includes [configuring the sidebar](./docs/sidebar/index.mdx), and even [versioning](./docs/versioning.mdx)\n- [Used the blog plugin](../blog.mdx) to create a fully featured blog\n- Tried your hands on [a range of Markdown features](./markdown-features/markdown-features-intro.mdx), which are useful for all content plugins\n- [Used stylesheets](../styling-layout.mdx) or [swizzling](../swizzling.mdx) to customize your site's appearance\n- [Included images and other assets](../static-assets.mdx) in your pages\n- [Added search](../search.mdx) to your site\n- Understood how [browser support](../browser-support.mdx) and [SEO](../seo.mdx) are done through standard Docusaurus APIs\n- Learned about how [individual plugins](../using-plugins.mdx) are installed and configured\n- [Deployed](../deployment.mdx) your site to a content host\n- [Internationalized](../i18n/i18n-tutorial.mdx) your site to include multiple languages",
+      "source_content_hash": "addc2cdc0495d0e6dbaa75d5ceb793ab5cdb495420a81eb63a3760116dbb4ab8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "At this point, you probably have a big `docusaurus.config.js` already😄 However, you haven't written much code yet! Most of the features are implemented through calling encapsulated Docusaurus APIs. As you continue your journey, you can take three paths:",
+      "source_content_hash": "0d197630467fe07f9bfec8fe583c4fd64d8fb7ef7144128e47c32db41a797ae1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "- Learn more advanced Docusaurus concepts. This will help you gain a deeper understand of what the APIs do.\n- Read about [all existing APIs](../docusaurus-core.mdx). Many of them have not been covered in the Guides!\n- Learn to [develop a plugin](../api/plugin-methods/README.mdx) to extend the functionality of your site.",
+      "source_content_hash": "34958485b7a672796fc04a42248b207b95255621702a5c3879b508e58528a074",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.1.1/guides/whats-next.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.721275+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

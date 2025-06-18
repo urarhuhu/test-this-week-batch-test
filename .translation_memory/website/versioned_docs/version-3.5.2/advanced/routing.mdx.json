@@ -1,0 +1,522 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.5.2/advanced/routing.mdx",
+  "source_file_content_hash": "3f7df3f2c686d6bc634cd9be31fcea9c3a6b9ade917b11c87f500f2897dc07f5",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: \"Docusaurus' routing system follows single-page application conventions: one route, one component.\"\n---",
+      "source_content_hash": "6eeee84c8ce003690ce3f4355116cdc0efeeed4f760b67992dcfe1e2e0f4d339",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Routing",
+      "source_content_hash": "41b390b3f98cfec1f1e9e9cdc4b0b464a737ce3f4af293fe47b8120c197d0bae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 路由系統"
+      }
+    },
+    {
+      "segment_id": "efa96cff",
+      "source_content": "```mdx-code-block\nimport Link from '@docusaurus/Link';\nimport {useLatestVersion, useActiveDocContext} from '@docusaurus/plugin-content-docs/client';\nimport {useLocation} from '@docusaurus/router';\nimport BrowserWindow from '@site/src/components/BrowserWindow';\n```",
+      "source_content_hash": "75f2f77fbb16ad205d4ee16abd49257e130589c6b086d49ba83225df95ee3a3a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efa96cff"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Docusaurus' routing system follows single-page application conventions: one route, one component. In this section, we will begin by talking about routing within the three content plugins (docs, blog, and pages), and then go beyond to talk about the underlying routing system.",
+      "source_content_hash": "f8a744992eaa18a04ae4012ffd3c6fb372742792d070318fe7d0fff85249cb85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的路由系統遵循單頁應用程式慣例：一個路由對應一個元件。本節將先介紹三種內容外掛（文檔、部落格和頁面）內部的路由機制，再深入探討底層路由系統的運作原理。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Routing in content plugins {#routing-in-content-plugins}",
+      "source_content_hash": "3dd8eb00519d7554c68f4dca5f4e0da710d62da485cee6c7194d8dc511f71bd6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 內容外掛中的路由 {#routing-in-content-plugins}"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Every content plugin provides a `routeBasePath` option. It defines where the plugins append their routes to. By default, the docs plugin puts its routes under `/docs`; the blog plugin, `/blog`; and the pages plugin, `/`. You can think about the route structure like this:",
+      "source_content_hash": "a5101f4b0bd741d2095c1eb6a8e8bc6be7276af3076fbf631ca471c8468a818e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個內容外掛都提供 `routeBasePath` 選項，用於定義外掛路由的基礎路徑。預設情況下，文檔外掛的路由前綴為 `/docs`；部落格外掛為 `/blog`；頁面外掛則為 `/`。路由結構可視為以下層級："
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```mermaid\ngraph LR;\n    A([\"https://example.com/\"])\n    B([\"/base-url/\"])\n    C([\"/docs/\"])\n    D([\"/blog/\"])\n    E([\"/\"])\n    F[\"All docs <br/>routes\"]\n    G[\"All blog <br/>routes\"]\n    H[\"All pages <br/>routes\"]\n    A---B;\n    B---C;\n    B---D;\n    B---E;\n    C---F;\n    D---G;\n    E---H;\n```",
+      "source_content_hash": "4ff66cfa9bc5f23537e0f7a0b4773c5158a35e2903364e4a98b93eb0d978f8c9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Any route will be matched against this nested route config until a good match is found. For example, when given a route `/docs/configuration`, Docusaurus first enters the `/docs` branch, and then searches among the subroutes created by the docs plugin.",
+      "source_content_hash": "bb9652c041a290e5c818d0ec87e4e95f60adb778ca16ab2f12f1d36ad3515ffe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "系統會將每個路由請求與此嵌套配置進行匹配，直到找到對應項目。例如當請求 `/docs/configuration` 路由時，Docusaurus 會先進入 `/docs` 分支，再於文檔外掛創建的子路由中搜尋。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "Changing `routeBasePath` can effectively alter your site's route structure. For example, in [Docs-only mode](../guides/docs/docs-introduction.mdx#docs-only-mode), we mentioned that configuring `routeBasePath: '/'` for docs means that all routes that the docs plugin create would not have the `/docs` prefix, yet it doesn't prevent you from having more subroutes like `/blog` created by other plugins.",
+      "source_content_hash": "da377ce21819d42e76d5861894be92d0e7984b0883d0b618e4ebb4b6176330c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "修改 `routeBasePath` 可實質改變網站路由結構。例如在[純文檔模式](../guides/docs/docs-introduction.mdx#docs-only-mode)中，將文檔外掛設為 `routeBasePath: '/'` 意味著所有文檔路由將移除 `/docs` 前綴，但仍可與其他外掛（如部落格）的 `/blog` 子路由共存。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Next, let's look at how the three plugins structure their own \"boxes of subroutes\".",
+      "source_content_hash": "a40439f3338d9b243dde99ac3c6c84dbef6eb1f64cf43cdb58f35fa93ad79b9e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "接下來我們分別解析三種外掛如何組織其「子路由容器」。"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "### Pages routing {#pages-routing}",
+      "source_content_hash": "c57cce2fea74d693517ac293a4fded43d53a62d2b0325813c050054d760e5b06",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 頁面路由 {#pages-routing}"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "Pages routing are straightforward: the file paths directly map to URLs, without any other way to customize. See the [pages docs](../guides/creating-pages.mdx#routing) for more information.",
+      "source_content_hash": "4057ea6f7f9cf262ca93f82df636eace41fff336b606b6b810891d2be3738352",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "頁面路由最為直觀：檔案路徑直接映射為 URL 且不可自訂。詳見[頁面文檔](../guides/creating-pages.mdx#routing)。"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "The component used for Markdown pages is `@theme/MDXPage`. React pages are directly used as the route's component.",
+      "source_content_hash": "7da19d495c6ed4c1bef0df1dcc3ef69a783a39bd18f226d3a7382b4dbba73595",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 頁面使用 `@theme/MDXPage` 元件，React 頁面則直接作為路由元件使用。"
+      }
+    },
+    {
+      "segment_id": "11c76fcc",
+      "source_content": "### Blog routing {#blog-routing}",
+      "source_content_hash": "36e9c77a162a4da475e470e11ac78c41594c95f04f6392df53db44f4800f83d4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 部落格路由 {#blog-routing}"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "The blog creates the following routes:",
+      "source_content_hash": "b905d956a8a9e7fa3447d3b3559fc817aadd695c4cc56292684ba7a1377f220e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格外掛會創建以下路由："
+      }
+    },
+    {
+      "segment_id": "c94a9c0e",
+      "source_content": "- **Posts list pages**: `/`, `/page/2`, `/page/3`...\n  - The route is customizable through the `pageBasePath` option.\n  - The component is `@theme/BlogListPage`.\n- **Post pages**: `/2021/11/21/algolia-docsearch-migration`, `/2021/05/12/announcing-docusaurus-two-beta`...\n  - Generated from each Markdown post.\n  - The routes are fully customizable through the `slug` front matter.\n  - The component is `@theme/BlogPostPage`.\n- **Tags list page**: `/tags`\n  - The route is customizable through the `tagsBasePath` option.\n  - The component is `@theme/BlogTagsListPage`.\n- **Tag pages**: `/tags/adoption`, `/tags/beta`...\n  - Generated through the tags defined in each post's front matter.\n  - The routes always have base defined in `tagsBasePath`, but the subroutes are customizable through the tag's `permalink` field.\n  - The component is `@theme/BlogTagsPostsPage`.\n- **Archive page**: `/archive`\n  - The route is customizable through the `archiveBasePath` option.\n  - The component is `@theme/BlogArchivePage`.",
+      "source_content_hash": "324b79bc7fee0a615b44402cf2c0019d72afaea69cac7ec8ce021c826194c2b3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **文章列表頁**：`/`, `/page/2`, `/page/3`...\n  - 可透過 `pageBasePath` 選項自訂路由\n  - 使用 `@theme/BlogListPage` 元件\n- **單篇文章頁**：`/2021/11/21/algolia-docsearch-migration`, `/2021/05/12/announcing-docusaurus-two-beta`...\n  - 由各篇 Markdown 文章生成\n  - 路由完全透過 `slug` 前置元數據自訂\n  - 使用 `@theme/BlogPostPage` 元件\n- **標籤列表頁**：`/tags`\n  - 可透過 `tagsBasePath` 選項自訂路由\n  - 使用 `@theme/BlogTagsListPage` 元件\n- **標籤分類頁**：`/tags/adoption`, `/tags/beta`...\n  - 根據文章前置元數據中的標籤生成\n  - 基礎路由由 `tagsBasePath` 定義，子路由可透過標籤的 `permalink` 欄位自訂\n  - 使用 `@theme/BlogTagsPostsPage` 元件\n- **歸檔頁**：`/archive`\n  - 可透過 `archiveBasePath` 選項自訂路由\n  - 使用 `@theme/BlogArchivePage` 元件"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "### Docs routing {#docs-routing}",
+      "source_content_hash": "dd3f3826f538449bb58546ce7129ba15aace5ed8c3c83691e032385c394b1838",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文檔路由 {#docs-routing}"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "The docs is the only plugin that creates **nested routes**. At the top, it registers [**version paths**](../guides/docs/versioning.mdx): `/`, `/next`, `/2.0.0-beta.13`... which provide the version context, including the layout and sidebar. This ensures that when switching between individual docs, the sidebar's state is preserved, and that you can switch between versions through the navbar dropdown while staying on the same doc. The component used is `@theme/DocPage`.",
+      "source_content_hash": "f815cdb462195364675abf2bdd5e4e1db8bc0a83fed11c63f3aa5ea08f257131",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文檔外掛是唯一會創建**嵌套路由**的外掛。頂層會註冊[版本路徑](../guides/docs/versioning.mdx)：`/`, `/next`, `/2.0.0-beta.13`... 這些路徑提供版本上下文（包含佈局和側邊欄），確保切換文檔時能保持側邊欄狀態，並可透過導航欄下拉選單切換版本而不跳轉頁面。此層級使用 `@theme/DocPage` 元件。"
+      }
+    },
+    {
+      "segment_id": "c808e01e",
+      "source_content": "```mdx-code-block\nexport const URLPath = () => <code>{useLocation().pathname}</code>;\n\nexport const FilePath = () => {\n  const currentVersion = useActiveDocContext('default').activeVersion.name;\n  return <code>{currentVersion === 'current' ? './docs/' : `./versioned_docs/version-${currentVersion}/`}advanced/routing.md</code>;\n}\n```",
+      "source_content_hash": "90f9a56eedac853ce47c243349e1d2f5b5950fcdc45af3a2bc02f96257f90b82",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c808e01e"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "The individual docs are rendered in the remaining space after the navbar, footer, sidebar, etc. have all been provided by the `DocPage` component. For example, this page, <URLPath />, is generated from the file at <FilePath />. The component used is `@theme/DocItem`.",
+      "source_content_hash": "ca408b68490615b758957c7cba520f60a8d5240426c92518430af445b6db01da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "個別文檔內容會渲染在 `DocPage` 元件提供的框架內（導航欄、頁腳、側邊欄等之外）。例如本頁面 <URLPath /> 即由 <FilePath /> 檔案生成，使用 `@theme/DocItem` 元件。"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "The doc's `slug` front matter customizes the last part of the route, but the base route is always defined by the plugin's `routeBasePath` and the version's `path`.",
+      "source_content_hash": "a55de8c36b53e94917fcfc50db8ee8af0eea15f20ee874690e662447ba2096c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文件的 `slug` 前置元數據可自訂路由的最後部分，但基礎路由始終由插件的 `routeBasePath` 和版本的 `path` 定義。"
+      }
+    },
+    {
+      "segment_id": "90d35b51",
+      "source_content": "### File paths and URL paths {#file-paths-and-url-paths}",
+      "source_content_hash": "b628908c1adc7e44bde3320a92bf66ee49c292177230b9e92aeca832235228e1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 檔案路徑與 URL 路徑 {#file-paths-and-url-paths}"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Throughout the documentation, we always try to be unambiguous about whether we are talking about file paths or URL paths. Content plugins usually map file paths directly to URL paths, for example, `./docs/advanced/routing.md` will become `/docs/advanced/routing`. However, with `slug`, you can make URLs totally decoupled from the file structure.",
+      "source_content_hash": "80adc446da2435335629008616f793747c1ee6f07d483136eb410bf1ad0c2f30",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在整個文件中，我們始終明確區分檔案路徑和 URL 路徑。內容插件通常會將檔案路徑直接映射到 URL 路徑，例如 `./docs/advanced/routing.md` 會變成 `/docs/advanced/routing`。但透過 `slug`，您可以讓 URL 完全與檔案結構脫鉤。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "When writing links in Markdown, you could either mean a _file path_, or a _URL path_, which Docusaurus would use several heuristics to determine.",
+      "source_content_hash": "b25aaa7bd745ea7633e9735d8bc977c2a5e3431893657d76c0b6ee82a09f0d34",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Markdown 中撰寫連結時，您可能指的是 _檔案路徑_ 或 _URL 路徑_，Docusaurus 會使用多種啟發式方法來判斷。"
+      }
+    },
+    {
+      "segment_id": "e0019b35",
+      "source_content": "- If the path has a `@site` prefix, it is _always_ an asset file path.\n- If the path has an `http(s)://` prefix, it is _always_ a URL path.\n- If the path doesn't have an extension, it is a URL path. For example, a link `[page](../plugins)` on a page with URL `/docs/advanced/routing` will link to `/docs/plugins`. Docusaurus will only detect broken links when building your site (when it knows the full route structure), but will make no assumptions about the existence of a file. It is exactly equivalent to writing `<a href=\"../plugins\">page</a>` in a JSX file.\n- If the path has an `.md(x)` extension, Docusaurus would try to resolve that Markdown file to a URL, and replace the file path with a URL path.\n- If the path has any other extension, Docusaurus would treat it as [an asset](../guides/markdown-features/markdown-features-assets.mdx) and bundle it.",
+      "source_content_hash": "752d68ce2ede5033d95056fdafe7687059da225d6528f1fafd54225641facd97",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 若路徑有 `@site` 前綴，則 _始終_ 是資源檔案路徑。\n- 若路徑有 `http(s)://` 前綴，則 _始終_ 是 URL 路徑。\n- 若路徑沒有副檔名，則是 URL 路徑。例如，在 URL 為 `/docs/advanced/routing` 的頁面上，連結 `[page](../plugins)` 會指向 `/docs/plugins`。Docusaurus 僅在建置網站時（當它知道完整路由結構時）檢測斷開的連結，但不會對檔案存在與否做任何假設。這完全等同於在 JSX 檔案中寫入 `<a href=\"../plugins\">page</a>`。\n- 若路徑有 `.md(x)` 副檔名，Docusaurus 會嘗試將該 Markdown 檔案解析為 URL，並將檔案路徑替換為 URL 路徑。\n- 若路徑有任何其他副檔名，Docusaurus 會將其視為 [資源](../guides/markdown-features/markdown-features-assets.mdx) 並打包。"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "The following directory structure may help you visualize this file → URL mapping. Assume that there's no slug customization in any page.",
+      "source_content_hash": "24fcdb06be714985aef5559fc39f3b4c1f3821a957e0d62dcab316ba496d72a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下目錄結構可幫助您視覺化這種檔案 → URL 映射。假設所有頁面均未自訂 slug。"
+      }
+    },
+    {
+      "segment_id": "341c2c0e",
+      "source_content": "<details>\n\n<summary>A sample site structure</summary>\n\n```bash\n.\n├── blog                            # blog plugin has routeBasePath: '/blog'\n│   ├── 2019-05-28-first-blog-post.md       # -> /blog/2019/05/28/first-blog-post\n│   ├── 2019-05-29-long-blog-post.md        # -> /blog/2019/05/29/long-blog-post\n│   ├── 2021-08-01-mdx-blog-post.mdx        # -> /blog/2021/08/01/mdx-blog-post\n│   └── 2021-08-26-welcome\n│       ├── docusaurus-plushie-banner.jpeg\n│       └── index.md                        # -> /blog/2021/08/26/welcome\n├── docs                            # docs plugin has routeBasePath: '/docs'; current version has base path '/'\n│   ├── intro.md                            # -> /docs/intro\n│   ├── tutorial-basics\n│   │   ├── _category_.json\n│   │   ├── congratulations.md              # -> /docs/tutorial-basics/congratulations\n│   │   └── markdown-features.mdx           # -> /docs/tutorial-basics/markdown-features\n│   └── tutorial-extras\n│       ├── _category_.json\n│       ├── manage-docs-versions.md         # -> /docs/tutorial-extras/manage-docs-versions\n│       └── translate-your-site.md          # -> /docs/tutorial-extras/translate-your-site\n├── src\n│   └── pages                       # pages plugin has routeBasePath: '/'\n│       ├── index.module.css\n│       ├── index.tsx                       # -> /\n│       └── markdown-page.md                # -> /markdown-page\n└── versioned_docs\n    └── version-1.0.0               # version has base path '/1.0.0'\n        ├── intro.md                        # -> /docs/1.0.0/intro\n        ├── tutorial-basics\n        │   ├── _category_.json\n        │   ├── congratulations.md          # -> /docs/1.0.0/tutorial-basics/congratulations\n        │   └── markdown-features.mdx       # -> /docs/1.0.0/tutorial-basics/markdown-features\n        └── tutorial-extras\n            ├── _category_.json\n            ├── manage-docs-versions.md     # -> /docs/1.0.0/tutorial-extras/manage-docs-versions\n            └── translate-your-site.md      # -> /docs/1.0.0/tutorial-extras/translate-your-site\n```\n\n</details>",
+      "source_content_hash": "15c1ad4425de0315c2fb68db6c9db4d5e0e1e92da3e0cd1e6834e8a906091ddf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_341c2c0e"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "So much about content plugins. Let's take one step back and talk about how routing works in a Docusaurus app in general.",
+      "source_content_hash": "ec0893916e37d474de7f89ec913edfd501d547bef91f39ba0e65fe00af6540e8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "關於內容插件的部分就這麼多。讓我們退一步，談談 Docusaurus 應用中的路由運作原理。"
+      }
+    },
+    {
+      "segment_id": "8b448c8b",
+      "source_content": "## Routes become HTML files {#routes-become-html-files}",
+      "source_content_hash": "bc483ab04c5fbbfb8fdf58bdd4e3fe2840e17f1d42540570665f649db556b475",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 路由轉為 HTML 檔案 {#routes-become-html-files}"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "Because Docusaurus is a server-side rendering framework, all routes generated will be server-side rendered into static HTML files. If you are familiar with the behavior of HTTP servers like [Apache2](https://httpd.apache.org/docs/trunk/getting-started.html), you will understand how this is done: when the browser sends a request to the route `/docs/advanced/routing`, the server interprets that as request for the HTML file `/docs/advanced/routing/index.html`, and returns that.",
+      "source_content_hash": "c072376433bc54d7c57ff847941453e432bd509fdd541d68dd0b2f94af19acee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於 Docusaurus 是伺服器端渲染框架，所有生成的路由都會被伺服器端渲染成靜態 HTML 檔案。如果您熟悉 [Apache2](https://httpd.apache.org/docs/trunk/getting-started.html) 等 HTTP 伺服器的行為，就會理解其運作方式：當瀏覽器向路由 `/docs/advanced/routing` 發送請求時，伺服器會將其解釋為請求 HTML 檔案 `/docs/advanced/routing/index.html` 並返回該檔案。"
+      }
+    },
+    {
+      "segment_id": "3e8f45da",
+      "source_content": "The `/docs/advanced/routing` route can correspond to either `/docs/advanced/routing/index.html` or `/docs/advanced/routing.html`. Some hosting providers differentiate between them using the presence of a trailing slash, and may or may not tolerate the other. Read more in the [trailing slash guide](https://github.com/slorber/trailing-slash-guide).",
+      "source_content_hash": "3ee9c1aceca6b185bfae14ee24dba332fec66b64e70de2f73e37aecd03c607ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "路由 `/docs/advanced/routing` 可能對應 `/docs/advanced/routing/index.html` 或 `/docs/advanced/routing.html`。某些託管供應商會根據尾部斜線的存在與否來區分它們，並可能容忍或不容忍另一種形式。詳見 [尾部斜線指南](https://github.com/slorber/trailing-slash-guide)。"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "For example, the build output of the directory above is (ignoring other assets and JS bundle):",
+      "source_content_hash": "de8e89d408747a3ade5f94ee6ec43b4614f2293fe6c5a06f9b75e4637d41f715",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，上述目錄的建置輸出為（忽略其他資源和 JS 套件）："
+      }
+    },
+    {
+      "segment_id": "a65f36d4",
+      "source_content": "<details>\n\n<summary>Output of the above workspace</summary>\n\n```bash\nbuild\n├── 404.html                      # /404/\n├── blog\n│   ├── archive\n│   │   └── index.html            # /blog/archive/\n│   ├── first-blog-post\n│   │   └── index.html            # /blog/first-blog-post/\n│   ├── index.html                # /blog/\n│   ├── long-blog-post\n│   │   └── index.html            # /blog/long-blog-post/\n│   ├── mdx-blog-post\n│   │   └── index.html            # /blog/mdx-blog-post/\n│   ├── tags\n│   │   ├── docusaurus\n│   │   │   └── index.html        # /blog/tags/docusaurus/\n│   │   ├── hola\n│   │   │   └── index.html        # /blog/tags/hola/\n│   │   └── index.html            # /blog/tags/\n│   └── welcome\n│       └── index.html            # /blog/welcome/\n├── docs\n│   ├── 1.0.0\n│   │   ├── intro\n│   │   │   └── index.html        # /docs/1.0.0/intro/\n│   │   ├── tutorial-basics\n│   │   │   ├── congratulations\n│   │   │   │   └── index.html    # /docs/1.0.0/tutorial-basics/congratulations/\n│   │   │   └── markdown-features\n│   │   │       └── index.html    # /docs/1.0.0/tutorial-basics/markdown-features/\n│   │   └── tutorial-extras\n│   │       ├── manage-docs-versions\n│   │       │   └── index.html    # /docs/1.0.0/tutorial-extras/manage-docs-versions/\n│   │       └── translate-your-site\n│   │           └── index.html    # /docs/1.0.0/tutorial-extras/translate-your-site/\n│   ├── intro\n│   │   └── index.html            # /docs/1.0.0/intro/\n│   ├── tutorial-basics\n│   │   ├── congratulations\n│   │   │   └── index.html        # /docs/tutorial-basics/congratulations/\n│   │   └── markdown-features\n│   │       └── index.html        # /docs/tutorial-basics/markdown-features/\n│   └── tutorial-extras\n│       ├── manage-docs-versions\n│       │   └── index.html        # /docs/tutorial-extras/manage-docs-versions/\n│       └── translate-your-site\n│           └── index.html        # /docs/tutorial-extras/translate-your-site/\n├── index.html                    # /\n└── markdown-page\n    └── index.html                # /markdown-page/\n```\n\n</details>",
+      "source_content_hash": "68a6cddba4abdffac2f077933168fbda5c4184d6d82fd56e020ee6defaae1c8d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a65f36d4"
+      }
+    },
+    {
+      "segment_id": "af834e0d",
+      "source_content": "If `trailingSlash` is set to `false`, the build would emit `intro.html` instead of `intro/index.html`.",
+      "source_content_hash": "7ff44806b3439c937608e3382ea45410cff02f0ddd2dfc7af213f8148910374e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若 `trailingSlash` 設為 `false`，建置會生成 `intro.html` 而非 `intro/index.html`。"
+      }
+    },
+    {
+      "segment_id": "d75361e3",
+      "source_content": "All HTML files will reference its JS assets using absolute URLs, so in order for the correct assets to be located, you have to configure the `baseUrl` field. Note that `baseUrl` doesn't affect the emitted bundle's file structure: the base URL is one level above the Docusaurus routing system. You can see the aggregate of `url` and `baseUrl` as the actual location of your Docusaurus site.",
+      "source_content_hash": "890a5b6a55972962c8c7993978b49e6bcf7525baeb695884c45f544f8ba78bb1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有 HTML 檔案都會使用絕對 URL 引用其 JS 資源，因此為了正確定位資源，您必須配置 `baseUrl` 欄位。請注意，`baseUrl` 不會影響生成的套件檔案結構：基礎 URL 位於 Docusaurus 路由系統之上的一層。您可以將 `url` 和 `baseUrl` 的組合視為 Docusaurus 網站的實際位置。"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "For example, the emitted HTML would contain links like `<link rel=\"preload\" href=\"/assets/js/runtime~main.7ed5108a.js\" as=\"script\">`. Because absolute URLs are resolved from the host, if the bundle placed under the path `https://example.com/base/`, the link will point to `https://example.com/assets/js/runtime~main.7ed5108a.js`, which is, well, non-existent. By specifying `/base/` as base URL, the link will correctly point to `/base/assets/js/runtime~main.7ed5108a.js`.",
+      "source_content_hash": "2f151f84b852a4fa26d4b11c37a3bf3a586beff42e5712a94ed377634bbbc36c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "舉例來說，產生的 HTML 檔案會包含如 `<link rel=\"preload\" href=\"/assets/js/runtime~main.7ed5108a.js\" as=\"script\">` 的連結。由於絕對 URL 是從主機端解析，若打包檔案被放置在 `https://example.com/base/` 路徑下，該連結會錯誤指向 `https://example.com/assets/js/runtime~main.7ed5108a.js`（實際上不存在）。透過指定 `/base/` 作為基礎 URL，連結才能正確指向 `/base/assets/js/runtime~main.7ed5108a.js`。"
+      }
+    },
+    {
+      "segment_id": "5eedf0a1",
+      "source_content": "Localized sites have the locale as part of the base URL as well. For example, `https://docusaurus.io/zh-CN/docs/advanced/routing/` has base URL `/zh-CN/`.",
+      "source_content_hash": "6c756f02ebef3904b7d99b74a6ba8a85c68e03647cac8a7e77ffae6577fa84da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在地化網站的基礎 URL 會包含語系代碼。例如 `https://docusaurus.io/zh-CN/docs/advanced/routing/` 的基礎 URL 為 `/zh-CN/`。"
+      }
+    },
+    {
+      "segment_id": "c7ab93a8",
+      "source_content": "## Generating and accessing routes {#generating-and-accessing-routes}",
+      "source_content_hash": "2c998a29e497f6fa040833c3f21a40ca0bc7de5f3f1fe31cccb4f7f1dc22ee20",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 路由生成與存取 {#generating-and-accessing-routes}"
+      }
+    },
+    {
+      "segment_id": "9ede513a",
+      "source_content": "The `addRoute` lifecycle action is used to generate routes. It registers a piece of route config to the route tree, giving a route, a component, and props that the component needs. The props and the component are both provided as paths for the bundler to `require`, because as explained in the [architecture overview](architecture.mdx), server and client only communicate through temp files.",
+      "source_content_hash": "e351d84ee8199a0b8d988975fece7924c329a3ef9b1104220d6d6d2361b40851",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`addRoute` 生命週期方法用於生成路由，它會向路由樹註冊一組路由配置，包含路由路徑、對應元件及元件所需的 props。props 和元件都以打包工具可 `require` 的路徑形式提供，如同[架構概述](architecture.mdx)所述，伺服器與客戶端僅透過暫存檔案溝通。"
+      }
+    },
+    {
+      "segment_id": "49be422b",
+      "source_content": "All routes are aggregated in `.docusaurus/routes.js`, which you can view with the debug plugin's [routes panel](/__docusaurus/debug/routes).",
+      "source_content_hash": "07a4c825013b46e392ba7c1a3c9344e231143c00d1488850f6001c335f2a78c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有路由會彙整在 `.docusaurus/routes.js` 中，可透過除錯外掛的[路由面板](/__docusaurus/debug/routes)查看。"
+      }
+    },
+    {
+      "segment_id": "01902900",
+      "source_content": "On the client side, we offer `@docusaurus/router` to access the page's route. `@docusaurus/router` is a re-export of the [`react-router-dom`](https://www.npmjs.com/package/react-router-dom/v/5.3.0) package. For example, you can use `useLocation` to get the current page's [location](https://developer.mozilla.org/en-US/docs/Web/API/Location), and `useHistory` to access the [history object](https://developer.mozilla.org/en-US/docs/Web/API/History). (They are not the same as the browser API, although similar in functionality. Refer to the React Router documentation for specific APIs.)",
+      "source_content_hash": "c24d609914e63312285a454fddf45633403a2fcca09fe77a529cacff464d2b8c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在客戶端，我們提供 `@docusaurus/router` 來存取頁面路由。該套件是 [`react-router-dom`](https://www.npmjs.com/package/react-router-dom/v/5.3.0) 的再匯出，例如可使用 `useLocation` 取得當前頁面的[位置物件](https://developer.mozilla.org/en-US/docs/Web/API/Location)，或透過 `useHistory` 存取[歷史物件](https://developer.mozilla.org/en-US/docs/Web/API/History)（功能類似瀏覽器 API 但實作不同，詳見 React Router 文件）。"
+      }
+    },
+    {
+      "segment_id": "dbeb30c1",
+      "source_content": "This API is **SSR safe**, as opposed to the browser-only `window.location`.",
+      "source_content_hash": "ffee21ca5497500a8b47bd07a3ca70dbc87c5d3957ff47e89b1ada159ed8bd79",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此 API 具有**SSR 安全性**，與僅限瀏覽端的 `window.location` 不同。"
+      }
+    },
+    {
+      "segment_id": "489cbec9",
+      "source_content": "```jsx title=\"myComponent.js\"\nimport React from 'react';\nimport {useLocation} from '@docusaurus/router';\n\nexport function PageRoute() {\n  // React router provides the current component's route, even in SSR\n  const location = useLocation();\n  return (\n    <span>\n      We are currently on <code>{location.pathname}</code>\n    </span>\n  );\n}\n```",
+      "source_content_hash": "685cf1244c12f947425f5065d2b6d8316fcaf53a73b2abca1f0b73f98fbcbc34",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4f217d4a",
+      "source_content": "```mdx-code-block\nexport function PageRoute() {\n  const location = useLocation();\n  return (\n    <span>\n      We are currently on <code>{location.pathname}</code>\n    </span>\n  );\n}\n\n<BrowserWindow>\n\n<PageRoute />\n\n</BrowserWindow>\n```",
+      "source_content_hash": "633fa452b3ae2c98c251cddd5c26215ab83ad2bdf40cff443dd7e3a0b7407f1b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4cb3b0aa",
+      "source_content": "## Escaping from SPA redirects {#escaping-from-spa-redirects}",
+      "source_content_hash": "6eae276098f13a027f15aedd66a4c9b1427bf57c1110c770e52757706b6bbd4a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 跳脫 SPA 重新導向機制 {#escaping-from-spa-redirects}"
+      }
+    },
+    {
+      "segment_id": "2153a2fa",
+      "source_content": "Docusaurus builds a [single-page application](https://developer.mozilla.org/en-US/docs/Glossary/SPA), where route transitions are done through the `history.push()` method of React router. This operation is done on the client side. However, the prerequisite for a route transition to happen this way is that the target URL is known to our router. Otherwise, the router catches this path and displays a 404 page instead.",
+      "source_content_hash": "7a6d2434cec6cf4ff73fc103e90e189de247eaa7824e1cb40e45f3bca6e1d931",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 建構的是[單頁應用程式](https://developer.mozilla.org/en-US/docs/Glossary/SPA)，路由轉換透過 React Router 的 `history.push()` 方法在客戶端完成。此操作的前提是目標 URL 必須存在於路由系統中，否則路由器會攔截路徑並顯示 404 頁面。"
+      }
+    },
+    {
+      "segment_id": "bb5297fc",
+      "source_content": "If you put some HTML pages under the `static` folder, they will be copied to the build output and therefore become accessible as part of your website, yet it's not part of the Docusaurus route system. We provide a `pathname://` protocol that allows you to redirect to another part of your domain in a non-SPA fashion, as if this route is an external link.",
+      "source_content_hash": "e06d7525113a5b994fe1014757c3ee5289ba657adbffb2d2114b67632337989c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若將 HTML 頁面置於 `static` 資料夾，它們會被複製到建置輸出中成為網站內容，但不會納入 Docusaurus 路由系統。我們提供 `pathname://` 協議，讓您能以非 SPA 方式重新導向至網域內其他路徑，如同外部連結般運作。"
+      }
+    },
+    {
+      "segment_id": "8aee8de6",
+      "source_content": "```md\n- [pathname:///pure-html](pathname:///pure-html)\n```",
+      "source_content_hash": "9a9e680e0f9b43052a7263106e573afcc4a17fd0fb67c167e2ed7edf25cca2bd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "58479831",
+      "source_content": "<BrowserWindow>\n\n- [`pathname:///pure-html`](pathname:///pure-html)\n\n</BrowserWindow>",
+      "source_content_hash": "064f9bfc2786ef89d529183f45861442e43ab017da865e8e27962eac3128dde3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "The `pathname://` protocol is useful for referencing any content in the static folder. For example, Docusaurus would convert [all Markdown static assets to require() calls](../guides/markdown-features/markdown-features-assets.mdx#static-assets). You can use `pathname://` to keep it a regular link instead of being hashed by Webpack.",
+      "source_content_hash": "ec7ae57c461c215b20df614147a6a9f182ece42778e3cdaa18105428349719b0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`pathname://` 協議特別適用於參照 static 資料夾內容。例如 Docusaurus 會將[所有 Markdown 靜態資源轉為 require() 呼叫](../guides/markdown-features/markdown-features-assets.mdx#static-assets)，使用此協議可保持原始連結形式，避免被 Webpack 雜湊處理。"
+      }
+    },
+    {
+      "segment_id": "a54efbd2",
+      "source_content": "```md title=\"my-doc.md\"\n![An image from the static](pathname:///img/docusaurus.png)\n\n[An asset from the static](pathname:///files/asset.pdf)\n```",
+      "source_content_hash": "7aa9f0aab0ae1ce94a44cf36904e2a61ceb2be1d25f3886eade621b24962f7b1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7fa65ec5",
+      "source_content": "Docusaurus will only strip the `pathname://` prefix without processing the content.",
+      "source_content_hash": "1903f1012906648ff8692b90da4923b0ab22beed57c66d98ef00e37d1c1830d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 僅會移除 `pathname://` 前綴，不會對內容進行其他處理。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.5.2/advanced/routing.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.255797+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "3f7df3f2c686d6bc634cd9be31fcea9c3a6b9ade917b11c87f500f2897dc07f5"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.2.1/migration/index.mdx",
+  "source_file_content_hash": "a52efe8f39a1b278200e69da05b636df0f9462071e6e9e6867bfd60c270a94ab",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration\n---",
+      "source_content_hash": "a0e4c8d2651f4709cf98cb378a8b8e7a132af41a494af81cb8725ac513ed730e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Upgrading Docusaurus",
+      "source_content_hash": "2696a0062e6ea9bc70bd7a052f426d77ecc5e858ce6118863ac5a64478c6c3cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 升級 Docusaurus"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus versioning is based on the `major.minor.patch` scheme and respects [**Semantic Versioning**](https://semver.org/).",
+      "source_content_hash": "4977a9e27ac6609a499a1feae6be6863270e9c1329784458db79338c985cf09c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的版本控制基於 `major.minor.patch` 方案，並遵循 [**語意化版本控制**](https://semver.org/)。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "**Breaking changes** are only released on major version upgrades, and thoroughly documented in the following upgrade guides.",
+      "source_content_hash": "01496586d875aa7213ea9795e693ccb703b31e7034fe9ff2fa9886a477f6ec60",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**重大變更**僅在主要版本升級時發布，並在以下升級指南中詳細記載。"
+      }
+    },
+    {
+      "segment_id": "b608d7f0",
+      "source_content": "import DocCardList from '@theme/DocCardList';",
+      "source_content_hash": "1f260d6e36f000dced0cbc1c9af370da2977fd6aedf8e610c2df031522c8d32e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b608d7f0"
+      }
+    },
+    {
+      "segment_id": "5da3670c",
+      "source_content": "<DocCardList />",
+      "source_content_hash": "14e3077db6e34a7ede797ac90e735654854537adefea128ed427d084d3efccf2",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5da3670c"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.2.1/migration/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.198247+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "a52efe8f39a1b278200e69da05b636df0f9462071e6e9e6867bfd60c270a94ab"
+  }
+}

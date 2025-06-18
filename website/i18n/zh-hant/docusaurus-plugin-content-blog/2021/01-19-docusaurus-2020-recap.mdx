@@ -1,0 +1,135 @@
+---
+title: Docusaurus 2020 Recap
+authors: [slorber]
+tags: [recap]
+image: /img/docusaurus-2020-recap.png
+---
+
+**2020年對Docusaurus而言是豐收的一年**，儘管[年初發生了令人遺憾的事件](https://docusaurus.io/blog/2020/01/07/tribute-to-endi)，且這一年對所有人來說都充滿動盪。
+
+我們持續投入[Docusaurus 2](https://docusaurus.io/)的開發，使其功能達到與[Docusaurus 1](https://v1.docusaurus.io/)的**完全對等**。
+
+我們現在**推薦Docusaurus 2**作為新專案的**預設選擇**，並鼓勵v1用戶[遷移至Docusaurus 2](https://docusaurus.io/docs/migration)。
+
+目前仍處於**alpha階段**，但預計**很快會有好消息公布**！
+
+![三隻Docusaurus絨毛玩偶並排擺放在桌上](/img/blog/2020-recap/docusaurus-plushie-banner.jpeg)
+
+<!--truncate-->
+
+## Docusaurus 2年度亮點
+
+今年我們開發了多項功能，以下是其中最重要的進展：
+
+- **國際化(i18n)**：輕鬆翻譯您的Docusaurus網站，即將發布！([預覽](https://github.com/facebook/docusaurus/pull/3325), [文檔](https://docusaurus.io/docs/next/i18n/introduction))
+- **版本下拉選單**：實現情境式版本切換
+- **版本控制選項**：解決用戶最常見的版本管理痛點
+- **情境式搜索**：在當前版本中搜索，使用全新的DocSearch 3體驗
+- **Markdown頁面**：使用Markdown替代React組件來創建獨立頁面
+- **更優質的主題**：多項UI、UX和無障礙功能改進
+- **漸進式網頁應用(PWA)**：為網站添加離線支持，並可安裝到設備
+- **快速失敗機制**：嚴格的配置驗證、檢測失效鏈接，防止不良生產環境部署
+- **多實例支持**：在單一網站上重複使用文檔插件（例如iOS/Android SDK文檔）
+- **遷移CLI工具**：自動化從Docusaurus 1升級的流程
+- **CodeSandbox整合**：通過[new.docusaurus.io](https://new.docusaurus.io/)直接在瀏覽器中評估Docusaurus
+- **Canary版本**：使用`@canary` npm標籤搶先體驗即將發布的版本
+- **TypeScript支援**：內部代碼逐步採用，並改善用戶使用體驗
+- **開源Infima**：現已[開放原始碼](https://github.com/facebookincubator/infima)
+
+## Docusaurus 2成長軌跡
+
+2019年[從頭重建Docusaurus的計劃](https://docusaurus.io/blog/2019/12/30/docusaurus-2019-recap)已見成效：經過緩慢起步後，Docusaurus 2獲得廣泛採用，**使用量已超越Docusaurus 1**。
+
+![2020年Docusaurus v1與v2的npm趨勢對比圖。v2安裝量呈現明顯上升趨勢，v1則微幅下降。v1從15000開始降至10000，v2從2000攀升至25000。兩條曲線在2020年6月左右交叉](/img/blog/2020-recap/docusaurus-npm-trends.png)
+
+值得注意的是，以下**專案、新創公司、大型企業和個人**已採用Docusaurus 2（[案例展示](https://docusaurus.io/showcase)）：
+
+- [Supabase](https://supabase.io)
+- [React Navigation](https://reactnavigation.org)
+- [React Redux](https://react-redux.js.org/)
+- [Vector](https://vector.dev)
+- [Algolia DocSearch](https://docsearch.algolia.com)
+- [SAP Cloud SDK](https://sap.github.io/cloud-sdk)
+- [Palo Alto Cortex XSOAR](https://xsoar.pan.dev)
+- [Quddús George的個人網站](https://portfoliosaurus.now.sh)
+
+我們協助**大型 Docusaurus 1 網站完成升級**，確保提供完善的**遷移路徑**與**功能對等性**。
+
+[React Native](https://reactnative.dev/) 已成功升級至 Docusaurus 2 ([v1 歸檔站點](http://archive.reactnative.dev/))：
+
+![使用 Docusaurus v2 建構的 React Native 新官網](/img/blog/2020-recap/react-native-screenshot.png)
+
+本地化的 Docusaurus 1 網站（如 **Jest**）也將能進行升級：
+
+![以 Docusaurus v2 建構的日文版 Jest 新官網](/img/blog/2020-recap/jest-screenshot.png)
+
+我們也見證了**[首個從右至左](https://datagit.ir/)** 的 Docusaurus 2 網站上線：
+
+![波斯語的 Datagit 網站（右至左語言）。側邊欄位於視窗右側，目錄則顯示在左側。](/img/blog/2020-recap/datagit-rtl-screenshot.png)
+
+## GitHub 活躍度
+
+- **星標數**：14632 → 20946（年增 43.2%）
+- **總貢獻者**：303 → 512（年增 68.9%），其中多數為非 Facebook 貢獻者
+- **每週 npm 下載量**：2356 → 25592（年增 986%）
+- **GitHub 上**，Docusaurus 1 被 6311 個專案使用（年增 62.9%），Docusaurus 2 則被 5039 個專案使用（年增 1940%）
+
+## 與 Major League Hacking 的合作
+
+我們已迎接 [Major League Hacking](https://mlh.io/) (MLH) 學員參與了兩個賽季。
+
+非常感謝他們帶來的**多項貢獻**，例如：
+
+- 編寫 v1 至 v2 遷移 CLI 的基礎架構
+- 協助將 React Native 官網從 v1 遷移至 v2
+- 強化配置驗證的嚴格性與完整性，提供更具幫助的錯誤訊息
+- 新增 CodeSandbox 支援
+- 改進 CI 流程：建置大小與 Lighthouse 機器人
+
+我們期待在 2021 年持續這項合作。
+
+## 媒體報導
+
+Dmitry Vinnik（Facebook 開發者推廣工程師）透過 [60 秒](https://www.youtube.com/watch?v=_An9EsKPhp0) 或 [15 分鐘](https://www.youtube.com/watch?v=Yhyx7otSksg) 影片解說 Docusaurus。
+
+Rachel Nabors（Facebook 文件工程師）在 [React Native Radio 第 178 集（播客）](https://reactnativeradio.com/episodes/178-documenting-react-native-with-rachel-nabors-gWxwySPl) 中談及 Docusaurus，William Candillon 則分享了 [React Native 官網遷移實錄（影片）](https://www.youtube.com/watch?v=-zhjq2ECKq4)。
+
+多篇部落格文章相繼發表：
+
+- [致 Docusaurus 的創造者們](https://portfoliosaurus.now.sh/blog/toTheMakers) - Quddus George
+- [用 Redoc 和 Docusaurus 打造更豐富的 API 文件](https://davidgoss.co/blog/api-documentation-redoc-docusaurus/) - David Goss
+- [如何為 Docusaurus v2 開發外掛](https://aknapen.nl/blog/how-to-build-a-plugin-for-docusaurus-v2/) - Adriaan Knapen
+- [使用 Docusaurus v2 建構 React Tracked 文件網站](https://blog.axlight.com/posts/react-tracked-documentation-website-with-docusaurus-v2/) - Daishi Kato
+- [用 Docusaurus 輕鬆建立文件](https://blog.logrocket.com/easy-documentation-with-docusaurus/) - Anshul Goyal（MLH 學員）
+- [用 Docusaurus 建構美觀的文件網站](https://lo-victoria.com/build-beautiful-documentation-websites-with-docusaurus) - Victoria Lo
+
+## 社群動態
+
+Docusaurus 社群持續成長，[Discord](https://discord.gg/docusaurus) 伺服器相當活躍，且 [Stack Overflow 問題](https://stackoverflow.com/questions/tagged/docusaurus)不斷被提出。
+
+Docusaurus 2 的**模組化架構**讓社群能夠建立並發布[第三方外掛](https://docusaurus.io/community/resources#community-plugins-)。由於我們希望更好地整合社群資源，如果您正在開發外掛，請[告知我們](https://github.com/facebook/docusaurus/discussions/4025)。
+
+## 下一步是什麼？
+
+隨著 **Docusaurus 2 的核心功能**終於完成，我們將能夠投入更多時間解決社群回報的痛點和錯誤，並讓 Docusaurus 足夠穩定與便利，進入**測試版和候選發布階段**。
+
+透過對**國際化與版本控制**的完善支援，以及如**React Native**和**Jest**等**大規模遷移**案例，我們現在為所有 Docusaurus 1 網站提供了清晰的遷移路徑。
+
+我們仍有幾項**主要功能**希望繼續推進：
+
+- [建立主題畫廊](https://github.com/facebook/docusaurus/issues/3522)，讓切換主題更輕鬆，並包含**一流的 Tailwind 支援**
+- [升級至 Webpack 5](https://github.com/facebook/docusaurus/issues/4027)，提升效能與建置速度
+- [提升與 CommonMark 的相容性](https://github.com/facebook/docusaurus/issues/3018)，因 MDX 使得基於 CommonMark 的網站較難採用 Docusaurus
+- [升級至 MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)
+- 其他可能在 2021 年發現的任務
+
+特別感謝社群在 2020 年的[貢獻](https://github.com/facebook/docusaurus/graphs/contributors?from=2020-01-01&to=2021-01-01&type=c)，尤其是：
+
+- [Joel Marcey](https://github.com/JoelMarcey) 創建了 Docusaurus 並長期支持此專案
+- 核心團隊 - [Alexey Pyltsyn](https://github.com/lex111)、[Sébastien Lorber](https://sebastienlorber.com)、[Yangshun Tay](https://x.com/yangshunz)
+- Major League Hacking 和 Facebook 實習生的重大貢獻
+- Algolia 團隊對 DocSearch 3 的支援
+- [Bartosz Kaszubowski](https://github.com/Simek) 對 React Native 遷移的投入
+- 整個社群的貢獻與互助支持
+
+祝 2021 年一切順利！🎉

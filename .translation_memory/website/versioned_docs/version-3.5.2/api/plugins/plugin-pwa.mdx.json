@@ -1,0 +1,622 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.5.2/api/plugins/plugin-pwa.mdx",
+  "source_file_content_hash": "fe603a5c0c3a407971bf6e11a0a92fa77ca09d04b23ae869abc7d99a1a7edd14",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 9\nslug: /api/plugins/@docusaurus/plugin-pwa\n---",
+      "source_content_hash": "b68561872192853069e5389a3218de06370088f9e04db9ead05c615d8e7d14d5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-pwa",
+      "source_content_hash": "8637a03722a82c2448bda4c7b5dbc3180613eb71a610f8a5d1970c88d5c43002",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-pwa"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Docusaurus Plugin to add PWA support using [Workbox](https://developers.google.com/web/tools/workbox). This plugin generates a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers) in production build only, and allows you to create fully PWA-compliant documentation site with offline and installation support.",
+      "source_content_hash": "3d707a955be470b307a911289897c54f457f03c424286913f364cb06e1b0df1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 插件，使用 [Workbox](https://developers.google.com/web/tools/workbox) 添加 PWA 支援。此插件僅在生產環境建置時生成 [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers)，讓您能建立具備離線與安裝功能的完整 PWA 相容文件網站。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "ee201347",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-pwa\n```",
+      "source_content_hash": "631f2214510b740d39d842daa8029240f1a7c9efd2bbfc712ecfe89b7a10972a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ee201347"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Create a [PWA manifest](https://web.dev/add-manifest/) at `./static/manifest.json`.",
+      "source_content_hash": "5ee93154defcd71f45457a269ef1fa66977947b3bd83010f39a4ebb635bfad83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 `./static/manifest.json` 建立 [PWA 清單文件](https://web.dev/add-manifest/)。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Modify `docusaurus.config.js` with a minimal PWA config, like:",
+      "source_content_hash": "f8e7e48f3e081b7553ec66beee83c6f00c8b234ab2010d9df0268c338ab00057",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "修改 `docusaurus.config.js` 加入基本 PWA 配置，例如："
+      }
+    },
+    {
+      "segment_id": "9eee5787",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-pwa',\n      {\n        debug: true,\n        offlineModeActivationStrategies: [\n          'appInstalled',\n          'standalone',\n          'queryString',\n        ],\n        pwaHead: [\n          {\n            tagName: 'link',\n            rel: 'icon',\n            href: '/img/docusaurus.png',\n          },\n          {\n            tagName: 'link',\n            rel: 'manifest',\n            href: '/manifest.json', // your PWA manifest\n          },\n          {\n            tagName: 'meta',\n            name: 'theme-color',\n            content: 'rgb(37, 194, 160)',\n          },\n        ],\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "c71fb661bcac0abefe19a478c39baee48aa53848ba8b9e2690391e866ab28161",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9eee5787"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "## Progressive Web App {#progressive-web-app}",
+      "source_content_hash": "3a0108ffde49a98a0033b1e0eafe6b19c3d3f443acea960823ae86aee0e4c674",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 漸進式網路應用 {#progressive-web-app}"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Having a service worker installed is not enough to make your application a PWA. You'll need to at least include a [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and have the correct tags in `<head>` ([Options > pwaHead](#pwahead)).",
+      "source_content_hash": "36ba9de5d6c8c3249d2363a671dec64d8afc00e0e6c3ef77b8bb4636ecadf7c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "僅安裝 service worker 並不足以讓您的應用成為 PWA。您至少需要包含 [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) 並在 `<head>` 中加入正確標籤（參見 [選項 > pwaHead](#pwahead)）。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "After deployment, you can use [Lighthouse](https://developers.google.com/web/tools/lighthouse) to run an audit on your site.",
+      "source_content_hash": "4a47d47a2b2be97f1721be18b0988132dbfb7c60ba54d47fef312296d5a631d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部署後，您可使用 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 對網站進行審核。"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "For a more exhaustive list of what it takes for your site to be a PWA, refer to the [PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist)",
+      "source_content_hash": "eed48666c9c6d3bbd7fcb8d579a949bbcfc9d43f3d241f073b3e0b52c95d750f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更完整的 PWA 要求清單，請參考 [PWA 檢查表](https://developers.google.com/web/progressive-web-apps/checklist)"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "## App installation support {#app-installation-support}",
+      "source_content_hash": "5f8c379eba02d914005e209717974e09a0d09f8700a2159e6c7a8242fe9892e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 應用程式安裝支援 {#app-installation-support}"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "If your browser supports it, you should be able to install a Docusaurus site as an app.",
+      "source_content_hash": "9dbdc2281b71a3fe030ecd374cc5fc3a71f5ca3e3ccff3e6a179b2f7f8a58f28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若瀏覽器支援，您可將 Docusaurus 網站安裝為應用程式。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "![A screen recording of the installation process. A button appears in the address bar of the browser, which displays a dialog asking \"install this application?\" when clicked. After clicking the \"Install\" button, a new application is opened in the operating system, opening to the Docusaurus homepage.](/img/pwa_install.gif)",
+      "source_content_hash": "9d8c3a4d45eb02148b0dae4b7d6f4b904b733200f4c00dbcd8bbf6e44093ec90",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![應用程式安裝過程的螢幕錄影。瀏覽器網址列出現安裝按鈕，點擊後顯示「安裝此應用程式？」對話框。點擊「安裝」按鈕後，作業系統會開啟新應用程式並顯示 Docusaurus 首頁。](/img/pwa_install.gif)"
+      }
+    },
+    {
+      "segment_id": "724adee0",
+      "source_content": ":::note\n\nApp installation requires the HTTPS protocol and a valid manifest.\n\n:::",
+      "source_content_hash": "fc56c347b195c805fd4427a6581f226ea4727004bd21dfdbebcaaf7a6b81e0c3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n應用程式安裝需使用 HTTPS 通訊協定與有效的 manifest 文件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "## Offline mode (precaching) {#offline-mode-precaching}",
+      "source_content_hash": "c0f39bf9ff5a4f380cb9714b019b356b41245e097d6ced85b9264cc6135d9031",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 離線模式（預先快取） {#offline-mode-precaching}"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "We enable users to browse a Docusaurus site offline, by using service-worker precaching.",
+      "source_content_hash": "aa28071c35b4d85b984114d1fe9bb806266f9891443787e07beff9b6b7db1509",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們透過 service-worker 預先快取機制，讓使用者能離線瀏覽 Docusaurus 網站。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "The [workbox-precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) page explains the idea:",
+      "source_content_hash": "deb7bc176cb33baffdeb7fdec80c6545eb6e652b8e36b41c7e313bdf1e5eb4e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[workbox-precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching) 頁面解釋其原理："
+      }
+    },
+    {
+      "segment_id": "c1945d24",
+      "source_content": "> One feature of service workers is the ability to save a set of files to the cache when the service worker is installing. This is often referred to as \"precaching\", since you are caching content ahead of the service worker being used.\n>\n> The main reason for doing this is that it gives developers control over the cache, meaning they can determine when and how long a file is cached as well as serve it to the browser without going to the network, meaning it can be used to create web apps that work offline.\n>\n> Workbox takes a lot of the heavy lifting out of precaching by simplifying the API and ensuring assets are downloaded efficiently.",
+      "source_content_hash": "9b7c83802a6e42d4f33910efd22c2814cd9e01f9543b326d14645bcee56bcb2c",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> Service worker 的重要功能之一是在安裝時將一組文件保存到快取中，此過程常稱為「預先快取」（precaching）。  \n>   \n> 這樣做的主要原因是讓開發者能控制快取，決定文件何時被快取、快取多久，並能直接提供給瀏覽器而無需連網，從而建立可離線運作的網路應用。  \n>  \n> Workbox 透過簡化 API 與確保資源高效下載，大幅降低了預先快取的實作難度。"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "By default, offline mode is enabled when the site is installed as an app. See the `offlineModeActivationStrategies` option for details.",
+      "source_content_hash": "7a63a2f09007b96e4f74f3de1cd3d629f94c67be51e3fd2ca490ab3bd98c11b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，當網站以應用程式形式安裝時會啟用離線模式。詳見 `offlineModeActivationStrategies` 選項說明。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "After the site has been precached, the service worker will serve cached responses for later visits. When a new build is deployed along with a new service worker, the new one will begin installing and eventually move to a waiting state. During this waiting state, a reload popup will show and ask the user to reload the page for new content. Until the user either clears the application cache or clicks the `reload` button on the popup, the service worker will continue serving the old content.",
+      "source_content_hash": "6d0dfd2f8d10521bef36179a0b437aa23c13f6c96b388af25346e1f4fa47e26c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "網站完成預先快取後，service worker 會為後續訪問提供快取回應。當新版本部署並伴隨新 service worker 時，新版本會開始安裝並進入等待狀態。在此等待狀態期間，會顯示重新載入彈窗，要求使用者刷新頁面以取得新內容。在使用者清除應用程式快取或點擊彈窗的 `reload` 按鈕前，service worker 將持續提供舊內容。"
+      }
+    },
+    {
+      "segment_id": "e2e299c8",
+      "source_content": ":::warning\n\nOffline mode / precaching requires downloading all the static assets of the site ahead of time, and can consume unnecessary bandwidth. It may not be a good idea to activate it for all kind of sites.\n\n:::",
+      "source_content_hash": "3dea952816bda50b8a1a47d291890c371d7746e7414fadab3e53bbe92107cb7f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n離線模式/預先快取需事先下載網站所有靜態資源，可能消耗不必要的頻寬。並非所有類型網站都適合啟用此功能。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "## Options {#options}",
+      "source_content_hash": "1ecc0321257b16f9836b45fb74a8be8a2f98cdd77589c4f08f998ef62beb8652",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 選項 {#options}"
+      }
+    },
+    {
+      "segment_id": "99d0dd9b",
+      "source_content": "### `debug` {#debug}",
+      "source_content_hash": "738facaa4a7179c80ebc34cece4aec4d3a16070642c7c667164de4a38544b3db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `debug` {#debug}"
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "- Type: `boolean`\n- Default: `false`",
+      "source_content_hash": "79ae4b6f266c1cb5218d55ef2e5a0ad96446e7548ace643ad20b8fee4aa1cc5e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `boolean`\n- 預設值: `false`"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "Turn debug mode on:",
+      "source_content_hash": "cf47e1f4b438f7668456dc8bc5c6fd2989fd8dd78136b4a758e46c19750889d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "啟用除錯模式："
+      }
+    },
+    {
+      "segment_id": "7a3b7c62",
+      "source_content": "- Workbox logs\n- Additional Docusaurus logs\n- Unoptimized SW file output\n- Source maps",
+      "source_content_hash": "03b6434aebb9b1bc1e65e31586974717bebf13c46a139a6342949a47b166f83e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Workbox 日誌\n- 額外的 Docusaurus 日誌\n- 未優化的 SW 檔案輸出\n- 原始碼映射"
+      }
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "### `offlineModeActivationStrategies` {#offlinemodeactivationstrategies}",
+      "source_content_hash": "2cbd61123ed94be76b13661776b3e5c802970f1a9230e25769d4a8b0c303d5b6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `offlineModeActivationStrategies` {#offlinemodeactivationstrategies}"
+      }
+    },
+    {
+      "segment_id": "0422e2e2",
+      "source_content": "- Type: `('appInstalled' | 'mobile' | 'saveData'| 'queryString' | 'always')[]`\n- Default: `['appInstalled', 'queryString', 'standalone']`",
+      "source_content_hash": "925cce494b4d37e26bc83db6bec4752a46f77cddc13b4ff4805e023f342fa03a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `('appInstalled' | 'mobile' | 'saveData'| 'queryString' | 'always')[]`\n- 預設值: `['appInstalled', 'queryString', 'standalone']`"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "Strategies used to turn the offline mode on:",
+      "source_content_hash": "af0b068b3519cd76474157f836bb8cebbf67eccd4393631b3871417587939b35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "啟用離線模式的策略："
+      }
+    },
+    {
+      "segment_id": "2a1e835c",
+      "source_content": "- `appInstalled`: activates for users having installed the site as an app (not 100% reliable)\n- `standalone`: activates for users running the app as standalone (often the case once a PWA is installed)\n- `queryString`: activates if queryString contains `offlineMode=true` (convenient for PWA debugging)\n- `mobile`: activates for mobile users (`width <= 996px`)\n- `saveData`: activates for users with `navigator.connection.saveData === true`\n- `always`: activates for all users",
+      "source_content_hash": "d93a63b150029d6e6b73653578f595fdfb8b44850c20aeb16305478df08383f2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `appInstalled`: 對已將網站安裝為應用的使用者啟用（並非 100% 可靠）\n- `standalone`: 對以獨立應用模式運行的使用者啟用（通常是 PWA 安裝後的情況）\n- `queryString`: 若查詢字串包含 `offlineMode=true` 則啟用（方便 PWA 除錯）\n- `mobile`: 對行動裝置使用者啟用（`width <= 996px`）\n- `saveData`: 對 `navigator.connection.saveData === true` 的使用者啟用\n- `always`: 對所有使用者啟用"
+      }
+    },
+    {
+      "segment_id": "9913b39e",
+      "source_content": ":::warning\n\nUse this carefully: some users may not like to be forced to use the offline mode.\n\n:::",
+      "source_content_hash": "0c82677fd4af945f2463b9e30f9de0fa1ff1422198cc499624f1c1da04a264b3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n謹慎使用此功能：部分使用者可能不喜歡被強制使用離線模式。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ed87fcae",
+      "source_content": ":::danger\n\nIt is not possible to detect if a page is rendered as a PWA in a reliable manner.\n\nThe `appinstalled` event has been [removed from the specification](https://github.com/w3c/manifest/pull/836), and the [`navigator.getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API is only supported in recent Chrome versions and require `related_applications` declared in the manifest.\n\nThe [`standalone` strategy](https://petelepage.com/blog/2019/07/is-my-pwa-installed/) is a nice fallback to activate the offline mode (at least when running the installed app).\n\n:::",
+      "source_content_hash": "9a7865c686f25a455be2260f98bdcd6d4f0ef719950265245451a48fa9f8da22",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger\n\n無法以可靠方式檢測頁面是否以 PWA 形式渲染。\n\n`appinstalled` 事件已[從規範中移除](https://github.com/w3c/manifest/pull/836)，且 [`navigator.getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API 僅在最新版 Chrome 中支援，並需在 manifest 中宣告 `related_applications`。\n\n[`standalone` 策略](https://petelepage.com/blog/2019/07/is-my-pwa-installed/)是啟用離線模式的良好備用方案（至少在運行已安裝應用時有效）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "734d40d8",
+      "source_content": "### `injectManifestConfig` {#injectmanifestconfig}",
+      "source_content_hash": "7cd271a3eef5f39e33eb2ae37cf887a5e96c617035ac62bc2c8d2da533420320",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `injectManifestConfig` {#injectmanifestconfig}"
+      }
+    },
+    {
+      "segment_id": "9e90a9b3",
+      "source_content": "[Workbox options](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-InjectManifestOptions) to pass to `workbox.injectManifest()`. This gives you control over which assets will be precached, and be available offline.",
+      "source_content_hash": "78a2212cfcd6474522e89a1d5d883df67c4d4eba890310d338cc295538a654e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "傳遞給 `workbox.injectManifest()` 的 [Workbox 選項](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-InjectManifestOptions)。此選項可控制哪些資源會被預先快取並在離線時可用。"
+      }
+    },
+    {
+      "segment_id": "d3939446",
+      "source_content": "- Type: `InjectManifestOptions`\n- Default: `{}`",
+      "source_content_hash": "3ffec4d3df20474d62b3aed81b54dd95e4b147b79c69d37c156297a50aadf4a5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `InjectManifestOptions`\n- 預設值: `{}`"
+      }
+    },
+    {
+      "segment_id": "ad3cd2f7",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-pwa',\n      {\n        injectManifestConfig: {\n          manifestTransforms: [\n            //...\n          ],\n          modifyURLPrefix: {\n            //...\n          },\n          // We already add regular static assets (HTML, images...) to be available offline\n          // You can add more files according to your needs\n          globPatterns: ['**/*.{pdf,docx,xlsx}'],\n          // ...\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "0b79c4638800d227fe3aa7950c84ed863bd2d67ddbcffce71a1edbae973b9fbd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ad3cd2f7"
+      }
+    },
+    {
+      "segment_id": "191265da",
+      "source_content": "### `pwaHead` {#pwahead}",
+      "source_content_hash": "117a2c4e4eeadb2b793ff6c10ccc03f6c3d07f3a76594ed6b64cbf795de153f7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `pwaHead` {#pwahead}"
+      }
+    },
+    {
+      "segment_id": "d9211093",
+      "source_content": "- Type: `({ tagName: string; [attributeName: string]: string })[]`\n- Default: `[]`",
+      "source_content_hash": "d082fabba044370806de9735fbab0c7c3bd47adeb4cfb46026da74bc4a1a7595",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `({ tagName: string; [attributeName: string]: string })[]`\n- 預設值: `[]`"
+      }
+    },
+    {
+      "segment_id": "61a78cbe",
+      "source_content": "Array of objects containing `tagName` and key-value pairs for attributes to inject into the `<head>` tag. Technically you can inject any head tag through this, but it's ideally used for tags to make your site PWA compliant. Here's a list of tag to make your app fully compliant:",
+      "source_content_hash": "b07be669fe5bf1b25cc741345e87a47528da547481b0e9266f50c6944008d12a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "包含 `tagName` 和屬性鍵值對的物件陣列，用於注入 `<head>` 標籤。技術上可透過此方式注入任何 head 標籤，但理想情況下用於使網站符合 PWA 規範的標籤。以下是使應用完全合規的標籤清單："
+      }
+    },
+    {
+      "segment_id": "904df6eb",
+      "source_content": "```js\nexport default {\n  plugins: [\n    [\n      '@docusaurus/plugin-pwa',\n      {\n        pwaHead: [\n          {\n            tagName: 'link',\n            rel: 'icon',\n            href: '/img/docusaurus.png',\n          },\n          {\n            tagName: 'link',\n            rel: 'manifest',\n            href: '/manifest.json',\n          },\n          {\n            tagName: 'meta',\n            name: 'theme-color',\n            content: 'rgb(37, 194, 160)',\n          },\n          {\n            tagName: 'meta',\n            name: 'apple-mobile-web-app-capable',\n            content: 'yes',\n          },\n          {\n            tagName: 'meta',\n            name: 'apple-mobile-web-app-status-bar-style',\n            content: '#000',\n          },\n          {\n            tagName: 'link',\n            rel: 'apple-touch-icon',\n            href: '/img/docusaurus.png',\n          },\n          {\n            tagName: 'link',\n            rel: 'mask-icon',\n            href: '/img/docusaurus.svg',\n            color: 'rgb(37, 194, 160)',\n          },\n          {\n            tagName: 'meta',\n            name: 'msapplication-TileImage',\n            content: '/img/docusaurus.png',\n          },\n          {\n            tagName: 'meta',\n            name: 'msapplication-TileColor',\n            content: '#000',\n          },\n        ],\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "511ab0e9c46ef6bd388ca9300235ba3761dc4c991163bc686151f91966cfa077",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_904df6eb"
+      }
+    },
+    {
+      "segment_id": "c9f45ca3",
+      "source_content": "### `swCustom` {#swcustom}",
+      "source_content_hash": "cf86ce330bb4411d61efccfda7cbdb76453f292c8cb9c20fc186bb6598b8e1c4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `swCustom` {#swcustom}"
+      }
+    },
+    {
+      "segment_id": "8aacd6aa",
+      "source_content": "- Type: `string | undefined`\n- Default: `undefined`",
+      "source_content_hash": "c71b2c4c1a514d69558a6302d1ba4b9eb6dfe4fcb2285b9ac717f28105caedb6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string | undefined`\n- 預設值: `undefined`"
+      }
+    },
+    {
+      "segment_id": "80dbdeb8",
+      "source_content": "Useful for additional Workbox rules. You can do whatever a service worker can do here, and use the full power of workbox libraries. The code is transpiled, so you can use modern ES6+ syntax here.",
+      "source_content_hash": "3916daa45b34d46c4d4d66719fd88501930cb8a17f68e23bd110560d7177d1ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "適用於額外的 Workbox 規則。可在此處執行服務工作者能做的任何操作，並充分利用 workbox 函式庫。程式碼會經過轉譯，因此可使用現代 ES6+ 語法。"
+      }
+    },
+    {
+      "segment_id": "d3f13bf4",
+      "source_content": "For example, to cache files from external routes:",
+      "source_content_hash": "342a53f574cbfe1b430f5ed86c13511c14e9041dcac68d0483c54390b4046233",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，快取外部路由的檔案："
+      }
+    },
+    {
+      "segment_id": "9eaa3064",
+      "source_content": "```js\nimport {registerRoute} from 'workbox-routing';\nimport {StaleWhileRevalidate} from 'workbox-strategies';\n\n// default fn export receiving some useful params\nexport default function swCustom(params) {\n  const {\n    debug, // :boolean\n    offlineMode, // :boolean\n  } = params;\n\n  // Cache responses from external resources\n  registerRoute((context) => {\n    return [\n      /graph\\.facebook\\.com\\/.*\\/picture/,\n      /netlify\\.com\\/img/,\n      /avatars1\\.githubusercontent/,\n    ].some((regex) => context.url.href.match(regex));\n  }, new StaleWhileRevalidate());\n}\n```",
+      "source_content_hash": "e8f843a06a72d7e61487cdec6b8a8b9453b1e929c70f4497ab2cda90aa85869e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9eaa3064"
+      }
+    },
+    {
+      "segment_id": "6085c028",
+      "source_content": "The module should have a `default` function export, and receives some params.",
+      "source_content_hash": "8b265678c12eefc83faff109458a8ae0c15f8114c0ae88fa72775b8ffdd5c2b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "模組應具有 `default` 函式匯出，並接收部分參數。"
+      }
+    },
+    {
+      "segment_id": "16efe6ee",
+      "source_content": "### `swRegister` {#swregister}",
+      "source_content_hash": "3de76dc8523bded6014b6924671e78f86c808d449ea65de7fec7ff2de3d3d203",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `swRegister` {#swregister}"
+      }
+    },
+    {
+      "segment_id": "ab7b2d04",
+      "source_content": "- Type: `string | false`\n- Default: `'docusaurus-plugin-pwa/src/registerSW.js'`",
+      "source_content_hash": "9de8bcb77b4b49985b77e9cfe7ad9fcff99ca4d7d8c8ddbb62d3c97d9d20430e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string | false`\n- 預設值: `'docusaurus-plugin-pwa/src/registerSW.js'`"
+      }
+    },
+    {
+      "segment_id": "53e725dc",
+      "source_content": "Adds an entry before the Docusaurus app so that registration can happen before the app runs. The default `registerSW.js` file is enough for simple registration.",
+      "source_content_hash": "945d339e00428006cf14afb69fae5a4eb5266a926a2317fbb4d1fcd635e29111",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 Docusaurus 應用前添加條目，以便註冊能在應用運行前完成。預設的 `registerSW.js` 檔案足以進行簡單註冊。"
+      }
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "Passing `false` will disable registration entirely.",
+      "source_content_hash": "5f2fe4ab0d24883d79b6459f062a2069230baae283c2e91ad7989ffeeaf6ca54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "傳遞 `false` 將完全停用註冊功能。"
+      }
+    },
+    {
+      "segment_id": "4b62af77",
+      "source_content": "## Manifest example {#manifest-example}",
+      "source_content_hash": "7ca6d33d58a819dfd98654bfa133c318c79c7cf47419bd48da9fe9eebe6b4619",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Manifest 範例 {#manifest-example}"
+      }
+    },
+    {
+      "segment_id": "740d2e67",
+      "source_content": "The Docusaurus site manifest can serve as an inspiration:",
+      "source_content_hash": "afee1542eaa95126dda84a66ecc5c31e3dca562224229ac58d7a078614ced162",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的網站清單 (manifest) 可作為參考範例："
+      }
+    },
+    {
+      "segment_id": "b73b8545",
+      "source_content": "```mdx-code-block\nimport CodeBlock from '@theme/CodeBlock';\n\n<CodeBlock className=\"language-json\">\n  {JSON.stringify(require('@site/static/manifest.json'),null,2)}\n</CodeBlock>\n```",
+      "source_content_hash": "fd53dc6085bb4f968bb1c748ee38c16246d15d7b704bdd05b2c6a758f59ee1e5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b73b8545"
+      }
+    },
+    {
+      "segment_id": "f8d1807a",
+      "source_content": "## Customizing reload popup {#customizing-reload-popup}",
+      "source_content_hash": "68331cab505987b0b9242982c28041c875fc1eff5cc2a2d036b563e48cc84946",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 自訂重新載入彈出視窗 {#customizing-reload-popup}"
+      }
+    },
+    {
+      "segment_id": "c95293b9",
+      "source_content": "The `@theme/PwaReloadPopup` component is rendered when a new service worker is waiting to be installed, and we suggest a reload to the user. You can [swizzle](../../swizzling.mdx) this component and implement your own UI. It will receive an `onReload` callback as props, which should be called when the `reload` button is clicked. This will tell the service worker to install the waiting service worker and reload the page.",
+      "source_content_hash": "c2215104d976416c398271479a697107ea012ee0f9bc1ea013fb0b8c9340a97b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當新的 Service Worker 等待安裝時，會渲染 `@theme/PwaReloadPopup` 元件並建議使用者重新載入頁面。您可以透過 [swizzle](../../swizzling.mdx) 此元件來實作自訂介面。該元件會接收 `onReload` 回調函式作為 props，應在使用者點擊「重新載入」按鈕時觸發，此操作會指示 Service Worker 安裝等待中的版本並重新載入頁面。"
+      }
+    },
+    {
+      "segment_id": "7ed923ee",
+      "source_content": "The default theme includes an implementation for the reload popup and uses [Infima Alerts](https://infima.dev/docs/components/alert).",
+      "source_content_hash": "ade0e1b13d6f512f510cc8ad840d915f4baaec03720d622a2bc41eb532999396",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設主題已內建重新載入彈出視窗的實作，採用 [Infima 警示框](https://infima.dev/docs/components/alert)樣式。"
+      }
+    },
+    {
+      "segment_id": "a5a28988",
+      "source_content": "![A screen recording of the reload process. An alert box shows in the bottom right of the window, saying \"New content available\". After clicking the \"Refresh\" button, the page's main heading changes from \"Introduction\" to \"PWA :))\".](/img/pwa_reload.gif)",
+      "source_content_hash": "575438641c836c24776c8b624e168dddcee9b18a28469dcb5b3940713e30e4bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![重新載入流程的畫面錄製。視窗右下角顯示警示框，內容為「有新內容可用」。點擊「重新整理」按鈕後，頁面主標題從「介紹」變更為「PWA :))」。](/img/pwa_reload.gif)"
+      }
+    },
+    {
+      "segment_id": "6c4ea90c",
+      "source_content": "Your component can render `null`, but this is not recommended: users won't have a way to get up-to-date content.",
+      "source_content_hash": "b6d22deb0e0e32614c246f816438d29973ab77b5bd32c4f368b852be38862d7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的元件可以渲染 `null`，但不建議這麼做：使用者將無法取得最新內容。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.5.2/api/plugins/plugin-pwa.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.251335+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "fe603a5c0c3a407971bf6e11a0a92fa77ca09d04b23ae869abc7d99a1a7edd14"
+  }
+}

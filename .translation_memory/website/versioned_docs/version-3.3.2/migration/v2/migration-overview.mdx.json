@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/migration/v2/migration-overview.mdx",
+  "source_file_content_hash": "725a8cebe20249e26c2362f7c5318619fbc7a8b919280a1e5394885a3f0d84ed",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration/v2\n---",
+      "source_content_hash": "4aaef4e22bda9bbfd0e8eb52f4d4455f9f2fec765259f1090a6d09ebdc8ed4cb",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Overview",
+      "source_content_hash": "e1cb7d861aecdf5efcbabedd31ee970857b02eec940d72c08574a7b1b3bdf580",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 概述"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "This doc guides you through migrating an existing Docusaurus 1 site to Docusaurus 2.",
+      "source_content_hash": "eb795e75510316c4da64edb3e395d82c6c1d9b45534309c70d23caef88bef9a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本文檔將引導您將現有的 Docusaurus 1 網站遷移至 Docusaurus 2。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We try to make this as easy as possible, and provide a migration CLI.",
+      "source_content_hash": "c8765ecb2d9aba5d30f9ddb2beb3f6c88474d9ca5e4275e83476a9dd7f8a5efd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們盡可能簡化此過程，並提供遷移 CLI 工具。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Main differences {#main-differences}",
+      "source_content_hash": "54dd8756992c0a3edffa506b4de85929c384010b0e77c96ba6c9b6d215eaaab5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 主要差異 {#main-differences}"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Docusaurus 1 is a pure documentation site generator, using React as a server-side template engine, but not loading React on the browser.",
+      "source_content_hash": "0dd63721e7aabc0697670332157a8332eb899039137748a43b87ae0065662140",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 1 是純粹的文件網站生成器，使用 React 作為伺服器端模板引擎，但不在瀏覽器中載入 React。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Docusaurus 2, rebuilt from the ground up, generates a single-page-application, using the full power of React in the browser. It allows for more customizability but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n.",
+      "source_content_hash": "68bf170b59ab0103baf78d1897a99ce8bf0f22a004998e6cf75f6fe9c3da560a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 從頭重建，生成單頁應用程式，在瀏覽器中充分發揮 React 的威力。它提供了更高的可定制性，同時保留了 Docusaurus 1 的精華——易於上手、版本化文件和國際化支援。"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Beyond that, Docusaurus 2 is a **performant static site generator** and can be used to create common content-driven websites (e.g. Documentation, Blogs, Product Landing and Marketing Pages, etc) extremely quickly.",
+      "source_content_hash": "0de785936547eb419b4ba8c602b700dd1aac3995902d0e1b096ed0ef9aea0b17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "除此之外，Docusaurus 2 是一個**高效能的靜態網站生成器**，可以快速建立常見的內容驅動型網站（例如文件、部落格、產品登陸頁和行銷頁面等）。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "While our main focus will still be helping you get your documentations right and well, it is possible to build any kind of website using Docusaurus 2 as it is just a React application. **Docusaurus can now be used to build any website, not just documentation websites.**",
+      "source_content_hash": "7bbded0bfb1f2128f5f691549581b9aa77b304007447aa2565077553bd8ea033",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然我們的主要重點仍然是幫助您完善文件，但由於 Docusaurus 2 本質上是一個 React 應用程式，**現在可以使用 Docusaurus 建立任何類型的網站，而不僅限於文件網站**。"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Docusaurus 1 structure {#docusaurus-1-structure}",
+      "source_content_hash": "da6e9541ef8759647004ca2105e15da034472d6e976774065b85dfa4ebf49654",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 1 結構 {#docusaurus-1-structure}"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Your Docusaurus 1 site should have the following structure:",
+      "source_content_hash": "c813d761bf8e7c42b0bdd53f6f032a0de58afb95fbdc652daa80f0d21322bf17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的 Docusaurus 1 網站應具有以下結構："
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```bash\n├── docs\n└── website\n    ├── blog\n    ├── core\n    │   └── Footer.js\n    ├── package.json\n    ├── pages\n    ├── sidebars.json\n    ├── siteConfig.js\n    └── static\n```",
+      "source_content_hash": "6fa48f4855de750c62812658e7d6e7f07409974af442634cdeab967d62ad04b3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "80d9e13c",
+      "source_content": "## Docusaurus 2 structure {#docusaurus-2-structure}",
+      "source_content_hash": "783685bd3f1442f7144f2e05f7fa9e8c93a0a0558711cdf44c55810456fb26a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 2 結構 {#docusaurus-2-structure}"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "After the migration, your Docusaurus 2 site could look like:",
+      "source_content_hash": "0a4bade73d8f3c381b4c1b2832663ef772f0670d2a07c5b5f2022e8f976fc39f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遷移後，您的 Docusaurus 2 網站可能如下所示："
+      }
+    },
+    {
+      "segment_id": "026f2f3e",
+      "source_content": "```sh\n├── docs\n└── website\n    ├── blog\n    ├── src\n    │   ├── components\n    │   ├── css\n    │   └── pages\n    ├── static\n    ├── package.json\n    ├── sidebars.json\n    ├── docusaurus.config.js\n```",
+      "source_content_hash": "35da13b1a6ff4c0ea824e1ed419f414d453bcffa6cf3d03b638b030c315b1128",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_026f2f3e"
+      }
+    },
+    {
+      "segment_id": "f90b9a6a",
+      "source_content": ":::info\n\nThis migration does not change the `/docs` folder location, but Docusaurus v2 sites generally have the `/docs` folder inside `/website`\n\nYou are free to put the `/docs` folder anywhere you want after having migrated to v2.\n\n:::",
+      "source_content_hash": "178fd7ad98847ba8c9eb838b798e30b475cebf5aac8975421db440742d03a6b3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n此遷移不會變更 `/docs` 資料夾的位置，但 Docusaurus v2 網站通常會將 `/docs` 資料夾放在 `/website` 內\n\n遷移至 v2 後，您可以自由將 `/docs` 資料夾放在任何位置。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "## Migration process {#migration-process}",
+      "source_content_hash": "bd913d2a1bc04105bbf986acd3c4119cef71e725812d59778eefae7dad35fcbe",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 遷移流程 {#migration-process}"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "There are multiple things to migrate to obtain a fully functional Docusaurus 2 website:",
+      "source_content_hash": "950d3de2108eb47e1c39c27b4aa07e3f33e8a524e45a199673f30b74869e1f27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要獲得功能完整的 Docusaurus 2 網站，需要遷移多個部分："
+      }
+    },
+    {
+      "segment_id": "645e08e3",
+      "source_content": "- packages\n- CLI commands\n- site configuration\n- Markdown files\n- sidebars file\n- pages, components and CSS\n- versioned docs\n- i18n support 🚧",
+      "source_content_hash": "a2db0f51b71296d5d18697d7a2da0427f99c21301da80a37a2d2ca7a13302538",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 套件\n- CLI 指令\n- 網站配置\n- Markdown 檔案\n- 側邊欄檔案\n- 頁面、元件和 CSS\n- 版本化文件\n- 國際化支援 🚧"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "## Automated migration process {#automated-migration-process}",
+      "source_content_hash": "dc7ddacf2488ab9abbcbfcd9a604001ac110eddbf8cdeebfa5fee880492b4803",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 自動化遷移流程 {#automated-migration-process}"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "The [migration CLI](./migration-automated.mdx) will handle many things of the migration for you.",
+      "source_content_hash": "9f749d376e9c1e6a0fb7f956190c01fec0ff5230de1463f98b9538dc88903f45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[遷移 CLI](./migration-automated.mdx) 將為您處理遷移過程中的許多工作。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "However, some parts can't easily be automated, and you will have to fallback to the manual process.",
+      "source_content_hash": "07988e9239c77bf56e6ea576deddbc84a37b331fb39fdf942872d7d4292d240f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然而，某些部分難以自動化，您需要退回到手動流程。"
+      }
+    },
+    {
+      "segment_id": "17f3ca09",
+      "source_content": ":::note\n\nWe recommend running the migration CLI, and complete the missing parts thanks to the manual migration process.\n\n:::",
+      "source_content_hash": "8ede8f9774f43e28a49293c7804a38e8734420955e590bc9c23ab4c5207b90ca",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n我們建議先執行遷移 CLI，然後透過手動遷移流程完成剩餘部分。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "## Manual migration process {#manual-migration-process}",
+      "source_content_hash": "59c216402329ed519b263eb3614512199f05245f20c5681e350b5e1ea10a5d64",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 手動遷移流程 {#manual-migration-process}"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "Some parts of the migration can't be automated (particularly the pages), and you will have to migrate them manually.",
+      "source_content_hash": "c94136979db11429576aecb3fdadf2b3462f58cd5fb1c29e6029c10065f74ca6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遷移的某些部分（特別是頁面）無法自動化，您需要手動遷移這些內容。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "The [manual migration guide](./migration-manual.mdx) will give you all the manual steps.",
+      "source_content_hash": "15577377c9d497d3deb5c6da9d10c7eb71b108d92db7f049b4a1a8653514d7b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[手動遷移指南](./migration-manual.mdx) 將提供所有手動步驟的說明。"
+      }
+    },
+    {
+      "segment_id": "e33a2404",
+      "source_content": "## Support {#support}",
+      "source_content_hash": "aa3d38fae8439733cec0ca6af0e9371d85a1e3516667845dea410ea85608ad1f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 支援 {#support}"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "For any questions, you can ask in the [`#migration-v1-to-v2` Discord channel](https://discord.gg/C3P6CxMMxY).",
+      "source_content_hash": "6f8a1fcb82c030969c08a28e1cc204d604e7668c04de58bc4261b6216d42b383",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如有任何問題，您可以在 [`#migration-v1-to-v2` Discord 頻道](https://discord.gg/C3P6CxMMxY) 中提問。"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "Feel free to tag [@slorber](https://github.com/slorber) in any migration PRs if you would like us to have a look.",
+      "source_content_hash": "b320f5060a7807787c6164500bad23c8414c2f465cebb80e486a549f9a144965",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您希望我們查看遷移 PR，請隨時在 PR 中標記 [@slorber](https://github.com/slorber)。"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "We also have volunteers willing to [help you migrate your v1 site](https://github.com/facebook/docusaurus/issues/1834).",
+      "source_content_hash": "7e7e5f6a689e0494cc89e18ab4801eaf84ad533a50c5f40268dfec6bb413eb39",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們也有志願者願意[幫助您遷移 v1 網站](https://github.com/facebook/docusaurus/issues/1834)。"
+      }
+    },
+    {
+      "segment_id": "94145a94",
+      "source_content": "## Example migration PRs {#example-migration-prs}",
+      "source_content_hash": "de7aa5959d1f8e55d60f0c051f8a9b6efe8f75b1b3133fa5ba8a24b185da3200",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 遷移 PR 範例 {#example-migration-prs}"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "You might want to refer to our migration PRs for [Create React App](https://github.com/facebook/create-react-app/pull/7785) and [Flux](https://github.com/facebook/flux/pull/471) as examples of how a migration for a basic Docusaurus v1 site can be done.",
+      "source_content_hash": "a2638b3539b232b6cc7e822fa40413e0a953a22d05cde1ac27b841662d743ac8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以參考我們針對 [Create React App](https://github.com/facebook/create-react-app/pull/7785) 和 [Flux](https://github.com/facebook/flux/pull/471) 的遷移拉取請求，作為基本 Docusaurus v1 網站遷移的範例。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/migration/v2/migration-overview.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.212685+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "725a8cebe20249e26c2362f7c5318619fbc7a8b919280a1e5394885a3f0d84ed"
+  }
+}

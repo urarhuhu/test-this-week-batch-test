@@ -1,0 +1,192 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.6.3/api/plugins/plugin-google-analytics.mdx",
+  "source_file_content_hash": "745a91a2d46174f9f27a6c035d42bb6dba60332707af486b791aa95da6230f9f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 6\nslug: /api/plugins/@docusaurus/plugin-google-analytics\n---",
+      "source_content_hash": "501ba68ca67e5697c2fa1e8383514ea0d05126f020858b153bafb9eb9b89a5b5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-google-analytics",
+      "source_content_hash": "3bf54da80581505d2f224e702083c3d206552a5cdede7a1a49c03c26028238e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-google-analytics"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The default [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) plugin. It is a JavaScript library for measuring how users interact with your website **in the production build**. If you are using Google Analytics 4 you might need to consider using [plugin-google-gtag](./plugin-google-gtag.mdx) instead.",
+      "source_content_hash": "7c7f5eb4f5033fbf72d4196f127896c36329681a5b485e24335c13e760436d1f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設的 [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) 外掛程式。這是一個用於測量使用者如何與您的網站互動的 JavaScript 函式庫（僅在正式環境建置中生效）。若您使用 Google Analytics 4，可能需要考慮改用 [plugin-google-gtag](./plugin-google-gtag.mdx)。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::danger[Deprecated]\n\nThis plugin is **deprecated** and became useless on July 1, 2023.\n\nGoogle is [moving away from Universal Analytics](https://blog.google/products/marketingplatform/analytics/prepare-for-future-with-google-analytics-4/).\n\nIf you are still using this plugin with a `UA-*` tracking id, you should create a Google Analytics 4 account as soon as possible, and use [`@docusaurus/plugin-google-gtag`](./plugin-google-gtag.mdx) instead of this plugin. More details [here](https://github.com/facebook/docusaurus/issues/7221).\n\n:::",
+      "source_content_hash": "ba4660eb67d1ad9f78243c3ae954c0ade208b7ba1d56a2de158e7329a74f2970",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[已棄用]\n\n此外掛程式已**棄用**，並於 2023 年 7 月 1 日起失效。\n\nGoogle 正[逐步淘汰 Universal Analytics](https://blog.google/products/marketingplatform/analytics/prepare-for-future-with-google-analytics-4/)。\n\n若您仍在使用帶有 `UA-*` 追蹤 ID 的此外掛程式，應盡快建立 Google Analytics 4 帳戶，並改用 [`@docusaurus/plugin-google-gtag`](./plugin-google-gtag.mdx) 取代此外掛程式。更多細節請參閱[此處](https://github.com/facebook/docusaurus/issues/7221)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8a545039",
+      "source_content": ":::warning[production only]\n\nThis plugin is always inactive in development and **only active in production** to avoid polluting the analytics statistics.\n\n:::",
+      "source_content_hash": "9c829c8e606080d5c41eeaefe0f2bfa43f9ec2cac92b02338332e497ca819110",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[僅限正式環境]\n\n此外掛程式在開發環境中始終處於非活動狀態，**僅在正式環境中生效**，以避免污染分析統計數據。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-google-analytics\n```",
+      "source_content_hash": "1fe4e5140bc37128d5ef54218f0c06f480078c2be4b685f0925b558a99b79faf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "b56ef571",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.\n\nYou can configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic).\n\n:::",
+      "source_content_hash": "737b2a008954011fd073f76b42dc5ff859f8bcaced754eff0b2741c9f733f873",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您使用 `@docusaurus/preset-classic` 預設配置，則無需將此外掛程式安裝為依賴項。\n\n您可以透過[預設選項](../../using-plugins.mdx#docusauruspreset-classic)配置此外掛程式。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "8b0f8d70",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `trackingID` | `string` | **Required** | The tracking ID of your analytics service. |\n| `anonymizeIP` | `boolean` | `false` | Whether the IP should be anonymized when sending requests. |",
+      "source_content_hash": "3b68c735bb98b5c2f50ec1ed1d3d025e7f8baf89caee26c6872cc457a5e7e18c",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8b0f8d70"
+      }
+    },
+    {
+      "segment_id": "f275f5fd",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f275f5fd"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例配置 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "You can configure this plugin through preset options or plugin options.",
+      "source_content_hash": "118dd7722fc15d0951831695d6b79451361a000dc8a9de8138e737e9fe881ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過預設選項或外掛程式選項配置此外掛程式。"
+      }
+    },
+    {
+      "segment_id": "3a4225d7",
+      "source_content": ":::tip\n\nMost Docusaurus users configure this plugin through the preset options.\n\n:::",
+      "source_content_hash": "0a660704749473b8e0f2d5316b808fdf177b0264e404d29b9d4653e71924c332",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n大多數 Docusaurus 使用者透過預設選項配置此外掛程式。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```js config-tabs\n// Preset Options: googleAnalytics\n// Plugin Options: @docusaurus/plugin-google-analytics\n\nconst config = {\n  trackingID: 'UA-141789564-1',\n  anonymizeIP: true,\n};\n```",
+      "source_content_hash": "264c2383a006735fa7c4c16d0bd3efa4e857ecb9974e57c5c2c14a7d49ece449",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.6.3/api/plugins/plugin-google-analytics.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.334283+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "745a91a2d46174f9f27a6c035d42bb6dba60332707af486b791aa95da6230f9f"
+  }
+}

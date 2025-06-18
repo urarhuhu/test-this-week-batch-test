@@ -1,0 +1,492 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "community/5-release-process.mdx",
+  "source_file_content_hash": "8cee47c0dfe7f1749a4936405fde8caae3cf5e0dbe9b340fd594e80c24674340",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Release process",
+      "source_content_hash": "4aca961889583c944abd12c703aee0f8778a0d52006f8111344c2a21700af6a7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 發佈流程"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Let's see how Docusaurus handles **versioning, releases and breaking changes**.",
+      "source_content_hash": "03b971b24964b65e1c1696f3fd4651148f5925fce321ca98ae876accdb483087",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "讓我們瞭解 Docusaurus 如何處理**版本控制、發佈與重大變更**。"
+      }
+    },
+    {
+      "segment_id": "8218387e",
+      "source_content": ":::info\n\nThis topic is particularly important for highly customized sites that may have difficulties to upgrade.\n\n:::",
+      "source_content_hash": "a5e458b96e34bb67dbdb61afefd822f3bb3fc69d2a234463398f39dcf4755cc7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n此主題對於高度客製化的網站尤其重要，這些網站可能在升級時遇到困難。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Semantic versioning {#semantic-versioning}",
+      "source_content_hash": "6d4f2bf170c0d56c163c6aeb36d0d77aa39519b85de00b41d78dc8b17e8f3b7c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 語意化版本控制 {#semantic-versioning}"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Docusaurus versioning is based on the `major.minor.patch` scheme and respects [Semantic Versioning](https://semver.org/).",
+      "source_content_hash": "f48af8aae32b495f361833c80ba54336165c344ca0da3c1750da58cce46940d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 採用 `major.minor.patch` 版本編號模式，並遵循[語意化版本規範](https://semver.org/)。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Respecting Semantic Versioning is important for multiple reasons:",
+      "source_content_hash": "eb256c5343fee22b9aca48d55e62d118fda2b006bb3a531bff23155ad5b6064a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遵循語意化版本控制的重要性在於："
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "- It **guarantees simple minor version upgrades**, as long as you only use the [public API](/community/release-process#public-api-surface)\n- It follows front-end ecosystem conventions\n- A new major version is an opportunity to thoroughly document breaking changes\n- A new major/minor version is an opportunity to communicate new features through a blog post",
+      "source_content_hash": "4ca9a0644d6bdfb808a199ebc6887353871a8124115a4bb0031e7ea3d9ade0bc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 只要您僅使用[公開 API](/community/release-process#public-api-surface)，即可**確保次要版本升級的簡易性**\n- 符合前端生態系的慣例\n- 新主版本是完整記錄重大變更的契機\n- 新主/次版本可透過部落格文章宣傳新功能"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Major versions {#major-versions}",
+      "source_content_hash": "8246501e1f2eefaa14eb864327869fac27a29db907fb84cb17f0ae249169f0ca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主版本 {#major-versions}"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "The `major` version number is incremented on **every breaking change**.",
+      "source_content_hash": "4dd47c3013b176e4ad1dbc52dcc16377ad7ba296cf7085c7d4fb5d6787354a96",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**每次重大變更**都會遞增 `major` 版本號。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Whenever a new major version is released, we publish:",
+      "source_content_hash": "3c1a10ae5b0fc55f6a4d4c7fc1a39598b3b363aaae6c87a0c2984f0fb3b31287",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每當新主版本發佈時，我們會提供："
+      }
+    },
+    {
+      "segment_id": "1d13125b",
+      "source_content": "- a blog post with feature highlights, major bug fixes, **breaking changes, and upgrade instructions**.\n- an exhaustive changelog entry",
+      "source_content_hash": "d97f5a1ec34ebdcf6b6af9f6229575dde3bb0dbd15766aca970bde700838c895",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 一篇部落格文章，包含功能亮點、主要錯誤修復、**重大變更與升級指引**\n- 完整的變更日誌條目"
+      }
+    },
+    {
+      "segment_id": "de30161a",
+      "source_content": ":::tip\n\nRead our [public API surface](#public-api-surface) section to clearly understand what we consider as a breaking change.\n\n:::",
+      "source_content_hash": "39b213abcd70e28a0714331c4d310c57c48ff4b8275563b93f201c65c363705e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n請參閱我們的[公開 API 範圍](#public-api-surface)章節，以明確瞭解我們認定的重大變更範疇。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "### Minor versions {#minor-versions}",
+      "source_content_hash": "568977a35f759ae38127024250ac1142fcfdf6c137b48dc7f598ed50442c9de3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 次版本 {#minor-versions}"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "The `minor` version number is incremented on every significant retro-compatible change.",
+      "source_content_hash": "6891ac2c80570ceeda7a81cad612397d2b4cb793c1bb7179f8fa4994fb3f0190",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每次向後相容的重要變更都會遞增 `minor` 版本號。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "Whenever a new minor version is released, we publish:",
+      "source_content_hash": "b656edaed4457124328c0e66955abb8e848f78ba284b4b85c4fad1160bf80e34",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每當新次版本發佈時，我們會提供："
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "- a blog post with a list of feature highlights and major bug fixes\n- an exhaustive changelog entry",
+      "source_content_hash": "e9b8792deef0877dd295f8118f8374fc16792b7fab8aa3f20d3585458cb42867",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 一篇列出功能亮點與主要錯誤修復的部落格文章\n- 完整的變更日誌條目"
+      }
+    },
+    {
+      "segment_id": "80e5ac71",
+      "source_content": ":::tip\n\nIf you only use our [public API surface](#public-api-surface), you should be able to upgrade in no time!\n\n:::",
+      "source_content_hash": "c54fa25287d47231cc1f8ae28a8c50aa0c7c4392260f484316664c9bcbf16784",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您僅使用我們的[公開 API 範圍](#public-api-surface)，升級過程理應迅速完成！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "### Patch versions {#patch-versions}",
+      "source_content_hash": "98d6c02064cf3ed90989d72bff41b951d1f895d7a53f158cc2e5365d70624eac",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 修補版本 {#patch-versions}"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "The `patch` version number is incremented on bugfixes releases.",
+      "source_content_hash": "237d5442201f37630d2f302feb218d63ed7b183da382cb433811952912bec4f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "錯誤修正版本會遞增 `patch` 版本號。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Whenever a new patch version is released, we publish:",
+      "source_content_hash": "1f3e0fbcc9c583ab535b63f8bdb31ae272c465bec89df64b3204f3752e57fa9e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每當新修補版本發佈時，我們會提供："
+      }
+    },
+    {
+      "segment_id": "e3321a43",
+      "source_content": "- an exhaustive changelog entry",
+      "source_content_hash": "7704bd2edc2cf8525ffc6a21e560e80a7a80abeebbeb4c30538fb0357bbc1fdb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 完整的變更日誌條目"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Versions {#versions}",
+      "source_content_hash": "5705174aa82c1db00c6d027c342af66fe45692951e0369769cef4878e885ef5b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 版本 {#versions}"
+      }
+    },
+    {
+      "segment_id": "3adc0ceb",
+      "source_content": "```mdx-code-block\nimport {\n  CurrentMajorVersionNumber,\n  StableMajorBranchLink,\n  MainBranchLink,\n} from \"@site/src/components/Versions\";\n```",
+      "source_content_hash": "e018e126448c4444c5455c9a0f1e99bc851218c39f203857ffa092433579cf10",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3adc0ceb"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "The Docusaurus team uses a simple development process and only works on a single major version and a single Git branch at a same time:",
+      "source_content_hash": "622ed56dfd3d3395a59c6dc6fdb6eebad924a23f5838aa1f03f97c0b96661a5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 團隊採用簡化的開發流程，同一時間僅專注於單一主版本與單一 Git 分支："
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "- **Docusaurus {CurrentMajorVersionNumber}**: the **stable** version, on the <MainBranchLink/> branch.",
+      "source_content_hash": "dfbc27801e35382d795550f9a88673d4002b469f18a912c80713eca30426b89f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **Docusaurus {CurrentMajorVersionNumber}**：位於 <MainBranchLink/> 分支的**穩定**版本。"
+      }
+    },
+    {
+      "segment_id": "07837485",
+      "source_content": ":::note[How we will ship the next version]\n\nOnce we are ready ship **Docusaurus {CurrentMajorVersionNumber + 1}**, we will:\n\n- create a <StableMajorBranchLink/> branch\n- merge breaking changes on the <MainBranchLink/> branch\n- release that new version directly from the <MainBranchLink/> branch\n\n:::",
+      "source_content_hash": "bf6f107085e6480a3bf4e1baa5c396f01de44c1dafaff6db91c9e5dbb7a76225",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note[下個版本的發佈方式]\n\n當我們準備發佈 **Docusaurus {CurrentMajorVersionNumber + 1}** 時，將：\n\n- 建立 <StableMajorBranchLink/> 分支\n- 將重大變更合併至 <MainBranchLink/> 分支\n- 直接從 <MainBranchLink/> 分支發佈新版本\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a9404d4e",
+      "source_content": ":::warning[Security fixes policy]\n\nAfter a new stable version has been released, the former stable version will continue to receive support for **major security issues** for **3 months**.\n\nIn practice, we will backport security fixes to the <StableMajorBranchLink/> branch. Otherwise, all features will be frozen and non-critical bugs will not be fixed.\n\nIt is recommended to upgrade within that time frame to the new stable version.\n\n:::",
+      "source_content_hash": "2198f531cdddc1be577b4623641d4934f4ed716c44b5c2eb8321543d68f5f5a0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[安全性修復政策]\n\n新穩定版本發佈後，前一個穩定版本將持續獲得**重大安全性問題**的支援，為期**3個月**。\n\n實務上，我們會將安全性修復反向移植至 <StableMajorBranchLink/> 分支。除此之外，所有功能將凍結且非關鍵錯誤不予修復。\n\n建議在此時間範圍內升級至新穩定版本。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "## Public API surface {#public-api-surface}",
+      "source_content_hash": "07ded26f5325b073b9c98b9e5e8decdd3bcb64d85ecfb007df44c984c5a6eff0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 公開 API 範圍 {#public-api-surface}"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "Docusaurus commits to respecting Semantic Versioning. This means that whenever changes occur in Docusaurus public APIs and break backward compatibility, we will increment the `major` version number.",
+      "source_content_hash": "c6f10cdbaf9d725a3641a40d10a336e2cffee0ee4e0cef24b3cf26b06df69cbe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 承諾遵循語意化版本控制。這意味著當 Docusaurus 公開 API 發生變更並破壞向後相容性時，我們將遞增 `major` 版本號。"
+      }
+    },
+    {
+      "segment_id": "ca7170d9",
+      "source_content": ":::tip\n\nDocusaurus guarantees public API retro-compatibility across `minor` versions. Unless you use internal APIs, `minor` version upgrades should be easy.\n\n:::",
+      "source_content_hash": "6ed0842c7df32cb8600c8e88a8cde43d5a748797ceedfd4d0482c4fd075e1f49",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\nDocusaurus 保證公開 API 在 `minor` 版本間的向後相容性。除非您使用內部 API，否則 `minor` 版本升級應相當簡易。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "We will outline what accounts as the public API surface.",
+      "source_content_hash": "7ca2f86862c570ee2a5fc0f6305dce0351a26462e9183e24e96786ab34f1399b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將概述哪些內容屬於公開 API 範圍。"
+      }
+    },
+    {
+      "segment_id": "c7c92a79",
+      "source_content": "### Core public API {#core-public-api}",
+      "source_content_hash": "0bc59151dddacc267ef5355e0518a63ecf2161de3ad761f1bd5927389c756cb1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 核心公開 API {#core-public-api}"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "✅ Our public API includes:",
+      "source_content_hash": "75801746b8e8f89f492636afe78dc050891fbaa62ddb2c22f30ae89f1ef79834",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "✅ 我們的公開 API 包含："
+      }
+    },
+    {
+      "segment_id": "2270deb6",
+      "source_content": "- Docusaurus config\n- Docusaurus client APIs\n- Docusaurus CLI\n- Preset options\n- Plugin options\n- Plugin lifecycle APIs\n- Theme config\n- Core plugins route component props\n- `@docusaurus/types` TypeScript types\n  - We still retain the freedom to make types stricter (which may break type-checking).",
+      "source_content_hash": "825094f79a1290a0c55705063e47bd324c87b89f38aa4a1dc33e51e27a4ee3db",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Docusaurus 配置\n- Docusaurus 客戶端 API\n- Docusaurus CLI\n- 預設選項\n- 插件選項\n- 插件生命週期 API\n- 主題配置\n- 核心插件路由元件屬性\n- `@docusaurus/types` TypeScript 類型\n  - 我們仍保留加強類型限制的自由（這可能會導致類型檢查失敗）。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "❌ Our public API **excludes**:",
+      "source_content_hash": "13d57d93db400fcd1a71ec534f24d7aa2142e3b28dfe7aae9e1b6a4cc1d7a383",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "❌ 我們的公開 API **不包含**："
+      }
+    },
+    {
+      "segment_id": "9673e622",
+      "source_content": "- Docusaurus config `future`\n- All features prefixed by `experimental_` or `unstable_`\n- All features prefixed by `v<MajorVersion>_` (`v6_` `v7_`, etc.)",
+      "source_content_hash": "7a81a55d0309876dbda70d24cff812c28f32f28a1e6eb93dcdaa828d57e5782a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Docusaurus 配置中的 `future` 選項\n- 所有以 `experimental_` 或 `unstable_` 為前綴的功能\n- 所有以 `v<MajorVersion>_` 為前綴的功能（例如 `v6_`、`v7_` 等）"
+      }
+    },
+    {
+      "segment_id": "9913b39e",
+      "source_content": ":::tip\n\nFor non-theme APIs, any documented API is considered public (and will be stable); any undocumented API is considered internal.\n\n:::",
+      "source_content_hash": "1725b2343343f1d2121601b27961bf7d957912af3204d113b9ac08b29df06d85",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n對於非主題 API，任何有文檔記錄的 API 都視為公開（且會保持穩定）；任何未記錄的 API 都視為內部 API。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "An API being \"stable\" means if you increment the patch or minor version of your Docusaurus installation without any other change, running `docusaurus start` or `docusaurus build` should not throw an error.",
+      "source_content_hash": "f30cf71e55e6a98580479b977d1e1352eb72377a97c119757cc8c59a132b1992",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "API 的「穩定」意味著當您僅升級 Docusaurus 的修訂版或次版本號，且未進行其他變更時，執行 `docusaurus start` 或 `docusaurus build` 不應拋出錯誤。"
+      }
+    },
+    {
+      "segment_id": "d53c8ed4",
+      "source_content": "### Theming public API {#theming-public-api}",
+      "source_content_hash": "b4f21bbb08722a8ee91d293f177036d93fd7838cbbd73b4bac3ed877b3f6e45b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題公開 API {#theming-public-api}"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "Docusaurus has a very flexible theming system:",
+      "source_content_hash": "9543d87233930409ad8d48524485db3db1d8811bed2f4bae3d68cd14c651bea6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 擁有非常靈活的主題系統："
+      }
+    },
+    {
+      "segment_id": "1fe5236e",
+      "source_content": "- You can use custom CSS\n- You can [swizzle](/docs/swizzling) any React theme component",
+      "source_content_hash": "aa6bd812d311102d71f175b57159db153a3745f30bcd2cdd3d91ba17b642af6a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 您可以使用自訂 CSS\n- 您可以[替換](/docs/swizzling)任何 React 主題元件"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "This system also implicitly creates a very large API surface. To be able to move fast and improve Docusaurus, we can't guarantee retro-compatibility.",
+      "source_content_hash": "0ba8750db69759514153280936a5f48628361060b1cdb91521b4b0f3bd5fd278",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此系統也隱含地創造了非常龐大的 API 介面。為了能夠快速迭代並改進 Docusaurus，我們無法保證向後兼容性。"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "✅ Our public theming API includes:",
+      "source_content_hash": "4ae1792dbd61448543779b67d48f42909faef3f5a497a0a6549b903b52cab355",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "✅ 我們的主題公開 API 包含："
+      }
+    },
+    {
+      "segment_id": "17ca27eb",
+      "source_content": "- [Theme class names](/docs/styling-layout#theme-class-names)\n- [Infima](/docs/styling-layout#styling-your-site-with-infima) class names and CSS variables\n- React components that are [safe to swizzle](/docs/swizzling#what-is-safe-to-swizzle)\n- The theme user experience\n- Browser support",
+      "source_content_hash": "29b7a264900edadb49df3c6706a82681ca590478662e14b2afea93acc03af009",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [主題類別名稱](/docs/styling-layout#theme-class-names)\n- [Infima](/docs/styling-layout#styling-your-site-with-infima) 類別名稱與 CSS 變數\n- 可安全替換的 [React 元件](/docs/swizzling#what-is-safe-to-swizzle)\n- 主題使用者體驗\n- 瀏覽器支援"
+      }
+    },
+    {
+      "segment_id": "ff35cad6",
+      "source_content": ":::tip\n\nYou may not be able to achieve your site customization through this public API.\n\nIn this case, please [report your customization use case](https://github.com/facebook/docusaurus/discussions/5468) and we will figure out how to expand our public API.\n\n:::",
+      "source_content_hash": "db9e3fc9316347e78f154e90cacd1b9d5c8ff3f6bd2a86f281c2767fed20de3e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您可能無法透過此公開 API 實現網站的所有自訂需求。\n\n若遇到此情況，請[提交您的自訂使用案例](https://github.com/facebook/docusaurus/discussions/5468)，我們將研究如何擴展公開 API。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a8f09c71",
+      "source_content": "❌ Our public theming API **excludes**:",
+      "source_content_hash": "f9ee06a726d4051267af2940280697c1b05196b8923a75f603143dcbea337922",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "❌ 我們的主題公開 API **不包含**："
+      }
+    },
+    {
+      "segment_id": "db343862",
+      "source_content": "- The DOM structure\n- CSS module class names with a hash suffix (usually targeted with `[class*='myClassName']` selectors)\n- React components that are [unsafe or forbidden to swizzle](/docs/swizzling#what-is-safe-to-swizzle)\n- React components that import from `@docusaurus/theme-common/internal`\n- The exact visual appearance of the theme",
+      "source_content_hash": "82cf35846c921f91d03d6dd315cc99fbafdb6cc1a7aa8f7fcb111103b0439443",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- DOM 結構\n- 帶有哈希後綴的 CSS 模組類別名稱（通常透過 `[class*='myClassName']` 選擇器定位）\n- [不安全或禁止替換](/docs/swizzling#what-is-safe-to-swizzle)的 React 元件\n- 從 `@docusaurus/theme-common/internal` 導入的 React 元件\n- 主題的精確視覺外觀"
+      }
+    },
+    {
+      "segment_id": "50ecdbd8",
+      "source_content": ":::note\n\nWhen [swizzling](/docs/swizzling) safe components, you might encounter components that import undocumented APIs from `@docusaurus/theme-common` (without the `/internal` subpath).\n\nWe still maintain retro-compatibility on those APIs (hence they are marked as \"safe\"), but we don't encourage a direct usage.\n\n:::",
+      "source_content_hash": "af34ee14e624a37c3638ca61afa980f6e6f0fc1cdf5834c4a2d06cd36f54d72f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n當[替換](/docs/swizzling)安全元件時，您可能會遇到從 `@docusaurus/theme-common`（不含 `/internal` 子路徑）導入未記錄 API 的元件。\n\n我們仍會保持這些 API 的向後兼容性（因此標記為「安全」），但不鼓勵直接使用。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current/5-release-process.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.034091+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "8cee47c0dfe7f1749a4936405fde8caae3cf5e0dbe9b340fd594e80c24674340"
+  }
+}

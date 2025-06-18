@@ -1,0 +1,1400 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-2.x/api/docusaurus.config.js.mdx",
+  "source_file_content_hash": "ac2f313f732b477f0f962f2cab205c5b5dc36dd0094345f30112d3e71be811a3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\ndescription: API reference for Docusaurus configuration file.\nslug: /api/docusaurus-config\n---",
+      "source_content_hash": "89609d083790d140ef3e1faef2af5bfff371a4ef010384d7d7d87338d13580b4",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# `docusaurus.config.js`",
+      "source_content_hash": "581d791e787b24e97d909758ae58aa6edad3e13b770b9158939c9a83e162de80",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Overview {#overview}",
+      "source_content_hash": "b59c5fa2fc40b0029bcce638255c9eed259608fd15ae6b734d2a2dcbebe6a78e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "`docusaurus.config.js` contains configurations for your site and is placed in the root directory of your site.",
+      "source_content_hash": "d85aac1a76b4b5c3297700ee7c12dc7d575c1d3b3325f9f4cfe7e01da998774e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "It usually exports a site configuration object:",
+      "source_content_hash": "8f575a663de3adf5ae8fd40e109348116817f553a2d1b5499dae6b8016e945a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // site config...\n};\n```",
+      "source_content_hash": "aa72f126b63e95cec74d2bbbc1ca45942b4e5d231f7a43e9b3728d7468fa8fe8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1485a88b",
+      "source_content": "<details>\n<summary>Config files also support config creator functions and async code.</summary>\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = function configCreator() {\n  return {\n    // site config...\n  };\n};\n```\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = async function configCreatorAsync() {\n  return {\n    // site config...\n  };\n};\n```\n\n```js title=\"docusaurus.config.js\"\nmodule.exports = Promise.resolve({\n  // site config...\n});\n```\n\n</details>",
+      "source_content_hash": "4b4bc5f60fd3ff986b546877f98102a2c2c5829af8e4c91da6252a8dfe12f91b",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "## Required fields {#required-fields}",
+      "source_content_hash": "e85ef0ce785fa2ff2988574e86cf1d5d2eaa2387cf0c7bd3371dcb3cb518a251",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "### `title` {#title}",
+      "source_content_hash": "b949198aef994b2dfb08d4b29c06176d540e50a73b2d07275a8c9195d0ceeee8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Title for your website. Will be used in metadata and as browser tab title.",
+      "source_content_hash": "ed70edee0bb27d3a6f818cb48f26ce10940e4ecc535f962b6907484b1933161c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "eb80afe1",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  title: 'Docusaurus',\n};\n```",
+      "source_content_hash": "dd6478e8a22ecb3b9034ef831c4dd3c6737e59b16baf93b29efd2a896b2c3c96",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### `url` {#url}",
+      "source_content_hash": "9af5761dfbad918160c7cb5b08da9144df63572a157634807e67d363b309a704",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "158e1f5d",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "URL for your website. This can also be considered the top-level hostname. For example, `https://facebook.github.io` is the URL of https://facebook.github.io/metro/, and `https://docusaurus.io` is the URL for https://docusaurus.io. This field is related to the [`baseUrl`](#baseUrl) field.",
+      "source_content_hash": "5f24504c2abd90a9190bd031a99b282b81623bcbbcdec72d0259293857ffe404",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  url: 'https://docusaurus.io',\n};\n```",
+      "source_content_hash": "160786560f033f777ef088f0c8530622c6b69717671c79d27cfe47fb7a408c53",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "daed5acb",
+      "source_content": "### `baseUrl` {#baseUrl}",
+      "source_content_hash": "f4087e284f30e3685086cbbb275877e3fd420c342dfde72a676d6140b4ef45b6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "Base URL for your site. Can be considered as the path after the host. For example, `/metro/` is the base URL of https://facebook.github.io/metro/. For URLs that have no path, the baseUrl should be set to `/`. This field is related to the [`url`](#url) field. Always has both leading and trailing slash.",
+      "source_content_hash": "f472f7e4a30695e42544029495f7808becb733deaec4e0f45fdb8f639a02cb52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "7b2110d8",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  baseUrl: '/',\n};\n```",
+      "source_content_hash": "9d06c0e3d7350db1c4e81508b619d317b1240c181f4ce7601bd4015bfe6d250d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1c598ecd",
+      "source_content": "## Optional fields {#optional-fields}",
+      "source_content_hash": "578497df33fb5526429c74caa7d268f8a54f23ffa2f2f7c09988ec16ef60a9ff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### `favicon` {#favicon}",
+      "source_content_hash": "bc8db87b1b5bd542aa178559a5981e49f69d5cf4e86d46fba5270db569d08a12",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4d429946",
+      "source_content": "- Type: `string | undefined`",
+      "source_content_hash": "b23a09f9d5df49964c459a0b4ffb8cee368b4c00e55817403234d3f6d4804bfb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Path to your site favicon; must be a URL that can be used in link's href. For example, if your favicon is in `static/img/favicon.ico`:",
+      "source_content_hash": "e57b67187621c10575a1317bf19ff1a83f952fa26ff1a83a46a089fdf40985a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "daa16011",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  favicon: '/img/favicon.ico',\n};\n```",
+      "source_content_hash": "3e60a8d007ee4bc8423756cab84ecc92e3ce2c26ab9947b2f0e0da7bf0322f25",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "### `trailingSlash` {#trailingSlash}",
+      "source_content_hash": "b8be58262cbcdd27a72d29d4851b542a80854ce797bdb09869f0facf184b31e8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2d15468d",
+      "source_content": "- Type: `boolean | undefined`",
+      "source_content_hash": "4211b54f3747fc10a7377d4433fba3a570945acdd391dbbea5f9be37ac8f1c41",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Allow to customize the presence/absence of a trailing slash at the end of URLs/links, and how static HTML files are generated:",
+      "source_content_hash": "7ba7a5a95e46be14568b083360b4bbe83b4973850fd41ccc16b5baaea626cbab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cd1d0fe2",
+      "source_content": "- `undefined` (default): keeps URLs untouched, and emit `/docs/myDoc/index.html` for `/docs/myDoc.md`\n- `true`: add trailing slashes to URLs/links, and emit `/docs/myDoc/index.html` for `/docs/myDoc.md`\n- `false`: remove trailing slashes from URLs/links, and emit `/docs/myDoc.html` for `/docs/myDoc.md`",
+      "source_content_hash": "6a70487dd44f3f60ee9019c06f1ba6ccdde7422bf1358cc6f421046ed3aef44d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3faebbae",
+      "source_content": ":::tip\n\nEach static hosting provider serves static files differently (this behavior may even change over time).\n\nRefer to the [deployment guide](../deployment.mdx) and [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) to choose the appropriate setting.\n\n:::",
+      "source_content_hash": "fcf74afc54f35702c093e685e0e63ab3f1a9232f756c7ca28d173f3059209b59",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "### `i18n` {#i18n}",
+      "source_content_hash": "704caaca5dd352ef1ae557f8528c94db9ce6f80a23a90671f968d45b83667ed2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2a1e835c",
+      "source_content": "- Type: `Object`",
+      "source_content_hash": "55e057d21714a4a0b55a76106adc543d2317d707b561a62baf0f7b16370fabd0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "The i18n configuration object to [localize your site](../i18n/i18n-introduction.mdx).",
+      "source_content_hash": "182487865e1883d9a8964d1937e2700d058c4192b030ba6a0d290c1849eee281",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a22bae45",
+      "source_content": "<!-- cSpell:ignore فارسی -->",
+      "source_content_hash": "515bc069926b4d36d07a6100adcdd973c6f9724d675698b9e888f9b4ef0e7c82",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "1ae0b80d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fa'],\n    path: 'i18n',\n    localeConfigs: {\n      en: {\n        label: 'English',\n        direction: 'ltr',\n        htmlLang: 'en-US',\n        calendar: 'gregory',\n        path: 'en',\n      },\n      fa: {\n        label: 'فارسی',\n        direction: 'rtl',\n        htmlLang: 'fa-IR',\n        calendar: 'persian',\n        path: 'fa',\n      },\n    },\n  },\n};\n```",
+      "source_content_hash": "7196f512a25928335d40530c9a3ea68a6575b28e79e75921d1583d40b51370dd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "3670cec0",
+      "source_content": "- `defaultLocale`: The locale that (1) does not have its name in the base URL (2) gets started with `docusaurus start` without `--locale` option (3) will be used for the `<link hrefLang=\"x-default\">` tag\n- `locales`: List of locales deployed on your site. Must contain `defaultLocale`.\n- `path`: Root folder which all locale folders are relative to. Can be absolute or relative to the config file. Defaults to `i18n`.\n- `localeConfigs`: Individual options for each locale.\n  - `label`: The label displayed for this locale in the locales dropdown.\n  - `direction`: `ltr` (default) or `rtl` (for [right-to-left languages](https://developer.mozilla.org/en-US/docs/Glossary/rtl) like Farsi, Arabic, Hebrew, etc.). Used to select the locale's CSS and HTML meta attribute.\n  - `htmlLang`: BCP 47 language tag to use in `<html lang=\"...\">` (or any other DOM tag name) and in `<link ... hreflang=\"...\">`\n  - `calendar`: the [calendar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar) used to calculate the date era. Note that it doesn't control the actual string displayed: `MM/DD/YYYY` and `DD/MM/YYYY` are both `gregory`. To choose the format (`DD/MM/YYYY` or `MM/DD/YYYY`), set your locale name to `en-GB` or `en-US` (`en` means `en-US`).\n  - `path`: Root folder that all plugin localization folders of this locale are relative to. Will be resolved against `i18n.path`. Defaults to the locale's name. Note: this has no effect on the locale's `baseUrl`—customization of base URL is a work-in-progress.",
+      "source_content_hash": "d9d5be5e0d76582e064a7005b7aebc4e4ebd987c78e6914c5433b86cb33bd5a2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `defaultLocale`: 預設語言環境：(1) 其名稱不會出現在基礎 URL 中 (2) 執行 `docusaurus start` 時若未使用 `--locale` 選項會採用此語言 (3) 將用於 `<link hrefLang=\"x-default\">` 標籤\n- `locales`: 網站部署的所有語言環境清單。必須包含 `defaultLocale`。\n- `path`: 所有語言環境資料夾的根目錄。可以是絕對路徑或相對於設定檔的路徑。預設為 `i18n`。\n- `localeConfigs`: 各語言環境的個別設定。\n  - `label`: 在語言切換下拉選單中顯示的標籤。\n  - `direction`: `ltr`（預設）或 `rtl`（適用於波斯語、阿拉伯語、希伯來語等[從右至左書寫的語言](https://developer.mozilla.org/en-US/docs/Glossary/rtl)）。用於選擇該語言的 CSS 和 HTML meta 屬性。\n  - `htmlLang`: 用於 `<html lang=\"...\">`（或其他 DOM 標籤）和 `<link ... hreflang=\"...\">` 的 [BCP 47 語言標籤](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)\n  - `calendar`: 用於計算日期紀元的[曆法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar)。注意這不控制實際顯示的日期格式：`MM/DD/YYYY` 和 `DD/MM/YYYY` 都屬於 `gregory` 曆法。要選擇格式需設定語言名稱如 `en-GB`（英式）或 `en-US`（美式，`en` 預設為 `en-US`）。\n  - `path`: 該語言所有插件本地化資料夾的根目錄。會基於 `i18n.path` 解析。預設為語言名稱。注意：這不影響語言的 `baseUrl`——基礎 URL 的自訂功能仍在開發中。"
+      }
+    },
+    {
+      "segment_id": "d4eab4a6",
+      "source_content": "### `noIndex` {#noIndex}",
+      "source_content_hash": "ed4c3341da175de493bc0d3db08f523f4753954a9e85b3c8179eccc3c2bcbca3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `noIndex` {#noIndex}"
+      }
+    },
+    {
+      "segment_id": "e258929d",
+      "source_content": "- Type: `boolean`",
+      "source_content_hash": "3b7852ec19f918e7840b2cf5a4e1741730cab42668a442a0f19a006c5f155029",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `boolean`"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "This option adds `<meta name=\"robots\" content=\"noindex, nofollow\">` to every page to tell search engines to avoid indexing your site (more information [here](https://moz.com/learn/seo/robots-meta-directives)).",
+      "source_content_hash": "bd9ec1fa11c4c6cdab496e9e51f39e4305a4aded561f18b6e82f19cb0874ebdc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此選項會在所有頁面加入 `<meta name=\"robots\" content=\"noindex, nofollow\">` 標籤，告知搜尋引擎不要索引本站（詳見[此說明](https://moz.com/learn/seo/robots-meta-directives)）。"
+      }
+    },
+    {
+      "segment_id": "b08ad0b4",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "90c0aa8a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  noIndex: true, // Defaults to `false`\n};\n```",
+      "source_content_hash": "a314b42b60c70e8de00825e62195a845efda08578f304a8feef69e8b8b152776",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_90c0aa8a"
+      }
+    },
+    {
+      "segment_id": "e1642ab4",
+      "source_content": "### `onBrokenLinks` {#onBrokenLinks}",
+      "source_content_hash": "b97aaaa8b128ccd2c8a8dda296d9d584e90587227c7912dcbd54caca03fbdd28",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `onBrokenLinks` {#onBrokenLinks}"
+      }
+    },
+    {
+      "segment_id": "6df73775",
+      "source_content": "- Type: `'ignore' | 'log' | 'warn' | 'throw'`",
+      "source_content_hash": "e2475e6313979179f4848e057ecdd534a4fb6429c3ffb3e420422845faf03294",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `'ignore' | 'log' | 'warn' | 'throw'`"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "The behavior of Docusaurus when it detects any broken link.",
+      "source_content_hash": "69568b6159e603dcb5441a10435198bd81832f2d8fb9307288e6993b65b2aae3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 偵測到失效連結時的處理方式。"
+      }
+    },
+    {
+      "segment_id": "fe25bd72",
+      "source_content": "By default, it throws an error, to ensure you never ship any broken link, but you can lower this security if needed.",
+      "source_content_hash": "22f94a3daa3b072f5eeb81e5ebf610159269bf34395f71d3a97f74581020e40f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設會拋出錯誤以確保不會發布失效連結，但可視需求降低此安全等級。"
+      }
+    },
+    {
+      "segment_id": "a5e147fb",
+      "source_content": ":::note\n\nThe broken links detection is only available for a production build (`docusaurus build`).\n\n:::",
+      "source_content_hash": "6438e75bcb42efa5a71a1f2ded037db638bb0572458d5c5a70d8ec9b034fcf7d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n失效連結檢測僅在生產環境建置時生效（`docusaurus build`）。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "be4b1cbf",
+      "source_content": "### `onBrokenMarkdownLinks` {#onBrokenMarkdownLinks}",
+      "source_content_hash": "6a5854e3db1d9092b3af75549d96b4450842d8ad7ef00a0e9f15a0cad044ebce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `onBrokenMarkdownLinks` {#onBrokenMarkdownLinks}"
+      }
+    },
+    {
+      "segment_id": "458ab9ae",
+      "source_content": "- Type: `'ignore' | 'log' | 'warn' | 'throw'`",
+      "source_content_hash": "e2475e6313979179f4848e057ecdd534a4fb6429c3ffb3e420422845faf03294",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `'ignore' | 'log' | 'warn' | 'throw'`"
+      }
+    },
+    {
+      "segment_id": "af016b8e",
+      "source_content": "The behavior of Docusaurus when it detects any broken Markdown link.",
+      "source_content_hash": "2ff6084c698a7cbe18347540d96c4fe4e94898b384a411455d77455cbd26fa4b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 偵測到失效 Markdown 連結時的處理方式。"
+      }
+    },
+    {
+      "segment_id": "3799844b",
+      "source_content": "By default, it prints a warning, to let you know about your broken Markdown link, but you can change this security if needed.",
+      "source_content_hash": "c980ac5f4e5d55afd782a8f673dd95710c28aae8d6a8693e923c0d2651eb8a69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設會顯示警告通知，但可視需求調整此設定。"
+      }
+    },
+    {
+      "segment_id": "8159e12a",
+      "source_content": "### `onDuplicateRoutes` {#onDuplicateRoutes}",
+      "source_content_hash": "a0c2144e7e689a44cf6bc82d76bdc123858dc7f6af791fe565210b1c43531585",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `onDuplicateRoutes` {#onDuplicateRoutes}"
+      }
+    },
+    {
+      "segment_id": "412352a8",
+      "source_content": "- Type: `'ignore' | 'log' | 'warn' | 'throw'`",
+      "source_content_hash": "e2475e6313979179f4848e057ecdd534a4fb6429c3ffb3e420422845faf03294",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `'ignore' | 'log' | 'warn' | 'throw'`"
+      }
+    },
+    {
+      "segment_id": "48249e3c",
+      "source_content": "The behavior of Docusaurus when it detects any [duplicate routes](/guides/creating-pages.mdx#duplicate-routes).",
+      "source_content_hash": "6bb25ab7b90e1615451e1d788c453257e2a645d961814e5267e56f044e66a61b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 偵測到[重複路由](/guides/creating-pages.mdx#duplicate-routes)時的處理方式。"
+      }
+    },
+    {
+      "segment_id": "ebfad7e4",
+      "source_content": "By default, it displays a warning after you run `yarn start` or `yarn build`.",
+      "source_content_hash": "9818c82b3940c1176f8ca047c03b24af9fa862c9c86c0b5b853fae0c4d00f1a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設會在執行 `yarn start` 或 `yarn build` 後顯示警告。"
+      }
+    },
+    {
+      "segment_id": "778e087a",
+      "source_content": "### `tagline` {#tagline}",
+      "source_content_hash": "0d6a944d9cff51d4d473e75e6af09e30700b64fd530c3f831e75bd875ca757a2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `tagline` {#tagline}"
+      }
+    },
+    {
+      "segment_id": "7cfc0291",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "1f9058cd",
+      "source_content": "The tagline for your website.",
+      "source_content_hash": "9d993357f95ff9be43266ff6c503a9ab17529488538d528b9ce0d2c1bacebc90",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "網站的標語。"
+      }
+    },
+    {
+      "segment_id": "a414aca8",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  tagline:\n    'Docusaurus makes it easy to maintain Open Source documentation websites.',\n};\n```",
+      "source_content_hash": "73e6ce580656ea1dee99e9d1dd60d43c87dac3d9e0f3a971f1af0b4745e160aa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a414aca8"
+      }
+    },
+    {
+      "segment_id": "3079a4d2",
+      "source_content": "### `organizationName` {#organizationName}",
+      "source_content_hash": "723b57b34cdb73509f8da9eacaf80c1d2e90b0e64b3dd8f62fff85f4dc70feff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `organizationName` {#organizationName}"
+      }
+    },
+    {
+      "segment_id": "876a99dd",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "9ede513a",
+      "source_content": "The GitHub user or organization that owns the repository. You don't need this if you are not using the `docusaurus deploy` command.",
+      "source_content_hash": "5a818551363e821e5f61edd37602998d701880c1198d5dab57888aa129aa1303",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "擁有該儲存庫的 GitHub 使用者或組織。若您未使用 `docusaurus deploy` 指令，則無需設定此項。"
+      }
+    },
+    {
+      "segment_id": "60efc494",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  // Docusaurus' organization is facebook\n  organizationName: 'facebook',\n};\n```",
+      "source_content_hash": "9e856c4be57b0b6dd4bb89393f6dd5e77fcb9156ee8c954d4273b057d112d582",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_60efc494"
+      }
+    },
+    {
+      "segment_id": "fbdb880f",
+      "source_content": "### `projectName` {#projectName}",
+      "source_content_hash": "cf98c7b8e2aae1b57059782a4bff7cc12f2daede72ff290fca456c3942c242af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `projectName` {#projectName}"
+      }
+    },
+    {
+      "segment_id": "c97d46ef",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "2dbbb313",
+      "source_content": "The name of the GitHub repository. You don't need this if you are not using the `docusaurus deploy` command.",
+      "source_content_hash": "1a571cda421779b089a2b44ebea051407cbc8d0430adc7451d21c17c7083266f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub 儲存庫的名稱。若您未使用 `docusaurus deploy` 指令，則無需設定此項。"
+      }
+    },
+    {
+      "segment_id": "2f24891a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  projectName: 'docusaurus',\n};\n```",
+      "source_content_hash": "d8e6948529f9bcf2db4d4f9358f44587131a51a4013a81c28f5dc0935cf333bc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2f24891a"
+      }
+    },
+    {
+      "segment_id": "a9950191",
+      "source_content": "### `deploymentBranch` {#deploymentBranch}",
+      "source_content_hash": "4b36429f7117b7224de7ba681908a7013c2c3d822827bbf6a59976aeb241735e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `deploymentBranch` {#deploymentBranch}"
+      }
+    },
+    {
+      "segment_id": "13f5db84",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "e636ba62",
+      "source_content": "The name of the branch to deploy the static files to. You don't need this if you are not using the `docusaurus deploy` command.",
+      "source_content_hash": "8941aec678efd4dabc0ebc31590dbc109efe464293ef72745eeb3a7f49a9a14f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部署靜態檔案至的分支名稱。若您未使用 `docusaurus deploy` 指令，則無需設定此項。"
+      }
+    },
+    {
+      "segment_id": "7f3d1f07",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  deploymentBranch: 'gh-pages',\n};\n```",
+      "source_content_hash": "bbce690abdf88edd3a8dd9e524df53791eed12599dc6f43ac5506f9d1da24843",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7f3d1f07"
+      }
+    },
+    {
+      "segment_id": "50e53dff",
+      "source_content": "### `githubHost` {#githubHost}",
+      "source_content_hash": "b5532c89c027e1e5ab0cd212c8a2d677458bcea2791cff3cb295ba301acf29ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `githubHost` {#githubHost}"
+      }
+    },
+    {
+      "segment_id": "fca5e491",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "9c70c953",
+      "source_content": "The hostname of your server. Useful if you are using GitHub Enterprise. You don't need this if you are not using the `docusaurus deploy` command.",
+      "source_content_hash": "789abf445fc3fd47eecd0e56dc5083a2a2bf043a562c2b0fe71abb2ac13d22bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "伺服器的主機名稱。若您使用 GitHub Enterprise 時會需要此設定。若您未使用 `docusaurus deploy` 指令，則無需設定此項。"
+      }
+    },
+    {
+      "segment_id": "d5f63a23",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  githubHost: 'github.com',\n};\n```",
+      "source_content_hash": "aea42da17a7fdcc40c3f95ba5520397f35801695302d99e247b640df5a919d3b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d5f63a23"
+      }
+    },
+    {
+      "segment_id": "3a600569",
+      "source_content": "### `githubPort` {#githubPort}",
+      "source_content_hash": "22f31f9f6b75fff94d0c5c55034faae5b3d0db79566a35f923cdf6033d1b3aa9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `githubPort` {#githubPort}"
+      }
+    },
+    {
+      "segment_id": "b321d4cc",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "216a8ee1",
+      "source_content": "The port of your server. Useful if you are using GitHub Enterprise. You don't need this if you are not using the `docusaurus deploy` command.",
+      "source_content_hash": "6e7073787dcf983400e869ffb6d3b269e1e9934c8ae7b984043230ee3f4cbf0e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "伺服器的連接埠。若您使用 GitHub Enterprise 時會需要此設定。若您未使用 `docusaurus deploy` 指令，則無需設定此項。"
+      }
+    },
+    {
+      "segment_id": "b7c66f56",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  githubPort: '22',\n};\n```",
+      "source_content_hash": "b76cde40e11d5d033710c9a05dfcfe7a75c03de79f903d6617f857114f07774a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7c66f56"
+      }
+    },
+    {
+      "segment_id": "9a53bcb1",
+      "source_content": "### `themeConfig` {#themeConfig}",
+      "source_content_hash": "782709f4994b816e5db654ff2cadbf1a82aeea78b9968387a2e6c20905a25855",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `themeConfig` {#themeConfig}"
+      }
+    },
+    {
+      "segment_id": "dab70635",
+      "source_content": "- Type: `Object`",
+      "source_content_hash": "55e057d21714a4a0b55a76106adc543d2317d707b561a62baf0f7b16370fabd0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `Object`"
+      }
+    },
+    {
+      "segment_id": "46e586a3",
+      "source_content": "The [theme configuration](./themes/theme-configuration.mdx) object to customize your site UI like navbar and footer.",
+      "source_content_hash": "874c911825cee20e97cd32fb76d3ca42b3b77b137c50f96b5a873e3d1195324f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "用於自訂網站 UI（如導覽列和頁尾）的[主題設定物件](./themes/theme-configuration.mdx)。"
+      }
+    },
+    {
+      "segment_id": "66e62938",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "525af061",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  themeConfig: {\n    docs: {\n      sidebar: {\n        hideable: false,\n        autoCollapseCategories: false,\n      },\n    },\n    colorMode: {\n      defaultMode: 'light',\n      disableSwitch: false,\n      respectPrefersColorScheme: true,\n    },\n    navbar: {\n      title: 'Site Title',\n      logo: {\n        alt: 'Site Logo',\n        src: 'img/logo.svg',\n        width: 32,\n        height: 32,\n      },\n      items: [\n        {\n          to: 'docs/docusaurus.config.js',\n          activeBasePath: 'docs',\n          label: 'docusaurus.config.js',\n          position: 'left',\n        },\n        // ... other links\n      ],\n    },\n    footer: {\n      style: 'dark',\n      links: [\n        {\n          title: 'Docs',\n          items: [\n            {\n              label: 'Docs',\n              to: 'docs/doc1',\n            },\n          ],\n        },\n        // ... other links\n      ],\n      logo: {\n        alt: 'Meta Open Source Logo',\n        src: 'img/meta_oss_logo.png',\n        href: 'https://opensource.fb.com',\n        width: 160,\n        height: 51,\n      },\n      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`, // You can also put own HTML here\n    },\n  },\n};\n```",
+      "source_content_hash": "abeb954620a223593c46c1f73e8038548bfd1f52b87ce16cdc0ae5dafdaadf4b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_525af061"
+      }
+    },
+    {
+      "segment_id": "1e5c4bc8",
+      "source_content": "### `plugins` {#plugins}",
+      "source_content_hash": "c627f99cba8a4068d3f0a15b2c8b3cf5737018a8c615c625c1cc33ded0fa6f9f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `plugins` {#plugins}"
+      }
+    },
+    {
+      "segment_id": "5fa0807b",
+      "source_content": "- Type: `PluginConfig[]`",
+      "source_content_hash": "df3711b6fee679016aa6181285782a1cf56a3ca334cd152c594771cbb4207274",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `PluginConfig[]`"
+      }
+    },
+    {
+      "segment_id": "606e259f",
+      "source_content": "```ts\ntype PluginConfig = string | [string, any] | PluginModule | [PluginModule, any];\n```",
+      "source_content_hash": "335df2a71a104a9391294316a67124826baec448d588cbaefa21961c537c8a07",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_606e259f"
+      }
+    },
+    {
+      "segment_id": "d58af824",
+      "source_content": "See [plugin method references](./plugin-methods/README.mdx) for the shape of a `PluginModule`.",
+      "source_content_hash": "cd8bd39ef4d33847a2abd90b76c5f97061836229b54150d9de27f26f00b60418",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "參閱[外掛方法參考](./plugin-methods/README.mdx)了解 `PluginModule` 的結構。"
+      }
+    },
+    {
+      "segment_id": "c887f5e6",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  plugins: [\n    'docusaurus-plugin-awesome',\n    ['docusuarus-plugin-confetti', {fancy: false}],\n    () => ({\n      postBuild() {\n        console.log('Build finished');\n      },\n    }),\n  ],\n};\n```",
+      "source_content_hash": "896d06441a18f351f646a6285d5da129b438f275aa0512a7ee1c0d2765478b03",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c887f5e6"
+      }
+    },
+    {
+      "segment_id": "06d2929c",
+      "source_content": "### `themes` {#themes}",
+      "source_content_hash": "c0bac8eb50218000c20adae8944b1b5a6fedc9669f655c92b5f71f48c12cb57e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `themes` {#themes}"
+      }
+    },
+    {
+      "segment_id": "aa526f01",
+      "source_content": "- Type: `PluginConfig[]`",
+      "source_content_hash": "df3711b6fee679016aa6181285782a1cf56a3ca334cd152c594771cbb4207274",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `PluginConfig[]`"
+      }
+    },
+    {
+      "segment_id": "29431851",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  themes: ['@docusaurus/theme-classic'],\n};\n```",
+      "source_content_hash": "267a2142f0a0ceab38a7f49c540ca57b8bf2b5021fe17f0dd4689191a8d69a0a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_29431851"
+      }
+    },
+    {
+      "segment_id": "357f5c2e",
+      "source_content": "### `presets` {#presets}",
+      "source_content_hash": "6077c27eecd0ca793e07cc76bdc10c9f1e4230f75ed499084c52554f23747d9b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `presets` {#presets}"
+      }
+    },
+    {
+      "segment_id": "0009c45d",
+      "source_content": "- Type: `PresetConfig[]`",
+      "source_content_hash": "e0e00c0c02eff526e02c220fec85442d00f7dcbe847793f24c0826ec7a360ccd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `PresetConfig[]`"
+      }
+    },
+    {
+      "segment_id": "fb74007a",
+      "source_content": "```ts\ntype PresetConfig = string | [string, any];\n```",
+      "source_content_hash": "037d1ab094a5aeb11faabad69541733b299d8dc041222db12a7e77bf56885484",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_fb74007a"
+      }
+    },
+    {
+      "segment_id": "d1c28c8f",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  presets: [],\n};\n```",
+      "source_content_hash": "a45432bc4c4c17b3b647b17ab074aedd5f234ed3416361885eb981bf1e904a43",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d1c28c8f"
+      }
+    },
+    {
+      "segment_id": "c489a644",
+      "source_content": "### `customFields` {#customfields}",
+      "source_content_hash": "a6ec151e654a651ac97b3e97e29cbe70bbbc43d879211ee0a62dbbda4e3be29e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `customFields` {#customfields}"
+      }
+    },
+    {
+      "segment_id": "b63b9ccf",
+      "source_content": "Docusaurus guards `docusaurus.config.js` from unknown fields. To add a custom field, define it on `customFields`.",
+      "source_content_hash": "ed4c6c9bf8298f4b530a64c12410c2de3e65e21928d4fc55ed1470b19fde111f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會防止 `docusaurus.config.js` 出現未知欄位。若要新增自訂欄位，請在 `customFields` 中定義。"
+      }
+    },
+    {
+      "segment_id": "0a48254a",
+      "source_content": "- Type: `Object`",
+      "source_content_hash": "55e057d21714a4a0b55a76106adc543d2317d707b561a62baf0f7b16370fabd0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `Object`"
+      }
+    },
+    {
+      "segment_id": "eeb25400",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  customFields: {\n    admin: 'endi',\n    superman: 'lol',\n  },\n};\n```",
+      "source_content_hash": "2ae9525c3b72f105e88984b45840aa7985a2919d3cbe8645076ce6aed72edf0c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eeb25400"
+      }
+    },
+    {
+      "segment_id": "ce99c217",
+      "source_content": "Attempting to add unknown fields in the config will lead to errors during build time:",
+      "source_content_hash": "1d8c83b020f51b25d47f16f6fbb1fd76120ece1beaff5cab8777acc743aa7710",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若嘗試在設定中新增未知欄位，將導致建置時發生錯誤:"
+      }
+    },
+    {
+      "segment_id": "e9d8c567",
+      "source_content": "```bash\nError: The field(s) 'foo', 'bar' are not recognized in docusaurus.config.js\n```",
+      "source_content_hash": "99ef817996edaa8cd1ef9a4abb92c2dad7c14048f7a2a16fb556eb809f6e08d1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e9d8c567"
+      }
+    },
+    {
+      "segment_id": "ad3aada7",
+      "source_content": "### `staticDirectories` {#staticDirectories}",
+      "source_content_hash": "99fd4a4133b4fcbc6fc03080a90dbb5dee771218d8efabb9d775febf0b84a9e8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `staticDirectories` {#staticDirectories}"
+      }
+    },
+    {
+      "segment_id": "3bb26da2",
+      "source_content": "An array of paths, relative to the site's directory or absolute. Files under these paths will be copied to the build output as-is.",
+      "source_content_hash": "a9cce308bfae37e01066a050a5b87bb0b56e659d5d76f0911a2fa111e6384376",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "路徑陣列，可為相對於網站目錄或絕對路徑。這些路徑下的檔案將原樣複製至建置輸出目錄。"
+      }
+    },
+    {
+      "segment_id": "09aad98b",
+      "source_content": "- Type: `string[]`",
+      "source_content_hash": "3136cee5756db9946b9bfeb0bd36ff81417830304f50494a2dffedb8a91a0750",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string[]`"
+      }
+    },
+    {
+      "segment_id": "a279d6f8",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "d8b7afcb",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  staticDirectories: ['static'],\n};\n```",
+      "source_content_hash": "e97756f0077f7791d0ec206fe89930074952d990217d49e5a34c3e8e46dba1ab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d8b7afcb"
+      }
+    },
+    {
+      "segment_id": "9d81e9c3",
+      "source_content": "### `headTags` {#headTags}",
+      "source_content_hash": "f61e2662829b8f4446c60e777b99848494eb7d9306dc290e0ade67e060c86f26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `headTags` {#headTags}"
+      }
+    },
+    {
+      "segment_id": "60d3a00d",
+      "source_content": "An array of tags that will be inserted in the HTML `<head>`. The values must be objects that contain two properties; `tagName` and `attributes`. `tagName` must be a string that determines the tag being created; eg `\"link\"`. `attributes` must be an attribute-value map.",
+      "source_content_hash": "a76a8d8a682cce704b29692ae3a4f01cee88e3475d2ed0d17a2cf1f018867e49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將插入 HTML `<head>` 的標籤陣列。值必須為包含兩個屬性的物件：`tagName` 和 `attributes`。`tagName` 必須為決定建立何種標籤的字串（例如 `\"link\"`）。`attributes` 必須為屬性-值的對應物件。"
+      }
+    },
+    {
+      "segment_id": "c90a1635",
+      "source_content": "- Type: `{ tagName: string; attributes: Object; }[]`",
+      "source_content_hash": "c1f1bd17981482701540478db0fa5da87e62dbf52fcda8e6932ff5bdbf7d2bad",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `{ tagName: string; attributes: Object; }[]`"
+      }
+    },
+    {
+      "segment_id": "1e0d7fbe",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "7b02faf5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  headTags: [\n    {\n      tagName: 'link',\n      attributes: {\n        rel: 'icon',\n        href: '/img/docusaurus.png',\n      },\n    },\n  ],\n};\n```",
+      "source_content_hash": "f4807b07b326557ff3b7af8c522089621b4b17ac4ebdffac7f057827329190db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7b02faf5"
+      }
+    },
+    {
+      "segment_id": "69d6e4be",
+      "source_content": "This would become `<link rel=\"icon\" href=\"img/docusaurus.png\" />` in the generated HTML.",
+      "source_content_hash": "916f47ffa7cc55114a6133938489ac7a25af956780726c7a9901f5592706031c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這將在生成的 HTML 中變為 `<link rel=\"icon\" href=\"img/docusaurus.png\" />`。"
+      }
+    },
+    {
+      "segment_id": "65863fe2",
+      "source_content": "### `scripts` {#scripts}",
+      "source_content_hash": "23e24836c72882a35dfc3172ecb5ca5a918180931569096d4bfd3d1acf80b708",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `scripts` {#scripts}"
+      }
+    },
+    {
+      "segment_id": "db871df4",
+      "source_content": "An array of scripts to load. The values can be either strings or plain objects of attribute-value maps. The `<script>` tags will be inserted in the HTML `<head>`. If you use a plain object, the only required attribute is `src`, and any other attributes are permitted (each one should have boolean/string values).",
+      "source_content_hash": "3f00e2d01b7723c4d0972069f8311829fde054eea51284bccb5e0dcd85615d73",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要載入的腳本陣列。值可以是字串或屬性-值映射的純物件。`<script>` 標籤將插入到 HTML `<head>` 中。如果使用純物件，唯一必需的屬性是 `src`，其他屬性均允許（每個屬性應為布林值/字串值）。"
+      }
+    },
+    {
+      "segment_id": "04bb83ba",
+      "source_content": "Note that `<script>` added here are render-blocking, so you might want to add `async: true`/`defer: true` to the objects.",
+      "source_content_hash": "1c85534e6d94da2380c9be239891ece0e6c7f7014d452151a5983813fd78505b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意，此處添加的 `<script>` 會阻擋渲染，因此您可能需要為物件添加 `async: true`/`defer: true`。"
+      }
+    },
+    {
+      "segment_id": "1a15c136",
+      "source_content": "- Type: `(string | Object)[]`",
+      "source_content_hash": "07100cb395d187a01942aa25438e3db737b7b6aac7613d65cfcdc0248674e76a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `(string | Object)[]`"
+      }
+    },
+    {
+      "segment_id": "76356197",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "e434bfaf",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  scripts: [\n    // String format.\n    'https://docusaurus.io/script.js',\n    // Object format.\n    {\n      src: 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',\n      async: true,\n    },\n  ],\n};\n```",
+      "source_content_hash": "8d8235df7bf4b4361d11ca791e72d53c020fd8591d794b87f267cbf8ba04b5dd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e434bfaf"
+      }
+    },
+    {
+      "segment_id": "7ea10fdf",
+      "source_content": "### `stylesheets` {#stylesheets}",
+      "source_content_hash": "697433d96e4442eee8de1832d872de8dc4422f5a132a8b08b091d5ea455d310b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `stylesheets` {#stylesheets}"
+      }
+    },
+    {
+      "segment_id": "f49fce49",
+      "source_content": "An array of CSS sources to load. The values can be either strings or plain objects of attribute-value maps. The `<link>` tags will be inserted in the HTML `<head>`. If you use an object, the only required attribute is `href`, and any other attributes are permitted (each one should have boolean/string values).",
+      "source_content_hash": "744365a97dc263ff75ebcf2f7bbf5d540c201b58ba1c6b96bedb41e167773129",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要載入的 CSS 來源陣列。值可以是字串或屬性-值映射的純物件。`<link>` 標籤將插入到 HTML `<head>` 中。如果使用物件，唯一必需的屬性是 `href`，其他屬性均允許（每個屬性應為布林值/字串值）。"
+      }
+    },
+    {
+      "segment_id": "0ef49ba3",
+      "source_content": "- Type: `(string | Object)[]`",
+      "source_content_hash": "07100cb395d187a01942aa25438e3db737b7b6aac7613d65cfcdc0248674e76a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `(string | Object)[]`"
+      }
+    },
+    {
+      "segment_id": "6d93952b",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "2105ab0d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  stylesheets: [\n    // String format.\n    'https://docusaurus.io/style.css',\n    // Object format.\n    {\n      href: 'http://mydomain.com/style.css',\n    },\n  ],\n};\n```",
+      "source_content_hash": "dffb8ed127899d93fb27d7347e0ec6e97d22d0cd734ad4ed4450fe6cc0bf0452",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2105ab0d"
+      }
+    },
+    {
+      "segment_id": "181a36c8",
+      "source_content": ":::info\n\nBy default, the `<link>` tags will have `rel=\"stylesheet\"`, but you can explicitly add a custom `rel` value to inject any kind of `<link>` tag, not necessarily stylesheets.\n\n:::",
+      "source_content_hash": "46cd1eef963bb862354519aba28dbb76319a2708569f4e6485d0dcbfb37cc04b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n預設情況下，`<link>` 標籤會帶有 `rel=\"stylesheet\"`，但您可以明確添加自訂的 `rel` 值來注入任何類型的 `<link>` 標籤，不一定是樣式表。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5d1627b0",
+      "source_content": "### `clientModules` {#clientModules}",
+      "source_content_hash": "538fd2f55ebb03edfe02f7e506f46e5fedbd04d1b13c0231bbbe6340e47691cb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `clientModules` {#clientModules}"
+      }
+    },
+    {
+      "segment_id": "fa770099",
+      "source_content": "An array of [client modules](../advanced/client.mdx#client-modules) to load globally on your site.",
+      "source_content_hash": "c5ff11e411ee623c2a800a4600d5fc91dbaa52f07ce9e049be9c9861a9028f0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "要在您的網站上全域載入的[客戶端模組](../advanced/client.mdx#client-modules)陣列。"
+      }
+    },
+    {
+      "segment_id": "d82906fc",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "1a51fda5",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  clientModules: [\n    require.resolve('./mySiteGlobalJs.js'),\n    require.resolve('./mySiteGlobalCss.css'),\n  ],\n};\n```",
+      "source_content_hash": "e864abd7f3ea5faf2bd5c9f79ece32dd677b9e86ef7cadd2bc6467cd553edbad",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1a51fda5"
+      }
+    },
+    {
+      "segment_id": "1e8fadaf",
+      "source_content": "### `ssrTemplate` {#ssrTemplate}",
+      "source_content_hash": "a47fbc6d5b7153887ace9218924b46640d8e8ddb3168727106c834b6728e7dfd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `ssrTemplate` {#ssrTemplate}"
+      }
+    },
+    {
+      "segment_id": "3442cdf6",
+      "source_content": "An HTML template written in [Eta's syntax](https://eta.js.org/docs/syntax#syntax-overview) that will be used to render your application. This can be used to set custom attributes on the `body` tags, additional `meta` tags, customize the `viewport`, etc. Please note that Docusaurus will rely on the template to be correctly structured in order to function properly, once you do customize it, you will have to make sure that your template is compliant with the requirements from upstream.",
+      "source_content_hash": "4a8b6077b21575b37ef46eb7bfa97056776fd4364c7123c9f42375c6e4f7e287",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [Eta 語法](https://eta.js.org/docs/syntax#syntax-overview)編寫的 HTML 模板，將用於渲染您的應用程式。可用於設定 `body` 標籤的自訂屬性、額外的 `meta` 標籤、自訂 `viewport` 等。請注意，Docusaurus 依賴模板的正確結構才能正常運作，一旦您進行自訂，必須確保您的模板符合上游要求。"
+      }
+    },
+    {
+      "segment_id": "46b5a102",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "61a57ead",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "d66d2785",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  ssrTemplate: `<!DOCTYPE html>\n<html <%~ it.htmlAttributes %>>\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"generator\" content=\"Docusaurus v<%= it.version %>\">\n    <% it.metaAttributes.forEach((metaAttribute) => { %>\n      <%~ metaAttribute %>\n    <% }); %>\n    <%~ it.headTags %>\n    <% it.stylesheets.forEach((stylesheet) => { %>\n      <link rel=\"stylesheet\" href=\"<%= it.baseUrl %><%= stylesheet %>\" />\n    <% }); %>\n    <% it.scripts.forEach((script) => { %>\n      <link rel=\"preload\" href=\"<%= it.baseUrl %><%= script %>\" as=\"script\">\n    <% }); %>\n  </head>\n  <body <%~ it.bodyAttributes %>>\n    <%~ it.preBodyTags %>\n    <div id=\"__docusaurus\">\n      <%~ it.appHtml %>\n    </div>\n    <% it.scripts.forEach((script) => { %>\n      <script src=\"<%= it.baseUrl %><%= script %>\"></script>\n    <% }); %>\n    <%~ it.postBodyTags %>\n  </body>\n</html>`,\n};\n```",
+      "source_content_hash": "20cbef1dd7eeaba485ab8847007480c352bf00c1caf15cc96cd3133f65fbdc02",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d66d2785"
+      }
+    },
+    {
+      "segment_id": "54eccfba",
+      "source_content": "### `titleDelimiter` {#titleDelimiter}",
+      "source_content_hash": "fab0422699d75a4e487a75789927baf50189622a890140de2592e0c314758224",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `titleDelimiter` {#titleDelimiter}"
+      }
+    },
+    {
+      "segment_id": "0a450d0c",
+      "source_content": "- Type: `string`",
+      "source_content_hash": "68233ef7bcb7713cc4d7e143b0eafe826791b3978d8428084f1447a66bf36214",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `string`"
+      }
+    },
+    {
+      "segment_id": "d10e32d6",
+      "source_content": "Will be used as title delimiter in the generated `<title>` tag.",
+      "source_content_hash": "94d4b3dc1a7aace48f45e5cd8a779114ab1c175b7e2a0fbc15c31cc3dac47888",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將用作生成的 `<title>` 標籤中的標題分隔符。"
+      }
+    },
+    {
+      "segment_id": "e93bb501",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "221f12fc",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  titleDelimiter: '🦖', // Defaults to `|`\n};\n```",
+      "source_content_hash": "676817afc0c5ad590f297ee8231570732587a1eeaf46e682b06f385cf937ccd0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_221f12fc"
+      }
+    },
+    {
+      "segment_id": "db7cc96c",
+      "source_content": "### `baseUrlIssueBanner` {#baseUrlIssueBanner}",
+      "source_content_hash": "46a260f768ad73fc70aa4f6b445df14350cd069379ce94700f9a9b8b16a1dcba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `baseUrlIssueBanner` {#baseUrlIssueBanner}"
+      }
+    },
+    {
+      "segment_id": "b5561f6b",
+      "source_content": "- Type: `boolean`",
+      "source_content_hash": "3b7852ec19f918e7840b2cf5a4e1741730cab42668a442a0f19a006c5f155029",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 類型: `boolean`"
+      }
+    },
+    {
+      "segment_id": "df08ff06",
+      "source_content": "When enabled, will show a banner in case your site can't load its CSS or JavaScript files, which is a very common issue, often related to a wrong `baseUrl` in site config.",
+      "source_content_hash": "670514daa460a7c1374aea9a3f3f9cd1f0ea796a2516e778826c5b25df558696",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "啟用後，當您的網站無法載入 CSS 或 JavaScript 檔案時，將顯示一個橫幅，這是一個非常常見的問題，通常與網站配置中的錯誤 `baseUrl` 有關。"
+      }
+    },
+    {
+      "segment_id": "aa8e8b02",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例:"
+      }
+    },
+    {
+      "segment_id": "c595833d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nmodule.exports = {\n  baseUrlIssueBanner: true, // Defaults to `true`\n};\n```",
+      "source_content_hash": "c9bca345893a3c5b3d71b27ae2683a616f4b0cdd8871162edd54284f843339b3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c595833d"
+      }
+    },
+    {
+      "segment_id": "c6dee347",
+      "source_content": "![A sample base URL issue banner. The style is very raw since the stylesheets failed to load. The text says \"Your Docusaurus site did not load properly... Current configured baseUrl = / (default value); We suggest trying baseUrl = /build/](/img/baseUrlIssueBanner.png)",
+      "source_content_hash": "b217a0c19f4f9f0ec72313d6592f9be49e0c9296319bdb0055655916d9c6427e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![一個基本的 URL 問題橫幅範例。由於樣式表載入失敗，樣式非常原始。文字顯示「您的 Docusaurus 網站未正確載入...當前設定的 baseUrl = / (預設值)；建議嘗試 baseUrl = /build/」](/img/baseUrlIssueBanner.png)"
+      }
+    },
+    {
+      "segment_id": "2e8e208e",
+      "source_content": ":::warning\n\nThis banner needs to inline CSS / JS in case all asset loading fails due to wrong base URL.\n\nIf you have a strict [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP), you should rather disable it.\n\n:::",
+      "source_content_hash": "120851ffa640e763264a698f5e58ba738129109d3d32a0beb685402398c545a0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此橫幅需要在所有資源載入因錯誤的基礎 URL 而失敗時內聯 CSS/JS。\n\n如果您有嚴格的[內容安全策略](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)，則應將其禁用。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-2.x/api/docusaurus.config.js.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.053047+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ac2f313f732b477f0f962f2cab205c5b5dc36dd0094345f30112d3e71be811a3"
+  }
+}

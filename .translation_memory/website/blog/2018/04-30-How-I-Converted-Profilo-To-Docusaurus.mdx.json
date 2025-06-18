@@ -1,0 +1,412 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2018/04-30-How-I-Converted-Profilo-To-Docusaurus.mdx",
+  "source_file_content_hash": "49f2288e3373c7a1145d1b1209d362ac0c29cf6b954ff30090d157373939d138",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: How I Converted Profilo to Docusaurus in Under 2 Hours\nauthors: [abernathyca]\ntags: [profilo, adoption]\n---",
+      "source_content_hash": "4c52f8eeb935d1ed3e6b2067c919ddef56ec7bf05fbb7c1dc9632fd5f4a4c15d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "da35bd88",
+      "source_content": "> _“Joel and I were discussing having a website and how it would have been great to launch with it. So I challenged myself to add Docusaurus support. It took just over an hour and a half. I'm going to send you a PR with the addition so you can take a look and see if you like it. Your workflow for adding docs wouldn't be much different from editing those Markdown files.”_\n>\n> _— Note sent to the Profilo team_",
+      "source_content_hash": "a2467b486c27a6976d4a2ad85769e970ea9f48daabf1cf89d2eddb9267afb930",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 「Joel 和我當時正在討論建立一個網站，並認為如果能隨專案一起發布會很棒。所以我挑戰自己加入 Docusaurus 支援。整個過程只花了一個半小時多。我會發送一個包含這項新增功能的 PR 給你們審閱，看看是否喜歡。你們新增文件的流程基本上就是編輯那些 Markdown 檔案。」\n>\n> _— 發送給 Profilo 團隊的訊息_"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "This is the story of the rather short journey it took to create the [Profilo](https://facebookincubator.github.io/profilo/) website using Docusaurus.",
+      "source_content_hash": "61b75a4a3570ab2ae2e14f0959dd99962fa073b1f856775a7383e1b6867202e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是關於使用 Docusaurus 建立 [Profilo](https://facebookincubator.github.io/profilo/) 網站的簡短歷程故事。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Profilo, an Android library for collecting performance traces from production, [was announced](https://code.fb.com/android/profilo-understanding-app-performance-in-the-wild/) earlier this year. The project was [published on GitHub](https://github.com/facebookincubator/profilo/tree/802042f90f990998a272387e371b893af52465b8) with a less than [a handful or Markdown files](https://github.com/facebookincubator/profilo/tree/802042f90f990998a272387e371b893af52465b8/docs) to describe its functionality and no website to showcase any branding and highlight the logo. The task at hand was to turn these existing docs and logo into a website.",
+      "source_content_hash": "bc859562bb5286a5de1fa631190e0db9248355560e4eb3557e97bf0ef4bea255",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Profilo 是一個用於從生產環境收集 Android 效能追蹤的函式庫，今年初[已發布公告](https://code.fb.com/android/profilo-understanding-app-performance-in-the-wild/)。該專案[發布在 GitHub](https://github.com/facebookincubator/profilo/tree/802042f90f990998a272387e371b893af52465b8) 時，僅有[少數 Markdown 文件](https://github.com/facebookincubator/profilo/tree/802042f90f990998a272387e371b893af52465b8/docs)描述其功能，且沒有網站來展示品牌標誌。當前的任務是將這些現有文件和標誌轉化為網站。"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "In general, when creating a website with Docusaurus you do the following:",
+      "source_content_hash": "7d8eb6a4fc721ea385e0f845fdbe4a3a4019f2b3c7cbbb9e29d79c0965ec4d95",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "一般而言，使用 Docusaurus 建立網站需執行以下步驟："
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "1. Generate a template website using Docusaurus scripts.\n1. Customize the generated template files for your desired site colors and your project configuration (ex: website and GitHub links).\n1. Create the website content:\n   1. Add your docs and any supporting assets.\n   1. Customize the default landing page provided by Docusaurus to suit your needs.\n   1. Configure the default site navigation file.\n1. Publish the website and set up how it will be published for future changes.",
+      "source_content_hash": "2a70f46cc2f4e8cbe0cc1049dfc493e7981d8d5ceee1d4ed477baf804dc32077",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 使用 Docusaurus 腳本生成網站模板。\n1. 為預期的網站顏色和專案配置（例如：網站和 GitHub 連結）自訂生成的模板檔案。\n1. 建立網站內容：\n   1. 新增你的文件和任何支援資源。\n   1. 自訂 Docusaurus 提供的預設登陸頁面以符合需求。\n   1. 配置預設的網站導航檔案。\n1. 發布網站並設定未來更新的發布方式。"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Given I had pre-existing Markdown files, I didn't have to generate the core content but simply make sure that Docusaurus could process the files by adding the expected metadata to them. Most of the work would therefore consist of customizing the defaults provided by Docusaurus.",
+      "source_content_hash": "d63e12c96dff35d0e4173519591ab9c416eb4569339d304b66efc678867fb9fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於我已有現成的 Markdown 檔案，因此不需要生成核心內容，只需確保 Docusaurus 能通過新增預期的元數據來處理這些檔案。大部分工作將集中在自訂 Docusaurus 提供的預設值上。"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Overview of Steps Taken",
+      "source_content_hash": "b7b0a41064068e4b1cc4898c2592b767794a8703b28a8d55519e1ce283f7cdb1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 執行步驟概述"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Here's an overview of the steps taken to convert to a website. I'll discuss some of the design aspects in a later section.",
+      "source_content_hash": "40b0bb117d195cfbb9935facbfd6921a667a0c6579c02e6e3884b2e9a32ee03a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是轉換為網站的步驟概述。設計方面的細節將在後續章節討論。"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "**Design and colors:**",
+      "source_content_hash": "32a8fd9bd209eace2859c2be9e97a1a04bb919da054a02313b98b9e491d30f09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**設計與顏色：**"
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "1. Got all the desired logo formats from designer. I had to create the _.favicon_ one.\n1. Worked out some passable primary and secondary website colors using the http://paletton.com/ tools - very handy!",
+      "source_content_hash": "05367ea841323d26bbd577dc5f8b988b0dcb6b5b364b54602cddf495c4db4739",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 從設計師處取得所有需要的標誌格式。我必須自行建立 _.favicon_ 檔案。\n1. 使用 http://paletton.com/ 工具制定出可接受的主要和次要網站顏色——非常方便！"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "**Initial website setup:**",
+      "source_content_hash": "39c9f739a8fe42e67cc1ee9dd6eee854fe84fc367eefffda3c4c48fa08bbfa5a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**初始網站設置：**"
+      }
+    },
+    {
+      "segment_id": "e7bc8c38",
+      "source_content": "1. Forked the [Profilo project](https://github.com/facebookincubator/profilo/) on GitHub and created a local clone of the fork to set up the website.\n1. Created the initial Docusaurus website using the [installation instructions](https://v1.docusaurus.io/docs/en/installation.html).\n1. Deleted the `docs-examples-from-docusaurus` and `website/blog-examples-from-docusaurus` folders as these would not be needed. Profilo had existing docs we could use and there was no need for blogs at this time.",
+      "source_content_hash": "8e0cd584f1e4a54923392f0ab86439bca1c8bfa2cbbcf02ceff9350841de75df",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 在 GitHub 上 Fork 了 [Profilo 專案](https://github.com/facebookincubator/profilo/)，並建立本地克隆以設置網站。\n1. 按照[安裝說明](https://v1.docusaurus.io/docs/en/installation.html)建立初始的 Docusaurus 網站。\n1. 刪除 `docs-examples-from-docusaurus` 和 `website/blog-examples-from-docusaurus` 資料夾，因為這些並不需要。Profilo 已有現成文件可供使用，且目前不需要部落格。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "**Content creation:**",
+      "source_content_hash": "7310e6d8e75247df657ebfc9c6ae2f1ea0722e927fc802feaef3ac10cabe6f87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**內容建立：**"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "1. Added metadata to the existing Markdown files found in the `docs` folder, for example:\n\n   ```md\n   ---\n   id: architecture\n   title: Architecture\n   sidebar_label: Architecture\n   ---\n   ```\n\n2. Added the logo assets to the `website/static/img` folder.\n3. Modified `website/pages/en/index.js`, the landing page, to highlight Profilo features.\n4. Modified `website/core/Footer.js`, the footer, to simplify it for Profilo.\n5. Edited `website/siteConfig.js` (website configuration file) to specify the previously chosen primary and secondary colors.\n6. Modified `website/sidebars.json` that specifies the sidebar navigation. Listed all the docs and customized it based on the metadata added to the Markdown files.\n7. Edited the website configuration file to specify the GitHub properties, logo images, header links, and the website link.\n8. Tested the website locally throughout this phase. (I ran `yarn start` from the `website` folder to start the server.)",
+      "source_content_hash": "075de256de2c0c29f7640e8274d29a7e04c1f0e8a2d0c2f1a29cb1e842dd4f84",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 為 `docs` 資料夾中的現有 Markdown 文件添加元數據，例如：\n\n   ```md\n   ---\n   id: architecture\n   title: 架構\n   sidebar_label: 架構\n   ---\n   ```\n\n2. 將標誌資產添加到 `website/static/img` 資料夾。\n3. 修改 `website/pages/en/index.js`（首頁）以突出 Profilo 的功能。\n4. 修改 `website/core/Footer.js`（頁腳）以簡化 Profilo 的頁腳。\n5. 編輯 `website/siteConfig.js`（網站配置文件）以指定先前選擇的主色和次色。\n6. 修改 `website/sidebars.json`（指定側邊欄導航的文件）。列出所有文檔並根據添加到 Markdown 文件的元數據進行自定義。\n7. 編輯網站配置文件以指定 GitHub 屬性、標誌圖像、標題鏈接和網站鏈接。\n8. 在此階段全程本地測試網站。（我從 `website` 資料夾運行 `yarn start` 來啟動服務器。）"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "**Feedback and review changes:**",
+      "source_content_hash": "54fc7b81e27d766658fd31b7d056b073f4c9cadf5f6d669d16feac020a8ade8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**反饋和審查更改：**"
+      }
+    },
+    {
+      "segment_id": "2eb5ba30",
+      "source_content": "1. Sent a [pull request](https://github.com/facebookincubator/profilo/pull/6) to the project.\n2. Updated the colors after the designer rightly gasped at the ones I had chosen (IANAD).\n3. Updated the colors and updated the PR.\n4. The PR was then accepted and [merged](https://github.com/facebookincubator/profilo/commit/6ad033aaf5a7d54e6d842f45a5bccd051a8e45ad). Yay!",
+      "source_content_hash": "d719732917c807ce44201a305c4b8b4b5aee555bc9370bb4d0aa0f3edf3c1be7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 向項目發送了一個[拉取請求](https://github.com/facebookincubator/profilo/pull/6)。\n2. 在設計師對我選擇的顏色表示驚訝後更新了顏色（我不是設計師）。\n3. 更新了顏色並更新了拉取請求。\n4. 拉取請求隨後被接受並[合併](https://github.com/facebookincubator/profilo/commit/6ad033aaf5a7d54e6d842f45a5bccd051a8e45ad)。耶！"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "**Website publishing:**",
+      "source_content_hash": "2b96008ae474cc5674161bacf3e35cf44be0776a8b0396943141f9af735f502d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**網站發布：**"
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "1. Pushed the first website version by running the Docusaurus publish script from the command line:\n\n   ```bash\n   USE_SSH=true \\\n     GIT_USER=caabernathy \\\n     CURRENT_BRANCH=master \\\n     yarn run publish-gh-pages\n   ```\n\n2. Configured CircleCI using the [provided Docusaurus instructions](https://v1.docusaurus.io/docs/en/publishing.html#automating-deployments-using-continuous-integration). There were 2 PRs for this, [the first](https://github.com/facebookincubator/profilo/pull/8)for the initial config and [the second](https://github.com/facebookincubator/profilo/pull/12) to make sure CircleCI only triggered for changes in the master branch (thanks Joel Marcey!).",
+      "source_content_hash": "2fda9651ce492cadf61c7f2a31970e885816776ee6678da2a835cc4536aa2d06",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 通過從命令行運行 Docusaurus 發布腳本推送了第一個網站版本：\n\n   ```bash\n   USE_SSH=true \\\n     GIT_USER=caabernathy \\\n     CURRENT_BRANCH=master \\\n     yarn run publish-gh-pages\n   ```\n\n2. 使用[Docusaurus 提供的說明](https://v1.docusaurus.io/docs/en/publishing.html#automating-deployments-using-continuous-integration)配置了 CircleCI。對此有兩個拉取請求，[第一個](https://github.com/facebookincubator/profilo/pull/8)用於初始配置，[第二個](https://github.com/facebookincubator/profilo/pull/12)確保 CircleCI 僅在 master 分支的更改時觸發（感謝 Joel Marcey！）。"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "The final website was published on https://facebookincubator.github.io/profilo/. It had taken 1.5 hours to get to the initial PR stage and another half an hour or so to respond to review feedback and publish the website.",
+      "source_content_hash": "c72981c7c67b218a5912de609db0234847e4c89c45a65bd7173c2d61a4782014",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "最終網站發布在 https://facebookincubator.github.io/profilo/。從初始拉取請求階段到完成花了 1.5 小時，另外花了半小時左右回應審查反饋並發布網站。"
+      }
+    },
+    {
+      "segment_id": "1c598ecd",
+      "source_content": "## Design",
+      "source_content_hash": "37a2fe5182e11d8fdcba009e1912fccfab0e4a26db4c10ffafc862846972a2cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設計"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "Here's what the initial website looked like when the first pull request was sent out:",
+      "source_content_hash": "6abb8d768fdb1659c48af76fb06e284ad3cc2ad1e6511cd8513dcd0d11bc2fa8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是第一個拉取請求發送時初始網站的外觀："
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "![The website's front page, with a quite bright and saturated red color as the primary color, closely resembling the Profilo logo color, making the logo unrecognizable in the navbar](/img/profilo_blog_post_website_initial.png)",
+      "source_content_hash": "af602a079afeee4ca8f711689b099450685d0e7da3dc90cc7f58c02065be5232",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![網站的首頁，主色是一種相當明亮且飽和的紅色，與 Profilo 標誌顏色非常接近，使得導航欄中的標誌難以辨認](/img/profilo_blog_post_website_initial.png)"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Most of the time in the content creation was spent picking colors that worked reasonably well with the given logo. These colors were a good jumping off point for designer feedback. I used Photoshop to sample various portions of the logo.",
+      "source_content_hash": "1951bf49339c145e3786489158504389a24f76bb0f807311748d893173c3324e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "內容創建的大部分時間花在選擇與給定標誌搭配合理的顏色上。這些顏色是設計師反饋的良好起點。我使用 Photoshop 對標誌的各個部分進行取樣。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "![Picking colors in Photoshop, with the Profilo logo and the main working area in the background and a color picker dialog in the foreground, selected to a red shade](/img/profilo_blog_post_photoshop_color_picker.png)",
+      "source_content_hash": "c8b157d91afbadd41ff2adf920895f0254f7593190fdc8cdd37ab65e9c289694",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![在 Photoshop 中選擇顏色，背景是 Profilo 標誌和主要工作區，前景是一個顏色選擇器對話框，選中了一種紅色色調](/img/profilo_blog_post_photoshop_color_picker.png)"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "I then took the RGB representation of the color and set it as the baseline color on [Paletton](http://paletton.com/). The website then gave me various color options to try on the website by editing the Docusaurus website configuration file.",
+      "source_content_hash": "d7d66d83415af45f14824b3851aa4b222daa8befd32062ad5ea97c2638d58679",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然後，我將顏色的 RGB 表示作為基準顏色輸入到 [Paletton](http://paletton.com/)。該網站隨後為我提供了各種顏色選項，通過編輯 Docusaurus 網站配置文件在網站上進行嘗試。"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "![Using Paletton to generate a full palette from the red shade selected. There's a color wheel showing all hues on the left, and a square showing various shades of red on the right.](/img/profilo_blog_post_palette_website_color_picker.png)",
+      "source_content_hash": "3d410c3d5f9d5217e2945e5bb0e849b9552e57c7644f9655babd71b44c45fe9f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![使用 Paletton 從選定的紅色色調生成完整的調色板。左側是一個顯示所有色調的色輪，右側是一個顯示各種紅色色調的方塊。](/img/profilo_blog_post_palette_website_color_picker.png)"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "The selected primary and secondary colors were a good jumping off point for designer feedback.",
+      "source_content_hash": "5e83d07e55788e84d6be79d437e80233119537f4b6206a3c93024a90b46663bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "選擇的主色和次色是設計師反饋的良好起點。"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "There were also modifications made to the default website generated by Docusaurus. These changes were mainly around simplifying the footer and creating a customized landing page for Profilo that listed the project's features.",
+      "source_content_hash": "969b70e72943d992c9efeb846ac9eac5e020690e8ec2d6401b0a8d124c10789b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此外，我們也對 Docusaurus 生成的預設網站進行了修改。這些變更主要集中在簡化頁尾，以及為 Profilo 創建一個客製化的登陸頁面，用於列出該專案的功能特色。"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Here's what the final website looked like:",
+      "source_content_hash": "3b275bd9c23bc363c5dd38da86665ab9241a366d9b18c559162db022e03e287b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是網站最終呈現的樣貌："
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "![The website's front page, with a much darker red color as the primary color, making both the logo and the primary-colored title text clearly legible.](/img/profilo_blog_post_website_final.png)",
+      "source_content_hash": "7c74e39f7df01774eec2ffa4662a1e1f3f4643f49b1ef7a732bf1708ec6d9b40",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![網站首頁，採用較深的紅色作為主色調，使標誌和主色標題文字都能清晰辨識。](/img/profilo_blog_post_website_final.png)"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "This is an example page showing the core content, in this case the Getting Started page:",
+      "source_content_hash": "f02949b899d851dba10954aa892e26930aed5fbfdbe17bf6ef0e49d6d492b881",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這是一個展示核心內容的範例頁面（此處為「快速入門」頁面）："
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "![A doc page with the sidebar on the left quarter of the screen and the main content occupying the rest. Some text is using the primary color and the main body uses multiple kinds of typesetting including bold, list, and code](/img/profilo_blog_post_website_final_docs.png)",
+      "source_content_hash": "76b5cf227783f1b89d483ea9f5203fb6fdb8c419b5f29814fd4cd90f52166a5b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![文件頁面，左側四分之一為邊欄，其餘空間為主內容區。部分文字使用主色調，主體內容採用多種排版格式，包括粗體、列表和代碼區塊。](/img/profilo_blog_post_website_final_docs.png)"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "This also shows the sidebar structure that was set up through editing `website/sidebars.json`.",
+      "source_content_hash": "0d48437c5266bf1fb53d16b5b55ebe300acc4f11e6c49c574a5099c8fc588e4a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此圖也展示了透過編輯 `website/sidebars.json` 設定的邊欄結構。"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Lastly, I didn't have to worry about handling responsive design. You get this out of the box with Docusaurus!",
+      "source_content_hash": "a6621983abc65edc49efca176520d255b24bd110602a51513fb30316d197ebbc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "最後，我無需擔心響應式設計的處理——Docusaurus 已內建此功能！"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "![Mobile screenshots of the front page and sample doc page. The layout is automatically adjusted to make it appear more natural. The doc sidebar is hidden behind a button.](/img/profilo_blog_post_android_ios.png)",
+      "source_content_hash": "b015b5eecc00f7f22d01cc849ebe4ea984aa80b21a3a06103c82b1a17cfd2352",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![首頁和範例文件頁面的行動裝置截圖。版面會自動調整以呈現更自然的瀏覽體驗。文件邊欄隱藏在按鈕後方。](/img/profilo_blog_post_android_ios.png)"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## Final Thoughts",
+      "source_content_hash": "a50ee9c263352561e67780e777da208a782389c4f6302e6c36102a508f1bae05",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 最終心得"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "The Profilo engineers were happy to see that they didn't have to change their workflow to update existing content. They were able to continue working with Markdown files. This will still be true in the future if new docs are added, although there may be some config changes needed if the sidebar navigation needs to be updated.",
+      "source_content_hash": "76eb03c8fbf9d7407810821db60a235718572bc61f77c2e525cbe5f27e7b0efb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Profilo 的工程師們很高興發現他們無需改變工作流程就能更新現有內容。他們仍可繼續使用 Markdown 檔案進行協作。未來新增文件時這點依然適用，不過若需更新邊欄導航，可能仍需調整部分設定。"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "The infrastructure provided by Docusaurus made it easy to convert Markdown files into a working website. Even though the project had only three docs, this gave Profilo a more professional look. So, it was well worth the short time investment to get it done.",
+      "source_content_hash": "2146f341ab60dcf6e2fa13c2d01801dcb42bbcc18071558aca4c34b2e47af1ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供的基礎架構讓 Markdown 檔案能輕鬆轉換為運作中的網站。即使該專案僅有三份文件，此舉仍為 Profilo 帶來更專業的形象。因此，投入短暫時間完成這項工作絕對值得。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2018/04-30-How-I-Converted-Profilo-To-Docusaurus.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.013052+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "49f2288e3373c7a1145d1b1209d362ac0c29cf6b954ff30090d157373939d138"
+  }
+}

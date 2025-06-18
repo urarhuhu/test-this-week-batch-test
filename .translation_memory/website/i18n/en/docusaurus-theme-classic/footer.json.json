@@ -1,0 +1,354 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-theme-classic/footer.json",
+  "source_file_content_hash": "ea895bc96a9c4c6ebf47e37cd64fcdb99b905ada86ac3c8cd14de49a6dce664c",
+  "segments": [
+    {
+      "segment_id": "link.title.Learn",
+      "source_content": "Learn",
+      "source_content_hash": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "學習"
+      },
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Learn in the footer"
+      }
+    },
+    {
+      "segment_id": "link.title.Community",
+      "source_content": "Community",
+      "source_content_hash": "bb501d7877eb7ddbd40baf7990e8058212e8140a2e6ceaaf2d54a6412b770bfd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "社群"
+      },
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Community in the footer"
+      }
+    },
+    {
+      "segment_id": "link.title.More",
+      "source_content": "More",
+      "source_content_hash": "d47d7cb0e4f8fd2be5ee07826694c18917d83ca77d0a01698582d05f432db996",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更多"
+      },
+      "metadata": {
+        "json_description": "The title of the footer links column with title=More in the footer"
+      }
+    },
+    {
+      "segment_id": "link.title.Legal",
+      "source_content": "Legal",
+      "source_content_hash": "4787eaf7c938045fd5285fe6a2cd72558caf7bd5faeb93fd1ad490a502e0e37b",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "法律"
+      },
+      "metadata": {
+        "json_description": "The title of the footer links column with title=Legal in the footer"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Introduction",
+      "source_content": "Introduction",
+      "source_content_hash": "b605350bc00209520b7cd8f546322663356ba630708f71bbf30aead6b3dd608e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "介紹"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Introduction linking to docs"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Installation",
+      "source_content": "Installation",
+      "source_content_hash": "c3fc54aa5390dc2c333d4bb596a339d552ad787337c1fdaac3957ca5a7facf50",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "安裝"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Installation linking to docs/installation"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Migration from v1 to v2",
+      "source_content": "Migration from v1 to v2",
+      "source_content_hash": "62d5c58d153feb3aac512d82026be114c0c0ae03ed55663b7fae1a401f408d8a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "從 v1 遷移至 v2"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Migration from v1 to v2 linking to docs/migration"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Stack Overflow",
+      "source_content": "Stack Overflow",
+      "source_content_hash": "185a76793eff17b079f576328881972dababed51764f1ab5afed4c9acef64d55",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Stack Overflow"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/docusaurus"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Feature Requests",
+      "source_content": "Feature Requests",
+      "source_content_hash": "d737b736eae80cc73d675d018d5da8812b0b20ae7792f1b20e4ca46b9fede259",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "功能請求"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Feature Requests linking to /feature-requests"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Discord",
+      "source_content": "Discord",
+      "source_content_hash": "053bc65874ad6098e58c41c57b378a2f36b0220e5e0b46722245e6c2f796818c",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Discord"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/docusaurus"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Help",
+      "source_content": "Help",
+      "source_content_hash": "b79cac926e0b2e347e72cc91d5174037c9e17ae7733fd7bdb570f71b10cd7bfc",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "幫助"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Help linking to /community/support"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Blog",
+      "source_content": "Blog",
+      "source_content_hash": "8c6bc099534a0251b576f6b88bd2db124ae9497c64bd9242e92a6aec23e6a73a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Blog linking to blog"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Changelog",
+      "source_content": "Changelog",
+      "source_content_hash": "ead07c84baac57a9542f388a07a2a5209456ce790b04251bc9bd7d179ea85cb1",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更新日誌"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Changelog linking to /changelog"
+      }
+    },
+    {
+      "segment_id": "link.item.label.GitHub",
+      "source_content": "GitHub",
+      "source_content_hash": "f911e414cf6bdfc595532ab166b5ba0f63d73c021452fcdacbda363dda6ad8fb",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "GitHub"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+      }
+    },
+    {
+      "segment_id": "link.item.label.X",
+      "source_content": "X",
+      "source_content_hash": "4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "X"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=X linking to https://x.com/docusaurus"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Privacy",
+      "source_content": "Privacy",
+      "source_content_hash": "54a57c3147c49f33de5898b87084ad2b14c4ab308f762454bf92aca907478ad5",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "隱私權"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Privacy linking to https://opensource.facebook.com/legal/privacy/"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Terms",
+      "source_content": "Terms",
+      "source_content_hash": "ede5489964834a514b61c7a4a8370be2452dd4a7d807180f14991ccc11ad2430",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "條款"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Terms linking to https://opensource.facebook.com/legal/terms/"
+      }
+    },
+    {
+      "segment_id": "link.item.label.Cookie Policy",
+      "source_content": "Cookie Policy",
+      "source_content_hash": "ee290b3ddbc8e7e90bd0028e8315a02570ee24d83cc8b0c14f860146bb24fd80",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Cookie 政策"
+      },
+      "metadata": {
+        "json_description": "The label of footer link with label=Cookie Policy linking to https://opensource.facebook.com/legal/cookie-policy/"
+      }
+    },
+    {
+      "segment_id": "copyright",
+      "source_content": "Copyright © 2025 Meta Platforms, Inc. Built with Docusaurus.",
+      "source_content_hash": "f9de1cf1df8b3b4f19c39010194eabb9549914eabc0d15ca73edf451ab0da427",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "版權所有 © 2025 Meta Platforms, Inc. 使用 Docusaurus 建置。"
+      },
+      "metadata": {
+        "json_description": "The footer copyright"
+      }
+    },
+    {
+      "segment_id": "logo.alt",
+      "source_content": "Meta Open Source Logo",
+      "source_content_hash": "467880d36a6e70b0b7121d2eee0ac531d103049cc3161cf3870a6d8f64f0ec8d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Meta 開源專案標誌"
+      },
+      "metadata": {
+        "json_description": "The alt text of footer logo"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "link.title.Learn": {
+      "message": "Learn",
+      "description": "The title of the footer links column with title=Learn in the footer"
+    },
+    "link.title.Community": {
+      "message": "Community",
+      "description": "The title of the footer links column with title=Community in the footer"
+    },
+    "link.title.More": {
+      "message": "More",
+      "description": "The title of the footer links column with title=More in the footer"
+    },
+    "link.title.Legal": {
+      "message": "Legal",
+      "description": "The title of the footer links column with title=Legal in the footer"
+    },
+    "link.item.label.Introduction": {
+      "message": "Introduction",
+      "description": "The label of footer link with label=Introduction linking to docs"
+    },
+    "link.item.label.Installation": {
+      "message": "Installation",
+      "description": "The label of footer link with label=Installation linking to docs/installation"
+    },
+    "link.item.label.Migration from v1 to v2": {
+      "message": "Migration from v1 to v2",
+      "description": "The label of footer link with label=Migration from v1 to v2 linking to docs/migration"
+    },
+    "link.item.label.Stack Overflow": {
+      "message": "Stack Overflow",
+      "description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/docusaurus"
+    },
+    "link.item.label.Feature Requests": {
+      "message": "Feature Requests",
+      "description": "The label of footer link with label=Feature Requests linking to /feature-requests"
+    },
+    "link.item.label.Discord": {
+      "message": "Discord",
+      "description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/docusaurus"
+    },
+    "link.item.label.Help": {
+      "message": "Help",
+      "description": "The label of footer link with label=Help linking to /community/support"
+    },
+    "link.item.label.Blog": {
+      "message": "Blog",
+      "description": "The label of footer link with label=Blog linking to blog"
+    },
+    "link.item.label.Changelog": {
+      "message": "Changelog",
+      "description": "The label of footer link with label=Changelog linking to /changelog"
+    },
+    "link.item.label.GitHub": {
+      "message": "GitHub",
+      "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+    },
+    "link.item.label.X": {
+      "message": "X",
+      "description": "The label of footer link with label=X linking to https://x.com/docusaurus"
+    },
+    "link.item.label.Privacy": {
+      "message": "Privacy",
+      "description": "The label of footer link with label=Privacy linking to https://opensource.facebook.com/legal/privacy/"
+    },
+    "link.item.label.Terms": {
+      "message": "Terms",
+      "description": "The label of footer link with label=Terms linking to https://opensource.facebook.com/legal/terms/"
+    },
+    "link.item.label.Cookie Policy": {
+      "message": "Cookie Policy",
+      "description": "The label of footer link with label=Cookie Policy linking to https://opensource.facebook.com/legal/cookie-policy/"
+    },
+    "copyright": {
+      "message": "Copyright © 2025 Meta Platforms, Inc. Built with Docusaurus.",
+      "description": "The footer copyright"
+    },
+    "logo.alt": {
+      "message": "Meta Open Source Logo",
+      "description": "The alt text of footer logo"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-theme-classic/footer.json",
+  "last_updated_timestamp": "2025-06-18T05:06:28.025804+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ea895bc96a9c4c6ebf47e37cd64fcdb99b905ada86ac3c8cd14de49a6dce664c"
+  }
+}

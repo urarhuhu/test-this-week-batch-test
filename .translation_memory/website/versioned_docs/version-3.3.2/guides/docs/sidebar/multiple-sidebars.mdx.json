@@ -1,0 +1,382 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/guides/docs/sidebar/multiple-sidebars.mdx",
+  "source_file_content_hash": "0c30e1de2a2f1102914f16dde2894f160ac5f745e05445978375bfe7e425daa0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /sidebar/multiple-sidebars\n---",
+      "source_content_hash": "5c42f7471011f77dbe946a7cdfa050592db99403578df7fb5e74aa6dfec1e7a5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Using multiple sidebars",
+      "source_content_hash": "0fd16888bd4dd1f42315838499ab2abf7386859e5df45fa7f8ea622ec276c71a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 使用多個側邊欄"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "You can create a sidebar for each **set of Markdown files** that you want to **group together**.",
+      "source_content_hash": "f4635dbfb5f125f657a1bb66d8b86831947b172db923a355a77df1c7b2998e91",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以為每組**需要歸類在一起的 Markdown 檔案**建立專屬的側邊欄。"
+      }
+    },
+    {
+      "segment_id": "0d5e1c45",
+      "source_content": ":::tip\n\nThe Docusaurus site is a good example of using multiple sidebars:\n\n- [Docs](../../../introduction.mdx)\n- [API](../../../cli.mdx)\n\n:::",
+      "source_content_hash": "e4e4a837f8979d9cd52a4e72847e764490955437812cc37f8598c71f34f42655",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\nDocusaurus 官方網站就是使用多側邊欄的絕佳範例：\n\n- [說明文件](../../../introduction.mdx)\n- [API 文件](../../../cli.mdx)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Consider this example:",
+      "source_content_hash": "e5b0040703b4e6bb34b6ca53544c7e381c09d880fc78af7f6a220cf6cf5b48b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請看以下範例："
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorialSidebar: {\n    'Category A': ['doc1', 'doc2'],\n  },\n  apiSidebar: ['doc3', 'doc4'],\n};\n```",
+      "source_content_hash": "2940bbbcfbcdc6f121315e751dd51a5f4247c637d53ca8704f7cb41469d1397d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "When browsing `doc1` or `doc2`, the `tutorialSidebar` will be displayed; when browsing `doc3` or `doc4`, the `apiSidebar` will be displayed.",
+      "source_content_hash": "e63808760a2ab2c4324e89f8846ee9b4b237bda97d07fe9bfb0b2d22232e7c56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當瀏覽 `doc1` 或 `doc2` 時，系統會顯示 `tutorialSidebar`；而瀏覽 `doc3` 或 `doc4` 時，則會顯示 `apiSidebar`。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "## Understanding sidebar association {#sidebar-association}",
+      "source_content_hash": "877b38c4281415e01f31d61735976bec4a816beceb6a35c3fd572025c56660be",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 理解側邊欄關聯機制 {#sidebar-association}"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Following the example above, if a `commonDoc` is included in both sidebars:",
+      "source_content_hash": "20d8b74bbdc0323113d45cd7697f53b62ddb5d199df0b70db6a8e75543ae3689",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "延續上例，若某個 `commonDoc` 同時出現在兩個側邊欄中："
+      }
+    },
+    {
+      "segment_id": "ef6eebef",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorialSidebar: {\n    'Category A': ['doc1', 'doc2', 'commonDoc'],\n  },\n  apiSidebar: ['doc3', 'doc4', 'commonDoc'],\n};\n```",
+      "source_content_hash": "d2ab7f4f1af372bb5a95053595efe387dff27ad16ed92dbed801e9747fc265c3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ef6eebef"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "How does Docusaurus know which sidebar to display when browsing `commonDoc`? Answer: it doesn't, and we don't guarantee which sidebar it will pick.",
+      "source_content_hash": "993bcc46b9b15cc1b5f7a09d1f32061a46dbe51b6ca9c3c4cd7878620a71aa61",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 如何決定瀏覽 `commonDoc` 時該顯示哪個側邊欄？答案是：系統無法判斷，我們也不保證會選擇哪個側邊欄。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "When you add doc Y to sidebar X, it creates a two-way binding: sidebar X contains a link to doc Y, and when browsing doc Y, sidebar X will be displayed. But sometimes, we want to break either implicit binding:",
+      "source_content_hash": "29c3e042476ac75f3d035530107de4a152617fc353ae96e00a325242b410be16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您將文件 Y 加入側邊欄 X 時，會建立雙向綁定：側邊欄 X 包含文件 Y 的連結，且瀏覽文件 Y 時會顯示側邊欄 X。但有時我們需要打破這種隱性綁定："
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "1. _How do I generate a link to doc Y in sidebar X without making sidebar X displayed on Y?_ For example, when I include doc Y in multiple sidebars as in the example above, and I want to explicitly tell Docusaurus to display one sidebar?\n2. _How do I make sidebar X displayed when browsing doc Y, but sidebar X shouldn't contain the link to Y?_ For example, when Y is a \"doc home page\" and the sidebar is purely used for navigation?",
+      "source_content_hash": "33a2856a8f794e2a26eb53ab371150dad8a9576a1a65ee7af14dd1a33d8e78d0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. _如何在側邊欄 X 建立文件 Y 的連結，卻不讓瀏覽 Y 時顯示側邊欄 X？_ 例如當文件 Y 同時出現在多個側邊欄（如上例），而我們希望明確指定 Docusaurus 顯示特定側邊欄時。\n2. _如何讓瀏覽文件 Y 時顯示側邊欄 X，但側邊欄 X 不包含 Y 的連結？_ 例如當 Y 是「文件首頁」而側邊欄僅用於導覽時。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "Front matter option `displayed_sidebar` will forcibly set the sidebar association. For the same example, you can still use doc shorthands without any special configuration:",
+      "source_content_hash": "c501d8cccae6fc91eec5f636ef1edba8b4efc022c43295460b97fe70feaaac44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Front matter 選項 `displayed_sidebar` 可強制設定側邊欄關聯。沿用相同範例，您仍可使用簡寫格式而無需特殊配置："
+      }
+    },
+    {
+      "segment_id": "ac961110",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorialSidebar: {\n    'Category A': ['doc1', 'doc2'],\n  },\n  apiSidebar: ['doc3', 'doc4'],\n};\n```",
+      "source_content_hash": "2940bbbcfbcdc6f121315e751dd51a5f4247c637d53ca8704f7cb41469d1397d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ac961110"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "And then add a front matter:",
+      "source_content_hash": "11b3bcb92b3f57dd6cff166fb0a8c17ed2bd14a2079adc7a04d620ae2454630f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "然後加入 front matter："
+      }
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```md title=\"commonDoc.md\"\n---\ndisplayed_sidebar: apiSidebar\n---\n```",
+      "source_content_hash": "a9074e3c6f8f3eedc827d2b265b0f64a245e4d48edfae5d2308c8b10eaa5bf31",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5a41b4fb"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Which explicitly tells Docusaurus to display `apiSidebar` when browsing `commonDoc`. Using the same method, you can make sidebar X which doesn't contain doc Y appear on doc Y:",
+      "source_content_hash": "f199e5458bba0f837a48817c6645630daede5a9fb47c426d0ffa3155ae1a7294",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這會明確指示 Docusaurus 在瀏覽 `commonDoc` 時顯示 `apiSidebar`。同理，您也能讓未包含文件 Y 的側邊欄 X 出現在文件 Y 上："
+      }
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```md title=\"home.md\"\n---\ndisplayed_sidebar: tutorialSidebar\n---\n```",
+      "source_content_hash": "4933d1237f0189436961c4f2cc1b1fb90ce5eb7e6184e350c8230268d5ac5c92",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fb3ded8"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "Even when `tutorialSidebar` doesn't contain a link to `home`, it will still be displayed when viewing `home`.",
+      "source_content_hash": "920bc1317c603aa9d5adc939d3645ae0ccabbb18c01a3d382625718b60438764",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "即使 `tutorialSidebar` 不包含 `home` 的連結，瀏覽 `home` 時仍會顯示該側邊欄。"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "If you set `displayed_sidebar: null`, no sidebar will be displayed whatsoever on this page, and subsequently, no pagination either.",
+      "source_content_hash": "a71c55a218e4f89e597ee29ecc74f0fbdb369ce4236403e791fca3f9c04d17f7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若設定 `displayed_sidebar: null`，該頁面將完全不顯示任何側邊欄，連帶也不會產生分頁導覽。"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "## Generating pagination {#generating-pagination}",
+      "source_content_hash": "e68bc9dd2f51d09e67fcb59bebb5187e4443d82b507b4d078f580bdebcf34053",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 產生分頁導覽 {#generating-pagination}"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Docusaurus uses the sidebar to generate the \"next\" and \"previous\" pagination links at the bottom of each doc page. It strictly uses the sidebar that is displayed: if no sidebar is associated, it doesn't generate pagination either. However, the docs linked as \"next\" and \"previous\" are not guaranteed to display the same sidebar: they are included in this sidebar, but in their front matter, they may have a different `displayed_sidebar`.",
+      "source_content_hash": "0d0f403309cee8bd11ab446064a8600bdd5e4157af7cb11b0fd9b88a4dfc012d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用側邊欄來產生每個文件頁面底部的「下一頁」與「上一頁」分頁連結。系統嚴格採用當前顯示的側邊欄：若無關聯的側邊欄，則不會產生分頁導覽。但需注意，作為「下一頁/上一頁」連結的文件不一定會顯示相同側邊欄：它們雖被包含在此側邊欄中，但其 front matter 可能設定了不同的 `displayed_sidebar`。"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "If a sidebar is displayed by setting `displayed_sidebar` front matter, and this sidebar doesn't contain the doc itself, no pagination is displayed.",
+      "source_content_hash": "9ba32902bcf39411daf04b642548f0908a68faad8f4a033c41b9faa6d1884123",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若透過 front matter 的 `displayed_sidebar` 設定顯示某側邊欄，而該側邊欄未包含當前文件，則不會顯示分頁導覽。"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "You can customize pagination with front matter `pagination_next` and `pagination_prev`. Consider this sidebar:",
+      "source_content_hash": "f1f5af476a4d7dcd67b214e0a827d4e645942042143666af3b2ada988faab4ea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可使用 front matter 的 `pagination_next` 和 `pagination_prev` 自訂分頁。請看此側邊欄範例："
+      }
+    },
+    {
+      "segment_id": "7d898a0e",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorial: [\n    'introduction',\n    {\n      installation: ['windows', 'linux', 'macos'],\n    },\n    'getting-started',\n  ],\n};\n```",
+      "source_content_hash": "905acaa0bc6c0a7929630827774b9d75805fa9ce034dfa32969dd0f14c14b093",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d898a0e"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "The pagination next link on \"windows\" points to \"linux\", but that doesn't make sense: you would want readers to proceed to \"getting started\" after installation. In this case, you can set the pagination manually:",
+      "source_content_hash": "b85a2bf0a9e346b539525af6342a7a4fdb34607672a3d710068c969eab29ea9f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "「windows」頁面的下一頁連結指向「linux」並不合理：您會希望讀者在完成安裝後繼續閱讀「getting started」。此時可手動設定分頁："
+      }
+    },
+    {
+      "segment_id": "1cf51900",
+      "source_content": "```md title=\"windows.md\"\n---\n# highlight-next-line\npagination_next: getting-started\n---\n\n# Installation on Windows\n```",
+      "source_content_hash": "eb3a2b6f4535bb4cc4fcf428297c34b057fde7823b9822aa31c03c9ee592cd21",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1cf51900"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "You can also disable displaying a pagination link with `pagination_next: null` or `pagination_prev: null`.",
+      "source_content_hash": "f8b9dea1d8923d0e83ab22fbea47ed166eb073da8ad8266604d2b0e543b966d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可透過 `pagination_next: null` 或 `pagination_prev: null` 停用特定分頁連結。"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "The pagination label by default is the sidebar label. You can use the front matter `pagination_label` to customize how this doc appears in the pagination.",
+      "source_content_hash": "d4a0ae4bfe4ea1e8cf44369efb909d39c88986061733de3f2bb5f55c94f4045f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "分頁標籤預設使用側邊欄標籤。您可透過 front matter 的 `pagination_label` 自訂該文件在分頁中的顯示名稱。"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "## The `ref` item {#sidebar-item-ref}",
+      "source_content_hash": "e32327aa5c8369f2be745e59bab523069e6537e775f6ebb905540c0b44f27658",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `ref` 項目 {#sidebar-item-ref}"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "The `ref` type is identical to the [`doc` type](./items.mdx#sidebar-item-doc) in every way, except that it doesn't participate in generating navigation metadata. It only registers itself as a link. When [generating pagination](#generating-pagination) and [displaying sidebar](#sidebar-association), `ref` items are completely ignored.",
+      "source_content_hash": "fc7848c28c66a3fa48877885caf88f263be1a7cedc27e23bf0d6fb82a8be43b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`ref` 類型與 [`doc` 類型](./items.mdx#sidebar-item-doc)在各方面完全相同，唯一的區別在於它不會參與生成導航元數據。它僅將自身註冊為一個連結。在[生成分頁](#generating-pagination)和[顯示側邊欄](#sidebar-association)時，`ref` 項目會被完全忽略。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "It is particularly useful where you wish to link to the same document from multiple sidebars. The document only belongs to one sidebar (the one where it's registered as `type: 'doc'` or from an autogenerated directory), but its link will appear in all sidebars that it's registered in.",
+      "source_content_hash": "cdf1df92a0f59d8a2867601845d24c1e6a94bdd3a6db13f71906d2b7edc16cf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您希望從多個側邊欄連結到同一份文件時，此類型特別有用。該文件僅屬於一個側邊欄（在其中註冊為 `type: 'doc'` 或來自自動生成的目錄），但其連結會出現在所有註冊過的側邊欄中。"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Consider this example:",
+      "source_content_hash": "e5b0040703b4e6bb34b6ca53544c7e381c09d880fc78af7f6a220cf6cf5b48b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "考慮以下範例："
+      }
+    },
+    {
+      "segment_id": "3917a88d",
+      "source_content": "```js title=\"sidebars.js\"\nexport default {\n  tutorialSidebar: {\n    'Category A': [\n      'doc1',\n      'doc2',\n      // highlight-next-line\n      {type: 'ref', id: 'commonDoc'},\n      'doc5',\n    ],\n  },\n  apiSidebar: ['doc3', 'doc4', 'commonDoc'],\n};\n```",
+      "source_content_hash": "3c3f30815d76aaf9bae953fabc349a2c36a61acb4c06b0404bb99e0a0ce3a9e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3917a88d"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "You can think of the `ref` type as the equivalent to doing the following:",
+      "source_content_hash": "9b1412229dd1d6730ba124219373f910b742b89a1404ba4af243da594a4b3325",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以將 `ref` 類型視為等效於以下操作："
+      }
+    },
+    {
+      "segment_id": "eb70e807",
+      "source_content": "- Setting `displayed_sidebar: tutorialSidebar` for `commonDoc` (`ref` is ignored in sidebar association)\n- Setting `pagination_next: doc5` for `doc2` and setting `pagination_prev: doc2` for `doc5` (`ref` is ignored in pagination generation)",
+      "source_content_hash": "bef5d0042eb79ab23bbda2c7320d7d8d6e73c32b553b63885fee1c9fadf9667f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 為 `commonDoc` 設定 `displayed_sidebar: tutorialSidebar`（`ref` 在側邊欄關聯中被忽略）\n- 為 `doc2` 設定 `pagination_next: doc5` 並為 `doc5` 設定 `pagination_prev: doc2`（`ref` 在分頁生成中被忽略）"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/guides/docs/sidebar/multiple-sidebars.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.192036+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "0c30e1de2a2f1102914f16dde2894f160ac5f745e05445978375bfe7e425daa0"
+  }
+}

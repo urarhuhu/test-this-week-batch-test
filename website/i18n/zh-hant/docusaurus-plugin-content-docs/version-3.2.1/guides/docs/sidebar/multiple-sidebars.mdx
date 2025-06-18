@@ -1,0 +1,143 @@
+---
+slug: /sidebar/multiple-sidebars
+---
+
+# 使用多個側邊欄
+
+您可以為每組**想要歸類在一起**的**Markdown文件**建立一個側邊欄。
+
+:::tip
+
+Docusaurus 官方網站就是使用多個側邊欄的良好範例：
+
+- [文檔](../../../introduction.mdx)
+- [API](../../../cli.mdx)
+
+:::
+
+請看以下範例：
+
+```js title="sidebars.js"
+export default {
+  tutorialSidebar: {
+    'Category A': ['doc1', 'doc2'],
+  },
+  apiSidebar: ['doc3', 'doc4'],
+};
+```
+
+當瀏覽 `doc1` 或 `doc2` 時，會顯示 `tutorialSidebar`；而瀏覽 `doc3` 或 `doc4` 時，則會顯示 `apiSidebar`。
+
+## 理解側邊欄關聯機制 {#sidebar-association}
+
+延續上述範例，若某個 `commonDoc` 同時出現在兩個側邊欄中：
+
+```js title="sidebars.js"
+export default {
+  tutorialSidebar: {
+    'Category A': ['doc1', 'doc2', 'commonDoc'],
+  },
+  apiSidebar: ['doc3', 'doc4', 'commonDoc'],
+};
+```
+
+Docusaurus 如何決定瀏覽 `commonDoc` 時該顯示哪個側邊欄？答案是：它無法判斷，我們也不保證會選擇哪個側邊欄。
+
+當您將文件 Y 加入側邊欄 X 時，會建立雙向綁定：側邊欄 X 包含文件 Y 的連結，且瀏覽文件 Y 時會顯示側邊欄 X。但有時我們需要打破這種隱性綁定：
+
+1. _如何在側邊欄 X 中生成文件 Y 的連結，但瀏覽 Y 時不顯示側邊欄 X？_ 例如當文件 Y 同時出現在多個側邊欄時，如何明確指定 Docusaurus 顯示特定側邊欄？
+2. _如何讓瀏覽文件 Y 時顯示側邊欄 X，但側邊欄 X 不包含 Y 的連結？_ 例如當 Y 是「文件首頁」而側邊欄僅用於導航時？
+
+Front matter 選項 `displayed_sidebar` 可強制設定側邊欄關聯。沿用相同範例，您仍可使用簡寫形式而無需特殊配置：
+
+```js title="sidebars.js"
+export default {
+  tutorialSidebar: {
+    'Category A': ['doc1', 'doc2'],
+  },
+  apiSidebar: ['doc3', 'doc4'],
+};
+```
+
+然後添加 front matter：
+
+```md title="commonDoc.md"
+---
+displayed_sidebar: apiSidebar
+---
+```
+
+這會明確告知 Docusaurus 在瀏覽 `commonDoc` 時顯示 `apiSidebar`。透過同樣方法，您也可以讓未包含文件 Y 的側邊欄 X 出現在文件 Y 上：
+
+```md title="home.md"
+---
+displayed_sidebar: tutorialSidebar
+---
+```
+
+即使 `tutorialSidebar` 未包含 `home` 的連結，瀏覽 `home` 時仍會顯示該側邊欄。
+
+若設定 `displayed_sidebar: null`，該頁面將不會顯示任何側邊欄，連帶也不會產生分頁導航。
+
+## 生成分頁導航 {#generating-pagination}
+
+Docusaurus 使用側邊欄來產生每個文件頁面底部的「下一頁」和「上一頁」分頁連結。它嚴格依據當前顯示的側邊欄來生成：若無關聯側邊欄，則不會產生分頁導航。但被連結為「下一頁」或「上一頁」的文件不一定會顯示相同側邊欄：它們雖被包含在此側邊欄中，但其 front matter 可能設定了不同的 `displayed_sidebar`。
+
+若透過 front matter `displayed_sidebar` 設定的側邊欄未包含當前文件本身，則不會顯示分頁導航。
+
+您可以使用 front matter `pagination_next` 和 `pagination_prev` 自訂分頁。參考以下側邊欄：
+
+```js title="sidebars.js"
+export default {
+  tutorial: [
+    'introduction',
+    {
+      installation: ['windows', 'linux', 'macos'],
+    },
+    'getting-started',
+  ],
+};
+```
+
+「windows」頁面的下一頁連結指向「linux」並不合理，您可能希望讀者在安裝後繼續閱讀「getting started」。此時可手動設定分頁：
+
+```md title="windows.md"
+---
+# highlight-next-line
+pagination_next: getting-started
+---
+
+# Installation on Windows
+```
+
+您也可透過 `pagination_next: null` 或 `pagination_prev: null` 停用特定分頁連結。
+
+分頁標籤預設使用側邊欄標籤。您可使用 front matter `pagination_label` 自訂該文件在分頁中的顯示名稱。
+
+## `ref` 項目類型 {#sidebar-item-ref}
+
+`ref` 類型與 [`doc` 類型](./items.mdx#sidebar-item-doc)在各方面完全相同，唯一的區別在於它不會參與生成導航元數據。它僅註冊為一個連結。當[生成分頁](#generating-pagination)和[顯示側邊欄](#sidebar-association)時，`ref` 項目會被完全忽略。
+
+當您希望從多個側邊欄連結到同一份文件時，此類型特別有用。該文件僅屬於一個側邊欄（在其中註冊為 `type: 'doc'` 或來自自動生成的目錄），但其連結會出現在所有註冊過的側邊欄中。
+
+考慮以下範例：
+
+```js title="sidebars.js"
+export default {
+  tutorialSidebar: {
+    'Category A': [
+      'doc1',
+      'doc2',
+      // highlight-next-line
+      {type: 'ref', id: 'commonDoc'},
+      'doc5',
+    ],
+  },
+  apiSidebar: ['doc3', 'doc4', 'commonDoc'],
+};
+```
+
+您可以將 `ref` 類型視為等效於以下操作：
+
+- 為 `commonDoc` 設定 `displayed_sidebar: tutorialSidebar`（`ref` 在側邊欄關聯中被忽略）
+- 為 `doc2` 設定 `pagination_next: doc5` 並為 `doc5` 設定 `pagination_prev: doc2`（`ref` 在分頁生成中被忽略）

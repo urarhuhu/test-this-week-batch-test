@@ -1,0 +1,167 @@
+---
+slug: /migration/v2/translated-sites
+---
+
+# 已翻譯的網站
+
+本頁面說明如何將已翻譯的 Docusaurus v1 網站遷移至 Docusaurus v2。
+
+## 國際化差異 {#i18n-differences}
+
+Docusaurus v2 的國際化功能在概念上與 Docusaurus v1 相當類似，但存在一些差異。
+
+它並未與 Crowdin 緊密耦合，您可以使用 Git 或其他 SaaS 服務替代。
+
+### 不同的檔案系統路徑 {#different-filesystem-paths}
+
+在 Docusaurus v2 中，本地化內容通常位於 `website/i18n/[locale]`。
+
+Docusaurus v2 基於插件系統模組化，每個插件需自行管理其翻譯內容。
+
+每個插件都有其專屬的 i18n 子資料夾，例如：`website/i18n/fr/docusaurus-plugin-content-blog`
+
+### 更新的翻譯 API {#updated-translation-apis}
+
+在 Docusaurus v1 中，您使用 `<translate>` 來翻譯頁面：
+
+```jsx
+const translate = require('../../server/translate.js').translate;
+
+<h2>
+  <translate desc="the header description">
+    This header will be translated
+  </translate>
+</h2>;
+```
+
+在 Docusaurus v2 中，您需使用 `<Translate>` 來翻譯頁面
+
+```jsx
+import Translate from '@docusaurus/Translate';
+
+<h2>
+  <Translate id="header.translation.id" description="the header description">
+    This header will be translated
+  </Translate>
+</h2>;
+```
+
+:::note
+
+`write-translations` CLI 指令仍可用於從程式碼中提取翻譯內容。
+
+程式碼翻譯現在會以 Chrome i18n JSON 格式存入 `i18n/[locale]/code.json`。
+
+:::
+
+### 更嚴格的 Markdown 解析器 {#stricter-markdown-parser}
+
+Docusaurus v2 使用 [MDX](https://mdxjs.com/) 來解析 Markdown 檔案。
+
+MDX 會將 Markdown 檔案編譯為 React 元件，其規範比 Docusaurus v1 的解析器更嚴格，當遇到錯誤時會導致建置失敗，而非渲染出有問題的內容。
+
+此外，HTML 元素必須替換為 JSX 元素。
+
+這對國際化尤其重要，因為若 Crowdin 上的翻譯品質不佳且使用了無效的標記，您的 v2 翻譯網站可能會建置失敗：您可能需要進行一些翻譯清理來修正錯誤。
+
+## 遷移策略 {#migration-strategies}
+
+本節將協助您了解如何在遷移至 v2 後保留現有的 v1 翻譯內容。
+
+對於使用 Crowdin 的 Docusaurus v1 網站，存在多種可能的遷移策略，各有不同的權衡取捨。
+
+:::warning
+
+本文件是為協助遷移所做的最大努力，若您發現更好的方法，請協助我們改進！
+
+:::
+
+首先，我們建議：
+
+- 先在不包含翻譯內容的情況下，將您的 v1 Docusaurus 網站遷移至 v2
+- 熟悉 [Docusaurus v2 的新國際化系統](../../i18n/i18n-introduction.mdx)
+- 使用全新且未翻譯的 Crowdin 專案，並參考 [Crowdin 教學](../../i18n/i18n-crowdin.mdx) 讓 Crowdin 適用於您的 v2 網站
+
+:::danger
+
+在未充分理解 Crowdin 和 Docusaurus v2 國際化功能前，請勿嘗試進行遷移。
+
+:::
+
+### 建立新的 Crowdin 專案 {#create-a-new-crowdin-project}
+
+為避免任何可能導致生產環境中的 v1 網站中斷的風險，一種可能的策略是複製原始的 v1 Crowdin 專案。
+
+:::info
+
+此策略曾用於 [升級 Jest 網站](https://jestjs.io/blog/2021/03/09/jest-website-upgrade)。
+
+:::
+
+遺憾的是，Crowdin 並未提供「複製/克隆專案」功能，這使得操作變得複雜。
+
+- 從原始專案下載翻譯記憶檔（`.tmx`格式）（`https://crowdin.com/project/<ORIGINAL_PROJECT>/settings#tm` > `View Records`）
+- 將翻譯記憶檔上傳至新專案（`https://crowdin.com/project/<NEW_PROJECT>/settings#tm` > `View Records`）
+- 根據i18n文件重新配置`crowdin.yml`以適應Docusaurus v2
+- 使用Crowdin CLI將Docusaurus v2原始檔案上傳至新專案
+- 在Crowdin上將敏感字串如`id`或`slug`標記為「隱藏字串」
+- 在「Translations」標籤頁中，點擊「Pre-Translation > via TM」（`https://crowdin.com/project/<NEW_PROJECT>/settings#translations`）
+- 先嘗試「100% match」（會比「Perfect」選項翻譯更多內容），並預翻譯你的原始檔案
+- 下載Crowdin翻譯至本地端
+- 嘗試執行/建置你的網站，查看是否有錯誤
+
+首次嘗試時很可能會遇到錯誤：預翻譯可能會嘗試翻譯不該翻譯的內容（front matter、admonition、程式碼區塊等），且翻譯後的MD檔案可能對MDX解析器無效。
+
+你必須修正所有錯誤直到網站能成功建置。可以透過修改本地端的翻譯MD檔案來解決，並使用`docusaurus build --locale fr`一次針對一個語系修正網站問題。
+
+我們無法提供解決這些錯誤的終極指南，但常見錯誤原因包括：
+
+- 未在Crowdin中將足夠字串標記為「隱藏字串」，導致預翻譯嘗試翻譯這些字串。
+- 存在不良的v1翻譯，導致v2中出現無效標記：翻譯中包含不良HTML元素或未閉合標籤
+- 任何被MDX解析器拒絕的內容，例如使用HTML元素而非JSX元素（可使用[MDX playground](https://mdxjs.com/playground/)進行除錯）
+
+你可能需要重複此預翻譯流程，最終嘗試「Perfect」選項並限制僅對部分語言/檔案進行預翻譯。
+
+:::tip
+
+對有問題的Markdown元素使用[`mdx-code-block`](../../i18n/i18n-crowdin.mdx#mdx-solutions)：Crowdin較不容易在程式碼區塊中出錯。
+
+:::
+
+:::note
+
+你可能會注意到舊專案中某些已翻譯的內容，在新專案中卻未翻譯。
+
+Crowdin的Markdown解析器會隨時間演進，且每個Crowdin專案的解析器版本不同，這可能導致預翻譯無法完整預翻譯所有字串。
+
+此解析器版本未公開文件化，你需要聯繫Crowdin支援以確認專案的解析器版本並固定特定版本。
+
+在兩個Crowdin專案中使用相同的CLI版本和解析器版本可能會獲得更好的結果。
+
+:::
+
+:::danger
+
+Crowdin有「上傳翻譯」功能，但根據我們的經驗，此功能對Markdown檔案的處理效果不佳
+
+:::
+
+### 使用現有的Crowdin專案 {#use-the-existing-crowdin-project}
+
+若不介意修改現有Crowdin專案並承擔可能出錯的風險，可以嘗試使用Crowdin的分支系統。
+
+:::warning
+
+此工作流程尚未經過實際測試，請回報其效果如何。
+
+:::
+
+如此一來，你無需建立新Crowdin專案、轉移翻譯記憶、套用預翻譯或嘗試修正預翻譯錯誤。
+
+你可以為Docusaurus v2建立Crowdin分支，上傳v2原始檔案，並在準備完成後將分支合併至主線。
+
+### 改用Git而非Crowdin {#use-git-instead-of-crowdin}
+
+可以完全遷移離開Crowdin，將翻譯檔案改為存放在Git中。
+
+使用Crowdin CLI下載v1翻譯檔案，並將這些檔案放置於Docusaurus v2正確的檔案系統路徑中。

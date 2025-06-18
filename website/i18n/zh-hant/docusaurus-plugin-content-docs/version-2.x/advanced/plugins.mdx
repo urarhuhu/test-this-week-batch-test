@@ -1,0 +1,129 @@
+# 外掛程式
+
+外掛程式是 Docusaurus 2 網站功能的基礎構件。每個外掛程式負責處理其獨立功能。外掛程式可透過預設集(presets)以套件組合形式運作並分發。
+
+## 建立外掛程式 {#creating-plugins}
+
+外掛程式是一個接收兩個參數的函式：`context` 和 `options`。它會回傳一個外掛程式實例物件（或 Promise）。您可以將外掛程式建立為函式或模組。更多資訊請參閱[外掛程式方法參考章節](../api/plugin-methods/README.mdx)。
+
+### 函式定義 {#function-definition}
+
+您可以直接在 Docusaurus 配置檔案中以函式形式使用外掛程式：
+
+```js title="docusaurus.config.js"
+module.exports = {
+  // ...
+  plugins: [
+    // highlight-start
+    async function myPlugin(context, options) {
+      // ...
+      return {
+        name: 'my-plugin',
+        async loadContent() {
+          // ...
+        },
+        async contentLoaded({content, actions}) {
+          // ...
+        },
+        /* other lifecycle API */
+      };
+    },
+    // highlight-end
+  ],
+};
+```
+
+### 模組定義 {#module-definition}
+
+您可以將外掛程式作為指向獨立檔案或 npm 套件的模組路徑使用：
+
+```js title="docusaurus.config.js"
+module.exports = {
+  // ...
+  plugins: [
+    // without options:
+    './my-plugin',
+    // or with options:
+    ['./my-plugin', options],
+  ],
+};
+```
+
+接著在 `my-plugin` 資料夾中，您可以建立如下的 `index.js`：
+
+```js title="my-plugin/index.js"
+module.exports = async function myPlugin(context, options) {
+  // ...
+  return {
+    name: 'my-plugin',
+    async loadContent() {
+      /* ... */
+    },
+    async contentLoaded({content, actions}) {
+      /* ... */
+    },
+    /* other lifecycle API */
+  };
+};
+```
+
+---
+
+您可以使用[除錯外掛程式的元資料面板](/__docusaurus/debug/metadata)查看網站中安裝的所有外掛程式。
+
+外掛程式分為以下幾種類型：
+
+- `package`：您安裝的外部套件
+- `project`：您在專案中建立並以本地檔案路徑提供給 Docusaurus 的外掛程式
+- `local`：使用函式定義建立的外掛程式
+- `synthetic`：Docusaurus 內部建立的「虛擬外掛程式」，目的是利用模組化架構優勢，避免核心程式碼處理過多特殊邏輯。您不會在元資料中看到此類型，因為這屬於實作細節。
+
+您可透過 `useDocusaurusContext().siteMetadata.pluginVersions` 在客戶端存取這些外掛程式。
+
+## 外掛程式設計 {#plugin-design}
+
+Docusaurus 的外掛系統實作提供了一種便捷方式，可透過掛鉤網站生命週期來修改開發/建置過程中的行為，這包含（但不限於）擴充 webpack 配置、修改載入資料，以及建立供頁面使用的新元件。
+
+### 佈景主題設計 {#theme-design}
+
+當外掛程式載入其內容後，資料會透過 [`createData` + `addRoute`](../api/plugin-methods/lifecycle-apis.mdx#addRoute) 或 [`setGlobalData`](../api/plugin-methods/lifecycle-apis.mdx#setGlobalData) 等操作提供給客戶端。這些資料必須被_序列化_為純文字字串，因為[外掛程式與佈景主題執行於不同環境](./architecture.mdx)。資料抵達客戶端後，對 React 開發者而言就變得熟悉：資料透過元件傳遞、元件與 Webpack 捆綁，並透過 `ReactDOM.render` 渲染至視窗...
+
+**佈景主題提供渲染內容所需的 UI 元件集。** 多數內容型外掛程式需搭配佈景主題才能實際發揮作用。UI 層與資料結構分離的設計，使得更換視覺風格變得容易。
+
+例如，Docusaurus 的部落格功能可能由部落格外掛程式與部落格佈景主題共同構成。
+
+:::note
+
+此為簡化範例：實務上 `@docusaurus/theme-classic` 會同時提供文件、部落格與佈局所需的佈景主題。
+
+:::
+
+```js title="docusaurus.config.js"
+module.exports = {
+  // highlight-next-line
+  themes: ['theme-blog'],
+  plugins: ['plugin-content-blog'],
+};
+```
+
+若您想改用 Bootstrap 樣式，可替換為虛構的 `theme-blog-bootstrap` 佈景主題：
+
+```js title="docusaurus.config.js"
+module.exports = {
+  // highlight-next-line
+  themes: ['theme-blog-bootstrap'],
+  plugins: ['plugin-content-blog'],
+};
+```
+
+此時，雖然佈景主題接收來自外掛程式的相同資料，但其選擇如何將資料_渲染_為 UI 的方式可能截然不同。
+
+儘管佈景主題與外掛程式共享完全相同的生命週期方法，但基於設計目標差異，兩者的實作方式可能大相逕庭。
+
+Themes are designed to complete the build of your Docusaurus site and supply the components used by your site, plugins, and the themes themselves. A theme still acts like a plugin and exposes some lifecycle methods, but most likely they would not use [`loadContent`](../api/plugin-methods/lifecycle-apis.mdx#loadContent), since they only receive data from plugins, but don't generate data themselves; themes are typically also accompanied by an `src/theme` directory full of components, which are made known to the core through the [`getThemePath`](../api/plugin-methods/extend-infrastructure.mdx#getThemePath) lifecycle.
+
+To summarize:
+
+- Themes share the same lifecycle methods with Plugins
+- Themes are run after all existing Plugins
+- Themes add component aliases by providing `getThemePath`.

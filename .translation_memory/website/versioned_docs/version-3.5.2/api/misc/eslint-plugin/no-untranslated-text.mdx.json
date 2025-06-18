@@ -1,0 +1,202 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.5.2/api/misc/eslint-plugin/no-untranslated-text.mdx",
+  "source_file_content_hash": "d3ae449d2e1364eb437a31c6d6ec75dbb1f1b3e78c208f9b3d262379d920f8e7",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /api/misc/@docusaurus/eslint-plugin/no-untranslated-text\n---",
+      "source_content_hash": "d1cb7a439b7c633fe99b6a199ce875c0f2a8fa2ccec6ff2030764c1f489dd15a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# no-untranslated-text",
+      "source_content_hash": "00be76a497138756a91aaea3827b2676ff0ac0f23d66459557b88ac1ab4202b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# no-untranslated-text"
+      }
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_10c4cb47"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Enforce text labels in JSX to be wrapped by translate calls.",
+      "source_content_hash": "0f3c8c1255102fb7a13ceb0d34f2c989092a0c22493980429d38c7922fec1861",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "強制要求 JSX 中的文字標籤必須使用 translate 呼叫進行包裹。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "When the [i18n feature](../../../i18n/i18n-introduction.mdx) is used, this rule ensures that all labels appearing on the website are translatable, so no string accidentally slips through untranslated.",
+      "source_content_hash": "110010b3c0e19de18b72026aec06a9ac06a7de2c7aa2962e299c0ab07d09cf73",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當使用 [i18n 功能](../../../i18n/i18n-introduction.mdx) 時，此規則確保網站上顯示的所有標籤都是可翻譯的，避免任何字串意外未經翻譯而顯示。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Rule Details {#details}",
+      "source_content_hash": "690b629e8ddc6e690cbd5cbf346df9a24a48806263051f247d6714c4a3c6ead7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則詳情 {#details}"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Examples of **incorrect** code for this rule:",
+      "source_content_hash": "7c6462bacad6bdc980d88d6feb75fba43108d257e6c559378586af7869988718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**錯誤**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```js\n// Hello World is not translated\n<Component>Hello World</Component>\n```",
+      "source_content_hash": "2a6ecb51dceb1df0be2b64387c1d67e987a13e91bf8daff186bd2cb4d456168d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Examples of **correct** code for this rule:",
+      "source_content_hash": "76019e5c3c094061d1e3142f6873cc0ad1c55a6f9b9596980100921b3099184f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此規則的**正確**程式碼範例："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```js\n// Hello World is translated\n<Component>\n  <Translate>Hello World</Translate>\n</Component>\n```",
+      "source_content_hash": "1befeeef2d8424d64c693a1cec13574470a44c9e1d5ee3f0127f7b29476996b0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "## Rule Configuration {#configuration}",
+      "source_content_hash": "592694473017d61078fea0d9b5331ffb2e358fd63ff89b3af19f326d9e213b46",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 規則配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受的欄位："
+      }
+    },
+    {
+      "segment_id": "ef6eebef",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ef6eebef"
+      }
+    },
+    {
+      "segment_id": "c83a1f29",
+      "source_content": "| Option | Type | Default | Description |\n| --- | --- | --- | --- |\n| `ignoredStrings` | `string[]` | `[]` | Text labels that only contain strings in this list will not be reported. |",
+      "source_content_hash": "76209b249c929aa8fd110db684dccdfe59d74b91b3e0bbcec953b420cb8c34a5",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c83a1f29"
+      }
+    },
+    {
+      "segment_id": "d9330cd7",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d9330cd7"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## When Not To Use It {#when-not-to-use}",
+      "source_content_hash": "54002d80f20b61218ad62d9f33d2db0105e2a3cbe2a6a9e8fea7de190a4eb5e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 不適用情況 {#when-not-to-use}"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "If you're not using the [i18n feature](../../../i18n/i18n-introduction.mdx), you can disable this rule. You can also disable this rule where the text is not supposed to be translated.",
+      "source_content_hash": "a7dffafad9969ae8fd0a94d7994b849a13bee85028c30afaced22d5611ecc14e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果您未使用 [i18n 功能](../../../i18n/i18n-introduction.mdx)，可以停用此規則。在文字不需要翻譯的情況下，也可以停用此規則。"
+      }
+    },
+    {
+      "segment_id": "11c76fcc",
+      "source_content": "## Further Reading {#further-reading}",
+      "source_content_hash": "372006c6107a6701da927145765c8cfb3114c9bd41eac5ce41dec0368d3629d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 延伸閱讀 {#further-reading}"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "- https://docusaurus.io/docs/docusaurus-core#translate\n- https://docusaurus.io/docs/docusaurus-core#translate-imperative",
+      "source_content_hash": "b1531e784110680950deab1905bbe66381d065858a559e55c3a3e6d35a387dac",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- https://docusaurus.io/docs/docusaurus-core#translate\n- https://docusaurus.io/docs/docusaurus-core#translate-imperative"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.5.2/api/misc/eslint-plugin/no-untranslated-text.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.349724+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "d3ae449d2e1364eb437a31c6d6ec75dbb1f1b3e78c208f9b3d262379d920f8e7"
+  }
+}

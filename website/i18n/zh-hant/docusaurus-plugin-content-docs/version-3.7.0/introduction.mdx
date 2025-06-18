@@ -1,0 +1,192 @@
+---
+description: Docusaurus was designed from the ground up to be easily installed and used to get your website up and running quickly.
+slug: /
+---
+
+# 介紹
+
+⚡️ Docusaurus 能協助您快速打造出精美的文件網站。
+
+💸 自建技術堆疊成本高昂。專注於您的內容，只需撰寫 Markdown 文件即可。
+
+💥 準備好進階功能了嗎？使用版本控制、國際化、搜尋和主題自訂等進階功能。
+
+💅 查看最佳 Docusaurus 網站獲取靈感。
+
+🧐 Docusaurus 是一個靜態網站生成器。它建構了一個具有快速客戶端導航的單頁應用程式，充分利用 React 的強大功能使您的網站具有互動性。它提供開箱即用的文件功能，但也可用於建立任何類型的網站（個人網站、產品、部落格、行銷登陸頁面等）。
+
+![](/img/slash-introducing.svg)
+
+## 快速入門 ⏱️ {#fast-track}
+
+透過實際操作，在 5 分鐘內了解 Docusaurus！
+
+建立一個新的 Docusaurus 網站並遵循簡短的內嵌教學。
+
+安裝 [Node.js](https://nodejs.org/en/download/) 並建立一個新的 Docusaurus 網站：
+
+```bash
+npx create-docusaurus@latest my-website classic
+```
+
+啟動網站：
+
+```bash
+cd my-website
+npx docusaurus start
+```
+
+開啟 [`http://localhost:3000`](http://localhost:3000) 並遵循教學。
+
+:::tip
+
+使用 **[docusaurus.new](https://docusaurus.new)** 立即在瀏覽器中測試 Docusaurus！
+
+或在線閱讀 **[5 分鐘教學](https://tutorial.docusaurus.io)**。
+
+:::
+
+## Docusaurus：讓文件製作變得簡單
+
+在 [Algolia 社群活動](https://www.algolia.com/) 的這場演講中，[Meta 開源團隊](https://opensource.facebook.com/) 簡要介紹了 Docusaurus。他們涵蓋了如何開始使用該專案、啟用插件以及設定文件和部落格等功能。
+
+```mdx-code-block
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
+<div className="video-container">
+  <LiteYouTubeEmbed
+    id="Yhyx7otSksg"
+    params="autoplay=1&autohide=1&showinfo=0&rel=0"
+    title="Docusaurus: Documentation Made Easy"
+    poster="maxresdefault"
+    webp
+  />
+</div>
+```
+
+## 從 v1 遷移 {#migrating-from-v1}
+
+Docusaurus v2+ 是對 Docusaurus v1 的全面重寫，利用了完全現代化的工具鏈。在 [v2 正式發布](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0) 後，我們強烈建議您使用 Docusaurus v2+ 而非 Docusaurus v1，因為 Docusaurus v1 已被棄用。
+
+已有許多用戶使用 Docusaurus v2+。
+
+**使用 Docusaurus v2+ 的情況：**
+
+- :white_check_mark: 您想要一個現代的 Jamstack 文件網站
+- :white_check_mark: 您想要一個具有客戶端路由的單頁應用程式 (SPA)
+- :white_check_mark: 您想要充分利用 React 和 MDX 的強大功能
+- :white_check_mark: 您不需要支援 IE11
+
+**使用 [Docusaurus v1](https://v1.docusaurus.io/) 的情況：**
+
+- :x: 您不想要單頁應用程式 (SPA)
+- :x: 您需要支援 IE11（...真的需要嗎？IE 已停止支援）
+
+對於現有的 v1 用戶，若想升級至 v2+，可以遵循我們的遷移指南。
+
+## 功能 {#features}
+
+Docusaurus 以高度關注開發者與貢獻者體驗為核心打造。
+
+- ⚛️ **以 💚 與 React 建構**：
+  - 透過 React 擴展與自訂
+  - 提供自訂 React 元件，完全掌控網站的瀏覽體驗
+- 🔌 **可插拔式架構**：
+  - 使用基礎模板快速建立網站，再透過進階功能與插件強化
+  - 開源您的插件與社群共享
+- ✂️ **開發者體驗**：
+  - 立即開始撰寫文件
+  - 統一配置入口提升協作維護性
+  - 變更時支援熱重載與閃電般增量建置
+  - 基於路由的程式碼與資料分割
+  - 輕鬆部署至 GitHub Pages、Netlify、Vercel 等服務
+
+我們的共同目標——協助使用者快速找到所需內容並更深入理解您的產品。我們分享最佳實踐，助您打造完善的文件網站。
+
+- 🎯 **SEO 友善**：
+  - 為所有可能路徑靜態生成 HTML 檔案
+  - 頁面專屬 SEO 優化，讓使用者直接找到相關問題的官方文件
+- 📝 **基於 MDX**：
+  - 透過 Markdown 中嵌入 JSX 與 React 撰寫互動元件
+  - 透過即時編輯器分享程式碼，讓使用者當場愛上您的產品
+- 🔍 **搜尋功能**：全站內容皆可搜尋
+- 💾 **文件版本控制**：保持文件與專案版本同步
+- 🌍 **國際化 (i18n)**：支援多語言在地化翻譯
+
+Docusaurus v2+ 天生具備極致速度，並貼心照顧所有使用者的可訪問性。
+
+- ⚡️ **閃電般快速**。遵循 [PRPL 模式](https://developers.google.com/web/fundamentals/performance/prpl-pattern/)，確保內容載入速度極快
+- 🦖 **無障礙設計**。注重可訪問性，讓所有使用者平等獲取內容
+
+## 設計原則 {#design-principles}
+
+- **低學習成本**。Docusaurus API 簡潔易學易用。即使需要更多程式碼與時間，使用者仍能實現大多數功能。與其提供錯誤抽象，不如不提供抽象，我們不希望使用者被迫繞過錯誤設計。必看演講—[最小化 API 表面積](https://www.youtube.com/watch?v=4anAwXYqLG8)。
+- **直覺化**。查看 Docusaurus 專案目錄或新增功能時，使用者不會感到不知所措。架構應直覺易懂，能基於熟悉的方式輕鬆擴展。
+- **分層架構**。各層級堆疊（內容/主題/樣式）關注點分離明確——抽象完善且模組化。
+- **合理預設值**。為使用者預設實施常見效能優化與配置，同時保留覆寫選項。
+- **無廠商鎖定**。不強制使用預設插件或 CSS（但強烈建議）。因預設效能優化需求，部分核心基礎（如 React Loadable 和 React Router）不可替換，但高階組件可替換。Markdown 引擎、CSS 框架、CSS 方法論等架構選擇完全由使用者決定。
+
+我們相信，開發者了解工具運作原理能提升使用效率。因此我們投入心力解釋 Docusaurus 架構與各組件，希望使用者能深入理解工具，運用更加得心應手。
+
+## 與其他工具比較 {#comparison-with-other-tools}
+
+在所有靜態網站生成器中，Docusaurus 獨特聚焦於文件網站，並提供眾多開箱即用功能。
+
+我們亦研究其他主流靜態網站生成器，分享比較見解，協助您在眾多選擇中做出決策。
+
+### Gatsby {#gatsby}
+
+[Gatsby](https://www.gatsbyjs.com/) 具備豐富功能與龐大插件生態系統，能實現 Docusaurus 的所有功能，但代價是較高的學習曲線。Gatsby 擅長構建多種類型網站，而 Docusaurus 專注於將單一功能做到極致——成為編寫與發布內容的最佳工具。
+
+GraphQL 是 Gatsby 的核心架構，但構建靜態網站時通常不需要 GraphQL 提供的靈活性。
+
+Docusaurus v2+ 的許多設計靈感源自 Gatsby 的優點，是極佳的替代方案。
+
+[Docz](https://github.com/pedronauck/docz) 是基於 Gatsby 的文檔網站主題，目前功能不如 Docusaurus 完善。
+
+### Next.js {#nextjs}
+
+[Next.js](https://nextjs.org/) 是流行的混合式 React 框架，雖能構建文檔網站，但缺乏對文檔場景的專項優化，需自行實現 Docusaurus 的開箱即用功能。
+
+[Nextra](https://github.com/shuding/nextra) 是基於 Next.js 的靜態網站生成器，目前功能完整度低於 Docusaurus。
+
+### VitePress {#vitepress}
+
+[VitePress](https://vitepress.dev/) 與 Docusaurus 高度相似——均專注於內容型網站並提供開箱即用的文檔功能。差異在於 VitePress 基於 Vue，而 Docusaurus 基於 React。若需 Vue 技術棧，VitePress 是理想選擇。
+
+### MkDocs {#mkdocs}
+
+[MkDocs](https://www.mkdocs.org/) 是流行的 Python 靜態網站生成器，核心價值與 Docusaurus 相近。
+
+若不需單頁應用且無需 React 技術棧，此為理想選項。
+
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 提供精美的主題方案。
+
+### Docsify {#docsify}
+
+[Docsify](https://docsify.js.org/) 易於快速創建文檔網站，但非靜態網站生成器且不利於 SEO。
+
+### GitBook {#gitbook}
+
+[GitBook](https://www.gitbook.com/) 擁有簡潔設計並被眾多開源項目採用。隨著其轉向商業化產品，許多功能已不符合開源文檔需求，促使項目遷移（如 [Redux 轉用 Docusaurus](https://github.com/reduxjs/redux/issues/3161)）。
+
+現階段 GitBook 僅對開源與非營利團隊免費，Docusaurus 則完全免費。
+
+### Jekyll {#jekyll}
+
+[Jekyll](https://github.com/jekyll/jekyll) 是最成熟的靜態網站生成器之一（Facebook 開源網站曾廣泛使用）。Docusaurus 旨在提供類似的簡易開發體驗，同時通過現代 JavaScript 工具鏈提升性能、構建流程與優化標準。
+
+相較於 Jekyll 的靜態 HTML 與腳本注入模式，Docusaurus 生成的是 React 應用，在交互性與現代化工作流方面更具優勢。
+
+## 獲取最新資訊 {#staying-informed}
+
+- [GitHub](https://github.com/facebook/docusaurus)
+- [X](https://x.com/docusaurus)
+- [部落格](/blog)
+- [Discord](https://discord.gg/docusaurus)
+
+## 缺少什麼內容嗎？ {#something-missing}
+
+如果您發現文件有問題，或對如何改進文件或專案本身有任何建議，請[提交問題](https://github.com/facebook/docusaurus)給我們，或在 X（前 Twitter）上發文提及 [@docusaurus](https://x.com/docusaurus) 帳號。
+
+對於新功能請求，您可以在我們的[功能請求看板 (Canny)](/feature-requests)上發文。該看板是規劃路線圖的實用工具，並允許按投票數排序，這讓核心團隊能更清楚地了解哪些功能需求較高，相較於較難分類的 GitHub 問題。請避免直接為新功能（尤其是大型功能）提交 Pull Request，因為可能已有人在開發或該功能已列入我們的開發路線圖。請先與我們討論！

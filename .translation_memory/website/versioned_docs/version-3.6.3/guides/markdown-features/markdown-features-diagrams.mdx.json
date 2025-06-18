@@ -1,0 +1,242 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.6.3/guides/markdown-features/markdown-features-diagrams.mdx",
+  "source_file_content_hash": "6ca239d7dae404ea79766ad78687a773fc648dd8783cb8de9324af36f0106c32",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: diagrams\ntitle: Diagrams\ndescription: Writing diagrams with Mermaid\nslug: /markdown-features/diagrams\n---",
+      "source_content_hash": "d42bdda7ae7141316dc407399d3b0d2d76ddf43fa74403c55617205fab4dc33c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "# Diagrams",
+      "source_content_hash": "ba3e65a7ac420190e91f4976f0afec63cc2b3ac3a669c77bca1c6df82744f563",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 圖表繪製"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Diagrams can be rendered using [Mermaid](https://mermaid-js.github.io/mermaid/) in a code block.",
+      "source_content_hash": "1632575bc101711e2bb562d5e94092d80f43f638cf96251ed831784c5d9bf80b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可使用 [Mermaid](https://mermaid-js.github.io/mermaid/) 在程式碼區塊中渲染圖表。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝方式 {#installation}"
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/theme-mermaid\n```",
+      "source_content_hash": "bbf3d0bf3b2822ed06ebe88143eae8cf839abb3e25aa8624152f03de723a22db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Enable Mermaid functionality by adding plugin `@docusaurus/theme-mermaid` and setting `markdown.mermaid` to `true` in your `docusaurus.config.js`.",
+      "source_content_hash": "11754b53d014975d3d84439c235007ada7cf19190ffaa54022640f7eaeba13ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 `docusaurus.config.js` 中新增插件 `@docusaurus/theme-mermaid` 並將 `markdown.mermaid` 設為 `true` 以啟用 Mermaid 功能。"
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  markdown: {\n    mermaid: true,\n  },\n  themes: ['@docusaurus/theme-mermaid'],\n};\n```",
+      "source_content_hash": "c87a4958744ce00ef0d32b2eb22e23b0c3f06fd86af37cf1af5f6c083e41aece",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用方式 {#usage}"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Add a code block with language `mermaid`:",
+      "source_content_hash": "cef91dc68b1f7c97785071ffd4c50c717de5e59538453d8ac3c600f9dafbfe78",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新增標記語言為 `mermaid` 的程式碼區塊："
+      }
+    },
+    {
+      "segment_id": "a2110253",
+      "source_content": "````md title=\"Example Mermaid diagram\"\n```mermaid\ngraph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;\n```\n````",
+      "source_content_hash": "895984b8e79dc244e8b1dda1f9714057e9b359293e9381670d2b27b1481f62cd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a2110253"
+      }
+    },
+    {
+      "segment_id": "d9330cd7",
+      "source_content": "```mermaid\ngraph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;\n```",
+      "source_content_hash": "240574bc3985932ce5ea37c966bc56858d19fb870d2d150cc4c60ad930747a67",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d9330cd7"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "See the [Mermaid syntax documentation](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference) for more information on the Mermaid syntax.",
+      "source_content_hash": "347078a9907066b7797468db88460a5aac03a57870207511428df87103495720",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳見 [Mermaid 語法文件](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference) 以獲取更多 Mermaid 語法資訊。"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "## Theming {#theming}",
+      "source_content_hash": "5c25ef058e84f21df7f62c785bad31cdc4f6b863cc94780617a0aebfc0fdb9b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 主題設定 {#theming}"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "The diagram dark and light themes can be changed by setting `mermaid.theme` values in the `themeConfig` in your `docusaurus.config.js`. You can set themes for both light and dark mode.",
+      "source_content_hash": "48c71634e7651bdee8a5e99a1979fa95f5f75ee7e0b6362a89d60b761b30d6d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可透過在 `docusaurus.config.js` 的 `themeConfig` 中設定 `mermaid.theme` 值來變更圖表的深色/淺色主題，同時支援為亮暗模式分別設定主題。"
+      }
+    },
+    {
+      "segment_id": "c3955998",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    mermaid: {\n      theme: {light: 'neutral', dark: 'forest'},\n    },\n  },\n};\n```",
+      "source_content_hash": "be3f4bf66442a5daa760ac998a8b43807cc710d0b4d9f78af40d6570c0289fb5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c3955998"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "See the [Mermaid theme documentation](https://mermaid-js.github.io/mermaid/#/theming) for more information on theming Mermaid diagrams.",
+      "source_content_hash": "02d6e646cac4bc73ca160ebe826cb175e9c3058c0037a2f951b9a25e605f6d8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳見 [Mermaid 主題文件](https://mermaid-js.github.io/mermaid/#/theming) 以獲取更多主題設定資訊。"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "## Mermaid Config {#configuration}",
+      "source_content_hash": "abf6638d25d73c45eea7aa7e7ebab2f3a86b43672c9a03e32249c8c83c84c3c0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Mermaid 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "Options in `mermaid.options` will be passed directly to `mermaid.initialize`:",
+      "source_content_hash": "9faae56136fce1a1f704e3742c1d690a728b5bfabe9d3476bb90b20edc1f2770",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`mermaid.options` 中的參數將直接傳遞給 `mermaid.initialize`："
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    mermaid: {\n      options: {\n        maxTextSize: 50,\n      },\n    },\n  },\n};\n```",
+      "source_content_hash": "ff78017fc7caabbb5d8c93ab0c1e31e18b8a2b3590743f8100f4f66e3802a13d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "See the [Mermaid config documentation](https://mermaid-js.github.io/mermaid/#/./Setup?id=configuration) and the [Mermaid config types](https://github.com/mermaid-js/mermaid/blob/master/packages/mermaid/src/config.type.ts) for the available config options.",
+      "source_content_hash": "3090ea971af30596143d1355b35041905b1113ff466acaeb6d160c3a3b324334",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可用配置選項請參閱 [Mermaid 配置文件](https://mermaid-js.github.io/mermaid/#/./Setup?id=configuration) 與 [Mermaid 配置類型](https://github.com/mermaid-js/mermaid/blob/master/packages/mermaid/src/config.type.ts)。"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "## Dynamic Mermaid Component {#component}",
+      "source_content_hash": "99734e281d6fced435d5b8df555ef695633f296328f06e078f3452b67b51d56b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 動態 Mermaid 元件 {#component}"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "To generate dynamic diagrams, you can use the `Mermaid` component:",
+      "source_content_hash": "c35c851f518b6ee7fa30393e4fa9d0b40eab7bae2fa8dfc911625bb574d60526",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "欲生成動態圖表，可使用 `Mermaid` 元件："
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```mdx title=\"Example of dynamic Mermaid component\"\nimport Mermaid from '@theme/Mermaid';\n\n<Mermaid\n  value={`graph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;`}\n/>\n```",
+      "source_content_hash": "d962259cb93d9fb52c21329bbc92f5e95a5fdd4f34fd95ac63c196a3a892d6c9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.6.3/guides/markdown-features/markdown-features-diagrams.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.311619+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "6ca239d7dae404ea79766ad78687a773fc648dd8783cb8de9324af36f0106c32"
+  }
+}

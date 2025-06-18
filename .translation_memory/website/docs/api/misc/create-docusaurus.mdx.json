@@ -1,0 +1,222 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/api/misc/create-docusaurus.mdx",
+  "source_file_content_hash": "65219e6086235fb79bac50a823bec43454df3c9777f8ff03dba351dae6e9d276",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\nslug: /api/misc/create-docusaurus\n---",
+      "source_content_hash": "38275a25841054c8b14c79e39014e12248b7a254ddba1f55066fe02db63f762e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 create-docusaurus",
+      "source_content_hash": "ebd3bc5100870cf9d141e1ce5eebb7ee098771318449dff960d96ed608e24d31",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 create-docusaurus"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "A scaffolding utility to help you instantly set up a functional Docusaurus app.",
+      "source_content_hash": "94711392dd0c9a757d19e2c449e1c9a402d2e4d0873336199fd75adfd8aceeb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "一個用於快速建立功能完整 Docusaurus 應用程式的腳手架工具。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 使用方法 {#usage}"
+      }
+    },
+    {
+      "segment_id": "ee201347",
+      "source_content": "```bash\nnpx create-docusaurus@latest [name] [template] [rootDir]\n```",
+      "source_content_hash": "d4daf86a84ec174eff07953eea185b2c148149911ee059f40cf73b7689f3c0c9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ee201347"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "The `name` argument will be used as the site's path as well as the `name` field in the created app's package.json. It can be an absolute path, or a path relative to `rootDir`.",
+      "source_content_hash": "47ee29a0e796bbe49b756aef2016d70c1c26354cdb9310294668711c163d04a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`name` 參數將同時作為網站路徑和生成應用程式中 package.json 的 `name` 字段。可以是絕對路徑或相對於 `rootDir` 的路徑。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "The `template` argument can be one of the following:",
+      "source_content_hash": "83c5783d8ae06eaead88e88ae73abccf8d2d828aee55c0464c68d8d6b96e8d6c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`template` 參數可為以下選項之一："
+      }
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "- `classic`: Uses the classic template (recommended)\n- `facebook`: Uses the Facebook/Meta template, which contains some Meta-specific setup\n- A git repo URL (beginning with `https://` or `git@`), which can be cloned to the destination\n- A local file path relative to CWD, which contains the files to be copied to destination",
+      "source_content_hash": "3e7ed7e207546fa1513c547c9bab1c8a1126382e6fa6bb09df18ad2528342f04",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `classic`: 使用經典模板（推薦）\n- `facebook`: 使用 Facebook/Meta 模板，包含 Meta 特定設置\n- 以 `https://` 或 `git@` 開頭的 git 倉庫 URL，可克隆至目標位置\n- 相對於當前工作目錄的本地文件路徑，該路徑下的文件將被複製到目標位置"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "The `rootDir` will be used to resolve the absolute path to the site directory. The default is CWD.",
+      "source_content_hash": "19dfa9c47c59b3b87f3f6cf78395b2ab84aafcb178b03e3b0770401e484fabf9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`rootDir` 將用於解析網站目錄的絕對路徑，預設為當前工作目錄。"
+      }
+    },
+    {
+      "segment_id": "6b3596a2",
+      "source_content": ":::warning\n\nThis command should be preferably used in an interactive shell so all features are available.\n\n:::",
+      "source_content_hash": "803d71ed8c62129ccc87a58e6b44bb3cc58493ece86db8e6b5ad95a438827716",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n建議在互動式 shell 中使用此命令以確保所有功能可用。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Options {#options}",
+      "source_content_hash": "1ecc0321257b16f9836b45fb74a8be8a2f98cdd77589c4f08f998ef62beb8652",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 選項 {#options}"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "### `-t, --typescript` {#typescript}",
+      "source_content_hash": "74716b1ef53b778c929e005b6bad9b237052c848c404ac9561b021b54ea88c09",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `-t, --typescript` {#typescript}"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Used when the template argument is a recognized name. Currently, only `classic` provides a TypeScript variant.",
+      "source_content_hash": "c5bac527d66a50a6ee393ad7ff870d6f0ef45864314baf68b18135a8b5a6dd77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當模板參數為可識別名稱時使用。目前僅 `classic` 模板提供 TypeScript 變體。"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### `-g, --git-strategy` {#git-strategy}",
+      "source_content_hash": "2063881fc6bfeb78bd040c9430f979a95bd986b55b42ac106c9bdaf1c55ef733",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `-g, --git-strategy` {#git-strategy}"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "Used when the template argument is a git repo. It needs to be one of:",
+      "source_content_hash": "b06a428c70f104cf64596a14ee405c0aa4016eaa8659802523f02044e58c2fa5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當模板參數為 git 倉庫時使用。必須為以下選項之一："
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "- `deep`: preserves full git history\n- `shallow`: clones with `--depth=1`\n- `copy`: does a shallow clone, but does not create a git repo\n- `custom`: enter your custom git clone command. We will prompt you for it. You can write something like `git clone --depth 10`, and we will append the repository URL and destination directory.",
+      "source_content_hash": "b4163a5ba45d61af83399eb7696cefd1e3ed2777931de204fc75add8c5dfffb1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `deep`: 保留完整 git 歷史記錄\n- `shallow`: 使用 `--depth=1` 進行淺克隆\n- `copy`: 執行淺克隆但不建立 git 倉庫\n- `custom`: 輸入自訂 git 克隆指令。系統將提示您輸入，例如可輸入 `git clone --depth 10`，我們會自動附加倉庫 URL 和目標目錄。"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "### `-p, --package-manager` {#package-manager}",
+      "source_content_hash": "a3dd5cd3cc0b59e18a2ed4bdffe27fa7b10feef6205b631a2b9cd7ecf7611389",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `-p, --package-manager` {#package-manager}"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Value should be one of `npm`, `yarn`, `pnpm`, or `bun`. If it's not explicitly provided, Docusaurus will infer one based on:",
+      "source_content_hash": "bfcbf7b76eab624dec10d55c76fbd3de6073cb051d658b33d54e60bffef0b836",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "值應為 `npm`、`yarn`、`pnpm` 或 `bun` 之一。若未明確指定，Docusaurus 將根據以下條件自動判斷："
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "- The lockfile already present in the CWD (e.g. if you are setting up website in an existing project)\n- The command used to invoke `create-docusaurus` (e.g. `npm init`, `npx`, `yarn create`, `bunx`, etc.)\n- Interactive prompting, in case all heuristics are not present",
+      "source_content_hash": "1a5bfe62132659593b73261f23a813df76c87e5a0c9330cb90da758527ad3865",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 當前工作目錄中已存在的鎖定文件（例如在現有專案中建立網站時）\n- 執行 `create-docusaurus` 時使用的指令（如 `npm init`、`npx`、`yarn create`、`bunx` 等）\n- 若以上啟發式條件均不滿足，則透過互動式提示選擇"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "### `-s, --skip-install` {#skip-install}",
+      "source_content_hash": "492d8e9f93dfb56692bb05b53c17d1aa78cbd5a889f5ad912900a9b61729718e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `-s, --skip-install` {#skip-install}"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "If provided, Docusaurus will not automatically install dependencies after creating the app. The `--package-manager` option is only useful when you are actually installing dependencies.",
+      "source_content_hash": "13e7ff62314efc873aa765201d678359e168f178128c675f170e9229b08eee8c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若指定此選項，Docusaurus 在建立應用程式後不會自動安裝依賴項。`--package-manager` 選項僅在實際安裝依賴項時有效。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/api/misc/create-docusaurus.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.030581+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "65219e6086235fb79bac50a823bec43454df3c9777f8ff03dba351dae6e9d276"
+  }
+}

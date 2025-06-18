@@ -1,0 +1,382 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/migration/v2/migration-versioned-sites.mdx",
+  "source_file_content_hash": "2b3063495e1759dbdb9fdb9165956f755de6970b63ab75785684dc7fe1691818",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: /migration/v2/versioned-sites\n---",
+      "source_content_hash": "bd5616912dd3aa238405af82000590e8d2bea5fe212b049fcaba57e4a2b566b2",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Versioned sites",
+      "source_content_hash": "caedb5f73ce379f6961d5a709e57f68b94778c24f3544ced489ede9a1d20f9c6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 版本化網站"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Read up https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2#versioning first for problems in v1's approach.",
+      "source_content_hash": "25cde9265a9d365ea67dd6f83aa6425197d31ff08179f9352fc6d0664e911076",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請先閱讀 https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2#versioning 了解 v1 版本控制方法的問題。"
+      }
+    },
+    {
+      "segment_id": "0d5e1c45",
+      "source_content": ":::note\n\nThe versioned docs should normally be migrated correctly by the [migration CLI](./migration-automated.mdx)\n\n:::",
+      "source_content_hash": "e74f6c3b0943c9241569549b6f83582e1c0ba614d8a88c26d20a5efa196b28f3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n版本化文件通常會由 [遷移 CLI](./migration-automated.mdx) 正確遷移\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "## Migrate your `versioned_docs` front matter {#migrate-your-versioned_docs-front-matter}",
+      "source_content_hash": "a53a5c721c57327c26c516b23e16f9386f7340b62eb999df60937b8ebdafdedd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 遷移 `versioned_docs` 的 front matter {#migrate-your-versioned_docs-front-matter}"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Unlike v1, The Markdown header for each versioned doc is no longer altered by using `version-${version}-${original_id}` as the value for the actual ID field. See scenario below for better explanation.",
+      "source_content_hash": "e6da09b2b60845175e0a22a59cd1c0288da25b7b2295cb99c3275e271e2a6cb3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "與 v1 不同，每個版本化文件的 Markdown 標頭不再使用 `version-${version}-${original_id}` 作為實際 ID 欄位的值。請參閱以下情境以獲得更好的解釋。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "For example, if you have a `docs/hello.md`.",
+      "source_content_hash": "eb3db5984e4540bdcd7b50f99431e97220dff6ce1b0ee88ce5622aa7dc490834",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，如果您有一個 `docs/hello.md`。"
+      }
+    },
+    {
+      "segment_id": "cbbebf8e",
+      "source_content": "```md\n---\nid: hello\ntitle: Hello, World !\n---\n\nHi, Endilie here :)\n```",
+      "source_content_hash": "d1a5cd86128d33aa26852653a1959fac545ac33d1a780a950ffb8bface0bce4f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cbbebf8e"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "When you cut a new version 1.0.0, in Docusaurus v1, `website/versioned_docs/version-1.0.0/hello.md` looks like this:",
+      "source_content_hash": "e26b81521d39f2296df1bf120015cc15ef270c5905f7d92ca9091976913d3cc9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您創建新版本 1.0.0 時，在 Docusaurus v1 中，`website/versioned_docs/version-1.0.0/hello.md` 看起來像這樣："
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```md\n---\nid: version-1.0.0-hello\ntitle: Hello, World !\noriginal_id: hello\n---\n\nHi, Endilie here :)\n```",
+      "source_content_hash": "a3892d820197820e48766007c3c0b41735a2d36e5fb7c3dae313accf882bb21a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "In comparison, Docusaurus 2 `website/versioned_docs/version-1.0.0/hello.md` looks like this (exactly same as original)",
+      "source_content_hash": "97f4fd07ee72474099f3480de49a27317cc9f6f011ae56d9bc9866495fef71d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "相比之下，Docusaurus 2 的 `website/versioned_docs/version-1.0.0/hello.md` 看起來像這樣（與原始文件完全相同）"
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```md\n---\nid: hello\ntitle: Hello, World !\n---\n\nHi, Endilie here :)\n```",
+      "source_content_hash": "d1a5cd86128d33aa26852653a1959fac545ac33d1a780a950ffb8bface0bce4f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "Since we're going for snapshot and allow people to move (and edit) docs easily inside version. The `id` front matter is no longer altered and will remain the same. Internally, it is set as `version-${version}/${id}`.",
+      "source_content_hash": "b9933dbaa9b4c6b54e1693b6f7cae6ea7b1233c91bd3e236ba960ee5a73844d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於我們採用快照方式並允許人們在版本內輕鬆移動（和編輯）文件，`id` front matter 不再被修改並保持不變。在內部，它被設置為 `version-${version}/${id}`。"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "Essentially, here are the necessary changes in each versioned_docs file:",
+      "source_content_hash": "f83105c21d5552d127f0ccfd27ed399f03a2797771fb377580c669a83cf3d7b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本質上，每個 versioned_docs 文件中需要進行以下更改："
+      }
+    },
+    {
+      "segment_id": "c3955998",
+      "source_content": "```diff {2-3,5}\n---\n- id: version-1.0.0-hello\n+ id: hello\ntitle: Hello, World !\n- original_id: hello\n---\nHi, Endilie here :)\n```",
+      "source_content_hash": "6019120cdf2c60eac79fec5677ffa4d3881303075c321baeaff8485d91a49086",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c3955998"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## Migrate your `versioned_sidebars` {#migrate-your-versioned_sidebars}",
+      "source_content_hash": "a2841d3dc61cf562d57dcb909d15e85cb8fdf7a2c95e23d22fea531976fc650f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 遷移您的 `versioned_sidebars` {#migrate-your-versioned_sidebars}"
+      }
+    },
+    {
+      "segment_id": "a4bd3cfc",
+      "source_content": "- Refer to `versioned_docs` ID as `version-${version}/${id}` (v2) instead of `version-${version}-${original_id}` (v1).",
+      "source_content_hash": "b1479823b893db580d1884b1e20768c8abb190e17c045e74d1cfd4f65479db6f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 將 `versioned_docs` 的 ID 引用為 `version-${version}/${id}`（v2）而不是 `version-${version}-${original_id}`（v1）。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "Because in v1 there is a good chance someone created a new file with front matter ID `\"version-${version}-${id}\"` that can conflict with `versioned_docs` ID.",
+      "source_content_hash": "d2ff43640dd1d1568e8aecfcec80238f99535db2cddcdb913766c4c7a42db5ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "因為在 v1 中，很有可能有人創建了一個 front matter ID 為 `\"version-${version}-${id}\"` 的新文件，這可能會與 `versioned_docs` 的 ID 衝突。"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "For example, Docusaurus 1 can't differentiate `docs/xxx.md`",
+      "source_content_hash": "b42ec0f485be6e21f21b04fc8607ed5ad1b7616d476edd61cf056f7e21e7f7d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，Docusaurus 1 無法區分 `docs/xxx.md`"
+      }
+    },
+    {
+      "segment_id": "9f3b4022",
+      "source_content": "```md\n---\nid: version-1.0.0-hello\n---\n\nAnother content\n```",
+      "source_content_hash": "67a6372d07dd98fd83d5d6d999228334efd8b4d9714a9110e3839a11898ba9c2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f3b4022"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "vs `website/versioned_docs/version-1.0.0/hello.md`",
+      "source_content_hash": "3443f8cf3ad6b1e276b416cdb8570540ab859f6a9a0f57baaa3c743cf03fb62a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "與 `website/versioned_docs/version-1.0.0/hello.md`"
+      }
+    },
+    {
+      "segment_id": "65400624",
+      "source_content": "```md\n---\nid: version-1.0.0-hello\ntitle: Hello, World !\noriginal_id: hello\n---\n\nHi, Endilie here :)\n```",
+      "source_content_hash": "a3892d820197820e48766007c3c0b41735a2d36e5fb7c3dae313accf882bb21a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_65400624"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Since we don't allow `/` in v1 & v2 for front matter, conflicts are less likely to occur.",
+      "source_content_hash": "2b467ba789ece0cc64bf3475e274d940b3bbf3c61299c8e612b9c8c6bd4b6508",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於我們在 v1 和 v2 中不允許 front matter 中使用 `/`，因此衝突的可能性較小。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "So v1 users need to migrate their versioned_sidebars file",
+      "source_content_hash": "343b8968d0fa4a32cd4100dcb780079b842c353df2d17c914f9076dae13d5c60",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "因此，v1 用戶需要遷移他們的 versioned_sidebars 文件"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "Example `versioned_sidebars/version-1.0.0-sidebars.json`:",
+      "source_content_hash": "1d13be6cff3b5a354237e2688d1cebeb1c7d063e38300fc4fab93a8f977e431f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例 `versioned_sidebars/version-1.0.0-sidebars.json`："
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```diff {2-3,5-6,9-10}  title=\"versioned_sidebars/version-1.0.0-sidebars.json\"\n{\n+ \"version-1.0.0/docs\": {\n- \"version-1.0.0-docs\": {\n    \"Test\": [\n+    \"version-1.0.0/foo/bar\",\n-    \"version-1.0.0-foo/bar\",\n    ],\n    \"Guides\": [\n+    \"version-1.0.0/hello\",\n-    \"version-1.0.0-hello\"\n    ]\n  }\n}\n```",
+      "source_content_hash": "6126c5191a5d7f04695d584a63e080bb480a29017a4488b58e5a094eb424a46c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "## Populate your `versioned_sidebars` and `versioned_docs` {#populate-your-versioned_sidebars-and-versioned_docs}",
+      "source_content_hash": "8aa811627248ad8f1c3db6e1ca2eb60a3a2e8da0bd5c13ae8f8d59623d16b7f6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 填充您的 `versioned_sidebars` 和 `versioned_docs` {#populate-your-versioned_sidebars-and-versioned_docs}"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "In v2, we use snapshot approach for documentation versioning. **Every versioned docs does not depends on other version**. It is possible to have `foo.md` in `version-1.0.0` but it doesn't exist in `version-1.2.0`. This is not possible in previous version due to Docusaurus v1 fallback functionality (https://v1.docusaurus.io/docs/en/versioning#fallback-functionality).",
+      "source_content_hash": "97b3574d5b0abe9bcb8c1fda4809070266cd77d3ead8cc34417b2bc320d1c16b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 v2 中，我們使用快照方法進行文件版本控制。**每個版本化的文件不依賴於其他版本**。可以在 `version-1.0.0` 中有 `foo.md`，但在 `version-1.2.0` 中不存在。這在以前的版本中是不可能的，因為 Docusaurus v1 有回退功能 (https://v1.docusaurus.io/docs/en/versioning#fallback-functionality)。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "For example, if your `versions.json` looks like this in v1",
+      "source_content_hash": "29d24ff8195c69a53905faad3322cb43111421bd7382a088d89fa0b9bd9b6f73",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，如果您的 v1 中的 `versions.json` 看起來像這樣"
+      }
+    },
+    {
+      "segment_id": "7102653e",
+      "source_content": "```json title=\"versions.json\"\n[\"1.1.0\", \"1.0.0\"]\n```",
+      "source_content_hash": "b61eabecc15b9e0f07ebd412142a0a02cf61ce35fa8e3dad9b1a3e32f0b0edae",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7102653e"
+      }
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "Docusaurus v1 creates versioned docs **if and only if the doc content is different**. Your docs structure might look like this if the only doc changed from v1.0.0 to v1.1.0 is `hello.md`.",
+      "source_content_hash": "a547bd2e27bcef4489d2afb7f6f20a9f3179d7ae64a645866b35c3eac7eaba2c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus v1 僅在文件內容不同時創建版本化文件。如果從 v1.0.0 到 v1.1.0 唯一更改的文件是 `hello.md`，您的文件結構可能看起來像這樣。"
+      }
+    },
+    {
+      "segment_id": "2f34b0ad",
+      "source_content": "```bash\nwebsite\n├── versioned_docs\n│   ├── version-1.1.0\n│   │   └── hello.md\n│   └── version-1.0.0\n│       ├── foo\n│       │   └── bar.md\n│       └── hello.md\n├── versioned_sidebars\n│   └── version-1.0.0-sidebars.json\n```",
+      "source_content_hash": "2b6175e0e6e73a2f0176369b17ad6e5f120a955b0f72875ce8e7f9a0801469c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2f34b0ad"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "In v2, you have to populate the missing `versioned_docs` and `versioned_sidebars` (with the right front matter and ID reference too).",
+      "source_content_hash": "1810ee7006a2ab4b654f975382af5e77883642ed7320416bfe02d48eb6f1aedc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 v2 中，您需要填充缺失的 `versioned_docs` 和 `versioned_sidebars`（並確保 front matter 和 ID 引用正確）。"
+      }
+    },
+    {
+      "segment_id": "01a167f4",
+      "source_content": "```bash {3-5,12}\nwebsite\n├── versioned_docs\n│   ├── version-1.1.0\n│   │   ├── foo\n│   │   │   └── bar.md\n│   │   └── hello.md\n│   └── version-1.0.0\n│       ├── foo\n│       │   └── bar.md\n│       └── hello.md\n├── versioned_sidebars\n│   ├── version-1.1.0-sidebars.json\n│   └── version-1.0.0-sidebars.json\n```",
+      "source_content_hash": "eb10d7ee3f60a3767b913c6f6521ecdce123547053660dd1e0da541914ddbf7f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_01a167f4"
+      }
+    },
+    {
+      "segment_id": "531ec0bb",
+      "source_content": "## Convert style attributes to style objects in MDX {#convert-style-attributes-to-style-objects-in-mdx}",
+      "source_content_hash": "e99c700747d99b3ff510d9030183de5fbc69ab299705eb4351443573c3030f39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 將 MDX 中的樣式屬性轉換為樣式物件 {#convert-style-attributes-to-style-objects-in-mdx}"
+      }
+    },
+    {
+      "segment_id": "d2a3d4c7",
+      "source_content": "Docusaurus 2 uses JSX for doc files. If you have any style attributes in your Docusaurus 1 docs, convert them to style objects, like this:",
+      "source_content_hash": "ee8eaec7e84bcc53638fe654177e723dce2e9ee18bc89e02d8bffe9449e70880",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 使用 JSX 處理文件檔案。若您的 Docusaurus 1 文件中含有任何樣式屬性，請將其轉換為樣式物件，如下所示："
+      }
+    },
+    {
+      "segment_id": "75daf40d",
+      "source_content": "```diff\n---\nid: demo\ntitle: Demo\n---\n\n## Section\n\nhello world\n\n- pre style=\"background: black\">zzz</pre>\n+ pre style={{background: 'black'}}>zzz</pre>\n```",
+      "source_content_hash": "7acbcc702271c6c005fb3dee7901f40657b4c48c5f600ca763400d16187006ce",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_75daf40d"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/migration/v2/migration-versioned-sites.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.186131+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "2b3063495e1759dbdb9fdb9165956f755de6970b63ab75785684dc7fe1691818"
+  }
+}

@@ -1,0 +1,198 @@
+---
+description: Docusaurus was designed from the ground up to be easily installed and used to get your website up and running quickly.
+slug: /
+---
+
+# 簡介
+
+⚡️ Docusaurus 能協助您快速打造出**美觀的技術文件網站**。
+
+💸 自建技術堆疊成本高昂。請專注於**內容創作**，只需撰寫 Markdown 文件即可。
+
+💥 需要更多功能？可使用**進階特性**如版本控制、國際化、搜尋及主題客製化。
+
+💅 查看**[精選 Docusaurus 網站](/showcase?tags=favorite)**獲取靈感。
+
+🧐 Docusaurus 是**靜態網站生成器**。它建構**單頁應用程式**，具備快速的客戶端導航能力，充分發揮 **React** 的互動性優勢。除預設的**技術文件功能**外，也能用於建立**任何類型網站**（個人網站、產品頁、部落格、行銷登陸頁等）。
+
+![](/img/slash-introducing.svg)
+
+## 快速入門 ⏱️ {#fast-track}
+
+透過實作，**5分鐘**快速理解 Docusaurus！
+
+建立新 Docusaurus 專案並遵循簡短的內建教學。
+
+安裝 [Node.js](https://nodejs.org/en/download/) 後建立新專案：
+
+```bash
+npx create-docusaurus@latest my-website classic
+```
+
+啟動網站：
+
+```bash
+cd my-website
+npx docusaurus start
+```
+
+開啟 [`http://localhost:3000`](http://localhost:3000) 並跟隨教學。
+
+:::tip
+
+立即透過 **[docusaurus.new](https://docusaurus.new)** 在瀏覽器中測試 Docusaurus！
+
+或線上閱讀 **[5分鐘教學](https://tutorial.docusaurus.io)**。
+
+:::
+
+## Docusaurus：輕鬆打造技術文件
+
+在 [Algolia 社群活動](https://www.algolia.com/) 的演講中，[Meta 開源團隊](https://opensource.facebook.com/) 簡介了 Docusaurus 的使用方式，包含專案初始化、插件啟用，以及文件系統與部落格功能的設定。
+
+```mdx-code-block
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
+<div className="video-container">
+  <LiteYouTubeEmbed
+    id="Yhyx7otSksg"
+    params="autoplay=1&autohide=1&showinfo=0&rel=0"
+    title="Docusaurus: Documentation Made Easy"
+    poster="maxresdefault"
+    webp
+  />
+</div>
+```
+
+## 從 v1 遷移 {#migrating-from-v1}
+
+Docusaurus v2+ 是基於現代化工具鏈的全面重構版本。自 [v2 正式發布](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0) 後，我們強烈建議**使用 v2+ 而非已棄用的 v1 版本**。
+
+已有[眾多用戶](/showcase)採用 Docusaurus v2+（[趨勢分析](https://www.npmtrends.com/docusaurus-vs-@docusaurus/core)）。
+
+**適用 Docusaurus v2+ 的情境：**
+
+- :white_check_mark: 需要現代化 Jamstack 技術文件網站
+- :white_check_mark: 需要具備客戶端路由的單頁應用程式 (SPA)
+- :white_check_mark: 需完整運用 React 與 MDX 功能
+- :white_check_mark: 無需支援 IE11 瀏覽器
+
+**適用 [Docusaurus v1](https://v1.docusaurus.io/) 的情境：**
+
+- :x: 不需要單頁應用程式 (SPA)
+- :x: 需支援 IE11（注意：IE [已終止支援](https://docs.microsoft.com/en-us/lifecycle/products/internet-explorer-11)）
+
+現有 v1 用戶可參閱[遷移指南](./migration/index.mdx)升級至 v2+。
+
+## 功能特性 {#features}
+
+Docusaurus 的設計高度重視開發者與貢獻者的使用體驗。
+
+- ⚛️ **以 💚 與 React 打造**：
+  - 透過 React 擴展與自訂功能
+  - 提供自訂 React 元件，全面掌控網站的瀏覽體驗
+- 🔌 **可外掛化**：
+  - 以基礎模板快速建立網站，再運用進階功能與外掛
+  - 將外掛開源以與社群共享
+- ✂️ **開發者體驗**：
+  - 立即開始撰寫文件
+  - 通用配置入口點，讓貢獻者更易維護
+  - 變更時支援熱重載與閃電般快速的增量建置
+  - 基於路由的程式碼與資料分割
+  - 輕鬆部署至 GitHub Pages、Netlify、Vercel 等服務
+
+我們的共同目標——協助使用者快速找到所需內容並更深入理解您的產品。我們分享最佳實踐，助您打造優質文件網站。
+
+- 🎯 **SEO 友善**：
+  - 為所有可能路徑靜態生成 HTML 檔案
+  - 頁面專屬 SEO 優化，讓使用者直接找到與問題相關的官方文件
+- 📝 **基於 MDX**：
+  - 透過嵌入 Markdown 的 JSX 與 React 撰寫互動元件
+  - 透過即時編輯器分享程式碼，讓使用者當場愛上您的產品
+- 🔍 **搜尋功能**：全站內容皆可搜尋
+- 💾 **文件版本控制**：保持文件與專案版本同步
+- 🌍 **國際化 (i18n)**：以多種語言在地化您的網站
+
+Docusaurus v2+ 天生具備極致效能，並以同理心確保所有使用者皆可無障礙使用。
+
+- ⚡️ **閃電般快速**。Docusaurus v2+ 遵循 [PRPL 模式](https://developers.google.com/web/fundamentals/performance/prpl-pattern/)，確保內容載入速度極快。
+- 🦖 **無障礙設計**。注重可訪問性，讓所有使用者平等獲取網站內容。
+
+## 設計原則 {#design-principles}
+
+- **低學習門檻**。Docusaurus API 簡潔，易學易用。即使需編寫更多程式碼與時間，使用者仍能實現大多數功能。與其提供錯誤抽象層，不如不提供抽象層，避免使用者被迫繞過錯誤設計。必看演講—[最小化 API 表面積](https://www.youtube.com/watch?v=4anAwXYqLG8)。
+- **直覺化**。檢視 Docusaurus 專案目錄或新增功能時，使用者不會感到無所適從。架構應直覺易懂，並能基於熟悉的方式輕鬆擴充。
+- **分層架構**。堆疊各層級（內容/主題/樣式）的關注點分離必須清晰——抽象完善且模組化。
+- **合理預設值**。為使用者預設常見的效能優化與配置，同時保留覆寫選項。
+- **無廠商鎖定**。不強制使用預設外掛或 CSS（但強烈建議）。核心基礎設施如 React Loadable 與 React Router 因預設效能優化而不可替換，但高階元件可自由選擇。Markdown 引擎、CSS 框架、CSS 方法論等架構完全由使用者決定。
+
+我們相信，作為開發者，了解函式庫運作原理能提升使用技巧。因此我們投入心力解釋 Docusaurus 的架構與各元件，期望使用者深入理解後能更熟練運用此工具。
+
+## 與其他工具的比較 {#comparison-with-other-tools}
+
+在所有靜態網站生成器中，Docusaurus 獨特聚焦於文件網站，並提供眾多開箱即用功能。
+
+我們亦研究其他主流靜態網站生成器，期望透過比較分析，協助您在眾多選擇中找到合適方案。
+
+### Gatsby {#gatsby}
+
+[Gatsby](https://www.gatsbyjs.com/) 具備豐富功能與龐大插件生態系統，能實現 Docusaurus 的所有能力，但代價是較高的學習曲線。Gatsby 擅長構建多種類型網站，而 Docusaurus 則專注於單一目標——成為內容創作與發佈的最佳工具。
+
+GraphQL 是 Gatsby 的核心技術，但構建靜態網站時通常不需要其提供的靈活性。
+
+Docusaurus v2+ 的許多設計靈感源自 Gatsby 的優點，使其成為出色的替代方案。
+
+[Docz](https://github.com/pedronauck/docz) 是基於 Gatsby 的文檔網站主題，目前功能較 Docusaurus 少。
+
+### Next.js {#nextjs}
+
+[Next.js](https://nextjs.org/) 是熱門的混合式 React 框架，雖能構建文檔網站，但缺乏對文檔場景的專項設計，需投入更多工作量才能實現 Docusaurus 的開箱即用功能。
+
+[Nextra](https://github.com/shuding/nextra) 是基於 Next.js 的靜態網站生成器，目前功能完整度低於 Docusaurus。
+
+### VitePress {#vitepress}
+
+[VitePress](https://vitepress.dev/) 與 Docusaurus 高度相似——均專注內容型網站並提供文檔專屬功能，但 VitePress 基於 Vue 而 Docusaurus 基於 React。若需 Vue 技術棧，VitePress 是理想選擇。
+
+### MkDocs {#mkdocs}
+
+[MkDocs](https://www.mkdocs.org/) 是 Python 生態的熱門靜態網站生成器，核心價值與 Docusaurus 相近。
+
+若不需單頁應用且無 React 需求，這是個優秀選擇。
+
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 提供精美的視覺主題。
+
+### Docsify {#docsify}
+
+[Docsify](https://docsify.js.org/) 便於快速創建文檔網站，但非靜態生成且對 SEO 不友好。
+
+### GitBook {#gitbook}
+
+[GitBook](https://www.gitbook.com/) 擁有簡潔設計並被眾多開源項目採用。隨著其商業化轉型，現有方案逐漸無法滿足開源文檔需求，促使許多項目遷移（如 [Redux 轉用 Docusaurus 的討論](https://github.com/reduxjs/redux/issues/3161)）。
+
+當前 GitBook 僅對開源與非營利團隊免費，而 Docusaurus 完全開放給所有用戶。
+
+### Jekyll {#jekyll}
+
+[Jekyll](https://github.com/jekyll/jekyll) 是最成熟的靜態網站生成器之一（Facebook 開源項目曾廣泛使用）。Docusaurus 旨在繼承其簡易開發體驗，同時通過 React 應用架構與現代工具鏈，在性能、資源優化與易用性方面樹立新標準。
+
+相較於 Jekyll 的靜態 HTML 與 `<script />` 標籤交互模式，Docusaurus 本質是 React 應用，能實現更先進的建置流程。
+
+### Rspress {#rspress}
+
+[Rspress](https://rspress.dev/) 是一個基於 Rspack（採用 Rust 的打包工具）的快速靜態網站生成器。它支援使用 MDX（結合 Markdown 與 React 元件）撰寫內容、整合全文搜尋、多語言支援（i18n），並可透過插件擴展功能。專為建立優雅的技術文件與靜態網站而設計，Rspress 生成的靜態 HTML 檔案易於部署。
+
+Rspress 與 Docusaurus 相當相似，各有優缺點。Rspress 創建時間較晚，受益於現代化基礎架構，能實現更快的網站構建速度。Docusaurus 則以成熟度、完整功能集、靈活性及活躍社群見長，並持續[現代化其基礎架構](https://github.com/facebook/docusaurus/issues/10556)以維持性能競爭力。
+
+## 獲取最新資訊 {#staying-informed}
+
+- [GitHub](https://github.com/facebook/docusaurus)
+- [X（推特）](https://x.com/docusaurus)
+- [部落格](/blog)
+- [Discord](https://discord.gg/docusaurus)
+
+## 發現遺漏？ {#something-missing}
+
+若發現文件問題或有改進建議（無論是文件或專案本身），請[提交 issue](https://github.com/facebook/docusaurus) 或透過 [@docusaurus](https://x.com/docusaurus) X 帳號發推文告知我們。
+
+新功能請求請至[功能提案看板（Canny）](/feature-requests)發文。此看板便於路線規劃，並能依投票數排序，讓核心團隊更清楚高需求功能（相較於較難分類的 GitHub issues）。請勿直接提交新功能的 Pull Request（尤其是大型功能），因可能已有他人開發中或列入路線圖，請先與團隊討論！

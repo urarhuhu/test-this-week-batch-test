@@ -1,0 +1,272 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/api/plugin-methods/i18n-lifecycles.mdx",
+  "source_file_content_hash": "6e59ab5309263a071f60c7b1ff0edd8cc2be8e8aea68b712d5991deeac7130dc",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\n---",
+      "source_content_hash": "57430a289358d8e38d7464d7df5ab948274d7e83ff708b215f37775a5a384353",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# I18n lifecycles",
+      "source_content_hash": "1db3f1de7f8084c345d108624b96f67e4688c378dc4d05fa1fda3fc20c070ad2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 國際化生命週期"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Plugins use these lifecycles to load i18n-related data.",
+      "source_content_hash": "b8682d6c9058f33900b515b8f18f35421d98416d131c690ecc71b2d302082786",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件透過這些生命週期來載入與國際化相關的資料。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## `getTranslationFiles({content})` {#getTranslationFiles}",
+      "source_content_hash": "1e0ca8403f34d12950d166a96316d8e228777025d088bfd607b2475dfb3911ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getTranslationFiles({content})` {#getTranslationFiles}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Plugins declare the JSON translation files they want to use.",
+      "source_content_hash": "529cfda7a4c33c7bd44ae8085ea2b3a0c99af724cd3f826172c5e1d7e70a4e4d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件宣告其欲使用的 JSON 翻譯檔案。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Returns translation files `{path: string, content: ChromeI18nJSON}`:",
+      "source_content_hash": "76487b21037385f75e7488ba5dcb824693c257fc6e820a41639dc98cf8a9b44f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "回傳翻譯檔案 `{path: string, content: ChromeI18nJSON}`："
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "- `path`: relative to the plugin localized folder `i18n/[locale]/[pluginName]`. Extension `.json` should be omitted to remain generic.\n- `content`: using the Chrome i18n JSON format.",
+      "source_content_hash": "7a71912eab80141e01f3f6993f3eb3c898bd630b0fee5b52315d84e06cf6a381",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `path`：相對於插件本地化資料夾 `i18n/[locale]/[pluginName]` 的路徑。應省略 `.json` 副檔名以保持通用性。\n- `content`：使用 Chrome i18n JSON 格式。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "These files will be written by the [`write-translations` CLI](../../cli.mdx#docusaurus-write-translations-sitedir) to the plugin i18n subfolder, and will be read in the appropriate locale before calling [`translateContent()`](#translateContent) and [`translateThemeConfig()`](#translateThemeConfig)",
+      "source_content_hash": "d42d59ce64dfb78c970a900dfae3fafb13ea7df27421ed7a08d13f04e903497a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些檔案將由 [`write-translations` CLI](../../cli.mdx#docusaurus-write-translations-sitedir) 寫入插件的 i18n 子資料夾，並會在呼叫 [`translateContent()`](#translateContent) 和 [`translateThemeConfig()`](#translateThemeConfig) 前，根據對應的語系讀取。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "9eee5787",
+      "source_content": "```js title=\"my-plugin.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-plugin',\n    // highlight-start\n    async getTranslationFiles({content}) {\n      return [\n        {\n          path: 'sidebar-labels',\n          content: {\n            someSidebarLabel: {\n              message: 'Some Sidebar Label',\n              description: 'A label used in my plugin in the sidebar',\n            },\n            someLabelFromContent: content.myLabel,\n          },\n        },\n      ];\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "93940aa57a131cae238daf287b0eedebcf941d961ecd74e2a632e7ee1422e528",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9eee5787"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## `translateContent({content,translationFiles})` {#translateContent}",
+      "source_content_hash": "be1666135dc36a0495f880d08a164b26768e46c7bac6439342a1a875835eb128",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `translateContent({content,translationFiles})` {#translateContent}"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Translate the plugin content, using the localized translation files.",
+      "source_content_hash": "706443477a6d96c6ee4b31a19b352ceb5deda20aef34558abb912e90c2b4f05e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用本地化的翻譯檔案來翻譯插件內容。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Returns the localized plugin content.",
+      "source_content_hash": "06a868f0cd73990379f98713ff82bdf31e843edbec747ac53a7786a3f6c7e9f2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "回傳本地化後的插件內容。"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "The `contentLoaded()` lifecycle will be called with the localized plugin content returned by `translateContent()`.",
+      "source_content_hash": "453f605764bf49bd4baa3887b15bf82b68bf376ec330c9e293264cb933924d22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`contentLoaded()` 生命週期將使用 `translateContent()` 回傳的本地化插件內容進行呼叫。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "eb80afe1",
+      "source_content": "```js title=\"my-plugin.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-plugin',\n    // highlight-start\n    translateContent({content, translationFiles}) {\n      const myTranslationFile = translationFiles.find(\n        (f) => f.path === 'myTranslationFile',\n      );\n      return {\n        ...content,\n        someContentLabel: myTranslationFile.someContentLabel.message,\n      };\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "f83f5ac0616c7d3081656da9b12a5f22f8d4d9227478c35567e20cd89e7005db",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eb80afe1"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## `translateThemeConfig({themeConfig,translationFiles})` {#translateThemeConfig}",
+      "source_content_hash": "f2938f08df85824dd7095693d1b6643943d272df4555f83305d5a5760be614d4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `translateThemeConfig({themeConfig,translationFiles})` {#translateThemeConfig}"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "Translate the site `themeConfig` labels, using the localized translation files.",
+      "source_content_hash": "e471930f758f486aad6a133c35a3bc765f38cb9e3ca158eb865b981d43b4c228",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用本地化的翻譯檔案來翻譯網站的 `themeConfig` 標籤。"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Returns the localized `themeConfig`.",
+      "source_content_hash": "d68ed7498d463c2832c789717c3a865c56473741c684979060770e97f1fbdeee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "回傳本地化的 `themeConfig`。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "092b29bb",
+      "source_content": "```js title=\"my-plugin.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-theme',\n    // highlight-start\n    translateThemeConfig({themeConfig, translationFiles}) {\n      const myTranslationFile = translationFiles.find(\n        (f) => f.path === 'myTranslationFile',\n      );\n      return {\n        ...themeConfig,\n        someThemeConfigLabel: myTranslationFile.someThemeConfigLabel.message,\n      };\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "0f8dc4d0d35dbe9bb0693e7160a565e69ae742e96aa9714967552746a3965076",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_092b29bb"
+      }
+    },
+    {
+      "segment_id": "a138e327",
+      "source_content": "## `async getDefaultCodeTranslationMessages()` {#getDefaultCodeTranslationMessages}",
+      "source_content_hash": "368c30e9d0dd953d0bc512c559c40ceaf752b7dd772b408a7b224bd231bdddbd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `async getDefaultCodeTranslationMessages()` {#getDefaultCodeTranslationMessages}"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Themes using the `<Translate>` API can provide default code translation messages.",
+      "source_content_hash": "5b97151525ffff48794017c5ba65124b89c41e708808a588ed885ca93cb98456",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 `<Translate>` API 的主題可提供預設的程式碼翻譯訊息。"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "It should return messages in `Record<string, string>`, where keys are translation IDs and values are messages (without the description) localized using the site's current locale.",
+      "source_content_hash": "66c54b231f35c86afc55ab29bc13fc3f26075300169241fdd830a087f59945d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "應回傳 `Record<string, string>` 格式的訊息，其中鍵為翻譯 ID，值為使用網站當前語系本地化的訊息（不含描述）。"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "7ded566f",
+      "source_content": "```js title=\"my-plugin.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-theme',\n    // highlight-start\n    async getDefaultCodeTranslationMessages() {\n      return readJsonFile(`${context.i18n.currentLocale}.json`);\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "5019a4a660cc2dcaa99092c84ed613c4ee62f65f1d9b71487def387e3420438e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7ded566f"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/api/plugin-methods/i18n-lifecycles.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.086486+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "6e59ab5309263a071f60c7b1ff0edd8cc2be8e8aea68b712d5991deeac7130dc"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/playground.mdx",
+  "source_file_content_hash": "6217ca30bfe58f8087286c8d07ffaf4a3bd2ff1deb1f50db7e0ce0b4d3dd9d61",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Playground",
+      "source_content_hash": "17596d4f9d7bd483c3476eec73d4b585cbe9a5c07bad3ae8d4262f2139a1e467",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 遊樂場"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Playgrounds allow you to run Docusaurus **in your browser, without installing anything**!",
+      "source_content_hash": "03f6381f9d789f418b8bf6cdc4769006b805fd2254058655c57ab2dfc11890af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "遊樂場讓您能在瀏覽器中直接運行 Docusaurus，無需安裝任何軟體！"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "They are mostly useful for:",
+      "source_content_hash": "cdc9089055b3f06d43c689ae7ff529d393cb0950ccc6d5c5400f54e13eb78bec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這功能主要適用於："
+      }
+    },
+    {
+      "segment_id": "57e757df",
+      "source_content": "- Testing Docusaurus\n- Reporting bugs",
+      "source_content_hash": "59ec0c1d839749919d67006f4368e10dfed0c8fae60714f36831d7c5e1ce0593",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 測試 Docusaurus\n- 回報錯誤"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Use [docusaurus.new](https://docusaurus.new) as an easy-to-remember shortcut.",
+      "source_content_hash": "bf791b3627c1e9d7be563eb7b2b1399ba6a7a4ba8ba688727daf9f9424da0e14",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可使用易記的快捷網址 [docusaurus.new](https://docusaurus.new)。"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Choose one of the available options below.",
+      "source_content_hash": "9227fb903939628873c3c741668a58e0ea0cfb601ce63454cbea04d7db818ac8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請從以下選項中擇一使用。"
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```mdx-code-block\nimport {PlaygroundCardsRow} from '@site/src/components/Playground';\n\n<PlaygroundCardsRow />\n```",
+      "source_content_hash": "1772fda8ad9dc62ab6a508b56b3d62edcfc967c6d00073728990fa55d0cbc2ae",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "80e6256a",
+      "source_content": ":::tip\n\nFor convenience, we'll remember your choice next time you visit [docusaurus.new](https://docusaurus.new).\n\n:::",
+      "source_content_hash": "021b617a41cc444d06e56de14f687031b38a26bd08cd2ce2251336e541f58855",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n為方便起見，系統會記住您的選擇，下次造訪 [docusaurus.new](https://docusaurus.new) 時將自動套用。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/playground.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.045910+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "6217ca30bfe58f8087286c8d07ffaf4a3bd2ff1deb1f50db7e0ce0b4d3dd9d61"
+  }
+}

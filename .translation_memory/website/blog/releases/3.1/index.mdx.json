@@ -1,0 +1,222 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.1/index.mdx",
+  "source_file_content_hash": "2b1c1fe4b3ac961e0a4e8d97d576ddfa83bdf17cfeec995197e69b9ce75db6ab",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.1\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2024-01-05\n---",
+      "source_content_hash": "e9469a79c8aff1726aa1488c3bf4ad339b503a9c2362ca835fc99eff9dbb0ba8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.1**.",
+      "source_content_hash": "a770cdf9a416325e942f79d765f45fb8122f533dced6487f4501acc34432052c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 3.1** 版本發布。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The upgrade should be easy: as explained in our [release process documentation](/community/release-process), minor versions respect [Semantic Versioning](https://semver.org/).",
+      "source_content_hash": "c798b6e35eb0c79c81cf7d49c78ac7cde6fc60897b64f9cfc3abb86bb45cd729",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該很簡單：如我們的[發布流程文件](/community/release-process)所述，次要版本遵循[語意化版本控制](https://semver.org/)規範。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 部落格文章社交卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "55ad7c88",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';\nimport IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';\nimport ErrorBoundaryTestButton from '@site/src/components/ErrorBoundaryTestButton';",
+      "source_content_hash": "8c93e81e8a225449e6e076e57a6598caac30c15068353affa40cd87553e66099",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_55ad7c88"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點更新"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Broken anchors checker",
+      "source_content_hash": "3750c0e13d590c593a482a9dc598284e47cc24c8b71ec2e2d5625420b748c717",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 失效錨點檢查器"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "In [#9528](https://github.com/facebook/docusaurus/pull/9528), we improved the built-in broken links checker to also detect broken anchors.",
+      "source_content_hash": "28de896e1d0b8c677b1b18faaa54f32901ef3058ac2dd83b98edbb53820c4cb4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#9528](https://github.com/facebook/docusaurus/pull/9528) 中，我們強化了內建的失效連結檢查功能，現在也能偵測失效的錨點。"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "![Docusaurus blog post social card](./img/broken-anchor.jpg)",
+      "source_content_hash": "d1f647bb88112929dff861c1b0521ae111fb835f0b5c88b8b25612d0788a63df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 部落格文章社交卡片](./img/broken-anchor.jpg)"
+      }
+    },
+    {
+      "segment_id": "57971bfb",
+      "source_content": ":::tip[Make it fail fast]\n\nThe new [`onBrokenAnchors`](/docs/api/docusaurus-config#onBrokenAnchors) option has value `warn` by default, for retro-compatibility reasons.\n\nWe recommend to turn it to `throw` and fail your CI builds instead of deploying broken anchors to productions.\n\n:::",
+      "source_content_hash": "cf910e00200d59e1b7b3ec98193452b808d0dadffb482036002009dbd53b1fa9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[快速失敗機制]\n\n基於向後兼容性考量，新的 [`onBrokenAnchors`](/docs/api/docusaurus-config#onBrokenAnchors) 選項預設值為 `warn`。\n\n我們建議將其改為 `throw`，讓 CI 建置流程因失效錨點而失敗，而非將問題部署至生產環境。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "26794fc5",
+      "source_content": ":::note\n\nFor users and plugin authors implementing custom `<Heading>` and `<Link>` components, we provide a new [`useBrokenLinks`](/docs/docusaurus-core#useBrokenLinks) React hook API.\n\n**Most Docusaurus users don't need to care about it**, built-in components (`docusaurus/Link` and `@theme/Heading`) already use it internally.\n\n:::",
+      "source_content_hash": "ae515c624a1344a21b1578c4d9e7a6be2811d4c76f7d3d7c49938403fb85c5eb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n對於實作自訂 `<Heading>` 和 `<Link>` 元件的使用者與插件開發者，我們提供了新的 [`useBrokenLinks`](/docs/docusaurus-core#useBrokenLinks) React Hook API。\n\n**多數 Docusaurus 使用者無需關注此功能**，內建元件（`docusaurus/Link` 和 `@theme/Heading`）已內整合此機制。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "### `parseFrontMatter` hook",
+      "source_content_hash": "1ad90014f76b88d0c85e7d1ef976374b542df32e904189871c65b76ed73392a1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `parseFrontMatter` 鉤子"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "In [#9624](https://github.com/facebook/docusaurus/pull/9624), we added a new [`siteConfig.markdown.parseFrontMatter` function hook](/docs/api/docusaurus-config#markdown).",
+      "source_content_hash": "da6878c0c549bbc5c2a5d7b42a4606c49302c35a8f173ad9de59497a594afb89",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#9624](https://github.com/facebook/docusaurus/pull/9624) 中，我們新增了 [`siteConfig.markdown.parseFrontMatter` 函式鉤子](/docs/api/docusaurus-config#markdown)。"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "This makes it possible to implement convenient front matter transformations, shortcuts, or to integrate with external systems using front matter that Docusaurus plugins do not support.",
+      "source_content_hash": "1756cdd00ce1ab626e7dae5b2e4fe25348daad28af4d787e920f2e67290bfe20",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過此功能，可實作便捷的前置資料轉換、快捷操作，或整合 Docusaurus 插件不支援的外部系統前置資料。"
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  markdown: {\n    // highlight-start\n    parseFrontMatter: async (params) => {\n      // Reuse the default parser\n      const result = await params.defaultParseFrontMatter(params);\n\n      // Process front matter description placeholders\n      result.frontMatter.description =\n        result.frontMatter.description?.replaceAll('{{MY_VAR}}', 'MY_VALUE');\n\n      // Create your own front matter shortcut\n      if (result.frontMatter.i_do_not_want_docs_pagination) {\n        result.frontMatter.pagination_prev = null;\n        result.frontMatter.pagination_next = null;\n      }\n\n      // Rename an unsupported front matter coming from another system\n      if (result.frontMatter.cms_seo_summary) {\n        result.frontMatter.description = result.frontMatter.cms_seo_summary;\n        delete result.frontMatter.cms_seo_summary;\n      }\n\n      return result;\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "7ad5a6e33b12c926178b6edf498f6e01a4399418d29097f490814299e6e73e54",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "Read the [front matter guide](/docs/markdown-features#front-matter) and the [`parseFrontMatter` API ref](/docs/api/docusaurus-config#markdown) for details.",
+      "source_content_hash": "9c683b69c1ff25203c3ab4b9949754ce4fbe7aa756174bd82e52bc71cadc9612",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳見[前置資料指南](/docs/markdown-features#front-matter)與 [`parseFrontMatter` API 參考文件](/docs/api/docusaurus-config#markdown)。"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他值得注意的變更包括："
+      }
+    },
+    {
+      "segment_id": "887c863e",
+      "source_content": "- [#9674](https://github.com/facebook/docusaurus/pull/9674): add `siteConfig.markdown.remarkRehypeOptions` to pass options to `remark-rehype`, letting you customize things such as MDX footnote label\n- [#9671](https://github.com/facebook/docusaurus/pull/9671): add code block MagicComments support for (Visual) Basic/Batch/Fortran/COBOL/ML\n- [#9610](https://github.com/facebook/docusaurus/pull/9610): enable CLI port configuration via `PORT` environment variable\n- [#9477](https://github.com/facebook/docusaurus/pull/9477): complete Brazilian Portuguese (pt-BR) translations",
+      "source_content_hash": "abed6ad886a81db21a4bdbc06be05d869b30d41d31c9c800604913ce37e0ffdf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#9674](https://github.com/facebook/docusaurus/pull/9674): 新增 `siteConfig.markdown.remarkRehypeOptions` 以傳遞參數給 `remark-rehype`，可自訂 MDX 腳註標籤等設定\n- [#9671](https://github.com/facebook/docusaurus/pull/9671): 新增對 (Visual) Basic/Batch/Fortran/COBOL/ML 的程式碼區塊 MagicComments 支援\n- [#9610](https://github.com/facebook/docusaurus/pull/9610): 透過 `PORT` 環境變數設定 CLI 連接埠\n- [#9477](https://github.com/facebook/docusaurus/pull/9477): 完成巴西葡萄牙語 (pt-BR) 翻譯"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "Check the **[3.1.0 changelog entry](/changelog/3.1.0)** for an exhaustive list of changes.",
+      "source_content_hash": "9a87f01f1d25dede70936393367bfeb6485dc895b778d6b8ec39649d59af4d5f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查閱 **[3.1.0 變更日誌條目](/changelog/3.1.0)** 獲取完整變更清單。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.1/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.026736+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "2b1c1fe4b3ac961e0a4e8d97d576ddfa83bdf17cfeec995197e69b9ce75db6ab"
+  }
+}

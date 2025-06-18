@@ -1,0 +1,372 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.2/index.mdx",
+  "source_file_content_hash": "8e802f14f200d3c4171d8ed29d399e6ad3841daa747a89675126c8bca61a9ed0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.2\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2024-03-29\n---",
+      "source_content_hash": "356ebd54cf3ce76199cdf97cb688c50749f26fa2fa3e4da8179befffe7de6819",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.2**.",
+      "source_content_hash": "85760fba7f9a13bc7ca75777204407b1cb67c8a7febb34cf14ebe0e51eb8df1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 3.2** 正式發布。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The upgrade should be easy: as explained in our [release process documentation](/community/release-process), minor versions respect [Semantic Versioning](https://semver.org/).",
+      "source_content_hash": "c798b6e35eb0c79c81cf7d49c78ac7cde6fc60897b64f9cfc3abb86bb45cd729",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該很簡單：如我們的[發布流程文件](/community/release-process)所述，次要版本遵循[語意化版本控制](https://semver.org/)規範。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 部落格文章社群卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "55ad7c88",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';\nimport IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';\nimport ErrorBoundaryTestButton from '@site/src/components/ErrorBoundaryTestButton';",
+      "source_content_hash": "8c93e81e8a225449e6e076e57a6598caac30c15068353affa40cd87553e66099",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_55ad7c88"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點更新"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Faster builds",
+      "source_content_hash": "326f475d7dcd1140abfe0330d023e84630d8a200f6e8cfba67e8aef038240956",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更快的建構速度"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "We worked hard to reduce the time it takes to build a Docusaurus site in production mode.",
+      "source_content_hash": "868445265f6d4223d6fbbe2c0d58aaf365a13847b060ee93b53f0dc65fe08267",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們致力於縮短 Docusaurus 網站在生產模式下的建構時間。"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Between v3.1.0 and v3.2.0, several changes have been made, leading to significantly faster production builds for many sites.",
+      "source_content_hash": "6f464c9506eeb72c54b09edf286b10120dd4486e976008265f1d7dbd794e1a46",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "從 v3.1.0 到 v3.2.0 版本間的多項改進，使得多數網站的生產環境建構速度顯著提升。"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Let's take an example. Our benchmark on the [React Native website upgrading to v3.2](https://github.com/facebook/react-native-website/pull/4072) reports the following results:",
+      "source_content_hash": "f54377029e39f55493aab28d9a83f850cbe33509fe41050e1b40ce31be465fa8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以實際案例說明。我們在[React Native 網站升級至 v3.2](https://github.com/facebook/react-native-website/pull/4072)的基準測試中獲得以下結果："
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "- 🔥 Cold builds: 95s ➡️ 66s (~30% faster)\n- 🔥 Incremental builds: 55s ➡️ 22s (~60% faster)",
+      "source_content_hash": "8df2c8e2bef40f2f0fccc255dbfa5333ca75839b587873e86adc9e617078439f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 🔥 完整建構：95秒 ➡️ 66秒（提速約30%）\n- 🔥 增量建構：55秒 ➡️ 22秒（提速約60%）"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The results will vary depending on your site's topology and the options you turned on, but we expect the largest sites will see the most significant improvements.",
+      "source_content_hash": "bdb987b191ba4dfcf78e53239e3e8831bd89f4054652d60b0294e408b0ad0e11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實際效果會因網站結構與啟用選項而異，但我們預期大型網站將獲得最顯著的效能提升。"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Note that this is only the beginning, and Docusaurus performance can still be significantly improved, notably the bundling time and the memory consumption. Track our [performance issue](https://github.com/facebook/docusaurus/issues/4765) for upcoming improvements.",
+      "source_content_hash": "9f66e293103ce4232de3015ead326fc5697f63dc2092f431c2d98155e8f1a059",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請注意這只是開始，Docusaurus 在打包時間與記憶體消耗等方面仍有大幅優化空間。請追蹤我們的[效能議題](https://github.com/facebook/docusaurus/issues/4765)以獲取後續改進。"
+      }
+    },
+    {
+      "segment_id": "720d606f",
+      "source_content": "<details>\n  <summary>What is the difference between a cold build and an incremental build?</summary>\n\nA cold build is when the Docusaurus caches are empty, generally after running `docusaurus clear`.\n\nAn incremental build happens when you run another time the `docusaurus build` command. Docusaurus automatically tries to \"re-use\" computations from former builds to make subsequent builds faster. In practice it's based on [Webpack persistent caching](https://webpack.js.org/guides/build-performance/#persistent-cache). To enable incremental builds on your CI server, you can persist the `node_modules/.cache` folder across builds.\n\n</details>",
+      "source_content_hash": "73f026adc27724c31a89c288c8dd3d650a7b2744c134b53bef5e033c109bdeb0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_720d606f"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "### Faster Dev Server",
+      "source_content_hash": "f79f08be28da5a98133fbcf85fc9e76212d9c5a68e6ce42fa8a05a64ca62c6d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 更快的開發伺服器"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "We also worked on improving the performance of the dev server, so that you can get a faster feedback when editing Markdown/MDX files.",
+      "source_content_hash": "30747af59c4022cccd03813e3782395a9fcf2caddd891e17562c9966bf32fada",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們同時優化了開發伺服器的效能，讓您在編輯 Markdown/MDX 檔案時能獲得更即時的反饋。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "The way we initially implemented content reloading wasn't great. For example, editing a blog post file would also trigger a useless reload of the unrelated docs plugin. From now on, when editing a plugin's content, only that plugin will reload. It's hard to measure precisely the impact of this change, but I estimate edits should appear in your browser at least 50% faster 🔥.",
+      "source_content_hash": "baaa3083578417be3379d3231f92f9160b911070dd932129c152e3894ac3b9e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "先前內容重新載入的實作方式不夠理想。例如編輯部落格文章時，會連帶觸發無關的文件插件重新載入。現在開始，編輯插件內容時只會重新載入該插件。雖然難以精確量化，但預估瀏覽器中的編輯反應速度至少提升50% 🔥。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "We plan to keep improving the speed of our dev server, with even more granular hot reloads, ensuring we don't run useless computations that would always keep giving the same result.",
+      "source_content_hash": "b1f547d0c71200a7757bf7f94d3ef716f4e698b68646bf8b303887b779642e8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們計劃持續改進開發伺服器速度，透過更細粒度的熱重載機制，避免執行無意義的重複運算。"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### MDX partials table-of-contents",
+      "source_content_hash": "bc4d0b2b381a47d19be603419c8f1bb40054b4ef642c46af9fae6002dfed1b55",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### MDX 片段目錄支援"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "With [#9684](https://github.com/facebook/docusaurus/pull/9684), Docusaurus is now able to render headings coming from an imported partial into the table-of-contents.",
+      "source_content_hash": "cb15fe253858aed1fe1f1b34005c2a90b4509e7466b6d143e3c93b7d427d4a86",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過 [#9684](https://github.com/facebook/docusaurus/pull/9684)，Docusaurus 現在能將導入片段中的標題渲染至目錄。"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Docusaurus and MDX allows you to [import one Markdown file into another](/docs/markdown-features/react#importing-markdown). We usually call the imported Markdown file a \"partial\", and use the `_` prefix so that this file does not lead to the creation of a new page.",
+      "source_content_hash": "bea3c858431e526707f984597489960ed3518893a3444f478fdc3eaa682c41d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 與 MDX 允許您[將 Markdown 檔案導入至其他檔案](/docs/markdown-features/react#importing-markdown)。我們通常稱被導入的 Markdown 檔案為「片段」，並使用 `_` 前綴確保該檔案不會產生新頁面。"
+      }
+    },
+    {
+      "segment_id": "c05ad55e",
+      "source_content": "```md title=\"myDoc.mdx\"\n# My Doc\n\n## Doc heading\n\nContent is imported from another MDX file:\n\nimport ImportedDoc from './\\_importedDoc.mdx';\n\n<ImportedDoc />\n```",
+      "source_content_hash": "235cc06776c9935e63470a07e807825ffde67e4fa198ae5b5867cdb959be0485",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c05ad55e"
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```md title=\"_myPartial.mdx\"\n## Partial heading\n\nSome paragraph\n```",
+      "source_content_hash": "cdf9754c2c3852c6e869304d77fefab8aa6b5acfe54143eae5962449073142ff",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Previously, the heading `Partial heading` did not appear in the table-of-contents, but now it will!",
+      "source_content_hash": "9d1882f9adb1ae96bd2d1ba3ec6d8d615731df1406aed04146f1e9196a7a2ba7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "過去「片段標題」不會出現在目錄中，但現在會了！"
+      }
+    },
+    {
+      "segment_id": "b936dd6a",
+      "source_content": "### Blog improvements",
+      "source_content_hash": "dde5218528383ffd62a946d44c628c8b1b12fef3ee8516b669e85f27d0aa6122",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 部落格功能強化"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "We improved the blog plugin with several new options to make it even more powerful and flexible:",
+      "source_content_hash": "3dfde4e57bd2e7162c1a758dfd3df90323bbaaf236b31cbbbe0b725d182f826b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們透過多項新選項強化部落格插件，使其更強大靈活："
+      }
+    },
+    {
+      "segment_id": "5dbc17cf",
+      "source_content": "- [#9912](https://github.com/facebook/docusaurus/pull/9912): you can now display the last update time and author of a blog post, a feature the docs plugin already had.\n- [#9886](https://github.com/facebook/docusaurus/pull/9886): a new `processBlogPosts` option allow you to filter/transform/sort blog posts.\n- [#9838](https://github.com/facebook/docusaurus/pull/9838): a new `pageBasePath` option allows you to customize the blog pagination URL segment (`/blog/page/2`)",
+      "source_content_hash": "88acc2b27495219edc2628f78efc152085b560c99d20ca9838436f4770b67ea1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#9912](https://github.com/facebook/docusaurus/pull/9912)：現在可顯示部落格文章的最後更新時間與作者，此功能原本僅文件插件具備\n- [#9886](https://github.com/facebook/docusaurus/pull/9886)：新增 `processBlogPosts` 選項可過濾/轉換/排序部落格文章\n- [#9838](https://github.com/facebook/docusaurus/pull/9838)：新增 `pageBasePath` 選項可自訂部落格分頁網址段（如 `/blog/page/2`）"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "### Sitemap lastmod",
+      "source_content_hash": "8726a095729da1ac9ca54c6d38414e057be1e2b5a175b2a369405170b5a4c4a0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 網站地圖最後修改時間"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "With [#9954](https://github.com/facebook/docusaurus/pull/9954), the sitemap plugin has a new `lastmod` option that can now emit a `<lastmod>` tag on the XML. The value is read from the Git history by default, but can be overridden with docs and blog `last_update` front matter.",
+      "source_content_hash": "153307ead5d4d6a1c81e05a57c09a96f27aa8f6ae2c820984223800aa2bed65a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "透過 [#9954](https://github.com/facebook/docusaurus/pull/9954)，網站地圖插件新增了 `lastmod` 選項，現在可以在 XML 中輸出 `<lastmod>` 標籤。預設情況下會從 Git 歷史記錄讀取該值，但也可以透過文件和部落格的 `last_update` 前置資料來覆寫。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "We also made it possible to opt-out of emitting `<priority>` and `<frequency>` tags, which are generally ignored by crawlers (notably [Google](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping)).",
+      "source_content_hash": "c5bf5da2ed90ff34277f1c55619c41b71bf025c330e1a21accb7488ca8ca56f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們也讓使用者可以選擇不輸出 `<priority>` 和 `<frequency>` 標籤，這些標籤通常會被爬蟲忽略（尤其是 [Google](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping)）。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "We recommend using the following sitemap plugin config, that will become the default in Docusaurus V4:",
+      "source_content_hash": "bd3a0623f70ba7f6ffe3dd1c81a22a94f12ee26b57dac9a8ecb6a06425498518",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議使用以下網站地圖插件配置，這將成為 Docusaurus V4 的預設值："
+      }
+    },
+    {
+      "segment_id": "ec99e704",
+      "source_content": "```js\n{\n  lastmod: 'date',\n  priority: null,\n  changefreq: null,\n}\n```",
+      "source_content_hash": "689ab1ca0197947548ee0e7098ee8a94e5224c5552aa48140fc6a4e31c23d223",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ec99e704"
+      }
+    },
+    {
+      "segment_id": "54bafb10",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "f6db2c30",
+      "source_content": "- [#9687](https://github.com/facebook/docusaurus/pull/9687): new Vercel Analytics plugin\n- [#9681](https://github.com/facebook/docusaurus/pull/9681) and [#9442](https://github.com/facebook/docusaurus/pull/9442): `docusaurus swizzle` and `create-docusaurus` CLIs now ask users if they prefer to use TypeScript\n- [#9928](https://github.com/facebook/docusaurus/pull/9928): new Icelandic translation\n- [#9928](https://github.com/facebook/docusaurus/pull/9931): new `allContentLoaded` plugin lifecycle (experimental)",
+      "source_content_hash": "9ea7fc31e0ae7299f960cb4894ccbc4fa40499b823214542ebdac7863b479fd5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#9687](https://github.com/facebook/docusaurus/pull/9687)：新增 Vercel Analytics 插件\n- [#9681](https://github.com/facebook/docusaurus/pull/9681) 和 [#9442](https://github.com/facebook/docusaurus/pull/9442)：`docusaurus swizzle` 和 `create-docusaurus` CLI 現在會詢問使用者是否偏好使用 TypeScript\n- [#9928](https://github.com/facebook/docusaurus/pull/9928)：新增冰島語翻譯\n- [#9928](https://github.com/facebook/docusaurus/pull/9931)：新增 `allContentLoaded` 插件生命週期（實驗性功能）"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "Check the **[3.2.0 changelog entry](/changelog/3.2.0)** for an exhaustive list of changes.",
+      "source_content_hash": "8329f9a3fd871ae798cc6681d677731f263e7ca8eaf7ab4fbc99c1098b3012b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查看 **[3.2.0 變更日誌條目](/changelog/3.2.0)** 以獲取完整的變更清單。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.2/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.012643+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "8e802f14f200d3c4171d8ed29d399e6ad3841daa747a89675126c8bca61a9ed0"
+  }
+}

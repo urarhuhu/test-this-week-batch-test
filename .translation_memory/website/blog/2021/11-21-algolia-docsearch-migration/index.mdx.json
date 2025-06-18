@@ -1,0 +1,412 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2021/11-21-algolia-docsearch-migration/index.mdx",
+  "source_file_content_hash": "97b8160e2f908ab7e0a78c8a9bd5db403f5c6152cd0c1143a96ad8eb34fd6cd1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: DocSearch migration\nauthors: [shortcuts, slorber]\ntags: [search]\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "7a80be7ed2a62cbc6fce8fd37de0c1d878a8448707edafa7230d91c73403570a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "[DocSearch](https://docsearch.algolia.com/) is migrating to a new, more powerful system, which gives users their own Algolia application and new credentials.",
+      "source_content_hash": "31e1b3a1cd8855842d70dfdca2514f985580388c94e80fd6822429f82fea8aea",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[DocSearch](https://docsearch.algolia.com/) 正在遷移至一個更強大的新系統，該系統將為用戶提供專屬的 Algolia 應用程式和新的憑證。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Docusaurus site owners should upgrade their configuration with their new credentials **by February 1, 2022**, existing search indexes will be frozen and become read-only after this date.",
+      "source_content_hash": "24af0442a2d7c3639e0cf4f6ab1f0ab17c08ebcdc6d49100680702111a94f27d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 網站擁有者需在 **2022年2月1日** 前使用新憑證更新配置，現有搜尋索引將在此日期後凍結並轉為唯讀狀態。"
+      }
+    },
+    {
+      "segment_id": "b7b09f68",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b7b09f68"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Upgrading your Docusaurus site",
+      "source_content_hash": "65d7e9fe6fc4d634c15597c43439bc690b0d7e69571dacc6aaf2e0ec1d9a2dd7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 升級您的 Docusaurus 網站"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "In the next few weeks, Docusaurus site owners will receive an email inviting them to join their personal Algolia application.",
+      "source_content_hash": "3ba9fec03c9e469e1f4e48ed4cfd0ffba22004d606f03bfe72cef749d2967d30",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "未來幾週內，Docusaurus 網站擁有者將收到邀請郵件，加入其專屬的 Algolia 應用程式。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "This email will include a new `appId` and `apiKey` to use in your Docusaurus configuration.",
+      "source_content_hash": "27a75d6056bde8b23a5a9813b8cc85a5dc46cfb8707f46a26c0790a7419889d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "該郵件將包含用於 Docusaurus 配置的新 `appId` 和 `apiKey`。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "The only things you have to do:",
+      "source_content_hash": "3840a761706a8407ea603acbbb028252128c97a93f2b36736f117e7d436a15ef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您只需完成以下操作："
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "- Join the Algolia application (eventually creating a new Algolia account)\n- Update your site configuration.",
+      "source_content_hash": "e7aec0cc5e528f8f770789e2642d8567cc2681a950dbdbc911f0eec93eef93f3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 加入 Algolia 應用程式（可能需要創建新 Algolia 帳戶）\n- 更新網站配置。"
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```js title=\"docusaurus.config.js\"\nconst config = {\n  themeConfig: {\n    algolia: {\n      // highlight-start\n      appId: '<NEW_APP_ID>',\n      apiKey: '<NEW_SEARCH_API_KEY>',\n      // highlight-end\n    },\n  },\n};\n\nmodule.exports = config;\n```",
+      "source_content_hash": "7c1526da4cd1e3b4fd65fdc6fed32131f504ede8804991d9fc99667a6e17c33d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "33a4805e",
+      "source_content": ":::info\n\n`appId` is now **required**.\n\nThese keys are not secrets and can be added to your Git repository.\n\n:::",
+      "source_content_hash": "59751913def3cc4b15bbc6a2d0e11bd889ab578d90184330de0788f591b09ce8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n`appId` 現為 **必填項**。\n\n這些金鑰非機密資訊，可提交至 Git 儲存庫。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "## DocSearch has a new home!",
+      "source_content_hash": "019a1eb740a3c18c394ff5a442b9390fa6d2c21f20cdc8e95aeeb7a2d52f1f41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## DocSearch 有了新家！"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "### What is DocSearch?",
+      "source_content_hash": "f32c608aeff32c3ac1d6b8d734865f34493456b97c98e5352383794847f995a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 什麼是 DocSearch？"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "[DocSearch](https://docsearch.algolia.com/) is a program created by [Algolia](http://algolia.com/), which offers search to technical documentation of Open Source projects and technical blogs **for free**.",
+      "source_content_hash": "43f989ec8e0bcef3275eecc05bb1eeda87afd654fc4ae975e6b5bada70ac5c82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[DocSearch](https://docsearch.algolia.com/) 是由 [Algolia](http://algolia.com/) 開發的程式，**免費** 為開源專案技術文件和技術部落格提供搜尋功能。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "You can [read more here](https://docsearch.algolia.com/docs/what-is-docsearch/), and [apply](https://docsearch.algolia.com/apply) if you'd like to give it a try!",
+      "source_content_hash": "df3513479aaac1aed3eae0ad5a180d52984cd72fb99b16c180e238e2ed26ee4c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可 [在此閱讀更多](https://docsearch.algolia.com/docs/what-is-docsearch/)，若想試用歡迎 [提交申請](https://docsearch.algolia.com/apply)！"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## What is this migration about?",
+      "source_content_hash": "88a08353f564b23f32f468094612e5b7b8a509264128eaf076257bd7a73d18ba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 本次遷移的內容為何？"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "### Motivation",
+      "source_content_hash": "5988841f1b91e30a8e51e3d543b0e95d313f2227e03aa506adceaba2bf40e460",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 動機"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "With the upcoming stable release of [DocSearch UI](https://docsearch.algolia.com/docs/DocSearch-v3), we wanted to go further and provide better tooling for our users to improve their search, but also leverage the full potential of Algolia.",
+      "source_content_hash": "c6ae4056872cbf6e756e0b1056b97714f0697e563446394e8cb4fd93b8df46a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "隨著 [DocSearch UI](https://docsearch.algolia.com/docs/DocSearch-v3) 穩定版即將發布，我們希望進一步提供更佳工具，協助用戶優化搜尋體驗，同時充分發揮 Algolia 的潛力。"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### What's new?",
+      "source_content_hash": "2c8e7d5ab0a32420273b8711d1cdabf7106bdeb144b08f961e99f1c65f1ad090",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 新功能"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "DocSearch now leverages the [Algolia Crawler](https://www.algolia.com/products/search-and-discovery/crawler/), which includes a web interface that will allow you to:",
+      "source_content_hash": "489b900a9504c1d344a3ef1a03bf8f6cb6cc18c52c91d6ff8cf83bd7507994a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "DocSearch 現採用 [Algolia 爬蟲](https://www.algolia.com/products/search-and-discovery/crawler/)，其網頁介面可讓您："
+      }
+    },
+    {
+      "segment_id": "2eb5ba30",
+      "source_content": "- Start, schedule and monitor your crawls\n- Edit your config file from a live editor\n- Test your results with DocSearch v3",
+      "source_content_hash": "c763a688ff0226e4a2a9b46c855c76923b73fdb5bf788bc5b93261e07b5b5947",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 啟動、排程及監控爬取作業\n- 透過即時編輯器修改配置檔\n- 使用 DocSearch v3 測試結果"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "![The Algolia crawler front page showing the project's overview, such as last complete crawl and indices](./img/crawler-overview.png)",
+      "source_content_hash": "d78e1c076f0c0032fc0749689c22c070d187fdfe2d339861667225fd5c82058d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![顯示專案概覽的 Algolia 爬蟲首頁，包含最近完整爬取時間與索引等資訊](./img/crawler-overview.png)"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "![The Algolia config editor opened to the docusaurus-2 config. The right pane shows the results for index and various facet filters.](./img/editor.png)",
+      "source_content_hash": "60d81589d2e5f663df92afb6c1afc9f89ced048d6b520217b6e7319d15b8d09a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![開啟的 Algolia 配置編輯器，顯示 docusaurus-2 配置。右側面板展示索引結果與各面向篩選器。](./img/editor.png)"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "But also, more Algolia features in **your own Algolia app**:",
+      "source_content_hash": "6a2812ecf2978336052a3eed04ad862848ebbf728c4c7216fad97995b1cf9ff3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此外，您的專屬 Algolia 應用程式還提供 **更多功能**："
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "- Team management\n- Browse and see how your records are indexed in Algolia\n- Try other Algolia features with free trials",
+      "source_content_hash": "d0944246d2840159537c19abada301cd512f30c8d591d806efc9cfc1c3fa914e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 團隊管理\n- 瀏覽並查看記錄在 Algolia 中的索引方式\n- 免費試用其他 Algolia 功能"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "![The Algolia index overview page, showing various filters and the details of every single index](./img/index-overview.png)",
+      "source_content_hash": "9cc2cc9ea5b04fc00cde8168a6bff4390ad3cc2a220d2c50798197fa68d41652",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Algolia 索引概覽頁面，顯示各類篩選器與每個索引的詳細資訊](./img/index-overview.png)"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "![The Algolia index analytics page, showing trends for total users, total searches, etc.](./img/index-analytics.png)",
+      "source_content_hash": "24098212b22c89a436ab20d218843718cffdc31e7f4c154998e6f8fbee10a29f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Algolia 索引分析頁面，顯示總用戶數、總搜尋量等趨勢](./img/index-analytics.png)"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "And of course, **a lot more, for free**.",
+      "source_content_hash": "fae298355a694f8ba25c4c289eda9055fda8a5dba3d53e79921db3ac96113f98",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當然，還有 **更多免費功能**。"
+      }
+    },
+    {
+      "segment_id": "1c598ecd",
+      "source_content": "## FAQ",
+      "source_content_hash": "b07ed55203f0d88ebed77a69ea750333f4f62ec38193b32272aa2987376f7b86",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 常見問題"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### I'm using Docusaurus and DocSearch, can I migrate? {#im-using-docusaurus-and-docsearch-can-i-migrate}",
+      "source_content_hash": "8bbbb2a99539d4633cb09dcb26ca4214cad2e256950f97e4831adf4f4dca73b2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 我正在使用 Docusaurus 和 DocSearch，可以遷移嗎？ {#im-using-docusaurus-and-docsearch-can-i-migrate}"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "At the time we are writing this, we are still at an early stage of the migration. We are doing small batches every week but will increase the load shortly, so please be patient and keep an eye out in your mailbox, you'll be contacted as soon as your Algolia app is ready!",
+      "source_content_hash": "41ee8302c0821ea0e41bba6caa80943cfa07fac790c4f8143484654d7d78ec44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本文撰寫時，我們仍處於遷移初期階段。目前每週進行小批量遷移，後續將逐步擴大規模，請耐心等待並留意郵箱通知，您的 Algolia 應用程式準備就緒後我們會立即聯繫您！"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "### Where can I read more about this?",
+      "source_content_hash": "a33ba2341cedee30709f9d9b975011d24fedcda1648a7db7ba23794763986cc8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 哪裡可以了解更多資訊？"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "We wrote a small [migration guide](https://docsearch.algolia.com/docs/migrating-from-legacy) but you'll have more detailed information in the migration email.",
+      "source_content_hash": "bfd553bf1550c352d7feb30cd0d9e65cb569003c33dde92c9f78faf86167b300",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們撰寫了一份簡短的[遷移指南](https://docsearch.algolia.com/docs/migrating-from-legacy)，但您將在遷移電子郵件中獲得更詳細的資訊。"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### I received the migration email but the invite expired",
+      "source_content_hash": "fdea78c5ca2a0ef22ddf7dd509603e071ef34c570d46b5be3105fad8c860f9b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 我收到遷移郵件但邀請已過期"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Please contact us via either [email](mailto:docsearch@algolia.com) or [DocSearch's Discord](https://discord.gg/bRTacwYrfX) or on [Docusaurus's Discord #algolia channel](https://discordapp.com/invite/docusaurus)",
+      "source_content_hash": "c4ccc9f4978c085fb41a1a8ccb1c6d82c0978b12b2785f4e1a33c6101cb21a5a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請透過[電子郵件](mailto:docsearch@algolia.com)、[DocSearch Discord](https://discord.gg/bRTacwYrfX)或[Docusaurus Discord的#algolia頻道](https://discordapp.com/invite/docusaurus)與我們聯繫。"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "### I have feedback!",
+      "source_content_hash": "76ca5ba7cce8feff109512cceb31b806ae484af94fd80086601fa0aba311e2d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 我有意見回饋！"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "For any feedback regarding our documentation or the DocSearch UI component, you can open an issue [on our GitHub repository](https://github.com/algolia/docsearch/issues), but also contact us via the methods above.",
+      "source_content_hash": "d3912b46ad9efe557b32b0676e43437fd53f690ac7d89a783de175bb350b4cf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於我們的文檔或DocSearch UI組件的任何意見，您可以在[我們的GitHub存儲庫](https://github.com/algolia/docsearch/issues)上開立問題，或透過上述方式聯繫我們。"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "### Can I still run my own DocSearch instance?",
+      "source_content_hash": "dc3baf7bef627a3b6455d832e1f3b31167cc8a762b357526ae6edb82daefdc48",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 我還能運行自己的DocSearch實例嗎？"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "In favor of the new infrastructure and DocSearch v3, we will no longer maintain our beloved [DocSearch scraper](https://github.com/algolia/docsearch-scraper) and [DocSearch v2](https://github.com/algolia/docsearch/tree/master), but the repositories will still be available and open to pull requests.",
+      "source_content_hash": "b53a4b3fc334a7db552d111131410bc7558c5df53b802e16ad157d46d3161a99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為了支持新基礎架構和DocSearch v3，我們將不再維護我們珍愛的[DocSearch爬蟲](https://github.com/algolia/docsearch-scraper)和[DocSearch v2](https://github.com/algolia/docsearch/tree/master)，但這些存儲庫仍將開放並接受拉取請求。"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "The previous documentation (now called `legacy`) remains available as well as our [`run your own`](https://docsearch.algolia.com/docs/legacy/run-your-own) guide.",
+      "source_content_hash": "95d6cf35c29daa452623cb23b3207441c4cb6a90d54e215f76a43eb8d869356d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "先前的文檔（現稱為`legacy`）以及我們的[`自行運行`](https://docsearch.algolia.com/docs/legacy/run-your-own)指南仍然可用。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2021/11-21-algolia-docsearch-migration/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.008988+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "97b8160e2f908ab7e0a78c8a9bd5db403f5c6152cd0c1143a96ad8eb34fd6cd1"
+  }
+}

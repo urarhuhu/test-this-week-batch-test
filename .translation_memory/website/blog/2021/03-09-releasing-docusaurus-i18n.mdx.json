@@ -1,0 +1,372 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2021/03-09-releasing-docusaurus-i18n.mdx",
+  "source_file_content_hash": "f1622045178f6ffbd2bd3057a09a3d3c26add481e0cd0c8f795aa36ae8546bf1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Releasing Docusaurus i18n\nauthors: [slorber]\ntags: [release, i18n]\nimage: /img/blog/2021-03-09-releasing-docusaurus-i18n/social-card.png\n---",
+      "source_content_hash": "cb049437cdae4a59394ddf1641b73be05c9ca0f3d17f1bb460460a9db0bd6223",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Today, we officially release **[Docusaurus 2 i18n](https://docusaurus.io/docs/i18n/introduction)** ([internationalization](https://en.wikipedia.org/wiki/Internationalization_and_localization)), as part of [2.0.0-alpha.71](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.71).",
+      "source_content_hash": "7171ba75545a006cfcef173614073858d20f3d307836e7c44f28ac7faf114269",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "今天，我們正式發佈 **[Docusaurus 2 i18n](https://docusaurus.io/docs/i18n/introduction)**（[國際化](https://en.wikipedia.org/wiki/Internationalization_and_localization)），作為 [2.0.0-alpha.71](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.71) 版本的一部分。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Docusaurus 2 has now reached **full feature parity with Docusaurus 1**. 🎉 And soon, after a few additional infrastructure updates and a bit more testing, the **first Docusaurus 2 beta** will be released.",
+      "source_content_hash": "be906b9856e688005c1d6516d843b6a09212a537561286f04a1b3ff087bc8d02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 現已實現 **與 Docusaurus 1 的完整功能對等**。🎉 很快地，在完成一些額外的基礎架構更新和更多測試後，**首個 Docusaurus 2 測試版** 即將發佈。"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "**We went the extra mile**, and the new i18n support is **even better than in Docusaurus 1**.",
+      "source_content_hash": "fb1e2525d3f6716d116d58afa283d60f9f16b90aef3476d893e314dbbc310188",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**我們付出了額外的努力**，新的國際化支援 **甚至比 Docusaurus 1 更加優秀**。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "In this post, we will present you the **translation workflow**, explain some **design decisions** and **showcase early adopter sites** that just went live: [Jest](https://jestjs.io/), [Redwood](https://learn.redwoodjs.com/), and [Datagit](https://datagit.ir/).",
+      "source_content_hash": "48bc6c207d727dc257e744fa021ad7a71f3cdea112419046c0c8ebd08488e49d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在這篇文章中，我們將向您介紹 **翻譯工作流程**，解釋一些 **設計決策**，並 **展示已上線的早期採用者網站**：[Jest](https://jestjs.io/)、[Redwood](https://learn.redwoodjs.com/) 和 [Datagit](https://datagit.ir/)。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "We also **dogfood** the i18n support on the **Docusaurus 2 site itself**, and this post is already available in [English](https://docusaurus.io/blog/2021/03/09/releasing-docusaurus-i18n) and [French](https://docusaurus.io/fr/blog/2021/03/09/releasing-docusaurus-i18n)!",
+      "source_content_hash": "91aed2b47b69910689c7bccbc70545a3fda3a9cb25452d898be77917b3757ffd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們也在 **Docusaurus 2 網站本身** 上 **實踐** 國際化支援，這篇文章已提供 [英文](https://docusaurus.io/blog/2021/03/09/releasing-docusaurus-i18n) 和 [法文](https://docusaurus.io/fr/blog/2021/03/09/releasing-docusaurus-i18n) 版本！"
+      }
+    },
+    {
+      "segment_id": "45c63027",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_45c63027"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Translate your site",
+      "source_content_hash": "c9ff56f0871c81ba51fea6866ca1142a9c9751c8ca6f57ee2d3769648736b53d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 翻譯您的網站"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "You can translate a Docusaurus site in **3 simple steps**:",
+      "source_content_hash": "f209a9fc814280f7cf4533cec8c0f8f0744be6026ad7eca65a18f867eaf1efbe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以通過 **3 個簡單步驟** 翻譯 Docusaurus 網站："
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "1. **Configure**: declare the default locale and alternative locales in `docusaurus.config.js`\n1. **Translate**: put the translation files at the [correct filesystem location](https://docusaurus.io/docs/next/i18n/introduction#translation-files-location)\n1. **Deploy**: build and deploy your site using a single or multi-domain strategy",
+      "source_content_hash": "ced665aaf112553f7c94527ba6a07cfd2568ebe8b38127d61b5a328f27be1393",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. **配置**：在 `docusaurus.config.js` 中聲明預設語言和替代語言\n1. **翻譯**：將翻譯檔案放在 [正確的檔案系統位置](https://docusaurus.io/docs/next/i18n/introduction#translation-files-location)\n1. **部署**：使用單一或多域名策略建置並部署您的網站"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "The i18n support is **very flexible** and based on the **filesystem**.",
+      "source_content_hash": "a2af3ae27ab8622e3385a05a159a000cd94856a0a4a3f33442e59c7af0929281",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "國際化支援 **非常靈活**，並基於 **檔案系統**。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "The **[i18n tutorial](https://docusaurus.io/docs/i18n/tutorial)** is the best way to get started, and we provide help to use **[Git](https://docusaurus.io/docs/i18n/git)** or **[Crowdin](https://docusaurus.io/docs/i18n/crowdin)**.",
+      "source_content_hash": "a0187fe90aa7ac0b829ca659b2738287fc57b7ae5d12e60ee24493dd611c691b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**[i18n 教學](https://docusaurus.io/docs/i18n/tutorial)** 是開始的最佳方式，我們提供使用 **[Git](https://docusaurus.io/docs/i18n/git)** 或 **[Crowdin](https://docusaurus.io/docs/i18n/crowdin)** 的協助。"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Design decisions",
+      "source_content_hash": "3dc77ef34937e4465f410f4c2075c9a8c7dfb807aaed6a04f30efdd38d737680",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設計決策"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The goals of the Docusaurus i18n system are:",
+      "source_content_hash": "8ad3d606bfb0485532cd5ac5f6e1d5033e71b7d97e602e38bfbe14307daa6407",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 國際化系統的目標是："
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "- **Simple**: just put the translated files in the [correct filesystem location](https://docusaurus.io/docs/next/i18n/introduction#translation-files-location)\n- **Flexible translation workflows**: use Git (monorepo, forks, or submodules), SaaS software, FTP\n- **Flexible deployment options**: single, multiple domains, or hybrid\n- **Modular**: allow plugin authors to provide i18n support\n- **Low-overhead runtime**: documentation is mostly static and does not require a heavy JS library or polyfills\n- **Scalable build-times**: allow building and deploying localized sites independently\n- **Localize assets**: an image of your site might contain text that should be translated\n- **No coupling**: not forced to use any SaaS, yet integrations are possible\n- **Easy to use with [Crowdin](https://crowdin.com/)**: multiple Docusaurus 1 sites use Crowdin, and should be able to migrate to v2\n- **Good SEO defaults**: we set useful SEO headers like [`hreflang`](https://developers.google.com/search/docs/advanced/crawling/localized-versions) for you\n- **RTL support**: locales reading right-to-left (Arabic, Hebrew, etc.) are supported and easy to implement\n- **Default translations**: classic theme labels are translated for you in [many languages](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)",
+      "source_content_hash": "16a60930290cfdfd9d8985dd75012dd34e1f89450ae1daf0c24958d2b8127c35",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **簡單**：只需將翻譯檔案放在 [正確的檔案系統位置](https://docusaurus.io/docs/next/i18n/introduction#translation-files-location)\n- **靈活的翻譯工作流程**：使用 Git（單一倉庫、分支或子模組）、SaaS 軟體、FTP\n- **靈活的部署選項**：單一、多個域名或混合模式\n- **模組化**：允許插件作者提供國際化支援\n- **低開銷運行時**：文檔主要是靜態的，不需要繁重的 JS 庫或填充程式\n- **可擴展的建置時間**：允許獨立建置和部署本地化網站\n- **本地化資源**：網站圖片可能包含需要翻譯的文字\n- **無耦合**：不強制使用任何 SaaS，但可以進行整合\n- **易於與 [Crowdin](https://crowdin.com/) 搭配使用**：多個 Docusaurus 1 網站使用 Crowdin，應能遷移至 v2\n- **良好的 SEO 預設值**：我們為您設置有用的 SEO 標頭，如 [`hreflang`](https://developers.google.com/search/docs/advanced/crawling/localized-versions)\n- **RTL 支援**：支援從右到左閱讀的語言（阿拉伯語、希伯來語等）且易於實現\n- **預設翻譯**：經典主題標籤已為您翻譯成 [多種語言](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Showcase",
+      "source_content_hash": "40e2d34313945001f9610a46e7db7d7e3a7b0684a0ab3760f08260df7dc5b446",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 展示"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "We worked with a few volunteers to **dogfood the i18n support** before releasing it.",
+      "source_content_hash": "6f0642177b9c24ab30cfad6902a953516c3c63dc461c1cdf6ee8c7c1d4cc0031",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們與一些志願者合作，在發佈前 **實踐國際化支援**。"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "### Jest: upgrading Docusaurus",
+      "source_content_hash": "f7e49f6c5e1b614b1a6eda9f5a392e05e483772a302990d80fbe641605a8f2ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Jest：升級 Docusaurus"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "We have made it possible to **upgrade** a **translated Docusaurus 1 site** to Docusaurus 2.",
+      "source_content_hash": "afa17234f5c59549569b777723191bc3daaacd1a7e0a32fdf65c480c3c3fcac4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們已實現將**已翻譯的 Docusaurus 1 網站**升級至 Docusaurus 2 的功能。"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "**[Jest](https://jestjs.io)**, using Docusaurus 1 and Crowdin was one of those sites.",
+      "source_content_hash": "2acc4159d0af80c7da5fcb81dd15bd84b80d3f82a3f9196c26eeffc5b1e0c02c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 Docusaurus 1 和 Crowdin 的 **[Jest](https://jestjs.io)** 就是其中一個成功案例。"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "The Docusaurus 2 migration was successful and the new site is now deployed in production ([announcement post](https://jestjs.io/blog/2021/03/09/jest-website-upgrade)).",
+      "source_content_hash": "ba3ead6f7dd1c0124dc03b9e7bc041c2d540660bd75b2f0b79acc628c332975c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 的遷移過程順利，新網站現已正式上線（[公告文章](https://jestjs.io/blog/2021/03/09/jest-website-upgrade)）。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "[![Jest's website front page in Japanese](/img/blog/2021-03-09-releasing-docusaurus-i18n/jest.png)](https://jestjs.io)",
+      "source_content_hash": "84639a08be8728a8574c58db2d67b4c20e323a8a782838e1503a382abfaf8122",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Jest 網站日文版首頁](/img/blog/2021-03-09-releasing-docusaurus-i18n/jest.png)](https://jestjs.io)"
+      }
+    },
+    {
+      "segment_id": "9e95fc4a",
+      "source_content": "### Redwood: adopting Docusaurus",
+      "source_content_hash": "db2a57e073e761f8f8f31df4c9522c55701b96a009321176ac5dbd6052bfa6bc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Redwood：採用 Docusaurus"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "[Redwood](https://redwoodjs.com/) is a React full-stack Jamstack framework.",
+      "source_content_hash": "68490243ee42bdfbf18500d285983d799d45484b5d682add699a1da64f872e35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Redwood](https://redwoodjs.com/) 是一個 React 全端 Jamstack 框架。"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "They were looking for a solution to create an **internationalized learning platform**, and became early adopters of Docusaurus 2 i18n for [learn.redwoodjs.com](https://learn.redwoodjs.com/), using Crowdin to get it translated to French.",
+      "source_content_hash": "ac19c2ef63f8ff04ee4d3526b041950eab3f265d1625de4d0cd34c08576c3615",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "他們正在尋找建立**國際化學習平台**的解決方案，並成為 Docusaurus 2 i18n 的早期採用者，使用 Crowdin 將 [learn.redwoodjs.com](https://learn.redwoodjs.com/) 翻譯成法文。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "[![Redwood's doc page in French](/img/blog/2021-03-09-releasing-docusaurus-i18n/redwood.png)](https://learn.redwoodjs.com/)",
+      "source_content_hash": "e30e849161709d33b74372cdd8fde26447e9739895e356d3594e45377716614a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Redwood 法文版文件頁面](/img/blog/2021-03-09-releasing-docusaurus-i18n/redwood.png)](https://learn.redwoodjs.com/)"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "### Datagit: using LTR support",
+      "source_content_hash": "d84cb8095351b8852a7878007af51be8296c040ff677a400e1aebbccccd93198",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### Datagit：使用 RTL 支援"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "The i18n system should work with any language, including **Right-to-Left languages**.",
+      "source_content_hash": "f918ca93e7413de035c0ced70774399c972e45b435e6869cd6ae29996ffa1450",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "i18n 系統應適用於任何語言，包括**從右至左書寫的語言**。"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "[Datagit.ir](https://datagit.ir/) is using Farsi, and a simple configuration option is able to **flip the Docusaurus theme** to add the required Right-to-Left support.",
+      "source_content_hash": "7f0ac4c08294258ba02ad54afa53e20f58ce13e4ade58d0af636f5bdc01664e8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[Datagit.ir](https://datagit.ir/) 使用波斯語，只需簡單的配置選項即可**翻轉 Docusaurus 主題**以添加所需的從右至左支援。"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "[![Datagit's website in Persian, a right-to-left language. The sidebar appears on the right of the window and the TOC appears on the left.](/img/blog/2021-03-09-releasing-docusaurus-i18n/datagit.png)](https://datagit.ir/)",
+      "source_content_hash": "403913b56aef5309e65f09c095d4e8ad2286cf85e089344c645d9a76707b33f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![Datagit 波斯語網站。側邊欄位於視窗右側，目錄位於左側。](/img/blog/2021-03-09-releasing-docusaurus-i18n/datagit.png)](https://datagit.ir/)"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 結語"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "We sincerely hope you will adopt and like the new i18n support.",
+      "source_content_hash": "9de3e12b4538fcfc8f4482e9d2ae1c87ee4813e79ee40d967d2a449d2572a830",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們衷心希望您能採用並喜歡新的 i18n 支援功能。"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "This feature has not been an easy one, and we would like to thank everyone that got involved in this journey:",
+      "source_content_hash": "337448c34fde2699a973f247b884d839a45ebd9fbd3b84fd76174ef131fe5ea0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這項功能的實現並不容易，我們要感謝所有參與此過程的人："
+      }
+    },
+    {
+      "segment_id": "5dbc17cf",
+      "source_content": "- [Alexey](https://github.com/lex111) for his help to make the i18n support exhaustive and even better than v1\n- [Simen](https://github.com/SimenB) for volunteering and supporting the Jest migration\n- [Claire](https://github.com/clairefro) for adopting Docusaurus 2 on the new Redwood platform and providing many feedbacks\n- [Massoud](https://github.com/massoudmaboudi) for reviewing my work on LTR and adopting it on Datagit\n- [Crowdin](https://crowdin.com/) for their support and willingness to improve their translation SaaS\n- The Docusaurus community for their patience, and providing many useful feedbacks on GitHub",
+      "source_content_hash": "ddedadd4e92be7b2277c8f092b898728eb9ec1c17216903ba38cbb16e43d41d3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Alexey](https://github.com/lex111) 協助完善 i18n 支援，使其比 v1 更出色\n- [Simen](https://github.com/SimenB) 自願支援 Jest 的遷移工作\n- [Claire](https://github.com/clairefro) 在 Redwood 新平台上採用 Docusaurus 2 並提供大量反饋\n- [Massoud](https://github.com/massoudmaboudi) 審核我在 RTL 方面的工作並在 Datagit 上採用\n- [Crowdin](https://crowdin.com/) 提供支援並持續改進其翻譯 SaaS 服務\n- Docusaurus 社群成員的耐心等待，以及在 GitHub 上提供的寶貴意見"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Thanks for reading.",
+      "source_content_hash": "56ee24e4788a9e1c4559f2131262b842d5d6020e172f60c1db7d3edee5d1d05d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "感謝您的閱讀。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "🙏 And please, add your brand new i18n sites to our [showcase page](https://docusaurus.io/showcase). We accept any all polished Docusaurus site here, and we are working on a [redesign](https://github.com/facebook/docusaurus/issues/4238) allowing you to filter sites by features.",
+      "source_content_hash": "0f4a8baefef673686bb630b9c1c52803318cf2e882f4cee4659689f1173084ab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "🙏 請將您新建的 i18n 網站提交至我們的[展示頁面](https://docusaurus.io/showcase)。我們接受所有精美的 Docusaurus 網站，目前正在進行[頁面改版](https://github.com/facebook/docusaurus/issues/4238)，未來將能按功能篩選網站。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2021/03-09-releasing-docusaurus-i18n.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.022861+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "f1622045178f6ffbd2bd3057a09a3d3c26add481e0cd0c8f795aa36ae8546bf1"
+  }
+}

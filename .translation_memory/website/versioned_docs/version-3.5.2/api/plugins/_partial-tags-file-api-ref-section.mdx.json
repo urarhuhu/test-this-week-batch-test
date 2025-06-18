@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.5.2/api/plugins/_partial-tags-file-api-ref-section.mdx",
+  "source_file_content_hash": "51e32e1685850a8fb16f31405f0e7feb67074b338b02278a9da79064ae32fbd3",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "## Tags File {#tags-file}",
+      "source_content_hash": "24e745cbf6a08a96ccd54b0945114cd9b35e7d2a4e2d2870261d4b01c56d9156",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 標籤檔案 {#tags-file}"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Use the [`tags` plugin option](#tags) to configure the path of a YAML tags file.",
+      "source_content_hash": "111dfce0543a5574923342f406141dfe8a42c842433986a12a5ffcbcc1453fe2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [`tags` 插件選項](#tags) 來配置 YAML 標籤檔案的路徑。"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "By convention, the plugin will look for a `tags.yml` file at the root of your content folder(s).",
+      "source_content_hash": "b8f288246a51227629314ad8158134e906f286c4919eab84352d5086d289b133",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "依照慣例，插件會在內容資料夾的根目錄中尋找 `tags.yml` 檔案。"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "This file can contain a list of predefined tags. You can reference these tags by their keys in Markdown files thanks to the [`tags` front matter](#markdown-front-matter).",
+      "source_content_hash": "c5e910014a82bebf7f888e91d0b9a097fa47389e62bad63c4257136a4a25c8fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此檔案可包含預定義的標籤列表。透過 [`tags` 前置資料](#markdown-front-matter)，你可以在 Markdown 檔案中透過標籤的鍵值來引用這些標籤。"
+      }
+    },
+    {
+      "segment_id": "0d5e1c45",
+      "source_content": ":::tip[Keeping tags consistent]\n\nUsing a tags file, you can ensure that your tags usage is consistent across your plugin content set. Use the [`onInlineTags: 'throw'`](#onInlineTags) plugin option to enforce this consistency and prevent usage of inline tags declared on the fly.\n\n:::",
+      "source_content_hash": "bb831e03f66c0cd6b818dce57073b7bd970be40f3604629b8cd702b2d3b0175a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[保持標籤一致性]\n\n使用標籤檔案可確保標籤在插件內容集中的使用保持一致。透過 [`onInlineTags: 'throw'`](#onInlineTags) 插件選項來強制執行此一致性，並防止使用臨時宣告的行內標籤。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "### Types {#tags-file-types}",
+      "source_content_hash": "1544c15c4d43128dda44bca2b1a1d121cca06e503c0077b1eca7a8d809d272a0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型 {#tags-file-types}"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "The YAML content of the provided tags file should respect the following shape:",
+      "source_content_hash": "61ae4f14379f2306cccb3a0cb27d3cc3a4d3d075f307ffd6d4099ea7f815c0c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "提供的標籤檔案的 YAML 內容應符合以下結構："
+      }
+    },
+    {
+      "segment_id": "940e34e3",
+      "source_content": "```tsx\ntype Tag = {\n  label?: string; // Tag display label\n  permalink?: string; // Tag URL pathname segment\n  description?: string; // Tag description displayed in the tag page\n};\n\ntype TagsFileInput = Record<string, Partial<Tag> | null>;\n```",
+      "source_content_hash": "0c684a0e832c3709056c9a67e7473aeaf59d96fd33fc1232c76e411edc5d048f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_940e34e3"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "### Example {#tags-file-example}",
+      "source_content_hash": "0587d19c0effcf53fbe3e5b8d156fe5aec714e782e2013fa458f6c43ad485e5d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例 {#tags-file-example}"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```yml title=\"tags.yml\"\nreleases:\n  label: 'Product releases'\n  permalink: '/product-releases'\n  description: 'Content related to product releases.'\n\n# A partial tag definition is also valid\nannouncements:\n  label: 'Announcements'\n\n# An empty tag definition is also valid\n# Other attributes will be inferred from the key\nemptyTag:\n```",
+      "source_content_hash": "e3b0108c2b554c45e0f24f74cdaf83fa86350af1b7fed7f8a1ebdae6f8ff0510",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```md title=\"content.md\"\n---\ntags: [releases, announcements, emptyTag]\n---\n\n# Title\n\nContent\n```",
+      "source_content_hash": "688f2257aa92b4588c177ef3de5e45bac083d191ab0ec1dfdd902d6331b81faf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4ec2920d"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.5.2/api/plugins/_partial-tags-file-api-ref-section.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.360654+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "51e32e1685850a8fb16f31405f0e7feb67074b338b02278a9da79064ae32fbd3"
+  }
+}

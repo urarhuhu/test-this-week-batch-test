@@ -1,0 +1,392 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/guides/docs/docs-create-doc.mdx",
+  "source_file_content_hash": "d84b4bbe61e0ea83ee9e3a2af3117f10aba6c0aaebf054d58e9251c878947a11",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: create-doc\ndescription: Create a Markdown Document\nslug: /create-doc\n---",
+      "source_content_hash": "26b9fb7787318f69d20b38aae2beece36e13899c36f58f71cbf2f93b380c9176",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Create a doc",
+      "source_content_hash": "06aa60bf131cf4b92745e0de8375bcbc71b1272950737fa9e3d21e7d3baec39f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 建立文件"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Create a Markdown file, `greeting.md`, and place it under the `docs` directory.",
+      "source_content_hash": "c5ce195f46f7dea9b7f13b8129bf473e624c78f97c174ff029b585e1d7811d25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建立一個 Markdown 檔案 `greeting.md`，並將其放置在 `docs` 目錄下。"
+      }
+    },
+    {
+      "segment_id": "43a8bc7e",
+      "source_content": "```bash\nwebsite # root directory of your site\n├── docs\n│   └── greeting.md\n├── src\n│   └── pages\n├── docusaurus.config.js\n├── ...\n```",
+      "source_content_hash": "2bf4944b67a84cdefd7669a3f76e639ab5f1443549a6a239a700797a0a9ab151",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_43a8bc7e"
+      }
+    },
+    {
+      "segment_id": "cbbebf8e",
+      "source_content": "```md\n---\ndescription: Create a doc page with rich content.\n---\n\n# Hello from Docusaurus\n\nAre you ready to create the documentation site for your open source project?\n\n## Headers\n\nwill show up on the table of contents on the upper right\n\nSo that your users will know what this page is all about without scrolling down or even without reading too much.\n\n## Only h2 and h3 will be in the TOC by default.\n\nYou can configure the TOC heading levels either per-document or in the theme configuration.\n\nThe headers are well-spaced so that the hierarchy is clear.\n\n- lists will help you\n- present the key points\n- that you want your users to remember\n  - and you may nest them\n    - multiple times\n```",
+      "source_content_hash": "60cc9feedd08b22ce6a527e31371a23a394cfd9e736df8e8b198eba21b1b07e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cbbebf8e"
+      }
+    },
+    {
+      "segment_id": "5a149cd3",
+      "source_content": ":::note\n\nAll files prefixed with an underscore (`_`) under the `docs` directory are treated as \"partial\" pages and will be ignored by default.\n\nRead more about [importing partial pages](../markdown-features/markdown-features-react.mdx#importing-markdown).\n\n:::",
+      "source_content_hash": "213eb01cd0f2a2b28602913a145b770cc1aa89702c39d841c50e9b8fe9a840b0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n`docs` 目錄下所有以下底線 (`_`) 為前綴的檔案預設會被視為「部分」頁面並被忽略。\n\n詳見[導入部分頁面](../markdown-features/markdown-features-react.mdx#importing-markdown)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "## Doc front matter {#doc-front-matter}",
+      "source_content_hash": "3706fb043081c1c9c5b49b0d21c6daf551ec8605691de6c9fb935c82ccc4054b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 文件前置元數據 {#doc-front-matter}"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "The [front matter](../markdown-features/markdown-features-intro.mdx#front-matter) is used to provide additional metadata for your doc page. Front matter is optional—Docusaurus will be able to infer all necessary metadata without the front matter. For example, the [doc tags](#doc-tags) feature introduced below requires using front matter. For all possible fields, see [the API documentation](../../api/plugins/plugin-content-docs.mdx#markdown-front-matter).",
+      "source_content_hash": "cd0eb78328f5acc0e91503bcfdb62c1b8023a4e4ba54f5591f47a551d76b016a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[前置元數據](../markdown-features/markdown-features-intro.mdx#front-matter)用於為文件頁面提供額外元數據。前置元數據是可選的——Docusaurus 能在沒有前置元數據的情況下推斷所有必要的元數據。例如，下文介紹的[文件標籤](#doc-tags)功能需要使用前置元數據。所有可能的字段詳見[API 文檔](../../api/plugins/plugin-content-docs.mdx#markdown-front-matter)。"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "## Doc tags {#doc-tags}",
+      "source_content_hash": "120922c27310643b3ff21d5956b506ef790479e8ab8cfdbdf8a3f2d8ea9b028d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 文件標籤 {#doc-tags}"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Optionally, you can add tags to your doc pages, which introduces another dimension of categorization in addition to the [docs sidebar](./sidebar/index.mdx). Tags are passed in the front matter as a list of labels:",
+      "source_content_hash": "a891f363d207a7b139818277dfa0bfb64b4a60c4faaea59cbee69a0156a20431",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可選地，您可以為文件頁面添加標籤，這在[文件側邊欄](./sidebar/index.mdx)之外引入了另一種分類維度。標籤以前置元數據中的標籤列表形式傳遞："
+      }
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```md \"your-doc-page.md\"\n---\nid: doc-with-tags\ntitle: A doc with tags\ntags:\n  - Demo\n  - Getting started\n---\n```",
+      "source_content_hash": "4ad73859e8873c0558beff9fe2d6eb8916399cd3797817588fe9e9b1e901f764",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a577a50"
+      }
+    },
+    {
+      "segment_id": "9186a173",
+      "source_content": ":::tip\n\nTags can also be declared with `tags: [Demo, Getting started]`.\n\nRead more about all the possible [Yaml array syntaxes](https://www.w3schools.io/file/yaml-arrays/).\n\n:::",
+      "source_content_hash": "88e1cd69f14cdd8651355d2d99deff571017aa529b844a9e7bc34922d613ed2a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n標籤也可以透過 `tags: [Demo, Getting started]` 宣告。\n\n詳見所有可能的[Yaml 陣列語法](https://www.w3schools.io/file/yaml-arrays/)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Organizing folder structure {#organizing-folder-structure}",
+      "source_content_hash": "d36aac0a42305e36ee699810d05270fad3932b61f0695cbdb72b546d67766485",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 組織檔案結構 {#organizing-folder-structure}"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "How the Markdown files are arranged under the `docs` folder can have multiple impacts on Docusaurus content generation. However, most of them can be decoupled from the file structure.",
+      "source_content_hash": "a49682196fa11ffaf1c6716e43bc2ad149542788d98f380deb42047d3aecbca8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 檔案在 `docs` 資料夾下的排列方式可能對 Docusaurus 內容生成產生多重影響。但大多數影響可與檔案結構解耦。"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "### Document ID {#document-id}",
+      "source_content_hash": "1c82152b4346ffb27029320cd298b732f583e9ea85f8d65094fe9492da665fc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文件 ID {#document-id}"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Every document has a unique `id`. By default, a document `id` is the name of the document (without the extension) relative to the root docs directory.",
+      "source_content_hash": "5a39f070eb4bbef6f6ceecb6dad3e90b81b2f13b37fbc5ce418030b4ad930cad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每個文件都有唯一的 `id`。預設情況下，文件 `id` 是相對於根 docs 目錄的文件名稱（不包含副檔名）。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "For example, the ID of `greeting.md` is `greeting`, and the ID of `guide/hello.md` is `guide/hello`.",
+      "source_content_hash": "dac65aed881b1b7e37ab2ab54f29c2f5e58971e8f0ab942f661f65169742c4f7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，`greeting.md` 的 ID 是 `greeting`，而 `guide/hello.md` 的 ID 是 `guide/hello`。"
+      }
+    },
+    {
+      "segment_id": "5782e280",
+      "source_content": "```bash\nwebsite # Root directory of your site\n└── docs\n   ├── greeting.md\n   └── guide\n      └── hello.md\n```",
+      "source_content_hash": "e11c750844c4e00ae52c7bc00bd874634bbcdda25b70281977f8a5963042ddeb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5782e280"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "However, the **last part** of the `id` can be defined by the user in the front matter. For example, if `guide/hello.md`'s content is defined as below, its final `id` is `guide/part1`.",
+      "source_content_hash": "be20418fa1f3ee0f029f0c4f3a5ddee8aa8c6cb49c28468156c22ab20f835b29",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "但使用者可以在前置元數據中定義 `id` 的**最後部分**。例如，若 `guide/hello.md` 的內容定義如下，其最終 `id` 為 `guide/part1`。"
+      }
+    },
+    {
+      "segment_id": "cae897fb",
+      "source_content": "```md\n---\nid: part1\n---\n\nLorem ipsum\n```",
+      "source_content_hash": "d852617e523bc02411b1278b04e99094bf1ed9db43e3529b7cda62d4b4b5b5bb",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cae897fb"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "The ID is used to refer to a document when hand-writing sidebars, or when using docs-related layout components or hooks.",
+      "source_content_hash": "e7938ac9cafba14af2c16cf4ca9376bae521ae72726e71f1e1a7469ba5124a7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "ID 用於在手寫側邊欄時引用文件，或使用與文件相關的佈局元件或鉤子時。"
+      }
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "### Doc URLs {#doc-urls}",
+      "source_content_hash": "1269d59b697d964f5b42e030c5b422b53c8595d0a6f7b205f93c6992e2ea6051",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 文件網址 {#doc-urls}"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "By default, a document's URL location is its file path relative to the `docs` folder, with a few exceptions. Namely, if a file is named one the following, the file name won't be included in the URL:",
+      "source_content_hash": "4104aece75548f0ac0f317f61d4b5366266f2f2fe3598576d3bfa6467097b41a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，文件的網址位置是其相對於 `docs` 資料夾的檔案路徑，但有幾個例外。具體來說，若檔案名稱符合以下情況，檔案名稱將不會出現在網址中："
+      }
+    },
+    {
+      "segment_id": "2890f5b2",
+      "source_content": "- Named as `index` (case-insensitive): `docs/Guides/index.md`\n- Named as `README` (case-insensitive): `docs/Guides/README.mdx`\n- Same name as parent folder: `docs/Guides/Guides.md`",
+      "source_content_hash": "a9a529fb27bd64fb9f1fc01dd8ad3ea90ce1fd0642dd3ab5a46f34e6b17ea3b9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 命名為 `index`（不區分大小寫）：`docs/Guides/index.md`\n- 命名為 `README`（不區分大小寫）：`docs/Guides/README.mdx`\n- 與父資料夾同名：`docs/Guides/Guides.md`"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "In all cases, the default slug would only be `/Guides`, without the `/index`, `/README`, or duplicate `/Guides` segment.",
+      "source_content_hash": "00f8306370033c87b037f6e84d280c98c098431d48d5ae4a7c629e210ae50f44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有情況下，預設 slug 僅為 `/Guides`，不包含 `/index`、`/README` 或重複的 `/Guides` 部分。"
+      }
+    },
+    {
+      "segment_id": "c9cbbb2d",
+      "source_content": ":::note\n\nThis convention is exactly the same as [the category index convention](./sidebar/autogenerated.mdx#category-index-convention). However, the `isCategoryIndex` configuration does _not_ affect the document URL.\n\n:::",
+      "source_content_hash": "956d6870b42c1788c57cf79c68563ab85ac019922434dbf69a3a978f84f45e12",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n此慣例與[分類索引慣例](./sidebar/autogenerated.mdx#category-index-convention)完全相同。但 `isCategoryIndex` 配置_不會_影響文件網址。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "Use the `slug` front matter to change a document's URL.",
+      "source_content_hash": "50f4414dbdbbac758732dd096ef015cf5039bc1338b5ca6b48b5cd5382470578",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 `slug` 前置元數據來變更文件的網址。"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "For example, suppose your site structure looks like this:",
+      "source_content_hash": "a105288625d988a4ce0d9d3eeef4c86937d3cde7661e6f5ed105faafe4c8d368",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，假設您的網站結構如下："
+      }
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```bash\nwebsite # Root directory of your site\n└── docs\n    └── guide\n        └── hello.md\n```",
+      "source_content_hash": "b94b475a829315c88d0fd405ccee0bfd9c306ba236ea7967688913481718e8be",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_18fb666f"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "By default `hello.md` will be available at `/docs/guide/hello`. You can change its URL location to `/docs/bonjour`:",
+      "source_content_hash": "77e3db21c4d7acb5f3022e015847ae351abd0d94df3c0f7fba88479a2870ab85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，`hello.md` 將可透過 `/docs/guide/hello` 路徑存取。您可以將其 URL 位置變更為 `/docs/bonjour`："
+      }
+    },
+    {
+      "segment_id": "e908327f",
+      "source_content": "```md\n---\nslug: /bonjour\n---\n\nLorem ipsum\n```",
+      "source_content_hash": "eabc028471d9fbe2aec499357b4be7aa33bc3cf89b7fa7c42e40c7696f0ef838",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e908327f"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "`slug` will be appended to the doc plugin's `routeBasePath`, which is `/docs` by default. See [Docs-only mode](docs-introduction.mdx#docs-only-mode) for how to remove the `/docs` part from the URL.",
+      "source_content_hash": "6f8e6ff2ee98efb4a7e54189cda8dda116f6e49a212da90d5687d1da0e66cef1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`slug` 會附加至文件插件的 `routeBasePath`（預設為 `/docs`）。請參閱[僅文件模式](docs-introduction.mdx#docs-only-mode)瞭解如何從 URL 中移除 `/docs` 部分。"
+      }
+    },
+    {
+      "segment_id": "ff35cad6",
+      "source_content": ":::note\n\nIt is possible to use:\n\n- absolute slugs: `slug: /mySlug`, `slug: /`...\n- relative slugs: `slug: mySlug`, `slug: ./../mySlug`...\n\n:::",
+      "source_content_hash": "c408bcb30e36630d2e37acfa86642cc7c0a8b49143d278a2dec7b4ce558a0781",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n可以使用以下形式：\n\n- 絕對 slug：`slug: /mySlug`、`slug: /`...\n- 相對 slug：`slug: mySlug`、`slug: ./../mySlug`...\n\n:::"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "If you want a document to be available at the root, and have a path like `https://docusaurus.io/docs/`, you can use the slug front matter:",
+      "source_content_hash": "c550bc999e2a502ac7db003550cee4e56b9347ff6c3a55c6f2ff9571a13b998a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若希望文件在根目錄下可存取，並擁有像 `https://docusaurus.io/docs/` 這樣的路徑，可使用 slug 前置元資料："
+      }
+    },
+    {
+      "segment_id": "0029045f",
+      "source_content": "```md\n---\nid: my-home-doc\nslug: /\n---\n\nLorem ipsum\n```",
+      "source_content_hash": "b233eddb9ae278380730b5b0879ab5595b5dafef9f6caadc6f4b02150150c68f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0029045f"
+      }
+    },
+    {
+      "segment_id": "89b740fe",
+      "source_content": "### Sidebars {#sidebars}",
+      "source_content_hash": "d9f56b1061f696964af5a40ef9f08dd42ffdba78ef33cd3fefb60df04d3ea487",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 側邊欄 {#sidebars}"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "When using [autogenerated sidebars](./sidebar/autogenerated.mdx), the file structure will determine the sidebar structure.",
+      "source_content_hash": "8a0e6aa6515935153664555b2e1901e3ddacbbc50d03ebb527cb69d640fdf99d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用[自動生成側邊欄](./sidebar/autogenerated.mdx)時，檔案結構將決定側邊欄結構。"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "Our recommendation for file system organization is: make your file system mirror the sidebar structure (so you don't need to handwrite your `sidebars.js` file), and use the `slug` front matter to customize URLs of each document.",
+      "source_content_hash": "04bfe11929a3821d59542c0e71280a3b8d2984977b7f4c435590a13e96f28d77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們對檔案系統組織的建議是：讓您的檔案系統鏡像側邊欄結構（這樣您就不需要手動編寫 `sidebars.js` 檔案），並使用 `slug` 前置元資料來自訂每個文件的 URL。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/guides/docs/docs-create-doc.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.176415+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "d84b4bbe61e0ea83ee9e3a2af3117f10aba6c0aaebf054d58e9251c878947a11"
+  }
+}

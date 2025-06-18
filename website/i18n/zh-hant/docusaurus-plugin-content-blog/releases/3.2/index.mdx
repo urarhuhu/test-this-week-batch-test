@@ -1,0 +1,112 @@
+---
+title: Docusaurus 3.2
+authors: [slorber]
+tags: [release]
+image: ./img/social-card.png
+date: 2024-03-29
+---
+
+我們很高興宣布 **Docusaurus 3.2** 正式發布。
+
+升級過程應該很簡單：如我們的[發布流程文件](/community/release-process)所述，次要版本遵循[語意化版本控制](https://semver.org/)規範。
+
+![Docusaurus 部落格文章社群卡片](./img/social-card.png)
+
+<!--truncate-->
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import IframeWindow from '@site/src/components/BrowserWindow/IframeWindow';
+import ErrorBoundaryTestButton from '@site/src/components/ErrorBoundaryTestButton';
+
+## 重點更新
+
+### 更快的建構速度
+
+我們致力於縮短 Docusaurus 網站在生產模式下的建構時間。
+
+從 v3.1.0 到 v3.2.0 版本間的多項改進，使得多數網站的生產環境建構速度顯著提升。
+
+以實際案例說明。我們在[React Native 網站升級至 v3.2](https://github.com/facebook/react-native-website/pull/4072)的基準測試中獲得以下結果：
+
+- 🔥 完整建構：95秒 ➡️ 66秒（提速約30%）
+- 🔥 增量建構：55秒 ➡️ 22秒（提速約60%）
+
+實際效果會因網站結構與啟用選項而異，但我們預期大型網站將獲得最顯著的效能提升。
+
+請注意這只是開始，Docusaurus 在打包時間與記憶體消耗等方面仍有大幅優化空間。請追蹤我們的[效能議題](https://github.com/facebook/docusaurus/issues/4765)以獲取後續改進。
+
+<details>
+  <summary>What is the difference between a cold build and an incremental build?</summary>
+
+A cold build is when the Docusaurus caches are empty, generally after running `docusaurus clear`.
+
+An incremental build happens when you run another time the `docusaurus build` command. Docusaurus automatically tries to "re-use" computations from former builds to make subsequent builds faster. In practice it's based on [Webpack persistent caching](https://webpack.js.org/guides/build-performance/#persistent-cache). To enable incremental builds on your CI server, you can persist the `node_modules/.cache` folder across builds.
+
+</details>
+
+### 更快的開發伺服器
+
+我們同時優化了開發伺服器的效能，讓您在編輯 Markdown/MDX 檔案時能獲得更即時的反饋。
+
+先前內容重新載入的實作方式不夠理想。例如編輯部落格文章時，會連帶觸發無關的文件插件重新載入。現在開始，編輯插件內容時只會重新載入該插件。雖然難以精確量化，但預估瀏覽器中的編輯反應速度至少提升50% 🔥。
+
+我們計劃持續改進開發伺服器速度，透過更細粒度的熱重載機制，避免執行無意義的重複運算。
+
+### MDX 片段目錄支援
+
+透過 [#9684](https://github.com/facebook/docusaurus/pull/9684)，Docusaurus 現在能將導入片段中的標題渲染至目錄。
+
+Docusaurus 與 MDX 允許您[將 Markdown 檔案導入至其他檔案](/docs/markdown-features/react#importing-markdown)。我們通常稱被導入的 Markdown 檔案為「片段」，並使用 `_` 前綴確保該檔案不會產生新頁面。
+
+```md title="myDoc.mdx"
+# My Doc
+
+## Doc heading
+
+Content is imported from another MDX file:
+
+import ImportedDoc from './\_importedDoc.mdx';
+
+<ImportedDoc />
+```
+
+```md title="_myPartial.mdx"
+## Partial heading
+
+Some paragraph
+```
+
+過去「片段標題」不會出現在目錄中，但現在會了！
+
+### 部落格功能強化
+
+我們透過多項新選項強化部落格插件，使其更強大靈活：
+
+- [#9912](https://github.com/facebook/docusaurus/pull/9912)：現在可顯示部落格文章的最後更新時間與作者，此功能原本僅文件插件具備
+- [#9886](https://github.com/facebook/docusaurus/pull/9886)：新增 `processBlogPosts` 選項可過濾/轉換/排序部落格文章
+- [#9838](https://github.com/facebook/docusaurus/pull/9838)：新增 `pageBasePath` 選項可自訂部落格分頁網址段（如 `/blog/page/2`）
+
+### 網站地圖最後修改時間
+
+透過 [#9954](https://github.com/facebook/docusaurus/pull/9954)，網站地圖插件新增了 `lastmod` 選項，現在可以在 XML 中輸出 `<lastmod>` 標籤。預設情況下會從 Git 歷史記錄讀取該值，但也可以透過文件和部落格的 `last_update` 前置資料來覆寫。
+
+我們也讓使用者可以選擇不輸出 `<priority>` 和 `<frequency>` 標籤，這些標籤通常會被爬蟲忽略（尤其是 [Google](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping)）。
+
+我們建議使用以下網站地圖插件配置，這將成為 Docusaurus V4 的預設值：
+
+```js
+{
+  lastmod: 'date',
+  priority: null,
+  changefreq: null,
+}
+```
+
+## 其他變更
+
+- [#9687](https://github.com/facebook/docusaurus/pull/9687)：新增 Vercel Analytics 插件
+- [#9681](https://github.com/facebook/docusaurus/pull/9681) 和 [#9442](https://github.com/facebook/docusaurus/pull/9442)：`docusaurus swizzle` 和 `create-docusaurus` CLI 現在會詢問使用者是否偏好使用 TypeScript
+- [#9928](https://github.com/facebook/docusaurus/pull/9928)：新增冰島語翻譯
+- [#9928](https://github.com/facebook/docusaurus/pull/9931)：新增 `allContentLoaded` 插件生命週期（實驗性功能）
+
+查看 **[3.2.0 變更日誌條目](/changelog/3.2.0)** 以獲取完整的變更清單。

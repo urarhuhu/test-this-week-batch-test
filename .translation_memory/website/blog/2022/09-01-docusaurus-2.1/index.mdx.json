@@ -1,0 +1,302 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022/09-01-docusaurus-2.1/index.mdx",
+  "source_file_content_hash": "cf45fed7fc5f3a877bcd50aba7a385daea53fbac46872dee777583ab2dd7f2be",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 2.1\nauthors:\n  - slorber\ntags: [release]\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "8abcc2450cd8652a0c0cc74c3f1a8be7bee607639236dd94459ff94f01b72c29",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 2.1**, our very first minor version release.",
+      "source_content_hash": "6dae02b165a2ea8a751869604531ee6147014cc195705b1a22852acba5075c02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 2.1**，這是我們首個次要版本更新。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The upgrade should be easy: as explained in our [release process documentation](/community/release-process), minor versions respect [Semantic Versioning](https://semver.org/).",
+      "source_content_hash": "c798b6e35eb0c79c81cf7d49c78ac7cde6fc60897b64f9cfc3abb86bb45cd729",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該很簡單：正如我們的[發佈流程文件](/community/release-process)所述，次要版本遵循[語意化版本控制](https://semver.org/)規範。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![Docusaurus 2.1 social card](./img/social-card.png)",
+      "source_content_hash": "2e066a030ec4fc3c27deacb323058d5dc02d50e44d6252d4170589f30e0ce6ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 2.1 社群卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點更新"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### DocCardList improvements",
+      "source_content_hash": "2ffb5fc1a900d8db1b927cf54cc87cbadeab8bbb493f3a3bf606e750f4bc024e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### DocCardList 改進"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "In [#8008](https://github.com/facebook/docusaurus/pull/8008), we simplified the usage of the`<DocCardList>` component, that is notably used on sidebar category generated index pages.",
+      "source_content_hash": "09b114ad59b9d13a65bf9d2b76c35cc100f45bd28db6451293c4a35db42e95f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#8008](https://github.com/facebook/docusaurus/pull/8008) 中，我們簡化了 `<DocCardList>` 元件的使用方式，該元件主要用於側邊欄分類的生成索引頁面。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "The `items` prop is now optional, and will be automatically inferred from the content of the parent sidebar category:",
+      "source_content_hash": "a4d7ccce14ac27ed95a30b29f11a20532a00c0caa03153f9f0f47803313dc396",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`items` 屬性現在是選填的，會自動從父級側邊欄分類的內容推斷："
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```diff\nimport DocCardList from '@theme/DocCardList';\n- import {useCurrentSidebarCategory} from '@docusaurus/theme-common';\n\n- <DocCardList items={useCurrentSidebarCategory().items}/>\n+ <DocCardList/>\n```",
+      "source_content_hash": "2fc5e11664d9e5a8b93ffcf5654c0f7f51acef1d71703fedc69243d16771e6e6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Also, we made it possible to use it on any document, including regular docs not linked to any sidebar category.",
+      "source_content_hash": "5a0e19685f2b15c6e01c20b9e2ef0b44232c6bdc01a5f6cfe1d8aedef866130a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此外，我們讓它能在任何文件上使用，包括未連結到任何側邊欄分類的常規文件。"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "![simplified DocCardList component](./img/doc-card-list.png)",
+      "source_content_hash": "8b30477363a7fcd02a9a285cf8ee50d2091f9c4822bf841fc9f9395cf23bd1cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![簡化的 DocCardList 元件](./img/doc-card-list.png)"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "### `noindex` improvements",
+      "source_content_hash": "54af5be85bc59cd8e20e3154b63438db788a00f9e0ca2cd3505d6f3c3cb24981",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `noindex` 改進"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "We improved the support of the [`noindex` meta `robots` directive](https://developers.google.com/search/docs/advanced/crawling/block-indexing), a way to signal search engines you don't want a specific page to be indexed.",
+      "source_content_hash": "9e8e24fd21613a20c61eb5c571abf1bafcf49da2db105f172508eb9c32383bc6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們加強了對 [`noindex` 元 `robots` 指令](https://developers.google.com/search/docs/advanced/crawling/block-indexing)的支援，該指令用於向搜尋引擎表明您不希望特定頁面被索引。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "In [#7963](https://github.com/facebook/docusaurus/pull/7963), we allow `noindex` to be configured on a per-docs-version basis.",
+      "source_content_hash": "380543a54baeb52132bb4f3dc7f2250c98d0ba3944bf2084c304d4390e38f118",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#7963](https://github.com/facebook/docusaurus/pull/7963) 中，我們允許按文件版本配置 `noindex`。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Use the following plugin options to tell crawlers you don't want the `1.0.0` version to be indexed:",
+      "source_content_hash": "bf1144d9f21175031e2ded23f5247b438230a187e557cf9eba395dd090f4500d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用以下插件選項告訴爬蟲您不希望 `1.0.0` 版本被索引："
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```jsx\nconst options = {\n  versions: {\n    '1.0.0': {\n      noIndex: true,\n    },\n  },\n};\n```",
+      "source_content_hash": "1a1c769cedb7d3db0daf033ccae9e14be913726cffae92443fb05b09ca70cf8a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "In practice, Docusaurus will add the following meta to each page of that version:",
+      "source_content_hash": "3e5aab7b265ca338b42c691ea7ddadc0bec3709d5a247d05d65fb77879d843b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實際上，Docusaurus 會為該版本的每個頁面添加以下元標記："
+      }
+    },
+    {
+      "segment_id": "c3955998",
+      "source_content": "```html\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n```",
+      "source_content_hash": "dd48cd3df0838550361109b08fa76f50d4a441c33c02882bcbdc5129a17bd4e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c3955998"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "In [#7964](https://github.com/facebook/docusaurus/pull/7964), we also fixed a bug where the sitemap plugin would still contain pages that have a `noindex` directive. Now the sitemap plugin will reliably filter out all the pages containing `noindex` directives.",
+      "source_content_hash": "3c241babfc82931a1eb22ec3eefd32689fc9d7405115ad582c5ee7c422aeec57",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#7964](https://github.com/facebook/docusaurus/pull/7964) 中，我們也修復了一個錯誤，即網站地圖插件仍會包含帶有 `noindex` 指令的頁面。現在網站地圖插件會可靠地過濾掉所有包含 `noindex` 指令的頁面。"
+      }
+    },
+    {
+      "segment_id": "9e95fc4a",
+      "source_content": "### Overriding default meta tags",
+      "source_content_hash": "cb5913b02c82d306b02a274381ec985e3597e85c6f7fc949ca881275179a4679",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 覆蓋預設元標記"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "In [#7952](https://github.com/facebook/docusaurus/pull/7952), it becomes possible to override default html meta tags you couldn't before:",
+      "source_content_hash": "3431335549f831cb208d0c5a740df0db178aad3d1381475c70dbe33e3f410943",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#7952](https://github.com/facebook/docusaurus/pull/7952) 中，現在可以覆蓋以前無法覆蓋的預設 HTML 元標記："
+      }
+    },
+    {
+      "segment_id": "1d510af2",
+      "source_content": "```jsx\n<>\n  {siteConfig.noIndex && <meta name=\"robots\" content=\"nofollow, noindex\" />}\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n</>\n```",
+      "source_content_hash": "c2821821f2a1cfe2a1dfa128577aa3e0f83aeb2684f7324cf030659d3f29c8d9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1d510af2"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "It is now possible to use `<Head>` or `themeConfig.metadata`:",
+      "source_content_hash": "c6317263a345b7f37e26c2b7d84ad4f3065dd2e2de702ec0a4e5ba927f7364dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在可以使用 `<Head>` 或 `themeConfig.metadata`："
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "- to override the `viewport` meta\n- to override the `robots` meta: you could mark your site as `noIndex`, but except for specific pages that should be indexed",
+      "source_content_hash": "52083bf4be2e4a94dccbce2b1a91df013e1ec87104ac2201e71d871cb727f484",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 覆蓋 `viewport` 元標記\n- 覆蓋 `robots` 元標記：您可以將整個網站標記為 `noIndex`，但特定頁面除外，這些頁面仍應被索引"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "### Ukrainian translations",
+      "source_content_hash": "d1fbe9d9fd4f5a631355a4ec38675a65469c22528a161de25ef7c53886c08a0a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 烏克蘭語翻譯"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "In [#7953](https://github.com/facebook/docusaurus/pull/7953), we added default classic theme translations for the Ukrainian language.",
+      "source_content_hash": "5d0f6c9d5882b1e68c22856be053e29cad9cbf796ca0537da659dedab54785bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#7953](https://github.com/facebook/docusaurus/pull/7953) 中，我們為烏克蘭語添加了經典主題的預設翻譯。"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "Check the [2.1.0 changelog entry](/changelog/2.1.0) for an exhaustive list of changes.",
+      "source_content_hash": "fef5f944332289f9555f9e3f949a4a1e60a0a3d50dcc9dbdcbd688924f89e146",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查看 [2.1.0 更新日誌條目](/changelog/2.1.0) 以獲取完整的變更列表。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022/09-01-docusaurus-2.1/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.027811+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "cf45fed7fc5f3a877bcd50aba7a385daea53fbac46872dee777583ab2dd7f2be"
+  }
+}

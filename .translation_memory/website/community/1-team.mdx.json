@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "community/1-team.mdx",
+  "source_file_content_hash": "95566b32b3983c1ae51f4ad1dc426c4c7237afaea258f122f48397aa5a8a3e06",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Team",
+      "source_content_hash": "9eace4bf1ffce42f54893f85fcde4ae252f58657549203afb1ecbf88de596187",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 團隊"
+      }
+    },
+    {
+      "segment_id": "a37198cd",
+      "source_content": "import {\n  ActiveTeamRow,\n  HonoraryAlumniTeamRow,\n  StudentFellowsTeamRow,\n} from '@site/src/components/TeamProfileCards';",
+      "source_content_hash": "3553dca191aeecd5e73d3494dcfce11e54cb2572a03ba3f63eb974fadfe1269a",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a37198cd"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## Active Team {#active-team}",
+      "source_content_hash": "0229cb7dd6f49b36253d094845d7e2d238b7f1ef9a5cff6e1ccc4799521c694b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 現任團隊成員 {#active-team}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "The Docusaurus team works on the core functionality, plugins for the classic theme, as well as the Docusaurus documentation website.",
+      "source_content_hash": "ad5e786cedb895596f48f02a5af15d1d320823f5a6466325f605258da9663d18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 團隊負責核心功能開發、經典主題插件開發，以及 Docusaurus 官方文檔網站的維護。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Current members of the Docusaurus team are listed in alphabetical order below.",
+      "source_content_hash": "c35317f1e83c815eba023b959f2c290846d90370176987482eb899bbce6417d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下按字母順序列出當前 Docusaurus 團隊成員。"
+      }
+    },
+    {
+      "segment_id": "4b7cc23c",
+      "source_content": "<ActiveTeamRow />",
+      "source_content_hash": "9a94c1438a392fa2d742152eb8e29a233353e6317cfd93c3ee251eb993f8647c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4b7cc23c"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "## Honorary Alumni {#honorary-alumni}",
+      "source_content_hash": "c6c2fe09a4b812380630b21c3686d1fd900b01b2a54bf6a6062d416e85934c01",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 榮譽校友 {#honorary-alumni}"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Docusaurus would never be what it is today without the huge contributions from these folks who have moved on to bigger and greater things.",
+      "source_content_hash": "84176bedb14b50f73d22f2e9af5d106f6a79e78c1e5bfba8af4604a75a5293f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若沒有這些已轉戰其他領域的貢獻者們，Docusaurus 絕不會有今日的成就。"
+      }
+    },
+    {
+      "segment_id": "1485a88b",
+      "source_content": "<HonoraryAlumniTeamRow />",
+      "source_content_hash": "489d37e846fcb19980c9aec2aabd796d50bc5704256d74f1f74ee88220331ab3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1485a88b"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Student Fellows {#student-fellows}",
+      "source_content_hash": "d998aaad6a4ba09d6c34ded84521104b01212a474fd10f5e6dc037ce705e532f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 學生研究員 {#student-fellows}"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "A handful of students have also worked on Docusaurus as part of their school term/internship and the [Major League Hacking Fellowship program](https://fellowship.mlh.io/), contributing amazing features such as plugin options validation, migration tooling, and a Bootstrap theme.",
+      "source_content_hash": "a06a6b7b7b8d38ccf6e07519021f7c12f39d36286a909112af37e116c834e6fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部分學生透過學期專案/實習計畫與 [Major League Hacking Fellowship 計畫](https://fellowship.mlh.io/)參與 Docusaurus 開發，貢獻了諸多重要功能，例如插件選項驗證、遷移工具與 Bootstrap 主題。"
+      }
+    },
+    {
+      "segment_id": "358a309f",
+      "source_content": "<StudentFellowsTeamRow />",
+      "source_content_hash": "3a223133002aac58c4ba9dd095e8ddb908a4b976eb992d43ceb83b4533831c4c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_358a309f"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## Acknowledgements {#acknowledgements}",
+      "source_content_hash": "3c93464bd5a44f91c407b9c65190e9b36e5dadad0f719480ad4e01a63ae70536",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 致謝 {#acknowledgements}"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Docusaurus was originally created by Joel Marcey. Today, Docusaurus has a few hundred open source contributors. We’d like to recognize a few people who have made significant contributions to Docusaurus and its documentation in the past and have helped maintain them over the years:",
+      "source_content_hash": "77f0fa9290e8ac1a4e9d4d1e01d0c3d268080b00b86345fba7ee4e4fc8f44ea2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 最初由 Joel Marcey 創建。如今已有數百位開源貢獻者參與其中。我們特別感謝以下曾對 Docusaurus 及其文檔做出重大貢獻，並長期協助維護的夥伴："
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "- [Amy Lam](https://github.com/amyrlam)\n- [Cheng Lou](https://github.com/chenglou)\n- [Christine Abernathy](https://github.com/caabernathy)\n- [Christopher Chedeau](https://github.com/vjeux)\n- [Elvis Wolcott](https://github.com/elviswolcott)\n- [Eric Nakagawa](https://github.com/ericnakagawa)\n- [Fienny Angelina](https://github.com/fiennyangeln)\n- [Frank Li](https://github.com/deltice)\n- [Héctor Ramos](https://github.com/hramos)\n- [Ramón Lamana](https://github.com/rlamana)\n- [Ricky Vetter](https://github.com/rickyvetter)",
+      "source_content_hash": "8555443781eff868fbf472cd7dbb061ab7a0f3e379cfb70a81b545683c3dc8b1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [Amy Lam](https://github.com/amyrlam)\n- [Cheng Lou](https://github.com/chenglou)\n- [Christine Abernathy](https://github.com/caabernathy)\n- [Christopher Chedeau](https://github.com/vjeux)\n- [Elvis Wolcott](https://github.com/elviswolcott)\n- [Eric Nakagawa](https://github.com/ericnakagawa)\n- [Fienny Angelina](https://github.com/fiennyangeln)\n- [Frank Li](https://github.com/deltice)\n- [Héctor Ramos](https://github.com/hramos)\n- [Ramón Lamana](https://github.com/rlamana)\n- [Ricky Vetter](https://github.com/rickyvetter)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-community/current/1-team.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.022592+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "95566b32b3983c1ae51f4ad1dc426c4c7237afaea258f122f48397aa5a8a3e06"
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/guides/markdown-features/markdown-features-intro.mdx",
+  "source_file_content_hash": "e921bd105e9085d6e79606ad333fbf43dafc5c6e1d8db1582aca1164c2b885fb",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: introduction\ndescription: Docusaurus uses MDX. Find out more about Docusaurus-specific features when writing Markdown.\nslug: /markdown-features\n---",
+      "source_content_hash": "364ff337f2d23d3e536fa7aea513790574c2ea0a8dc633ed73b54780db54316a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Markdown Features",
+      "source_content_hash": "24e7e43471ceade68c21c44fc2dff01570d4c0a7cc77a9644e81b425cbce9844",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# Markdown 功能"
+      }
+    },
+    {
+      "segment_id": "623f74e7",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_623f74e7"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus uses **[Markdown](https://commonmark.org/)** as its main content authoring format.",
+      "source_content_hash": "810de911292eb746ba2212962e43171955ba47d26e87a97489bd81308a9ef4af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 採用 **[Markdown](https://commonmark.org/)** 作為主要內容撰寫格式。"
+      }
+    },
+    {
+      "segment_id": "2e76584d",
+      "source_content": ":::tip[Learn Markdown]\n\nYou can [learn Markdown in 10 minutes](https://commonmark.org/help/).\n\n:::",
+      "source_content_hash": "ced49c71e35d8f178287479ace83a7e92bd1ee5c82b207ab8b6dc710f4654004",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[學習 Markdown]\n\n您可以[在 10 分鐘內學會 Markdown](https://commonmark.org/help/)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Docusaurus uses modern tooling to help you create **interactive documentation**.",
+      "source_content_hash": "a76e19fc36b6c2f6954bb9c4a38a04e96f3147e0e4a432e373285ad79878bf78",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用現代化工具協助您建立**互動式文件**。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "The **[MDX](https://mdxjs.com/)** compiler transforms **Markdown files to React components**, and allows you to use JSX in your Markdown content. This enables you to easily interleave React components within your content, and create delightful learning experiences.",
+      "source_content_hash": "dcc99d8f6c49078cc830f662d992672ade04869f24bea42322b4a93b3a2d8568",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**[MDX](https://mdxjs.com/)** 編譯器會將 **Markdown 檔案轉換為 React 元件**，並允許您在 Markdown 內容中使用 JSX。這讓您能輕鬆地在內容中嵌入 React 元件，創造愉悅的學習體驗。"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::tip[Use the MDX Playground]\n\nThe **[MDX playground](https://mdxjs.com/playground/)** is your new best friend!\n\nIt is a very helpful debugging tool that shows how the MDX compiler transforms Markdown to React.\n\n**Options**: select the right format (MDX or CommonMark) and the following plugins Docusaurus uses: `remark-gfm`, `remark-directive`, `rehype-raw`.\n\n:::",
+      "source_content_hash": "755ec6492a37dbe0acf826b72cf1b358dcc4044b6c178a3a1eec1123a36f1a69",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[使用 MDX 遊樂場]\n\n**[MDX 遊樂場](https://mdxjs.com/playground/)** 是您的新朋友！\n\n這是一個極具幫助的除錯工具，能展示 MDX 編譯器如何將 Markdown 轉換為 React。\n\n**選項**：選擇正確的格式（MDX 或 CommonMark）以及 Docusaurus 使用的以下插件：`remark-gfm`、`remark-directive`、`rehype-raw`。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## MDX vs. CommonMark {#mdx-vs-commonmark}",
+      "source_content_hash": "c4d736599d3a15cae319fb7c2e93b3f6f4f9864febd292d3d0ff4fcd35e54908",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## MDX 與 CommonMark 比較 {#mdx-vs-commonmark}"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Docusaurus compiles both `.md` and `.mdx` files to React components using the MDX compiler, but **the syntax can be interpreted differently** depending on your settings.",
+      "source_content_hash": "9c3b0d83679339b4b91410ccae47dc65c0f9f93b93d33e5c735261e5bf0bff5a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用 MDX 編譯器將 `.md` 和 `.mdx` 檔案編譯為 React 元件，但**語法解讀方式可能因設定而異**。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "The MDX compiler supports [2 formats](https://mdxjs.com/packages/mdx/#optionsformat):",
+      "source_content_hash": "c233f6b60690a2028d6774e2fb9e9a89f58f1dab2031b18a0c3fee827269bb69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "MDX 編譯器支援 [2 種格式](https://mdxjs.com/packages/mdx/#optionsformat)："
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "- The [MDX format](https://mdxjs.com/docs/what-is-mdx/): a powerful parser allowing the usage of JSX\n- The [CommonMark format](https://commonmark.org/): a standard-compliant Markdown parser that does not allow the usage of JSX",
+      "source_content_hash": "40810e39ee6d4d862a1ac1e07850c898486811d6b734b3a8c5dc0cf884112eca",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [MDX 格式](https://mdxjs.com/docs/what-is-mdx/)：強大的解析器，允許使用 JSX\n- [CommonMark 格式](https://commonmark.org/)：符合標準的 Markdown 解析器，不允許使用 JSX"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "By default, **Docusaurus v3 uses the MDX format for all files** (including `.md` files) for historical reasons.",
+      "source_content_hash": "5a06c56f80aebb7726ad87eaf0d62c51aa40b1b92b09540bba00f536ce856fb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，**Docusaurus v3 出於歷史原因對所有檔案（包括 `.md` 檔案）使用 MDX 格式**。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "It is possible to **opt-in for CommonMark** using the [`siteConfig.markdown.format`](../../api/docusaurus.config.js.mdx#markdown) setting or the `mdx.format: md` front matter.",
+      "source_content_hash": "632f2c59267922760dceecc3e2d94441ede2754c6e0ac0d9995937aef7b86f01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過 [`siteConfig.markdown.format`](../../api/docusaurus.config.js.mdx#markdown) 設定或 `mdx.format: md` 前置資料**選擇改用 CommonMark**。"
+      }
+    },
+    {
+      "segment_id": "80e5ac71",
+      "source_content": ":::tip[how to use CommonMark]\n\nIf you plan to use CommonMark, we recommend the [`siteConfig.markdown.format: 'detect'`](../../api/docusaurus.config.js.mdx#markdown) setting. The appropriate format will be selected automatically, based on file extensions:\n\n- `.md` files will use the CommonMark format\n- `.mdx` files will use the MDX format\n\n:::",
+      "source_content_hash": "eb000a6c29b67cfd1b00acf00dada71d08a7f90ec2c792e9941df3f7500207d9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[如何使用 CommonMark]\n\n若計劃使用 CommonMark，建議採用 [`siteConfig.markdown.format: 'detect'`](../../api/docusaurus.config.js.mdx#markdown) 設定。系統會根據副檔名自動選擇適當格式：\n\n- `.md` 檔案將使用 CommonMark 格式\n- `.mdx` 檔案將使用 MDX 格式\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7fc18c94",
+      "source_content": ":::danger[Experimental CommonMark support]\n\nThe CommonMark support is **experimental** and currently has a few [limitations](https://github.com/facebook/docusaurus/issues/9092).\n\n:::",
+      "source_content_hash": "9d9539d75decf38a18de21d5111416601c635635f0acd86e53c057a8c1cff62c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::danger[實驗性 CommonMark 支援]\n\nCommonMark 支援目前為**實驗性功能**，存在若干[限制](https://github.com/facebook/docusaurus/issues/9092)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "## Standard features {#standard-features}",
+      "source_content_hash": "42777478659ea8d9897bdb210079cac7c056340165611148516dd2898f9b11df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 標準功能 {#standard-features}"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Markdown is a syntax that enables you to write formatted content in a readable syntax.",
+      "source_content_hash": "9b840d1528845422938f5f4dfd2c1b5d20e5c3aa2ae312f73611375f9ce43ccd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 是一種讓您能以易讀語法撰寫格式化內容的語法。"
+      }
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```md\n### My Doc Section\n\nHello world message with some **bold** text, some _italic_ text, and a [link](/)\n\n![img alt](/img/docusaurus.png)\n```",
+      "source_content_hash": "64ec6afd0a796029871a1097feaba40383f5851dfc259a9f102fe00d35392048",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7a577a50"
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n\n<h3>My Doc Section</h3>\n\nHello world message with some **bold** text, some _italic_ text and a [link](/)\n\n![img alt](/img/docusaurus.png)\n\n</BrowserWindow>\n```",
+      "source_content_hash": "89fe39d3e06d9d583d1907d3a785a4d0250023985fa30baee0f0aabe5fcc63b9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "057a9dd8",
+      "source_content": "<details>\n\n<summary>Markdown is declarative</summary>\n\nSome may assume a 1-1 correlation between Markdown and HTML, e.g., `![Preview](/img/docusaurus.png)` will always become `<img src=\"/img/docusaurus.png\" alt=\"Preview\" />`, as-is. However, _that is not the case_.\n\nThe Markdown syntax `![message](url)` only declaratively tells Docusaurus that an image needs to be inserted here, but we may do other things like transforming a [file path to URL path](./markdown-features-assets.mdx#images), so the generated markup may differ from the output of other Markdown renderers, or a naïve hand-transcription to the equivalent JSX/HTML code.\n\nIn general, you should only assume the _semantics_ of the markup (` ``` ` fences become [code blocks](./markdown-features-code-blocks.mdx); `>` becomes [quotes](#quotes), etc.), but not the actual compiled output.\n\n</details>",
+      "source_content_hash": "96f7ca40c75faf65af19746c5f378a904f43fb9f5aa853dd4302a1fdf0e32887",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_057a9dd8"
+      }
+    },
+    {
+      "segment_id": "b10963d7",
+      "source_content": "## Front matter {#front-matter}",
+      "source_content_hash": "47aeedb3986a1b2ce51ff33fe107cf412fdea66527819dd6ac6767accbe1c3d0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 前置資料 {#front-matter}"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "Front matter is used to add metadata to your Markdown file. All content plugins have their own front matter schema, and use the front matter to enrich the default metadata inferred from the content or other configuration.",
+      "source_content_hash": "d308358ea651c42372973aeef6229b45e1b6ef542eeba4dd33a5d86c2ef8125f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "前置資料用於為 Markdown 檔案添加元數據。所有內容插件都有各自的前置資料結構描述，並利用前置資料來豐富從內容或其他配置推斷出的預設元數據。"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Front matter is provided at the very top of the file, enclosed by three dashes `---`. The content is parsed as [YAML](https://yaml.org/spec/1.2.2/).",
+      "source_content_hash": "3e15fb49e3486d1c063be64eda1cb9ef7792f6c2154ef639f914b5b7fb758e32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "前置資料位於檔案最頂端，以三個破折號 `---` 包圍。內容以 [YAML](https://yaml.org/spec/1.2.2/) 格式解析。"
+      }
+    },
+    {
+      "segment_id": "cae897fb",
+      "source_content": "```md\n---\ntitle: My Doc Title\nmore_data:\n  - Can be provided\n  - as: objects\n    or: arrays\n---\n```",
+      "source_content_hash": "b41c08c8cac8f79d5789f9a4b1013703321557de2a79c640dd76ea27aad90126",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cae897fb"
+      }
+    },
+    {
+      "segment_id": "95f2feab",
+      "source_content": ":::info\n\nThe API documentation of each official plugin lists the supported attributes:\n\n- [Docs front matter](../../api/plugins/plugin-content-docs.mdx#markdown-front-matter)\n- [Blog front matter](../../api/plugins/plugin-content-blog.mdx#markdown-front-matter)\n- [Pages front matter](../../api/plugins/plugin-content-pages.mdx#markdown-front-matter)\n\n:::",
+      "source_content_hash": "9bc9f63f5453167fbbeb75d02a729a11242db1ce44bad2b0e26928adcc7fadd6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n每個官方插件的 API 文件都列出了支援的屬性：\n\n- [文件前置資料](../../api/plugins/plugin-content-docs.mdx#markdown-front-matter)\n- [部落格前置資料](../../api/plugins/plugin-content-blog.mdx#markdown-front-matter)\n- [頁面前置資料](../../api/plugins/plugin-content-pages.mdx#markdown-front-matter)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c9cbbb2d",
+      "source_content": ":::tip[enhance your front matter]\n\nUse the [Markdown config `parseFrontMatter` function](../../api/docusaurus.config.js.mdx#markdown) to provide your own front matter parser, or to enhance the default parser.\n\nIt is possible to reuse the default parser to wrap it with your own custom proprietary logic. This makes it possible to implement convenient front matter transformations, shortcuts, or to integrate with external systems using front matter that Docusaurus plugins do not support.\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  markdown: {\n    // highlight-start\n    parseFrontMatter: async (params) => {\n      // Reuse the default parser\n      const result = await params.defaultParseFrontMatter(params);\n\n      // Process front matter description placeholders\n      result.frontMatter.description =\n        result.frontMatter.description?.replaceAll('{{MY_VAR}}', 'MY_VALUE');\n\n      // Create your own front matter shortcut\n      if (result.frontMatter.i_do_not_want_docs_pagination) {\n        result.frontMatter.pagination_prev = null;\n        result.frontMatter.pagination_next = null;\n      }\n\n      // Rename an unsupported front matter coming from another system\n      if (result.frontMatter.cms_seo_summary) {\n        result.frontMatter.description = result.frontMatter.cms_seo_summary;\n        delete result.frontMatter.cms_seo_summary;\n      }\n\n      return result;\n    },\n    // highlight-end\n  },\n};\n```\n\n:::",
+      "source_content_hash": "37c883c91070902c583966a4d19610a0eb0e0227070429d6899851fd9e292648",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[強化你的 front matter]\n\n使用 [Markdown 配置中的 `parseFrontMatter` 函數](../../api/docusaurus.config.js.mdx#markdown) 來提供自訂的 front matter 解析器，或增強預設解析器。\n\n你可以重複使用預設解析器，並用自有的專屬邏輯進行包裝。這讓你能實作便利的 front matter 轉換、快捷方式，或是透過 front matter 整合外部系統（即使 Docusaurus 外掛不支援這些功能）。\n\n```js title=\"docusaurus.config.js\"\nexport default {\n  markdown: {\n    // highlight-start\n    parseFrontMatter: async (params) => {\n      // 重複使用預設解析器\n      const result = await params.defaultParseFrontMatter(params);\n\n      // 處理 front matter 描述中的佔位符\n      result.frontMatter.description =\n        result.frontMatter.description?.replaceAll('{{MY_VAR}}', 'MY_VALUE');\n\n      // 建立自訂的 front matter 快捷方式\n      if (result.frontMatter.i_do_not_want_docs_pagination) {\n        result.frontMatter.pagination_prev = null;\n        result.frontMatter.pagination_next = null;\n      }\n\n      // 重新命名來自其他系統的不支援 front matter\n      if (result.frontMatter.cms_seo_summary) {\n        result.frontMatter.description = result.frontMatter.cms_seo_summary;\n        delete result.frontMatter.cms_seo_summary;\n      }\n\n      return result;\n    },\n    // highlight-end\n  },\n};\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ee213c98",
+      "source_content": "## Quotes {#quotes}",
+      "source_content_hash": "3367cb170bf760af7e9e53b2166225ded453d57ae7d7ffec4c0b1660b761b22e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 引用區塊 {#quotes}"
+      }
+    },
+    {
+      "segment_id": "008183b0",
+      "source_content": "Markdown quotes are beautifully styled:",
+      "source_content_hash": "db31e87d4de5a9677740c3d862ead7e6bb130a82fa03e5dc9a7097accf352cdf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 的引用區塊經過美觀的樣式設計："
+      }
+    },
+    {
+      "segment_id": "71779666",
+      "source_content": "```md\n> Easy to maintain open source documentation websites.\n>\n> — Docusaurus\n```",
+      "source_content_hash": "c6ed6ddaf648ef21a3eebb8be15bbbae3879beacdeded5e26342155efe8300ee",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71779666"
+      }
+    },
+    {
+      "segment_id": "623fa941",
+      "source_content": "<BrowserWindow>\n\n> Easy to maintain open source documentation websites.\n>\n> — Docusaurus\n\n</BrowserWindow>",
+      "source_content_hash": "46fbfa5d58d0d7f7b710aae1433c71c2609c26d928b04ebae117db349c7a8d94",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_623fa941"
+      }
+    },
+    {
+      "segment_id": "445c72bd",
+      "source_content": "## Details {#details}",
+      "source_content_hash": "0bb1d6a078457a7272b26361d9be74f9b0072f8e066a40e549732faced8d8bae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 摺疊內容 {#details}"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "Markdown can embed HTML elements, and [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) HTML elements are beautifully styled:",
+      "source_content_hash": "e8a760b676d5329675e7ac826283fd1b977bd9fd4953743d47e95c82feaf7acb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 可以嵌入 HTML 元素，而 [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) HTML 元素也經過美觀的樣式設計："
+      }
+    },
+    {
+      "segment_id": "44ecd2e3",
+      "source_content": "````md\n### Details element example\n\n<details>\n  <summary>Toggle me!</summary>\n\n  This is the detailed content\n\n  ```js\n  console.log(\"Markdown features including the code block are available\");\n  ```\n\n  You can use Markdown here including **bold** and _italic_ text, and [inline link](https://docusaurus.io)\n  <details>\n    <summary>Nested toggle! Some surprise inside...</summary>\n\n    😲😲😲😲😲\n  </details>\n</details>\n````",
+      "source_content_hash": "63433c998d41a387f31bf62f101884eb51b1e5d26599a9eaf681cf5f025785cf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_44ecd2e3"
+      }
+    },
+    {
+      "segment_id": "cf50de8a",
+      "source_content": "````mdx-code-block\n<BrowserWindow>\n\n<h3>Details element example</h3>\n\n<details>\n  <summary>Toggle me!</summary>\n\n  This is the detailed content\n\n  ```js\n  console.log(\"Markdown features including the code block are available\");\n  ```\n\n  You can use Markdown here including **bold** and _italic_ text, and [inline link](https://docusaurus.io)\n  <details>\n    <summary>Nested toggle! Some surprise inside...</summary>\n\n    😲😲😲😲😲\n  </details>\n</details>\n\n</BrowserWindow>\n````",
+      "source_content_hash": "3c71a0abe77c30d3514f0b1d339800a85d6bad37d6f28eff486676db1f66d5d6",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_cf50de8a"
+      }
+    },
+    {
+      "segment_id": "26a4cc09",
+      "source_content": ":::info\n\nYou may want to keep your `<summary>` on a single line. Keep in mind that [MDX creates extra HTML `<p>` paragraphs for line breaks.](https://mdxjs.com/migrating/v2/#jsx). When in doubt, use the [MDX playground](https://mdxjs.com/playground/) to troubleshoot `<details>` rendering problems.\n\n:::",
+      "source_content_hash": "e69d222b389fe104bd4ac590579229e7b096a0a7a9371bd20ee62e502efbac19",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n建議將 `<summary>` 保持在同一行。請注意 [MDX 會為換行符號建立額外的 HTML `<p>` 段落](https://mdxjs.com/migrating/v2/#jsx)。若有疑問，可使用 [MDX 遊樂場](https://mdxjs.com/playground/) 來排查 `<details>` 的渲染問題。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/guides/markdown-features/markdown-features-intro.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.390039+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e921bd105e9085d6e79606ad333fbf43dafc5c6e1d8db1582aca1164c2b885fb"
+  }
+}

@@ -1,0 +1,890 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/guides/markdown-features/markdown-features-toc.mdx",
+  "source_file_content_hash": "23db8d5216998b1b2eeece5885adab73426bab1db008dea99333ca0a191df697",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: toc\ndescription: Customizing headings and table-of-contents in Markdown\nslug: /markdown-features/toc\n---",
+      "source_content_hash": "f2526505a230ac21f0379ac7df25afdf87864ddaddb0b49018941973bfa57fd5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "10c4cb47",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "# Headings and Table of contents",
+      "source_content_hash": "48c5333204a0d698780de9b260b64d3b39bd279b54ad233fc4ade35a57597398",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Markdown headings {#markdown-headings}",
+      "source_content_hash": "b2f327411ce2879fc4c06cda60c29874ef0867b29af178df9944f164cc8d7574",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "You can use regular Markdown headings.",
+      "source_content_hash": "7ec23d3026b74e3e59b2a147a005bfe28aec1c30a1bab2e60ad4d1615ea3f6d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```md\n## Level 2 title\n\n### Level 3 title\n\n#### Level 4 title\n```",
+      "source_content_hash": "91f2f96cb3c372929ad1d50d123b19b8d917529e55f395d35dffc9cd8c604000",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Each Markdown heading will appear as a table of contents entry.",
+      "source_content_hash": "22154ec058ab2ab6dd296310f38810ca869a83d67a518cabcff0081f6c44ef1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "### Heading IDs {#heading-ids}",
+      "source_content_hash": "73cbacd72c06a3d0c97abfa0052c7a489156ea5e0a56bb95a8f5a3c0c2357bdf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Each heading has an ID that can be automatically generated or explicitly specified. Heading IDs allow you to link to a specific document heading in Markdown or JSX:",
+      "source_content_hash": "f9f271d1426c9b8b38e2d6395acaed8ac9691b226374b01bd62a1cf67619c2f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0c911872",
+      "source_content": "```md\n[link](#heading-id)\n```",
+      "source_content_hash": "815c52d10bdee490ea55a461b13f7f6bef5c28fc22d2d926eeed608aced59397",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a2110253",
+      "source_content": "```jsx\n<Link to=\"#heading-id\">link</Link>\n```",
+      "source_content_hash": "50729fecf43ec9c6adcd398d07eec1eb3d63a4bf43137833f251793588a61d1f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "By default, Docusaurus will generate heading IDs for you, based on the heading text. For example, `### Hello World` will have ID `hello-world`.",
+      "source_content_hash": "9fb2836d7d20477acfa3511b5f072e4a688d29a32b5f36725277aa05f5440747",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Generated IDs have **some limitations**:",
+      "source_content_hash": "8308c928b9e3e086e783529338c0944f55a89b3d24ce4530ba6765cd0ba7b22b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a01ee7b",
+      "source_content": "- The ID might not look good\n- You might want to **change or translate** the text without updating the existing ID",
+      "source_content_hash": "2414213ee793355621b8206126f5568bed52ab8dfe62dd2bfb2d73e688c3ed58",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "A special Markdown syntax lets you set an **explicit heading id**:",
+      "source_content_hash": "d29f873f9b14322d3132429db89db860f2863b5b4551cbb0565f4f22d8b414aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```mdx-code-block\n<Code language=\"md\">{'### Hello World \\u007B#my-explicit-id}\\n'}</Code>\n```",
+      "source_content_hash": "e3cd850afc9266ea55f8bcc86fbc463e51c6d8b37479df47660ed7c3540f261c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "7d0728d9",
+      "source_content": ":::tip\n\nUse the **[`write-heading-ids`](../../cli.mdx#docusaurus-write-heading-ids-sitedir)** CLI command to add explicit IDs to all your Markdown documents.\n\n:::",
+      "source_content_hash": "7fb5ee235374dcfb889a7e9641ebcf07f71395419c56bf80f442d0dd23a02950",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f90b9a6a",
+      "source_content": ":::warning[Avoid colliding IDs]\n\nGenerated heading IDs will be guaranteed to be unique on each page, but if you use custom IDs, make sure each one appears exactly once on each page, or there will be two DOM elements with the same ID, which is invalid HTML semantics, and will lead to one heading being unlinkable.\n\n:::",
+      "source_content_hash": "286106d62ad25e0f6c23e46caac4a6cd8d6da89be493b9a1f70419430bc10a40",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "## Table of contents heading level {#table-of-contents-heading-level}",
+      "source_content_hash": "ec6e6a4374b12c920ab2e9d70111da600e21b418e912128811283891dcc1f16d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Each Markdown document displays a table of contents on the top-right corner. By default, this table only shows h2 and h3 headings, which should be sufficient for an overview of the page structure. In case you need to change the range of headings displayed, you can customize the minimum and maximum heading level — either per page or globally.",
+      "source_content_hash": "9b143734f0cc37102c33753633966d4a1b8277b9b204aa585fe0ff46f9385f2c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "To set the heading level for a particular page, use the `toc_min_heading_level` and `toc_max_heading_level` front matter.",
+      "source_content_hash": "66aecaf4121e47f863a8faff0721ef805345c6f7c2bce85734f22f7ae0ea96e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "67b24fc5",
+      "source_content": "```md title=\"myDoc.md\"\n---\n# Display h2 to h5 headings\ntoc_min_heading_level: 2\ntoc_max_heading_level: 5\n---\n```",
+      "source_content_hash": "1a8232cc66679987caa33f84560e62cb880ab48302d5f9c60a5cfd568e759d88",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "To set the heading level for _all_ pages, use the [`themeConfig.tableOfContents`](../../api/themes/theme-configuration.mdx#table-of-contents) option.",
+      "source_content_hash": "80f70542fa220edc499486433ce5827907d08ea1ecf28776c0387235010d8ca0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8a9e710a",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    tableOfContents: {\n      // highlight-start\n      minHeadingLevel: 2,\n      maxHeadingLevel: 5,\n      // highlight-end\n    },\n  },\n};\n```",
+      "source_content_hash": "4e00e34af64ee8d008aa13c225368382e714dfd0eff8edae2e31a19ffc8a5e0f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "If you've set the options globally, you can still override them locally via front matter.",
+      "source_content_hash": "c1bcf45c4ac106c4faad7110ee7674694c70ed401e6944f480960ba7a4f0321b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e2e299c8",
+      "source_content": ":::note\n\nThe `themeConfig` option would apply to all TOC on the site, including [inline TOC](#inline-table-of-contents), but front matter options only affect the top-right TOC. You need to use the `minHeadingLevel` and `maxHeadingLevel` props to customize each `<TOCInline />` component.\n\n:::",
+      "source_content_hash": "6b0a8dfabd0b933b8064039c2c8573097569de332d9a2d8fdfc06b7e9888d0e2",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "## Inline table of contents {#inline-table-of-contents}",
+      "source_content_hash": "62a5a7e48b5decb32b7c0f1fbe68c434eee9247d7f1f01561c0560249447ddd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "It is also possible to display an inline table of contents directly inside a Markdown document, thanks to MDX.",
+      "source_content_hash": "ad8581897056dc353950050d1f114d1083eb9893400a5f955b72c38be1efec68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "The `toc` variable is available in any MDX document and contains all the headings of an MDX document. By default, only `h2` and `h3` headings are displayed in the TOC. You can change which heading levels are visible by setting `minHeadingLevel` or `maxHeadingLevel` for individual `TOCInline` components.",
+      "source_content_hash": "f20ba14d7609de2935da1ef2f7496557ca30f1f3d324d9eb392d342c698f4bc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "d44e4104",
+      "source_content": "```jsx\nimport TOCInline from '@theme/TOCInline';\n\n<TOCInline toc={toc} />\n```",
+      "source_content_hash": "913f92bc4d1e9863917703cc0b965313bfb2834220fb346a7793e317cd6e246b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "03a9ab41",
+      "source_content": "```mdx-code-block\nimport TOCInline from '@theme/TOCInline';\n\n<BrowserWindow>\n<TOCInline toc={toc} />\n</BrowserWindow>\n```",
+      "source_content_hash": "ece82beb600cad4bcf1ffc5816033abe19f4a83a97b9f384aea715d2d0f7807b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "The `toc` global is just a list of heading items:",
+      "source_content_hash": "297be3bcd4ebc4fd865a5fd1fcf1fa4974875d7f24bd021c3e634c0d57eeee22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```ts\ndeclare const toc: {\n  value: string;\n  id: string;\n  level: number;\n}[];\n```",
+      "source_content_hash": "d3858eb281fedad3fb2aecbd1bd02b0fb2ca127e56d71874e563fe045971039d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "Note that the `toc` global is a flat array, so you can easily cut out unwanted nodes or insert extra nodes, and create a new TOC tree.",
+      "source_content_hash": "3acffb7397db3156eb1244d48ff762fcdff42156d429f8bf86a3c4e8f9eb6f47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "18fb666f",
+      "source_content": "```jsx\nimport TOCInline from '@theme/TOCInline';\n\n<TOCInline\n  // Only show h2 and h4 headings\n  toc={toc.filter((node) => node.level === 2 || node.level === 4)}\n  minHeadingLevel={2}\n  // Show h4 headings in addition to the default h2 and h3 headings\n  maxHeadingLevel={4}\n/>\n```",
+      "source_content_hash": "301152da8e107c5b435261bda855af8836a19e951a9a7e36b115bc26590725f3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a6c3f55f",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n<TOCInline\n  toc={toc.filter((node) => node.level === 2 || node.level === 4)}\n  minHeadingLevel={2}\n  maxHeadingLevel={4}\n/>\n</BrowserWindow>\n```",
+      "source_content_hash": "931d8734e4cbfd537460dd809d7dd94264e6890fd01ba69865db0f232dfc22c1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "55dc794c",
+      "source_content": "## Customizing table of contents generation {#customizing-table-of-contents-generation}",
+      "source_content_hash": "0f994dec7754d7cb7d62e2a091593736daf19a65a1d179f1a685aaf8568f0c0b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 自訂目錄生成 {#customizing-table-of-contents-generation}"
+      }
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "The table-of-contents is generated by parsing the Markdown source with a [Remark plugin](./markdown-features-plugins.mdx). There are known edge-cases where it generates false-positives and false-negatives.",
+      "source_content_hash": "717ed59db49980b4d3533886232f97d3ed611a2596b4de59639e865f96b264e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "目錄是通過使用 [Remark 插件](./markdown-features-plugins.mdx) 解析 Markdown 原始碼生成的。存在已知的特殊情況會導致生成誤判（假陽性與假陰性）。"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "Markdown headings within hideable areas will still show up in the TOC. For example, headings within [`Tabs`](./markdown-features-tabs.mdx) and [`details`](./markdown-features-intro.mdx#details) will not be excluded.",
+      "source_content_hash": "8294b472bd68db45582ae31f29a5a20128add944936741402e2d30e65bf959dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可隱藏區域內的 Markdown 標題仍會顯示在目錄中。例如，位於 [`Tabs`](./markdown-features-tabs.mdx) 和 [`details`](./markdown-features-intro.mdx#details) 內的標題不會被排除。"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "Non-Markdown headings will not show up in the TOC. This can be used to your advantage to tackle the aforementioned issue.",
+      "source_content_hash": "217c184f76a080ae4e30b790df8c4533704c1fe380960762df3632b5c88c08ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "非 Markdown 標題不會出現在目錄中。這可用來解決上述問題。"
+      }
+    },
+    {
+      "segment_id": "0029045f",
+      "source_content": "```md\n<details>\n<summary>Some details containing headings</summary>\n<h2 id=\"#heading-id\">I'm a heading that will not show up in the TOC</h2>\n\nSome content...\n\n</details>\n```",
+      "source_content_hash": "b25eb650bfc69eb3871c0dac69f32692b8d64f68ceaaf50b33e22fa60f72200c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0029045f"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "The ability to ergonomically insert extra headings or ignore certain headings is a work-in-progress. If this feature is important to you, please report your use-case in [this issue](https://github.com/facebook/docusaurus/issues/6201).",
+      "source_content_hash": "e7c1ae86c6ffbd4076173fdfb714d82dcbb2ffacb02cb1b93248595ee16a4b16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "目前尚無法直觀地插入額外標題或忽略特定標題，此功能仍在開發中。若此功能對您很重要，請在 [此議題](https://github.com/facebook/docusaurus/issues/6201) 中回報您的使用案例。"
+      }
+    },
+    {
+      "segment_id": "f28724b0",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "---"
+      }
+    },
+    {
+      "segment_id": "b826038b",
+      "source_content": ":::warning\n\nBelow is just some dummy content to have more table of contents items available on the current page.\n\n:::",
+      "source_content_hash": "3ed52dca00d0ac88374b8050e18b0a0aafe0755991051256f86b2aea9641a666",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n以下僅為虛擬內容，用於在當前頁面提供更多目錄項目。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8d279c43",
+      "source_content": "## Example Section 1 {#example-section-1}",
+      "source_content_hash": "c7547769b6cfcfc7e311a70595b4905180db80d768cf07d8161d373293363e79",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 範例章節 1 {#example-section-1}"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "c4ac6a6f",
+      "source_content": "### Example Subsection 1 a {#example-subsection-1-a}",
+      "source_content_hash": "4e6c7ae8e42637cfe2649cb6aa15d72742805c49241883ce892fa94ee9fdab6c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 1 a {#example-subsection-1-a}"
+      }
+    },
+    {
+      "segment_id": "b49a7009",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "af250a10",
+      "source_content": "#### Example subsubsection 1 a I",
+      "source_content_hash": "601619d53d20535c526149eb507615d45d135ac993938ba64fae2bf9864f9a51",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 a I"
+      }
+    },
+    {
+      "segment_id": "6d457467",
+      "source_content": "#### Example subsubsection 1 a II",
+      "source_content_hash": "932893a3048d00ae4c43b75e2e5d835490142ebcabdd6c3181f160c17a34d5db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 a II"
+      }
+    },
+    {
+      "segment_id": "c6d75762",
+      "source_content": "#### Example subsubsection 1 a III",
+      "source_content_hash": "6e154286cddf8385fa65f396c44a0e06c8d84050b6a68d4cf4d8c974ae74bf1d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 a III"
+      }
+    },
+    {
+      "segment_id": "dfa23ddf",
+      "source_content": "### Example Subsection 1 b {#example-subsection-1-b}",
+      "source_content_hash": "dc1346cb385854aa8476fd003cc025ee7580b18d5b475dff17c040ec69f46899",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 1 b {#example-subsection-1-b}"
+      }
+    },
+    {
+      "segment_id": "f2c67ca5",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "4d7a4554",
+      "source_content": "#### Example subsubsection 1 b I",
+      "source_content_hash": "9933c2c1f8a4161b6e3c106ec340be2d4a2da1531a36842b00bf1a910809a1e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 b I"
+      }
+    },
+    {
+      "segment_id": "6ac93c98",
+      "source_content": "#### Example subsubsection 1 b II",
+      "source_content_hash": "58f673f07b1f00a30d2588b16048b5a72a1f24b6d19d6b81b65d496a90c01b3d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 b II"
+      }
+    },
+    {
+      "segment_id": "a9de5d69",
+      "source_content": "#### Example subsubsection 1 b III",
+      "source_content_hash": "58a7909d49ee377686c8fe796cfd7fa64d0a56301af3250f3f2d5843c9761110",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 b III"
+      }
+    },
+    {
+      "segment_id": "428f235a",
+      "source_content": "### Example Subsection 1 c {#example-subsection-1-c}",
+      "source_content_hash": "c12d4302ccd86a5b6b6c68b45f090d778a7da4017c24e55f8d2764959991826e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 1 c {#example-subsection-1-c}"
+      }
+    },
+    {
+      "segment_id": "dad05c50",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "4e8f71c1",
+      "source_content": "#### Example subsubsection 1 c I",
+      "source_content_hash": "2a171bb88a602967d07672d7fa64e9c1847a2d180fa3488c799bb65b503727e9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 c I"
+      }
+    },
+    {
+      "segment_id": "97496aad",
+      "source_content": "#### Example subsubsection 1 c II",
+      "source_content_hash": "1314ac846e8cc46a4bdbe75b2f6febdcf574ae4128acad85cf9891d595d566a9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 c II"
+      }
+    },
+    {
+      "segment_id": "ba4aa94e",
+      "source_content": "#### Example subsubsection 1 c III",
+      "source_content_hash": "c1ce116cbb5d36957533f1460a9bd6f9338c607a3f914e5c2006caa941c7980f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 1 c III"
+      }
+    },
+    {
+      "segment_id": "be106497",
+      "source_content": "## Example Section 2 {#example-section-2}",
+      "source_content_hash": "644ea70a4af8425b7213e00b564c91cda8212d885ac2261ce8b7d9b09cb5c142",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 範例章節 2 {#example-section-2}"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "3079a4d2",
+      "source_content": "### Example Subsection 2 a {#example-subsection-2-a}",
+      "source_content_hash": "c404a556b57b25749a281f348bdb4c30676c1dd7b4eaf6e358536315e9cb0ac9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 2 a {#example-subsection-2-a}"
+      }
+    },
+    {
+      "segment_id": "e4945edb",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "950e5c6c",
+      "source_content": "#### Example subsubsection 2 a I",
+      "source_content_hash": "5970369c0f3d603ead1e6ead1f305866c36d70ea6b21ed703966dca29b951c3f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 a I"
+      }
+    },
+    {
+      "segment_id": "43ad2e31",
+      "source_content": "#### Example subsubsection 2 a II",
+      "source_content_hash": "b161e2bddc084e8b7dd82cde826f7706148e2a92edc4fa2cd2f41356089aac47",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 a II"
+      }
+    },
+    {
+      "segment_id": "8e2354b8",
+      "source_content": "#### Example subsubsection 2 a III",
+      "source_content_hash": "a04925ac7bdc90e420ce419f90e9dd99e61bccb9fc284f860240e28c819d222f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 a III"
+      }
+    },
+    {
+      "segment_id": "200685d4",
+      "source_content": "### Example Subsection 2 b {#example-subsection-2-b}",
+      "source_content_hash": "82125b911ca717133459ef5f9c92452a965dc2364ce9561cdf3b38c34f08d394",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 2 b {#example-subsection-2-b}"
+      }
+    },
+    {
+      "segment_id": "09d52457",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "5e300688",
+      "source_content": "#### Example subsubsection 2 b I",
+      "source_content_hash": "aacc2f4100c25b18fc394922ca8d8646aadd193dc9cdf6e4192a3f1889566e34",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 b I"
+      }
+    },
+    {
+      "segment_id": "263073b1",
+      "source_content": "#### Example subsubsection 2 b II",
+      "source_content_hash": "b5d5560a143b06cd5f803bd5e49e626ae7eec3e4bb8f70673fcb4140f718ca88",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 b II"
+      }
+    },
+    {
+      "segment_id": "7eac7922",
+      "source_content": "#### Example subsubsection 2 b III",
+      "source_content_hash": "dbda587ace259ef441e72c60a14ee30f5770f2ffbbb08e85ecaa1264cedd9b24",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 b III"
+      }
+    },
+    {
+      "segment_id": "c9f45ca3",
+      "source_content": "### Example Subsection 2 c {#example-subsection-2-c}",
+      "source_content_hash": "c8576fcc62988c29b059bab5491105cb8ed7bb9bace9229866299446663fb38b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 2 c {#example-subsection-2-c}"
+      }
+    },
+    {
+      "segment_id": "f211c69a",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "4147aea6",
+      "source_content": "#### Example subsubsection 2 c I",
+      "source_content_hash": "a9206a9242c8d36226baee2520107443b5bf37d83396820ad03e89d03cca9286",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 c I"
+      }
+    },
+    {
+      "segment_id": "936707a1",
+      "source_content": "#### Example subsubsection 2 c II",
+      "source_content_hash": "bcd584ef9dd4b36aef61ebc164b9a3c0bbeeca190ae18694e97436fcc57027a8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 c II"
+      }
+    },
+    {
+      "segment_id": "52dd49af",
+      "source_content": "#### Example subsubsection 2 c III",
+      "source_content_hash": "2eafc4a66ecefd1daeacc3155bc88669c03192bcec8677de221ac65f550eeeaf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 2 c III"
+      }
+    },
+    {
+      "segment_id": "accb07e1",
+      "source_content": "## Example Section 3 {#example-section-3}",
+      "source_content_hash": "1a7e50783faa341125b16b85eaac5acf0b46ee8e5ecc0702c05fb86400dbb06d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 範例章節 3 {#example-section-3}"
+      }
+    },
+    {
+      "segment_id": "65be34cb",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "6beaa586",
+      "source_content": "### Example Subsection 3 a {#example-subsection-3-a}",
+      "source_content_hash": "59940bcd3c95bd7974c255e436a5e11abadde1b5586b0f9827c6a752430c90cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 3 a {#example-subsection-3-a}"
+      }
+    },
+    {
+      "segment_id": "41e7f712",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "371cb514",
+      "source_content": "#### Example subsubsection 3 a I",
+      "source_content_hash": "721c5b3ff5313c20da9321a44f9c0e3ada01b40e04340866bdba34e76995640a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 3 a I"
+      }
+    },
+    {
+      "segment_id": "217cbd06",
+      "source_content": "#### Example subsubsection 3 a II",
+      "source_content_hash": "d21e714cab9447400210ca3d7517aaf66d7379ebc1d55647bcd9bb00deee2196",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 3 a II"
+      }
+    },
+    {
+      "segment_id": "90032345",
+      "source_content": "#### Example subsubsection 3 a III",
+      "source_content_hash": "df464dd23caea963a2444a766bec048e303f33c37ac854f87ea4fa7658ed3977",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子子章節 3 a III"
+      }
+    },
+    {
+      "segment_id": "4cb3b0aa",
+      "source_content": "### Example Subsection 3 b {#example-subsection-3-b}",
+      "source_content_hash": "e5f4775a5e84a13c44ea829b411e850ddb8ae09c82f336ee4f1b02b14b047891",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例子章節 3 b {#example-subsection-3-b}"
+      }
+    },
+    {
+      "segment_id": "2153a2fa",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "68dbdf68",
+      "source_content": "#### Example subsubsection 3 b I",
+      "source_content_hash": "0b2e986a66fbe6eeb3f72f4f45a93611832302df820f309e7b9b7100039b73dc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 b I"
+      }
+    },
+    {
+      "segment_id": "bb74dfa2",
+      "source_content": "#### Example subsubsection 3 b II",
+      "source_content_hash": "b64ee3aea1117958eb7475cba3181f179a07bccacd160ec325ac22137e41786d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 b II"
+      }
+    },
+    {
+      "segment_id": "519c654d",
+      "source_content": "#### Example subsubsection 3 b III",
+      "source_content_hash": "8126d0094a65221ec95262dd10aa09cdc86866d202ccc23d07a1e74757fa8e77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 b III"
+      }
+    },
+    {
+      "segment_id": "2b20caf3",
+      "source_content": "### Example Subsection 3 c {#example-subsection-3-c}",
+      "source_content_hash": "40a2bf1834a3ca97fcfd014e6bb5228bbb141ba81b27806ef7cfbbc7f628b0d6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 範例小節 3 c {#example-subsection-3-c}"
+      }
+    },
+    {
+      "segment_id": "52d45a2c",
+      "source_content": "Lorem ipsum",
+      "source_content_hash": "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Lorem ipsum"
+      }
+    },
+    {
+      "segment_id": "a075432c",
+      "source_content": "#### Example subsubsection 3 c I",
+      "source_content_hash": "8474aef28e04f47ea350da470ea3166c11524a02f4a006540c88dbb16bade220",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 c I"
+      }
+    },
+    {
+      "segment_id": "73eb56bc",
+      "source_content": "#### Example subsubsection 3 c II",
+      "source_content_hash": "d5a07b7a4872a6554befb4fb15a644440cc1f522bd25a926c66787119bd84e46",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 c II"
+      }
+    },
+    {
+      "segment_id": "4b62af77",
+      "source_content": "#### Example subsubsection 3 c III",
+      "source_content_hash": "103543cacf9f9ead2e3667a0e76644a4be5282c492fc9e2cff513831935da8bd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 範例子小節 3 c III"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/guides/markdown-features/markdown-features-toc.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.096179+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "23db8d5216998b1b2eeece5885adab73426bab1db008dea99333ca0a191df697"
+  }
+}

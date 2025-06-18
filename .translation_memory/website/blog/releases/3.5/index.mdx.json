@@ -1,0 +1,386 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.5/index.mdx",
+  "source_file_content_hash": "e837b2c30a94385145997b8eedbdbfe3a5235e22ec6724b832149dd307537504",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.5\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2024-08-09\n---",
+      "source_content_hash": "48864da06f45b088d2fb5930a8173c8fc1f2ce0eddee59bb0efb541fd6b45ce7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.5**.",
+      "source_content_hash": "33fa81a1061a986b0cc9ac9b8caba665871018f1ced6a8bb1ece229ccbb70746",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "This release contains many **new exciting blog features**.",
+      "source_content_hash": "a36825d3ec7f4ced3bc9398325ec68d6700e732b847e24e233433b2c46514ac5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Upgrading should be easy. Our [release process](/community/release-process) respects [Semantic Versioning](https://semver.org/). Minor versions do not include any breaking changes.",
+      "source_content_hash": "81680bc8b927edb4674a8a44f09d0912cb08f6a4274e97bb1c6c65523e5a4839",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## Highlights",
+      "source_content_hash": "f5aedb14b6b9da4899c54cdf031961cfbda60d336dc60afdb5e12f0b83945e84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "### Blog Social Icons",
+      "source_content_hash": "31ac018f5786ac29eeffafd9a5f119096b806ed2389c3e0eef13c915013792af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "In [#10222](https://github.com/facebook/docusaurus/pull/10222), we added the possibility to associate social links to blog authors, for inline authors declared in front matter or global through the `authors.yml` file.",
+      "source_content_hash": "a98531804e17fc8da78470b2a1f2fcd4bb1001ff7224109aebc95f006d03e0b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```yml title=\"blog/authors.yml\"\nslorber:\n  name: Sébastien Lorber\n  # other author properties...\n  # highlight-start\n  socials:\n    x: sebastienlorber\n    linkedin: sebastienlorber\n    github: slorber\n    newsletter: https://thisweekinreact.com\n  # highlight-end\n```",
+      "source_content_hash": "fda2dd2e8a439ec81cbfff60aecfff35e900e5f347b21a327df8123ab07532cd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![Author socials screenshot displaying `slorber` author with 4 social platform icons](./img/author-socials.png)",
+      "source_content_hash": "4850fd235cde185af87a70390685da7041278c6245e159cedde26ee595a42d12",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Icons and handle shortcuts are provided for pre-defined platforms `x`, `linkedin`, `github` and `stackoverflow`. It's possible to provide any additional platform entry (like `newsletter` in the example above) with a full URL.",
+      "source_content_hash": "8f495d1b0effaaa573b65fcb9da3577fcbee113f1001f81b5e3d6c93a2df69d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "### Blog Authors Pages",
+      "source_content_hash": "953d49bbe82d726b5f96f0bc34efbb3efaf1b2d81c04e7172688cef5310723ff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "In [#10216](https://github.com/facebook/docusaurus/pull/10216), we added the possibility for [global blog authors](/docs/blog#global-authors) (declared in `authors.yml`) to have their own dedicated page listing all the blog posts they contributed to.",
+      "source_content_hash": "ace51fc1b2f363735e87c4084a6153d113bfbbf7681d81820a73d37858a3b68e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "This feature is opt-in and mostly relevant for **multi-author blogs**. You can turn it on for a specific author by setting the `page: true` property:",
+      "source_content_hash": "634037587621889f8f6b56ac745aa535631aa9fb34ea23a32523d738c3708065",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```yml title=\"blog/authors.yml\"\nslorber:\n  name: Sébastien Lorber\n  # the description will be displayed on the author's page\n  description: 'A freelance React and React-Native developer...'\n  # highlight-next-line\n  page: true # Turns the feature on\n```",
+      "source_content_hash": "b89ee690960c40de382b2066aaf082e6c83114033345981db785a9fe940e56c8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "This creates a [dedicated author page](/blog/authors/slorber) at `/blog/authors/slorber`.",
+      "source_content_hash": "5f467f294552a49f09a19448c77bd6013e2e8b7d713dbd17a64f1ddc22fdde7a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "![Author page screenshot for `slorber` global author](./img/author-page.png)",
+      "source_content_hash": "fc69042779fb7433fffbccf78f4bb284887ccf7fe4c3b4d0088906ab29d987f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "An [authors index page](/blog/authors) is also created, listing all the blog authors.",
+      "source_content_hash": "6e6bf1dfad4345455dd0358a50296f0a8e5dfaec936f7fbfc17a707c7ad77321",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "![Author index page listing multiple authors](./img/author-index.png)",
+      "source_content_hash": "55c63120c567f95a7cce9dcd99a9c3355b67e6fe4c8e7beac5ad9fbafca3527c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "Check the [blog authors pages guide](/docs/blog#authors-pages) for details.",
+      "source_content_hash": "7bda5d9c995e6812f35e6a65b2c6c6e4bcb8fa44f88f968c4fd45f270c37bedf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "### Blog Feeds Styling",
+      "source_content_hash": "4e202e35c5d5f7d6c228736b4d9286eb91e49f09288b8b6a0b27265bf422926b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "In [#9252](https://github.com/facebook/docusaurus/pull/9252), we added support for [styling your blog feeds](https://darekkay.com/blog/rss-styling/) by providing custom XSLT `.xls` files for the RSS and Atom feeds. This allows browsers to render the feeds in a more visually appealing way, like a regular HTML page, instead of the default XML view.",
+      "source_content_hash": "546ae34f3e0f26bf589f54ee6e22bd4c06801dddbbd5d51861b8bed73329fb30",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "17c579d2",
+      "source_content": "```js title=\"website/docusaurus.config.js\"\nconst blogOptions = {\n  feedOptions: {\n    // highlight-start\n    xslt: {\n      rss: 'custom-rss.xsl',\n      atom: 'custom-atom.xsl',\n    },\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "05cae2aa5a6c0a8b44bfa83310394958471c40e7c48bfeb05d376f906565457d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Writing your own XSLT can be complex, but you can also use `xslt: true` to turn on the built-in style:",
+      "source_content_hash": "0fdeb610355c6d4d1ebb54ae8ceec533cad0ea15222c614f462188c0380accda",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8c3563d3",
+      "source_content": "```js title=\"website/docusaurus.config.js\"\nconst blogOptions = {\n  feedOptions: {\n    // highlight-start\n    xslt: true,\n    // highlight-end\n  },\n};\n```",
+      "source_content_hash": "91f5a864c41bbc23bd4fa00a6323b1d8a4869bc01110741c464296fc3f899616",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "![Screenshot of the Docusaurus blog RSS feed, beautifully styled](./img/blog-feed-xslt.png)",
+      "source_content_hash": "f58a3742d2404056c0d6e7d13c29cb08e344ef797febff9f1045c50a9e21e95a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f8edb6d2",
+      "source_content": "### Blog Sidebar Grouping",
+      "source_content_hash": "377dccc03fb70e0cd5662863b287cc038f614b441df2e08465a4e6202621ea5c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "In [#10252](https://github.com/facebook/docusaurus/pull/10252), we added support for grouping blog posts by years in the blog sidebar.",
+      "source_content_hash": "76e61deb0ee389aa680abbf8ca944ce3eae50b00f3172b517ed8c7cdf3d17992",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "![Screenshot of the Docusaurus blog, in particular the sidebar items grouped by year](./img/blog-sidebar-years.png)",
+      "source_content_hash": "208e55a616155020b78d5935f681d7b66bf2d7e7667fea715a0edf6a8785764e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "This feature is now turned on by default, but can be disabled with `themeConfig.blog.sidebar.groupByYear: false`.",
+      "source_content_hash": "6a34376860429d8c0f2156d00f924ba468ca1aa281508b42ba7d78deebf11df5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "c7c92a79",
+      "source_content": "### Blog Consistency Options",
+      "source_content_hash": "52805e538925d03f1368d78ee61f25cc0cc5973e1206e416867b5367e11b38d4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "We added new blog options to enforce recommended practices for your blog posts:",
+      "source_content_hash": "2319b9a2618ddadbde071e299e90379054a20c1644a0a14339c096b8d41c3ca2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "#### `onInlineAuthors`",
+      "source_content_hash": "2f98a1c356a0ac2fd4ff00d7078365ec1ff37b9d0f26da87c3adfd9a5457e25d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "We believe large multi-blogs are easier to manage by using [global authors](/docs/blog#global-authors), declared in `authors.yml`. This notably permits to avoids duplicating author information across multiple blog posts, and now permits to generate [author pages](/docs/blog#authors-pages).",
+      "source_content_hash": "93e222c7b5f0d4731c43b74655ba54c17df181d13bac8ffe2b7d3341e72024e3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們相信大型多人協作部落格若使用宣告於 `authors.yml` 的[全域作者](/docs/blog#global-authors)會更易管理。這不僅能避免在多篇部落格文章中重複填寫作者資訊，現在還能自動生成[作者專頁](/docs/blog#authors-pages)。"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "In [#10224](https://github.com/facebook/docusaurus/pull/10224), we added the `onInlineAuthors` option. Use `onInlineAuthors: 'throw'` to forbid [inline authors](/docs/blog#inline-authors), and enforce a consistent usage of [global authors](/docs/blog#global-authors).",
+      "source_content_hash": "61f53809b5c402080cbd18f9a5ab28b35a97afb5cf29140cd3f31b4f9c29a03f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#10224](https://github.com/facebook/docusaurus/pull/10224) 中，我們新增了 `onInlineAuthors` 選項。使用 `onInlineAuthors: 'throw'` 可禁止[行內作者](/docs/blog#inline-authors)寫法，強制採用一致性的[全域作者](/docs/blog#global-authors)模式。"
+      }
+    },
+    {
+      "segment_id": "7974af84",
+      "source_content": "#### `onUntruncatedBlogPosts`",
+      "source_content_hash": "d4a86535b1285e87171fa83d94e12a7888222b03e2629857b742e5acffa69e51",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `onUntruncatedBlogPosts`"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "We believe blog posts are better using [truncation markers](/docs/blog#blog-list) (`<!-- truncate -->` or `{/* truncate */}`). On paginated lists (blog home, tags pages, authors pages), this permits to render a more concise preview of the blog post instead of a full blog post.",
+      "source_content_hash": "69a2abbfca740f963be73130a041839b7b27b0437d600c73e4a43ba0dd2440cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們建議部落格文章使用[截斷標記](/docs/blog#blog-list) (`<!-- truncate -->` 或 `{/* truncate */}`)。在分頁列表（部落格首頁、標籤頁、作者頁）中，這能顯示簡短的文章預覽而非完整內容。"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "In [#10375](https://github.com/facebook/docusaurus/pull/10375), we added the `onUntruncatedBlogPosts` option. Use `onUntruncatedBlogPosts: 'throw'` to enforce a consistent usage of [truncation markers](/docs/blog#blog-list).",
+      "source_content_hash": "5b06cde5cf6262409bc170df5661a9b878b6145c0221b05005881ea0ae785f51",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#10375](https://github.com/facebook/docusaurus/pull/10375) 中，我們新增了 `onUntruncatedBlogPosts` 選項。使用 `onUntruncatedBlogPosts: 'throw'` 可強制要求一致使用[截斷標記](/docs/blog#blog-list)。"
+      }
+    },
+    {
+      "segment_id": "cbd60296",
+      "source_content": "## Translations",
+      "source_content_hash": "833c7b5926569014321e6595331513ac182583b19706ac845a9e77f9dfb751a2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 翻譯更新"
+      }
+    },
+    {
+      "segment_id": "f93a1bb7",
+      "source_content": "- 🇪🇪 [#10339](https://github.com/facebook/docusaurus/pull/10339): Add Estonian theme translations.\n- 🇮🇩 [#10325](https://github.com/facebook/docusaurus/pull/10325): Add Indonesian theme translations.\n- 🇪🇸 [#10360](https://github.com/facebook/docusaurus/pull/10360): Improve Spanish theme translations.\n- 🇩🇪 [#10235](https://github.com/facebook/docusaurus/pull/10235): Improve German theme translations.\n- 🇨🇳 [#10257](https://github.com/facebook/docusaurus/pull/10257): Improve Traditional Chinese (zh-Hant) theme translations.",
+      "source_content_hash": "8af01e09897ba2d35df0665cacd56c3279e0a57c0d13f23ef962e025b6e89552",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 🇪🇪 [#10339](https://github.com/facebook/docusaurus/pull/10339)：新增愛沙尼亞語主題翻譯\n- 🇮🇩 [#10325](https://github.com/facebook/docusaurus/pull/10325)：新增印尼語主題翻譯\n- 🇪🇸 [#10360](https://github.com/facebook/docusaurus/pull/10360)：改進西班牙語主題翻譯\n- 🇩🇪 [#10235](https://github.com/facebook/docusaurus/pull/10235)：改進德語主題翻譯\n- 🇨🇳 [#10257](https://github.com/facebook/docusaurus/pull/10257)：改進繁體中文（zh-Hant）主題翻譯"
+      }
+    },
+    {
+      "segment_id": "4dd6a631",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他重要更新包括："
+      }
+    },
+    {
+      "segment_id": "d30a9380",
+      "source_content": "- [#10369](https://github.com/facebook/docusaurus/pull/10369): Add support for [pkg.pr.new](https://pkg.pr.new) continuous releases so that you can test any pull-request code in a StackBlitz playground.\n- [#10376](https://github.com/facebook/docusaurus/pull/10376): Theme unlisted/draft banners are also shown in dev so that you don't forget to publish your content.\n- [#10335](https://github.com/facebook/docusaurus/pull/10335): The Markdown top-level headings `# title` are automatically wrapped in `<header>` for consistency with front matter `title: Title`.\n- [#10286](https://github.com/facebook/docusaurus/pull/10286): Allows Docusaurus plugins to self-disable by returning `null`.\n- [#10241](https://github.com/facebook/docusaurus/pull/10241): Add support for [MDX processor `recmaPlugins` option](https://mdxjs.com/packages/mdx/#processoroptions) to modify the MDX Estree AST.\n- [#10324](https://github.com/facebook/docusaurus/pull/10324): The docs autogenerated `_category_.json` accepts a new `description` property that gets displayed on generated index pages.\n- [#10368](https://github.com/facebook/docusaurus/pull/10368): The CLI command `docusaurus --version` now actually returns the Docusaurus version.\n- [#10240](https://github.com/facebook/docusaurus/pull/10240): Markdown `mdx-code-block` now supports indentation.\n- [#10219](https://github.com/facebook/docusaurus/pull/10219): Fix `<TabItem lazy>` support the for `className` prop.\n- [#10313](https://github.com/facebook/docusaurus/pull/10313): Blog-related `@docusaurus/theme-common/internal` APIs have been moved to `@docusaurus/plugin-content-blog/client`.\n- [#10316](https://github.com/facebook/docusaurus/pull/10316): Docs-related `@docusaurus/theme-common/internal` APIs have been moved to `@docusaurus/plugin-content-docs/client`.",
+      "source_content_hash": "ce999a694dbd6d4776bbaaca027d6e92487d1b882fda8cae460310e89d5539c9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#10369](https://github.com/facebook/docusaurus/pull/10369)：支援 [pkg.pr.new](https://pkg.pr.new) 持續整合發布，可直接在 StackBlitz 沙盒測試任何 PR 程式碼\n- [#10376](https://github.com/facebook/docusaurus/pull/10376)：開發環境也會顯示未列出/草稿標示，避免忘記發布內容\n- [#10335](https://github.com/facebook/docusaurus/pull/10335)：Markdown 頂層標題 `# title` 會自動包裹 `<header>` 標籤，與 front matter 的 `title: Title` 保持一致性\n- [#10286](https://github.com/facebook/docusaurus/pull/10286)：允許 Docusaurus 插件透過返回 `null` 自行停用\n- [#10241](https://github.com/facebook/docusaurus/pull/10241)：支援 [MDX 處理器的 `recmaPlugins` 選項](https://mdxjs.com/packages/mdx/#processoroptions)來修改 MDX Estree 抽象語法樹\n- [#10324](https://github.com/facebook/docusaurus/pull/10324)：文件自動生成的 `_category_.json` 新增 `description` 屬性，會顯示在自動生成的索引頁面\n- [#10368](https://github.com/facebook/docusaurus/pull/10368)：CLI 指令 `docusaurus --version` 現在會正確回傳 Docusaurus 版本號\n- [#10240](https://github.com/facebook/docusaurus/pull/10240)：Markdown 的 `mdx-code-block` 現在支援縮排\n- [#10219](https://github.com/facebook/docusaurus/pull/10219)：修復 `<TabItem lazy>` 對 `className` 屬性的支援\n- [#10313](https://github.com/facebook/docusaurus/pull/10313)：部落格相關的 `@docusaurus/theme-common/internal` API 已移至 `@docusaurus/plugin-content-blog/client`\n- [#10316](https://github.com/facebook/docusaurus/pull/10316)：文件相關的 `@docusaurus/theme-common/internal` API 已移至 `@docusaurus/plugin-content-docs/client`"
+      }
+    },
+    {
+      "segment_id": "cfeb9eb1",
+      "source_content": "Check the **[3.5.0 changelog entry](/changelog/3.5.0)** for an exhaustive list of changes.",
+      "source_content_hash": "3f84be70c96749f80ad19833b97885eeba4cd080ba1d686f155921de64d9af7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "查閱 **[3.5.0 版本更新日誌](/changelog/3.5.0)** 以獲取完整的變更清單。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.5/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.002350+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "e837b2c30a94385145997b8eedbdbfe3a5235e22ec6724b832149dd307537504"
+  }
+}

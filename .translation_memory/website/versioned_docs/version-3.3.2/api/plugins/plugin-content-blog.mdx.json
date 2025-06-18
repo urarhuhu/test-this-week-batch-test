@@ -1,0 +1,442 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/api/plugins/plugin-content-blog.mdx",
+  "source_file_content_hash": "7868991575146738e4f554798dcf1894f8f622cd5c7e120af279d54f3bd031a8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\nslug: /api/plugins/@docusaurus/plugin-content-blog\n---",
+      "source_content_hash": "8cd68584b8b8d716f9404f37434eb3b19e155e164b1d9e533dc00d63a836f4de",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 plugin-content-blog",
+      "source_content_hash": "59304d3e588507c48c648b1281cb473dcec443f1ea7605c391f01bef51c013fe",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 plugin-content-blog"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import APITable from '@site/src/components/APITable';",
+      "source_content_hash": "617594357be14491b59c35a0417f7d0d89d9eda936d09d760f6b994379006923",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Provides the [Blog](blog.mdx) feature and is the default blog plugin for Docusaurus.",
+      "source_content_hash": "755b367e891a5ea70e1932bbe72eaf12fd291eeac950d9b0738f71864a863e9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "提供 [部落格](blog.mdx) 功能，是 Docusaurus 的預設部落格外掛。"
+      }
+    },
+    {
+      "segment_id": "0e7eb58c",
+      "source_content": ":::warning[some features production only]\n\nThe [feed feature](../../blog.mdx#feed) works by extracting the build output, and is **only active in production**.\n\n:::",
+      "source_content_hash": "23612aed681b4b69759b89c756883e9ba322292d662adfa4adb1bb401eed4bc6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning[部分功能僅限正式環境]\n\n[訂閱功能](../../blog.mdx#feed) 會擷取建置輸出結果，因此 **僅在正式環境中生效**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Installation {#installation}",
+      "source_content_hash": "01f99c1a4a9fd44bafc075a19f10269cf4e31a46b9c20b1a4b4cb278a46d10d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 安裝 {#installation}"
+      }
+    },
+    {
+      "segment_id": "166426c2",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/plugin-content-blog\n```",
+      "source_content_hash": "e303811ade22ec4d1547b565438285225623d51edcdc2846dd8777f96dde1d7a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_166426c2"
+      }
+    },
+    {
+      "segment_id": "6604338b",
+      "source_content": ":::tip\n\nIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.\n\nYou can configure this plugin through the [preset options](../../using-plugins.mdx#docusauruspreset-classic).\n\n:::",
+      "source_content_hash": "737b2a008954011fd073f76b42dc5ff859f8bcaced754eff0b2741c9f733f873",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若您使用 `@docusaurus/preset-classic` 預設套件，則無需額外安裝此外掛作為依賴項。\n\n您可以透過 [預設選項](../../using-plugins.mdx#docusauruspreset-classic) 來設定此外掛。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Configuration {#configuration}",
+      "source_content_hash": "8d40fda5898137d101c15929fa40cb58d8c71e60e8b40b33ce74200512d9f011",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設定 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "076d64d1",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_076d64d1"
+      }
+    },
+    {
+      "segment_id": "e6a4238f",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `path` | `string` | `'blog'` | Path to the blog content directory on the file system, relative to site dir. |\n| `editUrl` | <code>string \\| [EditUrlFn](#EditUrlFn)</code> | `undefined` | Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links. |\n| `editLocalizedFiles` | `boolean` | `false` | The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function. |\n| `blogTitle` | `string` | `'Blog'` | Blog page title for better SEO. |\n| `blogDescription` | `string` | `'Blog'` | Blog page meta description for better SEO. |\n| `blogSidebarCount` | <code>number \\| 'ALL'</code> | `5` | Number of blog post elements to show in the blog sidebar. `'ALL'` to show all blog posts; `0` to disable. |\n| `blogSidebarTitle` | `string` | `'Recent posts'` | Title of the blog sidebar. |\n| `routeBasePath` | `string` | `'blog'` | URL route for the blog section of your site. **DO NOT** include a trailing slash. Use `/` to put the blog at root path. |\n| `tagsBasePath` | `string` | `'tags'` | URL route for the tags section of your blog. Will be appended to `routeBasePath`. |\n| `pageBasePath` | `string` | `'page'` | URL route for the pages section of your blog. Will be appended to `routeBasePath`. |\n| `archiveBasePath` | <code>string \\| null</code> | `'archive'` | URL route for the archive section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. Use `null` to disable generation of archive. |\n| `include` | `string[]` | `['**/*.{md,mdx}']` | Array of glob patterns matching Markdown files to be built, relative to the content path. |\n| `exclude` | `string[]` | _See example configuration_ | Array of glob patterns matching Markdown files to be excluded. Serves as refinement based on the `include` option. |\n| `postsPerPage` | <code>number \\| 'ALL'</code> | `10` | Number of posts to show per page in the listing page. Use `'ALL'` to display all posts on one listing page. |\n| `blogListComponent` | `string` | `'@theme/BlogListPage'` | Root component of the blog listing page. |\n| `blogPostComponent` | `string` | `'@theme/BlogPostPage'` | Root component of each blog post page. |\n| `blogTagsListComponent` | `string` | `'@theme/BlogTagsListPage'` | Root component of the tags list page. |\n| `blogTagsPostsComponent` | `string` | `'@theme/BlogTagsPostsPage'` | Root component of the \"posts containing tag\" page. |\n| `blogArchiveComponent` | `string` | `'@theme/BlogArchivePage'` | Root component of the blog archive page. |\n| `remarkPlugins` | `any[]` | `[]` | Remark plugins passed to MDX. |\n| `rehypePlugins` | `any[]` | `[]` | Rehype plugins passed to MDX. |\n| `beforeDefaultRemarkPlugins` | `any[]` | `[]` | Custom Remark plugins passed to MDX before the default Docusaurus Remark plugins. |\n| `beforeDefaultRehypePlugins` | `any[]` | `[]` | Custom Rehype plugins passed to MDX before the default Docusaurus Rehype plugins. |\n| `truncateMarker` | `RegExp` | `/<!--\\s*truncate\\s*-->/` \\| `\\{\\/\\*\\s*truncate\\s*\\*\\/\\}/` | Truncate marker marking where the summary ends. |\n| `showReadingTime` | `boolean` | `true` | Show estimated reading time for the blog post. |\n| `readingTime` | `ReadingTimeFn` | The default reading time | A callback to customize the reading time number displayed. |\n| `authorsMapPath` | `string` | `'authors.yml'` | Path to the authors map file, relative to the blog content directory. |\n| `feedOptions` | _See below_ | `{type: ['rss', 'atom']}` | Blog feed. |\n| `feedOptions.type` | <code>[FeedType](#FeedType) \\| [FeedType](#FeedType)[] \\| 'all' \\| null</code> | **Required** | Type of feed to be generated. Use `null` to disable generation. |\n| `feedOptions.createFeedItems` | <code>[CreateFeedItemsFn](#CreateFeedItemsFn) \\| undefined</code> | `undefined` | An optional function which can be used to transform and / or filter the items in the feed. |\n| `feedOptions.limit` | `number \\| null \\| false` | `20` | Limits the feed to the specified number of posts, `false` or `null` for all entries. Defaults to `20`. |\n| `feedOptions.title` | `string` | `siteConfig.title` | Title of the feed. |\n| `feedOptions.description` | `string` | <code>\\`$\\{siteConfig.title} Blog\\`</code> | Description of the feed. |\n| `feedOptions.copyright` | `string` | `undefined` | Copyright message. |\n| `feedOptions.language` | `string` (See [documentation](http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes) for possible values) | `undefined` | Language metadata of the feed. |\n| `sortPosts` | <code>'descending' \\| 'ascending' </code> | `'descending'` | Governs the direction of blog post sorting. |\n| `processBlogPosts` | <code>[ProcessBlogPostsFn](#ProcessBlogPostsFn)</code> | `undefined` | An optional function which can be used to transform blog posts (filter, modify, delete, etc...). |\n| `showLastUpdateAuthor` | `boolean` | `false` | Whether to display the author who last updated the blog post. |\n| `showLastUpdateTime` | `boolean` | `false` | Whether to display the last date the blog post was updated. This requires access to git history during the build, so will not work correctly with shallow clones (a common default for CI systems). With GitHub `actions/checkout`, use`fetch-depth: 0`. |",
+      "source_content_hash": "d852adef02f0dbd41304551b817f5fab24db3bc60b7f342adaf5883e939c8f3d",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e6a4238f"
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "1c598ecd",
+      "source_content": "### Types {#types}",
+      "source_content_hash": "034686b12f78982c1e0199ff93724cd49daf8a7ddf6e6948ebd61df99af28c7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 類型 {#types}"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "#### `EditUrlFn` {#EditUrlFn}",
+      "source_content_hash": "5b9ea13321f33c35b1f57f998b0799a64d34e09eab387667521c4ddf90c65132",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `EditUrlFn` {#EditUrlFn}"
+      }
+    },
+    {
+      "segment_id": "7d898a0e",
+      "source_content": "```ts\ntype EditUrlFunction = (params: {\n  blogDirPath: string;\n  blogPath: string;\n  permalink: string;\n  locale: string;\n}) => string | undefined;\n```",
+      "source_content_hash": "a26233be255d8924524d713f94cda74c76bfff87e6d2468d4488eab2a06261ca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d898a0e"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "#### `ReadingTimeFn` {#ReadingTimeFn}",
+      "source_content_hash": "9185ad275c4a3f79bbcbe053fc27cb44c1d5993e10d3cb1b392c5ee99a65aca7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `ReadingTimeFn` {#ReadingTimeFn}"
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```ts\ntype ReadingTimeOptions = {\n  wordsPerMinute: number;\n  wordBound: (char: string) => boolean;\n};\n\ntype ReadingTimeCalculator = (params: {\n  content: string;\n  frontMatter?: BlogPostFrontMatter & Record<string, unknown>;\n  options?: ReadingTimeOptions;\n}) => number;\n\ntype ReadingTimeFn = (params: {\n  content: string;\n  frontMatter: BlogPostFrontMatter & Record<string, unknown>;\n  defaultReadingTime: ReadingTimeCalculator;\n}) => number | undefined;\n```",
+      "source_content_hash": "fa51db4ade35912b7014dde312c26c83277d199604ede43dc491d8fbbc83f7df",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "638efb88",
+      "source_content": "#### `FeedType` {#FeedType}",
+      "source_content_hash": "ad6faaf435fcf0be0cbe6d12985a888b546af67fa308ecb87b75edd6e75497ef",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `FeedType` {#FeedType}"
+      }
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```ts\ntype FeedType = 'rss' | 'atom' | 'json';\n```",
+      "source_content_hash": "8f27a55b1976bb329a9ddbb5284455ed6661b80ee61f5ae77306f37f86ffad39",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b27056c4"
+      }
+    },
+    {
+      "segment_id": "47516512",
+      "source_content": "#### `CreateFeedItemsFn` {#CreateFeedItemsFn}",
+      "source_content_hash": "cd287f772e8d779ab6c824a050a0e564b495938d91a082c528390e9b30af6583",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `CreateFeedItemsFn` {#CreateFeedItemsFn}"
+      }
+    },
+    {
+      "segment_id": "1ae0b80d",
+      "source_content": "```ts\ntype CreateFeedItemsFn = (params: {\n  blogPosts: BlogPost[];\n  siteConfig: DocusaurusConfig;\n  outDir: string;\n  defaultCreateFeedItemsFn: CreateFeedItemsFn;\n}) => Promise<BlogFeedItem[]>;\n```",
+      "source_content_hash": "cac24368066db6e82d57f2fde3c1b0174dfbd63a0d91ae3aaa868dfa6ca85145",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1ae0b80d"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "#### `ProcessBlogPostsFn` {#ProcessBlogPostsFn}",
+      "source_content_hash": "95acf2eca277fa38cc64a5e0f1e3604a4fee4c76ff582ad6fd94072e545eed02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `ProcessBlogPostsFn` {#ProcessBlogPostsFn}"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```ts\ntype ProcessBlogPostsFn = (params: {\n  blogPosts: BlogPost[];\n}) => Promise<void | BlogPost[]>;\n```",
+      "source_content_hash": "f204aa7b74b0dab6bb5025d87ab324812d8571f9bc2f127beffc27166f170e42",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "### Example configuration {#ex-config}",
+      "source_content_hash": "20d25d28dcea8d9ae040da96412bd154d51e0bbdd4d165a57ff0556d46b26849",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 設定範例 {#ex-config}"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "You can configure this plugin through preset options or plugin options.",
+      "source_content_hash": "118dd7722fc15d0951831695d6b79451361a000dc8a9de8138e737e9fe881ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您可以透過預設選項或外掛選項來設定此外掛。"
+      }
+    },
+    {
+      "segment_id": "85b122c2",
+      "source_content": ":::tip\n\nMost Docusaurus users configure this plugin through the preset options.\n\n:::",
+      "source_content_hash": "0a660704749473b8e0f2d5316b808fdf177b0264e404d29b9d4653e71924c332",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n大多數 Docusaurus 使用者會透過預設選項來設定此外掛。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d58c5dc0",
+      "source_content": "```js config-tabs\n// Preset Options: blog\n// Plugin Options: @docusaurus/plugin-content-blog\n\nconst config = {\n  path: 'blog',\n  // Simple use-case: string editUrl\n  // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',\n  // Advanced use-case: functional editUrl\n  editUrl: ({locale, blogDirPath, blogPath, permalink}) =>\n    `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`,\n  editLocalizedFiles: false,\n  blogTitle: 'Blog title',\n  blogDescription: 'Blog',\n  blogSidebarCount: 5,\n  blogSidebarTitle: 'All our posts',\n  routeBasePath: 'blog',\n  include: ['**/*.{md,mdx}'],\n  exclude: [\n    '**/_*.{js,jsx,ts,tsx,md,mdx}',\n    '**/_*/**',\n    '**/*.test.{js,jsx,ts,tsx}',\n    '**/__tests__/**',\n  ],\n  postsPerPage: 10,\n  blogListComponent: '@theme/BlogListPage',\n  blogPostComponent: '@theme/BlogPostPage',\n  blogTagsListComponent: '@theme/BlogTagsListPage',\n  blogTagsPostsComponent: '@theme/BlogTagsPostsPage',\n  remarkPlugins: [require('./my-remark-plugin')],\n  rehypePlugins: [],\n  beforeDefaultRemarkPlugins: [],\n  beforeDefaultRehypePlugins: [],\n  truncateMarker: /<!--\\s*(truncate)\\s*-->/,\n  showReadingTime: true,\n  feedOptions: {\n    type: '',\n    title: '',\n    description: '',\n    copyright: '',\n    language: undefined,\n    createFeedItems: async (params) => {\n      const {blogPosts, defaultCreateFeedItems, ...rest} = params;\n      return defaultCreateFeedItems({\n        // keep only the 10 most recent blog posts in the feed\n        blogPosts: blogPosts.filter((item, index) => index < 10),\n        ...rest,\n      });\n    },\n  },\n};\n```",
+      "source_content_hash": "784b52b9fa3e046dcc93d1abe7093b865ebc0a034b382ef6f6a9e9d1333c3f76",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d58c5dc0"
+      }
+    },
+    {
+      "segment_id": "778e087a",
+      "source_content": "## Markdown front matter {#markdown-front-matter}",
+      "source_content_hash": "b854995dbf0992227ce760c6a3aa3c73e5d0080774b09ab62c46bfabed5f2f1b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Markdown 前置資料 {#markdown-front-matter}"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "Markdown documents can use the following Markdown [front matter](../../guides/markdown-features/markdown-features-intro.mdx#front-matter) metadata fields, enclosed by a line `---` on either side.",
+      "source_content_hash": "84192aca6d91a3f87c9e5f8ae3617d0015a70951827c7e7b0dcb7c1e60d0bf8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Markdown 文件可使用下列 Markdown [前置資料](../../guides/markdown-features/markdown-features-intro.mdx#front-matter) 中繼資料欄位，需以 `---` 分隔線包覆。"
+      }
+    },
+    {
+      "segment_id": "1f9058cd",
+      "source_content": "Accepted fields:",
+      "source_content_hash": "2934eef61bc234f6f002b94be60279fd14197499b541a7659cff140c4058a0d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可接受欄位："
+      }
+    },
+    {
+      "segment_id": "a414aca8",
+      "source_content": "```mdx-code-block\n<APITable>\n```",
+      "source_content_hash": "daea3704d3d2ec2ac6f3f3792cce6b72c94997e4586c8bf4e3b88aa59ee9ce6d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a414aca8"
+      }
+    },
+    {
+      "segment_id": "3a00ac07",
+      "source_content": "| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| `authors` | `Authors` | `undefined` | List of blog post authors (or unique author). Read the [`authors` guide](../../blog.mdx#blog-post-authors) for more explanations. Prefer `authors` over the `author_*` front matter fields, even for single author blog posts. |\n| `author` | `string` | `undefined` | ⚠️ Prefer using `authors`. The blog post author's name. |\n| `author_url` | `string` | `undefined` | ⚠️ Prefer using `authors`. The URL that the author's name will be linked to. This could be a GitHub, X, Facebook profile URL, etc. |\n| `author_image_url` | `string` | `undefined` | ⚠️ Prefer using `authors`. The URL to the author's thumbnail image. |\n| `author_title` | `string` | `undefined` | ⚠️ Prefer using `authors`. A description of the author. |\n| `title` | `string` | Markdown title | The blog post title. |\n| `date` | `string` | File name or file creation time | The blog post creation date. If not specified, this can be extracted from the file or folder name, e.g, `2021-04-15-blog-post.mdx`, `2021-04-15-blog-post/index.mdx`, `2021/04/15/blog-post.mdx`. Otherwise, it is the Markdown file creation time. |\n| `tags` | `Tag[]` | `undefined` | A list of strings or objects of two string fields `label` and `permalink` to tag to your post. |\n| `draft` | `boolean` | `false` | Draft blog posts will only be available during development. |\n| `unlisted` | `boolean` | `false` | Unlisted blog posts will be available in both development and production. They will be \"hidden\" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link. |\n| `hide_table_of_contents` | `boolean` | `false` | Whether to hide the table of contents to the right. |\n| `toc_min_heading_level` | `number` | `2` | The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value. |\n| `toc_max_heading_level` | `number` | `3` | The max heading level shown in the table of contents. Must be between 2 and 6. |\n| `keywords` | `string[]` | `undefined` | Keywords meta tag, which will become the `<meta name=\"keywords\" content=\"keyword1,keyword2,...\"/>` in `<head>`, used by search engines. |\n| `description` | `string` | The first line of Markdown content | The description of your document, which will become the `<meta name=\"description\" content=\"...\"/>` and `<meta property=\"og:description\" content=\"...\"/>` in `<head>`, used by search engines. |\n| `image` | `string` | `undefined` | Cover or thumbnail image that will be used as the `<meta property=\"og:image\" content=\"...\"/>` in the `<head>`, enhancing link previews on social media and messaging platforms. |\n| `slug` | `string` | File path | Allows to customize the blog post URL (`/<routeBasePath>/<slug>`). Support multiple patterns: `slug: my-blog-post`, `slug: /my/path/to/blog/post`, slug: `/`. |\n| `last_update` | `FrontMatterLastUpdate` | `undefined` | Allows overriding the last update author/date. Date can be any [parsable date string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse). |",
+      "source_content_hash": "e06fcafef9eec5853eabc393a2002a844619c5062f33f6bd53a87d06a77e1582",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3a00ac07"
+      }
+    },
+    {
+      "segment_id": "0883e35a",
+      "source_content": "```mdx-code-block\n</APITable>\n```",
+      "source_content_hash": "0a98efafdfbe211fab9cdd0048c5021dbfb0ff5e4138f6c64a4f1e47947aa270",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0883e35a"
+      }
+    },
+    {
+      "segment_id": "43c34a84",
+      "source_content": "```ts\ntype FrontMatterLastUpdate = {date?: string; author?: string};\n\ntype Tag = string | {label: string; permalink: string};\n\n// An author key references an author from the global plugin authors.yml file\ntype AuthorKey = string;\n\ntype Author = {\n  key?: AuthorKey;\n  name: string;\n  title?: string;\n  url?: string;\n  image_url?: string;\n};\n\n// The front matter authors field allows various possible shapes\ntype Authors = AuthorKey | Author | (AuthorKey | Author)[];\n```",
+      "source_content_hash": "e599591551022b63d5de7bc7933b40714648e2b30fe100c90bffaba13f46f322",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_43c34a84"
+      }
+    },
+    {
+      "segment_id": "070ff7a2",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "703442ed",
+      "source_content": "```md\n---\ntitle: Welcome Docusaurus\nauthors:\n  - slorber\n  - yangshun\n  - name: Joel Marcey\n    title: Co-creator of Docusaurus 1\n    url: https://github.com/JoelMarcey\n    image_url: https://github.com/JoelMarcey.png\ntags: [hello, docusaurus-v2]\ndescription: This is my first post on Docusaurus.\nimage: https://i.imgur.com/mErPwqL.png\nhide_table_of_contents: false\n---\n\nA Markdown blog post\n```",
+      "source_content_hash": "17ed9660b44c51a9e92877c73eee41545e4e4029ab96c26d424cd3a853c6f454",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_703442ed"
+      }
+    },
+    {
+      "segment_id": "38115c9a",
+      "source_content": "## i18n {#i18n}",
+      "source_content_hash": "8fc6a816714ea84a43f45dcec8ad8ed16efdecffd610899dbba8869a40b117cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 國際化 {#i18n}"
+      }
+    },
+    {
+      "segment_id": "46e586a3",
+      "source_content": "Read the [i18n introduction](../../i18n/i18n-introduction.mdx) first.",
+      "source_content_hash": "7f3f6f6c86b9b8b0e831ef8680f94c902afcbd8b33228361a1dcd764ca9b42b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請先閱讀 [國際化介紹](../../i18n/i18n-introduction.mdx)。"
+      }
+    },
+    {
+      "segment_id": "bea5d450",
+      "source_content": "### Translation files location {#translation-files-location}",
+      "source_content_hash": "c4a2c001ab74402c22d2ce9621ec4331a59c8b9e0ab446f580b97d441bed9f1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯檔案位置 {#translation-files-location}"
+      }
+    },
+    {
+      "segment_id": "6cfa0721",
+      "source_content": "- **Base path**: `website/i18n/[locale]/docusaurus-plugin-content-blog`\n- **Multi-instance path**: `website/i18n/[locale]/docusaurus-plugin-content-blog-[pluginId]`\n- **JSON files**: extracted with [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir)\n- **Markdown files**: `website/i18n/[locale]/docusaurus-plugin-content-blog`",
+      "source_content_hash": "1a78090a084c47ac581b6073a68c72346d07379ccf5b95ca86f21b1ee0032e4b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **基礎路徑**：`website/i18n/[locale]/docusaurus-plugin-content-blog`\n- **多實例路徑**：`website/i18n/[locale]/docusaurus-plugin-content-blog-[pluginId]`\n- **JSON 檔案**：透過 [`docusaurus write-translations`](../../cli.mdx#docusaurus-write-translations-sitedir) 擷取\n- **Markdown 檔案**：`website/i18n/[locale]/docusaurus-plugin-content-blog`"
+      }
+    },
+    {
+      "segment_id": "f8d1807a",
+      "source_content": "### Example file-system structure {#example-file-system-structure}",
+      "source_content_hash": "57da28ad906fdd886089988ed51e309efc11cd799e4c58ffb0d296344765dd14",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 檔案系統結構範例 {#example-file-system-structure}"
+      }
+    },
+    {
+      "segment_id": "98fbc9ce",
+      "source_content": "```bash\nwebsite/i18n/[locale]/docusaurus-plugin-content-blog\n│\n│ # translations for website/blog\n├── authors.yml\n├── first-blog-post.md\n├── second-blog-post.md\n│\n│ # translations for the plugin options that will be rendered\n└── options.json\n```",
+      "source_content_hash": "399a884912011967ce3969f313d34f35e149fb89e6eb3b7bdb087921cc87fb67",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_98fbc9ce"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/api/plugins/plugin-content-blog.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.253135+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "7868991575146738e4f554798dcf1894f8f622cd5c7e120af279d54f3bd031a8"
+  }
+}

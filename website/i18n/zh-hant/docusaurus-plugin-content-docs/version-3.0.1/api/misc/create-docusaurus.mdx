@@ -1,0 +1,58 @@
+---
+sidebar_position: 0
+slug: /api/misc/create-docusaurus
+---
+
+# 📦 create-docusaurus
+
+一個腳手架工具，可幫助您快速建立功能完整的 Docusaurus 應用程式。
+
+## 使用方法 {#usage}
+
+```bash
+npx create-docusaurus@latest [name] [template] [rootDir]
+```
+
+`name` 參數將被用作網站的路徑，以及所建立應用程式中 package.json 的 `name` 欄位。它可以是絕對路徑，或相對於 `rootDir` 的路徑。
+
+`template` 參數可以是以下選項之一：
+
+- `classic`: 使用經典模板（推薦）
+- `facebook`: 使用 Facebook/Meta 模板，包含一些 Meta 特定的設定
+- 一個 git 倉庫 URL（以 `https://` 或 `git@` 開頭），可被克隆到目標位置
+- 相對於當前工作目錄的本地文件路徑，其中包含要複製到目標位置的文件
+
+`rootDir` 將用於解析網站目錄的絕對路徑。預設為當前工作目錄。
+
+:::warning
+
+建議在互動式 shell 中使用此命令，以確保所有功能都可用。
+
+:::
+
+## 選項 {#options}
+
+### `-t, --typescript` {#typescript}
+
+當模板參數是已知名稱時使用。目前只有 `classic` 提供 TypeScript 變體。
+
+### `-g, --git-strategy` {#git-strategy}
+
+當模板參數是 git 倉庫時使用。必須是以下選項之一：
+
+- `deep`: 保留完整的 git 歷史記錄
+- `shallow`: 使用 `--depth=1` 進行克隆
+- `copy`: 進行淺克隆，但不建立 git 倉庫
+- `custom`: 輸入自訂的 git 克隆命令。我們會提示您輸入。您可以寫類似 `git clone --depth 10` 的命令，我們會附加倉庫 URL 和目標目錄。
+
+### `-p, --package-manager` {#package-manager}
+
+值應為 `npm`、`yarn`、`pnpm` 或 `bun` 之一。如果未明確提供，Docusaurus 將根據以下情況推斷：
+
+- 當前工作目錄中已存在的鎖定文件（例如，如果您在現有專案中設定網站）
+- 用於調用 `create-docusaurus` 的命令（例如 `npm init`、`npx`、`yarn create`、`bunx` 等）
+- 如果所有啟發式方法都不存在，則進行互動式提示
+
+### `-s, --skip-install` {#skip-install}
+
+如果提供此選項，Docusaurus 將不會在建立應用程式後自動安裝依賴項。`--package-manager` 選項僅在您實際安裝依賴項時有用。

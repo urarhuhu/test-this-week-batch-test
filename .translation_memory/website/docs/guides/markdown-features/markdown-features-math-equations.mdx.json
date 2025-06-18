@@ -1,0 +1,186 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/guides/markdown-features/markdown-features-math-equations.mdx",
+  "source_file_content_hash": "6a18b7e326edcb5873a81d15020543c3c1a4e58ba1f286433d5d253ac834d82a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: math-equations\ndescription: Writing LaTeX Math Equations\nslug: /markdown-features/math-equations\n---",
+      "source_content_hash": "150a8e247c3ac1e89e9cfd8d21c364b3bf7e3195c00e0380d4a6d37e0dbb60ec",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Math Equations",
+      "source_content_hash": "d29eed4d4aecaa1de675ef44669fca3cb24e15c7c6ee2cebbae324a7b6f9253c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "623f74e7",
+      "source_content": "import BrowserWindow from '@site/src/components/BrowserWindow';",
+      "source_content_hash": "c30f3ec38b8fe46ed14acfdf630f27b5f382afaea44d9df375ff4baf3311b08e",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Mathematical equations can be rendered using [KaTeX](https://katex.org).",
+      "source_content_hash": "255484ffb2b3100d3a9333884b6908aa0f2bd49aba125eff6d3edfc0d0807515",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "See [below](#configuration) how to activate them.",
+      "source_content_hash": "1ed289439a121e068ca92060b1ffb99b40827f4d597dfd51bdc87c192dcde021",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "## Usage {#usage}",
+      "source_content_hash": "aa8a5456228a3a77df8ad31f0b19a08df50c10150b7c647889efe30b60781382",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Please read the [KaTeX](https://katex.org) documentation for more details.",
+      "source_content_hash": "9ff93372ccefa31afc697dd911d818188975578b916e550ba74702762dae2630",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### Inline {#inline}",
+      "source_content_hash": "68be51621261a4b55624a0a8de05df74d6222c8c8fa357a864f02d54e9df00a8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Write inline math equations by wrapping LaTeX equations between `$`:",
+      "source_content_hash": "76d5397b86db6dc6196828587760dea7d46f5ad2dc70276cf1898c01dc5137d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "41a8ae85",
+      "source_content": "```latex\nLet $f\\colon[a,b]\\to\\R$ be Riemann integrable. Let $F\\colon[a,b]\\to\\R$ be\n$F(x)=\\int_{a}^{x} f(t)\\,dt$. Then $F$ is continuous, and at all $x$ such that\n$f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.\n```",
+      "source_content_hash": "97d438670cd56edb831aa5239d108a023964e7927c82605f57dab0086c0cd0f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "9329e3e0",
+      "source_content": "<BrowserWindow>\n\nLet $f\\colon[a,b] \\to \\R$ be Riemann integrable. Let $F\\colon[a,b]\\to\\R$ be $F(x)=\n\\int_{a}^{x} f(t)\\,dt$. Then $F$ is continuous, and at all $x$ such that $f$ is continuous at $x$, $F$ is differentiable at $x$ with $F'(x)=f(x)$.\n\n</BrowserWindow>",
+      "source_content_hash": "f5b672a00a5263f76f0a7c0d4aa28dbed2dcfd45d7f7bb8ec23bcbba249e1152",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "### Blocks {#blocks}",
+      "source_content_hash": "d90184473d6f208ca3cad21f97eb5ad67f071cc47e6ffc24ca6de86840b3e65a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "For equation block or display mode, use line breaks and `$$`:",
+      "source_content_hash": "7e313030dedb1def6e71d287ade6f3c9b822d18a14c34a3630b781f96d125fc3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```latex\n$$\nI = \\int_0^{2\\pi} \\sin(x)\\,dx\n$$\n```",
+      "source_content_hash": "4403dcfe7c42dbd849ab2c26e99493da5611cb661e14313731180d835167c724",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f5276727",
+      "source_content": "<BrowserWindow>\n\n$$\nI = \\int_0^{2\\pi} \\sin(x)\\,dx\n$$\n\n</BrowserWindow>",
+      "source_content_hash": "65f6ac755f7c81eb4dfeb9b451a20dc52d4a82a6ba8e76af79b6608a052df015",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "## Enabling math equations {#configuration}",
+      "source_content_hash": "6717746102b0cc4e9f1f1b70aea35b4a656ca3db1c0b295d3b722ac2264cd8b4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Enable KaTeX:",
+      "source_content_hash": "4a7a9a02e8f4240ec4b209c380a5b52c9bcd24818895e40b2c0722a01b58fbd7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "e3321a43",
+      "source_content": "1.  Install the `remark-math` and `rehype-katex` plugins:\n\n    ```bash npm2yarn\n    npm install --save remark-math@6 rehype-katex@7\n    ```\n\n    :::warning\n\n    Make sure to use `remark-math 6` and `rehype-katex 7` for Docusaurus v3 (using MDX v3). We can't guarantee other versions will work.\n\n    :::\n\n2.  These 2 plugins are [**only available as ES Modules**](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). We recommended to use an [**ES Modules**](https://flaviocopes.com/es-modules/) config file:\n\n    ```js title=\"ES module docusaurus.config.js\"\n    // highlight-start\n    import remarkMath from 'remark-math';\n    import rehypeKatex from 'rehype-katex';\n    // highlight-end\n\n    // highlight-start\n    export default {\n      presets: [\n        [\n          '@docusaurus/preset-classic',\n          {\n            docs: {\n              path: 'docs',\n              // highlight-start\n              remarkPlugins: [remarkMath],\n              rehypePlugins: [rehypeKatex],\n              // highlight-end\n            },\n          },\n        ],\n      ],\n    };\n    ```\n\n        <details>\n\n    <summary>\n      Using a\n      [**CommonJS**](https://nodejs.org/api/modules.html#modules-commonjs-modules)\n      config file?\n    </summary>\n\n            If you decide to use a CommonJS config file, it is possible to load those ES module plugins thanks to dynamic imports and an async config creator function:\n\n    ```js title=\"CommonJS module docusaurus.config.js\"\n    // highlight-start\n    module.exports = async function createConfigAsync() {\n      // highlight-end\n      return {\n        presets: [\n          [\n            '@docusaurus/preset-classic',\n            {\n              docs: {\n                path: 'docs',\n                // highlight-start\n                remarkPlugins: [(await import('remark-math')).default],\n                rehypePlugins: [(await import('rehype-katex')).default],\n                // highlight-end\n              },\n            },\n          ],\n        ],\n      };\n    };\n    ```\n\n        </details>\n\n3.  Include the KaTeX CSS in your config under `stylesheets`:\n\n    ```js\n    export default {\n      //...\n      stylesheets: [\n        {\n          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',\n          type: 'text/css',\n          integrity:\n            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',\n          crossorigin: 'anonymous',\n        },\n      ],\n    };\n    ```",
+      "source_content_hash": "d61a7207f5a07e7172afdf6ff32a580ed46b7b04a419cc386a064c7361b31eb5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "40e141c5",
+      "source_content": "<details>\n<summary>See a config file example</summary>\n\n```js title=\"docusaurus.config.js\"\n// highlight-start\nimport remarkMath from 'remark-math';\nimport rehypeKatex from 'rehype-katex';\n// highlight-end\n\nexport default {\n  title: 'Docusaurus',\n  tagline: 'Build optimized websites quickly, focus on your content',\n  presets: [\n    [\n      '@docusaurus/preset-classic',\n      {\n        docs: {\n          path: 'docs',\n          // highlight-start\n          remarkPlugins: [remarkMath],\n          rehypePlugins: [rehypeKatex],\n          // highlight-end\n        },\n      },\n    ],\n  ],\n  // highlight-start\n  stylesheets: [\n    {\n      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',\n      type: 'text/css',\n      integrity:\n        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',\n      crossorigin: 'anonymous',\n    },\n  ],\n  // highlight-end\n};\n```\n\n</details>",
+      "source_content_hash": "a0b14e07a559775910491baf6a907f7a785a66f0404a94dc6b9850aa2af3742f",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "af250a10",
+      "source_content": "## Self-hosting KaTeX assets {#self-hosting-katex-assets}",
+      "source_content_hash": "37e50cbf704c4eb1fe07b4bcccd5caee82032406e262a35640c4ade7b7bcc1e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "295367fa",
+      "source_content": "Loading stylesheets, fonts, and JavaScript libraries from CDN sources is a good practice for popular libraries and assets, since it reduces the amount of assets you have to host. In case you prefer to self-host the `katex.min.css` (along with required KaTeX fonts), you can download the latest version from [KaTeX GitHub releases](https://github.com/KaTeX/KaTeX/releases), extract and copy `katex.min.css` and `fonts` directory (only `.woff2` font types should be enough) to your site's `static` directory, and in `docusaurus.config.js`, replace the stylesheet's `href` from the CDN URL to your local path (say, `/katex/katex.min.css`).",
+      "source_content_hash": "201e02bd332493d81cd5c8b1830669e4bb66cd6d8dbd346584bc0f6bdebd0832",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "edfcc73c",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  stylesheets: [\n    {\n      href: '/katex/katex.min.css',\n      type: 'text/css',\n    },\n  ],\n};\n```",
+      "source_content_hash": "2a6cd718c2277d450ae57791958c1642efaf634b27204d2e3e1a262612161604",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/guides/markdown-features/markdown-features-math-equations.mdx",
+  "last_updated_timestamp": "2025-06-18T04:53:13.247303+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

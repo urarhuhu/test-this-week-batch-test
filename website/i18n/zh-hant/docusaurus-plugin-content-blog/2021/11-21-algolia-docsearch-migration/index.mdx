@@ -1,0 +1,108 @@
+---
+title: DocSearch migration
+authors: [shortcuts, slorber]
+tags: [search]
+image: ./img/social-card.png
+---
+
+[DocSearch](https://docsearch.algolia.com/) 正在遷移至一個更強大的新系統，該系統將為用戶提供專屬的 Algolia 應用程式和新的憑證。
+
+Docusaurus 網站擁有者需在 **2022年2月1日** 前使用新憑證更新配置，現有搜尋索引將在此日期後凍結並轉為唯讀狀態。
+
+<!--truncate-->
+
+## 升級您的 Docusaurus 網站
+
+未來幾週內，Docusaurus 網站擁有者將收到邀請郵件，加入其專屬的 Algolia 應用程式。
+
+該郵件將包含用於 Docusaurus 配置的新 `appId` 和 `apiKey`。
+
+您只需完成以下操作：
+
+- 加入 Algolia 應用程式（可能需要創建新 Algolia 帳戶）
+- 更新網站配置。
+
+```js title="docusaurus.config.js"
+const config = {
+  themeConfig: {
+    algolia: {
+      // highlight-start
+      appId: '<NEW_APP_ID>',
+      apiKey: '<NEW_SEARCH_API_KEY>',
+      // highlight-end
+    },
+  },
+};
+
+module.exports = config;
+```
+
+:::info
+
+`appId` 現為 **必填項**。
+
+這些金鑰非機密資訊，可提交至 Git 儲存庫。
+
+:::
+
+## DocSearch 有了新家！
+
+### 什麼是 DocSearch？
+
+[DocSearch](https://docsearch.algolia.com/) 是由 [Algolia](http://algolia.com/) 開發的程式，**免費** 為開源專案技術文件和技術部落格提供搜尋功能。
+
+您可 [在此閱讀更多](https://docsearch.algolia.com/docs/what-is-docsearch/)，若想試用歡迎 [提交申請](https://docsearch.algolia.com/apply)！
+
+## 本次遷移的內容為何？
+
+### 動機
+
+隨著 [DocSearch UI](https://docsearch.algolia.com/docs/DocSearch-v3) 穩定版即將發布，我們希望進一步提供更佳工具，協助用戶優化搜尋體驗，同時充分發揮 Algolia 的潛力。
+
+### 新功能
+
+DocSearch 現採用 [Algolia 爬蟲](https://www.algolia.com/products/search-and-discovery/crawler/)，其網頁介面可讓您：
+
+- 啟動、排程及監控爬取作業
+- 透過即時編輯器修改配置檔
+- 使用 DocSearch v3 測試結果
+
+![顯示專案概覽的 Algolia 爬蟲首頁，包含最近完整爬取時間與索引等資訊](./img/crawler-overview.png)
+
+![開啟的 Algolia 配置編輯器，顯示 docusaurus-2 配置。右側面板展示索引結果與各面向篩選器。](./img/editor.png)
+
+此外，您的專屬 Algolia 應用程式還提供 **更多功能**：
+
+- 團隊管理
+- 瀏覽並查看記錄在 Algolia 中的索引方式
+- 免費試用其他 Algolia 功能
+
+![Algolia 索引概覽頁面，顯示各類篩選器與每個索引的詳細資訊](./img/index-overview.png)
+
+![Algolia 索引分析頁面，顯示總用戶數、總搜尋量等趨勢](./img/index-analytics.png)
+
+當然，還有 **更多免費功能**。
+
+## 常見問題
+
+### 我正在使用 Docusaurus 和 DocSearch，可以遷移嗎？ {#im-using-docusaurus-and-docsearch-can-i-migrate}
+
+本文撰寫時，我們仍處於遷移初期階段。目前每週進行小批量遷移，後續將逐步擴大規模，請耐心等待並留意郵箱通知，您的 Algolia 應用程式準備就緒後我們會立即聯繫您！
+
+### 哪裡可以了解更多資訊？
+
+我們撰寫了一份簡短的[遷移指南](https://docsearch.algolia.com/docs/migrating-from-legacy)，但您將在遷移電子郵件中獲得更詳細的資訊。
+
+### 我收到遷移郵件但邀請已過期
+
+請透過[電子郵件](mailto:docsearch@algolia.com)、[DocSearch Discord](https://discord.gg/bRTacwYrfX)或[Docusaurus Discord的#algolia頻道](https://discordapp.com/invite/docusaurus)與我們聯繫。
+
+### 我有意見回饋！
+
+對於我們的文檔或DocSearch UI組件的任何意見，您可以在[我們的GitHub存儲庫](https://github.com/algolia/docsearch/issues)上開立問題，或透過上述方式聯繫我們。
+
+### 我還能運行自己的DocSearch實例嗎？
+
+為了支持新基礎架構和DocSearch v3，我們將不再維護我們珍愛的[DocSearch爬蟲](https://github.com/algolia/docsearch-scraper)和[DocSearch v2](https://github.com/algolia/docsearch/tree/master)，但這些存儲庫仍將開放並接受拉取請求。
+
+先前的文檔（現稱為`legacy`）以及我們的[`自行運行`](https://docsearch.algolia.com/docs/legacy/run-your-own)指南仍然可用。

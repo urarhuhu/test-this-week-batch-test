@@ -1,0 +1,242 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/releases/3.7/index.mdx",
+  "source_file_content_hash": "5bddb595287ab8beaf7f3588bc293cb4e6910b5c4cc8a0ab5d1d890d7a8473b7",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Docusaurus 3.7\nauthors: [slorber]\ntags: [release]\nimage: ./img/social-card.png\ndate: 2025-01-03\n---",
+      "source_content_hash": "040a2d86958d33d0025f982df2ff23d36a0857baef070a455f075adde143cace",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "We are happy to announce **Docusaurus 3.7**.",
+      "source_content_hash": "7db11823b1fa66c5f2427370193e17333d66cb14f5c512d175f5c11605db65a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們很高興宣布 **Docusaurus 3.7** 正式發布。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus is now compatible with [React 19](https://react.dev/blog/2024/12/05/react-19).",
+      "source_content_hash": "642d4451ce5970d09c1f555d54b7971d7ac863142af7808822240736c1af08a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 現已相容於 [React 19](https://react.dev/blog/2024/12/05/react-19)。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Upgrading should be easy. Our [release process](/community/release-process) respects [Semantic Versioning](https://semver.org/). Minor versions do not include any breaking changes.",
+      "source_content_hash": "81680bc8b927edb4674a8a44f09d0912cb08f6a4274e97bb1c6c65523e5a4839",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級過程應該相當簡單。我們的[發布流程](/community/release-process)遵循[語意化版本控制](https://semver.org/)，次要版本更新不會包含任何破壞性變更。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "![Docusaurus blog post social card](./img/social-card.png)",
+      "source_content_hash": "0d6cc67b96187c80e96effdbccdb8ebd594812778ff93d7f85e45f47c4131a88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 部落格文章社群媒體卡片](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "## Highlight",
+      "source_content_hash": "db8b7fd3dbd058ac0d755a58b9a4ba8063192f8ec78a3f1fdf227c9a3fedde7a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 重點更新"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "### React 19",
+      "source_content_hash": "6417951b0c68a4cde2073d9eaf9a4280817990cc8c92917c468bfea9441b5ed8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### React 19"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "In [#10763](https://github.com/facebook/docusaurus/pull/10763), we added support for [React 19](https://react.dev/blog/2024/12/05/react-19), and the Docusaurus website is running on React 19 already.",
+      "source_content_hash": "e3b1a564ec0f9eb562b1b75445334aa6078dbac467a4d068bad6a162b8b1a5eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#10763](https://github.com/facebook/docusaurus/pull/10763) 中，我們新增了對 [React 19](https://react.dev/blog/2024/12/05/react-19) 的支援，且 Docusaurus 官方網站已運行於 React 19 環境。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "From now on, all newly initialized sites will run on React 19 by default, and React 19 will be the minimum required version Docusaurus v4.",
+      "source_content_hash": "536021158d878e9b8c34a8f2d104dbd03628d44a3160061b99de5000591a98f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "即日起，所有新初始化的網站預設都將運行於 React 19，且 React 19 將成為 Docusaurus v4 的最低需求版本。"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "However, React 18 remains supported, and existing Docusaurus sites can either choose to stay on React 18, or upgrade their dependencies to React 19:",
+      "source_content_hash": "6d3a5cdbefa7cde63f5bfc1e81944e07d8c2a169ba96e737f5c3212e12ebfa07",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "不過 React 18 仍會持續支援，現有的 Docusaurus 網站可選擇維持使用 React 18，或將相依套件升級至 React 19："
+      }
+    },
+    {
+      "segment_id": "0c911872",
+      "source_content": "```diff\n{\n  \"name\": \"my-docusaurus-site\",\n  \"dependencies\": {\n-   \"react\": \"^18.0.0\",\n-   \"react-dom\": \"^18.0.0\"\n+   \"react\": \"^19.0.0\",\n+   \"react-dom\": \"^19.0.0\"\n  }\n}\n```",
+      "source_content_hash": "73cf6bb29a65561be52ed23fb433756040f477ddc528d7de35c5ac1e26575855",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_0c911872"
+      }
+    },
+    {
+      "segment_id": "688f7369",
+      "source_content": ":::warning\n\nThere's no urge to upgrade your site immediately.\n\nReact 19 is a bit heavier than React 18. Since we support both versions, we don't leverage yet the new features that are exclusive to React 19.\n\nHowever, upgrading to React 19 prepares your site for Docusaurus v4, that will drop support for React 18.\n\nHere are good reasons to upgrade your site before Docusaurus v4:\n\n- You have custom React code and want to ensure it is ready for React19\n- You plan to leverage the brand-new React 19 features in your own code\n- You use custom or third-party plugins and want to ensure their compatibility\n- You have a monorepo and want to align the React dependency to v19 for all packages\n\n:::",
+      "source_content_hash": "a0f49465d806f7cad0bdd0bdf4a8515e6f379853f294b5d60431b43d156ec9ad",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n無需立即升級您的網站。\n\nReact 19 比 React 18 稍顯臃腫。由於我們同時支援兩個版本，目前尚未利用 React 19 的獨家新功能。\n\n但升級至 React 19 可讓您的網站為 Docusaurus v4 做好準備，該版本將停止支援 React 18。\n\n以下是建議在 Docusaurus v4 發布前升級的理由：\n\n- 您有自訂 React 程式碼並希望確保其相容於 React19\n- 您計劃在自有程式碼中運用 React 19 的全新功能\n- 您使用自訂或第三方插件並希望確保其相容性\n- 您採用單體式倉儲架構，希望統一所有套件的 React 相依版本至 v19\n\n:::"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Along the way, we [fixed](https://github.com/facebook/docusaurus/pull/10786) all the remaining hydration errors reported by React 19, some of them produced by our aggressive HTML minifier settings.",
+      "source_content_hash": "be7223d2997f00684683d860efc36c98528030cad43d2be72a5ff62a885923b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在此過程中，我們[修復](https://github.com/facebook/docusaurus/pull/10786)了 React 19 回報的所有殘留 hydration 錯誤，其中部分是由我們激進的 HTML 最小化設定所導致。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "### SVGR plugin",
+      "source_content_hash": "2de65dfe982eae2a1e51c8b50a5356de59460748938958a7a5a234e87719719f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### SVGR 插件"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Docusaurus has built-in support for [SVGR](https://github.com/gregberge/svgr), allowing you to seamlessly import and use SVG files as React components:",
+      "source_content_hash": "244f0e4fcc1016f9bf5a40cc911ef2103f08977d2cd9bdecbe11d5819b47acef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 內建支援 [SVGR](https://github.com/gregberge/svgr)，可讓您無縫匯入 SVG 檔案並作為 React 元件使用："
+      }
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```tsx\nimport DocusaurusSvg from './docusaurus.svg';\n\n<DocusaurusSvg />;\n```",
+      "source_content_hash": "60388ba6819e127abcbcbbac8e0d30a5156189df8e245a8b1e4f7639696469fa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5a41b4fb"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "This built-in support has been the source of various bug reports due to the inability to customize the [SVGR Options](https://react-svgr.com/docs/options/), in particular the [SVG Optimizer](https://svgo.dev/) options.",
+      "source_content_hash": "5c1fb513c47ae3871f01b2e5e8b1be990fe9919602d8129b50fb9478d17f5fc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這項內建支援曾因無法客製化 [SVGR 選項](https://react-svgr.com/docs/options/)而引發多項錯誤報告，特別是 [SVG 優化工具](https://svgo.dev/)的設定選項。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "In [#10677](https://github.com/facebook/docusaurus/pull/10677), we extracted a new [`@docusaurus/plugin-svgr`](/docs/api/plugins/@docusaurus/plugin-svgr) that you can now configure according to your needs. It is included by default in our classic preset:",
+      "source_content_hash": "6b69dd3c76789cb9802dab886574fe72018b83b7b99f989153e13b10dbc6dacb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [#10677](https://github.com/facebook/docusaurus/pull/10677) 中，我們抽離出新的 [`@docusaurus/plugin-svgr`](/docs/api/plugins/@docusaurus/plugin-svgr) 插件，現在您可以根據需求進行配置。該插件已預設包含於我們的經典預設集中："
+      }
+    },
+    {
+      "segment_id": "af983f82",
+      "source_content": "```js\nexport default {\n  presets: [\n    [\n      'classic',\n      {\n        svgr: {\n          svgrConfig: {\n            // Your SVGR options ...\n            svgoConfig: {\n              // Your SVGO options ...\n              // Use \"svgoConfig: undefined\" to use a svgo.config.js file\n            },\n          },\n        },\n      },\n    ],\n  ],\n};\n```",
+      "source_content_hash": "58ff56cf4d7b368d875197f2268e097f53970badd4d704a84b49537e64434e4b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_af983f82"
+      }
+    },
+    {
+      "segment_id": "e33a2404",
+      "source_content": "## Other changes",
+      "source_content_hash": "664d73286695bab6e722d97de9d3e8c2cfcb1f3862e89e29908a9dc19af1fe6d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 其他變更"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "Other notable changes include:",
+      "source_content_hash": "7a7f506f7135be9a4fa913b729c202a73a90a1e28932ea8fe72609585c615fe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "其他值得注意的變更包括："
+      }
+    },
+    {
+      "segment_id": "dee20070",
+      "source_content": "- [#10768](https://github.com/facebook/docusaurus/pull/10768): Blog authors have built-in icons for social platforms bluesky, mastodon, threads, twitch, youtube, instagram.\n- [#10729](https://github.com/facebook/docusaurus/pull/10729): Blog now supports `frontMatter.sidebar_label`\n- [#10803](https://github.com/facebook/docusaurus/pull/10803): `@docusaurus/remark-plugin-npm2yarn` now supports Bun conversions.\n- [#10672](https://github.com/facebook/docusaurus/pull/10672): Upgrade Algolia DocSearch to `algoliasearch` v5.\n- [#10800](https://github.com/facebook/docusaurus/pull/10800): Docusaurus Faster turns Rspack incremental mode on by default.\n- [#10783](https://github.com/facebook/docusaurus/pull/10783): Improve Dutch theme translations.\n- [#10760](https://github.com/facebook/docusaurus/pull/10760): Improve Korean theme translations.",
+      "source_content_hash": "45a7ece332994a55bcf61f61850ef80f89261190aca6649d9c0c7db616a8f180",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [#10768](https://github.com/facebook/docusaurus/pull/10768): 部落格作者現內建支援 Bluesky、Mastodon、Threads、Twitch、YouTube、Instagram 等社交平台的圖示。\n- [#10729](https://github.com/facebook/docusaurus/pull/10729): 部落格現在支援 `frontMatter.sidebar_label` 設定。\n- [#10803](https://github.com/facebook/docusaurus/pull/10803): `@docusaurus/remark-plugin-npm2yarn` 現在支援 Bun 套件管理器的轉換。\n- [#10672](https://github.com/facebook/docusaurus/pull/10672): 將 Algolia DocSearch 升級至 `algoliasearch` v5 版本。\n- [#10800](https://github.com/facebook/docusaurus/pull/10800): Docusaurus Faster 現在預設啟用 Rspack 增量模式。\n- [#10783](https://github.com/facebook/docusaurus/pull/10783): 改進荷蘭語主題的翻譯內容。\n- [#10760](https://github.com/facebook/docusaurus/pull/10760): 改進韓語主題的翻譯內容。"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "Check the **[3.7.0 changelog entry](/changelog/3.7.0)** for an exhaustive list of changes.",
+      "source_content_hash": "98224fb13960532d94ce95614312999cfcf157b6cfe301316ad8142c1bc1019b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "請查閱 **[3.7.0 版本更新日誌](/changelog/3.7.0)** 以獲取完整的變更清單。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/releases/3.7/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.015692+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "5bddb595287ab8beaf7f3588bc293cb4e6910b5c4cc8a0ab5d1d890d7a8473b7"
+  }
+}

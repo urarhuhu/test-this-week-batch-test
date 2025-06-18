@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/api/themes/theme-search-algolia.mdx",
+  "source_file_content_hash": "216bda55ed14a3ce370fbf37cb661a3185f30c3ee819ecae6899e37ae6cbaed1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\nslug: /api/themes/@docusaurus/theme-search-algolia\n---",
+      "source_content_hash": "d1c243393135ad10ebb1e486896753480e7b43d40bf079c2943b8026b628c8b6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 theme-search-algolia",
+      "source_content_hash": "3dac64af1566a06724904d276bdd611cfcefd9ee01dd1cd06e8b0fe575ef78ba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 theme-search-algolia"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "This theme provides a `@theme/SearchBar` component that integrates with Algolia DocSearch easily. Combined with `@docusaurus/theme-classic`, it provides a very easy search integration. You can read more on [search](../../search.mdx) documentation.",
+      "source_content_hash": "fa2dca6454602d66b08bafeb66d15ad7f9f659a9dd56be07e794065f4186ead5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此主題提供一個與 Algolia DocSearch 輕鬆整合的 `@theme/SearchBar` 組件。與 `@docusaurus/theme-classic` 結合使用時，可實現極簡的搜尋功能整合。更多資訊請參閱[搜尋功能](../../search.mdx)文件。"
+      }
+    },
+    {
+      "segment_id": "71b63116",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/theme-search-algolia\n```",
+      "source_content_hash": "37db0a9428479e5abd107c47d67f4aba23d864f7e9ccc2837ea0b34b91607e3c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71b63116"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "This theme also adds search page available at `/search` (as swizzlable `SearchPage` component) path with OpenSearch support. You can change this default path via `themeConfig.algolia.searchPagePath`. Use `false` to disable search page.",
+      "source_content_hash": "9a96830585cbfa4bf50b9980806b21393c514f9e003dad578bbc06ffcb8a2b0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此主題還新增了位於 `/search` 路徑的可搜尋頁面（作為可替換的 `SearchPage` 組件），並支援 OpenSearch。您可透過 `themeConfig.algolia.searchPagePath` 變更預設路徑，設為 `false` 則停用搜尋頁面。"
+      }
+    },
+    {
+      "segment_id": "976d532b",
+      "source_content": ":::tip\n\nIf you have installed `@docusaurus/preset-classic`, you don't need to install it as a dependency.\n\n:::",
+      "source_content_hash": "f8937bddae7116baa2a60200b2171cb26c1585b65250eef82b387c74d6d707e9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n若已安裝 `@docusaurus/preset-classic`，則無需額外安裝此主題作為依賴項。\n\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/api/themes/theme-search-algolia.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.068570+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "216bda55ed14a3ce370fbf37cb661a3185f30c3ee819ecae6899e37ae6cbaed1"
+  }
+}

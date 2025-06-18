@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/api/themes/theme-live-codeblock.mdx",
+  "source_file_content_hash": "ac42591811cd15239d2339daf3ff29746d970fdc67b7eb4a3f99887019ef5761",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\nslug: /api/themes/@docusaurus/theme-live-codeblock\n---",
+      "source_content_hash": "b8fb9c3f9f258059a3f892bb9b4929dfdd60c33a3891864f2dcece077ae3b222",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📦 theme-live-codeblock",
+      "source_content_hash": "90f7f8c7cff0478aed8e4b410d741e50956d75f51d34d6f2bc213fe39d2f9a30",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 📦 即時代碼區塊主題"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "This theme provides a `@theme/CodeBlock` component that is powered by [react-live](https://commerce.nearform.com/open-source/react-live/). You can read more on [interactive code editor](../../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor) documentation.",
+      "source_content_hash": "b88d01101a2bdc1438672eca013081bbfaba98d0265033776d08968e5e975e21",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此主題提供由 [react-live](https://commerce.nearform.com/open-source/react-live/) 驅動的 `@theme/CodeBlock` 組件。您可以在[互動式代碼編輯器](../../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor)文檔中閱讀更多相關資訊。"
+      }
+    },
+    {
+      "segment_id": "71b63116",
+      "source_content": "```bash npm2yarn\nnpm install --save @docusaurus/theme-live-codeblock\n```",
+      "source_content_hash": "427ea4c8b04a9ea9902cddcf7144d1574ab5e32dc425b5bbd8ca81b6aad00a64",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71b63116"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "### Configuration {#configuration}",
+      "source_content_hash": "ae18c681c4b56d308df243c0b96aa3dc7a637602c8a0d9419beda7a171febec4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置 {#configuration}"
+      }
+    },
+    {
+      "segment_id": "41ad46a6",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  plugins: ['@docusaurus/theme-live-codeblock'],\n  themeConfig: {\n    liveCodeBlock: {\n      /**\n       * The position of the live playground, above or under the editor\n       * Possible values: \"top\" | \"bottom\"\n       */\n      playgroundPosition: 'bottom',\n    },\n  },\n};\n```",
+      "source_content_hash": "94b58ae935f3e026b5289ef08c170a174e2ab3514e4f71e64cfa6aa90a6c88ec",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41ad46a6"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/api/themes/theme-live-codeblock.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.165953+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ac42591811cd15239d2339daf3ff29746d970fdc67b7eb4a3f99887019ef5761"
+  }
+}

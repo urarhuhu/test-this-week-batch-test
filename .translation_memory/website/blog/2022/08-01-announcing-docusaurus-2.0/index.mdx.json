@@ -1,0 +1,1074 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022/08-01-announcing-docusaurus-2.0/index.mdx",
+  "source_file_content_hash": "51236b900eb1ed9c1e67ad5424bf11d8eb4a1cb866fe2763d53187a96f0033bc",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Announcing Docusaurus 2.0\nauthors:\n  - slorber\n  - Josh-Cena\n  - yangshun\n  - lex111\n  - zpao\n  - key: JMarcey\n    title: Co-creator of Docusaurus 1\ntags: [release]\nimage: ./img/social-card.png\n---",
+      "source_content_hash": "b8cc41419fd14270a7a2263ee6934b429b5a3581ee285fbd3e287e862371bcfc",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```mdx-code-block\nimport LiteYouTubeEmbed from 'react-lite-youtube-embed';\nimport 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';\nimport BrowserWindow from '@site/src/components/BrowserWindow';\nimport ProductHuntCard from '@site/src/components/ProductHuntCard';\nimport HackerNewsIcon from '@site/src/components/HackerNewsIcon';\nimport ColorModeToggle from '@theme/Navbar/ColorModeToggle';\nimport useBaseUrl from '@docusaurus/useBaseUrl';\nimport ThemedImage from '@theme/ThemedImage';\nimport {ShowcaseCarouselV1, ShowcaseCarouselV2, ShowcaseCarouselV2Theming} from './ShowcaseCarousel';\n```",
+      "source_content_hash": "dfe9a958d0de3a329faca284afbbfe17639009b2103add097e979e34bb555132",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Today we are extremely happy to finally **announce Docusaurus 2.0**! 🥳️",
+      "source_content_hash": "eda7d62d5e7cf5b34c3f7a4ceb603d570fc49da7ad5a407a668c63161ddb6a47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "今天，我們非常高興終於能**正式宣佈 Docusaurus 2.0** 的到來！🥳️"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "At [**Meta Open Source**](https://opensource.fb.com/), we believe Docusaurus will help you build the **best documentation websites** with **minimal effort**, letting you **focus on what really matters**: writing the content.",
+      "source_content_hash": "24c292b78a9d6cdccb8b44fa3342945792261b473377ef22bdf0a36739b9d13d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [**Meta 開源專案**](https://opensource.fb.com/) 中，我們相信 Docusaurus 能協助您以**最小努力**打造**最優質的文件網站**，讓您專注於真正重要的事：撰寫內容。"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "After **4 years of work, [75 alphas](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.75) and [22 betas](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.22)**, the next generation of Docusaurus is **ready for prime time**. From now on, we now plan to **respect [Semantic Versioning](https://semver.org/)** and will release **major versions more frequently**.",
+      "source_content_hash": "101bb246044dba01150bc8ba472eaf18b4288f08083f54c8041834c825cb911e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "歷經**4年開發、[75個alpha版](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-alpha.75)與[22個beta版](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.22)**，新一代 Docusaurus 已**正式成熟**。從現在起，我們將嚴格遵循[語意化版本規範](https://semver.org/zh-Hant/)，並更頻繁地發布**主要版本更新**。"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "![social-card image](./img/social-card.png)",
+      "source_content_hash": "20c0740317f509617b8e01147b144c4f49dfcbe7dbcdd4eba2ac30347327a9bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![社交媒體預覽圖](./img/social-card.png)"
+      }
+    },
+    {
+      "segment_id": "26794fc5",
+      "source_content": ":::info[We are on [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) and [Hacker News](https://news.ycombinator.com/item?id=32303052)!]\n\n**Now** is the best time to show your love for Docusaurus!\n\n<div style={{display: 'flex'}}>\n  <ProductHuntCard />\n  <HackerNewsIcon />\n</div>\n\n:::",
+      "source_content_hash": "b57cfe9f262c1b9e8dd5523dd23c3008c234e33d128da54f9290b13392b47d7a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[我們登上了 [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) 和 [Hacker News](https://news.ycombinator.com/item?id=32303052)！]\n\n**現在**正是展現您對 Docusaurus 支持的最佳時機！\n\n<div style={{display: 'flex'}}>\n  <ProductHuntCard />\n  <HackerNewsIcon />\n</div>\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::tip\n\nIn a hurry? Check [what's new in Docusaurus 2.0](#whats-new-in-20)!\n\n:::",
+      "source_content_hash": "03929c23944bbec9bd285e0b89cf4ee468904ade6ce65d2373a652f8da516679",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n趕時間？直接查看 [Docusaurus 2.0 的新功能](#whats-new-in-20)！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "## What is Docusaurus exactly?",
+      "source_content_hash": "1e079e68516c2596a7fc3c488b495d44153ca2445afdca3638d8cf0c86ba358f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 究竟是什麼？"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Docusaurus is a **static site generator** that helps you ship **beautiful documentation websites** in **no time**.",
+      "source_content_hash": "7e95a0f8da5f050fc2c14e63b6ac99ff12a7274c07bb169b5d457c23fbd878a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 是一款**靜態網站生成器**，能協助您**快速建立**美觀的**文件網站**。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Focus on your content: just write **Markdown files**. Docusaurus will generate an optimized **website** for you that's easy to **host anywhere**.",
+      "source_content_hash": "016d4e7affdbb02afc9083d89a89a7f2b9dc0e70606636d0cee3c4c89b366eb9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "專注於您的內容：只需撰寫**Markdown文件**。Docusaurus 將為您生成經過優化的**網站**，並可輕鬆**部署至任何地方**。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Docusaurus is **full-featured** and very **flexible**: we ship with well-designed docs and blog layout, as well as out-of-the-box versioning, search, and internationalization functionalities, with a call to accessibility and search engine optimizations. Its flexible theming system permits to **adapt the UI to match your branding** so that it integrates nicely with your main website or documentation portal. Its usage of **React** enables a **modern client-side navigation**, and the ability to build an **interactive documentation**.",
+      "source_content_hash": "d64baeb726a00e0d5f04595367d667bd4c15879a74d57e19e91d5a7796440f7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 具備**完整功能**且極度**靈活**：我們提供精心設計的文件與部落格版面，開箱即用的版本控制、搜尋與國際化功能，同時兼顧無障礙存取與搜尋引擎優化。其彈性的主題系統可讓您**調整UI以符合品牌形象**，完美整合至主網站或文件入口。採用**React**技術實現**現代化客戶端導航**，並能打造**互動式文件**。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "![Introducing Slash](/img/slash-introducing.svg)",
+      "source_content_hash": "28e45e717a9072a3503f9277c34cbf087f8b8b144b502dbe9e2e59fb06175ac7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Slash介紹圖](/img/slash-introducing.svg)"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "The Docusaurus philosophy is akin to the **Pareto principle**: you can get **80% of the results** for **20% of the effort**. This enables you to compete with top-notch documentation sites with **minimal effort**.",
+      "source_content_hash": "c42b438a1b4cdf8277a3ece302ece4d90288e20a78be0c0234e7adf1e7e98ee2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的哲學符合**帕累托法則**：您只需投入**20%的精力**即可獲得**80%的成果**。這讓您能用**最小成本**打造可媲美頂尖水準的文件網站。"
+      }
+    },
+    {
+      "segment_id": "706eae60",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/rachelnabors/status/1452697991039660038\"\n  handle=\"rachelnabors\"\n  name=\"Rachel Nabors\"\n  job=\"Former ReactJS & React-Native docs manager\">\n  Unless you're spinning up a documentation team with engineering resources, you\n  probably want Docusaurus!\n</TweetQuote>",
+      "source_content_hash": "b58d791c1bdb2106e5fbc8efd92f19afce773286c8e1cebb6186b1b26211c4f9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "Docusaurus aims to be the **best documentation tool**, but you can use it for **other use-cases** as well: a blog, a knowledge base, a developer portfolio, a second brain, or even to scaffold landing pages!",
+      "source_content_hash": "e7095d5564966969d3ebe3f131fb629f47da563403ea6f04cad04065fde6d5ae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 致力成為**最佳文件工具**，但您也能將其運用於**其他場景**：部落格、知識庫、開發者作品集、第二大腦，甚至快速生成登陸頁面！"
+      }
+    },
+    {
+      "segment_id": "568a7359",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/johnny_reilly/status/1551861926334025728\"\n  handle=\"johnny_reilly\"\n  name=\"Johnny Reilly\"\n  job=\"Group Principal Engineer at Investec\">\n  Using Docusaurus for my tech blog has been a fantastic choice. It looks\n  tremendous out-of-the-box and the awesome DX means I write way more\n</TweetQuote>",
+      "source_content_hash": "cd56bc11cfd3632c3968d50be16c5b7f490d70722d565f97d1dbc2e090bf8879",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "de7ed16f",
+      "source_content": ":::tip\n\nTry Docusaurus now with our [online playgrounds](/docs/playground) and [5 minutes tutorial](https://tutorial.docusaurus.io/) ⏱️\n\n:::",
+      "source_content_hash": "a52f9ee639fd327eff0caf4a0b3aa176f34c785904c26be9aa627d03aae8bdbb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n立即透過我們的[線上遊樂場](/docs/playground)和[5分鐘教學](https://tutorial.docusaurus.io/)體驗 Docusaurus ⏱️\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "## The story behind Docusaurus",
+      "source_content_hash": "cf67df34c08fb2e74139b332e0cb1aa64c56f7c785953e0e456d9f49f58b5ea8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus 的誕生故事"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Docusaurus was created at **Facebook Open Source** in **2017** (now [Meta Open Source](https://opensource.fb.com/)). We had a lot of internal and open source projects to document. It's **complicated enough to write good documentation**, let alone to create the HTML, CSS, and JavaScript for a good-looking website. We wanted project leaders to be able to **focus on the content**, and **Markdown** is great for that.",
+      "source_content_hash": "155b00ac750a107a531817761e502391ae3d01fc99abbd2efe21d9c2e11ff124",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 由**Facebook開源團隊**（現為[Meta開源](https://opensource.fb.com/)）於**2017年**創建。當時我們有大量內部與開源專案需要文件化。**撰寫優質文件已屬不易**，更遑論打造美觀網站所需的HTML、CSS與JavaScript。我們希望專案負責人能**專注於內容**，而**Markdown**正是最佳選擇。"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "At that time, our solution was to **copy/paste a Jekyll template** over and over again. This naturally became **hard to maintain**, so we created a tool to **solve our own pain** once for all.",
+      "source_content_hash": "59e0ff361fe29ef950d3145ba12194c06b88c3b619851d8ef5a5792fcb4c0e10",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當時的解決方案是**不斷複製/貼上Jekyll模板**。這自然導致**維護困難**，因此我們開發了這個工具來**一勞永逸解決痛點**。"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "**[Docusaurus v1 was born](/blog/2017/12-14-introducing-docusaurus.mdx)!**",
+      "source_content_hash": "9dfa5a2c7f105155f6537b9266c6c54225d9a5d0147f6c9eb07dd3a9e057d9a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**[Docusaurus v1 誕生了](/blog/2017/12-14-introducing-docusaurus.mdx)!**"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "![Birth of Slash](/img/slash-birth.png)",
+      "source_content_hash": "70df611a84ea80aea6c36b021fa35621bdd23318ad2ad10a130a90c71cdff2f5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Slash 的誕生](/img/slash-birth.png)"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "It quickly built momentum at Facebook and in the frontend ecosystem, adopted by many popular projects such as [Prettier](https://prettier.io/), [Babel](https://babeljs.io/), [React-Native](https://archive.reactnative.dev/), [KaTeX](https://katex.org/docs/), and of course [Docusaurus v1](http://v1.docusaurus.io/) itself.",
+      "source_content_hash": "4bef24cd2cd9814ba2b5f2825ccdc069ecc5a0cd9dde863ae7a2d59fa4cc314b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "它迅速在 Facebook 和前端生態系統中獲得動力，被許多知名專案採用，例如 [Prettier](https://prettier.io/)、[Babel](https://babeljs.io/)、[React-Native](https://archive.reactnative.dev/)、[KaTeX](https://katex.org/docs/)，當然還有 [Docusaurus v1](http://v1.docusaurus.io/) 本身。"
+      }
+    },
+    {
+      "segment_id": "341c2c0e",
+      "source_content": "<ShowcaseCarouselV1 />",
+      "source_content_hash": "37a2253b6e35a00953773a10ff0e7bb2f230b8c38e7094f5d890262c75e43ecf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_341c2c0e"
+      }
+    },
+    {
+      "segment_id": "a3da9b2d",
+      "source_content": "<br />",
+      "source_content_hash": "7a1718a3cc58b9857b9d014b1a18d3079f9e1351abfe90d4f864b6be42c34c9d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a3da9b2d"
+      }
+    },
+    {
+      "segment_id": "72871d03",
+      "source_content": ":::note\n\nNotice that the sample sites above use different colors, but still look quite the same.\n\n:::",
+      "source_content_hash": "f74c7abe4b06071502cc215168d0809ae1920e4ce76e26a7c313974371293beb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n請注意，上述範例網站使用了不同的顏色，但看起來仍然非常相似。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "## Toward Docusaurus 2.0",
+      "source_content_hash": "4b6883cd932013a3a22630a120c87a7b7b483b674f114056db37e09c379e8433",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 邁向 Docusaurus 2.0"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "[**Docusaurus v1**](http://v1.docusaurus.io/) has been very successful, but we started to **question some architectural choices**:",
+      "source_content_hash": "e44786bdb46c640e37d88f0f0f3758b983f551bf83032196b4e83ba3edd64e4d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[**Docusaurus v1**](http://v1.docusaurus.io/) 非常成功，但我們開始**質疑一些架構上的選擇**："
+      }
+    },
+    {
+      "segment_id": "2979d081",
+      "source_content": "- React was only used as a **server-side templating language**, and not used on the client\n- **Theming system was pretty limited**, and apart from changing a few colors with CSS, it was difficult to do more advanced customizations\n- The **docs versioning system was confusing**, since it was based on a diff algorithm\n- The codebase was **monolithic**, neither well-tested nor easy to extend",
+      "source_content_hash": "d0c4b5cfde0307e28042b73415d774ed1ca9e9427d068af8917273b8e224ee30",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- React 僅作為**伺服器端模板語言**使用，並未在客戶端使用\n- **主題系統相當有限**，除了用 CSS 更改一些顏色外，很難進行更高級的自訂\n- **文件版本控制系統令人困惑**，因為它基於差異演算法\n- 程式碼庫是**單一的**，既沒有經過良好測試，也不易擴展"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "[**Docusaurus v2**](https://docusaurus.io/) was **rebuilt** from the ground up with a new **modular architecture**:",
+      "source_content_hash": "be9f8f8cc4b8487b5c975be20f6fee21edd4ae177a5713941c9f2979da68ba11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[**Docusaurus v2**](https://docusaurus.io/) 從頭開始**重建**，採用了新的**模組化架構**："
+      }
+    },
+    {
+      "segment_id": "82abb0a4",
+      "source_content": "- React is now also used on the client, enabling a **modern Single Page Application navigation**\n- **Plugins** empower the community to contribute useful features as third-party packages\n- **Theming** is more **flexible** than ever\n- Docs versioning is now based on snapshot copies, much easier to understand\n- We kept **everything good from v1**: docs, blog, pages, versioning, i18n...\n- We implemented **several new features**",
+      "source_content_hash": "effdbcb18c0f0d0c6f6ab8daa0bce9299328b1005158f920e27cfdee46bca27d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- React 現在也在客戶端使用，實現了**現代單頁應用程式導航**\n- **外掛**讓社群能夠以第三方套件的形式貢獻有用的功能\n- **主題**比以往更加**靈活**\n- 文件版本控制現在基於快照副本，更容易理解\n- 我們保留了**v1 的所有優點**：文件、部落格、頁面、版本控制、國際化...\n- 我們實現了**多項新功能**"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "More details in the [Docusaurus 2 project announcement](/blog/2018/09-11-Towards-Docusaurus-2.mdx) and [v1 to v2 migration guide](https://docusaurus.io/docs/migration)",
+      "source_content_hash": "e4c4716365b574f19de2330bfd377f5c3b4af5784dce7371146fb67f80798e8e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更多細節請參閱 [Docusaurus 2 專案公告](/blog/2018/09-11-Towards-Docusaurus-2.mdx) 和 [v1 到 v2 遷移指南](https://docusaurus.io/docs/migration)"
+      }
+    },
+    {
+      "segment_id": "8f1c1cd6",
+      "source_content": "## Who uses Docusaurus 2.0?",
+      "source_content_hash": "139974976c2469157a07fac02b6138574e546ea893cb93cce3fdad4ca245d279",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 誰在使用 Docusaurus 2.0？"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "Despite being in pre-release, it didn't take long for **Docusaurus v2 to outgrow Docusaurus v1** in terms of NPM downloads:",
+      "source_content_hash": "1863efa339fbfcf65856c349d9d94c40a1bd428a1b18b8f9bd774dfc5311bbe5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "儘管處於預發布階段，**Docusaurus v2 在 NPM 下載量上很快就超越了 Docusaurus v1**："
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "[![NPM downloads: v2 outgrows v1](./img/npm-downloads.png)](https://npmtrends.com/docusaurus-vs-@docusaurus/core)",
+      "source_content_hash": "86f9a4d2eb1bda7ebfa1a7113f488a818d75a730acfe79c8ce48862ea586fcb6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![NPM 下載量：v2 超越 v1](./img/npm-downloads.png)](https://npmtrends.com/docusaurus-vs-@docusaurus/core)"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "Our GitHub star trend is very positive, competing with major frameworks:",
+      "source_content_hash": "f416774cacfe6bfcdc5e28e571ee6764c5d6f21b6826d08237e94af77c6504ef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們的 GitHub star 趨勢非常正面，可與主要框架競爭："
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "[![GitHub stars: Docusaurus is well-positioned](./img/star-history.png)](https://star-history.com/#facebook/docusaurus&vercel/next.js&gatsbyjs/gatsby&hexojs/hexo&nuxt/nuxt.js&vuejs/vuepress&11ty/eleventy&gohugoio/hugo&remix-run/remix&mkdocs/mkdocs&Timeline)",
+      "source_content_hash": "cf15694f2f1deaca1b73ad830c3a114cb1539e8b597c8c68b781e44265466f16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[![GitHub stars：Docusaurus 表現出色](./img/star-history.png)](https://star-history.com/#facebook/docusaurus&vercel/next.js&gatsbyjs/gatsby&hexojs/hexo&nuxt/nuxt.js&vuejs/vuepress&11ty/eleventy&gohugoio/hugo&remix-run/remix&mkdocs/mkdocs&Timeline)"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "Today, Docusaurus v2 has already been a great success even before its launch:",
+      "source_content_hash": "4cef07987e3da3c2377151795e667b126a2df8489807122b3029f5326140bf0e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如今，Docusaurus v2 在正式發布前就已經取得了巨大成功："
+      }
+    },
+    {
+      "segment_id": "17ca27eb",
+      "source_content": "- We received so many [lovely testimonials](https://x.com/sebastienlorber/timelines/1392048416872706049)\n- Companies like [1Password](https://blog.1password.com/docusaurus-documentation-framework/) and [Courier](https://www.courier.com/blog/how-we-built-our-documentation/) are writing down their positive experience\n- Our [site showcase](/showcase) references hundreds of sites, and this is only the tip of the iceberg.",
+      "source_content_hash": "4b290d9378420a4a93d334e290421cbdac617cdc12e9ccc7878c66e9d07a46cd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 我們收到了許多[感人的推薦](https://x.com/sebastienlorber/timelines/1392048416872706049)\n- 像 [1Password](https://blog.1password.com/docusaurus-documentation-framework/) 和 [Courier](https://www.courier.com/blog/how-we-built-our-documentation/) 這樣的公司正在記錄他們的積極體驗\n- 我們的[網站展示](/showcase)列出了數百個網站，而這只是冰山一角。"
+      }
+    },
+    {
+      "segment_id": "b0cf7ea6",
+      "source_content": "<ShowcaseCarouselV2 />",
+      "source_content_hash": "e11d60622cbb94cad5b267962d8aded6cb221dffa7fd5fc70e06bd060ea4b252",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b0cf7ea6"
+      }
+    },
+    {
+      "segment_id": "9e0ba9d0",
+      "source_content": "<br />",
+      "source_content_hash": "7a1718a3cc58b9857b9d014b1a18d3079f9e1351abfe90d4f864b6be42c34c9d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9e0ba9d0"
+      }
+    },
+    {
+      "segment_id": "94366076",
+      "source_content": ":::tip\n\nPlease add your site to our [site showcase](/showcase)! It only takes a few seconds: just [post a comment here](https://github.com/facebook/docusaurus/discussions/7826).\n\n:::",
+      "source_content_hash": "88107496fab6d8879a6e00fcaa0beddc383492eed72d04d97aab039c1adb1be4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n歡迎將您的網站加入我們的[網站展示區](/showcase)！只需[在此留言](https://github.com/facebook/docusaurus/discussions/7826)，幾秒鐘即可完成。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a6c20a74",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/maxlynch/status/1549415692704825346\"\n  handle=\"maxlynch\"\n  name=\"Max Lynch\"\n  job=\"Ionic co-founder and CEO\">\n  We use Docusaurus everywhere now and love it\n</TweetQuote>",
+      "source_content_hash": "c5a8d8c8ff0844dec7c3a3cbbec957f1556e9005d13d03203f2a6f86a9a31b0d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a6c20a74"
+      }
+    },
+    {
+      "segment_id": "8f6fa9f3",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/supabase/status/1328960757149671425\"\n  handle=\"supabase\"\n  name=\"Supabase\"\n  job=\"Open Source Firebase alternative\">\n  We've been using V2 since January and it has been great\n</TweetQuote>",
+      "source_content_hash": "cca6dd504b102e917496c55d95e1e15d166302bed0edc9b7a8dcc1bba4f52d0d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8f6fa9f3"
+      }
+    },
+    {
+      "segment_id": "b905852a",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/gabrielcsapo/status/1415061312917233665\"\n  handle=\"gabrielcsapo\"\n  name=\"Gabriel Csapo\"\n  job=\"Staff Software Engineer at LinkedIn\">\n  Docusaurus is next level easy for literally everything you would need for\n  documentation in your project.\n</TweetQuote>",
+      "source_content_hash": "0093d1b18a297c3caa493200de020903aea2237c835e4a21142f1236ba9985ee",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b905852a"
+      }
+    },
+    {
+      "segment_id": "25adb529",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/ItWasMattGregg/status/1526682295075102721\"\n  handle=\"ItWasMattGregg\"\n  name=\"Matt Gregg\"\n  job=\"Senior Front End Developer at Shopify\">\n  Docusaurus is awesome. We use it\n</TweetQuote>",
+      "source_content_hash": "7d6108b94b89a5c82b6d1c479a0a47bfb93bbff20b0954a9cb70672fed34afba",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_25adb529"
+      }
+    },
+    {
+      "segment_id": "6d457467",
+      "source_content": "## What's New in 2.0?",
+      "source_content_hash": "c2c7055eb56a98a50e78e1eda4793333058fb3646dbece532ce8016c88de1398",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 2.0 版本有哪些新功能？"
+      }
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "It would be difficult to describe every single new feature coming with Docusaurus v2. Let's focus on the features we believe are the **most impactful**.",
+      "source_content_hash": "c8533febf3e72fc1255368043b3cc931383da10144481fa85be06586701a1e16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "很難一一列舉 Docusaurus v2 的所有新功能，我們將重點介紹最具影響力的功能。"
+      }
+    },
+    {
+      "segment_id": "dfa23ddf",
+      "source_content": "### MDX",
+      "source_content_hash": "a6524bfbbfac69edd6bddb76b1913423b69c17ccf2d7b656d6745f01f177d182",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### MDX"
+      }
+    },
+    {
+      "segment_id": "f2c67ca5",
+      "source_content": "[MDX](https://github.com/mdx-js/mdx) allows you to **interleave React components** in Markdown. This enables you to build top-notch **interactive documentation experiences** very easily.",
+      "source_content_hash": "5632d9f829281faa29efc0f6d3bfa2b807ce0938cc98bbd2a52a78ab2547bc04",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[MDX](https://github.com/mdx-js/mdx) 允許您在 Markdown 中**嵌入 React 組件**，這讓您能輕鬆打造頂尖的**互動式文檔體驗**。"
+      }
+    },
+    {
+      "segment_id": "3208eb29",
+      "source_content": "A demo is worth a thousand words:",
+      "source_content_hash": "ce10bd2eccd8349f28969d644fdad0afb8c9d57f35e533a2a2ab1b048fa513b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "實際示範勝過千言萬語："
+      }
+    },
+    {
+      "segment_id": "3c6be27a",
+      "source_content": "```md title=\"docs/my-document.mdx\"\n### Give it a try: press that button!\n\nimport ColorModeToggle from '@theme/ColorModeToggle';\n\n<ColorModeToggle/>\n```",
+      "source_content_hash": "0d0db8f2473a747513fed308215f4e89749cca82aeb6f1f6149103aa5d83ade9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3c6be27a"
+      }
+    },
+    {
+      "segment_id": "b3890715",
+      "source_content": "```mdx-code-block\n<BrowserWindow>\n\n<h3>Give it a try: press that button!</h3>\n\n<ColorModeToggle/>\n\n</BrowserWindow>\n```",
+      "source_content_hash": "2f5552e2b1fb8cd16bfa05ecac89a78ebc25a6a8d6c507b05e6afb8be69de718",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b3890715"
+      }
+    },
+    {
+      "segment_id": "6d7e2970",
+      "source_content": ":::info\n\nMDX has its own [plugin system](https://mdxjs.com/docs/extending-mdx/). You to customize your Markdown authoring experience, and even create your own Markdown syntax.\n\n:::",
+      "source_content_hash": "e6476d8d1b4e054c8f0a8c84612971b633836c8b168f5c1835eaa7bde41262a3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\nMDX 擁有自己的[插件系統](https://mdxjs.com/docs/extending-mdx/)，您可以自訂 Markdown 撰寫體驗，甚至創建自己的 Markdown 語法。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "5169ec65",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/HamelHusain/status/1551962275250053123\"\n  handle=\"HamelHusain\"\n  name=\"Hamel Husain\"\n  job=\"Head Of Data Science at Outerbounds\">\n  Docusaurus + MDX is great: we were able to implement a beautiful two-pane\n  layout and give the author fine-grained control on the placement of code and\n  corresponding prose.\n</TweetQuote>",
+      "source_content_hash": "a9d19b976ebd02c3d194e4f8afb67630bc84cede30dcdd331cf2c31ac3c3324a",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5169ec65"
+      }
+    },
+    {
+      "segment_id": "263073b1",
+      "source_content": "### File system conventions",
+      "source_content_hash": "670e540f95f15434105ec3cb2c5bba93581ffe74569d155e9b3d40d65641c898",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 檔案系統慣例"
+      }
+    },
+    {
+      "segment_id": "d119b75c",
+      "source_content": "Our goal is to make Docusaurus very **intuitive** to use. We added file system conventions, and adding a doc page is as easy as creating one Markdown file.",
+      "source_content_hash": "1f47f59dda26414737b485e0199ed016e88f576eab444053ce4baa48f675c8a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們的目標是讓 Docusaurus 使用起來非常**直觀**。我們新增了檔案系統慣例，現在新增文檔頁面就像建立一個 Markdown 檔案一樣簡單。"
+      }
+    },
+    {
+      "segment_id": "acffec5d",
+      "source_content": "<LiteYouTubeEmbed\n  id=\"T3S8GyFIXjo\"\n  params=\"autoplay=1&autohide=1&showinfo=0&rel=0\"\n  title=\"Explain Like I'm 5: Docusaurus\"\n  poster=\"maxresdefault\"\n  webp\n/>",
+      "source_content_hash": "8a24641d02f46a5e60d0b28e4c340186b6380d7dc8c55c1981a1eadfc3059069",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_acffec5d"
+      }
+    },
+    {
+      "segment_id": "8a3ed812",
+      "source_content": "<br />",
+      "source_content_hash": "7a1718a3cc58b9857b9d014b1a18d3079f9e1351abfe90d4f864b6be42c34c9d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_8a3ed812"
+      }
+    },
+    {
+      "segment_id": "741508d5",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/paularmstrong/status/1552005085168865281\"\n  handle=\"paularmstrong\"\n  name=\"Paul Armstrong\"\n  job=\"Principal Engineer at Microsoft\">\n  Using the auto-generated sidebars makes it so simple to just create a page and\n  not worry about any other configuration.\n</TweetQuote>",
+      "source_content_hash": "4c4c2050b0bbcf92207d6d01168bfac9c1a02339c9ff389682383949b75b490d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_741508d5"
+      }
+    },
+    {
+      "segment_id": "cb2e9dbf",
+      "source_content": "### Plugins",
+      "source_content_hash": "490ae92b33e6ee05d131e3b68dd3591cedd4e2035973f28487600d7077a1ea53",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 插件系統"
+      }
+    },
+    {
+      "segment_id": "9c70c953",
+      "source_content": "Docusaurus now has a **modular architecture** with a plugin system — our **core features** like docs, blog, pages, and search are all powered by individual plugins.",
+      "source_content_hash": "9f1344e25d5b08d9fa1b7fe9a36ad0cb16a56dd04ddeb3e7480d3cdb05444747",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 現在採用**模組化架構**並提供插件系統——我們的**核心功能**如文檔、部落格、頁面和搜尋都是由獨立插件驅動的。"
+      }
+    },
+    {
+      "segment_id": "93f7c834",
+      "source_content": "More importantly, it enables our community to **enhance Docusaurus** with additional features.",
+      "source_content_hash": "700d3e71ca3c649fcdd7535ff42317c07df3d481b98dbe47c12ba7319ad037eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "更重要的是，這讓我們的社群能夠**擴展 Docusaurus** 的功能。"
+      }
+    },
+    {
+      "segment_id": "12bc7444",
+      "source_content": "Let's highlight some examples:",
+      "source_content_hash": "e78dc86998f108f61af4a4fb4d769773ec8633c250a26718f11d9022c535d840",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是一些範例："
+      }
+    },
+    {
+      "segment_id": "a71e61f7",
+      "source_content": "- [redocusaurus](https://github.com/rohit-gohri/redocusaurus): seamless integration with [OpenAPI](https://www.openapis.org/) and [Redoc](https://github.com/Redocly/redoc)",
+      "source_content_hash": "6525d69a151799589f8b0b9b2bf4d1566f3160879561a8871ab95c2316b5cbc5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [redocusaurus](https://github.com/rohit-gohri/redocusaurus)：與 [OpenAPI](https://www.openapis.org/) 和 [Redoc](https://github.com/Redocly/redoc) 無縫整合"
+      }
+    },
+    {
+      "segment_id": "30aa9816",
+      "source_content": "![redocusaurus plugin example](./img/plugins/redocusaurus.png)",
+      "source_content_hash": "06a1844d57d87eaa740e49f0298d635d3a716b1aa4a3a4c848d339d51f8df634",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![redocusaurus 插件範例](./img/plugins/redocusaurus.png)"
+      }
+    },
+    {
+      "segment_id": "b321d4cc",
+      "source_content": "- [docusaurus-preset-shiki-twoslash](https://www.npmjs.com/package/docusaurus-preset-shiki-twoslash): use [Shiki](https://github.com/shikijs/shiki) code block syntax highlighting with [TwoSlash](https://shikijs.github.io/twoslash/) TypeScript compiler hints",
+      "source_content_hash": "ebabd2e6cfdcee8a2ed225f2e0f62fe34f02825f5ad8fbec4967c08a92fb1c27",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [docusaurus-preset-shiki-twoslash](https://www.npmjs.com/package/docusaurus-preset-shiki-twoslash)：使用 [Shiki](https://github.com/shikijs/shiki) 程式碼區塊語法高亮，並搭配 [TwoSlash](https://shikijs.github.io/twoslash/) TypeScript 編譯器提示"
+      }
+    },
+    {
+      "segment_id": "216a8ee1",
+      "source_content": "![shiki-twoslash plugin example](./img/plugins/shiki-twoslash.png)",
+      "source_content_hash": "1777ce3cf5dfe8e16059f8dd0695e2c44f42ec82a90252e238a3fa6d933e6827",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![shiki-twoslash 插件範例](./img/plugins/shiki-twoslash.png)"
+      }
+    },
+    {
+      "segment_id": "7178860a",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/orta\"\n  handle=\"orta\"\n  name=\"Orta Therox\"\n  job=\"Former TypeScript core team at Microsoft\">\n  The plugin API was a breeze to use, and powerful enough that I could port the\n  code sample renderer from the TypeScript website site in a couple of hours.\n</TweetQuote>",
+      "source_content_hash": "53270a8cc08cb01fafe30e5351e8cfc7a52bee91ae911f9349aeede35d7acd0d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7178860a"
+      }
+    },
+    {
+      "segment_id": "ae8baca1",
+      "source_content": "- [docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local): one of the various local search alternatives to the built-in Algolia plugin",
+      "source_content_hash": "049049d995add734319ce8858cf5aa4f0e04b6de6147b05d306dc11e90e54008",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local)：這是內建 Algolia 插件之外的多種本地搜尋替代方案之一"
+      }
+    },
+    {
+      "segment_id": "e3bf03eb",
+      "source_content": "![local search plugin example](./img/plugins/search.png)",
+      "source_content_hash": "210da34a36638d1311548f2148613c4103a3609af9b7f0399cdd1ed0c1d1911d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![本地搜尋插件範例](./img/plugins/search.png)"
+      }
+    },
+    {
+      "segment_id": "33dfb2ba",
+      "source_content": ":::tip\n\nWe have a curated list of outstanding plugins in our [community resources](/community/resources) page.\n\n:::",
+      "source_content_hash": "09ff83b233e6f32e5ad9307882eeb5eee60db06f0e8e40d52ddfe1f90bdc5d85",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n我們在[社群資源](/community/resources)頁面中精選了一些優秀的插件列表。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "02efad44",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/jodyheavener/status/1551974535452311552\"\n  handle=\"jodyheavener\"\n  name=\"Jody Heavener\"\n  job=\"Senior Developer at 1Password\">\n  The plugin system in Docusaurus v2 has made expanding 1Password's developer\n  portal so easy and fun. Super excited to show you what we've got cooking up.\n</TweetQuote>",
+      "source_content_hash": "3b3443d06ddeda326827c62819ca48c96d10ef50c67a68de74f2340971f524e9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_02efad44"
+      }
+    },
+    {
+      "segment_id": "9cdf9229",
+      "source_content": "### Theming",
+      "source_content_hash": "1a13d396c67c7ae6a2f5e253b8780546a7a71f0cacde146cd6aa5a5ce39b8e11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題系統"
+      }
+    },
+    {
+      "segment_id": "5e0ab881",
+      "source_content": "Theming is one of the most important features of Docusaurus: we believe a professional documentation site should **respect your company's branding** and create a consistent experience.",
+      "source_content_hash": "d101e98feca627acd11160588e114493d9c6a9e95bfcac5adf2acca796b131bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "主題系統是 Docusaurus 最重要的功能之一：我們認為專業的文檔網站應該**符合您公司的品牌形象**，創造一致的體驗。"
+      }
+    },
+    {
+      "segment_id": "d1996877",
+      "source_content": "Docusaurus theming gives a lot of **flexibility** on multiple levels:",
+      "source_content_hash": "2bfacb65260af928f9daae28eb7b12282a62912eed7b9b7214208a585947c596",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 的主題系統在多重層級上提供了極大的**靈活性**："
+      }
+    },
+    {
+      "segment_id": "1dcfeb19",
+      "source_content": "- Customize CSS variables to adjust colors, fonts, and more\n- Provide your own CSS stylesheets\n- Implement your own theme from scratch\n- **Override any React component** provided by our default theme: we call this [swizzling](https://docusaurus.io/docs/swizzling)",
+      "source_content_hash": "377bff419b1eab29c0fd94666bb34f71cae31830d68a84b0a323216d91f05f24",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 自訂 CSS 變數來調整顏色、字體等\n- 提供您自己的 CSS 樣式表\n- 從頭實作自己的主題\n- **覆寫預設主題的任何 React 組件**：我們稱之為 [swizzling](https://docusaurus.io/docs/swizzling)"
+      }
+    },
+    {
+      "segment_id": "d4a714d0",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/hung_dev/status/1546918275065741312\"\n  handle=\"hung_dev\"\n  name=\"\nHung Viet Nguyen\"\n  job=\"Creator of JestPreview\">\n  I love Docusaurus Swizzling feature. It’s opinionated and flexible at the same\n  time. This is super cool since a framework usually needs to sacrifice one for\n  the other.\n</TweetQuote>",
+      "source_content_hash": "e1a61e740bfb1eb62ce9ba61ce8528c909d2ce630d0be49831fe54d413c6f5f0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_d4a714d0"
+      }
+    },
+    {
+      "segment_id": "7e031d10",
+      "source_content": "This enables users willing to invest a bit more time on **customizations** to build sites that **look different** from others.",
+      "source_content_hash": "540eb4d8f021f521c5cb51378e5a680da0429979a1ea8eba977d2e1e35b573e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這使得願意投入更多時間進行**客製化**的使用者能夠打造出**與眾不同**的網站外觀。"
+      }
+    },
+    {
+      "segment_id": "1d1ab43d",
+      "source_content": "<ShowcaseCarouselV2Theming />",
+      "source_content_hash": "b80d0444ff1f1a9c30fc4b39c6f0e35be215af867bc615c866b5f6192477770a",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1d1ab43d"
+      }
+    },
+    {
+      "segment_id": "eb0e164a",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/dabit3/status/1382855449813389315\"\n  handle=\"dabit3\"\n  name=\"Nader Dabit\"\n  job=\"Web3 developer, Developer DAO founder\">\n  So far it’s working out really nicely. It’s been really easy to style up the\n  way that we wanted it to look. No blockers at all.\n</TweetQuote>",
+      "source_content_hash": "ed9aca7186a5094fda446646920c5889da5ddc9f9cc7327608a712260072aa79",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_eb0e164a"
+      }
+    },
+    {
+      "segment_id": "42a9e250",
+      "source_content": "### Other features",
+      "source_content_hash": "158255e9d261063b3ed5b12a7b8625b274ec95e988da61cd3ab36f0f8d07efd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 其他功能"
+      }
+    },
+    {
+      "segment_id": "e4ab192a",
+      "source_content": "Docusaurus 2 comes with a very long list of useful features:",
+      "source_content_hash": "8c0386601b064f096ce5fe2accb6528b5c03785e726b0168d4f9e66abb756b38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 2 提供了大量實用功能："
+      }
+    },
+    {
+      "segment_id": "af20384f",
+      "source_content": "- Theme: dark mode, better UI and UX, flexible `themeConfig` options...\n- Docs versioning: flexible plugin options to adapt to your workflow\n- Docs sidebar: collapsible category, category index pages...\n- Blog: multiple authors, authors map, archive page...\n- Markdown: tabs, math equations, live code blocks, linking, flexible front matter...\n- Search: use the new Algolia DocSearch 3 experience\n- Assets: make it easy to incorporate images and other kinds of files\n- Internationalization: config options, default theme translations...\n- Accessibility: aria labels, color contrasts, skip-to-content, keyboard navigation, progressive enhancement...\n- SEO: sensible defaults, easy to customize, canonical url, social card, no-index, sitemap, microdata, hreflang...\n- PWA: add offline support to your site, and make it installable\n- Fail-fast: strict config validation, detect broken links, and prevent bad production deployments\n- TypeScript support for config files, plugins, custom pages and theme authors\n- Playgrounds: assess Docusaurus easily from your browser with [docusaurus.new](https://docusaurus.new)\n- Canary releases: use the @canary npm tag to use the upcoming release before anyone else\n- Tests: Docusaurus is well-tested, we dogfood features and ensure they keep working",
+      "source_content_hash": "4df3e95589a04f11f02f38f068f769d80ddd712a2fb76032e67f68dcd6cb1414",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 主題：深色模式、更優的 UI/UX、彈性的 `themeConfig` 選項...\n- 文件版本控制：可調整的插件選項以適應工作流程\n- 文件側邊欄：可折疊分類、分類索引頁面...\n- 部落格：多位作者、作者對照表、歸檔頁面...\n- Markdown：標籤頁、數學公式、即時程式碼區塊、連結、彈性 front matter...\n- 搜尋：採用新版 Algolia DocSearch 3 體驗\n- 資源：輕鬆整合圖片與其他類型檔案\n- 國際化：配置選項、預設主題翻譯...\n- 無障礙：aria 標籤、色彩對比、跳至內容、鍵盤導航、漸進增強...\n- SEO：合理預設值、易於自訂、標準網址、社群卡片、禁止索引、網站地圖、微資料、hreflang...\n- PWA：為網站添加離線支援，並可安裝\n- 快速失敗：嚴格的配置驗證、偵測失效連結，防止不良生產環境部署\n- TypeScript 支援配置檔、插件、自訂頁面與主題開發\n- 遊樂場：透過 [docusaurus.new](https://docusaurus.new) 在瀏覽器中輕鬆評估 Docusaurus\n- Canary 版本：使用 @canary npm 標籤搶先體驗即將發布的版本\n- 測試：Docusaurus 經過完善測試，我們會實際使用功能並確保其持續運作"
+      }
+    },
+    {
+      "segment_id": "4fc1adf6",
+      "source_content": "<TweetQuote\n  url=\"https://x.com/alexbdebrie/status/1540010328335032320\"\n  handle=\"alexbdebrie\"\n  name=\"Alex DeBrie\"\n  job=\"AWS Data Hero, author of The DynamoDB Book\">\n  Recently, I was shocked at how good Docusaurus is out of the box. Super solid,\n  a good bit of configuration without being overwhelming, and the ability to\n  really customize the styling if you're braver than I am.\n</TweetQuote>",
+      "source_content_hash": "6e72a15e03c51dc4c47fb9e4cd95006d17099fde604e258348a71a45b23e16dc",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fc1adf6"
+      }
+    },
+    {
+      "segment_id": "7bd550b1",
+      "source_content": "## Why 2.0 now?",
+      "source_content_hash": "291c92027967b60b4aebb09e59e71981c6b6f1f4c721b74d9dfc35d0cf13659d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 為何現在推出 2.0？"
+      }
+    },
+    {
+      "segment_id": "423bbb1a",
+      "source_content": "Many enthusiastic followers of ours have been curious **why it took us 4 years to release Docusaurus 2.0**, considering the beta is already successful and **widely used in production**.",
+      "source_content_hash": "a8c484710bf41c8a64851c9a4b52bfd1af8f0e70ec1e5a8e0286c4fef10fe889",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "許多熱心追蹤者好奇**為何我們花了 4 年才發布 Docusaurus 2.0**，尤其測試版已相當成功且**廣泛用於生產環境**。"
+      }
+    },
+    {
+      "segment_id": "e91bdcd9",
+      "source_content": "The reason is that we aim to **respect [Semantic Versioning](https://semver.org/)**, which means we will be incrementing the major version number whenever we release a **breaking change**.",
+      "source_content_hash": "006d3e6775fe43a7327d28d2dd78aef4d87cf4cacd3013837c2906dd17c99cd5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "原因是我們堅持**遵循[語意化版本控制](https://semver.org/)**，這意味著每當發布**重大變更**時，我們就會增加主版本號。"
+      }
+    },
+    {
+      "segment_id": "4bfb1f31",
+      "source_content": "It is important for multiple reasons:",
+      "source_content_hash": "480e22bbda72c1e43615ffb3cb95dd9e953c883e1d85a3a5a482182ed0b29a72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這點至關重要："
+      }
+    },
+    {
+      "segment_id": "5f56629d",
+      "source_content": "- It **guarantees simple minor version upgrades**, as long as you only use the [public API](/community/release-process#public-api-surface)\n- It follows front-end ecosystem conventions\n- A new major version is an opportunity to thoroughly document breaking changes\n- A new major/minor version is an opportunity to communicate new features through a blog post",
+      "source_content_hash": "4ca9a0644d6bdfb808a199ebc6887353871a8124115a4bb0031e7ea3d9ade0bc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 只要您僅使用[公開 API](/community/release-process#public-api-surface)，就能**保證次要版本升級簡單**\n- 符合前端生態系慣例\n- 主版本更新是徹底記錄重大變更的契機\n- 主/次版本更新可透過部落格文章宣傳新功能"
+      }
+    },
+    {
+      "segment_id": "475959f2",
+      "source_content": "The problem is that our flexible theming system inherently creates a very **implicit API surface** on which it is **hard to know what is a breaking change** in the first place. Highly customized Docusaurus sites sometimes have a hard time upgrading Docusaurus because they achieve customizations using internal APIs. We dedicated time to extensive theme refactors and clearly defining our [public API](/community/release-process#public-api-surface), so that future code changes can be made more safely. We will continue to expand this public theming API so that the most common site customizations do not need to use any internal API.",
+      "source_content_hash": "015b5877d3e5ec1dd8e14dc7ed6d2d6accce7fb54ec83a6df4b70b7b6ab207b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "問題在於我們彈性的主題系統本質上形成了非常**隱性的 API 介面**，難以判斷何謂重大變更。高度客製化的 Docusaurus 網站有時升級困難，因為它們使用內部 API 實現客製化。我們投入時間進行主題重構並明確定義[公開 API](/community/release-process#public-api-surface)，使未來程式變更更安全。我們將持續擴展此公開主題 API，讓常見的網站客製化無需使用任何內部 API。"
+      }
+    },
+    {
+      "segment_id": "2ca1f1f5",
+      "source_content": ":::info\n\nFrom now on, Docusaurus will **release new major versions more frequently**. In practice, you can expect a **new major version every 2 to 4 months**.\n\n[Major version numbers are not sacred](https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html), but we still group breaking changes together and avoid releasing major versions too often.\n\nCheck our [release process](/community/release-process) documentation for details.\n\n:::",
+      "source_content_hash": "5012ab16e4a2351a37fb5eb63da07ebe23d76f9bfa180e0093765aecb67e0ce4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n從現在起，Docusaurus 將**更頻繁發布主版本**。實際上，您可預期**每 2 至 4 個月就會有新主版本**。\n\n[主版本號並非神聖不可侵犯](https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html)，但我們仍會將重大變更集中處理，避免過於頻繁發布主版本。\n\n詳情請參閱我們的[發布流程](/community/release-process)文件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bbee8ddc",
+      "source_content": "## What's Next?",
+      "source_content_hash": "15f3adb0b0bad93300d788f36f2829e56f59cf1f911b220f4e6e3d2313b86f7d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 下一步規劃？"
+      }
+    },
+    {
+      "segment_id": "e3f3475c",
+      "source_content": "![Slash Up and Running](/img/slash-up-and-running.png)",
+      "source_content_hash": "462588808de345ac3818d1be80f5e893582e26cf00994656bfa9f3ed41365ee2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Slash 全力運作中](/img/slash-up-and-running.png)"
+      }
+    },
+    {
+      "segment_id": "b63b9ccf",
+      "source_content": "The work on Docusaurus 3.0 has started, and this next version will be released only in a few months. We will **backport retro-compatible changes in Docusaurus 2.x** minor versions to make them available as soon as possible to the community on a stable channel.",
+      "source_content_hash": "8852d6b01a5185dc5f7113d2568782554f1e6887bc0c3765d19ba65988197923",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 3.0 的開發已啟動，此新版本將於數月內發布。我們會**在 Docusaurus 2.x 次要版本中回溯相容性變更**，讓社群能盡快在穩定管道中使用這些功能。"
+      }
+    },
+    {
+      "segment_id": "a290533e",
+      "source_content": "A sample of the features on our roadmap for the upcoming major versions of Docusaurus:",
+      "source_content_hash": "ab4221a604787f52073312d1b28db391a2c6b51f32e8f8c014f41dd86958e29a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是我們為 Docusaurus 未來主版本規劃的部分功能："
+      }
+    },
+    {
+      "segment_id": "1051b351",
+      "source_content": "- [Upgrade to MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)\n- [Improve Markdown infrastructure](https://github.com/facebook/docusaurus/issues/4625)\n- [Improve theming and swizzle](https://github.com/facebook/docusaurus/issues/6114)\n- [TailwindCSS theme](https://github.com/facebook/docusaurus/issues/2961)\n- [Theme; support custom item types for navbar, doc sidebar, blog sidebar, footer](https://github.com/facebook/docusaurus/issues/7227)\n- [Dynamic navbar: navbar item activation strategies](https://github.com/facebook/docusaurus/issues/4389)\n- [Custom Social Cards](https://github.com/facebook/docusaurus/issues/2968)\n- [CSS-in-JS support](https://github.com/facebook/docusaurus/issues/3236)\n- [Use Node.js ES Modules](https://github.com/facebook/docusaurus/issues/6520)\n- [Improve build time performance](https://github.com/facebook/docusaurus/issues/4765)\n- [Extend Docusaurus plugins, CMS integration](https://github.com/facebook/docusaurus/issues/4138)",
+      "source_content_hash": "9562a828f058bd5084b7af4ce07f4f994d0be251287e66b05da1793a73002999",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [升級至 MDX 2.0](https://github.com/facebook/docusaurus/issues/4029)\n- [改進 Markdown 基礎架構](https://github.com/facebook/docusaurus/issues/4625)\n- [強化主題與 swizzle 功能](https://github.com/facebook/docusaurus/issues/6114)\n- [TailwindCSS 主題](https://github.com/facebook/docusaurus/issues/2961)\n- [主題：支援導航欄、文檔側邊欄、部落格側邊欄及頁腳的自定義項目類型](https://github.com/facebook/docusaurus/issues/7227)\n- [動態導航欄：導航欄項目激活策略](https://github.com/facebook/docusaurus/issues/4389)\n- [自定義社交卡片](https://github.com/facebook/docusaurus/issues/2968)\n- [CSS-in-JS 支援](https://github.com/facebook/docusaurus/issues/3236)\n- [使用 Node.js ES 模組](https://github.com/facebook/docusaurus/issues/6520)\n- [提升建置時間效能](https://github.com/facebook/docusaurus/issues/4765)\n- [擴展 Docusaurus 插件與 CMS 整合](https://github.com/facebook/docusaurus/issues/4138)"
+      }
+    },
+    {
+      "segment_id": "babe18c8",
+      "source_content": "## Thank You",
+      "source_content_hash": "6e3b2305e9e65b578c13148ad6d9d74d5fb721c31a8b50c80c2ca960b9c75834",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 感謝"
+      }
+    },
+    {
+      "segment_id": "e3448845",
+      "source_content": "We'd like to express our gratitude to [all our contributors](https://github.com/facebook/docusaurus/graphs/contributors), including:",
+      "source_content_hash": "b09d8f1e8d3cbbe6f04c5da15c23b873f8cf89be3af4d3a7514bd4115ef6a545",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們想向[所有貢獻者](https://github.com/facebook/docusaurus/graphs/contributors)表達我們的感激之情，包括："
+      }
+    },
+    {
+      "segment_id": "e8755749",
+      "source_content": "- The Docusaurus core team: [Alexey Pyltsyn](https://github.com/lex111), [Joshua Chen](https://github.com/Josh-Cena), [Sébastien Lorber](https://github.com/slorber), [Yangshun Tay](https://github.com/yangshun) and all our [former team members](https://docusaurus.io/community/team)\n- [Joel Marcey](https://github.com/JoelMarcey) for creating Docusaurus 1.0 and supporting the Docusaurus 2.0 project at Meta Open Source\n- [Paul O’Shannessy](https://github.com/zpao) for supporting the development of all the next versions of Docusaurus at Meta Open Source\n- [Eric Nakagawa](https://github.com/ericnakagawa) for creating our cutest mascot Slash\n- [Endilie Yacop Sucipto](https://github.com/endiliey) for his significant [initial work on Docusaurus v2](/blog/2020/01-07-tribute-to-endi.mdx)\n- [Clément Vannicatte](https://github.com/shortcuts), [Kevin Granger](https://github.com/Shipow) and the whole Algolia team for their support\n- All the community members for making valuable code contributions, improving our documentation, and answering questions on [Discord](https://discordapp.com/invite/docusaurus)",
+      "source_content_hash": "fed6d87e1864d77e179992bc3dfa0496c40737381c299127ed01ddd14b84fdfa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Docusaurus 核心團隊：[Alexey Pyltsyn](https://github.com/lex111)、[Joshua Chen](https://github.com/Josh-Cena)、[Sébastien Lorber](https://github.com/slorber)、[Yangshun Tay](https://github.com/yangshun) 以及所有[前團隊成員](https://docusaurus.io/community/team)\n- [Joel Marcey](https://github.com/JoelMarcey) 創建了 Docusaurus 1.0 並在 Meta 開源支持 Docusaurus 2.0 項目\n- [Paul O’Shannessy](https://github.com/zpao) 在 Meta 開源支持所有 Docusaurus 後續版本的開發\n- [Eric Nakagawa](https://github.com/ericnakagawa) 創造了我們最可愛的吉祥物 Slash\n- [Endilie Yacop Sucipto](https://github.com/endiliey) 為 Docusaurus v2 的[初期重要工作](/blog/2020/01-07-tribute-to-endi.mdx)做出貢獻\n- [Clément Vannicatte](https://github.com/shortcuts)、[Kevin Granger](https://github.com/Shipow) 及整個 Algolia 團隊的支持\n- 所有社群成員，包括提交寶貴程式碼貢獻、改進文檔以及在 [Discord](https://discordapp.com/invite/docusaurus) 上回答問題的各位"
+      }
+    },
+    {
+      "segment_id": "a2532daf",
+      "source_content": "We'd like to thank in particular all our **Docusaurus 2.0 early adopters** for assessing its alpha, beta and canary releases, providing a ton of **invaluable feedback**. We sincerely hope you had a great experience using it, and that you will continue to provide feedback on the upcoming pre-releases of Docusaurus 3.0.",
+      "source_content_hash": "fc78a9947a172b8c1698e184eb2c2fdba4cc35c0dcf10f7cbb8b95794f290535",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們特別感謝所有 **Docusaurus 2.0 早期採用者**，他們評估了 alpha、beta 和 canary 版本，提供了大量**寶貴反饋**。我們衷心希望您在使用過程中有良好的體驗，並期待您繼續對 Docusaurus 3.0 的預發布版本提供反饋。"
+      }
+    },
+    {
+      "segment_id": "7e0b49a3",
+      "source_content": "At [Meta Open Source](https://opensource.fb.com/), Docusaurus is one of our **most successful projects**. We can't wait to see all the outstanding documentation websites that you will create! Don't forget to **submit them to our [site showcase](/showcase)**!",
+      "source_content_hash": "d36db800ab12c0fbaabd99fe1121b81e5deed4fb367da485d1b20917185fb555",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 [Meta 開源](https://opensource.fb.com/)中，Docusaurus 是我們**最成功的項目之一**。我們迫不及待想看到您創建的傑出文檔網站！別忘了**提交到我們的[網站展示區](/showcase)**！"
+      }
+    },
+    {
+      "segment_id": "72dd1482",
+      "source_content": "**Now, let your imagination run wild 🤪!**",
+      "source_content_hash": "14afae06ab26b94ce93425062ebf12e4e6a557fd37b121922fb9bd2fbaf11596",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**現在，讓您的想像力自由奔放吧 🤪！**"
+      }
+    },
+    {
+      "segment_id": "df64d276",
+      "source_content": "— Slash",
+      "source_content_hash": "e67b9e391e9fe35e2dc2a78f077c8f427c857ecff874703c2289b38f3d3089eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "— Slash"
+      }
+    },
+    {
+      "segment_id": "bc5a2569",
+      "source_content": ":::info[We are on [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) and [Hacker News](https://news.ycombinator.com/item?id=32303052)!]\n\n🙏 Share your experience using Docusaurus with the community!\n\n<div style={{display: 'flex'}}>\n  <ProductHuntCard />\n  <HackerNewsIcon />\n</div>\n\n:::",
+      "source_content_hash": "bff256fd225fc57048a9341644de491d192d5a728aaf837bd2fec1111289371e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[我們在 [ProductHunt](https://www.producthunt.com/posts/docusaurus-2-0) 和 [Hacker News](https://news.ycombinator.com/item?id=32303052) 上！]\n\n🙏 與社群分享您使用 Docusaurus 的體驗！\n\n<div style={{display: 'flex'}}>\n  <ProductHuntCard />\n  <HackerNewsIcon />\n</div>\n\n:::"
+      }
+    },
+    {
+      "segment_id": "36b947e5",
+      "source_content": "![Slash plushies](./img/slash-plushies.jpg)",
+      "source_content_hash": "9d0bc3d23a5735e9260b21777ea55db0cab07bcfc4ee4a48ca5bed742f2f2803",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Slash 絨毛玩偶](./img/slash-plushies.jpg)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022/08-01-announcing-docusaurus-2.0/index.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.028431+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "51236b900eb1ed9c1e67ad5424bf11d8eb4a1cb866fe2763d53187a96f0033bc"
+  }
+}

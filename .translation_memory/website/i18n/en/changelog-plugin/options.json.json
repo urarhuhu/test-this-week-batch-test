@@ -1,0 +1,57 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/changelog-plugin/options.json",
+  "source_file_content_hash": "cd3294c6b66951e7a37d4300884171d560804dfdb2a9023d531f703d12b6a7a1",
+  "segments": [
+    {
+      "segment_id": "title",
+      "source_content": "Docusaurus changelog",
+      "source_content_hash": "6d05f62a8c2de80ae5edcb48b121414ee6e3f2844c8ea8d5f75cfd8900658bfb",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The title for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "description",
+      "source_content": "Keep yourself up-to-date about new features in every release",
+      "source_content_hash": "d9e370bb5a3ef3957f8658772e8b07b54e417b54f5f41beafc445b282b9f66e0",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The description for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "sidebar.title",
+      "source_content": "Changelog",
+      "source_content_hash": "ead07c84baac57a9542f388a07a2a5209456ce790b04251bc9bd7d179ea85cb1",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {},
+      "metadata": {
+        "json_description": "The label for the left sidebar"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "title": {
+      "message": "Docusaurus changelog",
+      "description": "The title for the blog used in SEO"
+    },
+    "description": {
+      "message": "Keep yourself up-to-date about new features in every release",
+      "description": "The description for the blog used in SEO"
+    },
+    "sidebar.title": {
+      "message": "Changelog",
+      "description": "The label for the left sidebar"
+    }
+  },
+  "target_i18n_subpath": "changelog-plugin/options.json",
+  "last_updated_timestamp": "2025-06-18T04:53:23.177947+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {}
+}

@@ -1,0 +1,150 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-theme-classic/navbar.json",
+  "source_file_content_hash": "0791baa4bacbcde22891a99d7f0fc0e5f55c626991214dd40752eed3ab374e15",
+  "segments": [
+    {
+      "segment_id": "title",
+      "source_content": "Docusaurus",
+      "source_content_hash": "cea9bf64fb7e04a9834e89d808532f3407a1cc1490ccb38e571c37e91886777f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus"
+      },
+      "metadata": {
+        "json_description": "The title in the navbar"
+      }
+    },
+    {
+      "segment_id": "item.label.Docs",
+      "source_content": "Docs",
+      "source_content_hash": "7af023c43013b9a53fbff7dd4b5821588bba3319308878229740489152c43f6d",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "文件"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Docs"
+      }
+    },
+    {
+      "segment_id": "item.label.API",
+      "source_content": "API",
+      "source_content_hash": "c8e5998f6a3955c21d858936fe05c69621724d7f825c6e17793002a0fa798bf9",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "API"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label API"
+      }
+    },
+    {
+      "segment_id": "item.label.Blog",
+      "source_content": "Blog",
+      "source_content_hash": "8c6bc099534a0251b576f6b88bd2db124ae9497c64bd9242e92a6aec23e6a73a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "部落格"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Blog"
+      }
+    },
+    {
+      "segment_id": "item.label.Showcase",
+      "source_content": "Showcase",
+      "source_content_hash": "9a15dc9c62db5943b6f133495878c7cbd7e8ab5dab86c87c4eebd595613c748e",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "展示區"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Showcase"
+      }
+    },
+    {
+      "segment_id": "item.label.Community",
+      "source_content": "Community",
+      "source_content_hash": "bb501d7877eb7ddbd40baf7990e8058212e8140a2e6ceaaf2d54a6412b770bfd",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "社群"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Community"
+      }
+    },
+    {
+      "segment_id": "item.label.Tests",
+      "source_content": "Tests",
+      "source_content_hash": "e5c9d7030bada2fe792ad7e4a26ca44379a73f3fe16805ac1359e46759a1571a",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "測試"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Tests"
+      }
+    },
+    {
+      "segment_id": "item.label.Debug",
+      "source_content": "Debug",
+      "source_content_hash": "1a03bd2fd107c453f3183e30b9716f82200671e8270fbbefbe602f5a48705527",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "除錯"
+      },
+      "metadata": {
+        "json_description": "Navbar item with label Debug"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "title": {
+      "message": "Docusaurus",
+      "description": "The title in the navbar"
+    },
+    "item.label.Docs": {
+      "message": "Docs",
+      "description": "Navbar item with label Docs"
+    },
+    "item.label.API": {
+      "message": "API",
+      "description": "Navbar item with label API"
+    },
+    "item.label.Blog": {
+      "message": "Blog",
+      "description": "Navbar item with label Blog"
+    },
+    "item.label.Showcase": {
+      "message": "Showcase",
+      "description": "Navbar item with label Showcase"
+    },
+    "item.label.Community": {
+      "message": "Community",
+      "description": "Navbar item with label Community"
+    },
+    "item.label.Tests": {
+      "message": "Tests",
+      "description": "Navbar item with label Tests"
+    },
+    "item.label.Debug": {
+      "message": "Debug",
+      "description": "Navbar item with label Debug"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-theme-classic/navbar.json",
+  "last_updated_timestamp": "2025-06-18T05:06:28.051239+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "0791baa4bacbcde22891a99d7f0fc0e5f55c626991214dd40752eed3ab374e15"
+  }
+}

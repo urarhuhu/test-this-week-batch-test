@@ -1,0 +1,482 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.3.2/cli.mdx",
+  "source_file_content_hash": "ce8bc7dd203871bbe492c02d48a08ccdeafa4429722eec295dcdcc4b6e158793",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ndescription: Docusaurus provides a set of scripts to help you generate, serve, and deploy your website.\n---",
+      "source_content_hash": "2e9ae50ff38966db545abdcd0a1469e9124304b363fc02ea3ba2555e7a42050d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# CLI",
+      "source_content_hash": "6ea041db6ca494304d09fd9a8840fe4130df9d0f1dc2a2e7d405a9078b4129d3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 命令行介面"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus provides a set of scripts to help you generate, serve, and deploy your website.",
+      "source_content_hash": "21927495545e97f3454ef55c4a0561fe8e0aad244dbbc38f8445a8cc6cd6a50e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供一組腳本協助您生成、運行及部署網站。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Once your website is bootstrapped, the website source will contain the Docusaurus scripts that you can invoke with your package manager:",
+      "source_content_hash": "a7e819f1ad577662c7ac470f50f80434ce43cbb915a4e5ad125255342b7f9dc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "當您的網站初始化完成後，網站原始碼將包含可透過套件管理工具執行的 Docusaurus 腳本："
+      }
+    },
+    {
+      "segment_id": "43a8bc7e",
+      "source_content": "```json title=\"package.json\"\n{\n  // ...\n  \"scripts\": {\n    \"docusaurus\": \"docusaurus\",\n    \"start\": \"docusaurus start\",\n    \"build\": \"docusaurus build\",\n    \"swizzle\": \"docusaurus swizzle\",\n    \"deploy\": \"docusaurus deploy\",\n    \"clear\": \"docusaurus clear\",\n    \"serve\": \"docusaurus serve\",\n    \"write-translations\": \"docusaurus write-translations\",\n    \"write-heading-ids\": \"docusaurus write-heading-ids\"\n  }\n}\n```",
+      "source_content_hash": "893242dfc71885e8aaab13428096f447fdf21df6d09798c86147dd9ba29303bd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_43a8bc7e"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Docusaurus CLI commands {#docusaurus-cli-commands}",
+      "source_content_hash": "2c338ff9d017cc1b52d75ba216751da1ef201aa4ddcf4070cb1f025eda0c586e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Docusaurus CLI 指令集 {#docusaurus-cli-commands}"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Below is a list of Docusaurus CLI commands and their usages:",
+      "source_content_hash": "8f64c932c2b3b73c970e4f4c1acab730be9f251a00b185234d80fe2848041a47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以下是 Docusaurus CLI 指令及其用途清單："
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "### `docusaurus start [siteDir]` {#docusaurus-start-sitedir}",
+      "source_content_hash": "60cd9b437e90fa0f1134dfe89e66c2b45054df60680288b8e55849a6a51dddea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus start [siteDir]` {#docusaurus-start-sitedir}"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Builds and serves a preview of your site locally with [Webpack Dev Server](https://webpack.js.org/configuration/dev-server).",
+      "source_content_hash": "454fd75edebec1350dea70f853b8362e63bfff7e5f8fa0e6ab0bf3219317ee47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [Webpack Dev Server](https://webpack.js.org/configuration/dev-server) 在本機建構並預覽您的網站。"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "#### Options {#options}",
+      "source_content_hash": "bffc8405114cc4562899104bd636a4fe1a183224e36591105b134e6b672b8499",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options}"
+      }
+    },
+    {
+      "segment_id": "c75fd5e6",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `--port` | `3000` | Specifies the port of the dev server. |\n| `--host` | `localhost` | Specify a host to use. For example, if you want your server to be accessible externally, you can use `--host 0.0.0.0`. |\n| `--locale` |  | Specify site locale to be used. |\n| `--hot-only` | `false` | Enables Hot Module Replacement without page refresh as a fallback in case of build failures. More information [here](https://webpack.js.org/configuration/dev-server/#devserverhotonly). |\n| `--no-open` | `false` | Do not open the page automatically in the browser. |\n| `--config` | `undefined` | Path to Docusaurus config file, default to `[siteDir]/docusaurus.config.js` |\n| `--poll [optionalIntervalMs]` | `false` | Use polling of files rather than watching for live reload as a fallback in environments where watching doesn't work. More information [here](https://webpack.js.org/configuration/watch/#watchoptionspoll). |\n| `--no-minify` | `false` | Build website without minimizing JS/CSS bundles. |",
+      "source_content_hash": "e4c5bdf5b6548c4fa09d3b573a6ba38c46d8c66ee1725f6bd0141b3100be0a43",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c75fd5e6"
+      }
+    },
+    {
+      "segment_id": "5a149cd3",
+      "source_content": ":::info\n\nPlease note that some functionality (for example, anchor links) will not work in development. The functionality will work as expected in production.\n\n:::",
+      "source_content_hash": "afb6e5924b9c28d98c10b21d7e20abe84c23bcc17be89e90f3f9a7d5abd8e883",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n請注意部分功能（例如錨點連結）在開發模式下無法運作。這些功能在正式環境中將正常運作。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7fc18c94",
+      "source_content": ":::info[Development over network]\n\nWhen forwarding port 3000 from a remote server or VM (e.g. GitHub Codespaces), you can run the dev server on `0.0.0.0` to make it listen on the local IP.\n\n```bash npm2yarn\nnpm run start -- --host 0.0.0.0\n```\n\n:::",
+      "source_content_hash": "b6d54f1a7fefaa3586cda54be400c8cc584d38792cf9149f55a6e099b985d9ea",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info[網路開發模式]\n\n當從遠端伺服器或虛擬機（如 GitHub Codespaces）轉發 3000 埠時，可透過 `0.0.0.0` 參數讓開發伺服器監聽本地 IP 位址。\n\n```bash npm2yarn\nnpm run start -- --host 0.0.0.0\n```\n\n:::"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "#### Enabling HTTPS {#enabling-https}",
+      "source_content_hash": "497503cc799fb01f2d97c87b79ba82df1f35e97de34b55b67cc848c06811dd33",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 啟用 HTTPS {#enabling-https}"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "There are multiple ways to obtain a certificate. We will use [mkcert](https://github.com/FiloSottile/mkcert) as an example.",
+      "source_content_hash": "b6531131edce56a62147118a030fc47fc01a5f19683d15aa2ff0f5d85009547b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "取得憑證有多種方式，此處以 [mkcert](https://github.com/FiloSottile/mkcert) 為例說明。"
+      }
+    },
+    {
+      "segment_id": "a4bd3cfc",
+      "source_content": "1. Run `mkcert localhost` to generate `localhost.pem` + `localhost-key.pem`\n\n2. Run `mkcert -install` to install the cert in your trust store, and restart your browser\n\n3. Start the app with Docusaurus HTTPS env variables:",
+      "source_content_hash": "8711d0fe20f3da0b4cc7eebb6f1da2c485df62113a2318763fbe84acfe40d4e9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "1. 執行 `mkcert localhost` 生成 `localhost.pem` 與 `localhost-key.pem`\n\n2. 執行 `mkcert -install` 將憑證安裝至信任儲存區，並重啟瀏覽器\n\n3. 透過 Docusaurus HTTPS 環境變數啟動應用："
+      }
+    },
+    {
+      "segment_id": "9f3b4022",
+      "source_content": "```bash\nHTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem yarn start\n```",
+      "source_content_hash": "1c48fdf9f18dadc5fea8fb43c6e0575790a9f76a3feb7ba55fff410ad7bf0b0c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f3b4022"
+      }
+    },
+    {
+      "segment_id": "1316cb90",
+      "source_content": "4. Open `https://localhost:3000/`",
+      "source_content_hash": "76608a50c558a55d1c066217359b93c44ecf3360a059fe526068215b8f3dd522",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "4. 開啟 `https://localhost:3000/`"
+      }
+    },
+    {
+      "segment_id": "b936dd6a",
+      "source_content": "### `docusaurus build [siteDir]` {#docusaurus-build-sitedir}",
+      "source_content_hash": "a529b992f4ca195709b7c8de3b51a4730d762ec69d5d78917c30cd8ea80353eb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus build [siteDir]` {#docusaurus-build-sitedir}"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "Compiles your site for production.",
+      "source_content_hash": "12eccdb1dd1c861230621af714d4b062e838e760b5d7c96308f14b2140c7eddb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為正式環境編譯您的網站。"
+      }
+    },
+    {
+      "segment_id": "0a103a02",
+      "source_content": "#### Options {#options-1}",
+      "source_content_hash": "14b49df3e71266c94621ea98c965260978a54063a9872e25a0c09046da4c4b07",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options-1}"
+      }
+    },
+    {
+      "segment_id": "fd194d57",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `--dev` |  | Builds the website in dev mode, including full React error messages. |\n| `--bundle-analyzer` | `false` | Analyze your bundle with the [webpack bundle analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer). |\n| `--out-dir` | `build` | The full path for the new output directory, relative to the current workspace. |\n| `--config` | `undefined` | Path to Docusaurus config file, default to `[siteDir]/docusaurus.config.js` |\n| `--locale` |  | Build the site in the specified locale. If not specified, all known locales are built. |\n| `--no-minify` | `false` | Build website without minimizing JS/CSS bundles. |",
+      "source_content_hash": "f403db3c701558e9ceb3386323a250db01b441fdf1e55c61d1daeadcc5c7bc62",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_fd194d57"
+      }
+    },
+    {
+      "segment_id": "53cf11b8",
+      "source_content": ":::info\n\nFor advanced minification of CSS bundle, we use the [advanced cssnano preset](https://github.com/cssnano/cssnano/tree/master/packages/cssnano-preset-advanced) (along with additional several PostCSS plugins) and [level 2 optimization of clean-css](https://github.com/jakubpawlowicz/clean-css#level-2-optimizations). If as a result of this advanced CSS minification you find broken CSS, build your website with the environment variable `USE_SIMPLE_CSS_MINIFIER=true` to minify CSS with the [default cssnano preset](https://github.com/cssnano/cssnano/tree/master/packages/cssnano-preset-default). **Please [fill out an issue](https://github.com/facebook/docusaurus/issues/new?labels=bug%2C+needs+triage&template=bug.md) if you experience CSS minification bugs.**\n\nYou can skip the HTML minification with the environment variable `SKIP_HTML_MINIFICATION=true`.\n\n:::",
+      "source_content_hash": "0a40fd1e12b5bcd0f4f0198573dc2170dfbfc5a3e92e08626c60a238523188f1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n針對 CSS 套件的進階壓縮，我們採用 [cssnano 進階預設組](https://github.com/cssnano/cssnano/tree/master/packages/cssnano-preset-advanced)（搭配多個 PostCSS 外掛）與 [clean-css 第 2 級優化](https://github.com/jakubpawlowicz/clean-css#level-2-optimizations)。若此進階 CSS 壓縮導致樣式異常，可透過環境變數 `USE_SIMPLE_CSS_MINIFIER=true` 改用 [cssnano 預設組](https://github.com/cssnano/cssnano/tree/master/packages/cssnano-preset-default) 進行壓縮。**若遭遇 CSS 壓縮錯誤，請[提交問題報告](https://github.com/facebook/docusaurus/issues/new?labels=bug%2C+needs+triage&template=bug.md)。**\n\n透過環境變數 `SKIP_HTML_MINIFICATION=true` 可跳過 HTML 壓縮程序。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "### `docusaurus swizzle [themeName] [componentName] [siteDir]` {#docusaurus-swizzle}",
+      "source_content_hash": "698073409447866d32682bf96707dbf5b3ccfb62010fa4c9bcc9b6b9195c0a00",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus swizzle [themeName] [componentName] [siteDir]` {#docusaurus-swizzle}"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "[Swizzle](./swizzling.mdx) a theme component to customize it.",
+      "source_content_hash": "3b908eff930f7bb7a68e1e8e81eb7983341a427069234d2a530581ea5be19771",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "[替換](./swizzling.mdx) 主題元件以實現客製化。"
+      }
+    },
+    {
+      "segment_id": "c4c0fc07",
+      "source_content": "```bash npm2yarn\nnpm run swizzle [themeName] [componentName] [siteDir]\n\n# Example (leaving out the siteDir to indicate this directory)\nnpm run swizzle @docusaurus/theme-classic Footer -- --eject\n```",
+      "source_content_hash": "0d5ca6b267575fcd0c4c57303ff15cc8f25a37cc4867b7cb47349ac0088148b5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_c4c0fc07"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "The swizzle CLI is interactive and will guide you through the whole [swizzle process](./swizzling.mdx).",
+      "source_content_hash": "439ec3584cc7184be7626cf0fde98980c16d800649c3a3e99566703133a1c8a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此互動式 CLI 將引導您完成完整的[替換流程](./swizzling.mdx)。"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "#### Options {#options-swizzle}",
+      "source_content_hash": "aa4842f21ce648d9f26e20d3c8d4f7de17491fd55a7e628deddbe73f1a96a916",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options-swizzle}"
+      }
+    },
+    {
+      "segment_id": "29b12c10",
+      "source_content": "| Name | Description |\n| --- | --- |\n| `themeName` | The name of the theme to swizzle from. |\n| `componentName` | The name of the theme component to swizzle. |\n| `--list` | Display components available for swizzling |\n| `--eject` | [Eject](./swizzling.mdx#ejecting) the theme component |\n| `--wrap` | [Wrap](./swizzling.mdx#wrapping) the theme component |\n| `--danger` | Allow immediate swizzling of unsafe components |\n| `--typescript` | Swizzle the TypeScript variant component |\n| `--config` | Path to docusaurus config file, default to `[siteDir]/docusaurus.config.js` |",
+      "source_content_hash": "44a6711fd7d2ad7cbc0b693d857c724e3000276646f7033e1ebc8c57e4dee686",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_29b12c10"
+      }
+    },
+    {
+      "segment_id": "6b90258a",
+      "source_content": ":::warning\n\nUnsafe components have a higher risk of breaking changes due to internal refactorings.\n\n:::",
+      "source_content_hash": "e238a7172e9b041625ad7a1febd6153fb8d81b671077001a9c6898d14ddd8772",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n非安全元件因內部重構導致破壞性變更的風險較高。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "c83259bb",
+      "source_content": "### `docusaurus deploy [siteDir]` {#docusaurus-deploy-sitedir}",
+      "source_content_hash": "3dcf5b94f5fd36ec1f42f0d1961c9d9698503b925d32e153fbd7187ca9b9687a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus deploy [siteDir]` {#docusaurus-deploy-sitedir}"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "Deploys your site with [GitHub Pages](https://pages.github.com/). Check out the docs on [deployment](deployment.mdx#deploying-to-github-pages) for more details.",
+      "source_content_hash": "b4700a2b5e50d642a95e9d7c6c79d358c635425dd53c69571f75f31d26e1eefd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [GitHub Pages](https://pages.github.com/) 部署您的網站。詳情請參閱 [部署文件](deployment.mdx#deploying-to-github-pages)。"
+      }
+    },
+    {
+      "segment_id": "5dba1427",
+      "source_content": "#### Options {#options-3}",
+      "source_content_hash": "8d23f881fdfbf282bc39bc5ec94c669adca5c4e309ba5d862ddda25f29850cda",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 選項 {#options-3}"
+      }
+    },
+    {
+      "segment_id": "e016853e",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `--locale` |  | Deploy the site in the specified locale. If not specified, all known locales are deployed. |\n| `--out-dir` | `build` | The full path for the new output directory, relative to the current workspace. |\n| `--skip-build` | `false` | Deploy website without building it. This may be useful when using a custom deploy script. |\n| `--target-dir` | `.` | Path to the target directory to deploy to. |\n| `--config` | `undefined` | Path to Docusaurus config file, default to `[siteDir]/docusaurus.config.js` |",
+      "source_content_hash": "d31b2d45779e3f24d0f58b8f4d3118a280036bb3a46c84b3067292b981b41e1c",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_e016853e"
+      }
+    },
+    {
+      "segment_id": "35353302",
+      "source_content": "### `docusaurus serve [siteDir]` {#docusaurus-serve-sitedir}",
+      "source_content_hash": "397eb20d9cfa9bae58450883ad252ebe7acc7f4ba6a086e318a7445a0b8b217c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus serve [siteDir]` {#docusaurus-serve-sitedir}"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "Serve your built website locally.",
+      "source_content_hash": "d2302a7f249be3bccde398ef16a2dee87e7a0db9a10377d4e0e5ee84ed3a7d80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在本地提供已建置的網站服務。"
+      }
+    },
+    {
+      "segment_id": "10808a54",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `--port` | `3000` | Use specified port |\n| `--dir` | `build` | The full path for the output directory, relative to the current workspace |\n| `--build` | `false` | Build website before serving |\n| `--config` | `undefined` | Path to Docusaurus config file, default to `[siteDir]/docusaurus.config.js` |\n| `--host` | `localhost` | Specify a host to use. For example, if you want your server to be accessible externally, you can use `--host 0.0.0.0`. |\n| `--no-open` | `false` locally, `true` in CI | Do not open a browser window to the server location. |",
+      "source_content_hash": "588788e1bbc8e10e3897c093d365b10cf5a6d16f5cc67a8562f9aeb4e0ecf067",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_10808a54"
+      }
+    },
+    {
+      "segment_id": "7312e69e",
+      "source_content": "### `docusaurus clear [siteDir]` {#docusaurus-clear-sitedir}",
+      "source_content_hash": "465e4d0280d807fc469bd1a3b48d3e866d76f165069a1ec693da260232d4e0cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus clear [siteDir]` {#docusaurus-clear-sitedir}"
+      }
+    },
+    {
+      "segment_id": "2dbfc5f7",
+      "source_content": "Clear a Docusaurus site's generated assets, caches, build artifacts.",
+      "source_content_hash": "dd36f09013d4a7bc9561cd10b8c11af3d253338c9930b7951f7ed9931ce6bbcd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "清除 Docusaurus 網站生成的資源、快取和建置產物。"
+      }
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "We recommend running this command before reporting bugs, after upgrading versions, or anytime you have issues with your Docusaurus site.",
+      "source_content_hash": "698b3c62334221a10c26fb85817241c2dde658c3ae7ccab9a4ebc1d89f0e3ea4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建議在報告錯誤、升級版本後或任何遇到 Docusaurus 網站問題時執行此命令。"
+      }
+    },
+    {
+      "segment_id": "657bde08",
+      "source_content": "### `docusaurus write-translations [siteDir]` {#docusaurus-write-translations-sitedir}",
+      "source_content_hash": "724cd35ac9e26a9d05cb7c91e897048a7c855f374793ef14b46915bc7af68306",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus write-translations [siteDir]` {#docusaurus-write-translations-sitedir}"
+      }
+    },
+    {
+      "segment_id": "827eb9a3",
+      "source_content": "Write the JSON translation files that you will have to translate.",
+      "source_content_hash": "b90da106b7a7e32175ca3548c1ea4392f74781f0dd8bc4d7bbd051b757d570eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "寫出需要翻譯的 JSON 翻譯檔案。"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "By default, the files are written in `website/i18n/<defaultLocale>/...`.",
+      "source_content_hash": "d430e6feb593dc92306a2057f244eb1e925d784725280806944274ce42dab268",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，檔案會寫入 `website/i18n/<defaultLocale>/...` 目錄中。"
+      }
+    },
+    {
+      "segment_id": "b6840b81",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `--locale` | `<defaultLocale>` | Define which locale folder you want to write translations the JSON files in |\n| `--override` | `false` | Override existing translation messages |\n| `--config` | `undefined` | Path to Docusaurus config file, default to `[siteDir]/docusaurus.config.js` |\n| `--messagePrefix` | `''` | Allows adding a prefix to each translation message, to help you highlight untranslated strings |",
+      "source_content_hash": "f11bb436a765484c5ca2274d1bc2601c0158d4e00bffe7974cbe0faae3f195ca",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_b6840b81"
+      }
+    },
+    {
+      "segment_id": "c66e62ef",
+      "source_content": "### `docusaurus write-heading-ids [siteDir] [files]` {#docusaurus-write-heading-ids-sitedir}",
+      "source_content_hash": "02736f8021765e4d9a6205a811926cd95634216e00042418b20e87cc23604941",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `docusaurus write-heading-ids [siteDir] [files]` {#docusaurus-write-heading-ids-sitedir}"
+      }
+    },
+    {
+      "segment_id": "fe25bd72",
+      "source_content": "Add [explicit heading IDs](./guides/markdown-features/markdown-features-toc.mdx#heading-ids) to the Markdown documents of your site.",
+      "source_content_hash": "a27122397363f2d4e7dce0a5e6eeeb3adb8bfa55cae6ae9a8b0d2c8461398fe2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "為網站中的 Markdown 文件添加 [明確的標題 ID](./guides/markdown-features/markdown-features-toc.mdx#heading-ids)。"
+      }
+    },
+    {
+      "segment_id": "a4d72dc0",
+      "source_content": "| Name | Default | Description |\n| --- | --- | --- |\n| `files` | All MD files used by plugins | The files that you want heading IDs to be written to. |\n| `--maintain-case` | `false` | Keep the headings' casing, otherwise make all lowercase. |\n| `--overwrite` | `false` | Overwrite existing heading IDs. |",
+      "source_content_hash": "74d526f454b3431c52a5a6b5cc20b7dcea94930b2cbdb9db5c981929d846e262",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a4d72dc0"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.3.2/cli.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.182573+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "ce8bc7dd203871bbe492c02d48a08ccdeafa4429722eec295dcdcc4b6e158793"
+  }
+}

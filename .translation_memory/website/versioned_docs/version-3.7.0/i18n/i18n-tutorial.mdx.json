@@ -1,0 +1,946 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.7.0/i18n/i18n-tutorial.mdx",
+  "source_file_content_hash": "c44071c2a29b93c8ef5bf1d4ba1b89d99ae6bedfe61f8f4b38c6d480f8c97702",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: tutorial\ndescription: This tutorial will walk you through the basics of the Docusaurus i18n system.\nslug: /i18n/tutorial\n---",
+      "source_content_hash": "dcb96cfba2a0f228ef9e67db52f8ae8e4e59353f1525d3eb5a9fcd4bb1115201",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# i18n - Tutorial",
+      "source_content_hash": "09a103decf735c0cf50e7a82cee9892169a0d04cd5b06d1cffbde555f62eb215",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 國際化(i18n) - 教學指南"
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```mdx-code-block\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n```",
+      "source_content_hash": "ee7c7ccc3fc35d8459eb01cfa9b23771278098ad8ace52975ecedfe60785c012",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "This tutorial will walk you through the basics of the **Docusaurus i18n system**.",
+      "source_content_hash": "c5131704f96253230123aa94e02b4346a24a3148f47b49164bbdeebc64c760e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本教學將帶您了解 **Docusaurus 國際化系統** 的基本操作。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "We will add **French** translations to a **newly initialized English Docusaurus website**.",
+      "source_content_hash": "a39c0dbb125fec3dc5982e2e5fc27107c8c42cfaae6a9dd11089cbd36f5831ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將為 **全新初始化的英文版 Docusaurus 網站** 新增 **法文** 翻譯。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Initialize a new site with `npx create-docusaurus@latest website classic` (like [this one](https://github.com/facebook/docusaurus/tree/main/examples/classic)).",
+      "source_content_hash": "8ec4e1b8929fdcc70c2a931006ed62a54c7a910de70ccd173c7cb4189729391e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用指令 `npx create-docusaurus@latest website classic` 初始化新網站（類似 [此範例](https://github.com/facebook/docusaurus/tree/main/examples/classic)）。"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Configure your site {#configure-your-site}",
+      "source_content_hash": "e5aa785c5d66d84f4793285aea0f89f23264b554e962055aa1d3e8c4a6cb8478",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 設定您的網站 {#configure-your-site}"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Modify `docusaurus.config.js` to add the i18n support for the French language.",
+      "source_content_hash": "327a1d53e9646d4ab74bc5c4dd3e25c1e0d379c7c3b643f39465062ba1170b53",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "修改 `docusaurus.config.js` 以新增對法文語言的國際化支援。"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "### Site configuration {#site-configuration}",
+      "source_content_hash": "d2707d22a664430ffdfaf21b73bc68c8a8b6a7ae0ed5356450cf698bff7d2a37",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 網站設定 {#site-configuration}"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Use the [site i18n configuration](./../api/docusaurus.config.js.mdx#i18n) to declare the i18n locales:",
+      "source_content_hash": "590f913473e08439699329cdc55955ca384fe5e219eab46887ebd2e9eea8d2d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "使用 [網站國際化設定](./../api/docusaurus.config.js.mdx#i18n) 來宣告國際化語言環境："
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  i18n: {\n    defaultLocale: 'en',\n    locales: ['en', 'fr', 'fa'],\n    localeConfigs: {\n      en: {\n        htmlLang: 'en-GB',\n      },\n      // You can omit a locale (e.g. fr) if you don't need to override the defaults\n      fa: {\n        direction: 'rtl',\n      },\n    },\n  },\n};\n```",
+      "source_content_hash": "5e5f69160b531fc97f7127a21e2250401044c8069453b3e70a6da97b64f9e62e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "The locale names are used for the translation files' locations, as well as your translated locales' base URL. When building all locales, only the default locale will have its name omitted in the base URL.",
+      "source_content_hash": "5bb6e794c293a236cab139fe7042cf511923999edd9c13b97afa97b649db2f92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "地區名稱用於翻譯檔案的存放位置，以及翻譯後語言環境的基礎網址。在建置所有語言版本時，只有預設語言環境的基礎網址會省略其名稱。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Docusaurus uses the locale names to provide **sensible defaults**: the `<html lang=\"...\">` attribute, locale label, calendar format, etc. You can customize these defaults with the `localeConfigs`.",
+      "source_content_hash": "90fc15dbb5fa54dd711f2cd16e59037f2f35e59d1f42b485c9d3c9faf9271b45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 使用地區名稱提供 **合理的預設值**：`<html lang=\"...\">` 屬性、地區標籤、日曆格式等。您可以使用 `localeConfigs` 自訂這些預設值。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "### Theme configuration {#theme-configuration}",
+      "source_content_hash": "85d14dc228b7c82d5c71a141e954836c84434dd2af6f5f3a581e799594ddec9d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 主題設定 {#theme-configuration}"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "Add a **navbar item** of type `localeDropdown` so that users can select the locale they want:",
+      "source_content_hash": "5bcc3409bf967ebbe1d858f1284809f8d283f9b71d28deca5341966a27923819",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新增一個類型為 `localeDropdown` 的 **導覽列項目**，讓使用者可以選擇所需的語言環境："
+      }
+    },
+    {
+      "segment_id": "3ce8f045",
+      "source_content": "```js title=\"docusaurus.config.js\"\nexport default {\n  themeConfig: {\n    navbar: {\n      items: [\n        // highlight-start\n        {\n          type: 'localeDropdown',\n          position: 'left',\n        },\n        // highlight-end\n      ],\n    },\n  },\n};\n```",
+      "source_content_hash": "f587e65297fcdba18ac77365af8313e26c9ea58e9a50aa857dc57b96f6395709",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3ce8f045"
+      }
+    },
+    {
+      "segment_id": "724adee0",
+      "source_content": ":::tip\n\nYou can pass a query parameter that will be appended to the URL when a user changes the locale using the dropdown (e.g. `queryString: '?persistLocale=true'`).\n\nThis is useful for implementing an automatic locale detection on your server. For example, you can use this parameter to store the user's preferred locale in a cookie.\n\n:::",
+      "source_content_hash": "5e14d99f19606b3733cd22e70354e8f826960d77ea3d098c844d1b7caa7e03e4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n您可以傳遞一個查詢參數，當使用者使用下拉選單變更語言環境時，該參數會附加到網址（例如 `queryString: '?persistLocale=true'`）。\n\n這對於在伺服器上實作自動語言檢測非常有用。例如，您可以使用此參數將使用者偏好的語言環境儲存在 cookie 中。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "### Start your site {#start-your-site}",
+      "source_content_hash": "02ce489ef5f4f234d2112ea41e1cc64fd9e12ce747d4b9e94a753d81cfcf6c8f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 啟動您的網站 {#start-your-site}"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Start your localized site in dev mode, using the locale of your choice:",
+      "source_content_hash": "c2352f770500eaf4380849c199e568b85146f79c33b3324d05aac153719e4395",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "以開發模式啟動您的本地化網站，使用您選擇的語言環境："
+      }
+    },
+    {
+      "segment_id": "092b29bb",
+      "source_content": "```bash npm2yarn\nnpm run start -- --locale fr\n```",
+      "source_content_hash": "cb03a7f69b372ffc4020462fee71048686277912592f2ead73eff84fa9200e2d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_092b29bb"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Your site is accessible at [`http://localhost:3000/fr/`](http://localhost:3000/fr/).",
+      "source_content_hash": "2803564e4f95e8a716964933fccdca8e0a2501a67039eea6e5fd64845df935df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您的網站可透過 [`http://localhost:3000/fr/`](http://localhost:3000/fr/) 存取。"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "We haven't provided any translation yet, so the site is mostly untranslated.",
+      "source_content_hash": "f94b9324e93afc612d193201c5f1086168a5e247d435fca1f39a3c64978cd687",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們尚未提供任何翻譯，因此網站大部分內容仍為未翻譯狀態。"
+      }
+    },
+    {
+      "segment_id": "61dc1473",
+      "source_content": ":::tip\n\nDocusaurus provides **default translations** for generic theme labels, such as \"Next\" and \"Previous\" for the pagination.\n\nPlease help us complete those **[default translations](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)**.\n\n:::",
+      "source_content_hash": "d442a9405cf83f89da826e30737e0b4e3bde403489219ea1da6d630bcfec053d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\nDocusaurus 為通用主題標籤提供 **預設翻譯**，例如分頁的「下一頁」和「上一頁」。\n\n請協助我們完善這些 **[預設翻譯](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "9c85eea9",
+      "source_content": ":::warning\n\nEach locale is a **distinct standalone single-page application**: it is not possible to start the Docusaurus sites in all locales at the same time.\n\n:::",
+      "source_content_hash": "0e763de428632467e14f8d5b976364781547121d5b817dfc7284903b18b32992",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n每個語言環境都是 **獨立的單頁應用程式**：無法同時以所有語言環境啟動 Docusaurus 網站。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "54bafb10",
+      "source_content": "## Translate your site {#translate-your-site}",
+      "source_content_hash": "7bf2602db74540178bdae5347e912c4dc9d1a2e49e3f81dc40c211eb7bddd798",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 翻譯您的網站 {#translate-your-site}"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "All translation data for the French locale is stored in `website/i18n/fr`. Each plugin sources its own translated content under the corresponding folder, while the `code.json` file defines all text labels used in the React code.",
+      "source_content_hash": "e16130c021a3c16cccf8246cb8e0d4bd642617a73b85d7e0efddbc11b340991b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "所有法文語言環境的翻譯資料都儲存在 `website/i18n/fr` 中。每個插件在對應的資料夾下提供自己的翻譯內容，而 `code.json` 檔案則定義了 React 程式碼中使用的所有文字標籤。"
+      }
+    },
+    {
+      "segment_id": "549cdcf9",
+      "source_content": ":::note\n\nAfter copying files around, restart your site with `npm run start -- --locale fr`. Hot-reload will work better when editing existing files.\n\n:::",
+      "source_content_hash": "a4d948f97951ed9ace2dae311c1c954ad1cf9432d290cc1629ca64eaa2a937f5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\n在複製檔案後，請使用 `npm run start -- --locale fr` 重新啟動您的網站。編輯現有檔案時，熱重載的效果會更好。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "### Translate your React code {#translate-your-react-code}",
+      "source_content_hash": "578749284e95066b5bb2e6198a454e34eb47e9c2d3b939dad88f00256c7332b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯您的 React 程式碼 {#translate-your-react-code}"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "For any React code you've written yourself: React pages, React components, etc., you will use the [**translation APIs**](../docusaurus-core.mdx#translate).",
+      "source_content_hash": "5e13ba509a1e6580d89766cbd6380bb1699a99624f46a388a0eb9447e333b770",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "對於您自行編寫的任何 React 程式碼：React 頁面、React 元件等，您將使用 [**翻譯 API**](../docusaurus-core.mdx#translate)。"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "Locate all text labels in your React code that will be visible to your users, and mark them with the translation APIs. There are two kinds of APIs:",
+      "source_content_hash": "a51ce6ac90f57e7d98bb46f67a91a2342b15fc6083156557062bb4cd0abe7b1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "找出 React 程式碼中所有對使用者可見的文字標籤，並使用翻譯 API 進行標記。共有兩種 API："
+      }
+    },
+    {
+      "segment_id": "bcc700e8",
+      "source_content": "- The `<Translate>` component wraps a string as a JSX element;\n- The `translate()` callback takes a message and returns a string.",
+      "source_content_hash": "88d870ec202491b9a060f68680673fd73b693154110dc8ed9e8498a4e76ead74",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `<Translate>` 元件將字串包裝為 JSX 元素；\n- `translate()` 回呼函式接收訊息並回傳字串。"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "Use the one that better fits the context semantically. For example, the `<Translate>` can be used as React children, while for props that expect a string, the callback can be used.",
+      "source_content_hash": "ff26978d4e0244a28dfe24c265058986bdebfa62959919f73bf9aaa9b944cdb8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "8da6784e",
+      "source_content": ":::warning\n\nA JSX element is an _object_, not a string. Using it in contexts expecting strings (such as the children of [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)) would [coerce it to a string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString), which returns `\"[object Object]\"`. While we encourage you to use `<Translate>` as JSX children, only use the element form when it actually works.\n\n:::",
+      "source_content_hash": "f9d59f4c8f95aacae3b0280d54830729a8ee411bf8879f8fc03dff45c679d0fa",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b474abd5",
+      "source_content": "```mdx-code-block\n<Tabs>\n<TabItem value=\"Before\">\n```",
+      "source_content_hash": "f0f916383b83c1850e04bd0939aa172cba1811386a4e5de9aefdcf206380ac98",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "f2f9d525",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\nimport Link from '@docusaurus/Link';\n\nexport default function Home() {\n  return (\n    <Layout>\n      {/* highlight-next-line */}\n      <h1>Welcome to my website</h1>\n      <main>\n        {/* highlight-start */}\n        You can also visit my\n        <Link to=\"https://docusaurus.io/blog\">blog</Link>\n        {/* highlight-end */}\n        <img\n          src=\"/img/home.png\"\n          // highlight-next-line\n          alt=\"Home icon\"\n        />\n      </main>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "d4970772ab6b63478f7f6e1fbd427222ad314f3ea685c31d915dc728fcdff15d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "0029045f",
+      "source_content": "```mdx-code-block\n</TabItem>\n<TabItem value=\"After\">\n```",
+      "source_content_hash": "306462698e15c08bca8d38a23c575194a812e87c053949c12fef2756e45a686c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b5ea89c4",
+      "source_content": "```jsx title=\"src/pages/index.js\"\nimport React from 'react';\nimport Layout from '@theme/Layout';\nimport Link from '@docusaurus/Link';\n\n// highlight-next-line\nimport Translate, {translate} from '@docusaurus/Translate';\n\nexport default function Home() {\n  return (\n    <Layout>\n      <h1>\n        {/* highlight-next-line */}\n        <Translate>Welcome to my website</Translate>\n      </h1>\n      <main>\n        {/* highlight-start */}\n        <Translate\n          id=\"homepage.visitMyBlog\"\n          description=\"The homepage message to ask the user to visit my blog\"\n          values={{\n            blogLink: (\n              <Link to=\"https://docusaurus.io/blog\">\n                <Translate\n                  id=\"homepage.visitMyBlog.linkLabel\"\n                  description=\"The label for the link to my blog\">\n                  blog\n                </Translate>\n              </Link>\n            ),\n          }}>\n          {'You can also visit my {blogLink}'}\n        </Translate>\n        {/* highlight-end */}\n\n        <img\n          src=\"/img/home.png\"\n          alt={\n            // highlight-start\n            translate({\n              message: 'Home icon',\n              description: 'The homepage icon alt message',\n            })\n            // highlight-end\n          }\n        />\n      </main>\n    </Layout>\n  );\n}\n```",
+      "source_content_hash": "7517d7133f96c70507b31cf8f7b7e096944486e4765874147bb31f7b7605e32e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "eff3427d",
+      "source_content": "```mdx-code-block\n</TabItem>\n</Tabs>\n```",
+      "source_content_hash": "9003e7aa6a6da158e5a2616c7ad4fa3cf712efdc00cdb4fe1e22c1ce6e4f795e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "31289fdb",
+      "source_content": ":::info\n\nDocusaurus provides a **very small and lightweight translation runtime** on purpose, and only supports basic [placeholders interpolation](../docusaurus-core.mdx#interpolate), using a subset of the [ICU Message Format](https://formatjs.io/docs/core-concepts/icu-syntax/).\n\nMost documentation websites are generally **static** and don't need advanced i18n features (**plurals**, **genders**, etc.). Use a library like [react-intl](https://www.npmjs.com/package/react-intl) for more advanced use-cases.\n\n:::",
+      "source_content_hash": "ecfa332d5d7061cb17d09908a0200a3fb78977cb34855ae84470b234bf364501",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "09d52457",
+      "source_content": "The `docusaurus write-translations` command will statically analyze all React code files used in your site, extract calls to these APIs, and aggregate them in the `code.json` file. The translation files will be stored as maps from IDs to translation message objects (including the translated label and the description of the label). In your calls to the translation APIs (`<Translate>` or `translate()`), you need to specify either the default untranslated message or the ID, in order for Docusaurus to correctly correlate each translation entry to the API call.",
+      "source_content_hash": "f70b939905e21125e3852779535e1aa1f81764c1ab87bf2afb8c1d940229ff3c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "81f3e055",
+      "source_content": ":::warning[text labels must be static]\n\nThe `docusaurus write-translations` command only does **static analysis** of your code. It doesn't actually run your site. Therefore, dynamic messages can't be extracted, as the message is an _expression_, not a _string_:\n\n```jsx\nconst items = [\n  {id: 1, title: 'Hello'},\n  {id: 2, title: 'World'},\n];\n\nfunction ItemsList() {\n  return (\n    <ul>\n      {/* DON'T DO THIS: doesn't work with the write-translations command */}\n      {items.map((item) => (\n        <li key={item.id}>\n          <Translate>{item.title}</Translate>\n        </li>\n      ))}\n    <ul>\n  );\n}\n```\n\nThis still behaves correctly at runtime. However, in the future, we may provide a \"no-runtime\" mechanism, allowing the translations to be directly inlined in the React code through Babel transformations, instead of calling the APIs at runtime. Therefore, to be future-proof, you should always prefer statically analyzable messages. For example, we can refactor the code above to:\n\n```jsx\nconst items = [\n  {id: 1, title: <Translate>Hello</Translate>},\n  {id: 2, title: <Translate>World</Translate>},\n];\n\nfunction ItemsList() {\n  return (\n    <ul>\n      {/* The titles are now already translated when rendering! */}\n      {items.map((item) => (\n        <li key={item.id}>{item.title}</li>\n      ))}\n    <ul>\n  );\n}\n```\n\nYou can see the calls to the translation APIs as purely _markers_ that tell Docusaurus that \"here's a text label to be replaced with a translated message\".\n\n:::",
+      "source_content_hash": "143d722a530e762a697b70e1ad2de65d8bac6fdf3ebf14b4d15254473fcbe9a5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "4b62af77",
+      "source_content": "#### Pluralization {#pluralization}",
+      "source_content_hash": "4197b5e91244eddb86292be48ad409e4f6bdc8c5fbf13e38d54a10fff1b27566",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "740d2e67",
+      "source_content": "When you run `write-translations`, you will notice that some labels are pluralized:",
+      "source_content_hash": "c8a678b038cbde4fad7fbdf3d040018258e4543726c5597964b480259e558b69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "b73b8545",
+      "source_content": "```json title=\"i18n/en/code.json\"\n{\n  // ...\n  \"theme.blog.post.plurals\": \"One post|{count} posts\"\n  // ...\n}\n```",
+      "source_content_hash": "e93c9c9cbed004b7a61c68faf8fad5c9fe9ea33dc79afb483b4c4754d026af7e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "858b0a05",
+      "source_content": "Every language will have a list of [possible plural categories](https://unicode-org.github.io/cldr-staging/charts/37/supplemental/language_plural_rules.html). Docusaurus will arrange them in the order of `[\"zero\", \"one\", \"two\", \"few\", \"many\", \"other\"]`. For example, because English (`en`) has two plural forms (\"one\" and \"other\"), the translation message has two labels separated by a pipe (`|`). For Polish (`pl`) which has three plural forms (\"one\", \"few\", and \"many\"), you would provide three labels in that order, joined by pipes.",
+      "source_content_hash": "30bdc2b0dbe633b897935daa31858662b3c449bc786afdadc47124e06c981450",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每種語言都有一組[可能的複數類別](https://unicode-org.github.io/cldr-staging/charts/37/supplemental/language_plural_rules.html)。Docusaurus 會按照 `[\"zero\", \"one\", \"two\", \"few\", \"many\", \"other\"]` 的順序排列這些類別。例如，英語 (`en`) 有兩種複數形式 (\"one\" 和 \"other\")，翻譯訊息會用管道符 (`|`) 分隔兩個標籤。波蘭語 (`pl`) 有三種複數形式 (\"one\"、\"few\" 和 \"many\")，則需要按順序提供三個用管道符連接的標籤。"
+      }
+    },
+    {
+      "segment_id": "c95293b9",
+      "source_content": "You can pluralize your own code's messages as well:",
+      "source_content_hash": "98cac506621984ec0e84498d5897860dd1e371a85e577558b2cfc03f99384cee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "您也可以為自己的程式碼訊息實現複數化："
+      }
+    },
+    {
+      "segment_id": "63d9cf48",
+      "source_content": "```jsx\nimport {translate} from '@docusaurus/Translate';\nimport {usePluralForm} from '@docusaurus/theme-common';\n\nfunction ItemsList({items}) {\n  // `usePluralForm` will provide the plural selector for the current locale\n  const {selectMessage} = usePluralForm();\n  // Select the appropriate pluralized label based on `items.length`\n  const message = selectMessage(\n    items.length,\n    translate(\n      {message: 'One item|{count} items'},\n      {count: items.length},\n    ),\n  );\n  return (\n    <>\n      <h2>{message}</h2>\n      <ul>{items.map((item) => <li key={item.id}>{item.title}</li>)}<ul>\n    </>\n  );\n}\n```",
+      "source_content_hash": "bd0aa27fc304e1acb52fc7f75cf67157f640f8f94894006e2169a0be1616c9ea",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_63d9cf48"
+      }
+    },
+    {
+      "segment_id": "6b7807df",
+      "source_content": ":::note\n\nDocusaurus uses [`Intl.PluralRules`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules) to resolve and select plural forms. It is important to provide the right number of plural forms in the right order for `selectMessage` to work.\n\n:::",
+      "source_content_hash": "7421624d31f707a22cd19b9076c22c61db8a828017c8787eaa17fdcaea46799a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\nDocusaurus 使用 [`Intl.PluralRules`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules) 來解析和選擇複數形式。必須按照正確順序提供正確數量的複數形式，才能讓 `selectMessage` 正常運作。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "8dfbc79d",
+      "source_content": "### Translate plugin data {#translate-plugin-data}",
+      "source_content_hash": "754a1d626470d27ec6ff4e2981bee55e0e8c3729cce3dac271c62248cd653e14",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯插件數據 {#translate-plugin-data}"
+      }
+    },
+    {
+      "segment_id": "0302cdc1",
+      "source_content": "JSON translation files are used for everything that is interspersed in your code:",
+      "source_content_hash": "bbde349b410b63ae38db147d25ce684332528378bdce4361406ed9178dc1374c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "JSON 翻譯文件用於處理程式碼中所有需要國際化的內容："
+      }
+    },
+    {
+      "segment_id": "e55e1c2c",
+      "source_content": "- React code, including the translated labels you have marked above\n- Navbar and footer labels in theme config\n- Docs sidebar category labels in `sidebars.js`\n- Blog sidebar title in plugin options\n- ...",
+      "source_content_hash": "6652bbe526db1880d8dd4293c5d784afa065444e3573f582bbc23a6d74f728e0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- React 程式碼，包括您標記的翻譯標籤\n- 主題配置中的導覽列和頁尾標籤\n- `sidebars.js` 中的文檔側邊欄分類標籤\n- 部落格外掛選項中的側邊欄標題\n- ..."
+      }
+    },
+    {
+      "segment_id": "c1e7eaab",
+      "source_content": "Run the [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) command:",
+      "source_content_hash": "4e7cc5866776ad710dd469e86b215555b7b8b4e3c1a966a4ce6b8c9eec15ab32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "執行 [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) 指令："
+      }
+    },
+    {
+      "segment_id": "88b052dd",
+      "source_content": "```bash npm2yarn\nnpm run write-translations -- --locale fr\n```",
+      "source_content_hash": "11b280a685be5f4f6630bff872478513be6b87fbbb30620a90797a474355904a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_88b052dd"
+      }
+    },
+    {
+      "segment_id": "d70ad719",
+      "source_content": "It will extract and initialize the JSON translation files that you need to translate. The `code.json` file at the root includes all translation API calls extracted from the source code, which could either be written by you or provided by the themes, some of which may already be translated by default.",
+      "source_content_hash": "a06bf9bc1cdf80b959dcb1dac50aca2b2f6c2780dd1de5ec94e169db0f963b3d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這會提取並初始化需要翻譯的 JSON 翻譯文件。根目錄下的 `code.json` 包含從原始碼中提取的所有翻譯 API 呼叫，這些可能是您編寫的或由主題提供的，其中部分可能已預設翻譯完成。"
+      }
+    },
+    {
+      "segment_id": "ebc7af28",
+      "source_content": "```json title=\"i18n/fr/code.json\"\n{\n  // No ID for the <Translate> component: the default message is used as ID\n  \"Welcome to my website\": {\n    \"message\": \"Welcome to my website\"\n  },\n  \"home.visitMyBlog\": {\n    \"message\": \"You can also visit my {blog}\",\n    \"description\": \"The homepage message to ask the user to visit my blog\"\n  },\n  \"homepage.visitMyBlog.linkLabel\": {\n    \"message\": \"Blog\",\n    \"description\": \"The label for the link to my blog\"\n  },\n  \"Home icon\": {\n    \"message\": \"Home icon\",\n    \"description\": \"The homepage icon alt message\"\n  }\n}\n```",
+      "source_content_hash": "83591cb2d6080b3219059c0dbbe8104975b59d43bde6f868e9263e6372eedb92",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ebc7af28"
+      }
+    },
+    {
+      "segment_id": "d04a3ef5",
+      "source_content": "Plugins and themes will also write their own JSON translation files, such as:",
+      "source_content_hash": "889ca55381ba7d7e728e73e48089904d3a564765c4c625425f22aa36e99b3126",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "外掛和主題也會生成自己的 JSON 翻譯文件，例如："
+      }
+    },
+    {
+      "segment_id": "1c0c7d50",
+      "source_content": "```json title=\"i18n/fr/docusaurus-theme-classic/navbar.json\"\n{\n  \"title\": {\n    \"message\": \"My Site\",\n    \"description\": \"The title in the navbar\"\n  },\n  \"item.label.Docs\": {\n    \"message\": \"Docs\",\n    \"description\": \"Navbar item with label Docs\"\n  },\n  \"item.label.Blog\": {\n    \"message\": \"Blog\",\n    \"description\": \"Navbar item with label Blog\"\n  },\n  \"item.label.GitHub\": {\n    \"message\": \"GitHub\",\n    \"description\": \"Navbar item with label GitHub\"\n  }\n}\n```",
+      "source_content_hash": "af1792012b3609f38efe3d7fe002e99ef5aaa205518e112a474c7852a0f37b73",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_1c0c7d50"
+      }
+    },
+    {
+      "segment_id": "3e2af19c",
+      "source_content": "Translate the `message` attribute in the JSON files of `i18n/fr`, and your site layout and homepage should now be translated.",
+      "source_content_hash": "ad7a90a246760937cd151cef9ce0ec35519257501e5816a196d607977871022f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "翻譯 `i18n/fr` 中 JSON 文件的 `message` 屬性後，您的網站佈局和首頁現在應該已完成翻譯。"
+      }
+    },
+    {
+      "segment_id": "1ddee520",
+      "source_content": "### Translate Markdown files {#translate-markdown-files}",
+      "source_content_hash": "33036f217316503b4eeeb372ed70a071831fb0c9d1d4a97b891b9de4f70faaa7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 翻譯 Markdown 文件 {#translate-markdown-files}"
+      }
+    },
+    {
+      "segment_id": "c4d69fe4",
+      "source_content": "Official Docusaurus content plugins extensively use Markdown/MDX files and allow you to translate them.",
+      "source_content_hash": "5f62a23f57b0c59afbe12ba5eb78a55ffd829fe2163685256bd7ef8d052816d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "官方 Docusaurus 內容外掛廣泛使用 Markdown/MDX 文件，並允許您進行翻譯。"
+      }
+    },
+    {
+      "segment_id": "c489a644",
+      "source_content": "#### Translate the docs {#translate-the-docs}",
+      "source_content_hash": "c14fc480dd48e15488db9f9f5a7b081f51a3bf94300777472480d40d389119ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 翻譯文檔 {#translate-the-docs}"
+      }
+    },
+    {
+      "segment_id": "b63b9ccf",
+      "source_content": "Copy your docs Markdown files from `docs/` to `i18n/fr/docusaurus-plugin-content-docs/current`, and translate them:",
+      "source_content_hash": "8c3937305d457f49bbf578cbc5cce8894370083190838ce8134e054ac415e6f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將文檔 Markdown 文件從 `docs/` 複製到 `i18n/fr/docusaurus-plugin-content-docs/current` 並進行翻譯："
+      }
+    },
+    {
+      "segment_id": "371e39a0",
+      "source_content": "```bash\nmkdir -p i18n/fr/docusaurus-plugin-content-docs/current\ncp -r docs/** i18n/fr/docusaurus-plugin-content-docs/current\n```",
+      "source_content_hash": "fa7ebe172ffe75b20239d69b0b8a36e32972ffe95290c9a501a8831b005e0a96",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_371e39a0"
+      }
+    },
+    {
+      "segment_id": "a803d0e0",
+      "source_content": ":::info\n\nNotice that the `docusaurus-plugin-content-docs` plugin always divides its content by versions. The data in `./docs` folder will be translated in the `current` subfolder and `current.json` file. See [the doc versioning guide](../guides/docs/versioning.mdx#terminology) for more information about what \"current\" means.\n\n:::",
+      "source_content_hash": "59e838e47fcf8ad41ffbfc7cd6aeea567652d4d1cbd4960d8c22fb831546d39b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::info\n\n請注意，`docusaurus-plugin-content-docs` 外掛總是按版本劃分內容。`./docs` 文件夾中的數據會在 `current` 子文件夾和 `current.json` 文件中進行翻譯。有關 \"current\" 含義的更多信息，請參閱[文檔版本控制指南](../guides/docs/versioning.mdx#terminology)。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "086e47bd",
+      "source_content": "#### Translate the blog {#translate-the-blog}",
+      "source_content_hash": "a66a73242f696081cf7f7f9ba9d3bbea2c3ad57975ee056f16a47e27e2b6bc77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 翻譯部落格 {#translate-the-blog}"
+      }
+    },
+    {
+      "segment_id": "94a47b80",
+      "source_content": "Copy your blog Markdown files to `i18n/fr/docusaurus-plugin-content-blog`, and translate them:",
+      "source_content_hash": "1d8297af6b51853c92c3e5faf18d23c15e0941320fab3261f4b8f2d71964b954",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將部落格 Markdown 文件複製到 `i18n/fr/docusaurus-plugin-content-blog` 並進行翻譯："
+      }
+    },
+    {
+      "segment_id": "9f4bf2e5",
+      "source_content": "```bash\nmkdir -p i18n/fr/docusaurus-plugin-content-blog\ncp -r blog/** i18n/fr/docusaurus-plugin-content-blog\n```",
+      "source_content_hash": "503a4333a8571170fcbddd866c08e69a69bdfe1fad0d195a4453dd35ddb5cdda",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_9f4bf2e5"
+      }
+    },
+    {
+      "segment_id": "81e59017",
+      "source_content": "#### Translate the pages {#translate-the-pages}",
+      "source_content_hash": "cb453e2bc499c1f25d9b9cf8ac4f677b4a08917965d262bc164088a23bda56ca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 翻譯頁面 {#translate-the-pages}"
+      }
+    },
+    {
+      "segment_id": "ca714988",
+      "source_content": "Copy your pages Markdown files to `i18n/fr/docusaurus-plugin-content-pages`, and translate them:",
+      "source_content_hash": "9debc08228459d8af778ef755180fdf27e799ec7da2024d4bf0b304ca947c255",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "將頁面 Markdown 文件複製到 `i18n/fr/docusaurus-plugin-content-pages` 並進行翻譯："
+      }
+    },
+    {
+      "segment_id": "5de6a9e7",
+      "source_content": "```bash\nmkdir -p i18n/fr/docusaurus-plugin-content-pages\ncp -r src/pages/**.md i18n/fr/docusaurus-plugin-content-pages\ncp -r src/pages/**.mdx i18n/fr/docusaurus-plugin-content-pages\n```",
+      "source_content_hash": "6d86d22f0a13c0aaad013e2afc2c90fc90ca7d486f78a221efc3ec7366495fa7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_5de6a9e7"
+      }
+    },
+    {
+      "segment_id": "f7fb494e",
+      "source_content": ":::warning\n\nWe only copy `.md` and `.mdx` files, as React pages are translated through JSON translation files already.\n\n:::",
+      "source_content_hash": "06f4a3cc1b2b4eaf705d1f25841424a8e0e052450aa6d4ddc51319d0bbda2bad",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n我們只複製 `.md` 和 `.mdx` 文件，因為 React 頁面已通過 JSON 翻譯文件完成翻譯。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "fedf2970",
+      "source_content": ":::tip[Use explicit heading IDs]\n\nBy default, a Markdown heading `### Hello World` will have a generated ID `hello-world`. Other documents can link it with `[link](#hello-world)`. However, after translation, the heading becomes `### Bonjour le Monde`, with ID `bonjour-le-monde`.\n\nGenerated IDs are not always a good fit for localized sites, as it requires you to localize all the anchor links:\n\n```diff\n- [link](#hello-world).\n+ [link](#bonjour-le-monde)\n```\n\nFor localized sites, it is recommended to use **[explicit heading IDs](../guides/markdown-features/markdown-features-toc.mdx#heading-ids)**.\n\n:::",
+      "source_content_hash": "4a36f0a69bd9769e894d71c64c51110334a76d040ff3ff7fd4d9e493488ec155",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip[使用明確的標題 ID]\n\n預設情況下，Markdown 標題 `### Hello World` 會自動生成 ID `hello-world`。其他文件可以透過 `[link](#hello-world)` 連結到它。然而，翻譯後標題變為 `### Bonjour le Monde`，ID 也會變成 `bonjour-le-monde`。\n\n自動生成的 ID 並不總是適合本地化網站，因為這要求你本地化所有錨點連結：\n\n```diff\n- [link](#hello-world).\n+ [link](#bonjour-le-monde)\n```\n\n對於本地化網站，建議使用 **[明確的標題 ID](../guides/markdown-features/markdown-features-toc.mdx#heading-ids)**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "7d7166d8",
+      "source_content": "## Deploy your site {#deploy-your-site}",
+      "source_content_hash": "79aebff42c5dc5be4c7beb18c295a01969c5896c392452e495269f142a0125ec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 部署你的網站 {#deploy-your-site}"
+      }
+    },
+    {
+      "segment_id": "69d6e4be",
+      "source_content": "You can choose to deploy your site under a **single domain** or use **multiple (sub)domains**.",
+      "source_content_hash": "ed81f7933b5b1ef562af1c52a39b741b96396c7463c494f69a096be30ef5c26c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你可以選擇在**單一網域**下部署網站，或使用**多個（子）網域**。"
+      }
+    },
+    {
+      "segment_id": "65863fe2",
+      "source_content": "### Single-domain deployment {#single-domain-deployment}",
+      "source_content_hash": "d177226637c8e515b23514d91dedc6c8d64719fab88deb0357c608bdd91e88cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 單一網域部署 {#single-domain-deployment}"
+      }
+    },
+    {
+      "segment_id": "db871df4",
+      "source_content": "Run the following command:",
+      "source_content_hash": "f862cbcf2effa4fdc7a0e127b8226104aa5732e1678e51799688f2cd45b9efc9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "執行以下指令："
+      }
+    },
+    {
+      "segment_id": "a320d8a8",
+      "source_content": "```bash npm2yarn\nnpm run build\n```",
+      "source_content_hash": "f59d77928ebca01a2394f334d2c0386fe8af6dffab32db943c054660fabcee6f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_a320d8a8"
+      }
+    },
+    {
+      "segment_id": "76356197",
+      "source_content": "Docusaurus will build **one single-page application per locale**:",
+      "source_content_hash": "efe36a67d5bdb20fd8cab8222a1aac894bc2efc3f79925198f58aff7d8ad07a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 會為**每個語言版本建立一個單頁應用**："
+      }
+    },
+    {
+      "segment_id": "ee02dc16",
+      "source_content": "- `website/build`: for the default, English language\n- `website/build/fr`: for the French language",
+      "source_content_hash": "7f97c733fe1be2b7719ff11bcde2912c54d159710988aa728b01c49851f7b0c7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `website/build`：預設的英文版本\n- `website/build/fr`：法文版本"
+      }
+    },
+    {
+      "segment_id": "60ce13be",
+      "source_content": "You can now [deploy](../deployment.mdx) the `build` folder to the static hosting solution of your choice.",
+      "source_content_hash": "39e89a5ec26279fc40654bae8866b063e8c053daa9b4b50b1220e44c8756d3b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現在你可以將 `build` 資料夾[部署](../deployment.mdx)到選擇的靜態託管服務。"
+      }
+    },
+    {
+      "segment_id": "f43b08c8",
+      "source_content": ":::note\n\nThe Docusaurus website uses this strategy:\n\n- [`https://docusaurus.io`](https://docusaurus.io)\n- [`https://docusaurus.io/fr`](https://docusaurus.io/fr)\n\n:::",
+      "source_content_hash": "a5c096da185191714ccdb0be5fc799fc03cbdd68a72b93c6f6e7439700e24fd8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::note\n\nDocusaurus 官方網站採用此策略：\n\n- [`https://docusaurus.io`](https://docusaurus.io)\n- [`https://docusaurus.io/fr`](https://docusaurus.io/fr)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "555e2afe",
+      "source_content": ":::tip\n\nStatic hosting providers generally redirect `/unknown/url` to `/404.html` by convention, always showing an **English 404 page**.\n\n**Localize your 404 pages** by configuring your host to redirect `/fr/*` to `/fr/404.html`.\n\nThis is not always possible, and depends on your host: GitHub Pages can't do this, [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling) can.\n\n:::",
+      "source_content_hash": "1bd6e38fef0202261509a6bf229da503258a1e68f776843a0b999130459df9be",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\n靜態託管服務通常會將 `/unknown/url` 重新導向至 `/404.html`，因此總是顯示**英文 404 頁面**。\n\n若要**本地化 404 頁面**，需配置託管服務將 `/fr/*` 重新導向至 `/fr/404.html`。\n\n這並非總是可行，取決於託管服務：GitHub Pages 無法做到，但 [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling) 可以。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "f2829f67",
+      "source_content": "### Multi-domain deployment {#multi-domain-deployment}",
+      "source_content_hash": "936a3aa89d613a594c83c20c3a5ef0a6011af82b1797b25b0492804d9eb2476f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 多網域部署 {#multi-domain-deployment}"
+      }
+    },
+    {
+      "segment_id": "d85a747f",
+      "source_content": "You can also build your site for a single locale:",
+      "source_content_hash": "5ba64ba3425b9468f2085340338346a3e720308ca680818df9ccbb06fc42f3ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你也可以為單一語言版本建置網站："
+      }
+    },
+    {
+      "segment_id": "33d86a40",
+      "source_content": "```bash npm2yarn\nnpm run build -- --locale fr\n```",
+      "source_content_hash": "24f4101936e26d5fcc8d69f4b05ec80a72053e57c1db88e33007bfa30bb1b64c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_33d86a40"
+      }
+    },
+    {
+      "segment_id": "0fe0e5d6",
+      "source_content": "Docusaurus will not add the `/fr/` URL prefix.",
+      "source_content_hash": "dc994d4e2977b74622dc23e4531f1390585f856633ba09dd1de97aeb23e23a69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 不會添加 `/fr/` 網址前綴。"
+      }
+    },
+    {
+      "segment_id": "2c676438",
+      "source_content": "On your [static hosting provider](../deployment.mdx):",
+      "source_content_hash": "2c274e3070d72eac0209dbf29715a03c79b0ca83989dc0b07a13f961ab6a6a28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在[靜態託管服務](../deployment.mdx)上："
+      }
+    },
+    {
+      "segment_id": "0e8f997e",
+      "source_content": "- create one deployment per locale\n- configure the appropriate build command, using the `--locale` option\n- configure the (sub)domain of your choice for each deployment",
+      "source_content_hash": "0dec855e7033eac58f2833bf184e2830984400ced1d881118a590ef0d2cfce31",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 為每個語言版本建立一個部署\n- 配置適當的建置指令，使用 `--locale` 選項\n- 為每個部署配置選擇的（子）網域"
+      }
+    },
+    {
+      "segment_id": "5e35905f",
+      "source_content": ":::warning\n\nThis strategy is **not possible** with GitHub Pages, as it is only possible to **have a single deployment**.\n\n:::",
+      "source_content_hash": "62467f8bcfa6e7754f323647b59c90679da3275fe014649d143261b42a78ca9d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n此策略**無法**在 GitHub Pages 上實現，因為它**僅支援單一部署**。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2649c530",
+      "source_content": "### Hybrid {#hybrid}",
+      "source_content_hash": "e9ff1d65d52d52e7badacedff573dd14902076110a48933808b7628e1f7fa95a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 混合部署 {#hybrid}"
+      }
+    },
+    {
+      "segment_id": "3adcb0ad",
+      "source_content": "It is possible to have some locales using sub-paths, and others using subdomains.",
+      "source_content_hash": "8fa8fbfea5ccda9bbff4cdc3371396cd49c557822dc3befd9b5b70552ad40102",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可以讓部分語言版本使用子路徑，其他使用子網域。"
+      }
+    },
+    {
+      "segment_id": "1e1ccc8c",
+      "source_content": "It is also possible to deploy each locale as a separate subdomain, assemble the subdomains in a single unified domain at the CDN level:",
+      "source_content_hash": "03ae0fd54ebad3885e0206c8a6788739ceb1d3914b1cae990e2cafb23226e1cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "也可以將每個語言版本部署為獨立的子網域，並在 CDN 層級將子網域整合到統一網域下："
+      }
+    },
+    {
+      "segment_id": "885a24b8",
+      "source_content": "- Deploy your site as `fr.docusaurus.io`\n- Configure a CDN to serve it from `docusaurus.io/fr`",
+      "source_content_hash": "702da982a72b4d02926e4d144f937415bada3a0e05f59857f46ced85cd791baf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 將網站部署為 `fr.docusaurus.io`\n- 配置 CDN 使其從 `docusaurus.io/fr` 提供服務"
+      }
+    },
+    {
+      "segment_id": "684629a1",
+      "source_content": "## Managing translations {#managing-translations}",
+      "source_content_hash": "60f7f53dec19de30473e5b912afe89ca1e2676a8d128bacce84d2a8fcd8838bc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 管理翻譯 {#managing-translations}"
+      }
+    },
+    {
+      "segment_id": "0ac62679",
+      "source_content": "Docusaurus doesn't care about how you manage your translations: all it needs is that all translation files (JSON, Markdown, or other data files) are available in the file system during building. However, as site creators, you would need to consider how translations are managed so your translation contributors could collaborate well.",
+      "source_content_hash": "42a9ee75cd0376fa5cdeab9a9cd95ba96ce1c4f2e59a539753d930edaee6c598",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 不關心你如何管理翻譯：它只需要所有翻譯檔案（JSON、Markdown 或其他資料檔案）在建置期間存在於檔案系統中。然而，作為網站創建者，你需要考慮如何管理翻譯，以便翻譯貢獻者能有效協作。"
+      }
+    },
+    {
+      "segment_id": "50cd4f87",
+      "source_content": "We will share two common translation collaboration strategies: [**using git**](./i18n-git.mdx) and [**using Crowdin**](./i18n-crowdin.mdx).",
+      "source_content_hash": "358d77890b538f9b61c8b476acfa52026ec87f752bb2d4faffef75bae990dfbe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將分享兩種常見的翻譯協作策略：[**使用 git**](./i18n-git.mdx) 和 [**使用 Crowdin**](./i18n-crowdin.mdx)。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.7.0/i18n/i18n-tutorial.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.355544+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "c44071c2a29b93c8ef5bf1d4ba1b89d99ae6bedfe61f8f4b38c6d480f8c97702"
+  }
+}

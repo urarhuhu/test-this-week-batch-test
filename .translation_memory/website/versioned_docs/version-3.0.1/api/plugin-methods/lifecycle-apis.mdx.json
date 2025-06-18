@@ -1,0 +1,762 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.0.1/api/plugin-methods/lifecycle-apis.mdx",
+  "source_file_content_hash": "38a548412c6f285abed98c4da137e1a8a61c06968f9aa41cc649d7907a141d15",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntoc_max_heading_level: 4\n---",
+      "source_content_hash": "4d1d6f8e68fa95510753874968d34e2b993a7cf968fcbfd8392f4a1480e2384e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Lifecycle APIs",
+      "source_content_hash": "00b6c5fb8cf46cf1a08f847aa3183f8d5c95aec4c7aadb5b53459ffa1b0ec3a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 生命週期 API"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "During the build, plugins are loaded in parallel to fetch their own contents and render them to routes. Plugins may also configure webpack or post-process the generated files.",
+      "source_content_hash": "803aaa0417bcdd77f7904e9050a03702470cd84b49906f1e93ddbe1593b99dc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在建置過程中，插件會平行載入以獲取自身內容並將其渲染至路由。插件亦可配置 webpack 或對生成的文件進行後處理。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## `async loadContent()` {#loadContent}",
+      "source_content_hash": "e97e81f259bf85275dd5d00dfd4b7c43c339f714a4e1e66682b7532576071b06",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `async loadContent()` {#loadContent}"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Plugins should use this lifecycle to fetch from data sources (filesystem, remote API, headless CMS, etc.) or do some server processing. The return value is the content it needs.",
+      "source_content_hash": "f9321e8106d020fde0e36a6a0c4cd33b5bfd3784eabfb063be527bf4d0a4284c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "插件應使用此生命週期從資料來源（檔案系統、遠端 API、無頭 CMS 等）獲取資料或進行伺服器端處理。返回值即為其所需內容。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "For example, this plugin below returns a random integer between 1 and 10 as content.",
+      "source_content_hash": "dcbae7e5c8fb174d6a003d8bc981a01a16793cfb6db19cece2276f3e85ca44b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，下方插件會回傳 1 到 10 之間的隨機整數作為內容。"
+      }
+    },
+    {
+      "segment_id": "41ad46a6",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // highlight-start\n    async loadContent() {\n      return 1 + Math.floor(Math.random() * 10);\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "bc7259a956d7b598156beac3fb1575850ba1339a1190fdce35534e295b800f42",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_41ad46a6"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## `async contentLoaded({content, actions})` {#contentLoaded}",
+      "source_content_hash": "0b189084de9198831c26d08aa159c13bdd055a38d88211cd645aee6335b72a71",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `async contentLoaded({content, actions})` {#contentLoaded}"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "The data that was loaded in `loadContent` will be consumed in `contentLoaded`. It can be rendered to routes, registered as global data, etc.",
+      "source_content_hash": "128d52112d9b08e9c099fc7d775ffe98524e5865eb24f79ba0ad887dda3b7018",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`loadContent` 中載入的資料將在 `contentLoaded` 中被消耗。可將其渲染至路由、註冊為全域資料等。"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "### `content` {#content}",
+      "source_content_hash": "b00b454cec65378d037ed83be1c60db28df953eeb8b9ff9b2a9e1089bddb839a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `content` {#content}"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "`contentLoaded` will be called _after_ `loadContent` is done. The return value of `loadContent()` will be passed to `contentLoaded` as `content`.",
+      "source_content_hash": "55fcaa077d1dd01bd3c747e9eb141cf4e7fb5daeb285d23959c6853822b4bb26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`contentLoaded` 會在 `loadContent` 完成後被呼叫。`loadContent()` 的返回值將作為 `content` 傳遞給 `contentLoaded`。"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "### `actions` {#actions}",
+      "source_content_hash": "0d222041ad8b37fa8c21aadacca0f6a000eea62fcafa6389fda1a30b694bf11c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `actions` {#actions}"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "`actions` contain three functions:",
+      "source_content_hash": "e093709b12deec0735131ff454489a1f7aa4d43bc83fa833d517f91eb60a8054",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`actions` 包含三個函式："
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "#### `addRoute(config: RouteConfig): void` {#addRoute}",
+      "source_content_hash": "4b21db17f1883fa120a7c9b971a20f31ed901896620b169c2b3a7642338d5a48",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `addRoute(config: RouteConfig): void` {#addRoute}"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Create a route to add to the website.",
+      "source_content_hash": "5055966ec3106ffb36f269ff258028d6bcc71edceb671201a6b2a40bd88751ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "建立要添加到網站的路由。"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```ts\ntype RouteConfig = {\n  path: string;\n  component: string;\n  modules?: RouteModules;\n  routes?: RouteConfig[];\n  exact?: boolean;\n  priority?: number;\n};\ntype RouteModules = {\n  [module: string]: Module | RouteModules | RouteModules[];\n};\ntype Module =\n  | {\n      path: string;\n      __import?: boolean;\n      query?: ParsedUrlQueryInput;\n    }\n  | string;\n```",
+      "source_content_hash": "fd75ae1e11170e01c372faa8f94f2a28310144ec6ac9cbaef363efd58e0b0624",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "#### `createData(name: string, data: any): Promise<string>` {#createData}",
+      "source_content_hash": "23b486fb77a3a221c14ffca1953d53fc02c83561bb1dd70783bc8db25163db21",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `createData(name: string, data: any): Promise<string>` {#createData}"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "A declarative callback to create static data (generally JSON or string) which can later be provided to your routes as props. Takes the file name and data to be stored, and returns the actual data file's path.",
+      "source_content_hash": "33a9b93b1e1b424d8de3bc06c310726631f1cb5782464cadd8d094050721e3c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "宣告式回呼函式，用於建立靜態資料（通常為 JSON 或字串），後續可作為 props 提供給您的路由。接收檔案名稱及要儲存的資料，並回傳實際資料檔案的路徑。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "For example, this plugin below creates a `/friends` page which displays `Your friends are: Yangshun, Sebastien`:",
+      "source_content_hash": "df9c18fb864de41e58f8dbd6831db223a0571c2fd30dc59c4a003081be1de238",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，下方插件會建立一個顯示「您的朋友是：Yangshun、Sebastien」的 `/friends` 頁面："
+      }
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```jsx title=\"website/src/components/Friends.js\"\nimport React from 'react';\n\nexport default function FriendsComponent({friends}) {\n  return <div>Your friends are {friends.join(',')}</div>;\n}\n```",
+      "source_content_hash": "00a02e5469993296b6a57f0c1e474742bd3c26e07c8c7be652585647cecd1a31",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4fb3ded8"
+      }
+    },
+    {
+      "segment_id": "7b2110d8",
+      "source_content": "```js title=\"docusaurus-friends-plugin/src/index.js\"\nexport default function friendsPlugin(context, options) {\n  return {\n    name: 'docusaurus-friends-plugin',\n    // highlight-start\n    async contentLoaded({content, actions}) {\n      const {createData, addRoute} = actions;\n      // Create friends.json\n      const friends = ['Yangshun', 'Sebastien'];\n      const friendsJsonPath = await createData(\n        'friends.json',\n        JSON.stringify(friends),\n      );\n\n      // Add the '/friends' routes, and ensure it receives the friends props\n      addRoute({\n        path: '/friends',\n        component: '@site/src/components/Friends.js',\n        modules: {\n          // propName -> JSON file path\n          friends: friendsJsonPath,\n        },\n        exact: true,\n      });\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "e5e361e8b1fbc828eec045c6f5abd42c86014b5299935cfd9d760cfcbed4a5f1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7b2110d8"
+      }
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "#### `setGlobalData(data: any): void` {#setGlobalData}",
+      "source_content_hash": "7af02357b60296d5338aa7a881427684d80966305d5980cecdc58e168e9178c8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### `setGlobalData(data: any): void` {#setGlobalData}"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "This function permits one to create some global plugin data that can be read from any page, including the pages created by other plugins, and your theme layout.",
+      "source_content_hash": "e53198b5bbb74ed6016a9a40ce013589cd2cba9d695af229af93ac7e3928621e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此函式允許建立一些全域插件資料，這些資料可從任何頁面讀取，包括其他插件建立的頁面及您的主題佈局。"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "This data becomes accessible to your client-side/theme code through the [`useGlobalData`](../../docusaurus-core.mdx#useGlobalData) and [`usePluginData`](../../docusaurus-core.mdx#usePluginData) hooks.",
+      "source_content_hash": "ede278333f9b217df90c03fd9b61e79ac3bc0ece00b5e5013715c00196953132",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這些資料可透過 [`useGlobalData`](../../docusaurus-core.mdx#useGlobalData) 和 [`usePluginData`](../../docusaurus-core.mdx#usePluginData) 鉤子在客戶端/主題程式碼中存取。"
+      }
+    },
+    {
+      "segment_id": "5b81fcd1",
+      "source_content": ":::warning\n\nGlobal data is... global: its size affects the loading time of all pages of your site, so try to keep it small. Prefer `createData` and page-specific data whenever possible.\n\n:::",
+      "source_content_hash": "2cca74d9e0ca6e086de37d8a107c973b3561363064861a82a66c17c0b90d9594",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n全域資料是...全域的：其大小會影響網站所有頁面的載入時間，因此請盡量保持小巧。盡可能優先使用 `createData` 和頁面特定資料。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "For example, this plugin below creates a `/friends` page which displays `Your friends are: Yangshun, Sebastien`:",
+      "source_content_hash": "df9c18fb864de41e58f8dbd6831db223a0571c2fd30dc59c4a003081be1de238",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，下方插件會建立一個顯示「您的朋友是：Yangshun、Sebastien」的 `/friends` 頁面："
+      }
+    },
+    {
+      "segment_id": "6f605d92",
+      "source_content": "```jsx title=\"website/src/components/Friends.js\"\nimport React from 'react';\nimport {usePluginData} from '@docusaurus/useGlobalData';\n\nexport default function FriendsComponent() {\n  const {friends} = usePluginData('docusaurus-friends-plugin');\n  return <div>Your friends are {friends.join(',')}</div>;\n}\n```",
+      "source_content_hash": "3ce3ac61f343b2afa79afc57382bca00a9914965536095f217c5371029c0c17f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6f605d92"
+      }
+    },
+    {
+      "segment_id": "136818ce",
+      "source_content": "```js title=\"docusaurus-friends-plugin/src/index.js\"\nexport default function friendsPlugin(context, options) {\n  return {\n    name: 'docusaurus-friends-plugin',\n    // highlight-start\n    async contentLoaded({content, actions}) {\n      const {setGlobalData, addRoute} = actions;\n      // Create friends global data\n      setGlobalData({friends: ['Yangshun', 'Sebastien']});\n\n      // Add the '/friends' routes\n      addRoute({\n        path: '/friends',\n        component: '@site/src/components/Friends.js',\n        exact: true,\n      });\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "12ef28c60a9798f1240d202feac202234d8000866e4408ffb3d0f63aa4c0127f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_136818ce"
+      }
+    },
+    {
+      "segment_id": "2f2d5f01",
+      "source_content": "## `configureWebpack(config, isServer, utils, content)` {#configureWebpack}",
+      "source_content_hash": "22ecf8a9f653aa0e8b567348257bc91eab47842a3c5eb974fcf23ef3e029d18e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `configureWebpack(config, isServer, utils, content)` {#configureWebpack}"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "Modifies the internal webpack config. If the return value is a JavaScript object, it will be merged into the final config using [`webpack-merge`](https://github.com/survivejs/webpack-merge). If it is a function, it will be called and receive `config` as the first argument and an `isServer` flag as the second argument.",
+      "source_content_hash": "dbeb43400e0e69eac276d822cc26c42407f8bf02d17aaf7ce78bef112bb98d5b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "修改內部 webpack 配置。若返回值為 JavaScript 物件，將使用 [`webpack-merge`](https://github.com/survivejs/webpack-merge) 將其合併至最終配置中。若為函式，則會呼叫該函式並接收 `config` 作為第一個參數及 `isServer` 標誌作為第二個參數。"
+      }
+    },
+    {
+      "segment_id": "8830d530",
+      "source_content": ":::warning\n\nThe API of `configureWebpack` will be modified in the future to accept an object (`configureWebpack({config, isServer, utils, content})`)\n\n:::",
+      "source_content_hash": "62b78dab38ef0bc06fed015a194f9570709a390ad05ed34661acf21f5d90b662",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\n`configureWebpack` 的 API 未來將修改為接收物件形式 (`configureWebpack({config, isServer, utils, content})`)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "a5905b07",
+      "source_content": "### `config` {#config}",
+      "source_content_hash": "6eb6ab50e8c861470bca31fafd70a6cab3366ffc2922298da2776e8df74e77e4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `config` {#config}"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "`configureWebpack` is called with `config` generated according to client/server build. You may treat this as the base config to be merged with.",
+      "source_content_hash": "3f2ebc69dafe1246c282004291d1059f77553202e6a5816b589c16ac2c33d9ec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`configureWebpack` 會根據客戶端/伺服器端建置傳入生成的 `config`。您可將其視為待合併的基礎配置。"
+      }
+    },
+    {
+      "segment_id": "58f98d22",
+      "source_content": "### `isServer` {#isServer}",
+      "source_content_hash": "be1b3e475c9c2e329d6c7999d4921f9c98a2db24055ebb882dc450098343039e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `isServer` {#isServer}"
+      }
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "`configureWebpack` will be called both in server build and in client build. The server build receives `true` and the client build receives `false` as `isServer`.",
+      "source_content_hash": "a10c4cd3b36bee066a7e0e3e2dfc51feb48cf216a033c17e7323b7fa9d7638ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`configureWebpack` 會在伺服器建置和客戶端建置時被呼叫。伺服器建置會收到 `true`，而客戶端建置會收到 `false` 作為 `isServer` 的值。"
+      }
+    },
+    {
+      "segment_id": "191265da",
+      "source_content": "### `utils` {#utils}",
+      "source_content_hash": "96aeb4d7ffa4e8262875750b66e55d12423bf5f1c68cc48e88d4114834721c05",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `utils` {#utils}"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "`configureWebpack` also receives an util object:",
+      "source_content_hash": "342f293e16fbd62cb1ec5e7042b2b9c2bb0ae9446694a2a297616db6c596bba5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`configureWebpack` 還會收到一個工具物件："
+      }
+    },
+    {
+      "segment_id": "db79148c",
+      "source_content": "- `getStyleLoaders(isServer: boolean, cssOptions: {[key: string]: any}): Loader[]`\n- `getJSLoader(isServer: boolean, cacheOptions?: {}): Loader | null`",
+      "source_content_hash": "ac39e970c2e73d97c08592a375a3586bd8a514707ce4bedb36856d2a740686b5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `getStyleLoaders(isServer: boolean, cssOptions: {[key: string]: any}): Loader[]`\n- `getJSLoader(isServer: boolean, cacheOptions?: {}): Loader | null`"
+      }
+    },
+    {
+      "segment_id": "39c48ff7",
+      "source_content": "You may use them to return your webpack configuration conditionally.",
+      "source_content_hash": "206e1dac74ffcc2c6458b0373ab6c93bd4fccc365c67d3b5717d0a71923773dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "你可以使用它們來有條件地回傳你的 webpack 配置。"
+      }
+    },
+    {
+      "segment_id": "e29bd639",
+      "source_content": "For example, this plugin below modify the webpack config to transpile `.foo` files.",
+      "source_content_hash": "283cad795c74226f71d8e2e4b26a2220584b7307396549b285acd2e4c03ae78c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，以下這個插件修改了 webpack 配置以轉譯 `.foo` 檔案。"
+      }
+    },
+    {
+      "segment_id": "44ecd2e3",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'custom-docusaurus-plugin',\n    // highlight-start\n    configureWebpack(config, isServer, utils) {\n      const {getJSLoader} = utils;\n      return {\n        module: {\n          rules: [\n            {\n              test: /\\.foo$/,\n              use: [getJSLoader(isServer), 'my-custom-webpack-loader'],\n            },\n          ],\n        },\n      };\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "2827c68d64f45479acddd39efb7bf2f08b915b2f4fdfb9a474bcfc7b09f50c0e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_44ecd2e3"
+      }
+    },
+    {
+      "segment_id": "778e087a",
+      "source_content": "### `content` {#content-1}",
+      "source_content_hash": "8b446413b3451d40f7b116a760089d55a8492740b4a1270423bfa96c0386615a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### `content` {#content-1}"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "`configureWebpack` will be called both with the content loaded by the plugin.",
+      "source_content_hash": "4ab344b4b2b74926d53c14f00bcb4f5f7b01ef584cbf75aad1222e982d9be466",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`configureWebpack` 會被呼叫並帶入插件載入的內容。"
+      }
+    },
+    {
+      "segment_id": "197e1a1b",
+      "source_content": "### Merge strategy {#merge-strategy}",
+      "source_content_hash": "7a4c6c7c3613f15b3584e8a60fe9e33331a095a6729e79be05350dafebda751b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 合併策略 {#merge-strategy}"
+      }
+    },
+    {
+      "segment_id": "09512450",
+      "source_content": "We merge the Webpack configuration parts of plugins into the global Webpack config using [webpack-merge](https://github.com/survivejs/webpack-merge).",
+      "source_content_hash": "3c82205468463b7b529c3e33e38fd60ad4fa4e141bf434a3b96fa61193bff2ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們使用 [webpack-merge](https://github.com/survivejs/webpack-merge) 將插件的 Webpack 配置部分合併到全域 Webpack 配置中。"
+      }
+    },
+    {
+      "segment_id": "09f901c3",
+      "source_content": "It is possible to specify the merge strategy. For example, if you want a webpack rule to be prepended instead of appended:",
+      "source_content_hash": "737191cdf7a042916654f76f0ff11cd6d30c6995981d538e5379871ea6092294",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可以指定合併策略。例如，如果你希望某個 webpack 規則被前置而非後置："
+      }
+    },
+    {
+      "segment_id": "ca792546",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'custom-docusaurus-plugin',\n    configureWebpack(config, isServer, utils) {\n      return {\n        // highlight-start\n        mergeStrategy: {'module.rules': 'prepend'},\n        module: {rules: [myRuleToPrepend]},\n        // highlight-end\n      };\n    },\n  };\n}\n```",
+      "source_content_hash": "6cb27da9a06b7852255c624610022e8b181380552783e8456661ac5209e94024",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ca792546"
+      }
+    },
+    {
+      "segment_id": "85b17c36",
+      "source_content": "Read the [webpack-merge strategy doc](https://github.com/survivejs/webpack-merge#merging-with-strategies) for more details.",
+      "source_content_hash": "bc2270c8c559758e9ba8c65a25384e50220286ec50dc87e19b04fa553e60a37d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "詳情請參閱 [webpack-merge 策略文件](https://github.com/survivejs/webpack-merge#merging-with-strategies)。"
+      }
+    },
+    {
+      "segment_id": "f210f942",
+      "source_content": "### Configuring dev server {#configuring-dev-server}",
+      "source_content_hash": "184bd23f36e39b5da7eefb1e2df706134e57cebe9a7a36de80c98f5477e1c222",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 配置開發伺服器 {#configuring-dev-server}"
+      }
+    },
+    {
+      "segment_id": "2dbbb313",
+      "source_content": "The dev server can be configured through returning a `devServer` field.",
+      "source_content_hash": "70a8919df0d6805319f059794eb675208de637105b291c5b7fdda62a004cb389",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "可以透過回傳一個 `devServer` 欄位來配置開發伺服器。"
+      }
+    },
+    {
+      "segment_id": "2f24891a",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'custom-docusaurus-plugin',\n    configureWebpack(config, isServer, utils) {\n      return {\n        // highlight-start\n        devServer: {\n          open: '/docs', // Opens localhost:3000/docs instead of localhost:3000/\n        },\n        // highlight-end\n      };\n    },\n  };\n}\n```",
+      "source_content_hash": "2f836213d073886616e6ce1eb7982b14ee2a606334f2aaf02282419bf5562db2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_2f24891a"
+      }
+    },
+    {
+      "segment_id": "365a11aa",
+      "source_content": "## `configurePostCss(options)` {#configurePostCss}",
+      "source_content_hash": "5ed5d0d161bc651aea2aebbf9e4cab565f440827a8a96002a5353c34adbb6dea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `configurePostCss(options)` {#configurePostCss}"
+      }
+    },
+    {
+      "segment_id": "15d5abf0",
+      "source_content": "Modifies [`postcssOptions` of `postcss-loader`](https://webpack.js.org/loaders/postcss-loader/#postcssoptions) during the generation of the client bundle.",
+      "source_content_hash": "a4b26b95314c682fffb994a2593f08a16fc4370b561d344e3e5290ef389329e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在生成客戶端套件時修改 [`postcss-loader` 的 `postcssOptions`](https://webpack.js.org/loaders/postcss-loader/#postcssoptions)。"
+      }
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "Should return the mutated `postcssOptions`.",
+      "source_content_hash": "38f03d79db4c4dd546a730cfa895efd049b608514b3e5dae7abdf690dd58b155",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "應回傳修改後的 `postcssOptions`。"
+      }
+    },
+    {
+      "segment_id": "070ff7a2",
+      "source_content": "By default, `postcssOptions` looks like this:",
+      "source_content_hash": "a946e3537cbdbbffc379963e43b03c50d788ee3b93a0989cbab85c5d360194fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "預設情況下，`postcssOptions` 看起來像這樣："
+      }
+    },
+    {
+      "segment_id": "703442ed",
+      "source_content": "```js\nconst postcssOptions = {\n  ident: 'postcss',\n  plugins: [require('autoprefixer')],\n};\n```",
+      "source_content_hash": "0758e098026ba043aa50ef881f0d91075ffbc02618703ac29d0e571d70509c6b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_703442ed"
+      }
+    },
+    {
+      "segment_id": "6085c028",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "ac783488",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // highlight-start\n    configurePostCss(postcssOptions) {\n      // Appends new PostCSS plugin.\n      postcssOptions.plugins.push(require('postcss-import'));\n      return postcssOptions;\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "83da017836a595b251a1e2c95ae96e6c67daf003581796f4ab78a9029f8d7bec",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_ac783488"
+      }
+    },
+    {
+      "segment_id": "c2db81f5",
+      "source_content": "## `postBuild(props)` {#postBuild}",
+      "source_content_hash": "c75d087c112570f4f26d56f1f157987e3999e043001dc0a5ba7f19c8ab85b6f5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `postBuild(props)` {#postBuild}"
+      }
+    },
+    {
+      "segment_id": "7eb5b32d",
+      "source_content": "Called when a (production) build finishes.",
+      "source_content_hash": "fe536af523ec98d9d0d1f1a11ed5df97011772316444f887d13c7a3399f6acd9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在（生產）建置完成時呼叫。"
+      }
+    },
+    {
+      "segment_id": "00c94fa3",
+      "source_content": "```ts\ninterface Props {\n  siteDir: string;\n  generatedFilesDir: string;\n  siteConfig: DocusaurusConfig;\n  outDir: string;\n  baseUrl: string;\n  headTags: string;\n  preBodyTags: string;\n  postBodyTags: string;\n  routesPaths: string[];\n  plugins: Plugin<any>[];\n  content: Content;\n}\n```",
+      "source_content_hash": "c6a3c7cfe4a06ae9047e1ad8d46333ed6e13f4a0ea4f5d6ce1db05a59df062f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_00c94fa3"
+      }
+    },
+    {
+      "segment_id": "c2a9a004",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "7d27bd2e",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // highlight-start\n    async postBuild({siteConfig = {}, routesPaths = [], outDir}) {\n      // Print out to console all the rendered routes.\n      routesPaths.map((route) => {\n        console.log(route);\n      });\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "9fdec4f2e76a4abca80289271403be9275c13cc6e017093e3771e033ee19881c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_7d27bd2e"
+      }
+    },
+    {
+      "segment_id": "3d6aa925",
+      "source_content": "## `injectHtmlTags({content})` {#injectHtmlTags}",
+      "source_content_hash": "a463ca281722e73c07dcb91fa6109670959e1b6957b530271680d9b1c677d4ec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `injectHtmlTags({content})` {#injectHtmlTags}"
+      }
+    },
+    {
+      "segment_id": "b682f1ac",
+      "source_content": "Inject head and/or body HTML tags to Docusaurus generated HTML.",
+      "source_content_hash": "b35242b748ab1f9ffc74cb48804e9da89926ed1456fda8c227cbf75f7f1af023",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "向 Docusaurus 生成的 HTML 注入 head 和/或 body HTML 標籤。"
+      }
+    },
+    {
+      "segment_id": "0302cdc1",
+      "source_content": "`injectHtmlTags` will be called both with the content loaded by the plugin.",
+      "source_content_hash": "2cb4d6380a8b49d06cc6bde90669ebb4be635edf3e7b78ae6d18d2c95acc99f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "`injectHtmlTags` 會被呼叫並帶入插件載入的內容。"
+      }
+    },
+    {
+      "segment_id": "219a3173",
+      "source_content": "```ts\nfunction injectHtmlTags(): {\n  headTags?: HtmlTags;\n  preBodyTags?: HtmlTags;\n  postBodyTags?: HtmlTags;\n};\n\ntype HtmlTags = string | HtmlTagObject | (string | HtmlTagObject)[];\n\ntype HtmlTagObject = {\n  /**\n   * Attributes of the HTML tag\n   * E.g. `{'disabled': true, 'value': 'demo', 'rel': 'preconnect'}`\n   */\n  attributes?: {\n    [attributeName: string]: string | boolean;\n  };\n  /**\n   * The tag name e.g. `div`, `script`, `link`, `meta`\n   */\n  tagName: string;\n  /**\n   * The inner HTML\n   */\n  innerHTML?: string;\n};\n```",
+      "source_content_hash": "1d5aef898e725281f28633e8cd2d5d63508ae1030a8a704a20318c1f48e85850",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_219a3173"
+      }
+    },
+    {
+      "segment_id": "f7f08e35",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "96757ef3",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    loadContent: async () => {\n      return {remoteHeadTags: await fetchHeadTagsFromAPI()};\n    },\n    // highlight-start\n    injectHtmlTags({content}) {\n      return {\n        headTags: [\n          {\n            tagName: 'link',\n            attributes: {\n              rel: 'preconnect',\n              href: 'https://www.github.com',\n            },\n          },\n          ...content.remoteHeadTags,\n        ],\n        preBodyTags: [\n          {\n            tagName: 'script',\n            attributes: {\n              charset: 'utf-8',\n              src: '/noflash.js',\n            },\n          },\n        ],\n        postBodyTags: [`<div> This is post body </div>`],\n      };\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "2770422dde524e5e16f9490dd6756d214dd0eb68e741cde7f4a36247afcc6b22",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_96757ef3"
+      }
+    },
+    {
+      "segment_id": "85f6fcdd",
+      "source_content": "Tags will be added as follows:",
+      "source_content_hash": "2ceccfd88c2f4a4c80189994c9763dc2116bde12cfc274f57ee2296067525e0c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "標籤將按以下方式添加："
+      }
+    },
+    {
+      "segment_id": "e5a2218f",
+      "source_content": "- `headTags` will be inserted before the closing `</head>` tag after scripts added by config.\n- `preBodyTags` will be inserted after the opening `<body>` tag before any child elements.\n- `postBodyTags` will be inserted before the closing `</body>` tag after all child elements.",
+      "source_content_hash": "f69d909bdbf98a838247e4c3098082f8318155ca09bc1770593109e25a7546ae",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- `headTags` 會在 `</head>` 標籤關閉前插入，位於配置添加的腳本之後。\n- `preBodyTags` 會在 `<body>` 標籤開啟後插入，位於任何子元素之前。\n- `postBodyTags` 會在 `</body>` 標籤關閉前插入，位於所有子元素之後。"
+      }
+    },
+    {
+      "segment_id": "5d1aec8a",
+      "source_content": "## `getClientModules()` {#getClientModules}",
+      "source_content_hash": "593fa509c53c052385c5b5621db5653157a5e26f47c12c1e4b587a530b345123",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getClientModules()` {#getClientModules}"
+      }
+    },
+    {
+      "segment_id": "ff95ec03",
+      "source_content": "Returns an array of paths to the [client modules](../../advanced/client.mdx#client-modules) that are to be imported into the client bundle.",
+      "source_content_hash": "883747c74bc8df242761dd501d5fd614f794b72699137cbb86bb9d42db8097bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "回傳一個路徑陣列，這些路徑指向要導入客戶端套件的[客戶端模組](../../advanced/client.mdx#client-modules)。"
+      }
+    },
+    {
+      "segment_id": "80b10d5a",
+      "source_content": "As an example, to make your theme load a `customCss` or `customJs` file path from `options` passed in by the user:",
+      "source_content_hash": "8e1e6cffe1026be1bed77e84d1e121749547b928e93d265eb0d9ddab45751598",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "舉例來說，要讓你的主題載入使用者透過 `options` 傳入的 `customCss` 或 `customJs` 檔案路徑："
+      }
+    },
+    {
+      "segment_id": "56f9cf87",
+      "source_content": "```js title=\"my-theme/src/index.js\"\nexport default function (context, options) {\n  const {customCss, customJs} = options || {};\n  return {\n    name: 'name-of-my-theme',\n    // highlight-start\n    getClientModules() {\n      return [customCss, customJs];\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "51b57869d1dbc198b4fb232d9aa82b9ab4dd2752f8e29b0f766423788e360cfe",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_56f9cf87"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.0.1/api/plugin-methods/lifecycle-apis.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.091314+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "38a548412c6f285abed98c4da137e1a8a61c06968f9aa41cc649d7907a141d15"
+  }
+}

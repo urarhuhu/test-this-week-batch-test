@@ -1,0 +1,523 @@
+---
+id: crowdin
+slug: /i18n/crowdin
+toc_max_heading_level: 4
+---
+
+# 國際化 - 使用 Crowdin
+
+Docusaurus 的國際化系統**與任何翻譯軟體解耦**。
+
+您可以將 Docusaurus 與**您選擇的工具和 SaaS 整合**，只要將**翻譯文件放在正確的位置**。
+
+我們記錄了 [Crowdin](https://crowdin.com/) 的使用方式，作為**一個**可能的**整合範例**。
+
+:::warning
+
+這**並非對 Crowdin 作為翻譯 Docusaurus 網站的唯一選擇的背書**，但 Facebook 已成功使用它來翻譯如 [Jest](https://jestjs.io/)、[Docusaurus](https://docusaurus.io/) 和 [ReasonML](https://reasonml.github.io/) 等文件專案。
+
+如需協助，請參考 **[Crowdin 文件](https://support.crowdin.com/)** 和 **[Crowdin 支援](mailto:support@crowdin.com)**。
+
+:::
+
+:::tip
+
+使用這個 **[社群驅動的 GitHub 討論](https://github.com/facebook/docusaurus/discussions/4052)** 來討論任何與 Docusaurus + Crowdin 相關的事項。
+
+:::
+
+## Crowdin 概覽 {#crowdin-overview}
+
+Crowdin 是一個翻譯 SaaS，提供 [開放原始碼專案的免費方案](https://crowdin.com/page/open-source-project-setup-request)。
+
+我們推薦以下翻譯工作流程：
+
+- **上傳來源** 到 Crowdin（未翻譯的文件）
+- 使用 Crowdin **翻譯內容**
+- **下載翻譯** 從 Crowdin（本地化的翻譯文件）
+
+Crowdin 提供一個 [CLI](https://support.crowdin.com/cli-tool/) 來**上傳來源**和**下載翻譯**，讓您可以自動化翻譯流程。
+
+[`crowdin.yml` 設定檔](https://support.crowdin.com/configuration-file/) 對 Docusaurus 來說很方便，並允許**將本地化的翻譯文件下載到預期的位置**（在 `i18n/[locale]/..` 中）。
+
+閱讀 **[官方文件](https://support.crowdin.com/)** 以了解更多關於進階功能和不同翻譯工作流程的資訊。
+
+## Crowdin 教學 {#crowdin-tutorial}
+
+這是一個使用 Crowdin 將新初始化的英文 Docusaurus 網站翻譯成法文的逐步指南，並假設您已經遵循了 [國際化教學](./i18n-tutorial.mdx)。
+
+最終結果可以在 [docusaurus-crowdin-example.netlify.app](https://docusaurus-crowdin-example.netlify.app/) 看到（[儲存庫](https://github.com/slorber/docusaurus-crowdin-example)）。
+
+### 準備 Docusaurus 網站 {#prepare-the-docusaurus-site}
+
+初始化一個新的 Docusaurus 網站：
+
+```bash
+npx create-docusaurus@latest website classic
+```
+
+為法文語言新增網站設定：
+
+```js title="docusaurus.config.js"
+export default {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+  },
+  themeConfig: {
+    navbar: {
+      items: [
+        // ...
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
+        // ...
+      ],
+    },
+  },
+  // ...
+};
+```
+
+翻譯首頁：
+
+```jsx title="src/pages/index.js"
+import React from 'react';
+import Translate from '@docusaurus/Translate';
+import Layout from '@theme/Layout';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1 style={{margin: 20}}>
+        <Translate description="The homepage main heading">
+          Welcome to my Docusaurus translated site!
+        </Translate>
+      </h1>
+    </Layout>
+  );
+}
+```
+
+### 建立 Crowdin 專案 {#create-a-crowdin-project}
+
+在 [Crowdin](https://crowdin.com/) 上註冊，並建立一個專案。
+
+使用英文作為來源語言，法文作為目標語言。
+
+![建立一個 Crowdin 專案，英文為來源語言，法文為目標語言](/img/crowdin/crowdin-create-project.png)
+
+您的專案已建立，但目前是空的。我們將在接下來的步驟中上傳要翻譯的文件。
+
+### 建立 Crowdin 設定 {#create-the-crowdin-configuration}
+
+此設定（[文件](https://support.crowdin.com/configuration-file/)）為 Crowdin CLI 提供了一個映射，以便理解：
+
+- 上傳來源檔案的位置（JSON 和 Markdown）
+- 翻譯後下載檔案的位置（位於 `i18n/[locale]`）
+
+在 `website` 目錄下建立 `crowdin.yml`：
+
+```yml title="crowdin.yml"
+project_id: '123456'
+api_token_env: CROWDIN_PERSONAL_TOKEN
+preserve_hierarchy: true
+files:
+  # JSON translation files
+  - source: /i18n/en/**/*
+    translation: /i18n/%two_letters_code%/**/%original_file_name%
+  # Docs Markdown files
+  - source: /docs/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+  # Blog Markdown files
+  - source: /blog/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
+```
+
+Crowdin 有自己的語法來宣告來源/翻譯路徑：
+
+- `**/*`：子資料夾中的所有內容
+- `%two_letters_code%`：Crowdin 目標語言的兩位字母代碼（本例中為 `fr`）
+- `**/%original_file_name%`：翻譯將保留原始資料夾/檔案結構
+
+:::info
+
+Crowdin CLI 的警告訊息有時不易理解。
+
+建議：
+
+- 一次只修改一個設定
+- 任何配置變更後重新上傳來源檔案
+- 使用以 `/` 開頭的路徑（`./` 無效）
+- 避免複雜的 glob 模式如 `/docs/**/*.(md|mdx)`（無效）
+
+:::
+
+#### 存取權杖 {#access-token}
+
+`api_token_env` 屬性定義了 Crowdin CLI 讀取的 **環境變數名稱**。
+
+您可以在 [個人資料頁面](https://crowdin.com/settings#api-key) 取得 `Personal Access Token`。
+
+:::tip
+
+可保留預設值 `CROWDIN_PERSONAL_TOKEN`，並在本地電腦和 CI 伺服器上將此環境變數設為產生的存取權杖。
+
+:::
+
+:::warning
+
+個人存取權杖會授予 **對所有 Crowdin 專案的讀寫權限**。
+
+請勿提交此權杖至版本控制，建議為公司建立專用的 **Crowdin 帳號** 而非使用個人帳戶。
+
+:::
+
+#### 其他配置欄位 {#other-configuration-fields}
+
+- `project_id`：可硬編碼，位於 `https://crowdin.com/project/<MY_PROJECT_NAME>/settings#api`
+- `preserve_hierarchy`：在 Crowdin 介面中保留文件夾結構而非扁平化顯示
+
+### 安裝 Crowdin CLI {#install-the-crowdin-cli}
+
+本教學使用 CLI 版本 `3.5.2`，但預期 `3.x` 版本均可正常運作。
+
+將 Crowdin CLI 作為 npm 套件安裝至 Docusaurus 專案：
+
+```bash npm2yarn
+npm install @crowdin/cli@3
+```
+
+新增 `crowdin` 指令：
+
+```json title="package.json"
+{
+  "scripts": {
+    // ...
+    "write-translations": "docusaurus write-translations",
+    "crowdin": "crowdin"
+  }
+}
+```
+
+測試是否能執行 Crowdin CLI：
+
+```bash npm2yarn
+npm run crowdin -- --version
+```
+
+在電腦上設定 `CROWDIN_PERSONAL_TOKEN` 環境變數，以便 CLI 透過 Crowdin API 進行驗證。
+
+:::tip
+
+暫時可在 `crowdin.yml` 中硬編碼個人權杖：`api_token: 'MY-TOKEN'`。
+
+:::
+
+### 上傳來源檔案 {#upload-the-sources}
+
+為預設語言生成 JSON 翻譯檔案至 `website/i18n/en`：
+
+```bash npm2yarn
+npm run write-translations
+```
+
+上傳所有 JSON 和 Markdown 翻譯檔案：
+
+```bash npm2yarn
+npm run crowdin upload
+```
+
+![Crowdin CLI 上傳 Docusaurus 來源檔案](/img/crowdin/crowdin-upload-sources-cli.png)
+
+來源檔案現可於 Crowdin 介面查看：`https://crowdin.com/project/<MY_PROJECT_NAME>/settings#files`
+
+![Crowdin 介面顯示 Docusaurus 來源檔案](/img/crowdin/crowdin-source-files.png)
+
+### 翻譯來源檔案 {#translate-the-sources}
+
+於 `https://crowdin.com/project/<MY_PROJECT_NAME>` 點選法語目標語言。
+
+![Crowdin 介面顯示法文翻譯檔案](/img/crowdin/crowdin-french-translations.png)
+
+翻譯部分 Markdown 檔案。
+
+![Crowdin 介面翻譯 Markdown 檔案](/img/crowdin/crowdin-translate-markdown.png)
+
+:::tip
+
+使用 `Hide String` 功能確保翻譯人員**不會翻譯不應翻譯的內容**：
+
+- Front matter：`id`、`slug`、`tags`...
+- Admonitions：`:::`、`:::note`、`:::tip`...
+
+![Crowdin 介面隱藏字串](/img/crowdin/crowdin-hide-string.png)
+
+:::
+
+翻譯部分 JSON 檔案。
+
+![Crowdin 介面翻譯 JSON 檔案](/img/crowdin/crowdin-translate-json.png)
+
+:::info
+
+JSON 翻譯檔案中的 `description` 屬性會在 Crowdin 上顯示，協助翻譯字串。
+
+:::
+
+:::tip
+
+**[預先翻譯](https://support.crowdin.com/pre-translation-via-machine/)** 您的網站，並**手動修正預先翻譯的錯誤**（請先在設定中啟用全域翻譯記憶庫）。
+
+先使用 `Hide String` 功能，因為 Crowdin 的預先翻譯有時會過於樂觀。
+
+:::
+
+### 下載翻譯檔案 {#download-the-translations}
+
+使用 Crowdin CLI 下載已翻譯的 JSON 和 Markdown 檔案。
+
+```bash npm2yarn
+npm run crowdin download
+```
+
+翻譯後的內容應下載至 `i18n/fr` 目錄。
+
+以法語環境啟動您的網站：
+
+```bash npm2yarn
+npm run start -- --locale fr
+```
+
+確認您的網站現在已翻譯為法語，網址為 [`http://localhost:3000/fr/`](http://localhost:3000/fr/)。
+
+### 使用 CI 自動化 {#automate-with-ci}
+
+我們將設定 CI 在**建置時下載 Crowdin 翻譯**，並將其保留在 Git 之外。
+
+將 `website/i18n` 加入 `.gitignore`。
+
+在您的 CI 中設定 `CROWDIN_PERSONAL_TOKEN` 環境變數。
+
+建立一個 npm 腳本來 `sync` Crowdin（提取來源、上傳來源、下載翻譯）：
+
+```json title="package.json"
+{
+  "scripts": {
+    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"
+  }
+}
+```
+
+在 CI 中呼叫 `npm run crowdin:sync` 腳本，緊接在建置 Docusaurus 網站之前。
+
+:::tip
+
+保持部署預覽速度：不要下載翻譯，並對功能分支使用 `npm run build -- --locale en`。
+
+:::
+
+:::warning
+
+Crowdin 不支援多個同時上傳/下載：最好僅在生產部署中包含翻譯，並保持部署預覽未翻譯。
+
+:::
+
+## 進階 Crowdin 主題 {#advanced-crowdin-topics}
+
+### MDX {#mdx}
+
+:::warning
+
+特別注意 MDX 文件中的 JSX 片段！
+
+:::
+
+Crowdin **官方不支援 MDX**，但他們已**新增對 `.mdx` 副檔名的支援**，並將此類檔案視為 Markdown（而非純文字）。
+
+#### MDX 問題 {#mdx-problems}
+
+Crowdin 會將 JSX 語法視為嵌入式 HTML，並可能在您下載翻譯時弄亂 JSX 標記，導致網站因無效的 JSX 而無法建置。
+
+使用簡單字串屬性的簡單 JSX 片段（如 `<Username name="Sebastien"/>`）可以正常運作；而使用物件/陣列屬性的複雜 JSX 片段（如 `<User person={{name: "Sebastien"}}/>`）則更可能因語法不像 HTML 而失敗。
+
+#### MDX 解決方案 {#mdx-solutions}
+
+我們建議將複雜的嵌入式 JSX 程式碼提取為獨立的獨立元件。我們還新增了 `mdx-code-block` 逃逸語法：
+
+`````text
+# How to deploy Docusaurus
+
+To deploy Docusaurus, run the following command:
+
+````mdx-code-block 
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="bash" label="Bash">
+
+  ```bash
+  GIT_USER=<GITHUB_USERNAME> yarn deploy
+  ```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+
+  ```batch
+  cmd /C "set "GIT_USER=<GITHUB_USERNAME>" && yarn deploy"
+  ```
+
+  </TabItem>
+</Tabs>
+````
+`````
+
+這將：
+
+- 被 Crowdin 視為程式碼區塊（且在下載時不會破壞標記）
+- 被 Docusaurus 視為常規 JSX（就像沒有被任何程式碼區塊包裹一樣）
+- 不幸的是會退出 MDX 工具鏈（IDE 語法高亮、Prettier...）
+
+### 文件版本控制 {#docs-versioning}
+
+為 `website/versioned_docs` 資料夾配置翻譯檔案。
+
+當建立新版本時，原始字串通常與當前版本 (`website/docs`) 非常相似，而您不希望反覆翻譯新版本的文件。
+
+Crowdin 提供了 `Duplicate Strings` 設定選項。
+
+![Crowdin 重複字串選項設定](/img/crowdin/crowdin-settings-duplicate-strings.png)
+
+我們建議使用 `Hide`，但最佳設定取決於您的版本差異程度。
+
+:::warning
+
+不使用 `Hide` 會導致配額中的 `source strings` 數量大幅增加，並影響定價。
+
+:::
+
+### 多實例插件 {#multi-instance-plugins}
+
+您需要為每個插件實例配置翻譯檔案。
+
+如果您有一個 id 為 `ios` 的文件插件實例，您還需要配置這些原始檔案
+
+- `website/ios`
+- `website/ios_versioned_docs` (如果啟用了版本控制)
+
+### 維護您的網站 {#maintaining-your-site}
+
+有時您會在 Git 上**刪除或重新命名原始檔案**，Crowdin 會顯示 CLI 警告：
+
+![Crowdin CLI：下載翻譯警告](/img/crowdin/crowdin-download-translations-warning.png)
+
+當您的原始檔案被重構時，您應該使用 Crowdin UI **手動更新您的 Crowdin 檔案**：
+
+![Crowdin UI：重新命名檔案](/img/crowdin/crowdin-files-rename.png)
+
+### 版本控制系統 (Git) 整合 {#vcs-git-integrations}
+
+Crowdin 提供多種 VCS 整合，包括 [GitHub](https://support.crowdin.com/github-integration/)、GitLab 和 Bitbucket。
+
+:::warning[TL;DR]
+
+我們建議避免使用它們。
+
+:::
+
+理論上這本應有助於在 Git 和 Crowdin 中同時編輯翻譯，並在兩個系統之間實現**雙向同步**。
+
+實際上，**這並不是很可靠**，原因如下：
+
+- Crowdin -> Git 同步運作正常（透過 pull request）
+- Git -> Crowdin 同步是手動的（需要按按鈕）
+- Crowdin 用於匹配現有 Markdown 翻譯與原始檔的啟發式方法並非 100% 可靠，每次從 Git 同步後都需在 Crowdin UI 上驗證結果
+- 兩個用戶同時在 Git 和 Crowdin 上編輯可能導致翻譯丟失
+- 需要將 `crowdin.yml` 檔案放在儲存庫的根目錄
+
+### 上下文本地化 {#in-context-localization}
+
+Crowdin 提供[上下文本地化](https://support.crowdin.com/in-context-localization/)功能。
+
+:::warning
+
+不幸的是，由於技術原因目前尚無法使用，但我們有希望解決這個問題。
+
+Crowdin 會將 Markdown 字串替換為技術性 ID（如 `crowdin:id12345`），但替換過於激進，包括隱藏字串，並會破壞 front matter、admonitions 和 JSX...
+
+:::
+
+### 本地化編輯網址 {#localize-edit-urls}
+
+當用戶瀏覽 `/fr/doc1` 頁面時，預設情況下編輯按鈕會連結到未本地化的文件 `website/docs/doc1.md`。
+
+您可能更希望編輯按鈕改為連結到 Crowdin 介面，可透過 `editUrl` 函數針對不同語系自訂編輯網址。
+
+```js title="docusaurus.config.js"
+const DefaultLocale = 'en';
+
+export default {
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          // highlight-start
+          editUrl: ({locale, versionDocsDirPath, docPath}) => {
+            // Link to Crowdin for French docs
+            if (locale !== DefaultLocale) {
+              return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+            }
+            // Link to GitHub for English docs
+            return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;
+          },
+          // highlight-end
+        },
+        blog: {
+          // highlight-start
+          editUrl: ({locale, blogDirPath, blogPath}) => {
+            if (locale !== DefaultLocale) {
+              return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+            }
+            return `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`;
+          },
+          // highlight-start
+        },
+      },
+    ],
+  ],
+};
+```
+
+:::note
+
+目前**無法直接連結到 Crowdin 的特定文件**。
+
+:::
+
+### 範例配置 {#example-configuration}
+
+**Docusaurus 設定檔**是展示版本控制與多實例功能的良好範例：
+
+```mdx-code-block
+import CrowdinConfigV2 from '!!raw-loader!@site/../crowdin-v2.yaml';
+import CodeBlock from '@theme/CodeBlock';
+
+<CodeBlock className="language-yaml" title="crowdin.yml">
+  {CrowdinConfigV2.split('\n')
+    // remove comments
+    .map((line) => !line.startsWith('#') && line)
+    .filter(Boolean)
+    .join('\n')}
+</CodeBlock>
+```
+
+### 機器翻譯 (MT) 問題：連結/圖片處理
+
+Crowdin 近期對 Markdown 檔案格式進行重大調整，連結的處理方式與過往不同。先前連結被視為標籤，現在則顯示為純文字。此變更導致純文字連結會被傳送至 MT 引擎嘗試翻譯目標網址，因而破壞翻譯結果（例如：字串 `Allez voir [ma merveilleuse page](/ma-merveilleuse-page)` 被翻譯為 `Check out [my wonderful page](/my-wonderful-page)`，這會中斷 docusaurus 的國際化流程，因頁面名稱不應被翻譯）。
+
+截至 2023 年 12 月 7 日，官方無意變更連結處理邏輯，若計劃搭配使用 Crowdin 與 MT 引擎，請務必留意此問題。

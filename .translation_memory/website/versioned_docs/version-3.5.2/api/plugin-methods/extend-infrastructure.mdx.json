@@ -1,0 +1,272 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-3.5.2/api/plugin-methods/extend-infrastructure.mdx",
+  "source_file_content_hash": "97e7778bf48b2a68ee311a616f132d8037338109ce538a167e8c63bda49a8d63",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\n---",
+      "source_content_hash": "6b5a0ead0daa1090c8a38fd0c73528677b05e2e1ac3baca413f4c1cf998fee45",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "# Extending infrastructure",
+      "source_content_hash": "47d1d0a1adaae96594f0fec7e01167f587403224a58761990d19f181effcd19f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "# 擴充基礎設施"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docusaurus has some infrastructure like hot reloading, CLI, and swizzling, that can be extended by external plugins.",
+      "source_content_hash": "76a172d45d4318b5142068cb2d6a4b979268bfbfb97fa793a6391742a4caac31",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 提供如熱重載、CLI 和元件替換等基礎設施，可透過外部插件進行擴展。"
+      }
+    },
+    {
+      "segment_id": "d912d376",
+      "source_content": "## `getPathsToWatch()` {#getPathsToWatch}",
+      "source_content_hash": "a995e9876abcc2748a942d5b78dc6e4302b4a96af363673ad48dba9b1488a3b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getPathsToWatch()` {#getPathsToWatch}"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Specifies the paths to watch for plugins and themes. The paths are watched by the dev server so that the plugin lifecycles are reloaded when contents in the watched paths change. Note that the plugins and themes modules are initially called with `context` and `options` from Node, which you may use to find the necessary directory information about the site.",
+      "source_content_hash": "20ee9b0fbeb66304bb29405f863208cbc246e977e2f45dfbd43352c27b2b807a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "指定插件與主題需監控的檔案路徑。開發伺服器會監控這些路徑，當監控路徑內容變更時重新觸發插件生命週期。注意插件與主題模組初始會透過 Node 傳入 `context` 和 `options` 參數，可用於獲取站點相關目錄資訊。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Use this for files that are consumed server-side, because theme files are automatically watched by Webpack dev server.",
+      "source_content_hash": "e63612309b21746f7d116a5de805a9a0574982e63d75cae073494ca20ad1505b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此方法適用於伺服器端消費的檔案，因為主題檔案會由 Webpack 開發伺服器自動監控。"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nimport path from 'path';\n\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // highlight-start\n    getPathsToWatch() {\n      const contentPath = path.resolve(context.siteDir, options.path);\n      return [`${contentPath}/**/*.{ts,tsx}`];\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "769a02a80b6896b46c47f3e040b9ad9a51e630a27907f3ae9fb1cc912c6770b1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## `extendCli(cli)` {#extendCli}",
+      "source_content_hash": "50ff7c555911ef90a111da75b9281a87b889396ec3dd41a9a629cca6caa995b6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `extendCli(cli)` {#extendCli}"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Register an extra command to enhance the CLI of Docusaurus. `cli` is a [commander](https://www.npmjs.com/package/commander/v/5.1.0) object.",
+      "source_content_hash": "c51cf6815e728c6dbd84c8a522b32369e90c1df7786bd47b6198f3d1858f7225",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "註冊額外指令以增強 Docusaurus CLI。`cli` 參數為 [commander](https://www.npmjs.com/package/commander/v/5.1.0) 物件。"
+      }
+    },
+    {
+      "segment_id": "26794fc5",
+      "source_content": ":::warning\n\nThe commander version matters! We use commander v5, and make sure you are referring to the right version documentation for available APIs.\n\n:::",
+      "source_content_hash": "70c2f4e1e864fbc892fea1f10734debaaf9507c3a6d943f45441bb3781e2c547",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::warning\n\ncommander 版本至關重要！我們使用 commander v5，請確保查閱正確版本的 API 文件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```js title=\"docusaurus-plugin/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'docusaurus-plugin',\n    // highlight-start\n    extendCli(cli) {\n      cli\n        .command('roll')\n        .description('Roll a random number between 1 and 1000')\n        .action(() => {\n          console.log(Math.floor(Math.random() * 1000 + 1));\n        });\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "0b06dcfb8fe24b38e6545883e41cac70fcf3daee7dc6371a314c8817aa8dfa2e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "9e95fc4a",
+      "source_content": "## `getThemePath()` {#getThemePath}",
+      "source_content_hash": "d7b4c38ebadcb1c6ddcdb284f3f46ee19b89136aa11a764c22093bdc399e3b00",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getThemePath()` {#getThemePath}"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "Returns the path to the directory where the theme components can be found. When your users call `swizzle`, `getThemePath` is called and its returned path is used to find your theme components. Relative paths are resolved against the folder containing the entry point.",
+      "source_content_hash": "bf3c2750d83d864fcaa798c242487268bd9ede9beff927e4b90ba692a51ebd8f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "返回主題元件所在目錄路徑。當用戶執行 `swizzle` 指令時，將調用此方法並使用返回路徑定位主題元件。相對路徑會基於入口文件所在目錄解析。"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "For example, your `getThemePath` can be:",
+      "source_content_hash": "7829876731419f0376a145293dfefca5345f03b290148a1ee028b6bf7c76d7e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "例如，您的 `getThemePath` 可返回："
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```js title=\"my-theme/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-theme',\n    // highlight-start\n    getThemePath() {\n      return './theme';\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "e2d9ec59d8b68e797b5e9be90b807817bbd95ccca1145a487fd1b56d2a97ed23",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "## `getTypeScriptThemePath()` {#getTypeScriptThemePath}",
+      "source_content_hash": "6926a8d593bdd85ce8ac0c2e4ad398f3da83ed7c93d9ba950be06ce45980cc63",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getTypeScriptThemePath()` {#getTypeScriptThemePath}"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Similar to `getThemePath()`, it should return the path to the directory where the source code of TypeScript theme components can be found. This path is purely for swizzling TypeScript theme components, and theme components under this path will **not** be resolved by Webpack. Therefore, it is not a replacement for `getThemePath()`. Typically, you can make the path returned by `getTypeScriptThemePath()` be your source directory, and make the path returned by `getThemePath()` be the compiled JavaScript output.",
+      "source_content_hash": "7271255210783f72f8ebf70fd2fd47225ee3a1c8418559db7b26f7842f929c9d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "類似 `getThemePath()`，但應返回 TypeScript 主題元件原始碼目錄路徑。此路徑僅用於替換 TypeScript 主題元件，且該路徑下的元件**不會**被 Webpack 解析，故不可替代 `getThemePath()`。通常可將此路徑設為原始碼目錄，而 `getThemePath()` 返回編譯後的 JavaScript 輸出目錄。"
+      }
+    },
+    {
+      "segment_id": "de7ed16f",
+      "source_content": ":::tip\n\nFor TypeScript theme authors: you are strongly advised to make your compiled output as human-readable as possible. Only strip type annotations and don't transpile any syntaxes, because they will be handled by Webpack's Babel loader based on the targeted browser versions.\n\nYou should also format these files with Prettier. Remember—JS files can and will be directly consumed by your users.\n\n:::",
+      "source_content_hash": "a509787d0ffcdf55078d34aa7bec22d20f51b1d56cc548e4b81be213ecf54bd9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n\nTypeScript 主題作者注意：強烈建議保持編譯輸出的可讀性。僅移除型別註解且不要轉譯任何語法，因為 Webpack 的 Babel 加載器會根據目標瀏覽器版本處理這些語法。\n\n同時請使用 Prettier 格式化這些文件。請記住——用戶會直接使用這些 JS 文件。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Example:",
+      "source_content_hash": "872887e563e75957ffc20b021332504f2ddd0a8f3964cb93070863bfaf13cdad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "範例："
+      }
+    },
+    {
+      "segment_id": "19913a56",
+      "source_content": "```js title=\"my-theme/src/index.js\"\nexport default function (context, options) {\n  return {\n    name: 'my-theme',\n    // highlight-start\n    getThemePath() {\n      // Where compiled JavaScript output lives\n      return '../lib/theme';\n    },\n    getTypeScriptThemePath() {\n      // Where TypeScript source code lives\n      return '../src/theme';\n    },\n    // highlight-end\n  };\n}\n```",
+      "source_content_hash": "89a9b3234f621380371bb5620f0cac4113b7be5c3ac711f3f2c9e944cf4a99ff",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_19913a56"
+      }
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "## `getSwizzleComponentList()` {#getSwizzleComponentList}",
+      "source_content_hash": "581113f0ea050ab966f50d6a3859bbe7c9781a851b17b8e385f85d81ec549344",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## `getSwizzleComponentList()` {#getSwizzleComponentList}"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "**This is a static method, not attached to any plugin instance.**",
+      "source_content_hash": "a299ec793d8cb048d9fa5418762ed706b656de183531dced10c04379c8fad948",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "**此為靜態方法，不依附於任何插件實例。**"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "Returns a list of stable components that are considered safe for swizzling. These components will be swizzlable without `--danger`. All components are considered unstable by default. If an empty array is returned, all components are considered unstable. If `undefined` is returned, all components are considered stable.",
+      "source_content_hash": "72503ed055a597a49592efc8385459c1dc79a0f1eb7250ad7ba7b92156ddd506",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "返回被視為安全可替換的穩定元件列表。這些元件可在不使用 `--danger` 參數下進行替換。預設所有元件均視為不穩定。若返回空陣列，則所有元件視為不穩定；若返回 `undefined`，則所有元件視為穩定。"
+      }
+    },
+    {
+      "segment_id": "353ca453",
+      "source_content": "```js title=\"my-theme/src/index.js\"\nexport function getSwizzleComponentList() {\n  return [\n    'CodeBlock',\n    'DocSidebar',\n    'Footer',\n    'NotFound',\n    'SearchBar',\n    'hooks/useTheme',\n    'prism-include-languages',\n  ];\n}\n```",
+      "source_content_hash": "dcde168450782ea8bd08c00d3244d3996714dbbd5a6a9ecc30d4ac2fb46655d4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_353ca453"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-3.5.2/api/plugin-methods/extend-infrastructure.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.265541+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "97e7778bf48b2a68ee311a616f132d8037338109ce538a167e8c63bda49a8d63"
+  }
+}

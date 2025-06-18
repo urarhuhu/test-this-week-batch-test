@@ -1,0 +1,82 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2018/12-14-Happy-First-Birthday-Slash.mdx",
+  "source_file_content_hash": "304f4f1639d89a5722fa9d0402933dada46e91d030a080ff856d5dba9cd41712",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: Happy 1st Birthday Slash!\nauthors:\n  - key: JMarcey\n    title: Co-creator of Docusaurus\ntags: [birth]\n---",
+      "source_content_hash": "8a0b4512d846798b1548f3e519af689569f93639a8b0492a98fb01fbf094ebfa",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "![Docusaurus makes 1 year! Happy Birthday Slash!](/img/docusaurus-slash-first-birthday.svg)",
+      "source_content_hash": "922447c3b576eba24a8fd6d0d8de3f5e237ee45d98d117910eb3af488e926952",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![Docusaurus 滿一週年！Slash 生日快樂！](/img/docusaurus-slash-first-birthday.svg)"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Docusaurus [went live](https://v1.docusaurus.io/blog/2017/12/14/introducing-docusaurus) on December 14, 2017. At the time, we had [8 early adopters](https://v1.docusaurus.io/blog/2017/12/14/introducing-docusaurus#acknowledgements).",
+      "source_content_hash": "a5dcee03cdfcb1d91bba38c2bc0ceb1f5c4e7e21d418d792895d0c99136a4058",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Docusaurus 於 [2017年12月14日正式上線](https://v1.docusaurus.io/blog/2017/12/14/introducing-docusaurus)。當時我們僅有 [8 個早期採用者](https://v1.docusaurus.io/blog/2017/12/14/introducing-docusaurus#acknowledgements)。"
+      }
+    },
+    {
+      "segment_id": "3e6699f4",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_3e6699f4"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "We now have nearly [60 known users of Docusaurus](https://v1.docusaurus.io/en/users), and probably more that we don't know about. We have [9K GitHub stars](https://github.com/facebook/docusaurus) and an active community, particularly [Yangshun Tay](https://x.com/yangshunz) and [Endilie Yacop Sucipto](https://x.com/endiliey), both of whom are the lead maintainers helping keep this project [moving forward](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2).",
+      "source_content_hash": "191e73d897fa07820af9c0ed717d343d9175560454214a81dc2960398885046d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如今我們擁有近 [60 個已知的 Docusaurus 使用者](https://v1.docusaurus.io/en/users)，可能還有更多我們尚未發現的案例。我們獲得了 [9K GitHub 星星](https://github.com/facebook/docusaurus) 和一個活躍的社群，特別感謝主要維護者 [Yangshun Tay](https://x.com/yangshunz) 和 [Endilie Yacop Sucipto](https://x.com/endiliey) 持續推動這個專案 [向前發展](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2)。"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "Thank you to everyone for your support and use of this project! I am super proud of how far this project has come in just a year.",
+      "source_content_hash": "89d7b3d9c8b2864ae5edd81d756755875b45e5c055dfc718d9029107ace23a5a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "感謝所有人的支持與使用！這個專案在短短一年內取得的進展讓我感到無比自豪。"
+      }
+    },
+    {
+      "segment_id": "27514802",
+      "source_content": "> Special thanks to [Eric Nakagawa](https://x.com/ericnakagawa), creator of Slash, for creating this 1-year image of Slash enjoying cake. The Slash brand has been a boon for us!",
+      "source_content_hash": "4d7f69fdb00fb76256c8cbf630b7cec6d63edba1688f9494458e51191a539111",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 特別感謝 [Eric Nakagawa](https://x.com/ericnakagawa)，Slash 的創作者，繪製了這張 Slash 享用蛋糕的一週年紀念圖。Slash 品牌形象為我們帶來了極大助益！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2018/12-14-Happy-First-Birthday-Slash.mdx",
+  "last_updated_timestamp": "2025-06-18T05:06:28.008748+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "304f4f1639d89a5722fa9d0402933dada46e91d030a080ff856d5dba9cd41712"
+  }
+}
